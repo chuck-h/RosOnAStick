@@ -1,0 +1,953 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Agnd.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Agnd_Write,"ax",%progbits
+  18              		.align	2
+  19              		.global	Agnd_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Agnd_Write, %function
+  23              	Agnd_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\Agnd.c"
+   1:.\Generated_Source\PSoC4/Agnd.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Agnd.c **** * File Name: Agnd.c  
+   3:.\Generated_Source\PSoC4/Agnd.c **** * Version 2.0
+   4:.\Generated_Source\PSoC4/Agnd.c **** *
+   5:.\Generated_Source\PSoC4/Agnd.c **** * Description:
+   6:.\Generated_Source\PSoC4/Agnd.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/Agnd.c **** *
+   8:.\Generated_Source\PSoC4/Agnd.c **** * Note:
+   9:.\Generated_Source\PSoC4/Agnd.c **** *
+  10:.\Generated_Source\PSoC4/Agnd.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/Agnd.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/Agnd.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/Agnd.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/Agnd.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/Agnd.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/Agnd.c **** 
+  17:.\Generated_Source\PSoC4/Agnd.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/Agnd.c **** #include "Agnd.h"
+  19:.\Generated_Source\PSoC4/Agnd.c **** 
+  20:.\Generated_Source\PSoC4/Agnd.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/Agnd.c ****     do { \
+  22:.\Generated_Source\PSoC4/Agnd.c ****         Agnd_PC =   (Agnd_PC & \
+  23:.\Generated_Source\PSoC4/Agnd.c ****                                 (uint32)(~(uint32)(Agnd_DRIVE_MODE_IND_MASK << (Agnd_DRIVE_MODE_BIT
+  24:.\Generated_Source\PSoC4/Agnd.c ****                                 (uint32)((uint32)(mode) << (Agnd_DRIVE_MODE_BITS * (shift))); \
+  25:.\Generated_Source\PSoC4/Agnd.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/Agnd.c **** 
+  27:.\Generated_Source\PSoC4/Agnd.c **** 
+  28:.\Generated_Source\PSoC4/Agnd.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/Agnd.c **** * Function Name: Agnd_Write
+  30:.\Generated_Source\PSoC4/Agnd.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/Agnd.c **** *
+  32:.\Generated_Source\PSoC4/Agnd.c **** * Summary:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/Agnd.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/Agnd.c **** *
+  35:.\Generated_Source\PSoC4/Agnd.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/Agnd.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/Agnd.c **** *
+  38:.\Generated_Source\PSoC4/Agnd.c **** * Return: 
+  39:.\Generated_Source\PSoC4/Agnd.c **** *  None 
+  40:.\Generated_Source\PSoC4/Agnd.c **** *  
+  41:.\Generated_Source\PSoC4/Agnd.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/Agnd.c **** void Agnd_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/Agnd.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/Agnd.c ****     uint8 drVal = (uint8)(Agnd_DR & (uint8)(~Agnd_MASK));
+  39              		.loc 1 44 0
+  40 000c 0D4B     		ldr	r3, .L2
+  41 000e 1B68     		ldr	r3, [r3]
+  42 0010 DAB2     		uxtb	r2, r3
+  43 0012 3B1C     		mov	r3, r7
+  44 0014 0F33     		add	r3, r3, #15
+  45 0016 0121     		mov	r1, #1
+  46 0018 8A43     		bic	r2, r1
+  47 001a 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/Agnd.c ****     drVal = (drVal | ((uint8)(value << Agnd_SHIFT) & Agnd_MASK));
+  48              		.loc 1 45 0
+  49 001c FB1D     		add	r3, r7, #7
+  50 001e 1A78     		ldrb	r2, [r3]
+  51 0020 0123     		mov	r3, #1
+  52 0022 1340     		and	r3, r2
+  53 0024 D9B2     		uxtb	r1, r3
+  54 0026 3B1C     		mov	r3, r7
+  55 0028 0F33     		add	r3, r3, #15
+  56 002a 3A1C     		mov	r2, r7
+  57 002c 0F32     		add	r2, r2, #15
+  58 002e 1278     		ldrb	r2, [r2]
+  59 0030 0A43     		orr	r2, r1
+  60 0032 1A70     		strb	r2, [r3]
+  46:.\Generated_Source\PSoC4/Agnd.c ****     Agnd_DR = (uint32)drVal;
+  61              		.loc 1 46 0
+  62 0034 034B     		ldr	r3, .L2
+  63 0036 3A1C     		mov	r2, r7
+  64 0038 0F32     		add	r2, r2, #15
+  65 003a 1278     		ldrb	r2, [r2]
+  66 003c 1A60     		str	r2, [r3]
+  47:.\Generated_Source\PSoC4/Agnd.c **** }
+  67              		.loc 1 47 0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 3
+
+
+  68 003e BD46     		mov	sp, r7
+  69 0040 04B0     		add	sp, sp, #16
+  70              		@ sp needed
+  71 0042 80BD     		pop	{r7, pc}
+  72              	.L3:
+  73              		.align	2
+  74              	.L2:
+  75 0044 00010440 		.word	1074004224
+  76              		.cfi_endproc
+  77              	.LFE0:
+  78              		.size	Agnd_Write, .-Agnd_Write
+  79              		.section	.text.Agnd_SetDriveMode,"ax",%progbits
+  80              		.align	2
+  81              		.global	Agnd_SetDriveMode
+  82              		.code	16
+  83              		.thumb_func
+  84              		.type	Agnd_SetDriveMode, %function
+  85              	Agnd_SetDriveMode:
+  86              	.LFB1:
+  48:.\Generated_Source\PSoC4/Agnd.c **** 
+  49:.\Generated_Source\PSoC4/Agnd.c **** 
+  50:.\Generated_Source\PSoC4/Agnd.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/Agnd.c **** * Function Name: Agnd_SetDriveMode
+  52:.\Generated_Source\PSoC4/Agnd.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/Agnd.c **** *
+  54:.\Generated_Source\PSoC4/Agnd.c **** * Summary:
+  55:.\Generated_Source\PSoC4/Agnd.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/Agnd.c **** * 
+  57:.\Generated_Source\PSoC4/Agnd.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/Agnd.c **** *  mode:  Change the pins to one of the following drive modes.
+  59:.\Generated_Source\PSoC4/Agnd.c **** *
+  60:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_STRONG     Strong Drive 
+  61:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_OD_HI      Open Drain, Drives High 
+  62:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_OD_LO      Open Drain, Drives Low 
+  63:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_RES_UP     Resistive Pull Up 
+  64:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_RES_DWN    Resistive Pull Down 
+  65:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_RES_UPDWN  Resistive Pull Up/Down 
+  66:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_DIG_HIZ    High Impedance Digital 
+  67:.\Generated_Source\PSoC4/Agnd.c **** *  Agnd_DM_ALG_HIZ    High Impedance Analog 
+  68:.\Generated_Source\PSoC4/Agnd.c **** *
+  69:.\Generated_Source\PSoC4/Agnd.c **** * Return: 
+  70:.\Generated_Source\PSoC4/Agnd.c **** *  None
+  71:.\Generated_Source\PSoC4/Agnd.c **** *
+  72:.\Generated_Source\PSoC4/Agnd.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC4/Agnd.c **** void Agnd_SetDriveMode(uint8 mode) 
+  74:.\Generated_Source\PSoC4/Agnd.c **** {
+  87              		.loc 1 74 0
+  88              		.cfi_startproc
+  89 0000 80B5     		push	{r7, lr}
+  90              		.cfi_def_cfa_offset 8
+  91              		.cfi_offset 7, -8
+  92              		.cfi_offset 14, -4
+  93 0002 82B0     		sub	sp, sp, #8
+  94              		.cfi_def_cfa_offset 16
+  95 0004 00AF     		add	r7, sp, #0
+  96              		.cfi_def_cfa_register 7
+  97 0006 021C     		mov	r2, r0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 4
+
+
+  98 0008 FB1D     		add	r3, r7, #7
+  99 000a 1A70     		strb	r2, [r3]
+  75:.\Generated_Source\PSoC4/Agnd.c **** 	SetP4PinDriveMode(Agnd__0__SHIFT, mode);
+ 100              		.loc 1 75 0
+ 101 000c 064B     		ldr	r3, .L5
+ 102 000e 064A     		ldr	r2, .L5
+ 103 0010 1268     		ldr	r2, [r2]
+ 104 0012 0721     		mov	r1, #7
+ 105 0014 101C     		mov	r0, r2
+ 106 0016 8843     		bic	r0, r1
+ 107 0018 011C     		mov	r1, r0
+ 108 001a FA1D     		add	r2, r7, #7
+ 109 001c 1278     		ldrb	r2, [r2]
+ 110 001e 0A43     		orr	r2, r1
+ 111 0020 1A60     		str	r2, [r3]
+  76:.\Generated_Source\PSoC4/Agnd.c **** }
+ 112              		.loc 1 76 0
+ 113 0022 BD46     		mov	sp, r7
+ 114 0024 02B0     		add	sp, sp, #8
+ 115              		@ sp needed
+ 116 0026 80BD     		pop	{r7, pc}
+ 117              	.L6:
+ 118              		.align	2
+ 119              	.L5:
+ 120 0028 08010440 		.word	1074004232
+ 121              		.cfi_endproc
+ 122              	.LFE1:
+ 123              		.size	Agnd_SetDriveMode, .-Agnd_SetDriveMode
+ 124              		.section	.text.Agnd_Read,"ax",%progbits
+ 125              		.align	2
+ 126              		.global	Agnd_Read
+ 127              		.code	16
+ 128              		.thumb_func
+ 129              		.type	Agnd_Read, %function
+ 130              	Agnd_Read:
+ 131              	.LFB2:
+  77:.\Generated_Source\PSoC4/Agnd.c **** 
+  78:.\Generated_Source\PSoC4/Agnd.c **** 
+  79:.\Generated_Source\PSoC4/Agnd.c **** /*******************************************************************************
+  80:.\Generated_Source\PSoC4/Agnd.c **** * Function Name: Agnd_Read
+  81:.\Generated_Source\PSoC4/Agnd.c **** ********************************************************************************
+  82:.\Generated_Source\PSoC4/Agnd.c **** *
+  83:.\Generated_Source\PSoC4/Agnd.c **** * Summary:
+  84:.\Generated_Source\PSoC4/Agnd.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  85:.\Generated_Source\PSoC4/Agnd.c **** *  form.
+  86:.\Generated_Source\PSoC4/Agnd.c **** *
+  87:.\Generated_Source\PSoC4/Agnd.c **** * Parameters:  
+  88:.\Generated_Source\PSoC4/Agnd.c **** *  None 
+  89:.\Generated_Source\PSoC4/Agnd.c **** *
+  90:.\Generated_Source\PSoC4/Agnd.c **** * Return: 
+  91:.\Generated_Source\PSoC4/Agnd.c **** *  Returns the current value of the Digital Port as a right justified number
+  92:.\Generated_Source\PSoC4/Agnd.c **** *  
+  93:.\Generated_Source\PSoC4/Agnd.c **** * Note:
+  94:.\Generated_Source\PSoC4/Agnd.c **** *  Macro Agnd_ReadPS calls this function. 
+  95:.\Generated_Source\PSoC4/Agnd.c **** *  
+  96:.\Generated_Source\PSoC4/Agnd.c **** *******************************************************************************/
+  97:.\Generated_Source\PSoC4/Agnd.c **** uint8 Agnd_Read(void) 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 5
+
+
+  98:.\Generated_Source\PSoC4/Agnd.c **** {
+ 132              		.loc 1 98 0
+ 133              		.cfi_startproc
+ 134 0000 80B5     		push	{r7, lr}
+ 135              		.cfi_def_cfa_offset 8
+ 136              		.cfi_offset 7, -8
+ 137              		.cfi_offset 14, -4
+ 138 0002 00AF     		add	r7, sp, #0
+ 139              		.cfi_def_cfa_register 7
+  99:.\Generated_Source\PSoC4/Agnd.c ****     return (uint8)((Agnd_PS & Agnd_MASK) >> Agnd_SHIFT);
+ 140              		.loc 1 99 0
+ 141 0004 044B     		ldr	r3, .L9
+ 142 0006 1B68     		ldr	r3, [r3]
+ 143 0008 DAB2     		uxtb	r2, r3
+ 144 000a 0123     		mov	r3, #1
+ 145 000c 1340     		and	r3, r2
+ 146 000e DBB2     		uxtb	r3, r3
+ 100:.\Generated_Source\PSoC4/Agnd.c **** }
+ 147              		.loc 1 100 0
+ 148 0010 181C     		mov	r0, r3
+ 149 0012 BD46     		mov	sp, r7
+ 150              		@ sp needed
+ 151 0014 80BD     		pop	{r7, pc}
+ 152              	.L10:
+ 153 0016 C046     		.align	2
+ 154              	.L9:
+ 155 0018 04010440 		.word	1074004228
+ 156              		.cfi_endproc
+ 157              	.LFE2:
+ 158              		.size	Agnd_Read, .-Agnd_Read
+ 159              		.section	.text.Agnd_ReadDataReg,"ax",%progbits
+ 160              		.align	2
+ 161              		.global	Agnd_ReadDataReg
+ 162              		.code	16
+ 163              		.thumb_func
+ 164              		.type	Agnd_ReadDataReg, %function
+ 165              	Agnd_ReadDataReg:
+ 166              	.LFB3:
+ 101:.\Generated_Source\PSoC4/Agnd.c **** 
+ 102:.\Generated_Source\PSoC4/Agnd.c **** 
+ 103:.\Generated_Source\PSoC4/Agnd.c **** /*******************************************************************************
+ 104:.\Generated_Source\PSoC4/Agnd.c **** * Function Name: Agnd_ReadDataReg
+ 105:.\Generated_Source\PSoC4/Agnd.c **** ********************************************************************************
+ 106:.\Generated_Source\PSoC4/Agnd.c **** *
+ 107:.\Generated_Source\PSoC4/Agnd.c **** * Summary:
+ 108:.\Generated_Source\PSoC4/Agnd.c **** *  Read the current value assigned to a Digital Port's data output register
+ 109:.\Generated_Source\PSoC4/Agnd.c **** *
+ 110:.\Generated_Source\PSoC4/Agnd.c **** * Parameters:  
+ 111:.\Generated_Source\PSoC4/Agnd.c **** *  None 
+ 112:.\Generated_Source\PSoC4/Agnd.c **** *
+ 113:.\Generated_Source\PSoC4/Agnd.c **** * Return: 
+ 114:.\Generated_Source\PSoC4/Agnd.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 115:.\Generated_Source\PSoC4/Agnd.c **** *  
+ 116:.\Generated_Source\PSoC4/Agnd.c **** *******************************************************************************/
+ 117:.\Generated_Source\PSoC4/Agnd.c **** uint8 Agnd_ReadDataReg(void) 
+ 118:.\Generated_Source\PSoC4/Agnd.c **** {
+ 167              		.loc 1 118 0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 6
+
+
+ 168              		.cfi_startproc
+ 169 0000 80B5     		push	{r7, lr}
+ 170              		.cfi_def_cfa_offset 8
+ 171              		.cfi_offset 7, -8
+ 172              		.cfi_offset 14, -4
+ 173 0002 00AF     		add	r7, sp, #0
+ 174              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC4/Agnd.c ****     return (uint8)((Agnd_DR & Agnd_MASK) >> Agnd_SHIFT);
+ 175              		.loc 1 119 0
+ 176 0004 044B     		ldr	r3, .L13
+ 177 0006 1B68     		ldr	r3, [r3]
+ 178 0008 DAB2     		uxtb	r2, r3
+ 179 000a 0123     		mov	r3, #1
+ 180 000c 1340     		and	r3, r2
+ 181 000e DBB2     		uxtb	r3, r3
+ 120:.\Generated_Source\PSoC4/Agnd.c **** }
+ 182              		.loc 1 120 0
+ 183 0010 181C     		mov	r0, r3
+ 184 0012 BD46     		mov	sp, r7
+ 185              		@ sp needed
+ 186 0014 80BD     		pop	{r7, pc}
+ 187              	.L14:
+ 188 0016 C046     		.align	2
+ 189              	.L13:
+ 190 0018 00010440 		.word	1074004224
+ 191              		.cfi_endproc
+ 192              	.LFE3:
+ 193              		.size	Agnd_ReadDataReg, .-Agnd_ReadDataReg
+ 194              		.section	.text.Agnd_ClearInterrupt,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	Agnd_ClearInterrupt
+ 197              		.code	16
+ 198              		.thumb_func
+ 199              		.type	Agnd_ClearInterrupt, %function
+ 200              	Agnd_ClearInterrupt:
+ 201              	.LFB4:
+ 121:.\Generated_Source\PSoC4/Agnd.c **** 
+ 122:.\Generated_Source\PSoC4/Agnd.c **** 
+ 123:.\Generated_Source\PSoC4/Agnd.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 124:.\Generated_Source\PSoC4/Agnd.c **** #if defined(Agnd_INTSTAT) 
+ 125:.\Generated_Source\PSoC4/Agnd.c **** 
+ 126:.\Generated_Source\PSoC4/Agnd.c ****     /*******************************************************************************
+ 127:.\Generated_Source\PSoC4/Agnd.c ****     * Function Name: Agnd_ClearInterrupt
+ 128:.\Generated_Source\PSoC4/Agnd.c ****     ********************************************************************************
+ 129:.\Generated_Source\PSoC4/Agnd.c ****     *
+ 130:.\Generated_Source\PSoC4/Agnd.c ****     * Summary:
+ 131:.\Generated_Source\PSoC4/Agnd.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 132:.\Generated_Source\PSoC4/Agnd.c ****     *  interrupt status register.
+ 133:.\Generated_Source\PSoC4/Agnd.c ****     *
+ 134:.\Generated_Source\PSoC4/Agnd.c ****     * Parameters:  
+ 135:.\Generated_Source\PSoC4/Agnd.c ****     *  None 
+ 136:.\Generated_Source\PSoC4/Agnd.c ****     *
+ 137:.\Generated_Source\PSoC4/Agnd.c ****     * Return: 
+ 138:.\Generated_Source\PSoC4/Agnd.c ****     *  Returns the value of the interrupt status register
+ 139:.\Generated_Source\PSoC4/Agnd.c ****     *  
+ 140:.\Generated_Source\PSoC4/Agnd.c ****     *******************************************************************************/
+ 141:.\Generated_Source\PSoC4/Agnd.c ****     uint8 Agnd_ClearInterrupt(void) 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 7
+
+
+ 142:.\Generated_Source\PSoC4/Agnd.c ****     {
+ 202              		.loc 1 142 0
+ 203              		.cfi_startproc
+ 204 0000 80B5     		push	{r7, lr}
+ 205              		.cfi_def_cfa_offset 8
+ 206              		.cfi_offset 7, -8
+ 207              		.cfi_offset 14, -4
+ 208 0002 82B0     		sub	sp, sp, #8
+ 209              		.cfi_def_cfa_offset 16
+ 210 0004 00AF     		add	r7, sp, #0
+ 211              		.cfi_def_cfa_register 7
+ 143:.\Generated_Source\PSoC4/Agnd.c **** 		uint8 maskedStatus = (uint8)(Agnd_INTSTAT & Agnd_MASK);
+ 212              		.loc 1 143 0
+ 213 0006 084B     		ldr	r3, .L17
+ 214 0008 1B68     		ldr	r3, [r3]
+ 215 000a D9B2     		uxtb	r1, r3
+ 216 000c FB1D     		add	r3, r7, #7
+ 217 000e 0122     		mov	r2, #1
+ 218 0010 0A40     		and	r2, r1
+ 219 0012 1A70     		strb	r2, [r3]
+ 144:.\Generated_Source\PSoC4/Agnd.c **** 		Agnd_INTSTAT = maskedStatus;
+ 220              		.loc 1 144 0
+ 221 0014 044B     		ldr	r3, .L17
+ 222 0016 FA1D     		add	r2, r7, #7
+ 223 0018 1278     		ldrb	r2, [r2]
+ 224 001a 1A60     		str	r2, [r3]
+ 145:.\Generated_Source\PSoC4/Agnd.c ****         return maskedStatus >> Agnd_SHIFT;
+ 225              		.loc 1 145 0
+ 226 001c FB1D     		add	r3, r7, #7
+ 227 001e 1B78     		ldrb	r3, [r3]
+ 146:.\Generated_Source\PSoC4/Agnd.c ****     }
+ 228              		.loc 1 146 0
+ 229 0020 181C     		mov	r0, r3
+ 230 0022 BD46     		mov	sp, r7
+ 231 0024 02B0     		add	sp, sp, #8
+ 232              		@ sp needed
+ 233 0026 80BD     		pop	{r7, pc}
+ 234              	.L18:
+ 235              		.align	2
+ 236              	.L17:
+ 237 0028 10010440 		.word	1074004240
+ 238              		.cfi_endproc
+ 239              	.LFE4:
+ 240              		.size	Agnd_ClearInterrupt, .-Agnd_ClearInterrupt
+ 241              		.text
+ 242              	.Letext0:
+ 243              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 244              		.section	.debug_info,"",%progbits
+ 245              	.Ldebug_info0:
+ 246 0000 47010000 		.4byte	0x147
+ 247 0004 0400     		.2byte	0x4
+ 248 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 249 000a 04       		.byte	0x4
+ 250 000b 01       		.uleb128 0x1
+ 251 000c 6B010000 		.4byte	.LASF24
+ 252 0010 01       		.byte	0x1
+ 253 0011 34020000 		.4byte	.LASF25
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 8
+
+
+ 254 0015 00000000 		.4byte	.LASF26
+ 255 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 256 001d 00000000 		.4byte	0
+ 257 0021 00000000 		.4byte	.Ldebug_line0
+ 258 0025 02       		.uleb128 0x2
+ 259 0026 01       		.byte	0x1
+ 260 0027 06       		.byte	0x6
+ 261 0028 5F010000 		.4byte	.LASF0
+ 262 002c 02       		.uleb128 0x2
+ 263 002d 01       		.byte	0x1
+ 264 002e 08       		.byte	0x8
+ 265 002f 82000000 		.4byte	.LASF1
+ 266 0033 02       		.uleb128 0x2
+ 267 0034 02       		.byte	0x2
+ 268 0035 05       		.byte	0x5
+ 269 0036 35010000 		.4byte	.LASF2
+ 270 003a 02       		.uleb128 0x2
+ 271 003b 02       		.byte	0x2
+ 272 003c 07       		.byte	0x7
+ 273 003d A8000000 		.4byte	.LASF3
+ 274 0041 02       		.uleb128 0x2
+ 275 0042 04       		.byte	0x4
+ 276 0043 05       		.byte	0x5
+ 277 0044 56010000 		.4byte	.LASF4
+ 278 0048 02       		.uleb128 0x2
+ 279 0049 04       		.byte	0x4
+ 280 004a 07       		.byte	0x7
+ 281 004b 96000000 		.4byte	.LASF5
+ 282 004f 02       		.uleb128 0x2
+ 283 0050 08       		.byte	0x8
+ 284 0051 05       		.byte	0x5
+ 285 0052 10010000 		.4byte	.LASF6
+ 286 0056 02       		.uleb128 0x2
+ 287 0057 08       		.byte	0x8
+ 288 0058 07       		.byte	0x7
+ 289 0059 F4000000 		.4byte	.LASF7
+ 290 005d 03       		.uleb128 0x3
+ 291 005e 04       		.byte	0x4
+ 292 005f 05       		.byte	0x5
+ 293 0060 696E7400 		.ascii	"int\000"
+ 294 0064 02       		.uleb128 0x2
+ 295 0065 04       		.byte	0x4
+ 296 0066 07       		.byte	0x7
+ 297 0067 E7000000 		.4byte	.LASF8
+ 298 006b 04       		.uleb128 0x4
+ 299 006c 50010000 		.4byte	.LASF9
+ 300 0070 02       		.byte	0x2
+ 301 0071 5B       		.byte	0x5b
+ 302 0072 2C000000 		.4byte	0x2c
+ 303 0076 04       		.uleb128 0x4
+ 304 0077 E0000000 		.4byte	.LASF10
+ 305 007b 02       		.byte	0x2
+ 306 007c 5D       		.byte	0x5d
+ 307 007d 48000000 		.4byte	0x48
+ 308 0081 02       		.uleb128 0x2
+ 309 0082 04       		.byte	0x4
+ 310 0083 04       		.byte	0x4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 9
+
+
+ 311 0084 7C000000 		.4byte	.LASF11
+ 312 0088 02       		.uleb128 0x2
+ 313 0089 08       		.byte	0x8
+ 314 008a 04       		.byte	0x4
+ 315 008b D9000000 		.4byte	.LASF12
+ 316 008f 02       		.uleb128 0x2
+ 317 0090 01       		.byte	0x1
+ 318 0091 08       		.byte	0x8
+ 319 0092 30010000 		.4byte	.LASF13
+ 320 0096 04       		.uleb128 0x4
+ 321 0097 58000000 		.4byte	.LASF14
+ 322 009b 02       		.byte	0x2
+ 323 009c F2       		.byte	0xf2
+ 324 009d A1000000 		.4byte	0xa1
+ 325 00a1 05       		.uleb128 0x5
+ 326 00a2 76000000 		.4byte	0x76
+ 327 00a6 06       		.uleb128 0x6
+ 328 00a7 71000000 		.4byte	.LASF15
+ 329 00ab 01       		.byte	0x1
+ 330 00ac 2A       		.byte	0x2a
+ 331 00ad 00000000 		.4byte	.LFB0
+ 332 00b1 48000000 		.4byte	.LFE0-.LFB0
+ 333 00b5 01       		.uleb128 0x1
+ 334 00b6 9C       		.byte	0x9c
+ 335 00b7 D8000000 		.4byte	0xd8
+ 336 00bb 07       		.uleb128 0x7
+ 337 00bc 6B000000 		.4byte	.LASF17
+ 338 00c0 01       		.byte	0x1
+ 339 00c1 2A       		.byte	0x2a
+ 340 00c2 6B000000 		.4byte	0x6b
+ 341 00c6 02       		.uleb128 0x2
+ 342 00c7 91       		.byte	0x91
+ 343 00c8 6F       		.sleb128 -17
+ 344 00c9 08       		.uleb128 0x8
+ 345 00ca 90000000 		.4byte	.LASF22
+ 346 00ce 01       		.byte	0x1
+ 347 00cf 2C       		.byte	0x2c
+ 348 00d0 6B000000 		.4byte	0x6b
+ 349 00d4 02       		.uleb128 0x2
+ 350 00d5 91       		.byte	0x91
+ 351 00d6 77       		.sleb128 -9
+ 352 00d7 00       		.byte	0
+ 353 00d8 06       		.uleb128 0x6
+ 354 00d9 1E010000 		.4byte	.LASF16
+ 355 00dd 01       		.byte	0x1
+ 356 00de 49       		.byte	0x49
+ 357 00df 00000000 		.4byte	.LFB1
+ 358 00e3 2C000000 		.4byte	.LFE1-.LFB1
+ 359 00e7 01       		.uleb128 0x1
+ 360 00e8 9C       		.byte	0x9c
+ 361 00e9 FC000000 		.4byte	0xfc
+ 362 00ed 07       		.uleb128 0x7
+ 363 00ee 0B010000 		.4byte	.LASF18
+ 364 00f2 01       		.byte	0x1
+ 365 00f3 49       		.byte	0x49
+ 366 00f4 6B000000 		.4byte	0x6b
+ 367 00f8 02       		.uleb128 0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 10
+
+
+ 368 00f9 91       		.byte	0x91
+ 369 00fa 77       		.sleb128 -9
+ 370 00fb 00       		.byte	0
+ 371 00fc 09       		.uleb128 0x9
+ 372 00fd BB000000 		.4byte	.LASF19
+ 373 0101 01       		.byte	0x1
+ 374 0102 61       		.byte	0x61
+ 375 0103 6B000000 		.4byte	0x6b
+ 376 0107 00000000 		.4byte	.LFB2
+ 377 010b 1C000000 		.4byte	.LFE2-.LFB2
+ 378 010f 01       		.uleb128 0x1
+ 379 0110 9C       		.byte	0x9c
+ 380 0111 09       		.uleb128 0x9
+ 381 0112 3F010000 		.4byte	.LASF20
+ 382 0116 01       		.byte	0x1
+ 383 0117 75       		.byte	0x75
+ 384 0118 6B000000 		.4byte	0x6b
+ 385 011c 00000000 		.4byte	.LFB3
+ 386 0120 1C000000 		.4byte	.LFE3-.LFB3
+ 387 0124 01       		.uleb128 0x1
+ 388 0125 9C       		.byte	0x9c
+ 389 0126 0A       		.uleb128 0xa
+ 390 0127 C5000000 		.4byte	.LASF21
+ 391 012b 01       		.byte	0x1
+ 392 012c 8D       		.byte	0x8d
+ 393 012d 6B000000 		.4byte	0x6b
+ 394 0131 00000000 		.4byte	.LFB4
+ 395 0135 2C000000 		.4byte	.LFE4-.LFB4
+ 396 0139 01       		.uleb128 0x1
+ 397 013a 9C       		.byte	0x9c
+ 398 013b 08       		.uleb128 0x8
+ 399 013c 5E000000 		.4byte	.LASF23
+ 400 0140 01       		.byte	0x1
+ 401 0141 8F       		.byte	0x8f
+ 402 0142 6B000000 		.4byte	0x6b
+ 403 0146 02       		.uleb128 0x2
+ 404 0147 91       		.byte	0x91
+ 405 0148 77       		.sleb128 -9
+ 406 0149 00       		.byte	0
+ 407 014a 00       		.byte	0
+ 408              		.section	.debug_abbrev,"",%progbits
+ 409              	.Ldebug_abbrev0:
+ 410 0000 01       		.uleb128 0x1
+ 411 0001 11       		.uleb128 0x11
+ 412 0002 01       		.byte	0x1
+ 413 0003 25       		.uleb128 0x25
+ 414 0004 0E       		.uleb128 0xe
+ 415 0005 13       		.uleb128 0x13
+ 416 0006 0B       		.uleb128 0xb
+ 417 0007 03       		.uleb128 0x3
+ 418 0008 0E       		.uleb128 0xe
+ 419 0009 1B       		.uleb128 0x1b
+ 420 000a 0E       		.uleb128 0xe
+ 421 000b 55       		.uleb128 0x55
+ 422 000c 17       		.uleb128 0x17
+ 423 000d 11       		.uleb128 0x11
+ 424 000e 01       		.uleb128 0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 11
+
+
+ 425 000f 10       		.uleb128 0x10
+ 426 0010 17       		.uleb128 0x17
+ 427 0011 00       		.byte	0
+ 428 0012 00       		.byte	0
+ 429 0013 02       		.uleb128 0x2
+ 430 0014 24       		.uleb128 0x24
+ 431 0015 00       		.byte	0
+ 432 0016 0B       		.uleb128 0xb
+ 433 0017 0B       		.uleb128 0xb
+ 434 0018 3E       		.uleb128 0x3e
+ 435 0019 0B       		.uleb128 0xb
+ 436 001a 03       		.uleb128 0x3
+ 437 001b 0E       		.uleb128 0xe
+ 438 001c 00       		.byte	0
+ 439 001d 00       		.byte	0
+ 440 001e 03       		.uleb128 0x3
+ 441 001f 24       		.uleb128 0x24
+ 442 0020 00       		.byte	0
+ 443 0021 0B       		.uleb128 0xb
+ 444 0022 0B       		.uleb128 0xb
+ 445 0023 3E       		.uleb128 0x3e
+ 446 0024 0B       		.uleb128 0xb
+ 447 0025 03       		.uleb128 0x3
+ 448 0026 08       		.uleb128 0x8
+ 449 0027 00       		.byte	0
+ 450 0028 00       		.byte	0
+ 451 0029 04       		.uleb128 0x4
+ 452 002a 16       		.uleb128 0x16
+ 453 002b 00       		.byte	0
+ 454 002c 03       		.uleb128 0x3
+ 455 002d 0E       		.uleb128 0xe
+ 456 002e 3A       		.uleb128 0x3a
+ 457 002f 0B       		.uleb128 0xb
+ 458 0030 3B       		.uleb128 0x3b
+ 459 0031 0B       		.uleb128 0xb
+ 460 0032 49       		.uleb128 0x49
+ 461 0033 13       		.uleb128 0x13
+ 462 0034 00       		.byte	0
+ 463 0035 00       		.byte	0
+ 464 0036 05       		.uleb128 0x5
+ 465 0037 35       		.uleb128 0x35
+ 466 0038 00       		.byte	0
+ 467 0039 49       		.uleb128 0x49
+ 468 003a 13       		.uleb128 0x13
+ 469 003b 00       		.byte	0
+ 470 003c 00       		.byte	0
+ 471 003d 06       		.uleb128 0x6
+ 472 003e 2E       		.uleb128 0x2e
+ 473 003f 01       		.byte	0x1
+ 474 0040 3F       		.uleb128 0x3f
+ 475 0041 19       		.uleb128 0x19
+ 476 0042 03       		.uleb128 0x3
+ 477 0043 0E       		.uleb128 0xe
+ 478 0044 3A       		.uleb128 0x3a
+ 479 0045 0B       		.uleb128 0xb
+ 480 0046 3B       		.uleb128 0x3b
+ 481 0047 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 12
+
+
+ 482 0048 27       		.uleb128 0x27
+ 483 0049 19       		.uleb128 0x19
+ 484 004a 11       		.uleb128 0x11
+ 485 004b 01       		.uleb128 0x1
+ 486 004c 12       		.uleb128 0x12
+ 487 004d 06       		.uleb128 0x6
+ 488 004e 40       		.uleb128 0x40
+ 489 004f 18       		.uleb128 0x18
+ 490 0050 9742     		.uleb128 0x2117
+ 491 0052 19       		.uleb128 0x19
+ 492 0053 01       		.uleb128 0x1
+ 493 0054 13       		.uleb128 0x13
+ 494 0055 00       		.byte	0
+ 495 0056 00       		.byte	0
+ 496 0057 07       		.uleb128 0x7
+ 497 0058 05       		.uleb128 0x5
+ 498 0059 00       		.byte	0
+ 499 005a 03       		.uleb128 0x3
+ 500 005b 0E       		.uleb128 0xe
+ 501 005c 3A       		.uleb128 0x3a
+ 502 005d 0B       		.uleb128 0xb
+ 503 005e 3B       		.uleb128 0x3b
+ 504 005f 0B       		.uleb128 0xb
+ 505 0060 49       		.uleb128 0x49
+ 506 0061 13       		.uleb128 0x13
+ 507 0062 02       		.uleb128 0x2
+ 508 0063 18       		.uleb128 0x18
+ 509 0064 00       		.byte	0
+ 510 0065 00       		.byte	0
+ 511 0066 08       		.uleb128 0x8
+ 512 0067 34       		.uleb128 0x34
+ 513 0068 00       		.byte	0
+ 514 0069 03       		.uleb128 0x3
+ 515 006a 0E       		.uleb128 0xe
+ 516 006b 3A       		.uleb128 0x3a
+ 517 006c 0B       		.uleb128 0xb
+ 518 006d 3B       		.uleb128 0x3b
+ 519 006e 0B       		.uleb128 0xb
+ 520 006f 49       		.uleb128 0x49
+ 521 0070 13       		.uleb128 0x13
+ 522 0071 02       		.uleb128 0x2
+ 523 0072 18       		.uleb128 0x18
+ 524 0073 00       		.byte	0
+ 525 0074 00       		.byte	0
+ 526 0075 09       		.uleb128 0x9
+ 527 0076 2E       		.uleb128 0x2e
+ 528 0077 00       		.byte	0
+ 529 0078 3F       		.uleb128 0x3f
+ 530 0079 19       		.uleb128 0x19
+ 531 007a 03       		.uleb128 0x3
+ 532 007b 0E       		.uleb128 0xe
+ 533 007c 3A       		.uleb128 0x3a
+ 534 007d 0B       		.uleb128 0xb
+ 535 007e 3B       		.uleb128 0x3b
+ 536 007f 0B       		.uleb128 0xb
+ 537 0080 27       		.uleb128 0x27
+ 538 0081 19       		.uleb128 0x19
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 13
+
+
+ 539 0082 49       		.uleb128 0x49
+ 540 0083 13       		.uleb128 0x13
+ 541 0084 11       		.uleb128 0x11
+ 542 0085 01       		.uleb128 0x1
+ 543 0086 12       		.uleb128 0x12
+ 544 0087 06       		.uleb128 0x6
+ 545 0088 40       		.uleb128 0x40
+ 546 0089 18       		.uleb128 0x18
+ 547 008a 9742     		.uleb128 0x2117
+ 548 008c 19       		.uleb128 0x19
+ 549 008d 00       		.byte	0
+ 550 008e 00       		.byte	0
+ 551 008f 0A       		.uleb128 0xa
+ 552 0090 2E       		.uleb128 0x2e
+ 553 0091 01       		.byte	0x1
+ 554 0092 3F       		.uleb128 0x3f
+ 555 0093 19       		.uleb128 0x19
+ 556 0094 03       		.uleb128 0x3
+ 557 0095 0E       		.uleb128 0xe
+ 558 0096 3A       		.uleb128 0x3a
+ 559 0097 0B       		.uleb128 0xb
+ 560 0098 3B       		.uleb128 0x3b
+ 561 0099 0B       		.uleb128 0xb
+ 562 009a 27       		.uleb128 0x27
+ 563 009b 19       		.uleb128 0x19
+ 564 009c 49       		.uleb128 0x49
+ 565 009d 13       		.uleb128 0x13
+ 566 009e 11       		.uleb128 0x11
+ 567 009f 01       		.uleb128 0x1
+ 568 00a0 12       		.uleb128 0x12
+ 569 00a1 06       		.uleb128 0x6
+ 570 00a2 40       		.uleb128 0x40
+ 571 00a3 18       		.uleb128 0x18
+ 572 00a4 9742     		.uleb128 0x2117
+ 573 00a6 19       		.uleb128 0x19
+ 574 00a7 00       		.byte	0
+ 575 00a8 00       		.byte	0
+ 576 00a9 00       		.byte	0
+ 577              		.section	.debug_aranges,"",%progbits
+ 578 0000 3C000000 		.4byte	0x3c
+ 579 0004 0200     		.2byte	0x2
+ 580 0006 00000000 		.4byte	.Ldebug_info0
+ 581 000a 04       		.byte	0x4
+ 582 000b 00       		.byte	0
+ 583 000c 0000     		.2byte	0
+ 584 000e 0000     		.2byte	0
+ 585 0010 00000000 		.4byte	.LFB0
+ 586 0014 48000000 		.4byte	.LFE0-.LFB0
+ 587 0018 00000000 		.4byte	.LFB1
+ 588 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 589 0020 00000000 		.4byte	.LFB2
+ 590 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 591 0028 00000000 		.4byte	.LFB3
+ 592 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 593 0030 00000000 		.4byte	.LFB4
+ 594 0034 2C000000 		.4byte	.LFE4-.LFB4
+ 595 0038 00000000 		.4byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 14
+
+
+ 596 003c 00000000 		.4byte	0
+ 597              		.section	.debug_ranges,"",%progbits
+ 598              	.Ldebug_ranges0:
+ 599 0000 00000000 		.4byte	.LFB0
+ 600 0004 48000000 		.4byte	.LFE0
+ 601 0008 00000000 		.4byte	.LFB1
+ 602 000c 2C000000 		.4byte	.LFE1
+ 603 0010 00000000 		.4byte	.LFB2
+ 604 0014 1C000000 		.4byte	.LFE2
+ 605 0018 00000000 		.4byte	.LFB3
+ 606 001c 1C000000 		.4byte	.LFE3
+ 607 0020 00000000 		.4byte	.LFB4
+ 608 0024 2C000000 		.4byte	.LFE4
+ 609 0028 00000000 		.4byte	0
+ 610 002c 00000000 		.4byte	0
+ 611              		.section	.debug_line,"",%progbits
+ 612              	.Ldebug_line0:
+ 613 0000 A6000000 		.section	.debug_str,"MS",%progbits,1
+ 613      02004300 
+ 613      00000201 
+ 613      FB0E0D00 
+ 613      01010101 
+ 614              	.LASF26:
+ 615 0000 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 615      6F63756D 
+ 615      656E7473 
+ 615      20616E64 
+ 615      20536574 
+ 616 002f 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 616      72656174 
+ 616      6F725C52 
+ 616      6F734F6E 
+ 616      41537469 
+ 617              	.LASF14:
+ 618 0058 72656733 		.ascii	"reg32\000"
+ 618      3200
+ 619              	.LASF23:
+ 620 005e 6D61736B 		.ascii	"maskedStatus\000"
+ 620      65645374 
+ 620      61747573 
+ 620      00
+ 621              	.LASF17:
+ 622 006b 76616C75 		.ascii	"value\000"
+ 622      6500
+ 623              	.LASF15:
+ 624 0071 41676E64 		.ascii	"Agnd_Write\000"
+ 624      5F577269 
+ 624      746500
+ 625              	.LASF11:
+ 626 007c 666C6F61 		.ascii	"float\000"
+ 626      7400
+ 627              	.LASF1:
+ 628 0082 756E7369 		.ascii	"unsigned char\000"
+ 628      676E6564 
+ 628      20636861 
+ 628      7200
+ 629              	.LASF22:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 15
+
+
+ 630 0090 64725661 		.ascii	"drVal\000"
+ 630      6C00
+ 631              	.LASF5:
+ 632 0096 6C6F6E67 		.ascii	"long unsigned int\000"
+ 632      20756E73 
+ 632      69676E65 
+ 632      6420696E 
+ 632      7400
+ 633              	.LASF3:
+ 634 00a8 73686F72 		.ascii	"short unsigned int\000"
+ 634      7420756E 
+ 634      7369676E 
+ 634      65642069 
+ 634      6E7400
+ 635              	.LASF19:
+ 636 00bb 41676E64 		.ascii	"Agnd_Read\000"
+ 636      5F526561 
+ 636      6400
+ 637              	.LASF21:
+ 638 00c5 41676E64 		.ascii	"Agnd_ClearInterrupt\000"
+ 638      5F436C65 
+ 638      6172496E 
+ 638      74657272 
+ 638      75707400 
+ 639              	.LASF12:
+ 640 00d9 646F7562 		.ascii	"double\000"
+ 640      6C6500
+ 641              	.LASF10:
+ 642 00e0 75696E74 		.ascii	"uint32\000"
+ 642      333200
+ 643              	.LASF8:
+ 644 00e7 756E7369 		.ascii	"unsigned int\000"
+ 644      676E6564 
+ 644      20696E74 
+ 644      00
+ 645              	.LASF7:
+ 646 00f4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 646      206C6F6E 
+ 646      6720756E 
+ 646      7369676E 
+ 646      65642069 
+ 647              	.LASF18:
+ 648 010b 6D6F6465 		.ascii	"mode\000"
+ 648      00
+ 649              	.LASF6:
+ 650 0110 6C6F6E67 		.ascii	"long long int\000"
+ 650      206C6F6E 
+ 650      6720696E 
+ 650      7400
+ 651              	.LASF16:
+ 652 011e 41676E64 		.ascii	"Agnd_SetDriveMode\000"
+ 652      5F536574 
+ 652      44726976 
+ 652      654D6F64 
+ 652      6500
+ 653              	.LASF13:
+ 654 0130 63686172 		.ascii	"char\000"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccldOheE.s 			page 16
+
+
+ 654      00
+ 655              	.LASF2:
+ 656 0135 73686F72 		.ascii	"short int\000"
+ 656      7420696E 
+ 656      7400
+ 657              	.LASF20:
+ 658 013f 41676E64 		.ascii	"Agnd_ReadDataReg\000"
+ 658      5F526561 
+ 658      64446174 
+ 658      61526567 
+ 658      00
+ 659              	.LASF9:
+ 660 0150 75696E74 		.ascii	"uint8\000"
+ 660      3800
+ 661              	.LASF4:
+ 662 0156 6C6F6E67 		.ascii	"long int\000"
+ 662      20696E74 
+ 662      00
+ 663              	.LASF0:
+ 664 015f 7369676E 		.ascii	"signed char\000"
+ 664      65642063 
+ 664      68617200 
+ 665              	.LASF24:
+ 666 016b 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 666      4320342E 
+ 666      382E3420 
+ 666      32303134 
+ 666      30353236 
+ 667 019e 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 667      20726576 
+ 667      6973696F 
+ 667      6E203231 
+ 667      31333538 
+ 668 01d1 30202D66 		.ascii	"0 -ffunction-sections -fno-rtti -fno-exceptions -fu"
+ 668      66756E63 
+ 668      74696F6E 
+ 668      2D736563 
+ 668      74696F6E 
+ 669 0204 6E736967 		.ascii	"nsigned-char -funsigned-bitfields -fshort-enums\000"
+ 669      6E65642D 
+ 669      63686172 
+ 669      202D6675 
+ 669      6E736967 
+ 670              	.LASF25:
+ 671 0234 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Agnd.c\000"
+ 671      6E657261 
+ 671      7465645F 
+ 671      536F7572 
+ 671      63655C50 
+ 672              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

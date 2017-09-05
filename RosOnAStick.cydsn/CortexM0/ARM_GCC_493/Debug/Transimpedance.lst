@@ -1,0 +1,1036 @@
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Transimpedance.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	Transimpedance_initVar
+  18              		.bss
+  19              		.align	2
+  20              		.type	Transimpedance_initVar, %object
+  21              		.size	Transimpedance_initVar, 4
+  22              	Transimpedance_initVar:
+  23 0000 00000000 		.space	4
+  24              		.section	.text.Transimpedance_Init,"ax",%progbits
+  25              		.align	2
+  26              		.global	Transimpedance_Init
+  27              		.code	16
+  28              		.thumb_func
+  29              		.type	Transimpedance_Init, %function
+  30              	Transimpedance_Init:
+  31              	.LFB0:
+  32              		.file 1 ".\\Generated_Source\\PSoC4\\Transimpedance.c"
+   1:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Transimpedance.c **** * File Name: Transimpedance.c
+   3:.\Generated_Source\PSoC4/Transimpedance.c **** * Version 1.0
+   4:.\Generated_Source\PSoC4/Transimpedance.c **** *
+   5:.\Generated_Source\PSoC4/Transimpedance.c **** * Description:
+   6:.\Generated_Source\PSoC4/Transimpedance.c **** *  This file provides the source code to the API for OpAmp (Analog Buffer)
+   7:.\Generated_Source\PSoC4/Transimpedance.c **** *  Component.
+   8:.\Generated_Source\PSoC4/Transimpedance.c **** *
+   9:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  10:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/Transimpedance.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/Transimpedance.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC4/Transimpedance.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC4/Transimpedance.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/Transimpedance.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  17:.\Generated_Source\PSoC4/Transimpedance.c **** #include "Transimpedance.h"
+  18:.\Generated_Source\PSoC4/Transimpedance.c **** #include <CyLib.h>
+  19:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  20:.\Generated_Source\PSoC4/Transimpedance.c **** uint32 Transimpedance_initVar = 0u;
+  21:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  22:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  23:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name: Transimpedance_Init
+  25:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 2
+
+
+  26:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  27:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+  28:.\Generated_Source\PSoC4/Transimpedance.c **** *  Initialize component's parameters to the parameters set by user in the
+  29:.\Generated_Source\PSoC4/Transimpedance.c **** *  customizer of the component placed onto schematic. Usually called in
+  30:.\Generated_Source\PSoC4/Transimpedance.c **** *  Transimpedance_Start().
+  31:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  32:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+  33:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  34:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  35:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+  36:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  37:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  38:.\Generated_Source\PSoC4/Transimpedance.c **** *******************************************************************************/
+  39:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_Init(void)
+  40:.\Generated_Source\PSoC4/Transimpedance.c **** {
+  33              		.loc 1 40 0
+  34              		.cfi_startproc
+  35 0000 80B5     		push	{r7, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 7, -8
+  38              		.cfi_offset 14, -4
+  39 0002 00AF     		add	r7, sp, #0
+  40              		.cfi_def_cfa_register 7
+  41:.\Generated_Source\PSoC4/Transimpedance.c ****     /* Enable STB */
+  42:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_CTRL |= ((uint32)1u << Transimpedance_OA_CTB_EN_SHIFT);
+  41              		.loc 1 42 0
+  42 0004 0A4B     		ldr	r3, .L2
+  43 0006 0A4A     		ldr	r2, .L2
+  44 0008 1268     		ldr	r2, [r2]
+  45 000a 8021     		mov	r1, #128
+  46 000c 0906     		lsl	r1, r1, #24
+  47 000e 0A43     		orr	r2, r1
+  48 0010 1A60     		str	r2, [r3]
+  43:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL = 0u;
+  49              		.loc 1 43 0
+  50 0012 084B     		ldr	r3, .L2+4
+  51 0014 0022     		mov	r2, #0
+  52 0016 1A60     		str	r2, [r3]
+  44:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_COMP_TRIM_REG = Transimpedance_OA_COMP_TRIM_VALUE;
+  53              		.loc 1 44 0
+  54 0018 074B     		ldr	r3, .L2+8
+  55 001a 0322     		mov	r2, #3
+  56 001c 1A60     		str	r2, [r3]
+  45:.\Generated_Source\PSoC4/Transimpedance.c ****     #if(0u != Transimpedance_OUTPUT_CURRENT)
+  46:.\Generated_Source\PSoC4/Transimpedance.c ****         /* 10 mA current */
+  47:.\Generated_Source\PSoC4/Transimpedance.c ****         Transimpedance_OA_RES_CTRL |= Transimpedance_OA_DRIVE_STR_SEL_10X;
+  57              		.loc 1 47 0
+  58 001e 054B     		ldr	r3, .L2+4
+  59 0020 044A     		ldr	r2, .L2+4
+  60 0022 1268     		ldr	r2, [r2]
+  61 0024 0421     		mov	r1, #4
+  62 0026 0A43     		orr	r2, r1
+  63 0028 1A60     		str	r2, [r3]
+  48:.\Generated_Source\PSoC4/Transimpedance.c ****     #endif /* 0u != Transimpedance_OUTPUT_CURRENT */
+  49:.\Generated_Source\PSoC4/Transimpedance.c **** }
+  64              		.loc 1 49 0
+  65 002a BD46     		mov	sp, r7
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 3
+
+
+  66              		@ sp needed
+  67 002c 80BD     		pop	{r7, pc}
+  68              	.L3:
+  69 002e C046     		.align	2
+  70              	.L2:
+  71 0030 00001040 		.word	1074790400
+  72 0034 04001040 		.word	1074790404
+  73 0038 080F1040 		.word	1074794248
+  74              		.cfi_endproc
+  75              	.LFE0:
+  76              		.size	Transimpedance_Init, .-Transimpedance_Init
+  77              		.section	.text.Transimpedance_Enable,"ax",%progbits
+  78              		.align	2
+  79              		.global	Transimpedance_Enable
+  80              		.code	16
+  81              		.thumb_func
+  82              		.type	Transimpedance_Enable, %function
+  83              	Transimpedance_Enable:
+  84              	.LFB1:
+  50:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  51:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  52:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+  53:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name: Transimpedance_Enable
+  54:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+  55:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  56:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+  57:.\Generated_Source\PSoC4/Transimpedance.c **** *  Enables the OpAmp block operation
+  58:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  59:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+  60:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  61:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  62:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+  63:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  64:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  65:.\Generated_Source\PSoC4/Transimpedance.c **** *******************************************************************************/
+  66:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_Enable(void)
+  67:.\Generated_Source\PSoC4/Transimpedance.c **** {
+  85              		.loc 1 67 0
+  86              		.cfi_startproc
+  87 0000 80B5     		push	{r7, lr}
+  88              		.cfi_def_cfa_offset 8
+  89              		.cfi_offset 7, -8
+  90              		.cfi_offset 14, -4
+  91 0002 00AF     		add	r7, sp, #0
+  92              		.cfi_def_cfa_register 7
+  68:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL &= (~(uint32)Transimpedance_OA_PWR_MODE_MASK);
+  93              		.loc 1 68 0
+  94 0004 064B     		ldr	r3, .L5
+  95 0006 064A     		ldr	r2, .L5
+  96 0008 1268     		ldr	r2, [r2]
+  97 000a 0321     		mov	r1, #3
+  98 000c 8A43     		bic	r2, r1
+  99 000e 1A60     		str	r2, [r3]
+  69:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL |= Transimpedance_POWER | ((uint32)1u << Transimpedance_OA_PUMP_CTRL
+ 100              		.loc 1 69 0
+ 101 0010 034B     		ldr	r3, .L5
+ 102 0012 034A     		ldr	r2, .L5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 4
+
+
+ 103 0014 1268     		ldr	r2, [r2]
+ 104 0016 0349     		ldr	r1, .L5+4
+ 105 0018 0A43     		orr	r2, r1
+ 106 001a 1A60     		str	r2, [r3]
+  70:.\Generated_Source\PSoC4/Transimpedance.c **** }
+ 107              		.loc 1 70 0
+ 108 001c BD46     		mov	sp, r7
+ 109              		@ sp needed
+ 110 001e 80BD     		pop	{r7, pc}
+ 111              	.L6:
+ 112              		.align	2
+ 113              	.L5:
+ 114 0020 04001040 		.word	1074790404
+ 115 0024 02080000 		.word	2050
+ 116              		.cfi_endproc
+ 117              	.LFE1:
+ 118              		.size	Transimpedance_Enable, .-Transimpedance_Enable
+ 119              		.section	.text.Transimpedance_Start,"ax",%progbits
+ 120              		.align	2
+ 121              		.global	Transimpedance_Start
+ 122              		.code	16
+ 123              		.thumb_func
+ 124              		.type	Transimpedance_Start, %function
+ 125              	Transimpedance_Start:
+ 126              	.LFB2:
+  71:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  72:.\Generated_Source\PSoC4/Transimpedance.c **** 
+  73:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+  74:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name:   Transimpedance_Start
+  75:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+  76:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  77:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+  78:.\Generated_Source\PSoC4/Transimpedance.c **** *  The start function initializes the Analog Buffer with the default values and
+  79:.\Generated_Source\PSoC4/Transimpedance.c **** *  sets the power to the given level. A power level of 0, is same as
+  80:.\Generated_Source\PSoC4/Transimpedance.c **** *  executing the stop function.
+  81:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  82:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+  83:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  84:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  85:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+  86:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+  87:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  88:.\Generated_Source\PSoC4/Transimpedance.c **** * Global variables:
+  89:.\Generated_Source\PSoC4/Transimpedance.c **** *  Transimpedance_initVar: Used to check the initial configuration, modified
+  90:.\Generated_Source\PSoC4/Transimpedance.c **** *  when this function is called for the first time.
+  91:.\Generated_Source\PSoC4/Transimpedance.c **** *
+  92:.\Generated_Source\PSoC4/Transimpedance.c **** *******************************************************************************/
+  93:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_Start(void)
+  94:.\Generated_Source\PSoC4/Transimpedance.c **** {
+ 127              		.loc 1 94 0
+ 128              		.cfi_startproc
+ 129 0000 80B5     		push	{r7, lr}
+ 130              		.cfi_def_cfa_offset 8
+ 131              		.cfi_offset 7, -8
+ 132              		.cfi_offset 14, -4
+ 133 0002 00AF     		add	r7, sp, #0
+ 134              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 5
+
+
+  95:.\Generated_Source\PSoC4/Transimpedance.c ****     if(Transimpedance_initVar == 0u)
+ 135              		.loc 1 95 0
+ 136 0004 064B     		ldr	r3, .L9
+ 137 0006 1B68     		ldr	r3, [r3]
+ 138 0008 002B     		cmp	r3, #0
+ 139 000a 04D1     		bne	.L8
+  96:.\Generated_Source\PSoC4/Transimpedance.c ****     {
+  97:.\Generated_Source\PSoC4/Transimpedance.c ****         Transimpedance_initVar = 1u;
+ 140              		.loc 1 97 0
+ 141 000c 044B     		ldr	r3, .L9
+ 142 000e 0122     		mov	r2, #1
+ 143 0010 1A60     		str	r2, [r3]
+  98:.\Generated_Source\PSoC4/Transimpedance.c ****         Transimpedance_Init();
+ 144              		.loc 1 98 0
+ 145 0012 FFF7FEFF 		bl	Transimpedance_Init
+ 146              	.L8:
+  99:.\Generated_Source\PSoC4/Transimpedance.c ****     }
+ 100:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_Enable();
+ 147              		.loc 1 100 0
+ 148 0016 FFF7FEFF 		bl	Transimpedance_Enable
+ 101:.\Generated_Source\PSoC4/Transimpedance.c **** }
+ 149              		.loc 1 101 0
+ 150 001a BD46     		mov	sp, r7
+ 151              		@ sp needed
+ 152 001c 80BD     		pop	{r7, pc}
+ 153              	.L10:
+ 154 001e C046     		.align	2
+ 155              	.L9:
+ 156 0020 00000000 		.word	Transimpedance_initVar
+ 157              		.cfi_endproc
+ 158              	.LFE2:
+ 159              		.size	Transimpedance_Start, .-Transimpedance_Start
+ 160              		.section	.text.Transimpedance_Stop,"ax",%progbits
+ 161              		.align	2
+ 162              		.global	Transimpedance_Stop
+ 163              		.code	16
+ 164              		.thumb_func
+ 165              		.type	Transimpedance_Stop, %function
+ 166              	Transimpedance_Stop:
+ 167              	.LFB3:
+ 102:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 103:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 104:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+ 105:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name: Transimpedance_Stop
+ 106:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+ 107:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 108:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+ 109:.\Generated_Source\PSoC4/Transimpedance.c **** *  Powers down amplifier to lowest power state.
+ 110:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 111:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+ 112:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+ 113:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 114:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+ 115:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+ 116:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 117:.\Generated_Source\PSoC4/Transimpedance.c **** *******************************************************************************/
+ 118:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_Stop(void)
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 6
+
+
+ 119:.\Generated_Source\PSoC4/Transimpedance.c **** {
+ 168              		.loc 1 119 0
+ 169              		.cfi_startproc
+ 170 0000 80B5     		push	{r7, lr}
+ 171              		.cfi_def_cfa_offset 8
+ 172              		.cfi_offset 7, -8
+ 173              		.cfi_offset 14, -4
+ 174 0002 00AF     		add	r7, sp, #0
+ 175              		.cfi_def_cfa_register 7
+ 120:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL &= (~(uint32)(Transimpedance_OA_PWR_MODE_MASK |
+ 176              		.loc 1 120 0
+ 177 0004 034B     		ldr	r3, .L12
+ 178 0006 034A     		ldr	r2, .L12
+ 179 0008 1268     		ldr	r2, [r2]
+ 180 000a 0349     		ldr	r1, .L12+4
+ 181 000c 0A40     		and	r2, r1
+ 182 000e 1A60     		str	r2, [r3]
+ 121:.\Generated_Source\PSoC4/Transimpedance.c ****         ((uint32)1u << Transimpedance_OA_PUMP_CTRL_SHIFT)));
+ 122:.\Generated_Source\PSoC4/Transimpedance.c **** }
+ 183              		.loc 1 122 0
+ 184 0010 BD46     		mov	sp, r7
+ 185              		@ sp needed
+ 186 0012 80BD     		pop	{r7, pc}
+ 187              	.L13:
+ 188              		.align	2
+ 189              	.L12:
+ 190 0014 04001040 		.word	1074790404
+ 191 0018 FCF7FFFF 		.word	-2052
+ 192              		.cfi_endproc
+ 193              	.LFE3:
+ 194              		.size	Transimpedance_Stop, .-Transimpedance_Stop
+ 195              		.section	.text.Transimpedance_SetPower,"ax",%progbits
+ 196              		.align	2
+ 197              		.global	Transimpedance_SetPower
+ 198              		.code	16
+ 199              		.thumb_func
+ 200              		.type	Transimpedance_SetPower, %function
+ 201              	Transimpedance_SetPower:
+ 202              	.LFB4:
+ 123:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 124:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 125:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+ 126:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name: Transimpedance_SetPower
+ 127:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+ 128:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 129:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+ 130:.\Generated_Source\PSoC4/Transimpedance.c **** *  Sets power level of Analog buffer.
+ 131:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 132:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+ 133:.\Generated_Source\PSoC4/Transimpedance.c **** *  power: Sets power level between low (1) and high power (3).
+ 134:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 135:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+ 136:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+ 137:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 138:.\Generated_Source\PSoC4/Transimpedance.c **** **********************************************************************************/
+ 139:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_SetPower(uint32 power)
+ 140:.\Generated_Source\PSoC4/Transimpedance.c **** {
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 7
+
+
+ 203              		.loc 1 140 0
+ 204              		.cfi_startproc
+ 205 0000 80B5     		push	{r7, lr}
+ 206              		.cfi_def_cfa_offset 8
+ 207              		.cfi_offset 7, -8
+ 208              		.cfi_offset 14, -4
+ 209 0002 82B0     		sub	sp, sp, #8
+ 210              		.cfi_def_cfa_offset 16
+ 211 0004 00AF     		add	r7, sp, #0
+ 212              		.cfi_def_cfa_register 7
+ 213 0006 7860     		str	r0, [r7, #4]
+ 141:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL &= (~(uint32)Transimpedance_OA_PWR_MODE_MASK);
+ 214              		.loc 1 141 0
+ 215 0008 084B     		ldr	r3, .L15
+ 216 000a 084A     		ldr	r2, .L15
+ 217 000c 1268     		ldr	r2, [r2]
+ 218 000e 0321     		mov	r1, #3
+ 219 0010 8A43     		bic	r2, r1
+ 220 0012 1A60     		str	r2, [r3]
+ 142:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL |= (power & Transimpedance_OA_PWR_MODE_MASK);
+ 221              		.loc 1 142 0
+ 222 0014 054B     		ldr	r3, .L15
+ 223 0016 054A     		ldr	r2, .L15
+ 224 0018 1168     		ldr	r1, [r2]
+ 225 001a 7A68     		ldr	r2, [r7, #4]
+ 226 001c 0320     		mov	r0, #3
+ 227 001e 0240     		and	r2, r0
+ 228 0020 0A43     		orr	r2, r1
+ 229 0022 1A60     		str	r2, [r3]
+ 143:.\Generated_Source\PSoC4/Transimpedance.c **** }
+ 230              		.loc 1 143 0
+ 231 0024 BD46     		mov	sp, r7
+ 232 0026 02B0     		add	sp, sp, #8
+ 233              		@ sp needed
+ 234 0028 80BD     		pop	{r7, pc}
+ 235              	.L16:
+ 236 002a C046     		.align	2
+ 237              	.L15:
+ 238 002c 04001040 		.word	1074790404
+ 239              		.cfi_endproc
+ 240              	.LFE4:
+ 241              		.size	Transimpedance_SetPower, .-Transimpedance_SetPower
+ 242              		.section	.text.Transimpedance_PumpControl,"ax",%progbits
+ 243              		.align	2
+ 244              		.global	Transimpedance_PumpControl
+ 245              		.code	16
+ 246              		.thumb_func
+ 247              		.type	Transimpedance_PumpControl, %function
+ 248              	Transimpedance_PumpControl:
+ 249              	.LFB5:
+ 144:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 145:.\Generated_Source\PSoC4/Transimpedance.c **** 
+ 146:.\Generated_Source\PSoC4/Transimpedance.c **** /*******************************************************************************
+ 147:.\Generated_Source\PSoC4/Transimpedance.c **** * Function Name: Transimpedance_PumpControl
+ 148:.\Generated_Source\PSoC4/Transimpedance.c **** ********************************************************************************
+ 149:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 150:.\Generated_Source\PSoC4/Transimpedance.c **** * Summary:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 8
+
+
+ 151:.\Generated_Source\PSoC4/Transimpedance.c **** *  Turns the boost pump on or off.
+ 152:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 153:.\Generated_Source\PSoC4/Transimpedance.c **** * Parameters:
+ 154:.\Generated_Source\PSoC4/Transimpedance.c **** *  onOff: Transimpedance_PUMPON, Transimpedance_PUMPOFF.
+ 155:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 156:.\Generated_Source\PSoC4/Transimpedance.c **** * Return:
+ 157:.\Generated_Source\PSoC4/Transimpedance.c **** *  None
+ 158:.\Generated_Source\PSoC4/Transimpedance.c **** *
+ 159:.\Generated_Source\PSoC4/Transimpedance.c **** **********************************************************************************/
+ 160:.\Generated_Source\PSoC4/Transimpedance.c **** void Transimpedance_PumpControl(uint32 onOff)
+ 161:.\Generated_Source\PSoC4/Transimpedance.c **** {
+ 250              		.loc 1 161 0
+ 251              		.cfi_startproc
+ 252 0000 80B5     		push	{r7, lr}
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 7, -8
+ 255              		.cfi_offset 14, -4
+ 256 0002 82B0     		sub	sp, sp, #8
+ 257              		.cfi_def_cfa_offset 16
+ 258 0004 00AF     		add	r7, sp, #0
+ 259              		.cfi_def_cfa_register 7
+ 260 0006 7860     		str	r0, [r7, #4]
+ 162:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL &= (~(uint32)Transimpedance_OA_PUMP_EN_MASK);
+ 261              		.loc 1 162 0
+ 262 0008 084B     		ldr	r3, .L18
+ 263 000a 084A     		ldr	r2, .L18
+ 264 000c 1268     		ldr	r2, [r2]
+ 265 000e 0849     		ldr	r1, .L18+4
+ 266 0010 0A40     		and	r2, r1
+ 267 0012 1A60     		str	r2, [r3]
+ 163:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL |= ((onOff & Transimpedance_PUMP_PROTECT_MASK)
+ 268              		.loc 1 163 0
+ 269 0014 054B     		ldr	r3, .L18
+ 270 0016 054A     		ldr	r2, .L18
+ 271 0018 1168     		ldr	r1, [r2]
+ 272 001a 7A68     		ldr	r2, [r7, #4]
+ 273 001c 0120     		mov	r0, #1
+ 274 001e 0240     		and	r2, r0
+ 164:.\Generated_Source\PSoC4/Transimpedance.c ****         << Transimpedance_OA_PUMP_CTRL_SHIFT);
+ 275              		.loc 1 164 0
+ 276 0020 D202     		lsl	r2, r2, #11
+ 163:.\Generated_Source\PSoC4/Transimpedance.c ****     Transimpedance_OA_RES_CTRL |= ((onOff & Transimpedance_PUMP_PROTECT_MASK)
+ 277              		.loc 1 163 0
+ 278 0022 0A43     		orr	r2, r1
+ 279 0024 1A60     		str	r2, [r3]
+ 165:.\Generated_Source\PSoC4/Transimpedance.c **** }
+ 280              		.loc 1 165 0
+ 281 0026 BD46     		mov	sp, r7
+ 282 0028 02B0     		add	sp, sp, #8
+ 283              		@ sp needed
+ 284 002a 80BD     		pop	{r7, pc}
+ 285              	.L19:
+ 286              		.align	2
+ 287              	.L18:
+ 288 002c 04001040 		.word	1074790404
+ 289 0030 FFF7FFFF 		.word	-2049
+ 290              		.cfi_endproc
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 9
+
+
+ 291              	.LFE5:
+ 292              		.size	Transimpedance_PumpControl, .-Transimpedance_PumpControl
+ 293              		.text
+ 294              	.Letext0:
+ 295              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 296              		.section	.debug_info,"",%progbits
+ 297              	.Ldebug_info0:
+ 298 0000 3C010000 		.4byte	0x13c
+ 299 0004 0400     		.2byte	0x4
+ 300 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 301 000a 04       		.byte	0x4
+ 302 000b 01       		.uleb128 0x1
+ 303 000c 71000000 		.4byte	.LASF23
+ 304 0010 01       		.byte	0x1
+ 305 0011 F6010000 		.4byte	.LASF24
+ 306 0015 22000000 		.4byte	.LASF25
+ 307 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 308 001d 00000000 		.4byte	0
+ 309 0021 00000000 		.4byte	.Ldebug_line0
+ 310 0025 02       		.uleb128 0x2
+ 311 0026 01       		.byte	0x1
+ 312 0027 06       		.byte	0x6
+ 313 0028 C0010000 		.4byte	.LASF0
+ 314 002c 02       		.uleb128 0x2
+ 315 002d 01       		.byte	0x1
+ 316 002e 08       		.byte	0x8
+ 317 002f 57010000 		.4byte	.LASF1
+ 318 0033 02       		.uleb128 0x2
+ 319 0034 02       		.byte	0x2
+ 320 0035 05       		.byte	0x5
+ 321 0036 40020000 		.4byte	.LASF2
+ 322 003a 02       		.uleb128 0x2
+ 323 003b 02       		.byte	0x2
+ 324 003c 07       		.byte	0x7
+ 325 003d AD010000 		.4byte	.LASF3
+ 326 0041 02       		.uleb128 0x2
+ 327 0042 04       		.byte	0x4
+ 328 0043 05       		.byte	0x5
+ 329 0044 7F010000 		.4byte	.LASF4
+ 330 0048 02       		.uleb128 0x2
+ 331 0049 04       		.byte	0x4
+ 332 004a 07       		.byte	0x7
+ 333 004b 48000000 		.4byte	.LASF5
+ 334 004f 02       		.uleb128 0x2
+ 335 0050 08       		.byte	0x8
+ 336 0051 05       		.byte	0x5
+ 337 0052 00000000 		.4byte	.LASF6
+ 338 0056 02       		.uleb128 0x2
+ 339 0057 08       		.byte	0x8
+ 340 0058 07       		.byte	0x7
+ 341 0059 5A000000 		.4byte	.LASF7
+ 342 005d 03       		.uleb128 0x3
+ 343 005e 04       		.byte	0x4
+ 344 005f 05       		.byte	0x5
+ 345 0060 696E7400 		.ascii	"int\000"
+ 346 0064 02       		.uleb128 0x2
+ 347 0065 04       		.byte	0x4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 10
+
+
+ 348 0066 07       		.byte	0x7
+ 349 0067 15000000 		.4byte	.LASF8
+ 350 006b 04       		.uleb128 0x4
+ 351 006c 0E000000 		.4byte	.LASF12
+ 352 0070 02       		.byte	0x2
+ 353 0071 5D       		.byte	0x5d
+ 354 0072 48000000 		.4byte	0x48
+ 355 0076 02       		.uleb128 0x2
+ 356 0077 04       		.byte	0x4
+ 357 0078 04       		.byte	0x4
+ 358 0079 4C010000 		.4byte	.LASF9
+ 359 007d 02       		.uleb128 0x2
+ 360 007e 08       		.byte	0x8
+ 361 007f 04       		.byte	0x4
+ 362 0080 88010000 		.4byte	.LASF10
+ 363 0084 02       		.uleb128 0x2
+ 364 0085 01       		.byte	0x1
+ 365 0086 08       		.byte	0x8
+ 366 0087 52010000 		.4byte	.LASF11
+ 367 008b 04       		.uleb128 0x4
+ 368 008c 8F010000 		.4byte	.LASF13
+ 369 0090 02       		.byte	0x2
+ 370 0091 F2       		.byte	0xf2
+ 371 0092 96000000 		.4byte	0x96
+ 372 0096 05       		.uleb128 0x5
+ 373 0097 6B000000 		.4byte	0x6b
+ 374 009b 02       		.uleb128 0x2
+ 375 009c 04       		.byte	0x4
+ 376 009d 07       		.byte	0x7
+ 377 009e 20020000 		.4byte	.LASF14
+ 378 00a2 06       		.uleb128 0x6
+ 379 00a3 65010000 		.4byte	.LASF15
+ 380 00a7 01       		.byte	0x1
+ 381 00a8 27       		.byte	0x27
+ 382 00a9 00000000 		.4byte	.LFB0
+ 383 00ad 3C000000 		.4byte	.LFE0-.LFB0
+ 384 00b1 01       		.uleb128 0x1
+ 385 00b2 9C       		.byte	0x9c
+ 386 00b3 06       		.uleb128 0x6
+ 387 00b4 CC010000 		.4byte	.LASF16
+ 388 00b8 01       		.byte	0x1
+ 389 00b9 42       		.byte	0x42
+ 390 00ba 00000000 		.4byte	.LFB1
+ 391 00be 28000000 		.4byte	.LFE1-.LFB1
+ 392 00c2 01       		.uleb128 0x1
+ 393 00c3 9C       		.byte	0x9c
+ 394 00c4 07       		.uleb128 0x7
+ 395 00c5 4A020000 		.4byte	.LASF17
+ 396 00c9 01       		.byte	0x1
+ 397 00ca 5D       		.byte	0x5d
+ 398 00cb 00000000 		.4byte	.LFB2
+ 399 00cf 24000000 		.4byte	.LFE2-.LFB2
+ 400 00d3 01       		.uleb128 0x1
+ 401 00d4 9C       		.byte	0x9c
+ 402 00d5 06       		.uleb128 0x6
+ 403 00d6 E2010000 		.4byte	.LASF18
+ 404 00da 01       		.byte	0x1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 11
+
+
+ 405 00db 76       		.byte	0x76
+ 406 00dc 00000000 		.4byte	.LFB3
+ 407 00e0 1C000000 		.4byte	.LFE3-.LFB3
+ 408 00e4 01       		.uleb128 0x1
+ 409 00e5 9C       		.byte	0x9c
+ 410 00e6 08       		.uleb128 0x8
+ 411 00e7 95010000 		.4byte	.LASF19
+ 412 00eb 01       		.byte	0x1
+ 413 00ec 8B       		.byte	0x8b
+ 414 00ed 00000000 		.4byte	.LFB4
+ 415 00f1 30000000 		.4byte	.LFE4-.LFB4
+ 416 00f5 01       		.uleb128 0x1
+ 417 00f6 9C       		.byte	0x9c
+ 418 00f7 0A010000 		.4byte	0x10a
+ 419 00fb 09       		.uleb128 0x9
+ 420 00fc 7A020000 		.4byte	.LASF21
+ 421 0100 01       		.byte	0x1
+ 422 0101 8B       		.byte	0x8b
+ 423 0102 6B000000 		.4byte	0x6b
+ 424 0106 02       		.uleb128 0x2
+ 425 0107 91       		.byte	0x91
+ 426 0108 74       		.sleb128 -12
+ 427 0109 00       		.byte	0
+ 428 010a 08       		.uleb128 0x8
+ 429 010b 5F020000 		.4byte	.LASF20
+ 430 010f 01       		.byte	0x1
+ 431 0110 A0       		.byte	0xa0
+ 432 0111 00000000 		.4byte	.LFB5
+ 433 0115 34000000 		.4byte	.LFE5-.LFB5
+ 434 0119 01       		.uleb128 0x1
+ 435 011a 9C       		.byte	0x9c
+ 436 011b 2E010000 		.4byte	0x12e
+ 437 011f 09       		.uleb128 0x9
+ 438 0120 79010000 		.4byte	.LASF22
+ 439 0124 01       		.byte	0x1
+ 440 0125 A0       		.byte	0xa0
+ 441 0126 6B000000 		.4byte	0x6b
+ 442 012a 02       		.uleb128 0x2
+ 443 012b 91       		.byte	0x91
+ 444 012c 74       		.sleb128 -12
+ 445 012d 00       		.byte	0
+ 446 012e 0A       		.uleb128 0xa
+ 447 012f 29020000 		.4byte	.LASF26
+ 448 0133 01       		.byte	0x1
+ 449 0134 14       		.byte	0x14
+ 450 0135 6B000000 		.4byte	0x6b
+ 451 0139 05       		.uleb128 0x5
+ 452 013a 03       		.byte	0x3
+ 453 013b 00000000 		.4byte	Transimpedance_initVar
+ 454 013f 00       		.byte	0
+ 455              		.section	.debug_abbrev,"",%progbits
+ 456              	.Ldebug_abbrev0:
+ 457 0000 01       		.uleb128 0x1
+ 458 0001 11       		.uleb128 0x11
+ 459 0002 01       		.byte	0x1
+ 460 0003 25       		.uleb128 0x25
+ 461 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 12
+
+
+ 462 0005 13       		.uleb128 0x13
+ 463 0006 0B       		.uleb128 0xb
+ 464 0007 03       		.uleb128 0x3
+ 465 0008 0E       		.uleb128 0xe
+ 466 0009 1B       		.uleb128 0x1b
+ 467 000a 0E       		.uleb128 0xe
+ 468 000b 55       		.uleb128 0x55
+ 469 000c 17       		.uleb128 0x17
+ 470 000d 11       		.uleb128 0x11
+ 471 000e 01       		.uleb128 0x1
+ 472 000f 10       		.uleb128 0x10
+ 473 0010 17       		.uleb128 0x17
+ 474 0011 00       		.byte	0
+ 475 0012 00       		.byte	0
+ 476 0013 02       		.uleb128 0x2
+ 477 0014 24       		.uleb128 0x24
+ 478 0015 00       		.byte	0
+ 479 0016 0B       		.uleb128 0xb
+ 480 0017 0B       		.uleb128 0xb
+ 481 0018 3E       		.uleb128 0x3e
+ 482 0019 0B       		.uleb128 0xb
+ 483 001a 03       		.uleb128 0x3
+ 484 001b 0E       		.uleb128 0xe
+ 485 001c 00       		.byte	0
+ 486 001d 00       		.byte	0
+ 487 001e 03       		.uleb128 0x3
+ 488 001f 24       		.uleb128 0x24
+ 489 0020 00       		.byte	0
+ 490 0021 0B       		.uleb128 0xb
+ 491 0022 0B       		.uleb128 0xb
+ 492 0023 3E       		.uleb128 0x3e
+ 493 0024 0B       		.uleb128 0xb
+ 494 0025 03       		.uleb128 0x3
+ 495 0026 08       		.uleb128 0x8
+ 496 0027 00       		.byte	0
+ 497 0028 00       		.byte	0
+ 498 0029 04       		.uleb128 0x4
+ 499 002a 16       		.uleb128 0x16
+ 500 002b 00       		.byte	0
+ 501 002c 03       		.uleb128 0x3
+ 502 002d 0E       		.uleb128 0xe
+ 503 002e 3A       		.uleb128 0x3a
+ 504 002f 0B       		.uleb128 0xb
+ 505 0030 3B       		.uleb128 0x3b
+ 506 0031 0B       		.uleb128 0xb
+ 507 0032 49       		.uleb128 0x49
+ 508 0033 13       		.uleb128 0x13
+ 509 0034 00       		.byte	0
+ 510 0035 00       		.byte	0
+ 511 0036 05       		.uleb128 0x5
+ 512 0037 35       		.uleb128 0x35
+ 513 0038 00       		.byte	0
+ 514 0039 49       		.uleb128 0x49
+ 515 003a 13       		.uleb128 0x13
+ 516 003b 00       		.byte	0
+ 517 003c 00       		.byte	0
+ 518 003d 06       		.uleb128 0x6
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 13
+
+
+ 519 003e 2E       		.uleb128 0x2e
+ 520 003f 00       		.byte	0
+ 521 0040 3F       		.uleb128 0x3f
+ 522 0041 19       		.uleb128 0x19
+ 523 0042 03       		.uleb128 0x3
+ 524 0043 0E       		.uleb128 0xe
+ 525 0044 3A       		.uleb128 0x3a
+ 526 0045 0B       		.uleb128 0xb
+ 527 0046 3B       		.uleb128 0x3b
+ 528 0047 0B       		.uleb128 0xb
+ 529 0048 27       		.uleb128 0x27
+ 530 0049 19       		.uleb128 0x19
+ 531 004a 11       		.uleb128 0x11
+ 532 004b 01       		.uleb128 0x1
+ 533 004c 12       		.uleb128 0x12
+ 534 004d 06       		.uleb128 0x6
+ 535 004e 40       		.uleb128 0x40
+ 536 004f 18       		.uleb128 0x18
+ 537 0050 9742     		.uleb128 0x2117
+ 538 0052 19       		.uleb128 0x19
+ 539 0053 00       		.byte	0
+ 540 0054 00       		.byte	0
+ 541 0055 07       		.uleb128 0x7
+ 542 0056 2E       		.uleb128 0x2e
+ 543 0057 00       		.byte	0
+ 544 0058 3F       		.uleb128 0x3f
+ 545 0059 19       		.uleb128 0x19
+ 546 005a 03       		.uleb128 0x3
+ 547 005b 0E       		.uleb128 0xe
+ 548 005c 3A       		.uleb128 0x3a
+ 549 005d 0B       		.uleb128 0xb
+ 550 005e 3B       		.uleb128 0x3b
+ 551 005f 0B       		.uleb128 0xb
+ 552 0060 27       		.uleb128 0x27
+ 553 0061 19       		.uleb128 0x19
+ 554 0062 11       		.uleb128 0x11
+ 555 0063 01       		.uleb128 0x1
+ 556 0064 12       		.uleb128 0x12
+ 557 0065 06       		.uleb128 0x6
+ 558 0066 40       		.uleb128 0x40
+ 559 0067 18       		.uleb128 0x18
+ 560 0068 9642     		.uleb128 0x2116
+ 561 006a 19       		.uleb128 0x19
+ 562 006b 00       		.byte	0
+ 563 006c 00       		.byte	0
+ 564 006d 08       		.uleb128 0x8
+ 565 006e 2E       		.uleb128 0x2e
+ 566 006f 01       		.byte	0x1
+ 567 0070 3F       		.uleb128 0x3f
+ 568 0071 19       		.uleb128 0x19
+ 569 0072 03       		.uleb128 0x3
+ 570 0073 0E       		.uleb128 0xe
+ 571 0074 3A       		.uleb128 0x3a
+ 572 0075 0B       		.uleb128 0xb
+ 573 0076 3B       		.uleb128 0x3b
+ 574 0077 0B       		.uleb128 0xb
+ 575 0078 27       		.uleb128 0x27
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 14
+
+
+ 576 0079 19       		.uleb128 0x19
+ 577 007a 11       		.uleb128 0x11
+ 578 007b 01       		.uleb128 0x1
+ 579 007c 12       		.uleb128 0x12
+ 580 007d 06       		.uleb128 0x6
+ 581 007e 40       		.uleb128 0x40
+ 582 007f 18       		.uleb128 0x18
+ 583 0080 9742     		.uleb128 0x2117
+ 584 0082 19       		.uleb128 0x19
+ 585 0083 01       		.uleb128 0x1
+ 586 0084 13       		.uleb128 0x13
+ 587 0085 00       		.byte	0
+ 588 0086 00       		.byte	0
+ 589 0087 09       		.uleb128 0x9
+ 590 0088 05       		.uleb128 0x5
+ 591 0089 00       		.byte	0
+ 592 008a 03       		.uleb128 0x3
+ 593 008b 0E       		.uleb128 0xe
+ 594 008c 3A       		.uleb128 0x3a
+ 595 008d 0B       		.uleb128 0xb
+ 596 008e 3B       		.uleb128 0x3b
+ 597 008f 0B       		.uleb128 0xb
+ 598 0090 49       		.uleb128 0x49
+ 599 0091 13       		.uleb128 0x13
+ 600 0092 02       		.uleb128 0x2
+ 601 0093 18       		.uleb128 0x18
+ 602 0094 00       		.byte	0
+ 603 0095 00       		.byte	0
+ 604 0096 0A       		.uleb128 0xa
+ 605 0097 34       		.uleb128 0x34
+ 606 0098 00       		.byte	0
+ 607 0099 03       		.uleb128 0x3
+ 608 009a 0E       		.uleb128 0xe
+ 609 009b 3A       		.uleb128 0x3a
+ 610 009c 0B       		.uleb128 0xb
+ 611 009d 3B       		.uleb128 0x3b
+ 612 009e 0B       		.uleb128 0xb
+ 613 009f 49       		.uleb128 0x49
+ 614 00a0 13       		.uleb128 0x13
+ 615 00a1 3F       		.uleb128 0x3f
+ 616 00a2 19       		.uleb128 0x19
+ 617 00a3 02       		.uleb128 0x2
+ 618 00a4 18       		.uleb128 0x18
+ 619 00a5 00       		.byte	0
+ 620 00a6 00       		.byte	0
+ 621 00a7 00       		.byte	0
+ 622              		.section	.debug_aranges,"",%progbits
+ 623 0000 44000000 		.4byte	0x44
+ 624 0004 0200     		.2byte	0x2
+ 625 0006 00000000 		.4byte	.Ldebug_info0
+ 626 000a 04       		.byte	0x4
+ 627 000b 00       		.byte	0
+ 628 000c 0000     		.2byte	0
+ 629 000e 0000     		.2byte	0
+ 630 0010 00000000 		.4byte	.LFB0
+ 631 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 632 0018 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 15
+
+
+ 633 001c 28000000 		.4byte	.LFE1-.LFB1
+ 634 0020 00000000 		.4byte	.LFB2
+ 635 0024 24000000 		.4byte	.LFE2-.LFB2
+ 636 0028 00000000 		.4byte	.LFB3
+ 637 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 638 0030 00000000 		.4byte	.LFB4
+ 639 0034 30000000 		.4byte	.LFE4-.LFB4
+ 640 0038 00000000 		.4byte	.LFB5
+ 641 003c 34000000 		.4byte	.LFE5-.LFB5
+ 642 0040 00000000 		.4byte	0
+ 643 0044 00000000 		.4byte	0
+ 644              		.section	.debug_ranges,"",%progbits
+ 645              	.Ldebug_ranges0:
+ 646 0000 00000000 		.4byte	.LFB0
+ 647 0004 3C000000 		.4byte	.LFE0
+ 648 0008 00000000 		.4byte	.LFB1
+ 649 000c 28000000 		.4byte	.LFE1
+ 650 0010 00000000 		.4byte	.LFB2
+ 651 0014 24000000 		.4byte	.LFE2
+ 652 0018 00000000 		.4byte	.LFB3
+ 653 001c 1C000000 		.4byte	.LFE3
+ 654 0020 00000000 		.4byte	.LFB4
+ 655 0024 30000000 		.4byte	.LFE4
+ 656 0028 00000000 		.4byte	.LFB5
+ 657 002c 34000000 		.4byte	.LFE5
+ 658 0030 00000000 		.4byte	0
+ 659 0034 00000000 		.4byte	0
+ 660              		.section	.debug_line,"",%progbits
+ 661              	.Ldebug_line0:
+ 662 0000 C9000000 		.section	.debug_str,"MS",%progbits,1
+ 662      02004D00 
+ 662      00000201 
+ 662      FB0E0D00 
+ 662      01010101 
+ 663              	.LASF6:
+ 664 0000 6C6F6E67 		.ascii	"long long int\000"
+ 664      206C6F6E 
+ 664      6720696E 
+ 664      7400
+ 665              	.LASF12:
+ 666 000e 75696E74 		.ascii	"uint32\000"
+ 666      333200
+ 667              	.LASF8:
+ 668 0015 756E7369 		.ascii	"unsigned int\000"
+ 668      676E6564 
+ 668      20696E74 
+ 668      00
+ 669              	.LASF25:
+ 670 0022 453A5C50 		.ascii	"E:\\PSoC\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 670      536F435C 
+ 670      526F734F 
+ 670      6E415374 
+ 670      69636B5C 
+ 671              	.LASF5:
+ 672 0048 6C6F6E67 		.ascii	"long unsigned int\000"
+ 672      20756E73 
+ 672      69676E65 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 16
+
+
+ 672      6420696E 
+ 672      7400
+ 673              	.LASF7:
+ 674 005a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 674      206C6F6E 
+ 674      6720756E 
+ 674      7369676E 
+ 674      65642069 
+ 675              	.LASF23:
+ 676 0071 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 676      4320342E 
+ 676      392E3320 
+ 676      32303135 
+ 676      30333033 
+ 677 00a4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 677      20726576 
+ 677      6973696F 
+ 677      6E203232 
+ 677      31323230 
+ 678 00d7 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects -fno-rtti -"
+ 678      66756E63 
+ 678      74696F6E 
+ 678      2D736563 
+ 678      74696F6E 
+ 679 010a 666E6F2D 		.ascii	"fno-exceptions -funsigned-char -funsigned-bitfields"
+ 679      65786365 
+ 679      7074696F 
+ 679      6E73202D 
+ 679      66756E73 
+ 680 013d 202D6673 		.ascii	" -fshort-enums\000"
+ 680      686F7274 
+ 680      2D656E75 
+ 680      6D7300
+ 681              	.LASF9:
+ 682 014c 666C6F61 		.ascii	"float\000"
+ 682      7400
+ 683              	.LASF11:
+ 684 0152 63686172 		.ascii	"char\000"
+ 684      00
+ 685              	.LASF1:
+ 686 0157 756E7369 		.ascii	"unsigned char\000"
+ 686      676E6564 
+ 686      20636861 
+ 686      7200
+ 687              	.LASF15:
+ 688 0165 5472616E 		.ascii	"Transimpedance_Init\000"
+ 688      73696D70 
+ 688      6564616E 
+ 688      63655F49 
+ 688      6E697400 
+ 689              	.LASF22:
+ 690 0179 6F6E4F66 		.ascii	"onOff\000"
+ 690      6600
+ 691              	.LASF4:
+ 692 017f 6C6F6E67 		.ascii	"long int\000"
+ 692      20696E74 
+ 692      00
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 17
+
+
+ 693              	.LASF10:
+ 694 0188 646F7562 		.ascii	"double\000"
+ 694      6C6500
+ 695              	.LASF13:
+ 696 018f 72656733 		.ascii	"reg32\000"
+ 696      3200
+ 697              	.LASF19:
+ 698 0195 5472616E 		.ascii	"Transimpedance_SetPower\000"
+ 698      73696D70 
+ 698      6564616E 
+ 698      63655F53 
+ 698      6574506F 
+ 699              	.LASF3:
+ 700 01ad 73686F72 		.ascii	"short unsigned int\000"
+ 700      7420756E 
+ 700      7369676E 
+ 700      65642069 
+ 700      6E7400
+ 701              	.LASF0:
+ 702 01c0 7369676E 		.ascii	"signed char\000"
+ 702      65642063 
+ 702      68617200 
+ 703              	.LASF16:
+ 704 01cc 5472616E 		.ascii	"Transimpedance_Enable\000"
+ 704      73696D70 
+ 704      6564616E 
+ 704      63655F45 
+ 704      6E61626C 
+ 705              	.LASF18:
+ 706 01e2 5472616E 		.ascii	"Transimpedance_Stop\000"
+ 706      73696D70 
+ 706      6564616E 
+ 706      63655F53 
+ 706      746F7000 
+ 707              	.LASF24:
+ 708 01f6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Transimpedance.c\000"
+ 708      6E657261 
+ 708      7465645F 
+ 708      536F7572 
+ 708      63655C50 
+ 709              	.LASF14:
+ 710 0220 73697A65 		.ascii	"sizetype\000"
+ 710      74797065 
+ 710      00
+ 711              	.LASF26:
+ 712 0229 5472616E 		.ascii	"Transimpedance_initVar\000"
+ 712      73696D70 
+ 712      6564616E 
+ 712      63655F69 
+ 712      6E697456 
+ 713              	.LASF2:
+ 714 0240 73686F72 		.ascii	"short int\000"
+ 714      7420696E 
+ 714      7400
+ 715              	.LASF17:
+ 716 024a 5472616E 		.ascii	"Transimpedance_Start\000"
+ 716      73696D70 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccxcxSr7.s 			page 18
+
+
+ 716      6564616E 
+ 716      63655F53 
+ 716      74617274 
+ 717              	.LASF20:
+ 718 025f 5472616E 		.ascii	"Transimpedance_PumpControl\000"
+ 718      73696D70 
+ 718      6564616E 
+ 718      63655F50 
+ 718      756D7043 
+ 719              	.LASF21:
+ 720 027a 706F7765 		.ascii	"power\000"
+ 720      7200
+ 721              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

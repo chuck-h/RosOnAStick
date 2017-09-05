@@ -1,0 +1,1037 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Port0.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Port0_Write,"ax",%progbits
+  18              		.align	2
+  19              		.global	Port0_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Port0_Write, %function
+  23              	Port0_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\Port0.c"
+   1:.\Generated_Source\PSoC4/Port0.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Port0.c **** * File Name: Port0.c  
+   3:.\Generated_Source\PSoC4/Port0.c **** * Version 2.0
+   4:.\Generated_Source\PSoC4/Port0.c **** *
+   5:.\Generated_Source\PSoC4/Port0.c **** * Description:
+   6:.\Generated_Source\PSoC4/Port0.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/Port0.c **** *
+   8:.\Generated_Source\PSoC4/Port0.c **** * Note:
+   9:.\Generated_Source\PSoC4/Port0.c **** *
+  10:.\Generated_Source\PSoC4/Port0.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/Port0.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/Port0.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/Port0.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/Port0.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/Port0.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/Port0.c **** 
+  17:.\Generated_Source\PSoC4/Port0.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/Port0.c **** #include "Port0.h"
+  19:.\Generated_Source\PSoC4/Port0.c **** 
+  20:.\Generated_Source\PSoC4/Port0.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/Port0.c ****     do { \
+  22:.\Generated_Source\PSoC4/Port0.c ****         Port0_PC =   (Port0_PC & \
+  23:.\Generated_Source\PSoC4/Port0.c ****                                 (uint32)(~(uint32)(Port0_DRIVE_MODE_IND_MASK << (Port0_DRIVE_MODE_B
+  24:.\Generated_Source\PSoC4/Port0.c ****                                 (uint32)((uint32)(mode) << (Port0_DRIVE_MODE_BITS * (shift))); \
+  25:.\Generated_Source\PSoC4/Port0.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/Port0.c **** 
+  27:.\Generated_Source\PSoC4/Port0.c **** 
+  28:.\Generated_Source\PSoC4/Port0.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/Port0.c **** * Function Name: Port0_Write
+  30:.\Generated_Source\PSoC4/Port0.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/Port0.c **** *
+  32:.\Generated_Source\PSoC4/Port0.c **** * Summary:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/Port0.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/Port0.c **** *
+  35:.\Generated_Source\PSoC4/Port0.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/Port0.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/Port0.c **** *
+  38:.\Generated_Source\PSoC4/Port0.c **** * Return: 
+  39:.\Generated_Source\PSoC4/Port0.c **** *  None 
+  40:.\Generated_Source\PSoC4/Port0.c **** *  
+  41:.\Generated_Source\PSoC4/Port0.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/Port0.c **** void Port0_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/Port0.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/Port0.c ****     uint8 drVal = (uint8)(Port0_DR & (uint8)(~Port0_MASK));
+  39              		.loc 1 44 0
+  40 000c 0B4B     		ldr	r3, .L2
+  41 000e 1B68     		ldr	r3, [r3]
+  42 0010 3B1C     		mov	r3, r7
+  43 0012 0F33     		add	r3, r3, #15
+  44 0014 0022     		mov	r2, #0
+  45 0016 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/Port0.c ****     drVal = (drVal | ((uint8)(value << Port0_SHIFT) & Port0_MASK));
+  46              		.loc 1 45 0
+  47 0018 3B1C     		mov	r3, r7
+  48 001a 0F33     		add	r3, r3, #15
+  49 001c 391C     		mov	r1, r7
+  50 001e 0F31     		add	r1, r1, #15
+  51 0020 FA1D     		add	r2, r7, #7
+  52 0022 0978     		ldrb	r1, [r1]
+  53 0024 1278     		ldrb	r2, [r2]
+  54 0026 0A43     		orr	r2, r1
+  55 0028 1A70     		strb	r2, [r3]
+  46:.\Generated_Source\PSoC4/Port0.c ****     Port0_DR = (uint32)drVal;
+  56              		.loc 1 46 0
+  57 002a 044B     		ldr	r3, .L2
+  58 002c 3A1C     		mov	r2, r7
+  59 002e 0F32     		add	r2, r2, #15
+  60 0030 1278     		ldrb	r2, [r2]
+  61 0032 1A60     		str	r2, [r3]
+  47:.\Generated_Source\PSoC4/Port0.c **** }
+  62              		.loc 1 47 0
+  63 0034 BD46     		mov	sp, r7
+  64 0036 04B0     		add	sp, sp, #16
+  65              		@ sp needed
+  66 0038 80BD     		pop	{r7, pc}
+  67              	.L3:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 3
+
+
+  68 003a C046     		.align	2
+  69              	.L2:
+  70 003c 00000440 		.word	1074003968
+  71              		.cfi_endproc
+  72              	.LFE0:
+  73              		.size	Port0_Write, .-Port0_Write
+  74              		.section	.text.Port0_SetDriveMode,"ax",%progbits
+  75              		.align	2
+  76              		.global	Port0_SetDriveMode
+  77              		.code	16
+  78              		.thumb_func
+  79              		.type	Port0_SetDriveMode, %function
+  80              	Port0_SetDriveMode:
+  81              	.LFB1:
+  48:.\Generated_Source\PSoC4/Port0.c **** 
+  49:.\Generated_Source\PSoC4/Port0.c **** 
+  50:.\Generated_Source\PSoC4/Port0.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/Port0.c **** * Function Name: Port0_SetDriveMode
+  52:.\Generated_Source\PSoC4/Port0.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/Port0.c **** *
+  54:.\Generated_Source\PSoC4/Port0.c **** * Summary:
+  55:.\Generated_Source\PSoC4/Port0.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/Port0.c **** * 
+  57:.\Generated_Source\PSoC4/Port0.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/Port0.c **** *  mode:  Change the pins to one of the following drive modes.
+  59:.\Generated_Source\PSoC4/Port0.c **** *
+  60:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_STRONG     Strong Drive 
+  61:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_OD_HI      Open Drain, Drives High 
+  62:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_OD_LO      Open Drain, Drives Low 
+  63:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_RES_UP     Resistive Pull Up 
+  64:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_RES_DWN    Resistive Pull Down 
+  65:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_RES_UPDWN  Resistive Pull Up/Down 
+  66:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_DIG_HIZ    High Impedance Digital 
+  67:.\Generated_Source\PSoC4/Port0.c **** *  Port0_DM_ALG_HIZ    High Impedance Analog 
+  68:.\Generated_Source\PSoC4/Port0.c **** *
+  69:.\Generated_Source\PSoC4/Port0.c **** * Return: 
+  70:.\Generated_Source\PSoC4/Port0.c **** *  None
+  71:.\Generated_Source\PSoC4/Port0.c **** *
+  72:.\Generated_Source\PSoC4/Port0.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC4/Port0.c **** void Port0_SetDriveMode(uint8 mode) 
+  74:.\Generated_Source\PSoC4/Port0.c **** {
+  82              		.loc 1 74 0
+  83              		.cfi_startproc
+  84 0000 80B5     		push	{r7, lr}
+  85              		.cfi_def_cfa_offset 8
+  86              		.cfi_offset 7, -8
+  87              		.cfi_offset 14, -4
+  88 0002 82B0     		sub	sp, sp, #8
+  89              		.cfi_def_cfa_offset 16
+  90 0004 00AF     		add	r7, sp, #0
+  91              		.cfi_def_cfa_register 7
+  92 0006 021C     		mov	r2, r0
+  93 0008 FB1D     		add	r3, r7, #7
+  94 000a 1A70     		strb	r2, [r3]
+  75:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__0__SHIFT, mode);
+  95              		.loc 1 75 0
+  96 000c 2A4B     		ldr	r3, .L5
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 4
+
+
+  97 000e 2A4A     		ldr	r2, .L5
+  98 0010 1268     		ldr	r2, [r2]
+  99 0012 0721     		mov	r1, #7
+ 100 0014 101C     		mov	r0, r2
+ 101 0016 8843     		bic	r0, r1
+ 102 0018 011C     		mov	r1, r0
+ 103 001a FA1D     		add	r2, r7, #7
+ 104 001c 1278     		ldrb	r2, [r2]
+ 105 001e 0A43     		orr	r2, r1
+ 106 0020 1A60     		str	r2, [r3]
+  76:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__1__SHIFT, mode);
+ 107              		.loc 1 76 0
+ 108 0022 254B     		ldr	r3, .L5
+ 109 0024 244A     		ldr	r2, .L5
+ 110 0026 1268     		ldr	r2, [r2]
+ 111 0028 3821     		mov	r1, #56
+ 112 002a 101C     		mov	r0, r2
+ 113 002c 8843     		bic	r0, r1
+ 114 002e 011C     		mov	r1, r0
+ 115 0030 FA1D     		add	r2, r7, #7
+ 116 0032 1278     		ldrb	r2, [r2]
+ 117 0034 D200     		lsl	r2, r2, #3
+ 118 0036 0A43     		orr	r2, r1
+ 119 0038 1A60     		str	r2, [r3]
+  77:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__2__SHIFT, mode);
+ 120              		.loc 1 77 0
+ 121 003a 1F4B     		ldr	r3, .L5
+ 122 003c 1E4A     		ldr	r2, .L5
+ 123 003e 1168     		ldr	r1, [r2]
+ 124 0040 1E4A     		ldr	r2, .L5+4
+ 125 0042 1140     		and	r1, r2
+ 126 0044 FA1D     		add	r2, r7, #7
+ 127 0046 1278     		ldrb	r2, [r2]
+ 128 0048 9201     		lsl	r2, r2, #6
+ 129 004a 0A43     		orr	r2, r1
+ 130 004c 1A60     		str	r2, [r3]
+  78:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__3__SHIFT, mode);
+ 131              		.loc 1 78 0
+ 132 004e 1A4B     		ldr	r3, .L5
+ 133 0050 194A     		ldr	r2, .L5
+ 134 0052 1168     		ldr	r1, [r2]
+ 135 0054 1A4A     		ldr	r2, .L5+8
+ 136 0056 1140     		and	r1, r2
+ 137 0058 FA1D     		add	r2, r7, #7
+ 138 005a 1278     		ldrb	r2, [r2]
+ 139 005c 5202     		lsl	r2, r2, #9
+ 140 005e 0A43     		orr	r2, r1
+ 141 0060 1A60     		str	r2, [r3]
+  79:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__4__SHIFT, mode);
+ 142              		.loc 1 79 0
+ 143 0062 154B     		ldr	r3, .L5
+ 144 0064 144A     		ldr	r2, .L5
+ 145 0066 1168     		ldr	r1, [r2]
+ 146 0068 164A     		ldr	r2, .L5+12
+ 147 006a 1140     		and	r1, r2
+ 148 006c FA1D     		add	r2, r7, #7
+ 149 006e 1278     		ldrb	r2, [r2]
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 5
+
+
+ 150 0070 1203     		lsl	r2, r2, #12
+ 151 0072 0A43     		orr	r2, r1
+ 152 0074 1A60     		str	r2, [r3]
+  80:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__5__SHIFT, mode);
+ 153              		.loc 1 80 0
+ 154 0076 104B     		ldr	r3, .L5
+ 155 0078 0F4A     		ldr	r2, .L5
+ 156 007a 1168     		ldr	r1, [r2]
+ 157 007c 124A     		ldr	r2, .L5+16
+ 158 007e 1140     		and	r1, r2
+ 159 0080 FA1D     		add	r2, r7, #7
+ 160 0082 1278     		ldrb	r2, [r2]
+ 161 0084 D203     		lsl	r2, r2, #15
+ 162 0086 0A43     		orr	r2, r1
+ 163 0088 1A60     		str	r2, [r3]
+  81:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__6__SHIFT, mode);
+ 164              		.loc 1 81 0
+ 165 008a 0B4B     		ldr	r3, .L5
+ 166 008c 0A4A     		ldr	r2, .L5
+ 167 008e 1168     		ldr	r1, [r2]
+ 168 0090 0E4A     		ldr	r2, .L5+20
+ 169 0092 1140     		and	r1, r2
+ 170 0094 FA1D     		add	r2, r7, #7
+ 171 0096 1278     		ldrb	r2, [r2]
+ 172 0098 9204     		lsl	r2, r2, #18
+ 173 009a 0A43     		orr	r2, r1
+ 174 009c 1A60     		str	r2, [r3]
+  82:.\Generated_Source\PSoC4/Port0.c **** 	SetP4PinDriveMode(Port0__7__SHIFT, mode);
+ 175              		.loc 1 82 0
+ 176 009e 064B     		ldr	r3, .L5
+ 177 00a0 054A     		ldr	r2, .L5
+ 178 00a2 1168     		ldr	r1, [r2]
+ 179 00a4 0A4A     		ldr	r2, .L5+24
+ 180 00a6 1140     		and	r1, r2
+ 181 00a8 FA1D     		add	r2, r7, #7
+ 182 00aa 1278     		ldrb	r2, [r2]
+ 183 00ac 5205     		lsl	r2, r2, #21
+ 184 00ae 0A43     		orr	r2, r1
+ 185 00b0 1A60     		str	r2, [r3]
+  83:.\Generated_Source\PSoC4/Port0.c **** }
+ 186              		.loc 1 83 0
+ 187 00b2 BD46     		mov	sp, r7
+ 188 00b4 02B0     		add	sp, sp, #8
+ 189              		@ sp needed
+ 190 00b6 80BD     		pop	{r7, pc}
+ 191              	.L6:
+ 192              		.align	2
+ 193              	.L5:
+ 194 00b8 08000440 		.word	1074003976
+ 195 00bc 3FFEFFFF 		.word	-449
+ 196 00c0 FFF1FFFF 		.word	-3585
+ 197 00c4 FF8FFFFF 		.word	-28673
+ 198 00c8 FF7FFCFF 		.word	-229377
+ 199 00cc FFFFE3FF 		.word	-1835009
+ 200 00d0 FFFF1FFF 		.word	-14680065
+ 201              		.cfi_endproc
+ 202              	.LFE1:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 6
+
+
+ 203              		.size	Port0_SetDriveMode, .-Port0_SetDriveMode
+ 204              		.section	.text.Port0_Read,"ax",%progbits
+ 205              		.align	2
+ 206              		.global	Port0_Read
+ 207              		.code	16
+ 208              		.thumb_func
+ 209              		.type	Port0_Read, %function
+ 210              	Port0_Read:
+ 211              	.LFB2:
+  84:.\Generated_Source\PSoC4/Port0.c **** 
+  85:.\Generated_Source\PSoC4/Port0.c **** 
+  86:.\Generated_Source\PSoC4/Port0.c **** /*******************************************************************************
+  87:.\Generated_Source\PSoC4/Port0.c **** * Function Name: Port0_Read
+  88:.\Generated_Source\PSoC4/Port0.c **** ********************************************************************************
+  89:.\Generated_Source\PSoC4/Port0.c **** *
+  90:.\Generated_Source\PSoC4/Port0.c **** * Summary:
+  91:.\Generated_Source\PSoC4/Port0.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  92:.\Generated_Source\PSoC4/Port0.c **** *  form.
+  93:.\Generated_Source\PSoC4/Port0.c **** *
+  94:.\Generated_Source\PSoC4/Port0.c **** * Parameters:  
+  95:.\Generated_Source\PSoC4/Port0.c **** *  None 
+  96:.\Generated_Source\PSoC4/Port0.c **** *
+  97:.\Generated_Source\PSoC4/Port0.c **** * Return: 
+  98:.\Generated_Source\PSoC4/Port0.c **** *  Returns the current value of the Digital Port as a right justified number
+  99:.\Generated_Source\PSoC4/Port0.c **** *  
+ 100:.\Generated_Source\PSoC4/Port0.c **** * Note:
+ 101:.\Generated_Source\PSoC4/Port0.c **** *  Macro Port0_ReadPS calls this function. 
+ 102:.\Generated_Source\PSoC4/Port0.c **** *  
+ 103:.\Generated_Source\PSoC4/Port0.c **** *******************************************************************************/
+ 104:.\Generated_Source\PSoC4/Port0.c **** uint8 Port0_Read(void) 
+ 105:.\Generated_Source\PSoC4/Port0.c **** {
+ 212              		.loc 1 105 0
+ 213              		.cfi_startproc
+ 214 0000 80B5     		push	{r7, lr}
+ 215              		.cfi_def_cfa_offset 8
+ 216              		.cfi_offset 7, -8
+ 217              		.cfi_offset 14, -4
+ 218 0002 00AF     		add	r7, sp, #0
+ 219              		.cfi_def_cfa_register 7
+ 106:.\Generated_Source\PSoC4/Port0.c ****     return (uint8)((Port0_PS & Port0_MASK) >> Port0_SHIFT);
+ 220              		.loc 1 106 0
+ 221 0004 024B     		ldr	r3, .L9
+ 222 0006 1B68     		ldr	r3, [r3]
+ 223 0008 DBB2     		uxtb	r3, r3
+ 107:.\Generated_Source\PSoC4/Port0.c **** }
+ 224              		.loc 1 107 0
+ 225 000a 181C     		mov	r0, r3
+ 226 000c BD46     		mov	sp, r7
+ 227              		@ sp needed
+ 228 000e 80BD     		pop	{r7, pc}
+ 229              	.L10:
+ 230              		.align	2
+ 231              	.L9:
+ 232 0010 04000440 		.word	1074003972
+ 233              		.cfi_endproc
+ 234              	.LFE2:
+ 235              		.size	Port0_Read, .-Port0_Read
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 7
+
+
+ 236              		.section	.text.Port0_ReadDataReg,"ax",%progbits
+ 237              		.align	2
+ 238              		.global	Port0_ReadDataReg
+ 239              		.code	16
+ 240              		.thumb_func
+ 241              		.type	Port0_ReadDataReg, %function
+ 242              	Port0_ReadDataReg:
+ 243              	.LFB3:
+ 108:.\Generated_Source\PSoC4/Port0.c **** 
+ 109:.\Generated_Source\PSoC4/Port0.c **** 
+ 110:.\Generated_Source\PSoC4/Port0.c **** /*******************************************************************************
+ 111:.\Generated_Source\PSoC4/Port0.c **** * Function Name: Port0_ReadDataReg
+ 112:.\Generated_Source\PSoC4/Port0.c **** ********************************************************************************
+ 113:.\Generated_Source\PSoC4/Port0.c **** *
+ 114:.\Generated_Source\PSoC4/Port0.c **** * Summary:
+ 115:.\Generated_Source\PSoC4/Port0.c **** *  Read the current value assigned to a Digital Port's data output register
+ 116:.\Generated_Source\PSoC4/Port0.c **** *
+ 117:.\Generated_Source\PSoC4/Port0.c **** * Parameters:  
+ 118:.\Generated_Source\PSoC4/Port0.c **** *  None 
+ 119:.\Generated_Source\PSoC4/Port0.c **** *
+ 120:.\Generated_Source\PSoC4/Port0.c **** * Return: 
+ 121:.\Generated_Source\PSoC4/Port0.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 122:.\Generated_Source\PSoC4/Port0.c **** *  
+ 123:.\Generated_Source\PSoC4/Port0.c **** *******************************************************************************/
+ 124:.\Generated_Source\PSoC4/Port0.c **** uint8 Port0_ReadDataReg(void) 
+ 125:.\Generated_Source\PSoC4/Port0.c **** {
+ 244              		.loc 1 125 0
+ 245              		.cfi_startproc
+ 246 0000 80B5     		push	{r7, lr}
+ 247              		.cfi_def_cfa_offset 8
+ 248              		.cfi_offset 7, -8
+ 249              		.cfi_offset 14, -4
+ 250 0002 00AF     		add	r7, sp, #0
+ 251              		.cfi_def_cfa_register 7
+ 126:.\Generated_Source\PSoC4/Port0.c ****     return (uint8)((Port0_DR & Port0_MASK) >> Port0_SHIFT);
+ 252              		.loc 1 126 0
+ 253 0004 024B     		ldr	r3, .L13
+ 254 0006 1B68     		ldr	r3, [r3]
+ 255 0008 DBB2     		uxtb	r3, r3
+ 127:.\Generated_Source\PSoC4/Port0.c **** }
+ 256              		.loc 1 127 0
+ 257 000a 181C     		mov	r0, r3
+ 258 000c BD46     		mov	sp, r7
+ 259              		@ sp needed
+ 260 000e 80BD     		pop	{r7, pc}
+ 261              	.L14:
+ 262              		.align	2
+ 263              	.L13:
+ 264 0010 00000440 		.word	1074003968
+ 265              		.cfi_endproc
+ 266              	.LFE3:
+ 267              		.size	Port0_ReadDataReg, .-Port0_ReadDataReg
+ 268              		.section	.text.Port0_ClearInterrupt,"ax",%progbits
+ 269              		.align	2
+ 270              		.global	Port0_ClearInterrupt
+ 271              		.code	16
+ 272              		.thumb_func
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 8
+
+
+ 273              		.type	Port0_ClearInterrupt, %function
+ 274              	Port0_ClearInterrupt:
+ 275              	.LFB4:
+ 128:.\Generated_Source\PSoC4/Port0.c **** 
+ 129:.\Generated_Source\PSoC4/Port0.c **** 
+ 130:.\Generated_Source\PSoC4/Port0.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 131:.\Generated_Source\PSoC4/Port0.c **** #if defined(Port0_INTSTAT) 
+ 132:.\Generated_Source\PSoC4/Port0.c **** 
+ 133:.\Generated_Source\PSoC4/Port0.c ****     /*******************************************************************************
+ 134:.\Generated_Source\PSoC4/Port0.c ****     * Function Name: Port0_ClearInterrupt
+ 135:.\Generated_Source\PSoC4/Port0.c ****     ********************************************************************************
+ 136:.\Generated_Source\PSoC4/Port0.c ****     *
+ 137:.\Generated_Source\PSoC4/Port0.c ****     * Summary:
+ 138:.\Generated_Source\PSoC4/Port0.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 139:.\Generated_Source\PSoC4/Port0.c ****     *  interrupt status register.
+ 140:.\Generated_Source\PSoC4/Port0.c ****     *
+ 141:.\Generated_Source\PSoC4/Port0.c ****     * Parameters:  
+ 142:.\Generated_Source\PSoC4/Port0.c ****     *  None 
+ 143:.\Generated_Source\PSoC4/Port0.c ****     *
+ 144:.\Generated_Source\PSoC4/Port0.c ****     * Return: 
+ 145:.\Generated_Source\PSoC4/Port0.c ****     *  Returns the value of the interrupt status register
+ 146:.\Generated_Source\PSoC4/Port0.c ****     *  
+ 147:.\Generated_Source\PSoC4/Port0.c ****     *******************************************************************************/
+ 148:.\Generated_Source\PSoC4/Port0.c ****     uint8 Port0_ClearInterrupt(void) 
+ 149:.\Generated_Source\PSoC4/Port0.c ****     {
+ 276              		.loc 1 149 0
+ 277              		.cfi_startproc
+ 278 0000 80B5     		push	{r7, lr}
+ 279              		.cfi_def_cfa_offset 8
+ 280              		.cfi_offset 7, -8
+ 281              		.cfi_offset 14, -4
+ 282 0002 82B0     		sub	sp, sp, #8
+ 283              		.cfi_def_cfa_offset 16
+ 284 0004 00AF     		add	r7, sp, #0
+ 285              		.cfi_def_cfa_register 7
+ 150:.\Generated_Source\PSoC4/Port0.c **** 		uint8 maskedStatus = (uint8)(Port0_INTSTAT & Port0_MASK);
+ 286              		.loc 1 150 0
+ 287 0006 074B     		ldr	r3, .L17
+ 288 0008 1A68     		ldr	r2, [r3]
+ 289 000a FB1D     		add	r3, r7, #7
+ 290 000c 1A70     		strb	r2, [r3]
+ 151:.\Generated_Source\PSoC4/Port0.c **** 		Port0_INTSTAT = maskedStatus;
+ 291              		.loc 1 151 0
+ 292 000e 054B     		ldr	r3, .L17
+ 293 0010 FA1D     		add	r2, r7, #7
+ 294 0012 1278     		ldrb	r2, [r2]
+ 295 0014 1A60     		str	r2, [r3]
+ 152:.\Generated_Source\PSoC4/Port0.c ****         return maskedStatus >> Port0_SHIFT;
+ 296              		.loc 1 152 0
+ 297 0016 FB1D     		add	r3, r7, #7
+ 298 0018 1B78     		ldrb	r3, [r3]
+ 153:.\Generated_Source\PSoC4/Port0.c ****     }
+ 299              		.loc 1 153 0
+ 300 001a 181C     		mov	r0, r3
+ 301 001c BD46     		mov	sp, r7
+ 302 001e 02B0     		add	sp, sp, #8
+ 303              		@ sp needed
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 9
+
+
+ 304 0020 80BD     		pop	{r7, pc}
+ 305              	.L18:
+ 306 0022 C046     		.align	2
+ 307              	.L17:
+ 308 0024 10000440 		.word	1074003984
+ 309              		.cfi_endproc
+ 310              	.LFE4:
+ 311              		.size	Port0_ClearInterrupt, .-Port0_ClearInterrupt
+ 312              		.text
+ 313              	.Letext0:
+ 314              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 315              		.section	.debug_info,"",%progbits
+ 316              	.Ldebug_info0:
+ 317 0000 47010000 		.4byte	0x147
+ 318 0004 0400     		.2byte	0x4
+ 319 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 320 000a 04       		.byte	0x4
+ 321 000b 01       		.uleb128 0x1
+ 322 000c 91010000 		.4byte	.LASF24
+ 323 0010 01       		.byte	0x1
+ 324 0011 B6000000 		.4byte	.LASF25
+ 325 0015 00000000 		.4byte	.LASF26
+ 326 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 327 001d 00000000 		.4byte	0
+ 328 0021 00000000 		.4byte	.Ldebug_line0
+ 329 0025 02       		.uleb128 0x2
+ 330 0026 01       		.byte	0x1
+ 331 0027 06       		.byte	0x6
+ 332 0028 85010000 		.4byte	.LASF0
+ 333 002c 02       		.uleb128 0x2
+ 334 002d 01       		.byte	0x1
+ 335 002e 08       		.byte	0x8
+ 336 002f 7D000000 		.4byte	.LASF1
+ 337 0033 02       		.uleb128 0x2
+ 338 0034 02       		.byte	0x2
+ 339 0035 05       		.byte	0x5
+ 340 0036 5A010000 		.4byte	.LASF2
+ 341 003a 02       		.uleb128 0x2
+ 342 003b 02       		.byte	0x2
+ 343 003c 07       		.byte	0x7
+ 344 003d A3000000 		.4byte	.LASF3
+ 345 0041 02       		.uleb128 0x2
+ 346 0042 04       		.byte	0x4
+ 347 0043 05       		.byte	0x5
+ 348 0044 7C010000 		.4byte	.LASF4
+ 349 0048 02       		.uleb128 0x2
+ 350 0049 04       		.byte	0x4
+ 351 004a 07       		.byte	0x7
+ 352 004b 91000000 		.4byte	.LASF5
+ 353 004f 02       		.uleb128 0x2
+ 354 0050 08       		.byte	0x8
+ 355 0051 05       		.byte	0x5
+ 356 0052 2F010000 		.4byte	.LASF6
+ 357 0056 02       		.uleb128 0x2
+ 358 0057 08       		.byte	0x8
+ 359 0058 07       		.byte	0x7
+ 360 0059 13010000 		.4byte	.LASF7
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 10
+
+
+ 361 005d 03       		.uleb128 0x3
+ 362 005e 04       		.byte	0x4
+ 363 005f 05       		.byte	0x5
+ 364 0060 696E7400 		.ascii	"int\000"
+ 365 0064 02       		.uleb128 0x2
+ 366 0065 04       		.byte	0x4
+ 367 0066 07       		.byte	0x7
+ 368 0067 FA000000 		.4byte	.LASF8
+ 369 006b 04       		.uleb128 0x4
+ 370 006c 64010000 		.4byte	.LASF9
+ 371 0070 02       		.byte	0x2
+ 372 0071 5B       		.byte	0x5b
+ 373 0072 2C000000 		.4byte	0x2c
+ 374 0076 04       		.uleb128 0x4
+ 375 0077 F3000000 		.4byte	.LASF10
+ 376 007b 02       		.byte	0x2
+ 377 007c 5D       		.byte	0x5d
+ 378 007d 48000000 		.4byte	0x48
+ 379 0081 02       		.uleb128 0x2
+ 380 0082 04       		.byte	0x4
+ 381 0083 04       		.byte	0x4
+ 382 0084 77000000 		.4byte	.LASF11
+ 383 0088 02       		.uleb128 0x2
+ 384 0089 08       		.byte	0x8
+ 385 008a 04       		.byte	0x4
+ 386 008b D7000000 		.4byte	.LASF12
+ 387 008f 02       		.uleb128 0x2
+ 388 0090 01       		.byte	0x1
+ 389 0091 08       		.byte	0x8
+ 390 0092 4A010000 		.4byte	.LASF13
+ 391 0096 04       		.uleb128 0x4
+ 392 0097 6B000000 		.4byte	.LASF14
+ 393 009b 02       		.byte	0x2
+ 394 009c F2       		.byte	0xf2
+ 395 009d A1000000 		.4byte	0xa1
+ 396 00a1 05       		.uleb128 0x5
+ 397 00a2 76000000 		.4byte	0x76
+ 398 00a6 06       		.uleb128 0x6
+ 399 00a7 07010000 		.4byte	.LASF15
+ 400 00ab 01       		.byte	0x1
+ 401 00ac 2A       		.byte	0x2a
+ 402 00ad 00000000 		.4byte	.LFB0
+ 403 00b1 40000000 		.4byte	.LFE0-.LFB0
+ 404 00b5 01       		.uleb128 0x1
+ 405 00b6 9C       		.byte	0x9c
+ 406 00b7 D8000000 		.4byte	0xd8
+ 407 00bb 07       		.uleb128 0x7
+ 408 00bc 71000000 		.4byte	.LASF17
+ 409 00c0 01       		.byte	0x1
+ 410 00c1 2A       		.byte	0x2a
+ 411 00c2 6B000000 		.4byte	0x6b
+ 412 00c6 02       		.uleb128 0x2
+ 413 00c7 91       		.byte	0x91
+ 414 00c8 6F       		.sleb128 -17
+ 415 00c9 08       		.uleb128 0x8
+ 416 00ca 8B000000 		.4byte	.LASF22
+ 417 00ce 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 11
+
+
+ 418 00cf 2C       		.byte	0x2c
+ 419 00d0 6B000000 		.4byte	0x6b
+ 420 00d4 02       		.uleb128 0x2
+ 421 00d5 91       		.byte	0x91
+ 422 00d6 77       		.sleb128 -9
+ 423 00d7 00       		.byte	0
+ 424 00d8 06       		.uleb128 0x6
+ 425 00d9 58000000 		.4byte	.LASF16
+ 426 00dd 01       		.byte	0x1
+ 427 00de 49       		.byte	0x49
+ 428 00df 00000000 		.4byte	.LFB1
+ 429 00e3 D4000000 		.4byte	.LFE1-.LFB1
+ 430 00e7 01       		.uleb128 0x1
+ 431 00e8 9C       		.byte	0x9c
+ 432 00e9 FC000000 		.4byte	0xfc
+ 433 00ed 07       		.uleb128 0x7
+ 434 00ee 2A010000 		.4byte	.LASF18
+ 435 00f2 01       		.byte	0x1
+ 436 00f3 49       		.byte	0x49
+ 437 00f4 6B000000 		.4byte	0x6b
+ 438 00f8 02       		.uleb128 0x2
+ 439 00f9 91       		.byte	0x91
+ 440 00fa 77       		.sleb128 -9
+ 441 00fb 00       		.byte	0
+ 442 00fc 09       		.uleb128 0x9
+ 443 00fd 4F010000 		.4byte	.LASF19
+ 444 0101 01       		.byte	0x1
+ 445 0102 68       		.byte	0x68
+ 446 0103 6B000000 		.4byte	0x6b
+ 447 0107 00000000 		.4byte	.LFB2
+ 448 010b 14000000 		.4byte	.LFE2-.LFB2
+ 449 010f 01       		.uleb128 0x1
+ 450 0110 9C       		.byte	0x9c
+ 451 0111 09       		.uleb128 0x9
+ 452 0112 6A010000 		.4byte	.LASF20
+ 453 0116 01       		.byte	0x1
+ 454 0117 7C       		.byte	0x7c
+ 455 0118 6B000000 		.4byte	0x6b
+ 456 011c 00000000 		.4byte	.LFB3
+ 457 0120 14000000 		.4byte	.LFE3-.LFB3
+ 458 0124 01       		.uleb128 0x1
+ 459 0125 9C       		.byte	0x9c
+ 460 0126 0A       		.uleb128 0xa
+ 461 0127 DE000000 		.4byte	.LASF21
+ 462 012b 01       		.byte	0x1
+ 463 012c 94       		.byte	0x94
+ 464 012d 6B000000 		.4byte	0x6b
+ 465 0131 00000000 		.4byte	.LFB4
+ 466 0135 28000000 		.4byte	.LFE4-.LFB4
+ 467 0139 01       		.uleb128 0x1
+ 468 013a 9C       		.byte	0x9c
+ 469 013b 08       		.uleb128 0x8
+ 470 013c 3D010000 		.4byte	.LASF23
+ 471 0140 01       		.byte	0x1
+ 472 0141 96       		.byte	0x96
+ 473 0142 6B000000 		.4byte	0x6b
+ 474 0146 02       		.uleb128 0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 12
+
+
+ 475 0147 91       		.byte	0x91
+ 476 0148 77       		.sleb128 -9
+ 477 0149 00       		.byte	0
+ 478 014a 00       		.byte	0
+ 479              		.section	.debug_abbrev,"",%progbits
+ 480              	.Ldebug_abbrev0:
+ 481 0000 01       		.uleb128 0x1
+ 482 0001 11       		.uleb128 0x11
+ 483 0002 01       		.byte	0x1
+ 484 0003 25       		.uleb128 0x25
+ 485 0004 0E       		.uleb128 0xe
+ 486 0005 13       		.uleb128 0x13
+ 487 0006 0B       		.uleb128 0xb
+ 488 0007 03       		.uleb128 0x3
+ 489 0008 0E       		.uleb128 0xe
+ 490 0009 1B       		.uleb128 0x1b
+ 491 000a 0E       		.uleb128 0xe
+ 492 000b 55       		.uleb128 0x55
+ 493 000c 17       		.uleb128 0x17
+ 494 000d 11       		.uleb128 0x11
+ 495 000e 01       		.uleb128 0x1
+ 496 000f 10       		.uleb128 0x10
+ 497 0010 17       		.uleb128 0x17
+ 498 0011 00       		.byte	0
+ 499 0012 00       		.byte	0
+ 500 0013 02       		.uleb128 0x2
+ 501 0014 24       		.uleb128 0x24
+ 502 0015 00       		.byte	0
+ 503 0016 0B       		.uleb128 0xb
+ 504 0017 0B       		.uleb128 0xb
+ 505 0018 3E       		.uleb128 0x3e
+ 506 0019 0B       		.uleb128 0xb
+ 507 001a 03       		.uleb128 0x3
+ 508 001b 0E       		.uleb128 0xe
+ 509 001c 00       		.byte	0
+ 510 001d 00       		.byte	0
+ 511 001e 03       		.uleb128 0x3
+ 512 001f 24       		.uleb128 0x24
+ 513 0020 00       		.byte	0
+ 514 0021 0B       		.uleb128 0xb
+ 515 0022 0B       		.uleb128 0xb
+ 516 0023 3E       		.uleb128 0x3e
+ 517 0024 0B       		.uleb128 0xb
+ 518 0025 03       		.uleb128 0x3
+ 519 0026 08       		.uleb128 0x8
+ 520 0027 00       		.byte	0
+ 521 0028 00       		.byte	0
+ 522 0029 04       		.uleb128 0x4
+ 523 002a 16       		.uleb128 0x16
+ 524 002b 00       		.byte	0
+ 525 002c 03       		.uleb128 0x3
+ 526 002d 0E       		.uleb128 0xe
+ 527 002e 3A       		.uleb128 0x3a
+ 528 002f 0B       		.uleb128 0xb
+ 529 0030 3B       		.uleb128 0x3b
+ 530 0031 0B       		.uleb128 0xb
+ 531 0032 49       		.uleb128 0x49
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 13
+
+
+ 532 0033 13       		.uleb128 0x13
+ 533 0034 00       		.byte	0
+ 534 0035 00       		.byte	0
+ 535 0036 05       		.uleb128 0x5
+ 536 0037 35       		.uleb128 0x35
+ 537 0038 00       		.byte	0
+ 538 0039 49       		.uleb128 0x49
+ 539 003a 13       		.uleb128 0x13
+ 540 003b 00       		.byte	0
+ 541 003c 00       		.byte	0
+ 542 003d 06       		.uleb128 0x6
+ 543 003e 2E       		.uleb128 0x2e
+ 544 003f 01       		.byte	0x1
+ 545 0040 3F       		.uleb128 0x3f
+ 546 0041 19       		.uleb128 0x19
+ 547 0042 03       		.uleb128 0x3
+ 548 0043 0E       		.uleb128 0xe
+ 549 0044 3A       		.uleb128 0x3a
+ 550 0045 0B       		.uleb128 0xb
+ 551 0046 3B       		.uleb128 0x3b
+ 552 0047 0B       		.uleb128 0xb
+ 553 0048 27       		.uleb128 0x27
+ 554 0049 19       		.uleb128 0x19
+ 555 004a 11       		.uleb128 0x11
+ 556 004b 01       		.uleb128 0x1
+ 557 004c 12       		.uleb128 0x12
+ 558 004d 06       		.uleb128 0x6
+ 559 004e 40       		.uleb128 0x40
+ 560 004f 18       		.uleb128 0x18
+ 561 0050 9742     		.uleb128 0x2117
+ 562 0052 19       		.uleb128 0x19
+ 563 0053 01       		.uleb128 0x1
+ 564 0054 13       		.uleb128 0x13
+ 565 0055 00       		.byte	0
+ 566 0056 00       		.byte	0
+ 567 0057 07       		.uleb128 0x7
+ 568 0058 05       		.uleb128 0x5
+ 569 0059 00       		.byte	0
+ 570 005a 03       		.uleb128 0x3
+ 571 005b 0E       		.uleb128 0xe
+ 572 005c 3A       		.uleb128 0x3a
+ 573 005d 0B       		.uleb128 0xb
+ 574 005e 3B       		.uleb128 0x3b
+ 575 005f 0B       		.uleb128 0xb
+ 576 0060 49       		.uleb128 0x49
+ 577 0061 13       		.uleb128 0x13
+ 578 0062 02       		.uleb128 0x2
+ 579 0063 18       		.uleb128 0x18
+ 580 0064 00       		.byte	0
+ 581 0065 00       		.byte	0
+ 582 0066 08       		.uleb128 0x8
+ 583 0067 34       		.uleb128 0x34
+ 584 0068 00       		.byte	0
+ 585 0069 03       		.uleb128 0x3
+ 586 006a 0E       		.uleb128 0xe
+ 587 006b 3A       		.uleb128 0x3a
+ 588 006c 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 14
+
+
+ 589 006d 3B       		.uleb128 0x3b
+ 590 006e 0B       		.uleb128 0xb
+ 591 006f 49       		.uleb128 0x49
+ 592 0070 13       		.uleb128 0x13
+ 593 0071 02       		.uleb128 0x2
+ 594 0072 18       		.uleb128 0x18
+ 595 0073 00       		.byte	0
+ 596 0074 00       		.byte	0
+ 597 0075 09       		.uleb128 0x9
+ 598 0076 2E       		.uleb128 0x2e
+ 599 0077 00       		.byte	0
+ 600 0078 3F       		.uleb128 0x3f
+ 601 0079 19       		.uleb128 0x19
+ 602 007a 03       		.uleb128 0x3
+ 603 007b 0E       		.uleb128 0xe
+ 604 007c 3A       		.uleb128 0x3a
+ 605 007d 0B       		.uleb128 0xb
+ 606 007e 3B       		.uleb128 0x3b
+ 607 007f 0B       		.uleb128 0xb
+ 608 0080 27       		.uleb128 0x27
+ 609 0081 19       		.uleb128 0x19
+ 610 0082 49       		.uleb128 0x49
+ 611 0083 13       		.uleb128 0x13
+ 612 0084 11       		.uleb128 0x11
+ 613 0085 01       		.uleb128 0x1
+ 614 0086 12       		.uleb128 0x12
+ 615 0087 06       		.uleb128 0x6
+ 616 0088 40       		.uleb128 0x40
+ 617 0089 18       		.uleb128 0x18
+ 618 008a 9742     		.uleb128 0x2117
+ 619 008c 19       		.uleb128 0x19
+ 620 008d 00       		.byte	0
+ 621 008e 00       		.byte	0
+ 622 008f 0A       		.uleb128 0xa
+ 623 0090 2E       		.uleb128 0x2e
+ 624 0091 01       		.byte	0x1
+ 625 0092 3F       		.uleb128 0x3f
+ 626 0093 19       		.uleb128 0x19
+ 627 0094 03       		.uleb128 0x3
+ 628 0095 0E       		.uleb128 0xe
+ 629 0096 3A       		.uleb128 0x3a
+ 630 0097 0B       		.uleb128 0xb
+ 631 0098 3B       		.uleb128 0x3b
+ 632 0099 0B       		.uleb128 0xb
+ 633 009a 27       		.uleb128 0x27
+ 634 009b 19       		.uleb128 0x19
+ 635 009c 49       		.uleb128 0x49
+ 636 009d 13       		.uleb128 0x13
+ 637 009e 11       		.uleb128 0x11
+ 638 009f 01       		.uleb128 0x1
+ 639 00a0 12       		.uleb128 0x12
+ 640 00a1 06       		.uleb128 0x6
+ 641 00a2 40       		.uleb128 0x40
+ 642 00a3 18       		.uleb128 0x18
+ 643 00a4 9742     		.uleb128 0x2117
+ 644 00a6 19       		.uleb128 0x19
+ 645 00a7 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 15
+
+
+ 646 00a8 00       		.byte	0
+ 647 00a9 00       		.byte	0
+ 648              		.section	.debug_aranges,"",%progbits
+ 649 0000 3C000000 		.4byte	0x3c
+ 650 0004 0200     		.2byte	0x2
+ 651 0006 00000000 		.4byte	.Ldebug_info0
+ 652 000a 04       		.byte	0x4
+ 653 000b 00       		.byte	0
+ 654 000c 0000     		.2byte	0
+ 655 000e 0000     		.2byte	0
+ 656 0010 00000000 		.4byte	.LFB0
+ 657 0014 40000000 		.4byte	.LFE0-.LFB0
+ 658 0018 00000000 		.4byte	.LFB1
+ 659 001c D4000000 		.4byte	.LFE1-.LFB1
+ 660 0020 00000000 		.4byte	.LFB2
+ 661 0024 14000000 		.4byte	.LFE2-.LFB2
+ 662 0028 00000000 		.4byte	.LFB3
+ 663 002c 14000000 		.4byte	.LFE3-.LFB3
+ 664 0030 00000000 		.4byte	.LFB4
+ 665 0034 28000000 		.4byte	.LFE4-.LFB4
+ 666 0038 00000000 		.4byte	0
+ 667 003c 00000000 		.4byte	0
+ 668              		.section	.debug_ranges,"",%progbits
+ 669              	.Ldebug_ranges0:
+ 670 0000 00000000 		.4byte	.LFB0
+ 671 0004 40000000 		.4byte	.LFE0
+ 672 0008 00000000 		.4byte	.LFB1
+ 673 000c D4000000 		.4byte	.LFE1
+ 674 0010 00000000 		.4byte	.LFB2
+ 675 0014 14000000 		.4byte	.LFE2
+ 676 0018 00000000 		.4byte	.LFB3
+ 677 001c 14000000 		.4byte	.LFE3
+ 678 0020 00000000 		.4byte	.LFB4
+ 679 0024 28000000 		.4byte	.LFE4
+ 680 0028 00000000 		.4byte	0
+ 681 002c 00000000 		.4byte	0
+ 682              		.section	.debug_line,"",%progbits
+ 683              	.Ldebug_line0:
+ 684 0000 AD000000 		.section	.debug_str,"MS",%progbits,1
+ 684      02004400 
+ 684      00000201 
+ 684      FB0E0D00 
+ 684      01010101 
+ 685              	.LASF26:
+ 686 0000 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 686      6F63756D 
+ 686      656E7473 
+ 686      20616E64 
+ 686      20536574 
+ 687 002f 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 687      72656174 
+ 687      6F725C52 
+ 687      6F734F6E 
+ 687      41537469 
+ 688              	.LASF16:
+ 689 0058 506F7274 		.ascii	"Port0_SetDriveMode\000"
+ 689      305F5365 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 16
+
+
+ 689      74447269 
+ 689      76654D6F 
+ 689      646500
+ 690              	.LASF14:
+ 691 006b 72656733 		.ascii	"reg32\000"
+ 691      3200
+ 692              	.LASF17:
+ 693 0071 76616C75 		.ascii	"value\000"
+ 693      6500
+ 694              	.LASF11:
+ 695 0077 666C6F61 		.ascii	"float\000"
+ 695      7400
+ 696              	.LASF1:
+ 697 007d 756E7369 		.ascii	"unsigned char\000"
+ 697      676E6564 
+ 697      20636861 
+ 697      7200
+ 698              	.LASF22:
+ 699 008b 64725661 		.ascii	"drVal\000"
+ 699      6C00
+ 700              	.LASF5:
+ 701 0091 6C6F6E67 		.ascii	"long unsigned int\000"
+ 701      20756E73 
+ 701      69676E65 
+ 701      6420696E 
+ 701      7400
+ 702              	.LASF3:
+ 703 00a3 73686F72 		.ascii	"short unsigned int\000"
+ 703      7420756E 
+ 703      7369676E 
+ 703      65642069 
+ 703      6E7400
+ 704              	.LASF25:
+ 705 00b6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Port0.c\000"
+ 705      6E657261 
+ 705      7465645F 
+ 705      536F7572 
+ 705      63655C50 
+ 706              	.LASF12:
+ 707 00d7 646F7562 		.ascii	"double\000"
+ 707      6C6500
+ 708              	.LASF21:
+ 709 00de 506F7274 		.ascii	"Port0_ClearInterrupt\000"
+ 709      305F436C 
+ 709      65617249 
+ 709      6E746572 
+ 709      72757074 
+ 710              	.LASF10:
+ 711 00f3 75696E74 		.ascii	"uint32\000"
+ 711      333200
+ 712              	.LASF8:
+ 713 00fa 756E7369 		.ascii	"unsigned int\000"
+ 713      676E6564 
+ 713      20696E74 
+ 713      00
+ 714              	.LASF15:
+ 715 0107 506F7274 		.ascii	"Port0_Write\000"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 17
+
+
+ 715      305F5772 
+ 715      69746500 
+ 716              	.LASF7:
+ 717 0113 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 717      206C6F6E 
+ 717      6720756E 
+ 717      7369676E 
+ 717      65642069 
+ 718              	.LASF18:
+ 719 012a 6D6F6465 		.ascii	"mode\000"
+ 719      00
+ 720              	.LASF6:
+ 721 012f 6C6F6E67 		.ascii	"long long int\000"
+ 721      206C6F6E 
+ 721      6720696E 
+ 721      7400
+ 722              	.LASF23:
+ 723 013d 6D61736B 		.ascii	"maskedStatus\000"
+ 723      65645374 
+ 723      61747573 
+ 723      00
+ 724              	.LASF13:
+ 725 014a 63686172 		.ascii	"char\000"
+ 725      00
+ 726              	.LASF19:
+ 727 014f 506F7274 		.ascii	"Port0_Read\000"
+ 727      305F5265 
+ 727      616400
+ 728              	.LASF2:
+ 729 015a 73686F72 		.ascii	"short int\000"
+ 729      7420696E 
+ 729      7400
+ 730              	.LASF9:
+ 731 0164 75696E74 		.ascii	"uint8\000"
+ 731      3800
+ 732              	.LASF20:
+ 733 016a 506F7274 		.ascii	"Port0_ReadDataReg\000"
+ 733      305F5265 
+ 733      61644461 
+ 733      74615265 
+ 733      6700
+ 734              	.LASF4:
+ 735 017c 6C6F6E67 		.ascii	"long int\000"
+ 735      20696E74 
+ 735      00
+ 736              	.LASF0:
+ 737 0185 7369676E 		.ascii	"signed char\000"
+ 737      65642063 
+ 737      68617200 
+ 738              	.LASF24:
+ 739 0191 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 739      4320342E 
+ 739      382E3420 
+ 739      32303134 
+ 739      30353236 
+ 740 01c4 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 740      20726576 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc6G18j6.s 			page 18
+
+
+ 740      6973696F 
+ 740      6E203231 
+ 740      31333538 
+ 741 01f7 30202D66 		.ascii	"0 -ffunction-sections -fno-rtti -fno-exceptions -fu"
+ 741      66756E63 
+ 741      74696F6E 
+ 741      2D736563 
+ 741      74696F6E 
+ 742 022a 6E736967 		.ascii	"nsigned-char -funsigned-bitfields -fshort-enums\000"
+ 742      6E65642D 
+ 742      63686172 
+ 742      202D6675 
+ 742      6E736967 
+ 743              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

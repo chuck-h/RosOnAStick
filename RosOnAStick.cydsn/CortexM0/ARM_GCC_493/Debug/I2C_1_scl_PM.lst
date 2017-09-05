@@ -1,0 +1,644 @@
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"I2C_1_scl_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	I2C_1_scl_backup:
+  20 0000 00000000 		.space	12
+  20      00000000 
+  20      00000000 
+  21              		.section	.text.I2C_1_scl_Sleep,"ax",%progbits
+  22              		.align	2
+  23              		.global	I2C_1_scl_Sleep
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	I2C_1_scl_Sleep, %function
+  27              	I2C_1_scl_Sleep:
+  28              	.LFB0:
+  29              		.file 1 ".\\Generated_Source\\PSoC4\\I2C_1_scl_PM.c"
+   1:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * File Name: I2C_1_scl.c  
+   3:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Version 2.20
+   4:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+   5:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Description:
+   6:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  This file contains APIs to set up the Pins component for low power modes.
+   7:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+   8:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Note:
+   9:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  10:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Copyright 2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  17:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** #include "I2C_1_scl.h"
+  19:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  20:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** static I2C_1_scl_BACKUP_STRUCT  I2C_1_scl_backup = {0u, 0u, 0u};
+  21:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  22:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  23:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Function Name: I2C_1_scl_Sleep
+  25:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** ****************************************************************************//**
+  26:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 2
+
+
+  27:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \brief Stores the pin configuration and prepares the pin for entering chip 
+  28:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  deep-sleep/hibernate modes. This function must be called for SIO and USBIO
+  29:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  pins. It is not essential if using GPIO or GPIO_OVT pins.
+  30:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  31:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  32:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  33:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \return 
+  34:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  None 
+  35:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  
+  36:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \sideeffect
+  37:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  For SIO pins, this function configures the pin input threshold to CMOS and
+  38:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  drive level to Vddio. This is needed for SIO pins when in device 
+  39:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  deep-sleep/hibernate modes.
+  40:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  41:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \funcusage
+  42:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  \snippet I2C_1_scl_SUT.c usage_I2C_1_scl_Sleep_Wakeup
+  43:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *******************************************************************************/
+  44:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** void I2C_1_scl_Sleep(void)
+  45:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** {
+  30              		.loc 1 45 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  46:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #if defined(I2C_1_scl__PC)
+  47:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         I2C_1_scl_backup.pcState = I2C_1_scl_PC;
+  38              		.loc 1 47 0
+  39 0004 024B     		ldr	r3, .L2
+  40 0006 1A68     		ldr	r2, [r3]
+  41 0008 024B     		ldr	r3, .L2+4
+  42 000a 1A60     		str	r2, [r3]
+  48:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #else
+  49:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         #if (CY_PSOC4_4200L)
+  50:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             /* Save the regulator state and put the PHY into suspend mode */
+  51:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_backup.usbState = I2C_1_scl_CR1_REG;
+  52:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_USB_POWER_REG |= I2C_1_scl_USBIO_ENTER_SLEEP;
+  53:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_CR1_REG &= I2C_1_scl_USBIO_CR1_OFF;
+  54:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         #endif
+  55:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #endif
+  56:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(I2C_1_scl__SIO)
+  57:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         I2C_1_scl_backup.sioState = I2C_1_scl_SIO_REG;
+  58:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         /* SIO requires unregulated output buffer and single ended input buffer */
+  59:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         I2C_1_scl_SIO_REG &= (uint32)(~I2C_1_scl_SIO_LPM_MASK);
+  60:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #endif  
+  61:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** }
+  43              		.loc 1 61 0
+  44 000c BD46     		mov	sp, r7
+  45              		@ sp needed
+  46 000e 80BD     		pop	{r7, pc}
+  47              	.L3:
+  48              		.align	2
+  49              	.L2:
+  50 0010 08000440 		.word	1074003976
+  51 0014 00000000 		.word	I2C_1_scl_backup
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 3
+
+
+  52              		.cfi_endproc
+  53              	.LFE0:
+  54              		.size	I2C_1_scl_Sleep, .-I2C_1_scl_Sleep
+  55              		.section	.text.I2C_1_scl_Wakeup,"ax",%progbits
+  56              		.align	2
+  57              		.global	I2C_1_scl_Wakeup
+  58              		.code	16
+  59              		.thumb_func
+  60              		.type	I2C_1_scl_Wakeup, %function
+  61              	I2C_1_scl_Wakeup:
+  62              	.LFB1:
+  62:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  63:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** 
+  64:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** /*******************************************************************************
+  65:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * Function Name: I2C_1_scl_Wakeup
+  66:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** ****************************************************************************//**
+  67:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  68:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \brief Restores the pin configuration that was saved during Pin_Sleep().
+  69:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  70:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * For USBIO pins, the wakeup is only triggered for falling edge interrupts.
+  71:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  72:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  73:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *
+  74:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \return 
+  75:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  None
+  76:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  
+  77:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** * \funcusage
+  78:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *  Refer to I2C_1_scl_Sleep() for an example usage.
+  79:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** *******************************************************************************/
+  80:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** void I2C_1_scl_Wakeup(void)
+  81:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** {
+  63              		.loc 1 81 0
+  64              		.cfi_startproc
+  65 0000 80B5     		push	{r7, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 00AF     		add	r7, sp, #0
+  70              		.cfi_def_cfa_register 7
+  82:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #if defined(I2C_1_scl__PC)
+  83:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         I2C_1_scl_PC = I2C_1_scl_backup.pcState;
+  71              		.loc 1 83 0
+  72 0004 024A     		ldr	r2, .L5
+  73 0006 034B     		ldr	r3, .L5+4
+  74 0008 1B68     		ldr	r3, [r3]
+  75 000a 1360     		str	r3, [r2]
+  84:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #else
+  85:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         #if (CY_PSOC4_4200L)
+  86:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             /* Restore the regulator state and come out of suspend mode */
+  87:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_USB_POWER_REG &= I2C_1_scl_USBIO_EXIT_SLEEP_PH1;
+  88:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_CR1_REG = I2C_1_scl_backup.usbState;
+  89:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****             I2C_1_scl_USB_POWER_REG &= I2C_1_scl_USBIO_EXIT_SLEEP_PH2;
+  90:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         #endif
+  91:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #endif
+  92:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(I2C_1_scl__SIO)
+  93:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****         I2C_1_scl_SIO_REG = I2C_1_scl_backup.sioState;
+  94:.\Generated_Source\PSoC4/I2C_1_scl_PM.c ****     #endif
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 4
+
+
+  95:.\Generated_Source\PSoC4/I2C_1_scl_PM.c **** }
+  76              		.loc 1 95 0
+  77 000c BD46     		mov	sp, r7
+  78              		@ sp needed
+  79 000e 80BD     		pop	{r7, pc}
+  80              	.L6:
+  81              		.align	2
+  82              	.L5:
+  83 0010 08000440 		.word	1074003976
+  84 0014 00000000 		.word	I2C_1_scl_backup
+  85              		.cfi_endproc
+  86              	.LFE1:
+  87              		.size	I2C_1_scl_Wakeup, .-I2C_1_scl_Wakeup
+  88              		.text
+  89              	.Letext0:
+  90              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+  91              		.file 3 ".\\Generated_Source\\PSoC4\\I2C_1_scl.h"
+  92              		.section	.debug_info,"",%progbits
+  93              	.Ldebug_info0:
+  94 0000 03010000 		.4byte	0x103
+  95 0004 0400     		.2byte	0x4
+  96 0006 00000000 		.4byte	.Ldebug_abbrev0
+  97 000a 04       		.byte	0x4
+  98 000b 01       		.uleb128 0x1
+  99 000c 86000000 		.4byte	.LASF20
+ 100 0010 01       		.byte	0x1
+ 101 0011 A3010000 		.4byte	.LASF21
+ 102 0015 0F000000 		.4byte	.LASF22
+ 103 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 104 001d 00000000 		.4byte	0
+ 105 0021 00000000 		.4byte	.Ldebug_line0
+ 106 0025 02       		.uleb128 0x2
+ 107 0026 01       		.byte	0x1
+ 108 0027 06       		.byte	0x6
+ 109 0028 13020000 		.4byte	.LASF0
+ 110 002c 02       		.uleb128 0x2
+ 111 002d 01       		.byte	0x1
+ 112 002e 08       		.byte	0x8
+ 113 002f 53000000 		.4byte	.LASF1
+ 114 0033 02       		.uleb128 0x2
+ 115 0034 02       		.byte	0x2
+ 116 0035 05       		.byte	0x5
+ 117 0036 E7010000 		.4byte	.LASF2
+ 118 003a 02       		.uleb128 0x2
+ 119 003b 02       		.byte	0x2
+ 120 003c 07       		.byte	0x7
+ 121 003d 73000000 		.4byte	.LASF3
+ 122 0041 02       		.uleb128 0x2
+ 123 0042 04       		.byte	0x4
+ 124 0043 05       		.byte	0x5
+ 125 0044 0A020000 		.4byte	.LASF4
+ 126 0048 02       		.uleb128 0x2
+ 127 0049 04       		.byte	0x4
+ 128 004a 07       		.byte	0x7
+ 129 004b 61000000 		.4byte	.LASF5
+ 130 004f 02       		.uleb128 0x2
+ 131 0050 08       		.byte	0x8
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 5
+
+
+ 132 0051 05       		.byte	0x5
+ 133 0052 D4010000 		.4byte	.LASF6
+ 134 0056 02       		.uleb128 0x2
+ 135 0057 08       		.byte	0x8
+ 136 0058 07       		.byte	0x7
+ 137 0059 8C010000 		.4byte	.LASF7
+ 138 005d 03       		.uleb128 0x3
+ 139 005e 04       		.byte	0x4
+ 140 005f 05       		.byte	0x5
+ 141 0060 696E7400 		.ascii	"int\000"
+ 142 0064 02       		.uleb128 0x2
+ 143 0065 04       		.byte	0x4
+ 144 0066 07       		.byte	0x7
+ 145 0067 7F010000 		.4byte	.LASF8
+ 146 006b 04       		.uleb128 0x4
+ 147 006c 78010000 		.4byte	.LASF12
+ 148 0070 02       		.byte	0x2
+ 149 0071 5D       		.byte	0x5d
+ 150 0072 48000000 		.4byte	0x48
+ 151 0076 02       		.uleb128 0x2
+ 152 0077 04       		.byte	0x4
+ 153 0078 04       		.byte	0x4
+ 154 0079 4D000000 		.4byte	.LASF9
+ 155 007d 02       		.uleb128 0x2
+ 156 007e 08       		.byte	0x8
+ 157 007f 04       		.byte	0x4
+ 158 0080 71010000 		.4byte	.LASF10
+ 159 0084 02       		.uleb128 0x2
+ 160 0085 01       		.byte	0x1
+ 161 0086 08       		.byte	0x8
+ 162 0087 E2010000 		.4byte	.LASF11
+ 163 008b 04       		.uleb128 0x4
+ 164 008c 00000000 		.4byte	.LASF13
+ 165 0090 02       		.byte	0x2
+ 166 0091 F2       		.byte	0xf2
+ 167 0092 96000000 		.4byte	0x96
+ 168 0096 05       		.uleb128 0x5
+ 169 0097 6B000000 		.4byte	0x6b
+ 170 009b 06       		.uleb128 0x6
+ 171 009c 0C       		.byte	0xc
+ 172 009d 03       		.byte	0x3
+ 173 009e 21       		.byte	0x21
+ 174 009f C8000000 		.4byte	0xc8
+ 175 00a3 07       		.uleb128 0x7
+ 176 00a4 F1010000 		.4byte	.LASF14
+ 177 00a8 03       		.byte	0x3
+ 178 00a9 23       		.byte	0x23
+ 179 00aa 6B000000 		.4byte	0x6b
+ 180 00ae 00       		.byte	0
+ 181 00af 07       		.uleb128 0x7
+ 182 00b0 CB010000 		.4byte	.LASF15
+ 183 00b4 03       		.byte	0x3
+ 184 00b5 24       		.byte	0x24
+ 185 00b6 6B000000 		.4byte	0x6b
+ 186 00ba 04       		.byte	0x4
+ 187 00bb 07       		.uleb128 0x7
+ 188 00bc 06000000 		.4byte	.LASF16
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 6
+
+
+ 189 00c0 03       		.byte	0x3
+ 190 00c1 25       		.byte	0x25
+ 191 00c2 6B000000 		.4byte	0x6b
+ 192 00c6 08       		.byte	0x8
+ 193 00c7 00       		.byte	0
+ 194 00c8 04       		.uleb128 0x4
+ 195 00c9 35000000 		.4byte	.LASF17
+ 196 00cd 03       		.byte	0x3
+ 197 00ce 26       		.byte	0x26
+ 198 00cf 9B000000 		.4byte	0x9b
+ 199 00d3 08       		.uleb128 0x8
+ 200 00d4 61010000 		.4byte	.LASF18
+ 201 00d8 01       		.byte	0x1
+ 202 00d9 2C       		.byte	0x2c
+ 203 00da 00000000 		.4byte	.LFB0
+ 204 00de 18000000 		.4byte	.LFE0-.LFB0
+ 205 00e2 01       		.uleb128 0x1
+ 206 00e3 9C       		.byte	0x9c
+ 207 00e4 08       		.uleb128 0x8
+ 208 00e5 1F020000 		.4byte	.LASF19
+ 209 00e9 01       		.byte	0x1
+ 210 00ea 50       		.byte	0x50
+ 211 00eb 00000000 		.4byte	.LFB1
+ 212 00ef 18000000 		.4byte	.LFE1-.LFB1
+ 213 00f3 01       		.uleb128 0x1
+ 214 00f4 9C       		.byte	0x9c
+ 215 00f5 09       		.uleb128 0x9
+ 216 00f6 F9010000 		.4byte	.LASF23
+ 217 00fa 01       		.byte	0x1
+ 218 00fb 14       		.byte	0x14
+ 219 00fc C8000000 		.4byte	0xc8
+ 220 0100 05       		.uleb128 0x5
+ 221 0101 03       		.byte	0x3
+ 222 0102 00000000 		.4byte	I2C_1_scl_backup
+ 223 0106 00       		.byte	0
+ 224              		.section	.debug_abbrev,"",%progbits
+ 225              	.Ldebug_abbrev0:
+ 226 0000 01       		.uleb128 0x1
+ 227 0001 11       		.uleb128 0x11
+ 228 0002 01       		.byte	0x1
+ 229 0003 25       		.uleb128 0x25
+ 230 0004 0E       		.uleb128 0xe
+ 231 0005 13       		.uleb128 0x13
+ 232 0006 0B       		.uleb128 0xb
+ 233 0007 03       		.uleb128 0x3
+ 234 0008 0E       		.uleb128 0xe
+ 235 0009 1B       		.uleb128 0x1b
+ 236 000a 0E       		.uleb128 0xe
+ 237 000b 55       		.uleb128 0x55
+ 238 000c 17       		.uleb128 0x17
+ 239 000d 11       		.uleb128 0x11
+ 240 000e 01       		.uleb128 0x1
+ 241 000f 10       		.uleb128 0x10
+ 242 0010 17       		.uleb128 0x17
+ 243 0011 00       		.byte	0
+ 244 0012 00       		.byte	0
+ 245 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 7
+
+
+ 246 0014 24       		.uleb128 0x24
+ 247 0015 00       		.byte	0
+ 248 0016 0B       		.uleb128 0xb
+ 249 0017 0B       		.uleb128 0xb
+ 250 0018 3E       		.uleb128 0x3e
+ 251 0019 0B       		.uleb128 0xb
+ 252 001a 03       		.uleb128 0x3
+ 253 001b 0E       		.uleb128 0xe
+ 254 001c 00       		.byte	0
+ 255 001d 00       		.byte	0
+ 256 001e 03       		.uleb128 0x3
+ 257 001f 24       		.uleb128 0x24
+ 258 0020 00       		.byte	0
+ 259 0021 0B       		.uleb128 0xb
+ 260 0022 0B       		.uleb128 0xb
+ 261 0023 3E       		.uleb128 0x3e
+ 262 0024 0B       		.uleb128 0xb
+ 263 0025 03       		.uleb128 0x3
+ 264 0026 08       		.uleb128 0x8
+ 265 0027 00       		.byte	0
+ 266 0028 00       		.byte	0
+ 267 0029 04       		.uleb128 0x4
+ 268 002a 16       		.uleb128 0x16
+ 269 002b 00       		.byte	0
+ 270 002c 03       		.uleb128 0x3
+ 271 002d 0E       		.uleb128 0xe
+ 272 002e 3A       		.uleb128 0x3a
+ 273 002f 0B       		.uleb128 0xb
+ 274 0030 3B       		.uleb128 0x3b
+ 275 0031 0B       		.uleb128 0xb
+ 276 0032 49       		.uleb128 0x49
+ 277 0033 13       		.uleb128 0x13
+ 278 0034 00       		.byte	0
+ 279 0035 00       		.byte	0
+ 280 0036 05       		.uleb128 0x5
+ 281 0037 35       		.uleb128 0x35
+ 282 0038 00       		.byte	0
+ 283 0039 49       		.uleb128 0x49
+ 284 003a 13       		.uleb128 0x13
+ 285 003b 00       		.byte	0
+ 286 003c 00       		.byte	0
+ 287 003d 06       		.uleb128 0x6
+ 288 003e 13       		.uleb128 0x13
+ 289 003f 01       		.byte	0x1
+ 290 0040 0B       		.uleb128 0xb
+ 291 0041 0B       		.uleb128 0xb
+ 292 0042 3A       		.uleb128 0x3a
+ 293 0043 0B       		.uleb128 0xb
+ 294 0044 3B       		.uleb128 0x3b
+ 295 0045 0B       		.uleb128 0xb
+ 296 0046 01       		.uleb128 0x1
+ 297 0047 13       		.uleb128 0x13
+ 298 0048 00       		.byte	0
+ 299 0049 00       		.byte	0
+ 300 004a 07       		.uleb128 0x7
+ 301 004b 0D       		.uleb128 0xd
+ 302 004c 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 8
+
+
+ 303 004d 03       		.uleb128 0x3
+ 304 004e 0E       		.uleb128 0xe
+ 305 004f 3A       		.uleb128 0x3a
+ 306 0050 0B       		.uleb128 0xb
+ 307 0051 3B       		.uleb128 0x3b
+ 308 0052 0B       		.uleb128 0xb
+ 309 0053 49       		.uleb128 0x49
+ 310 0054 13       		.uleb128 0x13
+ 311 0055 38       		.uleb128 0x38
+ 312 0056 0B       		.uleb128 0xb
+ 313 0057 00       		.byte	0
+ 314 0058 00       		.byte	0
+ 315 0059 08       		.uleb128 0x8
+ 316 005a 2E       		.uleb128 0x2e
+ 317 005b 00       		.byte	0
+ 318 005c 3F       		.uleb128 0x3f
+ 319 005d 19       		.uleb128 0x19
+ 320 005e 03       		.uleb128 0x3
+ 321 005f 0E       		.uleb128 0xe
+ 322 0060 3A       		.uleb128 0x3a
+ 323 0061 0B       		.uleb128 0xb
+ 324 0062 3B       		.uleb128 0x3b
+ 325 0063 0B       		.uleb128 0xb
+ 326 0064 27       		.uleb128 0x27
+ 327 0065 19       		.uleb128 0x19
+ 328 0066 11       		.uleb128 0x11
+ 329 0067 01       		.uleb128 0x1
+ 330 0068 12       		.uleb128 0x12
+ 331 0069 06       		.uleb128 0x6
+ 332 006a 40       		.uleb128 0x40
+ 333 006b 18       		.uleb128 0x18
+ 334 006c 9742     		.uleb128 0x2117
+ 335 006e 19       		.uleb128 0x19
+ 336 006f 00       		.byte	0
+ 337 0070 00       		.byte	0
+ 338 0071 09       		.uleb128 0x9
+ 339 0072 34       		.uleb128 0x34
+ 340 0073 00       		.byte	0
+ 341 0074 03       		.uleb128 0x3
+ 342 0075 0E       		.uleb128 0xe
+ 343 0076 3A       		.uleb128 0x3a
+ 344 0077 0B       		.uleb128 0xb
+ 345 0078 3B       		.uleb128 0x3b
+ 346 0079 0B       		.uleb128 0xb
+ 347 007a 49       		.uleb128 0x49
+ 348 007b 13       		.uleb128 0x13
+ 349 007c 02       		.uleb128 0x2
+ 350 007d 18       		.uleb128 0x18
+ 351 007e 00       		.byte	0
+ 352 007f 00       		.byte	0
+ 353 0080 00       		.byte	0
+ 354              		.section	.debug_aranges,"",%progbits
+ 355 0000 24000000 		.4byte	0x24
+ 356 0004 0200     		.2byte	0x2
+ 357 0006 00000000 		.4byte	.Ldebug_info0
+ 358 000a 04       		.byte	0x4
+ 359 000b 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 9
+
+
+ 360 000c 0000     		.2byte	0
+ 361 000e 0000     		.2byte	0
+ 362 0010 00000000 		.4byte	.LFB0
+ 363 0014 18000000 		.4byte	.LFE0-.LFB0
+ 364 0018 00000000 		.4byte	.LFB1
+ 365 001c 18000000 		.4byte	.LFE1-.LFB1
+ 366 0020 00000000 		.4byte	0
+ 367 0024 00000000 		.4byte	0
+ 368              		.section	.debug_ranges,"",%progbits
+ 369              	.Ldebug_ranges0:
+ 370 0000 00000000 		.4byte	.LFB0
+ 371 0004 18000000 		.4byte	.LFE0
+ 372 0008 00000000 		.4byte	.LFB1
+ 373 000c 18000000 		.4byte	.LFE1
+ 374 0010 00000000 		.4byte	0
+ 375 0014 00000000 		.4byte	0
+ 376              		.section	.debug_line,"",%progbits
+ 377              	.Ldebug_line0:
+ 378 0000 87000000 		.section	.debug_str,"MS",%progbits,1
+ 378      02005A00 
+ 378      00000201 
+ 378      FB0E0D00 
+ 378      01010101 
+ 379              	.LASF13:
+ 380 0000 72656733 		.ascii	"reg32\000"
+ 380      3200
+ 381              	.LASF16:
+ 382 0006 75736253 		.ascii	"usbState\000"
+ 382      74617465 
+ 382      00
+ 383              	.LASF22:
+ 384 000f 453A5C50 		.ascii	"E:\\PSoC\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 384      536F435C 
+ 384      526F734F 
+ 384      6E415374 
+ 384      69636B5C 
+ 385              	.LASF17:
+ 386 0035 4932435F 		.ascii	"I2C_1_scl_BACKUP_STRUCT\000"
+ 386      315F7363 
+ 386      6C5F4241 
+ 386      434B5550 
+ 386      5F535452 
+ 387              	.LASF9:
+ 388 004d 666C6F61 		.ascii	"float\000"
+ 388      7400
+ 389              	.LASF1:
+ 390 0053 756E7369 		.ascii	"unsigned char\000"
+ 390      676E6564 
+ 390      20636861 
+ 390      7200
+ 391              	.LASF5:
+ 392 0061 6C6F6E67 		.ascii	"long unsigned int\000"
+ 392      20756E73 
+ 392      69676E65 
+ 392      6420696E 
+ 392      7400
+ 393              	.LASF3:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 10
+
+
+ 394 0073 73686F72 		.ascii	"short unsigned int\000"
+ 394      7420756E 
+ 394      7369676E 
+ 394      65642069 
+ 394      6E7400
+ 395              	.LASF20:
+ 396 0086 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 396      4320342E 
+ 396      392E3320 
+ 396      32303135 
+ 396      30333033 
+ 397 00b9 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 397      20726576 
+ 397      6973696F 
+ 397      6E203232 
+ 397      31323230 
+ 398 00ec 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects -fno-rtti -"
+ 398      66756E63 
+ 398      74696F6E 
+ 398      2D736563 
+ 398      74696F6E 
+ 399 011f 666E6F2D 		.ascii	"fno-exceptions -funsigned-char -funsigned-bitfields"
+ 399      65786365 
+ 399      7074696F 
+ 399      6E73202D 
+ 399      66756E73 
+ 400 0152 202D6673 		.ascii	" -fshort-enums\000"
+ 400      686F7274 
+ 400      2D656E75 
+ 400      6D7300
+ 401              	.LASF18:
+ 402 0161 4932435F 		.ascii	"I2C_1_scl_Sleep\000"
+ 402      315F7363 
+ 402      6C5F536C 
+ 402      65657000 
+ 403              	.LASF10:
+ 404 0171 646F7562 		.ascii	"double\000"
+ 404      6C6500
+ 405              	.LASF12:
+ 406 0178 75696E74 		.ascii	"uint32\000"
+ 406      333200
+ 407              	.LASF8:
+ 408 017f 756E7369 		.ascii	"unsigned int\000"
+ 408      676E6564 
+ 408      20696E74 
+ 408      00
+ 409              	.LASF7:
+ 410 018c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 410      206C6F6E 
+ 410      6720756E 
+ 410      7369676E 
+ 410      65642069 
+ 411              	.LASF21:
+ 412 01a3 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\I2C_1_scl_PM.c\000"
+ 412      6E657261 
+ 412      7465645F 
+ 412      536F7572 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccofJvwL.s 			page 11
+
+
+ 412      63655C50 
+ 413              	.LASF15:
+ 414 01cb 73696F53 		.ascii	"sioState\000"
+ 414      74617465 
+ 414      00
+ 415              	.LASF6:
+ 416 01d4 6C6F6E67 		.ascii	"long long int\000"
+ 416      206C6F6E 
+ 416      6720696E 
+ 416      7400
+ 417              	.LASF11:
+ 418 01e2 63686172 		.ascii	"char\000"
+ 418      00
+ 419              	.LASF2:
+ 420 01e7 73686F72 		.ascii	"short int\000"
+ 420      7420696E 
+ 420      7400
+ 421              	.LASF14:
+ 422 01f1 70635374 		.ascii	"pcState\000"
+ 422      61746500 
+ 423              	.LASF23:
+ 424 01f9 4932435F 		.ascii	"I2C_1_scl_backup\000"
+ 424      315F7363 
+ 424      6C5F6261 
+ 424      636B7570 
+ 424      00
+ 425              	.LASF4:
+ 426 020a 6C6F6E67 		.ascii	"long int\000"
+ 426      20696E74 
+ 426      00
+ 427              	.LASF0:
+ 428 0213 7369676E 		.ascii	"signed char\000"
+ 428      65642063 
+ 428      68617200 
+ 429              	.LASF19:
+ 430 021f 4932435F 		.ascii	"I2C_1_scl_Wakeup\000"
+ 430      315F7363 
+ 430      6C5F5761 
+ 430      6B657570 
+ 430      00
+ 431              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

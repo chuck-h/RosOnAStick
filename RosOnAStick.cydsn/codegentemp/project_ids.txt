@@ -1,0 +1,7 @@
+E:\PSoC\RosOnAStick\Bootloader.cydsn\Bootloader.cyprj|f581fd89-7e6e-4fea-a5a0-b4f8994efb6e
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|bf03ce48-12c2-4be2-ad76-cf200a961d42
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a057b1ce-5483-4c25-b0ec-0dd9a789ba16
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|71f8ce18-c697-433d-bfd3-c4a05d279380
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3f1ee555-ed33-406d-b4c2-6f4d4e574b70
+E:\PSoC\RosOnAStick\RosOnAStick.cydsn\RosOnAStick.cyprj|52faf77a-6550-4bb3-b100-132e8be1105a
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|4c821d71-5717-49a2-ae6c-1353d781f59c

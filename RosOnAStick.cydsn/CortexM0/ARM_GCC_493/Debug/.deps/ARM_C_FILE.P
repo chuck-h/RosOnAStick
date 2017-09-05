@@ -1,0 +1,454 @@
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ADC_SAR_SEQ.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ADC_SAR_SEQ_INT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_INT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_INT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ADC_SAR_SEQ_IRQ.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_IRQ.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_IRQ.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_IRQ.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_IRQ.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ADC_SAR_SEQ_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ADC_SAR_SEQ_intClock.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_intClock.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_intClock.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_intClock.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ADC_SAR_SEQ_intClock.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Agnd.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Agnd_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Bootloadable.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Bootloadable.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Bootloadable.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyFlash.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Bootloadable.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Bootloadable.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Button_in.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Button_in_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Button_in_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PVT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_CSHL.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_INT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_INT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_INT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_SMS.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SMS.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SMS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SMS.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SMS.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_SampleClk.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_SenseClk.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_Sns.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_Sns_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CapSense_TunerHelper.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_CSHL.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_IP.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SampleClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_SenseClk.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_TunerHelper.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_TunerHelper.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmFunc.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/core_cmInstr.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_TunerHelper.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CapSense_TunerHelper.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Cm0Start.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Cm0Start.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CyFlash.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyFlash.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyFlash.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/CyLib.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Feedback.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Feedback_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_BOOT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_BOOT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_BOOT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_BOOT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_BOOT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_I2C.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_I2C_BOOT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_BOOT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_BOOT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_BOOT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_I2C_INT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_INT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_INT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_I2C_MASTER.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_MASTER.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_MASTER.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_I2C_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_SCBCLK.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCBCLK.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_SCB_IRQ.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCB_IRQ.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCB_IRQ.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCB_IRQ.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_SCB_IRQ.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_scl.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_scl_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_scl_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_sda.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/I2CMaster_sda_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cypins.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/I2CMaster_sda_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/P1_6.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/P1_6_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/PWM_1.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/PWM_1_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_1_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/PWM_Clock.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Clock.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Clock.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Clock.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Clock.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/PWM_Pin.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/PWM_Pin_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/QuadDec_1.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/QuadDec_1_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/QuadDec_1_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Quad_Clock.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_Clock.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_Clock.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_Clock.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_Clock.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Quad_In_A.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_A_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Quad_In_B.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Quad_In_B_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_BOOT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_BOOT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_BOOT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_Clock.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_Clock.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_Clock.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_Clock.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_Clock.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_SPI_UART.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_SPI_UART_INT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_INT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_INT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_UART.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART_PVT.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_UART.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_UART.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_UART_BOOT.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_PINS.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_SPI_UART.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_UART_BOOT.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_UART_BOOT.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_rx.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_rx.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/ROSSerial_UART_tx.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/ROSSerial_UART_tx.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Step_A_N.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_N_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Step_A_P.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_A_P_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Step_B_N.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_N_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Step_B_P.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Step_B_P_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Stepper_Control.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Stepper_Control.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Stepper_Control.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Stepper_Control.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Stepper_Control.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Sum_node.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Sum_node_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Transimpedance.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/Transimpedance_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/Transimpedance_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/UD_Ref.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Ref_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/UD_Signal.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal_aliases.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UD_Signal_aliases.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/UpDown.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/UpDown_PM.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown_PM.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/UpDown_PM.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/cyPm.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyPm.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyPm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/cybootloader.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cybootloader.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cybootloader.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/cyfitter_cfg.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/CyLib.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/cymetadata.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cymetadata.c E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_493/Debug/cyutils.o : E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cydevice_trm.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyfitter.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cytypes.h E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+E:/PSoC/RosOnAStick/RosOnAStick.cydsn/Generated_Source/PSoC4/cyutils.c : 
+

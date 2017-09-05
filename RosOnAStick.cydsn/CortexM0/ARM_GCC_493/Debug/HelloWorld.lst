@@ -1,0 +1,4866 @@
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"HelloWorld.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text._ZN3ros3MsgC2Ev,"axG",%progbits,_ZN3ros3MsgC5Ev,comdat
+  18              		.align	2
+  19              		.weak	_ZN3ros3MsgC2Ev
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	_ZN3ros3MsgC2Ev, %function
+  23              	_ZN3ros3MsgC2Ev:
+  24              	.LFB21:
+  25              		.file 1 "./ros_lib/ros/msg.h"
+   1:./ros_lib/ros/msg.h **** /* 
+   2:./ros_lib/ros/msg.h ****  * Software License Agreement (BSD License)
+   3:./ros_lib/ros/msg.h ****  *
+   4:./ros_lib/ros/msg.h ****  * Copyright (c) 2011, Willow Garage, Inc.
+   5:./ros_lib/ros/msg.h ****  * All rights reserved.
+   6:./ros_lib/ros/msg.h ****  *
+   7:./ros_lib/ros/msg.h ****  * Redistribution and use in source and binary forms, with or without
+   8:./ros_lib/ros/msg.h ****  * modification, are permitted provided that the following conditions
+   9:./ros_lib/ros/msg.h ****  * are met:
+  10:./ros_lib/ros/msg.h ****  *
+  11:./ros_lib/ros/msg.h ****  *  * Redistributions of source code must retain the above copyright
+  12:./ros_lib/ros/msg.h ****  *    notice, this list of conditions and the following disclaimer.
+  13:./ros_lib/ros/msg.h ****  *  * Redistributions in binary form must reproduce the above
+  14:./ros_lib/ros/msg.h ****  *    copyright notice, this list of conditions and the following
+  15:./ros_lib/ros/msg.h ****  *    disclaimer in the documentation and/or other materials provided
+  16:./ros_lib/ros/msg.h ****  *    with the distribution.
+  17:./ros_lib/ros/msg.h ****  *  * Neither the name of Willow Garage, Inc. nor the names of its
+  18:./ros_lib/ros/msg.h ****  *    contributors may be used to endorse or promote prducts derived
+  19:./ros_lib/ros/msg.h ****  *    from this software without specific prior written permission.
+  20:./ros_lib/ros/msg.h ****  *
+  21:./ros_lib/ros/msg.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  22:./ros_lib/ros/msg.h ****  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  23:./ros_lib/ros/msg.h ****  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  24:./ros_lib/ros/msg.h ****  * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  25:./ros_lib/ros/msg.h ****  * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  26:./ros_lib/ros/msg.h ****  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  27:./ros_lib/ros/msg.h ****  * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  28:./ros_lib/ros/msg.h ****  * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  29:./ros_lib/ros/msg.h ****  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  30:./ros_lib/ros/msg.h ****  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  31:./ros_lib/ros/msg.h ****  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  32:./ros_lib/ros/msg.h ****  * POSSIBILITY OF SUCH DAMAGE.
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 2
+
+
+  33:./ros_lib/ros/msg.h ****  */
+  34:./ros_lib/ros/msg.h **** 
+  35:./ros_lib/ros/msg.h **** #ifndef _ROS_MSG_H_
+  36:./ros_lib/ros/msg.h **** #define _ROS_MSG_H_
+  37:./ros_lib/ros/msg.h **** 
+  38:./ros_lib/ros/msg.h **** #include <stdint.h>
+  39:./ros_lib/ros/msg.h **** 
+  40:./ros_lib/ros/msg.h **** namespace ros {
+  41:./ros_lib/ros/msg.h **** 
+  42:./ros_lib/ros/msg.h **** /* Base Message Type */
+  43:./ros_lib/ros/msg.h **** class Msg
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 82B0     		sub	sp, sp, #8
+  33              		.cfi_def_cfa_offset 16
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 7860     		str	r0, [r7, #4]
+  37              	.LBB2:
+  38              		.loc 1 43 0
+  39 0008 7B68     		ldr	r3, [r7, #4]
+  40 000a 034A     		ldr	r2, .L4
+  41 000c 1A60     		str	r2, [r3]
+  42              	.LBE2:
+  43 000e 7B68     		ldr	r3, [r7, #4]
+  44 0010 181C     		mov	r0, r3
+  45 0012 BD46     		mov	sp, r7
+  46 0014 02B0     		add	sp, sp, #8
+  47              		@ sp needed
+  48 0016 80BD     		pop	{r7, pc}
+  49              	.L5:
+  50              		.align	2
+  51              	.L4:
+  52 0018 08000000 		.word	_ZTVN3ros3MsgE+8
+  53              		.cfi_endproc
+  54              	.LFE21:
+  55              		.size	_ZN3ros3MsgC2Ev, .-_ZN3ros3MsgC2Ev
+  56              		.weak	_ZN3ros3MsgC1Ev
+  57              		.thumb_set _ZN3ros3MsgC1Ev,_ZN3ros3MsgC2Ev
+  58              		.section	.text._ZN3ros9PublisherC2EPKcPNS_3MsgEi,"axG",%progbits,_ZN3ros9PublisherC5EPKcPNS_3MsgEi
+  59              		.align	2
+  60              		.weak	_ZN3ros9PublisherC2EPKcPNS_3MsgEi
+  61              		.code	16
+  62              		.thumb_func
+  63              		.type	_ZN3ros9PublisherC2EPKcPNS_3MsgEi, %function
+  64              	_ZN3ros9PublisherC2EPKcPNS_3MsgEi:
+  65              	.LFB58:
+  66              		.file 2 "./ros_lib/ros/publisher.h"
+   1:./ros_lib/ros/publisher.h **** /* 
+   2:./ros_lib/ros/publisher.h ****  * Software License Agreement (BSD License)
+   3:./ros_lib/ros/publisher.h ****  *
+   4:./ros_lib/ros/publisher.h ****  * Copyright (c) 2011, Willow Garage, Inc.
+   5:./ros_lib/ros/publisher.h ****  * All rights reserved.
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 3
+
+
+   6:./ros_lib/ros/publisher.h ****  *
+   7:./ros_lib/ros/publisher.h ****  * Redistribution and use in source and binary forms, with or without
+   8:./ros_lib/ros/publisher.h ****  * modification, are permitted provided that the following conditions
+   9:./ros_lib/ros/publisher.h ****  * are met:
+  10:./ros_lib/ros/publisher.h ****  *
+  11:./ros_lib/ros/publisher.h ****  *  * Redistributions of source code must retain the above copyright
+  12:./ros_lib/ros/publisher.h ****  *    notice, this list of conditions and the following disclaimer.
+  13:./ros_lib/ros/publisher.h ****  *  * Redistributions in binary form must reproduce the above
+  14:./ros_lib/ros/publisher.h ****  *    copyright notice, this list of conditions and the following
+  15:./ros_lib/ros/publisher.h ****  *    disclaimer in the documentation and/or other materials provided
+  16:./ros_lib/ros/publisher.h ****  *    with the distribution.
+  17:./ros_lib/ros/publisher.h ****  *  * Neither the name of Willow Garage, Inc. nor the names of its
+  18:./ros_lib/ros/publisher.h ****  *    contributors may be used to endorse or promote prducts derived
+  19:./ros_lib/ros/publisher.h ****  *    from this software without specific prior written permission.
+  20:./ros_lib/ros/publisher.h ****  *
+  21:./ros_lib/ros/publisher.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  22:./ros_lib/ros/publisher.h ****  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  23:./ros_lib/ros/publisher.h ****  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  24:./ros_lib/ros/publisher.h ****  * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  25:./ros_lib/ros/publisher.h ****  * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  26:./ros_lib/ros/publisher.h ****  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  27:./ros_lib/ros/publisher.h ****  * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  28:./ros_lib/ros/publisher.h ****  * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  29:./ros_lib/ros/publisher.h ****  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  30:./ros_lib/ros/publisher.h ****  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  31:./ros_lib/ros/publisher.h ****  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  32:./ros_lib/ros/publisher.h ****  * POSSIBILITY OF SUCH DAMAGE.
+  33:./ros_lib/ros/publisher.h ****  */
+  34:./ros_lib/ros/publisher.h **** 
+  35:./ros_lib/ros/publisher.h **** #ifndef _ROS_PUBLISHER_H_
+  36:./ros_lib/ros/publisher.h **** #define _ROS_PUBLISHER_H_
+  37:./ros_lib/ros/publisher.h **** 
+  38:./ros_lib/ros/publisher.h **** #include "rosserial_msgs/TopicInfo.h"
+  39:./ros_lib/ros/publisher.h **** #include "node_handle.h"
+  40:./ros_lib/ros/publisher.h **** 
+  41:./ros_lib/ros/publisher.h **** namespace ros {
+  42:./ros_lib/ros/publisher.h **** 
+  43:./ros_lib/ros/publisher.h ****   /* Generic Publisher */
+  44:./ros_lib/ros/publisher.h ****   class Publisher
+  45:./ros_lib/ros/publisher.h ****   {
+  46:./ros_lib/ros/publisher.h ****     public:
+  47:./ros_lib/ros/publisher.h ****       Publisher( const char * topic_name, Msg * msg, int endpoint=rosserial_msgs::TopicInfo::ID_PUB
+  67              		.loc 2 47 0
+  68              		.cfi_startproc
+  69 0000 80B5     		push	{r7, lr}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 7, -8
+  72              		.cfi_offset 14, -4
+  73 0002 84B0     		sub	sp, sp, #16
+  74              		.cfi_def_cfa_offset 24
+  75 0004 00AF     		add	r7, sp, #0
+  76              		.cfi_def_cfa_register 7
+  77 0006 F860     		str	r0, [r7, #12]
+  78 0008 B960     		str	r1, [r7, #8]
+  79 000a 7A60     		str	r2, [r7, #4]
+  80 000c 3B60     		str	r3, [r7]
+  81              	.LBB3:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 4
+
+
+  48:./ros_lib/ros/publisher.h ****         topic_(topic_name), 
+  49:./ros_lib/ros/publisher.h ****         msg_(msg),
+  50:./ros_lib/ros/publisher.h ****         endpoint_(endpoint) {};
+  82              		.loc 2 50 0
+  83 000e FB68     		ldr	r3, [r7, #12]
+  84 0010 BA68     		ldr	r2, [r7, #8]
+  85 0012 1A60     		str	r2, [r3]
+  86 0014 FB68     		ldr	r3, [r7, #12]
+  87 0016 7A68     		ldr	r2, [r7, #4]
+  88 0018 5A60     		str	r2, [r3, #4]
+  89 001a FB68     		ldr	r3, [r7, #12]
+  90 001c 3A68     		ldr	r2, [r7]
+  91 001e 1A61     		str	r2, [r3, #16]
+  92              	.LBE3:
+  93 0020 FB68     		ldr	r3, [r7, #12]
+  94 0022 181C     		mov	r0, r3
+  95 0024 BD46     		mov	sp, r7
+  96 0026 04B0     		add	sp, sp, #16
+  97              		@ sp needed
+  98 0028 80BD     		pop	{r7, pc}
+  99              		.cfi_endproc
+ 100              	.LFE58:
+ 101              		.size	_ZN3ros9PublisherC2EPKcPNS_3MsgEi, .-_ZN3ros9PublisherC2EPKcPNS_3MsgEi
+ 102              		.weak	_ZN3ros9PublisherC1EPKcPNS_3MsgEi
+ 103              		.thumb_set _ZN3ros9PublisherC1EPKcPNS_3MsgEi,_ZN3ros9PublisherC2EPKcPNS_3MsgEi
+ 104 002a C046     		.section	.text._ZN3ros9Publisher7publishEPKNS_3MsgE,"axG",%progbits,_ZN3ros9Publisher7publishEPKNS
+ 105              		.align	2
+ 106              		.weak	_ZN3ros9Publisher7publishEPKNS_3MsgE
+ 107              		.code	16
+ 108              		.thumb_func
+ 109              		.type	_ZN3ros9Publisher7publishEPKNS_3MsgE, %function
+ 110              	_ZN3ros9Publisher7publishEPKNS_3MsgE:
+ 111              	.LFB60:
+  51:./ros_lib/ros/publisher.h ****       // rosserial standard signature
+  52:./ros_lib/ros/publisher.h ****       int publish( const Msg * msg ) { return nh_->publish(id_, msg); };
+ 112              		.loc 2 52 0
+ 113              		.cfi_startproc
+ 114 0000 90B5     		push	{r4, r7, lr}
+ 115              		.cfi_def_cfa_offset 12
+ 116              		.cfi_offset 4, -12
+ 117              		.cfi_offset 7, -8
+ 118              		.cfi_offset 14, -4
+ 119 0002 83B0     		sub	sp, sp, #12
+ 120              		.cfi_def_cfa_offset 24
+ 121 0004 00AF     		add	r7, sp, #0
+ 122              		.cfi_def_cfa_register 7
+ 123 0006 7860     		str	r0, [r7, #4]
+ 124 0008 3960     		str	r1, [r7]
+ 125              		.loc 2 52 0
+ 126 000a 7B68     		ldr	r3, [r7, #4]
+ 127 000c DB68     		ldr	r3, [r3, #12]
+ 128 000e 1B68     		ldr	r3, [r3]
+ 129 0010 1C68     		ldr	r4, [r3]
+ 130 0012 7B68     		ldr	r3, [r7, #4]
+ 131 0014 D968     		ldr	r1, [r3, #12]
+ 132 0016 7B68     		ldr	r3, [r7, #4]
+ 133 0018 9A68     		ldr	r2, [r3, #8]
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 5
+
+
+ 134 001a 3B68     		ldr	r3, [r7]
+ 135 001c 081C     		mov	r0, r1
+ 136 001e 111C     		mov	r1, r2
+ 137 0020 1A1C     		mov	r2, r3
+ 138 0022 A047     		blx	r4
+ 139 0024 031C     		mov	r3, r0
+ 140 0026 181C     		mov	r0, r3
+ 141 0028 BD46     		mov	sp, r7
+ 142 002a 03B0     		add	sp, sp, #12
+ 143              		@ sp needed
+ 144 002c 90BD     		pop	{r4, r7, pc}
+ 145              		.cfi_endproc
+ 146              	.LFE60:
+ 147              		.size	_ZN3ros9Publisher7publishEPKNS_3MsgE, .-_ZN3ros9Publisher7publishEPKNS_3MsgE
+ 148 002e C046     		.section	.text._ZN8SysTimer6millisEv,"axG",%progbits,_ZN8SysTimer6millisEv,comdat
+ 149              		.align	2
+ 150              		.weak	_ZN8SysTimer6millisEv
+ 151              		.code	16
+ 152              		.thumb_func
+ 153              		.type	_ZN8SysTimer6millisEv, %function
+ 154              	_ZN8SysTimer6millisEv:
+ 155              	.LFB109:
+ 156              		.file 3 "./ros_lib/SysTimer.h"
+   1:./ros_lib/SysTimer.h **** /* ========================================
+   2:./ros_lib/SysTimer.h ****  *
+   3:./ros_lib/SysTimer.h ****  * The following firmware was developed by Chuck Harrison
+   4:./ros_lib/SysTimer.h ****  * This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+   5:./ros_lib/SysTimer.h ****  * 
+   6:./ros_lib/SysTimer.h ****  * http://creativecommons.org/licenses/by/3.0/deed.en_US
+   7:./ros_lib/SysTimer.h ****  * 
+   8:./ros_lib/SysTimer.h ****  * You are free to:
+   9:./ros_lib/SysTimer.h ****  * -To Share — to copy, distribute and transmit the work 
+  10:./ros_lib/SysTimer.h ****  * -To Remix — to adapt the work 
+  11:./ros_lib/SysTimer.h ****  * -To make commercial use of the work
+  12:./ros_lib/SysTimer.h ****  *
+  13:./ros_lib/SysTimer.h ****  * ========================================
+  14:./ros_lib/SysTimer.h ****  */
+  15:./ros_lib/SysTimer.h **** 
+  16:./ros_lib/SysTimer.h **** #ifndef ROS_SYSTIMER_H_
+  17:./ros_lib/SysTimer.h **** #define ROS_SYSTIMER_H_
+  18:./ros_lib/SysTimer.h **** 
+  19:./ros_lib/SysTimer.h **** typedef void (* cyisraddress)(void); // should we #include the whole cytypes.h?
+  20:./ros_lib/SysTimer.h **** #define CY_ISR(FuncName)        void FuncName (void)
+  21:./ros_lib/SysTimer.h **** 
+  22:./ros_lib/SysTimer.h **** extern "C" {
+  23:./ros_lib/SysTimer.h **** cyisraddress CyIntSetSysVector(uint8_t number, cyisraddress address);
+  24:./ros_lib/SysTimer.h **** }
+  25:./ros_lib/SysTimer.h **** 
+  26:./ros_lib/SysTimer.h **** CY_ISR(SysTick_ISR); //forward declaration for SysTimer::init()
+  27:./ros_lib/SysTimer.h **** 
+  28:./ros_lib/SysTimer.h **** #define SYSTICK_INTERRUPT_VECTOR_NUMBER 15u /* Cortex-M0 hard vector */
+  29:./ros_lib/SysTimer.h **** 
+  30:./ros_lib/SysTimer.h **** /* clock and interrupt rates, in Hz */
+  31:./ros_lib/SysTimer.h **** #define CLOCK_FREQ     24000000u
+  32:./ros_lib/SysTimer.h **** #define INTERRUPT_FREQ 1000u
+  33:./ros_lib/SysTimer.h **** 
+  34:./ros_lib/SysTimer.h **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 6
+
+
+  35:./ros_lib/SysTimer.h **** class SysTimer
+  36:./ros_lib/SysTimer.h **** {
+  37:./ros_lib/SysTimer.h ****   public:
+  38:./ros_lib/SysTimer.h ****     static void init() {
+  39:./ros_lib/SysTimer.h ****       CyIntSetSysVector(SYSTICK_INTERRUPT_VECTOR_NUMBER, SysTick_ISR);
+  40:./ros_lib/SysTimer.h ****       // must eventually do this:
+  41:./ros_lib/SysTimer.h ****       //  SysTick_Config(CLOCK_FREQ / INTERRUPT_FREQ); /* defined in auto-generated core_cm0.h */
+  42:./ros_lib/SysTimer.h ****       //  CyGlobalIntEnable;
+  43:./ros_lib/SysTimer.h ****       millis_ = 0;
+  44:./ros_lib/SysTimer.h ****     };
+  45:./ros_lib/SysTimer.h ****     static uint32_t millis() { return millis_; };
+ 157              		.loc 3 45 0
+ 158              		.cfi_startproc
+ 159 0000 80B5     		push	{r7, lr}
+ 160              		.cfi_def_cfa_offset 8
+ 161              		.cfi_offset 7, -8
+ 162              		.cfi_offset 14, -4
+ 163 0002 00AF     		add	r7, sp, #0
+ 164              		.cfi_def_cfa_register 7
+ 165              		.loc 3 45 0
+ 166 0004 024B     		ldr	r3, .L13
+ 167 0006 1B68     		ldr	r3, [r3]
+ 168 0008 181C     		mov	r0, r3
+ 169 000a BD46     		mov	sp, r7
+ 170              		@ sp needed
+ 171 000c 80BD     		pop	{r7, pc}
+ 172              	.L14:
+ 173 000e C046     		.align	2
+ 174              	.L13:
+ 175 0010 00000000 		.word	_ZN8SysTimer7millis_E
+ 176              		.cfi_endproc
+ 177              	.LFE109:
+ 178              		.size	_ZN8SysTimer6millisEv, .-_ZN8SysTimer6millisEv
+ 179              		.section	.rodata
+ 180              		.align	2
+ 181              	.LC3:
+ 182 0000 00       		.ascii	"\000"
+ 183              		.section	.text._ZN8std_msgs6StringC2Ev,"axG",%progbits,_ZN8std_msgs6StringC5Ev,comdat
+ 184              		.align	2
+ 185              		.weak	_ZN8std_msgs6StringC2Ev
+ 186              		.code	16
+ 187              		.thumb_func
+ 188              		.type	_ZN8std_msgs6StringC2Ev, %function
+ 189              	_ZN8std_msgs6StringC2Ev:
+ 190              	.LFB126:
+ 191              		.file 4 "./ros_lib/std_msgs/String.h"
+   1:./ros_lib/std_msgs/String.h **** #ifndef _ROS_std_msgs_String_h
+   2:./ros_lib/std_msgs/String.h **** #define _ROS_std_msgs_String_h
+   3:./ros_lib/std_msgs/String.h **** 
+   4:./ros_lib/std_msgs/String.h **** #include <stdint.h>
+   5:./ros_lib/std_msgs/String.h **** #include <string.h>
+   6:./ros_lib/std_msgs/String.h **** #include <stdlib.h>
+   7:./ros_lib/std_msgs/String.h **** #include "ros/msg.h"
+   8:./ros_lib/std_msgs/String.h **** 
+   9:./ros_lib/std_msgs/String.h **** namespace std_msgs
+  10:./ros_lib/std_msgs/String.h **** {
+  11:./ros_lib/std_msgs/String.h **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 7
+
+
+  12:./ros_lib/std_msgs/String.h ****   class String : public ros::Msg
+  13:./ros_lib/std_msgs/String.h ****   {
+  14:./ros_lib/std_msgs/String.h ****     public:
+  15:./ros_lib/std_msgs/String.h ****       const char* data;
+  16:./ros_lib/std_msgs/String.h **** 
+  17:./ros_lib/std_msgs/String.h ****     String():
+ 192              		.loc 4 17 0
+ 193              		.cfi_startproc
+ 194 0000 80B5     		push	{r7, lr}
+ 195              		.cfi_def_cfa_offset 8
+ 196              		.cfi_offset 7, -8
+ 197              		.cfi_offset 14, -4
+ 198 0002 82B0     		sub	sp, sp, #8
+ 199              		.cfi_def_cfa_offset 16
+ 200 0004 00AF     		add	r7, sp, #0
+ 201              		.cfi_def_cfa_register 7
+ 202 0006 7860     		str	r0, [r7, #4]
+ 203              	.LBB4:
+  18:./ros_lib/std_msgs/String.h ****       data("")
+ 204              		.loc 4 18 0
+ 205 0008 7B68     		ldr	r3, [r7, #4]
+ 206 000a 181C     		mov	r0, r3
+ 207 000c FFF7FEFF 		bl	_ZN3ros3MsgC2Ev
+ 208 0010 7B68     		ldr	r3, [r7, #4]
+ 209 0012 054A     		ldr	r2, .L18
+ 210 0014 1A60     		str	r2, [r3]
+ 211 0016 7B68     		ldr	r3, [r7, #4]
+ 212 0018 044A     		ldr	r2, .L18+4
+ 213 001a 5A60     		str	r2, [r3, #4]
+ 214              	.LBE4:
+  19:./ros_lib/std_msgs/String.h ****     {
+  20:./ros_lib/std_msgs/String.h ****     }
+ 215              		.loc 4 20 0
+ 216 001c 7B68     		ldr	r3, [r7, #4]
+ 217 001e 181C     		mov	r0, r3
+ 218 0020 BD46     		mov	sp, r7
+ 219 0022 02B0     		add	sp, sp, #8
+ 220              		@ sp needed
+ 221 0024 80BD     		pop	{r7, pc}
+ 222              	.L19:
+ 223 0026 C046     		.align	2
+ 224              	.L18:
+ 225 0028 08000000 		.word	_ZTVN8std_msgs6StringE+8
+ 226 002c 00000000 		.word	.LC3
+ 227              		.cfi_endproc
+ 228              	.LFE126:
+ 229              		.size	_ZN8std_msgs6StringC2Ev, .-_ZN8std_msgs6StringC2Ev
+ 230              		.weak	_ZN8std_msgs6StringC1Ev
+ 231              		.thumb_set _ZN8std_msgs6StringC1Ev,_ZN8std_msgs6StringC2Ev
+ 232              		.section	.text._ZNK8std_msgs6String9serializeEPh,"axG",%progbits,_ZNK8std_msgs6String9serializeEPh
+ 233              		.align	2
+ 234              		.weak	_ZNK8std_msgs6String9serializeEPh
+ 235              		.code	16
+ 236              		.thumb_func
+ 237              		.type	_ZNK8std_msgs6String9serializeEPh, %function
+ 238              	_ZNK8std_msgs6String9serializeEPh:
+ 239              	.LFB128:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 8
+
+
+  21:./ros_lib/std_msgs/String.h **** 
+  22:./ros_lib/std_msgs/String.h ****     virtual int serialize(unsigned char *outbuffer) const
+ 240              		.loc 4 22 0
+ 241              		.cfi_startproc
+ 242 0000 80B5     		push	{r7, lr}
+ 243              		.cfi_def_cfa_offset 8
+ 244              		.cfi_offset 7, -8
+ 245              		.cfi_offset 14, -4
+ 246 0002 84B0     		sub	sp, sp, #16
+ 247              		.cfi_def_cfa_offset 24
+ 248 0004 00AF     		add	r7, sp, #0
+ 249              		.cfi_def_cfa_register 7
+ 250 0006 7860     		str	r0, [r7, #4]
+ 251 0008 3960     		str	r1, [r7]
+ 252              	.LBB5:
+  23:./ros_lib/std_msgs/String.h ****     {
+  24:./ros_lib/std_msgs/String.h ****       int offset = 0;
+ 253              		.loc 4 24 0
+ 254 000a 0023     		mov	r3, #0
+ 255 000c FB60     		str	r3, [r7, #12]
+  25:./ros_lib/std_msgs/String.h **** #ifndef ROS_MSG_DONT_SERIALIZE
+  26:./ros_lib/std_msgs/String.h ****       uint32_t length_data = strlen( (const char*) this->data);
+ 256              		.loc 4 26 0
+ 257 000e 7B68     		ldr	r3, [r7, #4]
+ 258 0010 5B68     		ldr	r3, [r3, #4]
+ 259 0012 181C     		mov	r0, r3
+ 260 0014 FFF7FEFF 		bl	strlen
+ 261 0018 031C     		mov	r3, r0
+ 262 001a BB60     		str	r3, [r7, #8]
+  27:./ros_lib/std_msgs/String.h ****       memcpy(outbuffer + offset, &length_data, sizeof(uint32_t));
+ 263              		.loc 4 27 0
+ 264 001c FB68     		ldr	r3, [r7, #12]
+ 265 001e 3A68     		ldr	r2, [r7]
+ 266 0020 D218     		add	r2, r2, r3
+ 267 0022 0823     		mov	r3, #8
+ 268 0024 FB18     		add	r3, r7, r3
+ 269 0026 101C     		mov	r0, r2
+ 270 0028 191C     		mov	r1, r3
+ 271 002a 0422     		mov	r2, #4
+ 272 002c FFF7FEFF 		bl	memcpy
+  28:./ros_lib/std_msgs/String.h ****       offset += 4;
+ 273              		.loc 4 28 0
+ 274 0030 FB68     		ldr	r3, [r7, #12]
+ 275 0032 0433     		add	r3, r3, #4
+ 276 0034 FB60     		str	r3, [r7, #12]
+  29:./ros_lib/std_msgs/String.h ****       memcpy(outbuffer + offset, this->data, length_data);
+ 277              		.loc 4 29 0
+ 278 0036 FB68     		ldr	r3, [r7, #12]
+ 279 0038 3A68     		ldr	r2, [r7]
+ 280 003a D118     		add	r1, r2, r3
+ 281 003c 7B68     		ldr	r3, [r7, #4]
+ 282 003e 5A68     		ldr	r2, [r3, #4]
+ 283 0040 BB68     		ldr	r3, [r7, #8]
+ 284 0042 081C     		mov	r0, r1
+ 285 0044 111C     		mov	r1, r2
+ 286 0046 1A1C     		mov	r2, r3
+ 287 0048 FFF7FEFF 		bl	memcpy
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 9
+
+
+  30:./ros_lib/std_msgs/String.h ****       offset += length_data;
+ 288              		.loc 4 30 0
+ 289 004c FA68     		ldr	r2, [r7, #12]
+ 290 004e BB68     		ldr	r3, [r7, #8]
+ 291 0050 D318     		add	r3, r2, r3
+ 292 0052 FB60     		str	r3, [r7, #12]
+  31:./ros_lib/std_msgs/String.h **** #endif
+  32:./ros_lib/std_msgs/String.h ****       return offset;
+ 293              		.loc 4 32 0
+ 294 0054 FB68     		ldr	r3, [r7, #12]
+ 295              	.LBE5:
+  33:./ros_lib/std_msgs/String.h ****     }
+ 296              		.loc 4 33 0
+ 297 0056 181C     		mov	r0, r3
+ 298 0058 BD46     		mov	sp, r7
+ 299 005a 04B0     		add	sp, sp, #16
+ 300              		@ sp needed
+ 301 005c 80BD     		pop	{r7, pc}
+ 302              		.cfi_endproc
+ 303              	.LFE128:
+ 304              		.size	_ZNK8std_msgs6String9serializeEPh, .-_ZNK8std_msgs6String9serializeEPh
+ 305 005e C046     		.section	.text._ZN8std_msgs6String11deserializeEPh,"axG",%progbits,_ZN8std_msgs6String11deserializ
+ 306              		.align	2
+ 307              		.weak	_ZN8std_msgs6String11deserializeEPh
+ 308              		.code	16
+ 309              		.thumb_func
+ 310              		.type	_ZN8std_msgs6String11deserializeEPh, %function
+ 311              	_ZN8std_msgs6String11deserializeEPh:
+ 312              	.LFB129:
+  34:./ros_lib/std_msgs/String.h **** 
+  35:./ros_lib/std_msgs/String.h ****     virtual int deserialize(unsigned char *inbuffer)
+ 313              		.loc 4 35 0
+ 314              		.cfi_startproc
+ 315 0000 80B5     		push	{r7, lr}
+ 316              		.cfi_def_cfa_offset 8
+ 317              		.cfi_offset 7, -8
+ 318              		.cfi_offset 14, -4
+ 319 0002 86B0     		sub	sp, sp, #24
+ 320              		.cfi_def_cfa_offset 32
+ 321 0004 00AF     		add	r7, sp, #0
+ 322              		.cfi_def_cfa_register 7
+ 323 0006 7860     		str	r0, [r7, #4]
+ 324 0008 3960     		str	r1, [r7]
+ 325              	.LBB6:
+  36:./ros_lib/std_msgs/String.h ****     {
+  37:./ros_lib/std_msgs/String.h ****       int offset = 0;
+ 326              		.loc 4 37 0
+ 327 000a 0023     		mov	r3, #0
+ 328 000c 3B61     		str	r3, [r7, #16]
+  38:./ros_lib/std_msgs/String.h **** #ifndef ROS_MSG_DONT_DESERIALIZE
+  39:./ros_lib/std_msgs/String.h ****       uint32_t length_data;
+  40:./ros_lib/std_msgs/String.h ****       memcpy(&length_data, (inbuffer + offset), sizeof(uint32_t));
+ 329              		.loc 4 40 0
+ 330 000e 3B69     		ldr	r3, [r7, #16]
+ 331 0010 3A68     		ldr	r2, [r7]
+ 332 0012 D318     		add	r3, r2, r3
+ 333 0014 0C22     		mov	r2, #12
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 10
+
+
+ 334 0016 BA18     		add	r2, r7, r2
+ 335 0018 101C     		mov	r0, r2
+ 336 001a 191C     		mov	r1, r3
+ 337 001c 0422     		mov	r2, #4
+ 338 001e FFF7FEFF 		bl	memcpy
+  41:./ros_lib/std_msgs/String.h ****       offset += 4;
+ 339              		.loc 4 41 0
+ 340 0022 3B69     		ldr	r3, [r7, #16]
+ 341 0024 0433     		add	r3, r3, #4
+ 342 0026 3B61     		str	r3, [r7, #16]
+ 343              	.LBB7:
+  42:./ros_lib/std_msgs/String.h ****       for(unsigned int k= offset; k< offset+length_data; ++k){
+ 344              		.loc 4 42 0
+ 345 0028 3B69     		ldr	r3, [r7, #16]
+ 346 002a 7B61     		str	r3, [r7, #20]
+ 347 002c 0BE0     		b	.L23
+ 348              	.L24:
+  43:./ros_lib/std_msgs/String.h ****           inbuffer[k-1]=inbuffer[k];
+ 349              		.loc 4 43 0 discriminator 3
+ 350 002e 7B69     		ldr	r3, [r7, #20]
+ 351 0030 013B     		sub	r3, r3, #1
+ 352 0032 3A68     		ldr	r2, [r7]
+ 353 0034 D318     		add	r3, r2, r3
+ 354 0036 3968     		ldr	r1, [r7]
+ 355 0038 7A69     		ldr	r2, [r7, #20]
+ 356 003a 8A18     		add	r2, r1, r2
+ 357 003c 1278     		ldrb	r2, [r2]
+ 358 003e 1A70     		strb	r2, [r3]
+  42:./ros_lib/std_msgs/String.h ****       for(unsigned int k= offset; k< offset+length_data; ++k){
+ 359              		.loc 4 42 0 discriminator 3
+ 360 0040 7B69     		ldr	r3, [r7, #20]
+ 361 0042 0133     		add	r3, r3, #1
+ 362 0044 7B61     		str	r3, [r7, #20]
+ 363              	.L23:
+  42:./ros_lib/std_msgs/String.h ****       for(unsigned int k= offset; k< offset+length_data; ++k){
+ 364              		.loc 4 42 0 is_stmt 0 discriminator 1
+ 365 0046 3A69     		ldr	r2, [r7, #16]
+ 366 0048 FB68     		ldr	r3, [r7, #12]
+ 367 004a D218     		add	r2, r2, r3
+ 368 004c 7B69     		ldr	r3, [r7, #20]
+ 369 004e 9A42     		cmp	r2, r3
+ 370 0050 EDD8     		bhi	.L24
+ 371              	.LBE7:
+  44:./ros_lib/std_msgs/String.h ****       }
+  45:./ros_lib/std_msgs/String.h ****       inbuffer[offset+length_data-1]=0;
+ 372              		.loc 4 45 0 is_stmt 1
+ 373 0052 3A69     		ldr	r2, [r7, #16]
+ 374 0054 FB68     		ldr	r3, [r7, #12]
+ 375 0056 D318     		add	r3, r2, r3
+ 376 0058 013B     		sub	r3, r3, #1
+ 377 005a 3A68     		ldr	r2, [r7]
+ 378 005c D318     		add	r3, r2, r3
+ 379 005e 0022     		mov	r2, #0
+ 380 0060 1A70     		strb	r2, [r3]
+  46:./ros_lib/std_msgs/String.h ****       this->data = (char *)(inbuffer + offset-1);
+ 381              		.loc 4 46 0
+ 382 0062 3B69     		ldr	r3, [r7, #16]
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 11
+
+
+ 383 0064 013B     		sub	r3, r3, #1
+ 384 0066 3A68     		ldr	r2, [r7]
+ 385 0068 D218     		add	r2, r2, r3
+ 386 006a 7B68     		ldr	r3, [r7, #4]
+ 387 006c 5A60     		str	r2, [r3, #4]
+  47:./ros_lib/std_msgs/String.h ****       offset += length_data;
+ 388              		.loc 4 47 0
+ 389 006e 3A69     		ldr	r2, [r7, #16]
+ 390 0070 FB68     		ldr	r3, [r7, #12]
+ 391 0072 D318     		add	r3, r2, r3
+ 392 0074 3B61     		str	r3, [r7, #16]
+  48:./ros_lib/std_msgs/String.h **** #endif
+  49:./ros_lib/std_msgs/String.h ****      return offset;
+ 393              		.loc 4 49 0
+ 394 0076 3B69     		ldr	r3, [r7, #16]
+ 395              	.LBE6:
+  50:./ros_lib/std_msgs/String.h ****     }
+ 396              		.loc 4 50 0
+ 397 0078 181C     		mov	r0, r3
+ 398 007a BD46     		mov	sp, r7
+ 399 007c 06B0     		add	sp, sp, #24
+ 400              		@ sp needed
+ 401 007e 80BD     		pop	{r7, pc}
+ 402              		.cfi_endproc
+ 403              	.LFE129:
+ 404              		.size	_ZN8std_msgs6String11deserializeEPh, .-_ZN8std_msgs6String11deserializeEPh
+ 405              		.section	.rodata
+ 406 0001 000000   		.align	2
+ 407              	.LC5:
+ 408 0004 7374645F 		.ascii	"std_msgs/String\000"
+ 408      6D736773 
+ 408      2F537472 
+ 408      696E6700 
+ 409              		.section	.text._ZN8std_msgs6String7getTypeEv,"axG",%progbits,_ZN8std_msgs6String7getTypeEv,comdat
+ 410              		.align	2
+ 411              		.weak	_ZN8std_msgs6String7getTypeEv
+ 412              		.code	16
+ 413              		.thumb_func
+ 414              		.type	_ZN8std_msgs6String7getTypeEv, %function
+ 415              	_ZN8std_msgs6String7getTypeEv:
+ 416              	.LFB130:
+  51:./ros_lib/std_msgs/String.h **** 
+  52:./ros_lib/std_msgs/String.h ****     const char * getType(){ return "std_msgs/String"; };
+ 417              		.loc 4 52 0
+ 418              		.cfi_startproc
+ 419 0000 80B5     		push	{r7, lr}
+ 420              		.cfi_def_cfa_offset 8
+ 421              		.cfi_offset 7, -8
+ 422              		.cfi_offset 14, -4
+ 423 0002 82B0     		sub	sp, sp, #8
+ 424              		.cfi_def_cfa_offset 16
+ 425 0004 00AF     		add	r7, sp, #0
+ 426              		.cfi_def_cfa_register 7
+ 427 0006 7860     		str	r0, [r7, #4]
+ 428              		.loc 4 52 0
+ 429 0008 024B     		ldr	r3, .L28
+ 430 000a 181C     		mov	r0, r3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 12
+
+
+ 431 000c BD46     		mov	sp, r7
+ 432 000e 02B0     		add	sp, sp, #8
+ 433              		@ sp needed
+ 434 0010 80BD     		pop	{r7, pc}
+ 435              	.L29:
+ 436 0012 C046     		.align	2
+ 437              	.L28:
+ 438 0014 04000000 		.word	.LC5
+ 439              		.cfi_endproc
+ 440              	.LFE130:
+ 441              		.size	_ZN8std_msgs6String7getTypeEv, .-_ZN8std_msgs6String7getTypeEv
+ 442              		.section	.rodata
+ 443              		.align	2
+ 444              	.LC7:
+ 445 0014 39393263 		.ascii	"992ce8a1687cec8c8bd883ec73ca41d1\000"
+ 445      65386131 
+ 445      36383763 
+ 445      65633863 
+ 445      38626438 
+ 446              		.section	.text._ZN8std_msgs6String6getMD5Ev,"axG",%progbits,_ZN8std_msgs6String6getMD5Ev,comdat
+ 447              		.align	2
+ 448              		.weak	_ZN8std_msgs6String6getMD5Ev
+ 449              		.code	16
+ 450              		.thumb_func
+ 451              		.type	_ZN8std_msgs6String6getMD5Ev, %function
+ 452              	_ZN8std_msgs6String6getMD5Ev:
+ 453              	.LFB131:
+  53:./ros_lib/std_msgs/String.h ****     const char * getMD5(){ return "992ce8a1687cec8c8bd883ec73ca41d1"; };
+ 454              		.loc 4 53 0
+ 455              		.cfi_startproc
+ 456 0000 80B5     		push	{r7, lr}
+ 457              		.cfi_def_cfa_offset 8
+ 458              		.cfi_offset 7, -8
+ 459              		.cfi_offset 14, -4
+ 460 0002 82B0     		sub	sp, sp, #8
+ 461              		.cfi_def_cfa_offset 16
+ 462 0004 00AF     		add	r7, sp, #0
+ 463              		.cfi_def_cfa_register 7
+ 464 0006 7860     		str	r0, [r7, #4]
+ 465              		.loc 4 53 0
+ 466 0008 024B     		ldr	r3, .L32
+ 467 000a 181C     		mov	r0, r3
+ 468 000c BD46     		mov	sp, r7
+ 469 000e 02B0     		add	sp, sp, #8
+ 470              		@ sp needed
+ 471 0010 80BD     		pop	{r7, pc}
+ 472              	.L33:
+ 473 0012 C046     		.align	2
+ 474              	.L32:
+ 475 0014 14000000 		.word	.LC7
+ 476              		.cfi_endproc
+ 477              	.LFE131:
+ 478              		.size	_ZN8std_msgs6String6getMD5Ev, .-_ZN8std_msgs6String6getMD5Ev
+ 479              		.global	_ZN10HelloWorld7str_msgE
+ 480              		.bss
+ 481              		.align	2
+ 482              		.type	_ZN10HelloWorld7str_msgE, %object
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 13
+
+
+ 483              		.size	_ZN10HelloWorld7str_msgE, 8
+ 484              	_ZN10HelloWorld7str_msgE:
+ 485 0000 00000000 		.space	8
+ 485      00000000 
+ 486              		.global	_ZN10HelloWorld7chatterE
+ 487              		.align	2
+ 488              		.type	_ZN10HelloWorld7chatterE, %object
+ 489              		.size	_ZN10HelloWorld7chatterE, 20
+ 490              	_ZN10HelloWorld7chatterE:
+ 491 0008 00000000 		.space	20
+ 491      00000000 
+ 491      00000000 
+ 491      00000000 
+ 491      00000000 
+ 492              		.global	_ZN10HelloWorld5helloE
+ 493              		.data
+ 494              		.align	2
+ 495              		.type	_ZN10HelloWorld5helloE, %object
+ 496              		.size	_ZN10HelloWorld5helloE, 13
+ 497              	_ZN10HelloWorld5helloE:
+ 498 0000 68656C6C 		.ascii	"hello world!\000"
+ 498      6F20776F 
+ 498      726C6421 
+ 498      00
+ 499              		.global	_ZN10HelloWorld9next_timeE
+ 500 000d 000000   		.bss
+ 501              		.align	2
+ 502              		.type	_ZN10HelloWorld9next_timeE, %object
+ 503              		.size	_ZN10HelloWorld9next_timeE, 4
+ 504              	_ZN10HelloWorld9next_timeE:
+ 505 001c 00000000 		.space	4
+ 506              		.section	.text._ZN10HelloWorld5setupEv,"ax",%progbits
+ 507              		.align	2
+ 508              		.global	_ZN10HelloWorld5setupEv
+ 509              		.code	16
+ 510              		.thumb_func
+ 511              		.type	_ZN10HelloWorld5setupEv, %function
+ 512              	_ZN10HelloWorld5setupEv:
+ 513              	.LFB132:
+ 514              		.file 5 ".\\ros_lib\\examples\\HelloWorld\\HelloWorld.cpp"
+   1:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** /*
+   2:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****  * rosserial Publisher Example
+   3:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****  * Prints "hello world!"
+   4:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****  */
+   5:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+   6:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** #include <ros.h>
+   7:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** #include <std_msgs/String.h>
+   8:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** extern ros::NodeHandle  nh;
+   9:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+  10:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** namespace HelloWorld {
+  11:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+  12:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** std_msgs::String str_msg;
+  13:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** ros::Publisher chatter("chatter", &str_msg);
+  14:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+  15:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** char hello[13] = "hello world!";
+  16:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** uint32_t next_time;
+  17:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 14
+
+
+  18:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** void setup()
+  19:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** {
+ 515              		.loc 5 19 0
+ 516              		.cfi_startproc
+ 517 0000 80B5     		push	{r7, lr}
+ 518              		.cfi_def_cfa_offset 8
+ 519              		.cfi_offset 7, -8
+ 520              		.cfi_offset 14, -4
+ 521 0002 00AF     		add	r7, sp, #0
+ 522              		.cfi_def_cfa_register 7
+  20:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****   nh.advertise(chatter);
+ 523              		.loc 5 20 0
+ 524 0004 064A     		ldr	r2, .L35
+ 525 0006 074B     		ldr	r3, .L35+4
+ 526 0008 101C     		mov	r0, r2
+ 527 000a 191C     		mov	r1, r3
+ 528 000c FFF7FEFF 		bl	_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9PublisherE
+  21:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****   next_time = SysTimer::millis();
+ 529              		.loc 5 21 0
+ 530 0010 FFF7FEFF 		bl	_ZN8SysTimer6millisEv
+ 531 0014 021C     		mov	r2, r0
+ 532 0016 044B     		ldr	r3, .L35+8
+ 533 0018 1A60     		str	r2, [r3]
+  22:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** }
+ 534              		.loc 5 22 0
+ 535 001a BD46     		mov	sp, r7
+ 536              		@ sp needed
+ 537 001c 80BD     		pop	{r7, pc}
+ 538              	.L36:
+ 539 001e C046     		.align	2
+ 540              	.L35:
+ 541 0020 00000000 		.word	nh
+ 542 0024 00000000 		.word	_ZN10HelloWorld7chatterE
+ 543 0028 00000000 		.word	_ZN10HelloWorld9next_timeE
+ 544              		.cfi_endproc
+ 545              	.LFE132:
+ 546              		.size	_ZN10HelloWorld5setupEv, .-_ZN10HelloWorld5setupEv
+ 547              		.section	.text._ZN10HelloWorld4loopEv,"ax",%progbits
+ 548              		.align	2
+ 549              		.global	_ZN10HelloWorld4loopEv
+ 550              		.code	16
+ 551              		.thumb_func
+ 552              		.type	_ZN10HelloWorld4loopEv, %function
+ 553              	_ZN10HelloWorld4loopEv:
+ 554              	.LFB133:
+  23:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+  24:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** void loop()
+  25:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** {
+ 555              		.loc 5 25 0
+ 556              		.cfi_startproc
+ 557 0000 80B5     		push	{r7, lr}
+ 558              		.cfi_def_cfa_offset 8
+ 559              		.cfi_offset 7, -8
+ 560              		.cfi_offset 14, -4
+ 561 0002 00AF     		add	r7, sp, #0
+ 562              		.cfi_def_cfa_register 7
+  26:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****   if ((int32_t)(SysTimer::millis()-next_time)>0) {
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 15
+
+
+ 563              		.loc 5 26 0
+ 564 0004 FFF7FEFF 		bl	_ZN8SysTimer6millisEv
+ 565 0008 021C     		mov	r2, r0
+ 566 000a 0D4B     		ldr	r3, .L39
+ 567 000c 1B68     		ldr	r3, [r3]
+ 568 000e D31A     		sub	r3, r2, r3
+ 569 0010 DA17     		asr	r2, r3, #31
+ 570 0012 D31A     		sub	r3, r2, r3
+ 571 0014 DB0F     		lsr	r3, r3, #31
+ 572 0016 DBB2     		uxtb	r3, r3
+ 573 0018 002B     		cmp	r3, #0
+ 574 001a 0FD0     		beq	.L37
+  27:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****     next_time += 1000; // delay 1 sec
+ 575              		.loc 5 27 0
+ 576 001c 084B     		ldr	r3, .L39
+ 577 001e 1B68     		ldr	r3, [r3]
+ 578 0020 FA22     		mov	r2, #250
+ 579 0022 9200     		lsl	r2, r2, #2
+ 580 0024 9A18     		add	r2, r3, r2
+ 581 0026 064B     		ldr	r3, .L39
+ 582 0028 1A60     		str	r2, [r3]
+  28:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****     str_msg.data = hello;
+ 583              		.loc 5 28 0
+ 584 002a 064B     		ldr	r3, .L39+4
+ 585 002c 064A     		ldr	r2, .L39+8
+ 586 002e 5A60     		str	r2, [r3, #4]
+  29:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****     chatter.publish( &str_msg );
+ 587              		.loc 5 29 0
+ 588 0030 064A     		ldr	r2, .L39+12
+ 589 0032 044B     		ldr	r3, .L39+4
+ 590 0034 101C     		mov	r0, r2
+ 591 0036 191C     		mov	r1, r3
+ 592 0038 FFF7FEFF 		bl	_ZN3ros9Publisher7publishEPKNS_3MsgE
+ 593              	.L37:
+  30:.\ros_lib\examples\HelloWorld/HelloWorld.cpp ****   }
+  31:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** }
+ 594              		.loc 5 31 0
+ 595 003c BD46     		mov	sp, r7
+ 596              		@ sp needed
+ 597 003e 80BD     		pop	{r7, pc}
+ 598              	.L40:
+ 599              		.align	2
+ 600              	.L39:
+ 601 0040 00000000 		.word	_ZN10HelloWorld9next_timeE
+ 602 0044 00000000 		.word	_ZN10HelloWorld7str_msgE
+ 603 0048 00000000 		.word	_ZN10HelloWorld5helloE
+ 604 004c 00000000 		.word	_ZN10HelloWorld7chatterE
+ 605              		.cfi_endproc
+ 606              	.LFE133:
+ 607              		.size	_ZN10HelloWorld4loopEv, .-_ZN10HelloWorld4loopEv
+ 608              		.section	.text._ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9Publishe
+ 609              		.align	2
+ 610              		.weak	_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9PublisherE
+ 611              		.code	16
+ 612              		.thumb_func
+ 613              		.type	_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9PublisherE, %func
+ 614              	_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9PublisherE:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 16
+
+
+ 615              	.LFB134:
+ 616              		.file 6 "./ros_lib/ros/node_handle.h"
+   1:./ros_lib/ros/node_handle.h **** /*
+   2:./ros_lib/ros/node_handle.h ****  * Software License Agreement (BSD License)
+   3:./ros_lib/ros/node_handle.h ****  *
+   4:./ros_lib/ros/node_handle.h ****  * Copyright (c) 2011, Willow Garage, Inc.
+   5:./ros_lib/ros/node_handle.h ****  * All rights reserved.
+   6:./ros_lib/ros/node_handle.h ****  *
+   7:./ros_lib/ros/node_handle.h ****  * Redistribution and use in source and binary forms, with or without
+   8:./ros_lib/ros/node_handle.h ****  * modification, are permitted provided that the following conditions
+   9:./ros_lib/ros/node_handle.h ****  * are met:
+  10:./ros_lib/ros/node_handle.h ****  *
+  11:./ros_lib/ros/node_handle.h ****  *  * Redistributions of source code must retain the above copyright
+  12:./ros_lib/ros/node_handle.h ****  *    notice, this list of conditions and the following disclaimer.
+  13:./ros_lib/ros/node_handle.h ****  *  * Redistributions in binary form must reproduce the above
+  14:./ros_lib/ros/node_handle.h ****  *    copyright notice, this list of conditions and the following
+  15:./ros_lib/ros/node_handle.h ****  *    disclaimer in the documentation and/or other materials provided
+  16:./ros_lib/ros/node_handle.h ****  *    with the distribution.
+  17:./ros_lib/ros/node_handle.h ****  *  * Neither the name of Willow Garage, Inc. nor the names of its
+  18:./ros_lib/ros/node_handle.h ****  *    contributors may be used to endorse or promote prducts derived
+  19:./ros_lib/ros/node_handle.h ****  *    from this software without specific prior written permission.
+  20:./ros_lib/ros/node_handle.h ****  *
+  21:./ros_lib/ros/node_handle.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  22:./ros_lib/ros/node_handle.h ****  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  23:./ros_lib/ros/node_handle.h ****  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  24:./ros_lib/ros/node_handle.h ****  * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  25:./ros_lib/ros/node_handle.h ****  * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  26:./ros_lib/ros/node_handle.h ****  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  27:./ros_lib/ros/node_handle.h ****  * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  28:./ros_lib/ros/node_handle.h ****  * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  29:./ros_lib/ros/node_handle.h ****  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  30:./ros_lib/ros/node_handle.h ****  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  31:./ros_lib/ros/node_handle.h ****  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  32:./ros_lib/ros/node_handle.h ****  * POSSIBILITY OF SUCH DAMAGE.
+  33:./ros_lib/ros/node_handle.h ****  */
+  34:./ros_lib/ros/node_handle.h **** 
+  35:./ros_lib/ros/node_handle.h **** #ifndef ROS_NODE_HANDLE_H_
+  36:./ros_lib/ros/node_handle.h **** #define ROS_NODE_HANDLE_H_
+  37:./ros_lib/ros/node_handle.h **** 
+  38:./ros_lib/ros/node_handle.h **** #ifndef PARAM_REQ_SUPPORT
+  39:./ros_lib/ros/node_handle.h **** #define PARAM_REQ_SUPPORT 1
+  40:./ros_lib/ros/node_handle.h **** #endif
+  41:./ros_lib/ros/node_handle.h **** 
+  42:./ros_lib/ros/node_handle.h **** #include "std_msgs/Time.h"
+  43:./ros_lib/ros/node_handle.h **** #include "rosserial_msgs/TopicInfo.h"
+  44:./ros_lib/ros/node_handle.h **** #include "rosserial_msgs/Log.h"
+  45:./ros_lib/ros/node_handle.h **** #if PARAM_REQ_SUPPORT
+  46:./ros_lib/ros/node_handle.h **** #include "rosserial_msgs/RequestParam.h"
+  47:./ros_lib/ros/node_handle.h **** #endif
+  48:./ros_lib/ros/node_handle.h **** 
+  49:./ros_lib/ros/node_handle.h **** #define SYNC_SECONDS        2
+  50:./ros_lib/ros/node_handle.h **** 
+  51:./ros_lib/ros/node_handle.h **** #define MODE_FIRST_FF       0
+  52:./ros_lib/ros/node_handle.h **** /*
+  53:./ros_lib/ros/node_handle.h ****  * The second sync byte is a protocol version. It's value is 0xff for the first
+  54:./ros_lib/ros/node_handle.h ****  * version of the rosserial protocol (used up to hydro), 0xfe for the second version
+  55:./ros_lib/ros/node_handle.h ****  * (introduced in hydro), 0xfd for the next, and so on. Its purpose is to enable
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 17
+
+
+  56:./ros_lib/ros/node_handle.h ****  * detection of mismatched protocol versions (e.g. hydro rosserial_python with groovy
+  57:./ros_lib/ros/node_handle.h ****  * rosserial_arduino. It must be changed in both this file and in
+  58:./ros_lib/ros/node_handle.h ****  * rosserial_python/src/rosserial_python/SerialClient.py
+  59:./ros_lib/ros/node_handle.h ****  */
+  60:./ros_lib/ros/node_handle.h **** #define MODE_PROTOCOL_VER   1
+  61:./ros_lib/ros/node_handle.h **** #define PROTOCOL_VER1		0xff // through groovy
+  62:./ros_lib/ros/node_handle.h **** #define PROTOCOL_VER2		0xfe // in hydro
+  63:./ros_lib/ros/node_handle.h **** #define PROTOCOL_VER 		PROTOCOL_VER2
+  64:./ros_lib/ros/node_handle.h **** #define MODE_SIZE_L         2   
+  65:./ros_lib/ros/node_handle.h **** #define MODE_SIZE_H         3
+  66:./ros_lib/ros/node_handle.h **** #define MODE_SIZE_CHECKSUM  4   // checksum for msg size received from size L and H
+  67:./ros_lib/ros/node_handle.h **** #define MODE_TOPIC_L        5   // waiting for topic id
+  68:./ros_lib/ros/node_handle.h **** #define MODE_TOPIC_H        6
+  69:./ros_lib/ros/node_handle.h **** #define MODE_MESSAGE        7
+  70:./ros_lib/ros/node_handle.h **** #define MODE_MSG_CHECKSUM   8   // checksum for msg and topic id 
+  71:./ros_lib/ros/node_handle.h **** 
+  72:./ros_lib/ros/node_handle.h **** 
+  73:./ros_lib/ros/node_handle.h **** #define MSG_TIMEOUT 200  // was 20 milliseconds to recieve all of message data
+  74:./ros_lib/ros/node_handle.h **** 
+  75:./ros_lib/ros/node_handle.h **** #include "msg.h"
+  76:./ros_lib/ros/node_handle.h **** 
+  77:./ros_lib/ros/node_handle.h **** namespace ros {
+  78:./ros_lib/ros/node_handle.h **** 
+  79:./ros_lib/ros/node_handle.h ****   class NodeHandleBase_{
+  80:./ros_lib/ros/node_handle.h ****     public:
+  81:./ros_lib/ros/node_handle.h ****       virtual int publish(int id, const Msg* msg)=0;
+  82:./ros_lib/ros/node_handle.h ****       virtual int spinOnce()=0;
+  83:./ros_lib/ros/node_handle.h ****       virtual bool connected()=0;
+  84:./ros_lib/ros/node_handle.h ****     };
+  85:./ros_lib/ros/node_handle.h **** }
+  86:./ros_lib/ros/node_handle.h **** 
+  87:./ros_lib/ros/node_handle.h **** #include "publisher.h"
+  88:./ros_lib/ros/node_handle.h **** #include "subscriber.h"
+  89:./ros_lib/ros/node_handle.h **** #include "service_server.h"
+  90:./ros_lib/ros/node_handle.h **** #include "service_client.h"
+  91:./ros_lib/ros/node_handle.h **** 
+  92:./ros_lib/ros/node_handle.h **** namespace ros {
+  93:./ros_lib/ros/node_handle.h **** 
+  94:./ros_lib/ros/node_handle.h ****   using rosserial_msgs::TopicInfo;
+  95:./ros_lib/ros/node_handle.h **** 
+  96:./ros_lib/ros/node_handle.h ****   /* Node Handle */
+  97:./ros_lib/ros/node_handle.h ****   template<class Hardware,
+  98:./ros_lib/ros/node_handle.h ****            int MAX_SUBSCRIBERS=25,
+  99:./ros_lib/ros/node_handle.h ****            int MAX_PUBLISHERS=25,
+ 100:./ros_lib/ros/node_handle.h ****            int INPUT_SIZE=512,
+ 101:./ros_lib/ros/node_handle.h ****            int OUTPUT_SIZE=512>
+ 102:./ros_lib/ros/node_handle.h ****   class NodeHandle_ : public NodeHandleBase_
+ 103:./ros_lib/ros/node_handle.h ****   {
+ 104:./ros_lib/ros/node_handle.h ****     protected:
+ 105:./ros_lib/ros/node_handle.h ****       Hardware hardware_;
+ 106:./ros_lib/ros/node_handle.h **** 
+ 107:./ros_lib/ros/node_handle.h ****       /* time used for syncing */
+ 108:./ros_lib/ros/node_handle.h ****       unsigned long rt_time;
+ 109:./ros_lib/ros/node_handle.h **** 
+ 110:./ros_lib/ros/node_handle.h ****       /* used for computing current time */
+ 111:./ros_lib/ros/node_handle.h ****       unsigned long sec_offset, nsec_offset;
+ 112:./ros_lib/ros/node_handle.h **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 18
+
+
+ 113:./ros_lib/ros/node_handle.h ****       unsigned char message_in[INPUT_SIZE];
+ 114:./ros_lib/ros/node_handle.h ****       unsigned char message_out[OUTPUT_SIZE];
+ 115:./ros_lib/ros/node_handle.h **** 
+ 116:./ros_lib/ros/node_handle.h ****       Publisher * publishers[MAX_PUBLISHERS];
+ 117:./ros_lib/ros/node_handle.h ****       Subscriber_ * subscribers[MAX_SUBSCRIBERS];
+ 118:./ros_lib/ros/node_handle.h **** 
+ 119:./ros_lib/ros/node_handle.h ****       /*
+ 120:./ros_lib/ros/node_handle.h ****        * Setup Functions
+ 121:./ros_lib/ros/node_handle.h ****        */
+ 122:./ros_lib/ros/node_handle.h ****     public:
+ 123:./ros_lib/ros/node_handle.h ****       NodeHandle_() : configured_(false) {
+ 124:./ros_lib/ros/node_handle.h **** #if true
+ 125:./ros_lib/ros/node_handle.h ****         for(unsigned int i=0; i< MAX_PUBLISHERS; i++) 
+ 126:./ros_lib/ros/node_handle.h **** 	   publishers[i] = 0;
+ 127:./ros_lib/ros/node_handle.h **** 
+ 128:./ros_lib/ros/node_handle.h ****         for(unsigned int i=0; i< MAX_SUBSCRIBERS; i++) 
+ 129:./ros_lib/ros/node_handle.h **** 	   subscribers[i] = 0;
+ 130:./ros_lib/ros/node_handle.h **** 
+ 131:./ros_lib/ros/node_handle.h ****         for(unsigned int i=0; i< INPUT_SIZE; i++) 
+ 132:./ros_lib/ros/node_handle.h **** 	   message_in[i] = 0;
+ 133:./ros_lib/ros/node_handle.h **** 
+ 134:./ros_lib/ros/node_handle.h ****         for(unsigned int i=0; i< OUTPUT_SIZE; i++) 
+ 135:./ros_lib/ros/node_handle.h **** 	   message_out[i] = 0;
+ 136:./ros_lib/ros/node_handle.h **** 
+ 137:./ros_lib/ros/node_handle.h ****         req_param_resp.ints_length = 0;
+ 138:./ros_lib/ros/node_handle.h ****         req_param_resp.ints = NULL;
+ 139:./ros_lib/ros/node_handle.h ****         req_param_resp.floats_length = 0;
+ 140:./ros_lib/ros/node_handle.h ****         req_param_resp.floats = NULL;
+ 141:./ros_lib/ros/node_handle.h ****         req_param_resp.ints_length = 0;
+ 142:./ros_lib/ros/node_handle.h ****         req_param_resp.ints = NULL;
+ 143:./ros_lib/ros/node_handle.h ****       }
+ 144:./ros_lib/ros/node_handle.h **** #endif      
+ 145:./ros_lib/ros/node_handle.h ****       Hardware* getHardware(){
+ 146:./ros_lib/ros/node_handle.h ****         return &hardware_;
+ 147:./ros_lib/ros/node_handle.h ****       }
+ 148:./ros_lib/ros/node_handle.h **** 
+ 149:./ros_lib/ros/node_handle.h ****       /* Start serial, initialize buffers */
+ 150:./ros_lib/ros/node_handle.h ****       void initNode(){
+ 151:./ros_lib/ros/node_handle.h ****         hardware_.init();
+ 152:./ros_lib/ros/node_handle.h ****         mode_ = 0;
+ 153:./ros_lib/ros/node_handle.h ****         bytes_ = 0;
+ 154:./ros_lib/ros/node_handle.h ****         index_ = 0;
+ 155:./ros_lib/ros/node_handle.h ****         topic_ = 0;
+ 156:./ros_lib/ros/node_handle.h ****       };
+ 157:./ros_lib/ros/node_handle.h **** 
+ 158:./ros_lib/ros/node_handle.h ****       /* Start a named port, which may be network server IP, initialize buffers */
+ 159:./ros_lib/ros/node_handle.h ****       void initNode(char *portName){
+ 160:./ros_lib/ros/node_handle.h ****         hardware_.init(portName);
+ 161:./ros_lib/ros/node_handle.h ****         mode_ = 0;
+ 162:./ros_lib/ros/node_handle.h ****         bytes_ = 0;
+ 163:./ros_lib/ros/node_handle.h ****         index_ = 0;
+ 164:./ros_lib/ros/node_handle.h ****         topic_ = 0;
+ 165:./ros_lib/ros/node_handle.h ****       };
+ 166:./ros_lib/ros/node_handle.h **** 
+ 167:./ros_lib/ros/node_handle.h ****     protected:
+ 168:./ros_lib/ros/node_handle.h ****       //State machine variables for spinOnce
+ 169:./ros_lib/ros/node_handle.h ****       int mode_;
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 19
+
+
+ 170:./ros_lib/ros/node_handle.h ****       int bytes_;
+ 171:./ros_lib/ros/node_handle.h ****       int topic_;
+ 172:./ros_lib/ros/node_handle.h ****       int index_;
+ 173:./ros_lib/ros/node_handle.h ****       int checksum_;
+ 174:./ros_lib/ros/node_handle.h **** 
+ 175:./ros_lib/ros/node_handle.h ****       bool configured_;
+ 176:./ros_lib/ros/node_handle.h **** 
+ 177:./ros_lib/ros/node_handle.h ****       /* used for syncing the time */
+ 178:./ros_lib/ros/node_handle.h ****       unsigned long last_sync_time;
+ 179:./ros_lib/ros/node_handle.h ****       unsigned long last_sync_receive_time;
+ 180:./ros_lib/ros/node_handle.h ****       unsigned long last_msg_timeout_time;
+ 181:./ros_lib/ros/node_handle.h **** 
+ 182:./ros_lib/ros/node_handle.h ****     public:
+ 183:./ros_lib/ros/node_handle.h ****       /* This function goes in your loop() function, it handles
+ 184:./ros_lib/ros/node_handle.h ****        *  serial input and callbacks for subscribers.
+ 185:./ros_lib/ros/node_handle.h ****        */
+ 186:./ros_lib/ros/node_handle.h **** 
+ 187:./ros_lib/ros/node_handle.h **** 
+ 188:./ros_lib/ros/node_handle.h ****       virtual int spinOnce(){
+ 189:./ros_lib/ros/node_handle.h **** 
+ 190:./ros_lib/ros/node_handle.h ****         /* restart if timed out */
+ 191:./ros_lib/ros/node_handle.h ****         unsigned long c_time = hardware_.time();
+ 192:./ros_lib/ros/node_handle.h ****         if( (c_time - last_sync_receive_time) > (SYNC_SECONDS*1100) ){
+ 193:./ros_lib/ros/node_handle.h ****             configured_ = false;
+ 194:./ros_lib/ros/node_handle.h ****          }
+ 195:./ros_lib/ros/node_handle.h ****          
+ 196:./ros_lib/ros/node_handle.h ****         /* reset if message has timed out */
+ 197:./ros_lib/ros/node_handle.h ****         if ( mode_ != MODE_FIRST_FF){ 
+ 198:./ros_lib/ros/node_handle.h ****           if (c_time > last_msg_timeout_time){
+ 199:./ros_lib/ros/node_handle.h ****             mode_ = MODE_FIRST_FF;
+ 200:./ros_lib/ros/node_handle.h ****           }
+ 201:./ros_lib/ros/node_handle.h ****         }
+ 202:./ros_lib/ros/node_handle.h **** 
+ 203:./ros_lib/ros/node_handle.h ****         /* while available buffer, read data */
+ 204:./ros_lib/ros/node_handle.h ****         while( true )
+ 205:./ros_lib/ros/node_handle.h ****         {
+ 206:./ros_lib/ros/node_handle.h ****           int data = hardware_.read();
+ 207:./ros_lib/ros/node_handle.h ****           if( data < 0 )
+ 208:./ros_lib/ros/node_handle.h ****             break;
+ 209:./ros_lib/ros/node_handle.h ****           checksum_ += data;
+ 210:./ros_lib/ros/node_handle.h ****           if( mode_ == MODE_MESSAGE ){        /* message data being recieved */
+ 211:./ros_lib/ros/node_handle.h ****             message_in[index_++] = data;
+ 212:./ros_lib/ros/node_handle.h ****             bytes_--;
+ 213:./ros_lib/ros/node_handle.h ****             if(bytes_ == 0)                  /* is message complete? if so, checksum */
+ 214:./ros_lib/ros/node_handle.h ****               mode_ = MODE_MSG_CHECKSUM;
+ 215:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_FIRST_FF ){
+ 216:./ros_lib/ros/node_handle.h ****             if(data == 0xff){
+ 217:./ros_lib/ros/node_handle.h ****               mode_++;
+ 218:./ros_lib/ros/node_handle.h ****               last_msg_timeout_time = c_time + MSG_TIMEOUT;
+ 219:./ros_lib/ros/node_handle.h ****             }
+ 220:./ros_lib/ros/node_handle.h ****             else if( hardware_.time() - c_time > (SYNC_SECONDS)){
+ 221:./ros_lib/ros/node_handle.h ****               /* We have been stuck in spinOnce too long, return error */
+ 222:./ros_lib/ros/node_handle.h ****               configured_=false;
+ 223:./ros_lib/ros/node_handle.h ****               return -2;
+ 224:./ros_lib/ros/node_handle.h ****             }
+ 225:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_PROTOCOL_VER ){
+ 226:./ros_lib/ros/node_handle.h ****             if(data == PROTOCOL_VER){
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 20
+
+
+ 227:./ros_lib/ros/node_handle.h ****               mode_++;
+ 228:./ros_lib/ros/node_handle.h ****             }else{
+ 229:./ros_lib/ros/node_handle.h ****               mode_ = MODE_FIRST_FF;
+ 230:./ros_lib/ros/node_handle.h ****               if (configured_ == false)
+ 231:./ros_lib/ros/node_handle.h ****                   requestSyncTime(); 	/* send a msg back showing our protocol version */
+ 232:./ros_lib/ros/node_handle.h ****             }
+ 233:./ros_lib/ros/node_handle.h **** 	  }else if( mode_ == MODE_SIZE_L ){   /* bottom half of message size */
+ 234:./ros_lib/ros/node_handle.h ****             bytes_ = data;
+ 235:./ros_lib/ros/node_handle.h ****             index_ = 0;
+ 236:./ros_lib/ros/node_handle.h ****             mode_++;
+ 237:./ros_lib/ros/node_handle.h ****             checksum_ = data;               /* first byte for calculating size checksum */
+ 238:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_SIZE_H ){   /* top half of message size */
+ 239:./ros_lib/ros/node_handle.h ****             bytes_ += data<<8;
+ 240:./ros_lib/ros/node_handle.h **** 	    mode_++;
+ 241:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_SIZE_CHECKSUM ){  
+ 242:./ros_lib/ros/node_handle.h ****             if( (checksum_%256) == 255)
+ 243:./ros_lib/ros/node_handle.h **** 	      mode_++;
+ 244:./ros_lib/ros/node_handle.h **** 	    else 
+ 245:./ros_lib/ros/node_handle.h **** 	      mode_ = MODE_FIRST_FF;          /* Abandon the frame if the msg len is wrong */
+ 246:./ros_lib/ros/node_handle.h **** 	  }else if( mode_ == MODE_TOPIC_L ){  /* bottom half of topic id */
+ 247:./ros_lib/ros/node_handle.h ****             topic_ = data;
+ 248:./ros_lib/ros/node_handle.h ****             mode_++;
+ 249:./ros_lib/ros/node_handle.h ****             checksum_ = data;               /* first byte included in checksum */
+ 250:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_TOPIC_H ){  /* top half of topic id */
+ 251:./ros_lib/ros/node_handle.h ****             topic_ += data<<8;
+ 252:./ros_lib/ros/node_handle.h ****             mode_ = MODE_MESSAGE;
+ 253:./ros_lib/ros/node_handle.h ****             if(bytes_ == 0)
+ 254:./ros_lib/ros/node_handle.h ****               mode_ = MODE_MSG_CHECKSUM;  
+ 255:./ros_lib/ros/node_handle.h ****           }else if( mode_ == MODE_MSG_CHECKSUM ){ /* do checksum */
+ 256:./ros_lib/ros/node_handle.h ****             mode_ = MODE_FIRST_FF;
+ 257:./ros_lib/ros/node_handle.h ****             if( (checksum_%256) == 255){
+ 258:./ros_lib/ros/node_handle.h ****               if(topic_ == TopicInfo::ID_PUBLISHER){
+ 259:./ros_lib/ros/node_handle.h ****                 requestSyncTime();
+ 260:./ros_lib/ros/node_handle.h ****                 negotiateTopics();
+ 261:./ros_lib/ros/node_handle.h ****                 last_sync_time = c_time;
+ 262:./ros_lib/ros/node_handle.h ****                 last_sync_receive_time = c_time;
+ 263:./ros_lib/ros/node_handle.h ****                 return -1;
+ 264:./ros_lib/ros/node_handle.h ****               }else if(topic_ == TopicInfo::ID_TIME){
+ 265:./ros_lib/ros/node_handle.h ****                 syncTime(message_in);
+ 266:./ros_lib/ros/node_handle.h ****               #if PARAM_REQ_SUPPORT
+ 267:./ros_lib/ros/node_handle.h ****               }else if (topic_ == TopicInfo::ID_PARAMETER_REQUEST){
+ 268:./ros_lib/ros/node_handle.h ****                   req_param_resp.deserialize(message_in);
+ 269:./ros_lib/ros/node_handle.h ****                   param_recieved= true;
+ 270:./ros_lib/ros/node_handle.h ****               #endif
+ 271:./ros_lib/ros/node_handle.h ****               }else if(topic_ == TopicInfo::ID_TX_STOP){
+ 272:./ros_lib/ros/node_handle.h ****                   configured_ = false;
+ 273:./ros_lib/ros/node_handle.h ****               }else{
+ 274:./ros_lib/ros/node_handle.h ****                 if(subscribers[topic_-100])
+ 275:./ros_lib/ros/node_handle.h ****                   subscribers[topic_-100]->callback( message_in );
+ 276:./ros_lib/ros/node_handle.h ****               }
+ 277:./ros_lib/ros/node_handle.h ****             }
+ 278:./ros_lib/ros/node_handle.h ****           }
+ 279:./ros_lib/ros/node_handle.h ****         }
+ 280:./ros_lib/ros/node_handle.h **** 
+ 281:./ros_lib/ros/node_handle.h ****         /* occasionally sync time */
+ 282:./ros_lib/ros/node_handle.h ****         if( configured_ && ((c_time-last_sync_time) > (SYNC_SECONDS*500) )){
+ 283:./ros_lib/ros/node_handle.h ****           requestSyncTime();
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 21
+
+
+ 284:./ros_lib/ros/node_handle.h ****           last_sync_time = c_time;
+ 285:./ros_lib/ros/node_handle.h ****         }
+ 286:./ros_lib/ros/node_handle.h **** 
+ 287:./ros_lib/ros/node_handle.h ****         return 0;
+ 288:./ros_lib/ros/node_handle.h ****       }
+ 289:./ros_lib/ros/node_handle.h **** 
+ 290:./ros_lib/ros/node_handle.h **** 
+ 291:./ros_lib/ros/node_handle.h ****       /* Are we connected to the PC? */
+ 292:./ros_lib/ros/node_handle.h ****       virtual bool connected() {
+ 293:./ros_lib/ros/node_handle.h ****         return configured_;
+ 294:./ros_lib/ros/node_handle.h ****       };
+ 295:./ros_lib/ros/node_handle.h **** 
+ 296:./ros_lib/ros/node_handle.h ****       /********************************************************************
+ 297:./ros_lib/ros/node_handle.h ****        * Time functions
+ 298:./ros_lib/ros/node_handle.h ****        */
+ 299:./ros_lib/ros/node_handle.h **** 
+ 300:./ros_lib/ros/node_handle.h ****       void requestSyncTime()
+ 301:./ros_lib/ros/node_handle.h ****       {
+ 302:./ros_lib/ros/node_handle.h ****         std_msgs::Time t;
+ 303:./ros_lib/ros/node_handle.h ****         publish(TopicInfo::ID_TIME, &t);
+ 304:./ros_lib/ros/node_handle.h ****         rt_time = hardware_.time();
+ 305:./ros_lib/ros/node_handle.h ****       }
+ 306:./ros_lib/ros/node_handle.h **** 
+ 307:./ros_lib/ros/node_handle.h ****       void syncTime( unsigned char * data )
+ 308:./ros_lib/ros/node_handle.h ****       {
+ 309:./ros_lib/ros/node_handle.h ****         std_msgs::Time t;
+ 310:./ros_lib/ros/node_handle.h ****         unsigned long offset = hardware_.time() - rt_time;
+ 311:./ros_lib/ros/node_handle.h **** 
+ 312:./ros_lib/ros/node_handle.h ****         t.deserialize(data);
+ 313:./ros_lib/ros/node_handle.h ****         t.data.sec += offset/1000;
+ 314:./ros_lib/ros/node_handle.h ****         t.data.nsec += (offset%1000)*1000000UL;
+ 315:./ros_lib/ros/node_handle.h **** 
+ 316:./ros_lib/ros/node_handle.h ****         this->setNow(t.data);
+ 317:./ros_lib/ros/node_handle.h ****         last_sync_receive_time = hardware_.time();
+ 318:./ros_lib/ros/node_handle.h ****       }
+ 319:./ros_lib/ros/node_handle.h **** 
+ 320:./ros_lib/ros/node_handle.h ****       Time now(){
+ 321:./ros_lib/ros/node_handle.h ****         unsigned long ms = hardware_.time();
+ 322:./ros_lib/ros/node_handle.h ****         Time current_time;
+ 323:./ros_lib/ros/node_handle.h ****         current_time.sec = ms/1000 + sec_offset;
+ 324:./ros_lib/ros/node_handle.h ****         current_time.nsec = (ms%1000)*1000000UL + nsec_offset;
+ 325:./ros_lib/ros/node_handle.h ****         normalizeSecNSec(current_time.sec, current_time.nsec);
+ 326:./ros_lib/ros/node_handle.h ****         return current_time;
+ 327:./ros_lib/ros/node_handle.h ****       }
+ 328:./ros_lib/ros/node_handle.h **** 
+ 329:./ros_lib/ros/node_handle.h ****       void setNow( Time & new_now )
+ 330:./ros_lib/ros/node_handle.h ****       {
+ 331:./ros_lib/ros/node_handle.h ****         unsigned long ms = hardware_.time();
+ 332:./ros_lib/ros/node_handle.h ****         sec_offset = new_now.sec - ms/1000 - 1;
+ 333:./ros_lib/ros/node_handle.h ****         nsec_offset = new_now.nsec - (ms%1000)*1000000UL + 1000000000UL;
+ 334:./ros_lib/ros/node_handle.h ****         normalizeSecNSec(sec_offset, nsec_offset);
+ 335:./ros_lib/ros/node_handle.h ****       }
+ 336:./ros_lib/ros/node_handle.h **** 
+ 337:./ros_lib/ros/node_handle.h ****       /********************************************************************
+ 338:./ros_lib/ros/node_handle.h ****        * Topic Management 
+ 339:./ros_lib/ros/node_handle.h ****        */
+ 340:./ros_lib/ros/node_handle.h **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 22
+
+
+ 341:./ros_lib/ros/node_handle.h ****       /* Register a new publisher */    
+ 342:./ros_lib/ros/node_handle.h ****       bool advertise(Publisher & p)
+ 617              		.loc 6 342 0
+ 618              		.cfi_startproc
+ 619 0000 80B5     		push	{r7, lr}
+ 620              		.cfi_def_cfa_offset 8
+ 621              		.cfi_offset 7, -8
+ 622              		.cfi_offset 14, -4
+ 623 0002 84B0     		sub	sp, sp, #16
+ 624              		.cfi_def_cfa_offset 24
+ 625 0004 00AF     		add	r7, sp, #0
+ 626              		.cfi_def_cfa_register 7
+ 627 0006 7860     		str	r0, [r7, #4]
+ 628 0008 3960     		str	r1, [r7]
+ 629              	.LBB8:
+ 630              	.LBB9:
+ 343:./ros_lib/ros/node_handle.h ****       {
+ 344:./ros_lib/ros/node_handle.h ****         for(int i = 0; i < MAX_PUBLISHERS; i++){
+ 631              		.loc 6 344 0
+ 632 000a 0023     		mov	r3, #0
+ 633 000c FB60     		str	r3, [r7, #12]
+ 634 000e 19E0     		b	.L42
+ 635              	.L45:
+ 345:./ros_lib/ros/node_handle.h ****           if(publishers[i] == 0){ // empty slot
+ 636              		.loc 6 345 0
+ 637 0010 7B68     		ldr	r3, [r7, #4]
+ 638 0012 FA68     		ldr	r2, [r7, #12]
+ 639 0014 6A32     		add	r2, r2, #106
+ 640 0016 9200     		lsl	r2, r2, #2
+ 641 0018 D358     		ldr	r3, [r2, r3]
+ 642 001a 002B     		cmp	r3, #0
+ 643 001c 0FD1     		bne	.L43
+ 346:./ros_lib/ros/node_handle.h ****             publishers[i] = &p;
+ 644              		.loc 6 346 0
+ 645 001e 7B68     		ldr	r3, [r7, #4]
+ 646 0020 FA68     		ldr	r2, [r7, #12]
+ 647 0022 6A32     		add	r2, r2, #106
+ 648 0024 9200     		lsl	r2, r2, #2
+ 649 0026 3968     		ldr	r1, [r7]
+ 650 0028 D150     		str	r1, [r2, r3]
+ 347:./ros_lib/ros/node_handle.h ****             p.id_ = i+100+MAX_SUBSCRIBERS;
+ 651              		.loc 6 347 0
+ 652 002a FB68     		ldr	r3, [r7, #12]
+ 653 002c 6E33     		add	r3, r3, #110
+ 654 002e 1A1C     		mov	r2, r3
+ 655 0030 3B68     		ldr	r3, [r7]
+ 656 0032 9A60     		str	r2, [r3, #8]
+ 348:./ros_lib/ros/node_handle.h ****             p.nh_ = this;
+ 657              		.loc 6 348 0
+ 658 0034 7A68     		ldr	r2, [r7, #4]
+ 659 0036 3B68     		ldr	r3, [r7]
+ 660 0038 DA60     		str	r2, [r3, #12]
+ 349:./ros_lib/ros/node_handle.h ****             return true;
+ 661              		.loc 6 349 0
+ 662 003a 0123     		mov	r3, #1
+ 663 003c 06E0     		b	.L44
+ 664              	.L43:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 23
+
+
+ 344:./ros_lib/ros/node_handle.h ****           if(publishers[i] == 0){ // empty slot
+ 665              		.loc 6 344 0 discriminator 2
+ 666 003e FB68     		ldr	r3, [r7, #12]
+ 667 0040 0133     		add	r3, r3, #1
+ 668 0042 FB60     		str	r3, [r7, #12]
+ 669              	.L42:
+ 344:./ros_lib/ros/node_handle.h ****           if(publishers[i] == 0){ // empty slot
+ 670              		.loc 6 344 0 is_stmt 0 discriminator 1
+ 671 0044 FB68     		ldr	r3, [r7, #12]
+ 672 0046 132B     		cmp	r3, #19
+ 673 0048 E2DD     		ble	.L45
+ 674              	.LBE9:
+ 350:./ros_lib/ros/node_handle.h ****           }
+ 351:./ros_lib/ros/node_handle.h ****         }
+ 352:./ros_lib/ros/node_handle.h ****         return false;
+ 675              		.loc 6 352 0 is_stmt 1
+ 676 004a 0023     		mov	r3, #0
+ 677              	.L44:
+ 678              	.LBE8:
+ 353:./ros_lib/ros/node_handle.h ****       }
+ 679              		.loc 6 353 0
+ 680 004c 181C     		mov	r0, r3
+ 681 004e BD46     		mov	sp, r7
+ 682 0050 04B0     		add	sp, sp, #16
+ 683              		@ sp needed
+ 684 0052 80BD     		pop	{r7, pc}
+ 685              		.cfi_endproc
+ 686              	.LFE134:
+ 687              		.size	_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200ELi200EE9advertiseERNS_9PublisherE, .-_ZN
+ 688              		.weak	_ZTVN8std_msgs6StringE
+ 689              		.section	.rodata._ZTVN8std_msgs6StringE,"aG",%progbits,_ZTVN8std_msgs6StringE,comdat
+ 690              		.align	3
+ 691              		.type	_ZTVN8std_msgs6StringE, %object
+ 692              		.size	_ZTVN8std_msgs6StringE, 24
+ 693              	_ZTVN8std_msgs6StringE:
+ 694 0000 00000000 		.word	0
+ 695 0004 00000000 		.word	0
+ 696 0008 00000000 		.word	_ZNK8std_msgs6String9serializeEPh
+ 697 000c 00000000 		.word	_ZN8std_msgs6String11deserializeEPh
+ 698 0010 00000000 		.word	_ZN8std_msgs6String7getTypeEv
+ 699 0014 00000000 		.word	_ZN8std_msgs6String6getMD5Ev
+ 700              		.weak	_ZTVN3ros3MsgE
+ 701              		.section	.rodata._ZTVN3ros3MsgE,"aG",%progbits,_ZTVN3ros3MsgE,comdat
+ 702              		.align	3
+ 703              		.type	_ZTVN3ros3MsgE, %object
+ 704              		.size	_ZTVN3ros3MsgE, 24
+ 705              	_ZTVN3ros3MsgE:
+ 706 0000 00000000 		.word	0
+ 707 0004 00000000 		.word	0
+ 708 0008 00000000 		.word	__cxa_pure_virtual
+ 709 000c 00000000 		.word	__cxa_pure_virtual
+ 710 0010 00000000 		.word	__cxa_pure_virtual
+ 711 0014 00000000 		.word	__cxa_pure_virtual
+ 712              		.section	.rodata
+ 713 0035 000000   		.align	2
+ 714              	.LC18:
+ 715 0038 63686174 		.ascii	"chatter\000"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 24
+
+
+ 715      74657200 
+ 716              		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 717              		.align	2
+ 718              		.code	16
+ 719              		.thumb_func
+ 720              		.type	_Z41__static_initialization_and_destruction_0ii, %function
+ 721              	_Z41__static_initialization_and_destruction_0ii:
+ 722              	.LFB135:
+  32:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** 
+  33:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** } // namespace...
+ 723              		.loc 5 33 0
+ 724              		.cfi_startproc
+ 725 0000 80B5     		push	{r7, lr}
+ 726              		.cfi_def_cfa_offset 8
+ 727              		.cfi_offset 7, -8
+ 728              		.cfi_offset 14, -4
+ 729 0002 82B0     		sub	sp, sp, #8
+ 730              		.cfi_def_cfa_offset 16
+ 731 0004 00AF     		add	r7, sp, #0
+ 732              		.cfi_def_cfa_register 7
+ 733 0006 7860     		str	r0, [r7, #4]
+ 734 0008 3960     		str	r1, [r7]
+ 735              		.loc 5 33 0
+ 736 000a 7B68     		ldr	r3, [r7, #4]
+ 737 000c 012B     		cmp	r3, #1
+ 738 000e 10D1     		bne	.L46
+ 739              		.loc 5 33 0 is_stmt 0 discriminator 1
+ 740 0010 3B68     		ldr	r3, [r7]
+ 741 0012 094A     		ldr	r2, .L48
+ 742 0014 9342     		cmp	r3, r2
+ 743 0016 0CD1     		bne	.L46
+  12:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** std_msgs::String str_msg;
+ 744              		.loc 5 12 0 is_stmt 1
+ 745 0018 084B     		ldr	r3, .L48+4
+ 746 001a 181C     		mov	r0, r3
+ 747 001c FFF7FEFF 		bl	_ZN8std_msgs6StringC1Ev
+  13:.\ros_lib\examples\HelloWorld/HelloWorld.cpp **** ros::Publisher chatter("chatter", &str_msg);
+ 748              		.loc 5 13 0
+ 749 0020 0749     		ldr	r1, .L48+8
+ 750 0022 084A     		ldr	r2, .L48+12
+ 751 0024 054B     		ldr	r3, .L48+4
+ 752 0026 081C     		mov	r0, r1
+ 753 0028 111C     		mov	r1, r2
+ 754 002a 1A1C     		mov	r2, r3
+ 755 002c 0023     		mov	r3, #0
+ 756 002e FFF7FEFF 		bl	_ZN3ros9PublisherC1EPKcPNS_3MsgEi
+ 757              	.L46:
+ 758              		.loc 5 33 0
+ 759 0032 BD46     		mov	sp, r7
+ 760 0034 02B0     		add	sp, sp, #8
+ 761              		@ sp needed
+ 762 0036 80BD     		pop	{r7, pc}
+ 763              	.L49:
+ 764              		.align	2
+ 765              	.L48:
+ 766 0038 FFFF0000 		.word	65535
+ 767 003c 00000000 		.word	_ZN10HelloWorld7str_msgE
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 25
+
+
+ 768 0040 00000000 		.word	_ZN10HelloWorld7chatterE
+ 769 0044 38000000 		.word	.LC18
+ 770              		.cfi_endproc
+ 771              	.LFE135:
+ 772              		.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destructi
+ 773              		.section	.rodata
+ 774              		.align	2
+ 775              		.type	_ZN14rosserial_msgsL12REQUESTPARAME, %object
+ 776              		.size	_ZN14rosserial_msgsL12REQUESTPARAME, 28
+ 777              	_ZN14rosserial_msgsL12REQUESTPARAME:
+ 778 0040 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 778      65726961 
+ 778      6C5F6D73 
+ 778      67732F52 
+ 778      65717565 
+ 779              		.section	.text._GLOBAL__sub_I__ZN10HelloWorld7str_msgE,"ax",%progbits
+ 780              		.align	2
+ 781              		.code	16
+ 782              		.thumb_func
+ 783              		.type	_GLOBAL__sub_I__ZN10HelloWorld7str_msgE, %function
+ 784              	_GLOBAL__sub_I__ZN10HelloWorld7str_msgE:
+ 785              	.LFB136:
+ 786              		.loc 5 33 0
+ 787              		.cfi_startproc
+ 788 0000 80B5     		push	{r7, lr}
+ 789              		.cfi_def_cfa_offset 8
+ 790              		.cfi_offset 7, -8
+ 791              		.cfi_offset 14, -4
+ 792 0002 00AF     		add	r7, sp, #0
+ 793              		.cfi_def_cfa_register 7
+ 794              		.loc 5 33 0
+ 795 0004 034B     		ldr	r3, .L51
+ 796 0006 0120     		mov	r0, #1
+ 797 0008 191C     		mov	r1, r3
+ 798 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 799 000e BD46     		mov	sp, r7
+ 800              		@ sp needed
+ 801 0010 80BD     		pop	{r7, pc}
+ 802              	.L52:
+ 803 0012 C046     		.align	2
+ 804              	.L51:
+ 805 0014 FFFF0000 		.word	65535
+ 806              		.cfi_endproc
+ 807              	.LFE136:
+ 808              		.size	_GLOBAL__sub_I__ZN10HelloWorld7str_msgE, .-_GLOBAL__sub_I__ZN10HelloWorld7str_msgE
+ 809              		.section	.init_array,"aw",%init_array
+ 810              		.align	2
+ 811 0000 00000000 		.word	_GLOBAL__sub_I__ZN10HelloWorld7str_msgE(target1)
+ 812              		.text
+ 813              	.Letext0:
+ 814              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 815              		.file 8 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 816              		.file 9 "./ros_lib/ros.h"
+ 817              		.file 10 "./ros_lib/rosserial_msgs/TopicInfo.h"
+ 818              		.file 11 "./ros_lib/Psoc4Hardware.h"
+ 819              		.file 12 "./ros_lib/std_msgs/Time.h"
+ 820              		.file 13 "./ros_lib/rosserial_msgs/RequestParam.h"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 26
+
+
+ 821              		.file 14 "./ros_lib/Uarts.h"
+ 822              		.section	.debug_info,"",%progbits
+ 823              	.Ldebug_info0:
+ 824 0000 C20B0000 		.4byte	0xbc2
+ 825 0004 0400     		.2byte	0x4
+ 826 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 827 000a 04       		.byte	0x4
+ 828 000b 01       		.uleb128 0x1
+ 829 000c 06000000 		.4byte	.LASF114
+ 830 0010 04       		.byte	0x4
+ 831 0011 83060000 		.4byte	.LASF115
+ 832 0015 DB060000 		.4byte	.LASF116
+ 833 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 834 001d 00000000 		.4byte	0
+ 835 0021 00000000 		.4byte	.Ldebug_line0
+ 836 0025 02       		.uleb128 0x2
+ 837 0026 01       		.byte	0x1
+ 838 0027 06       		.byte	0x6
+ 839 0028 B7080000 		.4byte	.LASF0
+ 840 002c 03       		.uleb128 0x3
+ 841 002d 33070000 		.4byte	.LASF3
+ 842 0031 07       		.byte	0x7
+ 843 0032 1D       		.byte	0x1d
+ 844 0033 37000000 		.4byte	0x37
+ 845 0037 02       		.uleb128 0x2
+ 846 0038 01       		.byte	0x1
+ 847 0039 08       		.byte	0x8
+ 848 003a 30080000 		.4byte	.LASF1
+ 849 003e 02       		.uleb128 0x2
+ 850 003f 02       		.byte	0x2
+ 851 0040 05       		.byte	0x5
+ 852 0041 B9060000 		.4byte	.LASF2
+ 853 0045 03       		.uleb128 0x3
+ 854 0046 AE020000 		.4byte	.LASF4
+ 855 004a 07       		.byte	0x7
+ 856 004b 2B       		.byte	0x2b
+ 857 004c 50000000 		.4byte	0x50
+ 858 0050 02       		.uleb128 0x2
+ 859 0051 02       		.byte	0x2
+ 860 0052 07       		.byte	0x7
+ 861 0053 C3080000 		.4byte	.LASF5
+ 862 0057 03       		.uleb128 0x3
+ 863 0058 54010000 		.4byte	.LASF6
+ 864 005c 07       		.byte	0x7
+ 865 005d 3F       		.byte	0x3f
+ 866 005e 62000000 		.4byte	0x62
+ 867 0062 02       		.uleb128 0x2
+ 868 0063 04       		.byte	0x4
+ 869 0064 05       		.byte	0x5
+ 870 0065 D2060000 		.4byte	.LASF7
+ 871 0069 03       		.uleb128 0x3
+ 872 006a 44080000 		.4byte	.LASF8
+ 873 006e 07       		.byte	0x7
+ 874 006f 41       		.byte	0x41
+ 875 0070 74000000 		.4byte	0x74
+ 876 0074 02       		.uleb128 0x2
+ 877 0075 04       		.byte	0x4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 27
+
+
+ 878 0076 07       		.byte	0x7
+ 879 0077 58070000 		.4byte	.LASF9
+ 880 007b 02       		.uleb128 0x2
+ 881 007c 08       		.byte	0x8
+ 882 007d 05       		.byte	0x5
+ 883 007e 84040000 		.4byte	.LASF10
+ 884 0082 02       		.uleb128 0x2
+ 885 0083 08       		.byte	0x8
+ 886 0084 07       		.byte	0x7
+ 887 0085 3B020000 		.4byte	.LASF11
+ 888 0089 04       		.uleb128 0x4
+ 889 008a 04       		.byte	0x4
+ 890 008b 05       		.byte	0x5
+ 891 008c 696E7400 		.ascii	"int\000"
+ 892 0090 02       		.uleb128 0x2
+ 893 0091 04       		.byte	0x4
+ 894 0092 07       		.byte	0x7
+ 895 0093 47010000 		.4byte	.LASF12
+ 896 0097 03       		.uleb128 0x3
+ 897 0098 1D040000 		.4byte	.LASF13
+ 898 009c 08       		.byte	0x8
+ 899 009d 15       		.byte	0x15
+ 900 009e 2C000000 		.4byte	0x2c
+ 901 00a2 03       		.uleb128 0x3
+ 902 00a3 FE050000 		.4byte	.LASF14
+ 903 00a7 08       		.byte	0x8
+ 904 00a8 21       		.byte	0x21
+ 905 00a9 45000000 		.4byte	0x45
+ 906 00ad 03       		.uleb128 0x3
+ 907 00ae BA070000 		.4byte	.LASF15
+ 908 00b2 08       		.byte	0x8
+ 909 00b3 2C       		.byte	0x2c
+ 910 00b4 57000000 		.4byte	0x57
+ 911 00b8 03       		.uleb128 0x3
+ 912 00b9 0F020000 		.4byte	.LASF16
+ 913 00bd 08       		.byte	0x8
+ 914 00be 2D       		.byte	0x2d
+ 915 00bf 69000000 		.4byte	0x69
+ 916 00c3 02       		.uleb128 0x2
+ 917 00c4 04       		.byte	0x4
+ 918 00c5 07       		.byte	0x7
+ 919 00c6 4F070000 		.4byte	.LASF17
+ 920 00ca 05       		.uleb128 0x5
+ 921 00cb 04       		.byte	0x4
+ 922 00cc 06       		.uleb128 0x6
+ 923 00cd 04       		.byte	0x4
+ 924 00ce 37000000 		.4byte	0x37
+ 925 00d2 02       		.uleb128 0x2
+ 926 00d3 01       		.byte	0x1
+ 927 00d4 08       		.byte	0x8
+ 928 00d5 B9030000 		.4byte	.LASF18
+ 929 00d9 06       		.uleb128 0x6
+ 930 00da 04       		.byte	0x4
+ 931 00db DF000000 		.4byte	0xdf
+ 932 00df 07       		.uleb128 0x7
+ 933 00e0 D2000000 		.4byte	0xd2
+ 934 00e4 02       		.uleb128 0x2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 28
+
+
+ 935 00e5 08       		.byte	0x8
+ 936 00e6 04       		.byte	0x4
+ 937 00e7 09090000 		.4byte	.LASF19
+ 938 00eb 02       		.uleb128 0x2
+ 939 00ec 04       		.byte	0x4
+ 940 00ed 04       		.byte	0x4
+ 941 00ee 18020000 		.4byte	.LASF20
+ 942 00f2 02       		.uleb128 0x2
+ 943 00f3 08       		.byte	0x8
+ 944 00f4 04       		.byte	0x4
+ 945 00f5 F2050000 		.4byte	.LASF21
+ 946 00f9 08       		.uleb128 0x8
+ 947 00fa 726F7300 		.ascii	"ros\000"
+ 948 00fe 01       		.byte	0x1
+ 949 00ff 28       		.byte	0x28
+ 950 0100 A0030000 		.4byte	0x3a0
+ 951 0104 09       		.uleb128 0x9
+ 952 0105 B9020000 		.4byte	.LASF27
+ 953 0109 14       		.byte	0x14
+ 954 010a 02       		.byte	0x2
+ 955 010b 2C       		.byte	0x2c
+ 956 010c DA010000 		.4byte	0x1da
+ 957 0110 0A       		.uleb128 0xa
+ 958 0111 DB080000 		.4byte	.LASF22
+ 959 0115 02       		.byte	0x2
+ 960 0116 39       		.byte	0x39
+ 961 0117 D9000000 		.4byte	0xd9
+ 962 011b 00       		.byte	0
+ 963 011c 01       		.byte	0x1
+ 964 011d 0A       		.uleb128 0xa
+ 965 011e D6080000 		.4byte	.LASF23
+ 966 0122 02       		.byte	0x2
+ 967 0123 3A       		.byte	0x3a
+ 968 0124 E1040000 		.4byte	0x4e1
+ 969 0128 04       		.byte	0x4
+ 970 0129 01       		.byte	0x1
+ 971 012a 0B       		.uleb128 0xb
+ 972 012b 69645F00 		.ascii	"id_\000"
+ 973 012f 02       		.byte	0x2
+ 974 0130 3C       		.byte	0x3c
+ 975 0131 89000000 		.4byte	0x89
+ 976 0135 08       		.byte	0x8
+ 977 0136 01       		.byte	0x1
+ 978 0137 0B       		.uleb128 0xb
+ 979 0138 6E685F00 		.ascii	"nh_\000"
+ 980 013c 02       		.byte	0x2
+ 981 013d 3D       		.byte	0x3d
+ 982 013e E7040000 		.4byte	0x4e7
+ 983 0142 0C       		.byte	0xc
+ 984 0143 01       		.byte	0x1
+ 985 0144 0C       		.uleb128 0xc
+ 986 0145 29070000 		.4byte	.LASF29
+ 987 0149 02       		.byte	0x2
+ 988 014a 40       		.byte	0x40
+ 989 014b 89000000 		.4byte	0x89
+ 990 014f 10       		.byte	0x10
+ 991 0150 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 29
+
+
+ 992 0151 B9020000 		.4byte	.LASF27
+ 993 0155 02       		.byte	0x2
+ 994 0156 2F       		.byte	0x2f
+ 995 0157 ED040000 		.4byte	0x4ed
+ 996 015b 01       		.byte	0x1
+ 997 015c 64010000 		.4byte	0x164
+ 998 0160 79010000 		.4byte	0x179
+ 999 0164 0E       		.uleb128 0xe
+ 1000 0165 ED040000 		.4byte	0x4ed
+ 1001 0169 0F       		.uleb128 0xf
+ 1002 016a D9000000 		.4byte	0xd9
+ 1003 016e 0F       		.uleb128 0xf
+ 1004 016f E1040000 		.4byte	0x4e1
+ 1005 0173 0F       		.uleb128 0xf
+ 1006 0174 89000000 		.4byte	0x89
+ 1007 0178 00       		.byte	0
+ 1008 0179 10       		.uleb128 0x10
+ 1009 017a FB010000 		.4byte	.LASF24
+ 1010 017e 02       		.byte	0x2
+ 1011 017f 34       		.byte	0x34
+ 1012 0180 7E080000 		.4byte	.LASF25
+ 1013 0184 89000000 		.4byte	0x89
+ 1014 0188 01       		.byte	0x1
+ 1015 0189 91010000 		.4byte	0x191
+ 1016 018d 9C010000 		.4byte	0x19c
+ 1017 0191 0E       		.uleb128 0xe
+ 1018 0192 ED040000 		.4byte	0x4ed
+ 1019 0196 0F       		.uleb128 0xf
+ 1020 0197 F3040000 		.4byte	0x4f3
+ 1021 019b 00       		.byte	0
+ 1022 019c 10       		.uleb128 0x10
+ 1023 019d FB010000 		.4byte	.LASF24
+ 1024 01a1 02       		.byte	0x2
+ 1025 01a2 36       		.byte	0x36
+ 1026 01a3 0F030000 		.4byte	.LASF26
+ 1027 01a7 89000000 		.4byte	0x89
+ 1028 01ab 01       		.byte	0x1
+ 1029 01ac B4010000 		.4byte	0x1b4
+ 1030 01b0 BF010000 		.4byte	0x1bf
+ 1031 01b4 0E       		.uleb128 0xe
+ 1032 01b5 ED040000 		.4byte	0x4ed
+ 1033 01b9 0F       		.uleb128 0xf
+ 1034 01ba F9040000 		.4byte	0x4f9
+ 1035 01be 00       		.byte	0
+ 1036 01bf 11       		.uleb128 0x11
+ 1037 01c0 5F030000 		.4byte	.LASF28
+ 1038 01c4 02       		.byte	0x2
+ 1039 01c5 37       		.byte	0x37
+ 1040 01c6 85050000 		.4byte	.LASF41
+ 1041 01ca 89000000 		.4byte	0x89
+ 1042 01ce 01       		.byte	0x1
+ 1043 01cf D3010000 		.4byte	0x1d3
+ 1044 01d3 0E       		.uleb128 0xe
+ 1045 01d4 ED040000 		.4byte	0x4ed
+ 1046 01d8 00       		.byte	0
+ 1047 01d9 00       		.byte	0
+ 1048 01da 12       		.uleb128 0x12
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 30
+
+
+ 1049 01db 4D736700 		.ascii	"Msg\000"
+ 1050 01df 04       		.byte	0x4
+ 1051 01e0 01       		.byte	0x1
+ 1052 01e1 2B       		.byte	0x2b
+ 1053 01e2 DA010000 		.4byte	0x1da
+ 1054 01e6 24030000 		.4byte	0x324
+ 1055 01ea 13       		.uleb128 0x13
+ 1056 01eb 82070000 		.4byte	.LASF30
+ 1057 01ef C2070000 		.4byte	0x7c2
+ 1058 01f3 00       		.byte	0
+ 1059 01f4 01       		.byte	0x1
+ 1060 01f5 14       		.uleb128 0x14
+ 1061 01f6 FF020000 		.4byte	.LASF31
+ 1062 01fa CA000000 		.4byte	0xca
+ 1063 01fe 01       		.byte	0x1
+ 1064 01ff 07020000 		.4byte	0x207
+ 1065 0203 12020000 		.4byte	0x212
+ 1066 0207 0E       		.uleb128 0xe
+ 1067 0208 E1040000 		.4byte	0x4e1
+ 1068 020c 0E       		.uleb128 0xe
+ 1069 020d 89000000 		.4byte	0x89
+ 1070 0211 00       		.byte	0
+ 1071 0212 15       		.uleb128 0x15
+ 1072 0213 4D736700 		.ascii	"Msg\000"
+ 1073 0217 E1040000 		.4byte	0x4e1
+ 1074 021b 01       		.byte	0x1
+ 1075 021c 24020000 		.4byte	0x224
+ 1076 0220 2F020000 		.4byte	0x22f
+ 1077 0224 0E       		.uleb128 0xe
+ 1078 0225 E1040000 		.4byte	0x4e1
+ 1079 0229 0F       		.uleb128 0xf
+ 1080 022a F9040000 		.4byte	0x4f9
+ 1081 022e 00       		.byte	0
+ 1082 022f 15       		.uleb128 0x15
+ 1083 0230 4D736700 		.ascii	"Msg\000"
+ 1084 0234 E1040000 		.4byte	0x4e1
+ 1085 0238 01       		.byte	0x1
+ 1086 0239 41020000 		.4byte	0x241
+ 1087 023d 47020000 		.4byte	0x247
+ 1088 0241 0E       		.uleb128 0xe
+ 1089 0242 E1040000 		.4byte	0x4e1
+ 1090 0246 00       		.byte	0
+ 1091 0247 16       		.uleb128 0x16
+ 1092 0248 00010000 		.4byte	.LASF32
+ 1093 024c 01       		.byte	0x1
+ 1094 024d 2E       		.byte	0x2e
+ 1095 024e CA050000 		.4byte	.LASF34
+ 1096 0252 89000000 		.4byte	0x89
+ 1097 0256 01       		.byte	0x1
+ 1098 0257 02       		.uleb128 0x2
+ 1099 0258 10       		.byte	0x10
+ 1100 0259 00       		.uleb128 0
+ 1101 025a DA010000 		.4byte	0x1da
+ 1102 025e 01       		.byte	0x1
+ 1103 025f 67020000 		.4byte	0x267
+ 1104 0263 72020000 		.4byte	0x272
+ 1105 0267 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 31
+
+
+ 1106 0268 F3040000 		.4byte	0x4f3
+ 1107 026c 0F       		.uleb128 0xf
+ 1108 026d CC000000 		.4byte	0xcc
+ 1109 0271 00       		.byte	0
+ 1110 0272 16       		.uleb128 0x16
+ 1111 0273 55040000 		.4byte	.LASF33
+ 1112 0277 01       		.byte	0x1
+ 1113 0278 2F       		.byte	0x2f
+ 1114 0279 BE030000 		.4byte	.LASF35
+ 1115 027d 89000000 		.4byte	0x89
+ 1116 0281 01       		.byte	0x1
+ 1117 0282 02       		.uleb128 0x2
+ 1118 0283 10       		.byte	0x10
+ 1119 0284 01       		.uleb128 0x1
+ 1120 0285 DA010000 		.4byte	0x1da
+ 1121 0289 01       		.byte	0x1
+ 1122 028a 92020000 		.4byte	0x292
+ 1123 028e 9D020000 		.4byte	0x29d
+ 1124 0292 0E       		.uleb128 0xe
+ 1125 0293 E1040000 		.4byte	0x4e1
+ 1126 0297 0F       		.uleb128 0xf
+ 1127 0298 CC000000 		.4byte	0xcc
+ 1128 029c 00       		.byte	0
+ 1129 029d 16       		.uleb128 0x16
+ 1130 029e 1D050000 		.4byte	.LASF36
+ 1131 02a2 01       		.byte	0x1
+ 1132 02a3 30       		.byte	0x30
+ 1133 02a4 10090000 		.4byte	.LASF37
+ 1134 02a8 D9000000 		.4byte	0xd9
+ 1135 02ac 01       		.byte	0x1
+ 1136 02ad 02       		.uleb128 0x2
+ 1137 02ae 10       		.byte	0x10
+ 1138 02af 02       		.uleb128 0x2
+ 1139 02b0 DA010000 		.4byte	0x1da
+ 1140 02b4 01       		.byte	0x1
+ 1141 02b5 BD020000 		.4byte	0x2bd
+ 1142 02b9 C3020000 		.4byte	0x2c3
+ 1143 02bd 0E       		.uleb128 0xe
+ 1144 02be E1040000 		.4byte	0x4e1
+ 1145 02c2 00       		.byte	0
+ 1146 02c3 16       		.uleb128 0x16
+ 1147 02c4 7C060000 		.4byte	.LASF38
+ 1148 02c8 01       		.byte	0x1
+ 1149 02c9 31       		.byte	0x31
+ 1150 02ca 52020000 		.4byte	.LASF39
+ 1151 02ce D9000000 		.4byte	0xd9
+ 1152 02d2 01       		.byte	0x1
+ 1153 02d3 02       		.uleb128 0x2
+ 1154 02d4 10       		.byte	0x10
+ 1155 02d5 03       		.uleb128 0x3
+ 1156 02d6 DA010000 		.4byte	0x1da
+ 1157 02da 01       		.byte	0x1
+ 1158 02db E3020000 		.4byte	0x2e3
+ 1159 02df E9020000 		.4byte	0x2e9
+ 1160 02e3 0E       		.uleb128 0xe
+ 1161 02e4 E1040000 		.4byte	0x4e1
+ 1162 02e8 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 32
+
+
+ 1163 02e9 17       		.uleb128 0x17
+ 1164 02ea A3080000 		.4byte	.LASF40
+ 1165 02ee 01       		.byte	0x1
+ 1166 02ef 3E       		.byte	0x3e
+ 1167 02f0 F8040000 		.4byte	.LASF42
+ 1168 02f4 89000000 		.4byte	0x89
+ 1169 02f8 01       		.byte	0x1
+ 1170 02f9 08030000 		.4byte	0x308
+ 1171 02fd 0F       		.uleb128 0xf
+ 1172 02fe CC000000 		.4byte	0xcc
+ 1173 0302 0F       		.uleb128 0xf
+ 1174 0303 EB000000 		.4byte	0xeb
+ 1175 0307 00       		.byte	0
+ 1176 0308 18       		.uleb128 0x18
+ 1177 0309 67020000 		.4byte	.LASF43
+ 1178 030d 01       		.byte	0x1
+ 1179 030e 64       		.byte	0x64
+ 1180 030f CA040000 		.4byte	.LASF117
+ 1181 0313 89000000 		.4byte	0x89
+ 1182 0317 01       		.byte	0x1
+ 1183 0318 0F       		.uleb128 0xf
+ 1184 0319 D2070000 		.4byte	0x7d2
+ 1185 031d 0F       		.uleb128 0xf
+ 1186 031e A5070000 		.4byte	0x7a5
+ 1187 0322 00       		.byte	0
+ 1188 0323 00       		.byte	0
+ 1189 0324 19       		.uleb128 0x19
+ 1190 0325 34030000 		.4byte	.LASF76
+ 1191 0329 07       		.uleb128 0x7
+ 1192 032a DA010000 		.4byte	0x1da
+ 1193 032e 1A       		.uleb128 0x1a
+ 1194 032f 06       		.byte	0x6
+ 1195 0330 5E       		.byte	0x5e
+ 1196 0331 AB030000 		.4byte	0x3ab
+ 1197 0335 1B       		.uleb128 0x1b
+ 1198 0336 4F060000 		.4byte	.LASF118
+ 1199 033a 94030000 		.4byte	0x394
+ 1200 033e 1C       		.uleb128 0x1c
+ 1201 033f 25050000 		.4byte	.LASF44
+ 1202 0343 06       		.byte	0x6
+ 1203 0344 5601     		.2byte	0x156
+ 1204 0346 2F050000 		.4byte	.LASF119
+ 1205 034a AB0A0000 		.4byte	0xaab
+ 1206 034e 01       		.byte	0x1
+ 1207 034f 57030000 		.4byte	0x357
+ 1208 0353 62030000 		.4byte	0x362
+ 1209 0357 0E       		.uleb128 0xe
+ 1210 0358 B20A0000 		.4byte	0xab2
+ 1211 035c 0F       		.uleb128 0xf
+ 1212 035d B80A0000 		.4byte	0xab8
+ 1213 0361 00       		.byte	0
+ 1214 0362 1D       		.uleb128 0x1d
+ 1215 0363 AA050000 		.4byte	.LASF120
+ 1216 0367 34050000 		.4byte	0x534
+ 1217 036b 1E       		.uleb128 0x1e
+ 1218 036c 44030000 		.4byte	.LASF45
+ 1219 0370 89000000 		.4byte	0x89
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 33
+
+
+ 1220 0374 0A       		.byte	0xa
+ 1221 0375 1E       		.uleb128 0x1e
+ 1222 0376 80090000 		.4byte	.LASF46
+ 1223 037a 89000000 		.4byte	0x89
+ 1224 037e 14       		.byte	0x14
+ 1225 037f 1E       		.uleb128 0x1e
+ 1226 0380 75090000 		.4byte	.LASF47
+ 1227 0384 89000000 		.4byte	0x89
+ 1228 0388 C8       		.byte	0xc8
+ 1229 0389 1E       		.uleb128 0x1e
+ 1230 038a BE040000 		.4byte	.LASF48
+ 1231 038e 89000000 		.4byte	0x89
+ 1232 0392 C8       		.byte	0xc8
+ 1233 0393 00       		.byte	0
+ 1234 0394 03       		.uleb128 0x3
+ 1235 0395 54030000 		.4byte	.LASF49
+ 1236 0399 09       		.byte	0x9
+ 1237 039a 45       		.byte	0x45
+ 1238 039b 35030000 		.4byte	0x335
+ 1239 039f 00       		.byte	0
+ 1240 03a0 1F       		.uleb128 0x1f
+ 1241 03a1 AB010000 		.4byte	.LASF50
+ 1242 03a5 0A       		.byte	0xa
+ 1243 03a6 0A       		.byte	0xa
+ 1244 03a7 E1040000 		.4byte	0x4e1
+ 1245 03ab 20       		.uleb128 0x20
+ 1246 03ac 25040000 		.4byte	.LASF51
+ 1247 03b0 18       		.byte	0x18
+ 1248 03b1 0A       		.byte	0xa
+ 1249 03b2 0C       		.byte	0xc
+ 1250 03b3 DA010000 		.4byte	0x1da
+ 1251 03b7 CC040000 		.4byte	0x4cc
+ 1252 03bb 21       		.uleb128 0x21
+ 1253 03bc 01       		.byte	0x1
+ 1254 03bd 0A       		.byte	0xa
+ 1255 03be 14       		.byte	0x14
+ 1256 03bf 01       		.byte	0x1
+ 1257 03c0 CB030000 		.4byte	0x3cb
+ 1258 03c4 22       		.uleb128 0x22
+ 1259 03c5 5A080000 		.4byte	.LASF121
+ 1260 03c9 00       		.sleb128 0
+ 1261 03ca 00       		.byte	0
+ 1262 03cb 23       		.uleb128 0x23
+ 1263 03cc DA010000 		.4byte	0x1da
+ 1264 03d0 00       		.byte	0
+ 1265 03d1 01       		.byte	0x1
+ 1266 03d2 0A       		.uleb128 0xa
+ 1267 03d3 98040000 		.4byte	.LASF52
+ 1268 03d7 0A       		.byte	0xa
+ 1269 03d8 0F       		.byte	0xf
+ 1270 03d9 A2000000 		.4byte	0xa2
+ 1271 03dd 04       		.byte	0x4
+ 1272 03de 01       		.byte	0x1
+ 1273 03df 0A       		.uleb128 0xa
+ 1274 03e0 4F080000 		.4byte	.LASF53
+ 1275 03e4 0A       		.byte	0xa
+ 1276 03e5 10       		.byte	0x10
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 34
+
+
+ 1277 03e6 D9000000 		.4byte	0xd9
+ 1278 03ea 08       		.byte	0x8
+ 1279 03eb 01       		.byte	0x1
+ 1280 03ec 0A       		.uleb128 0xa
+ 1281 03ed A1020000 		.4byte	.LASF54
+ 1282 03f1 0A       		.byte	0xa
+ 1283 03f2 11       		.byte	0x11
+ 1284 03f3 D9000000 		.4byte	0xd9
+ 1285 03f7 0C       		.byte	0xc
+ 1286 03f8 01       		.byte	0x1
+ 1287 03f9 0A       		.uleb128 0xa
+ 1288 03fa F4010000 		.4byte	.LASF55
+ 1289 03fe 0A       		.byte	0xa
+ 1290 03ff 12       		.byte	0x12
+ 1291 0400 D9000000 		.4byte	0xd9
+ 1292 0404 10       		.byte	0x10
+ 1293 0405 01       		.byte	0x1
+ 1294 0406 0A       		.uleb128 0xa
+ 1295 0407 03020000 		.4byte	.LASF56
+ 1296 040b 0A       		.byte	0xa
+ 1297 040c 13       		.byte	0x13
+ 1298 040d AD000000 		.4byte	0xad
+ 1299 0411 14       		.byte	0x14
+ 1300 0412 01       		.byte	0x1
+ 1301 0413 0D       		.uleb128 0xd
+ 1302 0414 25040000 		.4byte	.LASF51
+ 1303 0418 0A       		.byte	0xa
+ 1304 0419 1D       		.byte	0x1d
+ 1305 041a AB070000 		.4byte	0x7ab
+ 1306 041e 01       		.byte	0x1
+ 1307 041f 27040000 		.4byte	0x427
+ 1308 0423 2D040000 		.4byte	0x42d
+ 1309 0427 0E       		.uleb128 0xe
+ 1310 0428 AB070000 		.4byte	0x7ab
+ 1311 042c 00       		.byte	0
+ 1312 042d 16       		.uleb128 0x16
+ 1313 042e 00010000 		.4byte	.LASF32
+ 1314 0432 0A       		.byte	0xa
+ 1315 0433 26       		.byte	0x26
+ 1316 0434 26090000 		.4byte	.LASF57
+ 1317 0438 89000000 		.4byte	0x89
+ 1318 043c 01       		.byte	0x1
+ 1319 043d 02       		.uleb128 0x2
+ 1320 043e 10       		.byte	0x10
+ 1321 043f 00       		.uleb128 0
+ 1322 0440 AB030000 		.4byte	0x3ab
+ 1323 0444 01       		.byte	0x1
+ 1324 0445 4D040000 		.4byte	0x44d
+ 1325 0449 58040000 		.4byte	0x458
+ 1326 044d 0E       		.uleb128 0xe
+ 1327 044e B1070000 		.4byte	0x7b1
+ 1328 0452 0F       		.uleb128 0xf
+ 1329 0453 CC000000 		.4byte	0xcc
+ 1330 0457 00       		.byte	0
+ 1331 0458 16       		.uleb128 0x16
+ 1332 0459 55040000 		.4byte	.LASF33
+ 1333 045d 0A       		.byte	0xa
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 35
+
+
+ 1334 045e 4A       		.byte	0x4a
+ 1335 045f 8C070000 		.4byte	.LASF58
+ 1336 0463 89000000 		.4byte	0x89
+ 1337 0467 01       		.byte	0x1
+ 1338 0468 02       		.uleb128 0x2
+ 1339 0469 10       		.byte	0x10
+ 1340 046a 01       		.uleb128 0x1
+ 1341 046b AB030000 		.4byte	0x3ab
+ 1342 046f 01       		.byte	0x1
+ 1343 0470 78040000 		.4byte	0x478
+ 1344 0474 83040000 		.4byte	0x483
+ 1345 0478 0E       		.uleb128 0xe
+ 1346 0479 AB070000 		.4byte	0x7ab
+ 1347 047d 0F       		.uleb128 0xf
+ 1348 047e CC000000 		.4byte	0xcc
+ 1349 0482 00       		.byte	0
+ 1350 0483 16       		.uleb128 0x16
+ 1351 0484 1D050000 		.4byte	.LASF36
+ 1352 0488 0A       		.byte	0xa
+ 1353 0489 7B       		.byte	0x7b
+ 1354 048a C2070000 		.4byte	.LASF59
+ 1355 048e D9000000 		.4byte	0xd9
+ 1356 0492 01       		.byte	0x1
+ 1357 0493 02       		.uleb128 0x2
+ 1358 0494 10       		.byte	0x10
+ 1359 0495 02       		.uleb128 0x2
+ 1360 0496 AB030000 		.4byte	0x3ab
+ 1361 049a 01       		.byte	0x1
+ 1362 049b A3040000 		.4byte	0x4a3
+ 1363 049f A9040000 		.4byte	0x4a9
+ 1364 04a3 0E       		.uleb128 0xe
+ 1365 04a4 AB070000 		.4byte	0x7ab
+ 1366 04a8 00       		.byte	0
+ 1367 04a9 24       		.uleb128 0x24
+ 1368 04aa 7C060000 		.4byte	.LASF38
+ 1369 04ae 0A       		.byte	0xa
+ 1370 04af 7C       		.byte	0x7c
+ 1371 04b0 09080000 		.4byte	.LASF84
+ 1372 04b4 D9000000 		.4byte	0xd9
+ 1373 04b8 01       		.byte	0x1
+ 1374 04b9 02       		.uleb128 0x2
+ 1375 04ba 10       		.byte	0x10
+ 1376 04bb 03       		.uleb128 0x3
+ 1377 04bc AB030000 		.4byte	0x3ab
+ 1378 04c0 01       		.byte	0x1
+ 1379 04c1 C5040000 		.4byte	0x4c5
+ 1380 04c5 0E       		.uleb128 0xe
+ 1381 04c6 AB070000 		.4byte	0x7ab
+ 1382 04ca 00       		.byte	0
+ 1383 04cb 00       		.byte	0
+ 1384 04cc 07       		.uleb128 0x7
+ 1385 04cd AB030000 		.4byte	0x3ab
+ 1386 04d1 25       		.uleb128 0x25
+ 1387 04d2 CD020000 		.4byte	.LASF112
+ 1388 04d6 0D       		.byte	0xd
+ 1389 04d7 0B       		.byte	0xb
+ 1390 04d8 B50B0000 		.4byte	0xbb5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 36
+
+
+ 1391 04dc 2B010000 		.4byte	.LASF122
+ 1392 04e0 00       		.byte	0
+ 1393 04e1 06       		.uleb128 0x6
+ 1394 04e2 04       		.byte	0x4
+ 1395 04e3 DA010000 		.4byte	0x1da
+ 1396 04e7 06       		.uleb128 0x6
+ 1397 04e8 04       		.byte	0x4
+ 1398 04e9 24030000 		.4byte	0x324
+ 1399 04ed 06       		.uleb128 0x6
+ 1400 04ee 04       		.byte	0x4
+ 1401 04ef 04010000 		.4byte	0x104
+ 1402 04f3 06       		.uleb128 0x6
+ 1403 04f4 04       		.byte	0x4
+ 1404 04f5 29030000 		.4byte	0x329
+ 1405 04f9 26       		.uleb128 0x26
+ 1406 04fa 04       		.byte	0x4
+ 1407 04fb 29030000 		.4byte	0x329
+ 1408 04ff 09       		.uleb128 0x9
+ 1409 0500 6C090000 		.4byte	.LASF60
+ 1410 0504 01       		.byte	0x1
+ 1411 0505 03       		.byte	0x3
+ 1412 0506 23       		.byte	0x23
+ 1413 0507 34050000 		.4byte	0x534
+ 1414 050b 27       		.uleb128 0x27
+ 1415 050c 3D070000 		.4byte	.LASF123
+ 1416 0510 03       		.byte	0x3
+ 1417 0511 2F       		.byte	0x2f
+ 1418 0512 B8000000 		.4byte	0xb8
+ 1419 0516 01       		.byte	0x1
+ 1420 0517 28       		.uleb128 0x28
+ 1421 0518 4A070000 		.4byte	.LASF68
+ 1422 051c 03       		.byte	0x3
+ 1423 051d 26       		.byte	0x26
+ 1424 051e 5E010000 		.4byte	.LASF124
+ 1425 0522 01       		.byte	0x1
+ 1426 0523 29       		.uleb128 0x29
+ 1427 0524 24010000 		.4byte	.LASF125
+ 1428 0528 03       		.byte	0x3
+ 1429 0529 2D       		.byte	0x2d
+ 1430 052a 0F060000 		.4byte	.LASF126
+ 1431 052e B8000000 		.4byte	0xb8
+ 1432 0532 01       		.byte	0x1
+ 1433 0533 00       		.byte	0
+ 1434 0534 09       		.uleb128 0x9
+ 1435 0535 E4050000 		.4byte	.LASF61
+ 1436 0539 08       		.byte	0x8
+ 1437 053a 0B       		.byte	0xb
+ 1438 053b 33       		.byte	0x33
+ 1439 053c 6B060000 		.4byte	0x66b
+ 1440 0540 0A       		.uleb128 0xa
+ 1441 0541 63090000 		.4byte	.LASF62
+ 1442 0545 0B       		.byte	0xb
+ 1443 0546 5B       		.byte	0x5b
+ 1444 0547 70060000 		.4byte	0x670
+ 1445 054b 00       		.byte	0
+ 1446 054c 02       		.byte	0x2
+ 1447 054d 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 37
+
+
+ 1448 054e EA070000 		.4byte	.LASF63
+ 1449 0552 0B       		.byte	0xb
+ 1450 0553 5C       		.byte	0x5c
+ 1451 0554 62000000 		.4byte	0x62
+ 1452 0558 04       		.byte	0x4
+ 1453 0559 02       		.byte	0x2
+ 1454 055a 0D       		.uleb128 0xd
+ 1455 055b E4050000 		.4byte	.LASF61
+ 1456 055f 0B       		.byte	0xb
+ 1457 0560 35       		.byte	0x35
+ 1458 0561 76060000 		.4byte	0x676
+ 1459 0565 01       		.byte	0x1
+ 1460 0566 6E050000 		.4byte	0x56e
+ 1461 056a 7E050000 		.4byte	0x57e
+ 1462 056e 0E       		.uleb128 0xe
+ 1463 056f 76060000 		.4byte	0x676
+ 1464 0573 0F       		.uleb128 0xf
+ 1465 0574 70060000 		.4byte	0x670
+ 1466 0578 0F       		.uleb128 0xf
+ 1467 0579 62000000 		.4byte	0x62
+ 1468 057d 00       		.byte	0
+ 1469 057e 0D       		.uleb128 0xd
+ 1470 057f E4050000 		.4byte	.LASF61
+ 1471 0583 0B       		.byte	0xb
+ 1472 0584 3B       		.byte	0x3b
+ 1473 0585 76060000 		.4byte	0x676
+ 1474 0589 01       		.byte	0x1
+ 1475 058a 92050000 		.4byte	0x592
+ 1476 058e 98050000 		.4byte	0x598
+ 1477 0592 0E       		.uleb128 0xe
+ 1478 0593 76060000 		.4byte	0x676
+ 1479 0597 00       		.byte	0
+ 1480 0598 0D       		.uleb128 0xd
+ 1481 0599 E4050000 		.4byte	.LASF61
+ 1482 059d 0B       		.byte	0xb
+ 1483 059e 41       		.byte	0x41
+ 1484 059f 76060000 		.4byte	0x676
+ 1485 05a3 01       		.byte	0x1
+ 1486 05a4 AC050000 		.4byte	0x5ac
+ 1487 05a8 B7050000 		.4byte	0x5b7
+ 1488 05ac 0E       		.uleb128 0xe
+ 1489 05ad 76060000 		.4byte	0x676
+ 1490 05b1 0F       		.uleb128 0xf
+ 1491 05b2 7C060000 		.4byte	0x67c
+ 1492 05b6 00       		.byte	0
+ 1493 05b7 2A       		.uleb128 0x2a
+ 1494 05b8 07060000 		.4byte	.LASF64
+ 1495 05bc 0B       		.byte	0xb
+ 1496 05bd 46       		.byte	0x46
+ 1497 05be 2F040000 		.4byte	.LASF65
+ 1498 05c2 01       		.byte	0x1
+ 1499 05c3 CB050000 		.4byte	0x5cb
+ 1500 05c7 D6050000 		.4byte	0x5d6
+ 1501 05cb 0E       		.uleb128 0xe
+ 1502 05cc 76060000 		.4byte	0x676
+ 1503 05d0 0F       		.uleb128 0xf
+ 1504 05d1 62000000 		.4byte	0x62
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 38
+
+
+ 1505 05d5 00       		.byte	0
+ 1506 05d6 10       		.uleb128 0x10
+ 1507 05d7 5B090000 		.4byte	.LASF66
+ 1508 05db 0B       		.byte	0xb
+ 1509 05dc 4A       		.byte	0x4a
+ 1510 05dd E3000000 		.4byte	.LASF67
+ 1511 05e1 89000000 		.4byte	0x89
+ 1512 05e5 01       		.byte	0x1
+ 1513 05e6 EE050000 		.4byte	0x5ee
+ 1514 05ea F4050000 		.4byte	0x5f4
+ 1515 05ee 0E       		.uleb128 0xe
+ 1516 05ef 76060000 		.4byte	0x676
+ 1517 05f3 00       		.byte	0
+ 1518 05f4 2A       		.uleb128 0x2a
+ 1519 05f5 4A070000 		.4byte	.LASF68
+ 1520 05f9 0B       		.byte	0xb
+ 1521 05fa 4C       		.byte	0x4c
+ 1522 05fb F7030000 		.4byte	.LASF69
+ 1523 05ff 01       		.byte	0x1
+ 1524 0600 08060000 		.4byte	0x608
+ 1525 0604 0E060000 		.4byte	0x60e
+ 1526 0608 0E       		.uleb128 0xe
+ 1527 0609 76060000 		.4byte	0x676
+ 1528 060d 00       		.byte	0
+ 1529 060e 10       		.uleb128 0x10
+ 1530 060f 45070000 		.4byte	.LASF70
+ 1531 0613 0B       		.byte	0xb
+ 1532 0614 50       		.byte	0x50
+ 1533 0615 0A010000 		.4byte	.LASF71
+ 1534 0619 89000000 		.4byte	0x89
+ 1535 061d 01       		.byte	0x1
+ 1536 061e 26060000 		.4byte	0x626
+ 1537 0622 2C060000 		.4byte	0x62c
+ 1538 0626 0E       		.uleb128 0xe
+ 1539 0627 76060000 		.4byte	0x676
+ 1540 062b 00       		.byte	0
+ 1541 062c 2A       		.uleb128 0x2a
+ 1542 062d 92040000 		.4byte	.LASF72
+ 1543 0631 0B       		.byte	0xb
+ 1544 0632 52       		.byte	0x52
+ 1545 0633 1E020000 		.4byte	.LASF73
+ 1546 0637 01       		.byte	0x1
+ 1547 0638 40060000 		.4byte	0x640
+ 1548 063c 50060000 		.4byte	0x650
+ 1549 0640 0E       		.uleb128 0xe
+ 1550 0641 76060000 		.4byte	0x676
+ 1551 0645 0F       		.uleb128 0xf
+ 1552 0646 82060000 		.4byte	0x682
+ 1553 064a 0F       		.uleb128 0xf
+ 1554 064b 89000000 		.4byte	0x89
+ 1555 064f 00       		.byte	0
+ 1556 0650 11       		.uleb128 0x11
+ 1557 0651 C3020000 		.4byte	.LASF74
+ 1558 0655 0B       		.byte	0xb
+ 1559 0656 58       		.byte	0x58
+ 1560 0657 BA010000 		.4byte	.LASF75
+ 1561 065b 74000000 		.4byte	0x74
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 39
+
+
+ 1562 065f 01       		.byte	0x1
+ 1563 0660 64060000 		.4byte	0x664
+ 1564 0664 0E       		.uleb128 0xe
+ 1565 0665 76060000 		.4byte	0x676
+ 1566 0669 00       		.byte	0
+ 1567 066a 00       		.byte	0
+ 1568 066b 19       		.uleb128 0x19
+ 1569 066c F0020000 		.4byte	.LASF77
+ 1570 0670 06       		.uleb128 0x6
+ 1571 0671 04       		.byte	0x4
+ 1572 0672 6B060000 		.4byte	0x66b
+ 1573 0676 06       		.uleb128 0x6
+ 1574 0677 04       		.byte	0x4
+ 1575 0678 34050000 		.4byte	0x534
+ 1576 067c 26       		.uleb128 0x26
+ 1577 067d 04       		.byte	0x4
+ 1578 067e 34050000 		.4byte	0x534
+ 1579 0682 06       		.uleb128 0x6
+ 1580 0683 04       		.byte	0x4
+ 1581 0684 97000000 		.4byte	0x97
+ 1582 0688 1F       		.uleb128 0x1f
+ 1583 0689 B0060000 		.4byte	.LASF78
+ 1584 068d 0C       		.byte	0xc
+ 1585 068e 0B       		.byte	0xb
+ 1586 068f 93070000 		.4byte	0x793
+ 1587 0693 20       		.uleb128 0x20
+ 1588 0694 01070000 		.4byte	.LASF79
+ 1589 0698 08       		.byte	0x8
+ 1590 0699 04       		.byte	0x4
+ 1591 069a 0C       		.byte	0xc
+ 1592 069b DA010000 		.4byte	0x1da
+ 1593 069f 8D070000 		.4byte	0x78d
+ 1594 06a3 23       		.uleb128 0x23
+ 1595 06a4 DA010000 		.4byte	0x1da
+ 1596 06a8 00       		.byte	0
+ 1597 06a9 01       		.byte	0x1
+ 1598 06aa 0A       		.uleb128 0xa
+ 1599 06ab F2030000 		.4byte	.LASF80
+ 1600 06af 04       		.byte	0x4
+ 1601 06b0 0F       		.byte	0xf
+ 1602 06b1 D9000000 		.4byte	0xd9
+ 1603 06b5 04       		.byte	0x4
+ 1604 06b6 01       		.byte	0x1
+ 1605 06b7 14       		.uleb128 0x14
+ 1606 06b8 01070000 		.4byte	.LASF79
+ 1607 06bc 93070000 		.4byte	0x793
+ 1608 06c0 01       		.byte	0x1
+ 1609 06c1 C9060000 		.4byte	0x6c9
+ 1610 06c5 D4060000 		.4byte	0x6d4
+ 1611 06c9 0E       		.uleb128 0xe
+ 1612 06ca 93070000 		.4byte	0x793
+ 1613 06ce 0F       		.uleb128 0xf
+ 1614 06cf 99070000 		.4byte	0x799
+ 1615 06d3 00       		.byte	0
+ 1616 06d4 0D       		.uleb128 0xd
+ 1617 06d5 01070000 		.4byte	.LASF79
+ 1618 06d9 04       		.byte	0x4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 40
+
+
+ 1619 06da 11       		.byte	0x11
+ 1620 06db 93070000 		.4byte	0x793
+ 1621 06df 01       		.byte	0x1
+ 1622 06e0 E8060000 		.4byte	0x6e8
+ 1623 06e4 EE060000 		.4byte	0x6ee
+ 1624 06e8 0E       		.uleb128 0xe
+ 1625 06e9 93070000 		.4byte	0x793
+ 1626 06ed 00       		.byte	0
+ 1627 06ee 16       		.uleb128 0x16
+ 1628 06ef 00010000 		.4byte	.LASF32
+ 1629 06f3 04       		.byte	0x4
+ 1630 06f4 16       		.byte	0x16
+ 1631 06f5 E7080000 		.4byte	.LASF81
+ 1632 06f9 89000000 		.4byte	0x89
+ 1633 06fd 01       		.byte	0x1
+ 1634 06fe 02       		.uleb128 0x2
+ 1635 06ff 10       		.byte	0x10
+ 1636 0700 00       		.uleb128 0
+ 1637 0701 93060000 		.4byte	0x693
+ 1638 0705 01       		.byte	0x1
+ 1639 0706 0E070000 		.4byte	0x70e
+ 1640 070a 19070000 		.4byte	0x719
+ 1641 070e 0E       		.uleb128 0xe
+ 1642 070f 9F070000 		.4byte	0x79f
+ 1643 0713 0F       		.uleb128 0xf
+ 1644 0714 CC000000 		.4byte	0xcc
+ 1645 0718 00       		.byte	0
+ 1646 0719 16       		.uleb128 0x16
+ 1647 071a 55040000 		.4byte	.LASF33
+ 1648 071e 04       		.byte	0x4
+ 1649 071f 23       		.byte	0x23
+ 1650 0720 7D020000 		.4byte	.LASF82
+ 1651 0724 89000000 		.4byte	0x89
+ 1652 0728 01       		.byte	0x1
+ 1653 0729 02       		.uleb128 0x2
+ 1654 072a 10       		.byte	0x10
+ 1655 072b 01       		.uleb128 0x1
+ 1656 072c 93060000 		.4byte	0x693
+ 1657 0730 01       		.byte	0x1
+ 1658 0731 39070000 		.4byte	0x739
+ 1659 0735 44070000 		.4byte	0x744
+ 1660 0739 0E       		.uleb128 0xe
+ 1661 073a 93070000 		.4byte	0x793
+ 1662 073e 0F       		.uleb128 0xf
+ 1663 073f CC000000 		.4byte	0xcc
+ 1664 0743 00       		.byte	0
+ 1665 0744 16       		.uleb128 0x16
+ 1666 0745 1D050000 		.4byte	.LASF36
+ 1667 0749 04       		.byte	0x4
+ 1668 074a 34       		.byte	0x34
+ 1669 074b 7D010000 		.4byte	.LASF83
+ 1670 074f D9000000 		.4byte	0xd9
+ 1671 0753 01       		.byte	0x1
+ 1672 0754 02       		.uleb128 0x2
+ 1673 0755 10       		.byte	0x10
+ 1674 0756 02       		.uleb128 0x2
+ 1675 0757 93060000 		.4byte	0x693
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 41
+
+
+ 1676 075b 01       		.byte	0x1
+ 1677 075c 64070000 		.4byte	0x764
+ 1678 0760 6A070000 		.4byte	0x76a
+ 1679 0764 0E       		.uleb128 0xe
+ 1680 0765 93070000 		.4byte	0x793
+ 1681 0769 00       		.byte	0
+ 1682 076a 24       		.uleb128 0x24
+ 1683 076b 7C060000 		.4byte	.LASF38
+ 1684 076f 04       		.byte	0x4
+ 1685 0770 35       		.byte	0x35
+ 1686 0771 A1040000 		.4byte	.LASF85
+ 1687 0775 D9000000 		.4byte	0xd9
+ 1688 0779 01       		.byte	0x1
+ 1689 077a 02       		.uleb128 0x2
+ 1690 077b 10       		.byte	0x10
+ 1691 077c 03       		.uleb128 0x3
+ 1692 077d 93060000 		.4byte	0x693
+ 1693 0781 01       		.byte	0x1
+ 1694 0782 86070000 		.4byte	0x786
+ 1695 0786 0E       		.uleb128 0xe
+ 1696 0787 93070000 		.4byte	0x793
+ 1697 078b 00       		.byte	0
+ 1698 078c 00       		.byte	0
+ 1699 078d 07       		.uleb128 0x7
+ 1700 078e 93060000 		.4byte	0x693
+ 1701 0792 00       		.byte	0
+ 1702 0793 06       		.uleb128 0x6
+ 1703 0794 04       		.byte	0x4
+ 1704 0795 93060000 		.4byte	0x693
+ 1705 0799 26       		.uleb128 0x26
+ 1706 079a 04       		.byte	0x4
+ 1707 079b 8D070000 		.4byte	0x78d
+ 1708 079f 06       		.uleb128 0x6
+ 1709 07a0 04       		.byte	0x4
+ 1710 07a1 8D070000 		.4byte	0x78d
+ 1711 07a5 06       		.uleb128 0x6
+ 1712 07a6 04       		.byte	0x4
+ 1713 07a7 EB000000 		.4byte	0xeb
+ 1714 07ab 06       		.uleb128 0x6
+ 1715 07ac 04       		.byte	0x4
+ 1716 07ad AB030000 		.4byte	0x3ab
+ 1717 07b1 06       		.uleb128 0x6
+ 1718 07b2 04       		.byte	0x4
+ 1719 07b3 CC040000 		.4byte	0x4cc
+ 1720 07b7 2B       		.uleb128 0x2b
+ 1721 07b8 89000000 		.4byte	0x89
+ 1722 07bc C2070000 		.4byte	0x7c2
+ 1723 07c0 2C       		.uleb128 0x2c
+ 1724 07c1 00       		.byte	0
+ 1725 07c2 06       		.uleb128 0x6
+ 1726 07c3 04       		.byte	0x4
+ 1727 07c4 C8070000 		.4byte	0x7c8
+ 1728 07c8 2D       		.uleb128 0x2d
+ 1729 07c9 04       		.byte	0x4
+ 1730 07ca 9B010000 		.4byte	.LASF127
+ 1731 07ce B7070000 		.4byte	0x7b7
+ 1732 07d2 06       		.uleb128 0x6
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 42
+
+
+ 1733 07d3 04       		.byte	0x4
+ 1734 07d4 D8070000 		.4byte	0x7d8
+ 1735 07d8 07       		.uleb128 0x7
+ 1736 07d9 37000000 		.4byte	0x37
+ 1737 07dd 2E       		.uleb128 0x2e
+ 1738 07de 2F020000 		.4byte	0x22f
+ 1739 07e2 01       		.byte	0x1
+ 1740 07e3 2B       		.byte	0x2b
+ 1741 07e4 02       		.byte	0x2
+ 1742 07e5 ED070000 		.4byte	0x7ed
+ 1743 07e9 F7070000 		.4byte	0x7f7
+ 1744 07ed 2F       		.uleb128 0x2f
+ 1745 07ee E2080000 		.4byte	.LASF86
+ 1746 07f2 F7070000 		.4byte	0x7f7
+ 1747 07f6 00       		.byte	0
+ 1748 07f7 07       		.uleb128 0x7
+ 1749 07f8 E1040000 		.4byte	0x4e1
+ 1750 07fc 30       		.uleb128 0x30
+ 1751 07fd DD070000 		.4byte	0x7dd
+ 1752 0801 E4010000 		.4byte	.LASF88
+ 1753 0805 00000000 		.4byte	.LFB21
+ 1754 0809 1C000000 		.4byte	.LFE21-.LFB21
+ 1755 080d 01       		.uleb128 0x1
+ 1756 080e 9C       		.byte	0x9c
+ 1757 080f 17080000 		.4byte	0x817
+ 1758 0813 20080000 		.4byte	0x820
+ 1759 0817 31       		.uleb128 0x31
+ 1760 0818 ED070000 		.4byte	0x7ed
+ 1761 081c 02       		.uleb128 0x2
+ 1762 081d 91       		.byte	0x91
+ 1763 081e 74       		.sleb128 -12
+ 1764 081f 00       		.byte	0
+ 1765 0820 32       		.uleb128 0x32
+ 1766 0821 50010000 		.4byte	0x150
+ 1767 0825 02       		.byte	0x2
+ 1768 0826 2E080000 		.4byte	0x82e
+ 1769 082a 59080000 		.4byte	0x859
+ 1770 082e 2F       		.uleb128 0x2f
+ 1771 082f E2080000 		.4byte	.LASF86
+ 1772 0833 59080000 		.4byte	0x859
+ 1773 0837 33       		.uleb128 0x33
+ 1774 0838 4F080000 		.4byte	.LASF53
+ 1775 083c 02       		.byte	0x2
+ 1776 083d 2F       		.byte	0x2f
+ 1777 083e D9000000 		.4byte	0xd9
+ 1778 0842 34       		.uleb128 0x34
+ 1779 0843 6D736700 		.ascii	"msg\000"
+ 1780 0847 02       		.byte	0x2
+ 1781 0848 2F       		.byte	0x2f
+ 1782 0849 E1040000 		.4byte	0x4e1
+ 1783 084d 33       		.uleb128 0x33
+ 1784 084e 52090000 		.4byte	.LASF87
+ 1785 0852 02       		.byte	0x2
+ 1786 0853 2F       		.byte	0x2f
+ 1787 0854 89000000 		.4byte	0x89
+ 1788 0858 00       		.byte	0
+ 1789 0859 07       		.uleb128 0x7
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 43
+
+
+ 1790 085a ED040000 		.4byte	0x4ed
+ 1791 085e 30       		.uleb128 0x30
+ 1792 085f 20080000 		.4byte	0x820
+ 1793 0863 97030000 		.4byte	.LASF89
+ 1794 0867 00000000 		.4byte	.LFB58
+ 1795 086b 2A000000 		.4byte	.LFE58-.LFB58
+ 1796 086f 01       		.uleb128 0x1
+ 1797 0870 9C       		.byte	0x9c
+ 1798 0871 79080000 		.4byte	0x879
+ 1799 0875 9A080000 		.4byte	0x89a
+ 1800 0879 31       		.uleb128 0x31
+ 1801 087a 2E080000 		.4byte	0x82e
+ 1802 087e 02       		.uleb128 0x2
+ 1803 087f 91       		.byte	0x91
+ 1804 0880 74       		.sleb128 -12
+ 1805 0881 31       		.uleb128 0x31
+ 1806 0882 37080000 		.4byte	0x837
+ 1807 0886 02       		.uleb128 0x2
+ 1808 0887 91       		.byte	0x91
+ 1809 0888 70       		.sleb128 -16
+ 1810 0889 31       		.uleb128 0x31
+ 1811 088a 42080000 		.4byte	0x842
+ 1812 088e 02       		.uleb128 0x2
+ 1813 088f 91       		.byte	0x91
+ 1814 0890 6C       		.sleb128 -20
+ 1815 0891 31       		.uleb128 0x31
+ 1816 0892 4D080000 		.4byte	0x84d
+ 1817 0896 02       		.uleb128 0x2
+ 1818 0897 91       		.byte	0x91
+ 1819 0898 68       		.sleb128 -24
+ 1820 0899 00       		.byte	0
+ 1821 089a 35       		.uleb128 0x35
+ 1822 089b 79010000 		.4byte	0x179
+ 1823 089f 00000000 		.4byte	.LFB60
+ 1824 08a3 2E000000 		.4byte	.LFE60-.LFB60
+ 1825 08a7 01       		.uleb128 0x1
+ 1826 08a8 9C       		.byte	0x9c
+ 1827 08a9 B1080000 		.4byte	0x8b1
+ 1828 08ad CC080000 		.4byte	0x8cc
+ 1829 08b1 36       		.uleb128 0x36
+ 1830 08b2 E2080000 		.4byte	.LASF86
+ 1831 08b6 59080000 		.4byte	0x859
+ 1832 08ba 02       		.uleb128 0x2
+ 1833 08bb 91       		.byte	0x91
+ 1834 08bc 6C       		.sleb128 -20
+ 1835 08bd 37       		.uleb128 0x37
+ 1836 08be 6D736700 		.ascii	"msg\000"
+ 1837 08c2 02       		.byte	0x2
+ 1838 08c3 34       		.byte	0x34
+ 1839 08c4 F3040000 		.4byte	0x4f3
+ 1840 08c8 02       		.uleb128 0x2
+ 1841 08c9 91       		.byte	0x91
+ 1842 08ca 68       		.sleb128 -24
+ 1843 08cb 00       		.byte	0
+ 1844 08cc 38       		.uleb128 0x38
+ 1845 08cd 23050000 		.4byte	0x523
+ 1846 08d1 00000000 		.4byte	.LFB109
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 44
+
+
+ 1847 08d5 14000000 		.4byte	.LFE109-.LFB109
+ 1848 08d9 01       		.uleb128 0x1
+ 1849 08da 9C       		.byte	0x9c
+ 1850 08db 32       		.uleb128 0x32
+ 1851 08dc D4060000 		.4byte	0x6d4
+ 1852 08e0 02       		.byte	0x2
+ 1853 08e1 E9080000 		.4byte	0x8e9
+ 1854 08e5 F3080000 		.4byte	0x8f3
+ 1855 08e9 2F       		.uleb128 0x2f
+ 1856 08ea E2080000 		.4byte	.LASF86
+ 1857 08ee F3080000 		.4byte	0x8f3
+ 1858 08f2 00       		.byte	0
+ 1859 08f3 07       		.uleb128 0x7
+ 1860 08f4 93070000 		.4byte	0x793
+ 1861 08f8 39       		.uleb128 0x39
+ 1862 08f9 DB080000 		.4byte	0x8db
+ 1863 08fd 6A070000 		.4byte	.LASF90
+ 1864 0901 00000000 		.4byte	.LFB126
+ 1865 0905 30000000 		.4byte	.LFE126-.LFB126
+ 1866 0909 01       		.uleb128 0x1
+ 1867 090a 9C       		.byte	0x9c
+ 1868 090b 13090000 		.4byte	0x913
+ 1869 090f 1C090000 		.4byte	0x91c
+ 1870 0913 31       		.uleb128 0x31
+ 1871 0914 E9080000 		.4byte	0x8e9
+ 1872 0918 02       		.uleb128 0x2
+ 1873 0919 91       		.byte	0x91
+ 1874 091a 74       		.sleb128 -12
+ 1875 091b 00       		.byte	0
+ 1876 091c 35       		.uleb128 0x35
+ 1877 091d EE060000 		.4byte	0x6ee
+ 1878 0921 00000000 		.4byte	.LFB128
+ 1879 0925 5E000000 		.4byte	.LFE128-.LFB128
+ 1880 0929 01       		.uleb128 0x1
+ 1881 092a 9C       		.byte	0x9c
+ 1882 092b 33090000 		.4byte	0x933
+ 1883 092f 74090000 		.4byte	0x974
+ 1884 0933 36       		.uleb128 0x36
+ 1885 0934 E2080000 		.4byte	.LASF86
+ 1886 0938 74090000 		.4byte	0x974
+ 1887 093c 02       		.uleb128 0x2
+ 1888 093d 91       		.byte	0x91
+ 1889 093e 6C       		.sleb128 -20
+ 1890 093f 3A       		.uleb128 0x3a
+ 1891 0940 C8060000 		.4byte	.LASF91
+ 1892 0944 04       		.byte	0x4
+ 1893 0945 16       		.byte	0x16
+ 1894 0946 CC000000 		.4byte	0xcc
+ 1895 094a 02       		.uleb128 0x2
+ 1896 094b 91       		.byte	0x91
+ 1897 094c 68       		.sleb128 -24
+ 1898 094d 3B       		.uleb128 0x3b
+ 1899 094e 0A000000 		.4byte	.LBB5
+ 1900 0952 4C000000 		.4byte	.LBE5-.LBB5
+ 1901 0956 3C       		.uleb128 0x3c
+ 1902 0957 E9020000 		.4byte	.LASF92
+ 1903 095b 04       		.byte	0x4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 45
+
+
+ 1904 095c 18       		.byte	0x18
+ 1905 095d 89000000 		.4byte	0x89
+ 1906 0961 02       		.uleb128 0x2
+ 1907 0962 91       		.byte	0x91
+ 1908 0963 74       		.sleb128 -12
+ 1909 0964 3C       		.uleb128 0x3c
+ 1910 0965 11040000 		.4byte	.LASF93
+ 1911 0969 04       		.byte	0x4
+ 1912 096a 1A       		.byte	0x1a
+ 1913 096b B8000000 		.4byte	0xb8
+ 1914 096f 02       		.uleb128 0x2
+ 1915 0970 91       		.byte	0x91
+ 1916 0971 70       		.sleb128 -16
+ 1917 0972 00       		.byte	0
+ 1918 0973 00       		.byte	0
+ 1919 0974 07       		.uleb128 0x7
+ 1920 0975 9F070000 		.4byte	0x79f
+ 1921 0979 35       		.uleb128 0x35
+ 1922 097a 19070000 		.4byte	0x719
+ 1923 097e 00000000 		.4byte	.LFB129
+ 1924 0982 80000000 		.4byte	.LFE129-.LFB129
+ 1925 0986 01       		.uleb128 0x1
+ 1926 0987 9C       		.byte	0x9c
+ 1927 0988 90090000 		.4byte	0x990
+ 1928 098c E7090000 		.4byte	0x9e7
+ 1929 0990 36       		.uleb128 0x36
+ 1930 0991 E2080000 		.4byte	.LASF86
+ 1931 0995 F3080000 		.4byte	0x8f3
+ 1932 0999 02       		.uleb128 0x2
+ 1933 099a 91       		.byte	0x91
+ 1934 099b 64       		.sleb128 -28
+ 1935 099c 3A       		.uleb128 0x3a
+ 1936 099d 4C040000 		.4byte	.LASF94
+ 1937 09a1 04       		.byte	0x4
+ 1938 09a2 23       		.byte	0x23
+ 1939 09a3 CC000000 		.4byte	0xcc
+ 1940 09a7 02       		.uleb128 0x2
+ 1941 09a8 91       		.byte	0x91
+ 1942 09a9 60       		.sleb128 -32
+ 1943 09aa 3B       		.uleb128 0x3b
+ 1944 09ab 0A000000 		.4byte	.LBB6
+ 1945 09af 6E000000 		.4byte	.LBE6-.LBB6
+ 1946 09b3 3C       		.uleb128 0x3c
+ 1947 09b4 E9020000 		.4byte	.LASF92
+ 1948 09b8 04       		.byte	0x4
+ 1949 09b9 25       		.byte	0x25
+ 1950 09ba 89000000 		.4byte	0x89
+ 1951 09be 02       		.uleb128 0x2
+ 1952 09bf 91       		.byte	0x91
+ 1953 09c0 70       		.sleb128 -16
+ 1954 09c1 3C       		.uleb128 0x3c
+ 1955 09c2 11040000 		.4byte	.LASF93
+ 1956 09c6 04       		.byte	0x4
+ 1957 09c7 27       		.byte	0x27
+ 1958 09c8 B8000000 		.4byte	0xb8
+ 1959 09cc 02       		.uleb128 0x2
+ 1960 09cd 91       		.byte	0x91
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 46
+
+
+ 1961 09ce 6C       		.sleb128 -20
+ 1962 09cf 3B       		.uleb128 0x3b
+ 1963 09d0 28000000 		.4byte	.LBB7
+ 1964 09d4 2A000000 		.4byte	.LBE7-.LBB7
+ 1965 09d8 3D       		.uleb128 0x3d
+ 1966 09d9 6B00     		.ascii	"k\000"
+ 1967 09db 04       		.byte	0x4
+ 1968 09dc 2A       		.byte	0x2a
+ 1969 09dd 90000000 		.4byte	0x90
+ 1970 09e1 02       		.uleb128 0x2
+ 1971 09e2 91       		.byte	0x91
+ 1972 09e3 74       		.sleb128 -12
+ 1973 09e4 00       		.byte	0
+ 1974 09e5 00       		.byte	0
+ 1975 09e6 00       		.byte	0
+ 1976 09e7 3E       		.uleb128 0x3e
+ 1977 09e8 44070000 		.4byte	0x744
+ 1978 09ec 00000000 		.4byte	.LFB130
+ 1979 09f0 18000000 		.4byte	.LFE130-.LFB130
+ 1980 09f4 01       		.uleb128 0x1
+ 1981 09f5 9C       		.byte	0x9c
+ 1982 09f6 FE090000 		.4byte	0x9fe
+ 1983 09fa 0B0A0000 		.4byte	0xa0b
+ 1984 09fe 36       		.uleb128 0x36
+ 1985 09ff E2080000 		.4byte	.LASF86
+ 1986 0a03 F3080000 		.4byte	0x8f3
+ 1987 0a07 02       		.uleb128 0x2
+ 1988 0a08 91       		.byte	0x91
+ 1989 0a09 74       		.sleb128 -12
+ 1990 0a0a 00       		.byte	0
+ 1991 0a0b 3E       		.uleb128 0x3e
+ 1992 0a0c 6A070000 		.4byte	0x76a
+ 1993 0a10 00000000 		.4byte	.LFB131
+ 1994 0a14 18000000 		.4byte	.LFE131-.LFB131
+ 1995 0a18 01       		.uleb128 0x1
+ 1996 0a19 9C       		.byte	0x9c
+ 1997 0a1a 220A0000 		.4byte	0xa22
+ 1998 0a1e 2F0A0000 		.4byte	0xa2f
+ 1999 0a22 36       		.uleb128 0x36
+ 2000 0a23 E2080000 		.4byte	.LASF86
+ 2001 0a27 F3080000 		.4byte	0x8f3
+ 2002 0a2b 02       		.uleb128 0x2
+ 2003 0a2c 91       		.byte	0x91
+ 2004 0a2d 74       		.sleb128 -12
+ 2005 0a2e 00       		.byte	0
+ 2006 0a2f 1F       		.uleb128 0x1f
+ 2007 0a30 72010000 		.4byte	.LASF95
+ 2008 0a34 05       		.byte	0x5
+ 2009 0a35 0A       		.byte	0xa
+ 2010 0a36 8D0A0000 		.4byte	0xa8d
+ 2011 0a3a 3F       		.uleb128 0x3f
+ 2012 0a3b 3E080000 		.4byte	.LASF96
+ 2013 0a3f 05       		.byte	0x5
+ 2014 0a40 12       		.byte	0x12
+ 2015 0a41 DA030000 		.4byte	.LASF98
+ 2016 0a45 3F       		.uleb128 0x3f
+ 2017 0a46 C8020000 		.4byte	.LASF97
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 47
+
+
+ 2018 0a4a 05       		.byte	0x5
+ 2019 0a4b 18       		.byte	0x18
+ 2020 0a4c 67080000 		.4byte	.LASF99
+ 2021 0a50 40       		.uleb128 0x40
+ 2022 0a51 21070000 		.4byte	.LASF100
+ 2023 0a55 05       		.byte	0x5
+ 2024 0a56 0C       		.byte	0xc
+ 2025 0a57 08070000 		.4byte	.LASF102
+ 2026 0a5b 93060000 		.4byte	0x693
+ 2027 0a5f 40       		.uleb128 0x40
+ 2028 0a60 7C040000 		.4byte	.LASF101
+ 2029 0a64 05       		.byte	0x5
+ 2030 0a65 0D       		.byte	0xd
+ 2031 0a66 F0070000 		.4byte	.LASF103
+ 2032 0a6a 04010000 		.4byte	0x104
+ 2033 0a6e 40       		.uleb128 0x40
+ 2034 0a6f 00000000 		.4byte	.LASF104
+ 2035 0a73 05       		.byte	0x5
+ 2036 0a74 0F       		.byte	0xf
+ 2037 0a75 B3050000 		.4byte	.LASF105
+ 2038 0a79 7F0B0000 		.4byte	0xb7f
+ 2039 0a7d 40       		.uleb128 0x40
+ 2040 0a7e D4010000 		.4byte	.LASF106
+ 2041 0a82 05       		.byte	0x5
+ 2042 0a83 10       		.byte	0x10
+ 2043 0a84 61040000 		.4byte	.LASF107
+ 2044 0a88 B8000000 		.4byte	0xb8
+ 2045 0a8c 00       		.byte	0
+ 2046 0a8d 41       		.uleb128 0x41
+ 2047 0a8e 3A0A0000 		.4byte	0xa3a
+ 2048 0a92 00000000 		.4byte	.LFB132
+ 2049 0a96 2C000000 		.4byte	.LFE132-.LFB132
+ 2050 0a9a 01       		.uleb128 0x1
+ 2051 0a9b 9C       		.byte	0x9c
+ 2052 0a9c 41       		.uleb128 0x41
+ 2053 0a9d 450A0000 		.4byte	0xa45
+ 2054 0aa1 00000000 		.4byte	.LFB133
+ 2055 0aa5 50000000 		.4byte	.LFE133-.LFB133
+ 2056 0aa9 01       		.uleb128 0x1
+ 2057 0aaa 9C       		.byte	0x9c
+ 2058 0aab 02       		.uleb128 0x2
+ 2059 0aac 01       		.byte	0x1
+ 2060 0aad 02       		.byte	0x2
+ 2061 0aae F3040000 		.4byte	.LASF108
+ 2062 0ab2 06       		.uleb128 0x6
+ 2063 0ab3 04       		.byte	0x4
+ 2064 0ab4 35030000 		.4byte	0x335
+ 2065 0ab8 26       		.uleb128 0x26
+ 2066 0ab9 04       		.byte	0x4
+ 2067 0aba 04010000 		.4byte	0x104
+ 2068 0abe 3E       		.uleb128 0x3e
+ 2069 0abf 3E030000 		.4byte	0x33e
+ 2070 0ac3 00000000 		.4byte	.LFB134
+ 2071 0ac7 54000000 		.4byte	.LFE134-.LFB134
+ 2072 0acb 01       		.uleb128 0x1
+ 2073 0acc 9C       		.byte	0x9c
+ 2074 0acd D50A0000 		.4byte	0xad5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 48
+
+
+ 2075 0ad1 060B0000 		.4byte	0xb06
+ 2076 0ad5 36       		.uleb128 0x36
+ 2077 0ad6 E2080000 		.4byte	.LASF86
+ 2078 0ada 060B0000 		.4byte	0xb06
+ 2079 0ade 02       		.uleb128 0x2
+ 2080 0adf 91       		.byte	0x91
+ 2081 0ae0 6C       		.sleb128 -20
+ 2082 0ae1 42       		.uleb128 0x42
+ 2083 0ae2 7000     		.ascii	"p\000"
+ 2084 0ae4 06       		.byte	0x6
+ 2085 0ae5 5601     		.2byte	0x156
+ 2086 0ae7 0B0B0000 		.4byte	0xb0b
+ 2087 0aeb 02       		.uleb128 0x2
+ 2088 0aec 91       		.byte	0x91
+ 2089 0aed 68       		.sleb128 -24
+ 2090 0aee 3B       		.uleb128 0x3b
+ 2091 0aef 0A000000 		.4byte	.LBB9
+ 2092 0af3 40000000 		.4byte	.LBE9-.LBB9
+ 2093 0af7 43       		.uleb128 0x43
+ 2094 0af8 6900     		.ascii	"i\000"
+ 2095 0afa 06       		.byte	0x6
+ 2096 0afb 5801     		.2byte	0x158
+ 2097 0afd 89000000 		.4byte	0x89
+ 2098 0b01 02       		.uleb128 0x2
+ 2099 0b02 91       		.byte	0x91
+ 2100 0b03 74       		.sleb128 -12
+ 2101 0b04 00       		.byte	0
+ 2102 0b05 00       		.byte	0
+ 2103 0b06 07       		.uleb128 0x7
+ 2104 0b07 B20A0000 		.4byte	0xab2
+ 2105 0b0b 07       		.uleb128 0x7
+ 2106 0b0c B80A0000 		.4byte	0xab8
+ 2107 0b10 44       		.uleb128 0x44
+ 2108 0b11 25060000 		.4byte	.LASF128
+ 2109 0b15 00000000 		.4byte	.LFB135
+ 2110 0b19 48000000 		.4byte	.LFE135-.LFB135
+ 2111 0b1d 01       		.uleb128 0x1
+ 2112 0b1e 9C       		.byte	0x9c
+ 2113 0b1f 400B0000 		.4byte	0xb40
+ 2114 0b23 3A       		.uleb128 0x3a
+ 2115 0b24 DA020000 		.4byte	.LASF109
+ 2116 0b28 05       		.byte	0x5
+ 2117 0b29 21       		.byte	0x21
+ 2118 0b2a 89000000 		.4byte	0x89
+ 2119 0b2e 02       		.uleb128 0x2
+ 2120 0b2f 91       		.byte	0x91
+ 2121 0b30 74       		.sleb128 -12
+ 2122 0b31 3A       		.uleb128 0x3a
+ 2123 0b32 04030000 		.4byte	.LASF110
+ 2124 0b36 05       		.byte	0x5
+ 2125 0b37 21       		.byte	0x21
+ 2126 0b38 89000000 		.4byte	0x89
+ 2127 0b3c 02       		.uleb128 0x2
+ 2128 0b3d 91       		.byte	0x91
+ 2129 0b3e 70       		.sleb128 -16
+ 2130 0b3f 00       		.byte	0
+ 2131 0b40 45       		.uleb128 0x45
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 49
+
+
+ 2132 0b41 6F030000 		.4byte	.LASF129
+ 2133 0b45 00000000 		.4byte	.LFB136
+ 2134 0b49 18000000 		.4byte	.LFE136-.LFB136
+ 2135 0b4d 01       		.uleb128 0x1
+ 2136 0b4e 9C       		.byte	0x9c
+ 2137 0b4f 19       		.uleb128 0x19
+ 2138 0b50 C3060000 		.4byte	.LASF111
+ 2139 0b54 46       		.uleb128 0x46
+ 2140 0b55 DE010000 		.4byte	.LASF113
+ 2141 0b59 0E       		.byte	0xe
+ 2142 0b5a 1D       		.byte	0x1d
+ 2143 0b5b 4F0B0000 		.4byte	0xb4f
+ 2144 0b5f 47       		.uleb128 0x47
+ 2145 0b60 6E6800   		.ascii	"nh\000"
+ 2146 0b63 05       		.byte	0x5
+ 2147 0b64 08       		.byte	0x8
+ 2148 0b65 94030000 		.4byte	0x394
+ 2149 0b69 48       		.uleb128 0x48
+ 2150 0b6a 500A0000 		.4byte	0xa50
+ 2151 0b6e 05       		.uleb128 0x5
+ 2152 0b6f 03       		.byte	0x3
+ 2153 0b70 00000000 		.4byte	_ZN10HelloWorld7str_msgE
+ 2154 0b74 48       		.uleb128 0x48
+ 2155 0b75 5F0A0000 		.4byte	0xa5f
+ 2156 0b79 05       		.uleb128 0x5
+ 2157 0b7a 03       		.byte	0x3
+ 2158 0b7b 00000000 		.4byte	_ZN10HelloWorld7chatterE
+ 2159 0b7f 49       		.uleb128 0x49
+ 2160 0b80 D2000000 		.4byte	0xd2
+ 2161 0b84 8F0B0000 		.4byte	0xb8f
+ 2162 0b88 4A       		.uleb128 0x4a
+ 2163 0b89 C3000000 		.4byte	0xc3
+ 2164 0b8d 0C       		.byte	0xc
+ 2165 0b8e 00       		.byte	0
+ 2166 0b8f 48       		.uleb128 0x48
+ 2167 0b90 6E0A0000 		.4byte	0xa6e
+ 2168 0b94 05       		.uleb128 0x5
+ 2169 0b95 03       		.byte	0x3
+ 2170 0b96 00000000 		.4byte	_ZN10HelloWorld5helloE
+ 2171 0b9a 48       		.uleb128 0x48
+ 2172 0b9b 7D0A0000 		.4byte	0xa7d
+ 2173 0b9f 05       		.uleb128 0x5
+ 2174 0ba0 03       		.byte	0x3
+ 2175 0ba1 00000000 		.4byte	_ZN10HelloWorld9next_timeE
+ 2176 0ba5 49       		.uleb128 0x49
+ 2177 0ba6 D2000000 		.4byte	0xd2
+ 2178 0baa B50B0000 		.4byte	0xbb5
+ 2179 0bae 4A       		.uleb128 0x4a
+ 2180 0baf C3000000 		.4byte	0xc3
+ 2181 0bb3 1B       		.byte	0x1b
+ 2182 0bb4 00       		.byte	0
+ 2183 0bb5 07       		.uleb128 0x7
+ 2184 0bb6 A50B0000 		.4byte	0xba5
+ 2185 0bba 48       		.uleb128 0x48
+ 2186 0bbb D1040000 		.4byte	0x4d1
+ 2187 0bbf 05       		.uleb128 0x5
+ 2188 0bc0 03       		.byte	0x3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 50
+
+
+ 2189 0bc1 40000000 		.4byte	_ZN14rosserial_msgsL12REQUESTPARAME
+ 2190 0bc5 00       		.byte	0
+ 2191              		.section	.debug_abbrev,"",%progbits
+ 2192              	.Ldebug_abbrev0:
+ 2193 0000 01       		.uleb128 0x1
+ 2194 0001 11       		.uleb128 0x11
+ 2195 0002 01       		.byte	0x1
+ 2196 0003 25       		.uleb128 0x25
+ 2197 0004 0E       		.uleb128 0xe
+ 2198 0005 13       		.uleb128 0x13
+ 2199 0006 0B       		.uleb128 0xb
+ 2200 0007 03       		.uleb128 0x3
+ 2201 0008 0E       		.uleb128 0xe
+ 2202 0009 1B       		.uleb128 0x1b
+ 2203 000a 0E       		.uleb128 0xe
+ 2204 000b 55       		.uleb128 0x55
+ 2205 000c 17       		.uleb128 0x17
+ 2206 000d 11       		.uleb128 0x11
+ 2207 000e 01       		.uleb128 0x1
+ 2208 000f 10       		.uleb128 0x10
+ 2209 0010 17       		.uleb128 0x17
+ 2210 0011 00       		.byte	0
+ 2211 0012 00       		.byte	0
+ 2212 0013 02       		.uleb128 0x2
+ 2213 0014 24       		.uleb128 0x24
+ 2214 0015 00       		.byte	0
+ 2215 0016 0B       		.uleb128 0xb
+ 2216 0017 0B       		.uleb128 0xb
+ 2217 0018 3E       		.uleb128 0x3e
+ 2218 0019 0B       		.uleb128 0xb
+ 2219 001a 03       		.uleb128 0x3
+ 2220 001b 0E       		.uleb128 0xe
+ 2221 001c 00       		.byte	0
+ 2222 001d 00       		.byte	0
+ 2223 001e 03       		.uleb128 0x3
+ 2224 001f 16       		.uleb128 0x16
+ 2225 0020 00       		.byte	0
+ 2226 0021 03       		.uleb128 0x3
+ 2227 0022 0E       		.uleb128 0xe
+ 2228 0023 3A       		.uleb128 0x3a
+ 2229 0024 0B       		.uleb128 0xb
+ 2230 0025 3B       		.uleb128 0x3b
+ 2231 0026 0B       		.uleb128 0xb
+ 2232 0027 49       		.uleb128 0x49
+ 2233 0028 13       		.uleb128 0x13
+ 2234 0029 00       		.byte	0
+ 2235 002a 00       		.byte	0
+ 2236 002b 04       		.uleb128 0x4
+ 2237 002c 24       		.uleb128 0x24
+ 2238 002d 00       		.byte	0
+ 2239 002e 0B       		.uleb128 0xb
+ 2240 002f 0B       		.uleb128 0xb
+ 2241 0030 3E       		.uleb128 0x3e
+ 2242 0031 0B       		.uleb128 0xb
+ 2243 0032 03       		.uleb128 0x3
+ 2244 0033 08       		.uleb128 0x8
+ 2245 0034 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 51
+
+
+ 2246 0035 00       		.byte	0
+ 2247 0036 05       		.uleb128 0x5
+ 2248 0037 0F       		.uleb128 0xf
+ 2249 0038 00       		.byte	0
+ 2250 0039 0B       		.uleb128 0xb
+ 2251 003a 0B       		.uleb128 0xb
+ 2252 003b 00       		.byte	0
+ 2253 003c 00       		.byte	0
+ 2254 003d 06       		.uleb128 0x6
+ 2255 003e 0F       		.uleb128 0xf
+ 2256 003f 00       		.byte	0
+ 2257 0040 0B       		.uleb128 0xb
+ 2258 0041 0B       		.uleb128 0xb
+ 2259 0042 49       		.uleb128 0x49
+ 2260 0043 13       		.uleb128 0x13
+ 2261 0044 00       		.byte	0
+ 2262 0045 00       		.byte	0
+ 2263 0046 07       		.uleb128 0x7
+ 2264 0047 26       		.uleb128 0x26
+ 2265 0048 00       		.byte	0
+ 2266 0049 49       		.uleb128 0x49
+ 2267 004a 13       		.uleb128 0x13
+ 2268 004b 00       		.byte	0
+ 2269 004c 00       		.byte	0
+ 2270 004d 08       		.uleb128 0x8
+ 2271 004e 39       		.uleb128 0x39
+ 2272 004f 01       		.byte	0x1
+ 2273 0050 03       		.uleb128 0x3
+ 2274 0051 08       		.uleb128 0x8
+ 2275 0052 3A       		.uleb128 0x3a
+ 2276 0053 0B       		.uleb128 0xb
+ 2277 0054 3B       		.uleb128 0x3b
+ 2278 0055 0B       		.uleb128 0xb
+ 2279 0056 01       		.uleb128 0x1
+ 2280 0057 13       		.uleb128 0x13
+ 2281 0058 00       		.byte	0
+ 2282 0059 00       		.byte	0
+ 2283 005a 09       		.uleb128 0x9
+ 2284 005b 02       		.uleb128 0x2
+ 2285 005c 01       		.byte	0x1
+ 2286 005d 03       		.uleb128 0x3
+ 2287 005e 0E       		.uleb128 0xe
+ 2288 005f 0B       		.uleb128 0xb
+ 2289 0060 0B       		.uleb128 0xb
+ 2290 0061 3A       		.uleb128 0x3a
+ 2291 0062 0B       		.uleb128 0xb
+ 2292 0063 3B       		.uleb128 0x3b
+ 2293 0064 0B       		.uleb128 0xb
+ 2294 0065 01       		.uleb128 0x1
+ 2295 0066 13       		.uleb128 0x13
+ 2296 0067 00       		.byte	0
+ 2297 0068 00       		.byte	0
+ 2298 0069 0A       		.uleb128 0xa
+ 2299 006a 0D       		.uleb128 0xd
+ 2300 006b 00       		.byte	0
+ 2301 006c 03       		.uleb128 0x3
+ 2302 006d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 52
+
+
+ 2303 006e 3A       		.uleb128 0x3a
+ 2304 006f 0B       		.uleb128 0xb
+ 2305 0070 3B       		.uleb128 0x3b
+ 2306 0071 0B       		.uleb128 0xb
+ 2307 0072 49       		.uleb128 0x49
+ 2308 0073 13       		.uleb128 0x13
+ 2309 0074 38       		.uleb128 0x38
+ 2310 0075 0B       		.uleb128 0xb
+ 2311 0076 32       		.uleb128 0x32
+ 2312 0077 0B       		.uleb128 0xb
+ 2313 0078 00       		.byte	0
+ 2314 0079 00       		.byte	0
+ 2315 007a 0B       		.uleb128 0xb
+ 2316 007b 0D       		.uleb128 0xd
+ 2317 007c 00       		.byte	0
+ 2318 007d 03       		.uleb128 0x3
+ 2319 007e 08       		.uleb128 0x8
+ 2320 007f 3A       		.uleb128 0x3a
+ 2321 0080 0B       		.uleb128 0xb
+ 2322 0081 3B       		.uleb128 0x3b
+ 2323 0082 0B       		.uleb128 0xb
+ 2324 0083 49       		.uleb128 0x49
+ 2325 0084 13       		.uleb128 0x13
+ 2326 0085 38       		.uleb128 0x38
+ 2327 0086 0B       		.uleb128 0xb
+ 2328 0087 32       		.uleb128 0x32
+ 2329 0088 0B       		.uleb128 0xb
+ 2330 0089 00       		.byte	0
+ 2331 008a 00       		.byte	0
+ 2332 008b 0C       		.uleb128 0xc
+ 2333 008c 0D       		.uleb128 0xd
+ 2334 008d 00       		.byte	0
+ 2335 008e 03       		.uleb128 0x3
+ 2336 008f 0E       		.uleb128 0xe
+ 2337 0090 3A       		.uleb128 0x3a
+ 2338 0091 0B       		.uleb128 0xb
+ 2339 0092 3B       		.uleb128 0x3b
+ 2340 0093 0B       		.uleb128 0xb
+ 2341 0094 49       		.uleb128 0x49
+ 2342 0095 13       		.uleb128 0x13
+ 2343 0096 38       		.uleb128 0x38
+ 2344 0097 0B       		.uleb128 0xb
+ 2345 0098 00       		.byte	0
+ 2346 0099 00       		.byte	0
+ 2347 009a 0D       		.uleb128 0xd
+ 2348 009b 2E       		.uleb128 0x2e
+ 2349 009c 01       		.byte	0x1
+ 2350 009d 3F       		.uleb128 0x3f
+ 2351 009e 19       		.uleb128 0x19
+ 2352 009f 03       		.uleb128 0x3
+ 2353 00a0 0E       		.uleb128 0xe
+ 2354 00a1 3A       		.uleb128 0x3a
+ 2355 00a2 0B       		.uleb128 0xb
+ 2356 00a3 3B       		.uleb128 0x3b
+ 2357 00a4 0B       		.uleb128 0xb
+ 2358 00a5 49       		.uleb128 0x49
+ 2359 00a6 13       		.uleb128 0x13
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 53
+
+
+ 2360 00a7 32       		.uleb128 0x32
+ 2361 00a8 0B       		.uleb128 0xb
+ 2362 00a9 3C       		.uleb128 0x3c
+ 2363 00aa 19       		.uleb128 0x19
+ 2364 00ab 64       		.uleb128 0x64
+ 2365 00ac 13       		.uleb128 0x13
+ 2366 00ad 01       		.uleb128 0x1
+ 2367 00ae 13       		.uleb128 0x13
+ 2368 00af 00       		.byte	0
+ 2369 00b0 00       		.byte	0
+ 2370 00b1 0E       		.uleb128 0xe
+ 2371 00b2 05       		.uleb128 0x5
+ 2372 00b3 00       		.byte	0
+ 2373 00b4 49       		.uleb128 0x49
+ 2374 00b5 13       		.uleb128 0x13
+ 2375 00b6 34       		.uleb128 0x34
+ 2376 00b7 19       		.uleb128 0x19
+ 2377 00b8 00       		.byte	0
+ 2378 00b9 00       		.byte	0
+ 2379 00ba 0F       		.uleb128 0xf
+ 2380 00bb 05       		.uleb128 0x5
+ 2381 00bc 00       		.byte	0
+ 2382 00bd 49       		.uleb128 0x49
+ 2383 00be 13       		.uleb128 0x13
+ 2384 00bf 00       		.byte	0
+ 2385 00c0 00       		.byte	0
+ 2386 00c1 10       		.uleb128 0x10
+ 2387 00c2 2E       		.uleb128 0x2e
+ 2388 00c3 01       		.byte	0x1
+ 2389 00c4 3F       		.uleb128 0x3f
+ 2390 00c5 19       		.uleb128 0x19
+ 2391 00c6 03       		.uleb128 0x3
+ 2392 00c7 0E       		.uleb128 0xe
+ 2393 00c8 3A       		.uleb128 0x3a
+ 2394 00c9 0B       		.uleb128 0xb
+ 2395 00ca 3B       		.uleb128 0x3b
+ 2396 00cb 0B       		.uleb128 0xb
+ 2397 00cc 6E       		.uleb128 0x6e
+ 2398 00cd 0E       		.uleb128 0xe
+ 2399 00ce 49       		.uleb128 0x49
+ 2400 00cf 13       		.uleb128 0x13
+ 2401 00d0 32       		.uleb128 0x32
+ 2402 00d1 0B       		.uleb128 0xb
+ 2403 00d2 3C       		.uleb128 0x3c
+ 2404 00d3 19       		.uleb128 0x19
+ 2405 00d4 64       		.uleb128 0x64
+ 2406 00d5 13       		.uleb128 0x13
+ 2407 00d6 01       		.uleb128 0x1
+ 2408 00d7 13       		.uleb128 0x13
+ 2409 00d8 00       		.byte	0
+ 2410 00d9 00       		.byte	0
+ 2411 00da 11       		.uleb128 0x11
+ 2412 00db 2E       		.uleb128 0x2e
+ 2413 00dc 01       		.byte	0x1
+ 2414 00dd 3F       		.uleb128 0x3f
+ 2415 00de 19       		.uleb128 0x19
+ 2416 00df 03       		.uleb128 0x3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 54
+
+
+ 2417 00e0 0E       		.uleb128 0xe
+ 2418 00e1 3A       		.uleb128 0x3a
+ 2419 00e2 0B       		.uleb128 0xb
+ 2420 00e3 3B       		.uleb128 0x3b
+ 2421 00e4 0B       		.uleb128 0xb
+ 2422 00e5 6E       		.uleb128 0x6e
+ 2423 00e6 0E       		.uleb128 0xe
+ 2424 00e7 49       		.uleb128 0x49
+ 2425 00e8 13       		.uleb128 0x13
+ 2426 00e9 32       		.uleb128 0x32
+ 2427 00ea 0B       		.uleb128 0xb
+ 2428 00eb 3C       		.uleb128 0x3c
+ 2429 00ec 19       		.uleb128 0x19
+ 2430 00ed 64       		.uleb128 0x64
+ 2431 00ee 13       		.uleb128 0x13
+ 2432 00ef 00       		.byte	0
+ 2433 00f0 00       		.byte	0
+ 2434 00f1 12       		.uleb128 0x12
+ 2435 00f2 02       		.uleb128 0x2
+ 2436 00f3 01       		.byte	0x1
+ 2437 00f4 03       		.uleb128 0x3
+ 2438 00f5 08       		.uleb128 0x8
+ 2439 00f6 0B       		.uleb128 0xb
+ 2440 00f7 0B       		.uleb128 0xb
+ 2441 00f8 3A       		.uleb128 0x3a
+ 2442 00f9 0B       		.uleb128 0xb
+ 2443 00fa 3B       		.uleb128 0x3b
+ 2444 00fb 0B       		.uleb128 0xb
+ 2445 00fc 1D       		.uleb128 0x1d
+ 2446 00fd 13       		.uleb128 0x13
+ 2447 00fe 01       		.uleb128 0x1
+ 2448 00ff 13       		.uleb128 0x13
+ 2449 0100 00       		.byte	0
+ 2450 0101 00       		.byte	0
+ 2451 0102 13       		.uleb128 0x13
+ 2452 0103 0D       		.uleb128 0xd
+ 2453 0104 00       		.byte	0
+ 2454 0105 03       		.uleb128 0x3
+ 2455 0106 0E       		.uleb128 0xe
+ 2456 0107 49       		.uleb128 0x49
+ 2457 0108 13       		.uleb128 0x13
+ 2458 0109 38       		.uleb128 0x38
+ 2459 010a 0B       		.uleb128 0xb
+ 2460 010b 34       		.uleb128 0x34
+ 2461 010c 19       		.uleb128 0x19
+ 2462 010d 32       		.uleb128 0x32
+ 2463 010e 0B       		.uleb128 0xb
+ 2464 010f 00       		.byte	0
+ 2465 0110 00       		.byte	0
+ 2466 0111 14       		.uleb128 0x14
+ 2467 0112 2E       		.uleb128 0x2e
+ 2468 0113 01       		.byte	0x1
+ 2469 0114 3F       		.uleb128 0x3f
+ 2470 0115 19       		.uleb128 0x19
+ 2471 0116 03       		.uleb128 0x3
+ 2472 0117 0E       		.uleb128 0xe
+ 2473 0118 49       		.uleb128 0x49
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 55
+
+
+ 2474 0119 13       		.uleb128 0x13
+ 2475 011a 34       		.uleb128 0x34
+ 2476 011b 19       		.uleb128 0x19
+ 2477 011c 32       		.uleb128 0x32
+ 2478 011d 0B       		.uleb128 0xb
+ 2479 011e 3C       		.uleb128 0x3c
+ 2480 011f 19       		.uleb128 0x19
+ 2481 0120 64       		.uleb128 0x64
+ 2482 0121 13       		.uleb128 0x13
+ 2483 0122 01       		.uleb128 0x1
+ 2484 0123 13       		.uleb128 0x13
+ 2485 0124 00       		.byte	0
+ 2486 0125 00       		.byte	0
+ 2487 0126 15       		.uleb128 0x15
+ 2488 0127 2E       		.uleb128 0x2e
+ 2489 0128 01       		.byte	0x1
+ 2490 0129 3F       		.uleb128 0x3f
+ 2491 012a 19       		.uleb128 0x19
+ 2492 012b 03       		.uleb128 0x3
+ 2493 012c 08       		.uleb128 0x8
+ 2494 012d 49       		.uleb128 0x49
+ 2495 012e 13       		.uleb128 0x13
+ 2496 012f 34       		.uleb128 0x34
+ 2497 0130 19       		.uleb128 0x19
+ 2498 0131 32       		.uleb128 0x32
+ 2499 0132 0B       		.uleb128 0xb
+ 2500 0133 3C       		.uleb128 0x3c
+ 2501 0134 19       		.uleb128 0x19
+ 2502 0135 64       		.uleb128 0x64
+ 2503 0136 13       		.uleb128 0x13
+ 2504 0137 01       		.uleb128 0x1
+ 2505 0138 13       		.uleb128 0x13
+ 2506 0139 00       		.byte	0
+ 2507 013a 00       		.byte	0
+ 2508 013b 16       		.uleb128 0x16
+ 2509 013c 2E       		.uleb128 0x2e
+ 2510 013d 01       		.byte	0x1
+ 2511 013e 3F       		.uleb128 0x3f
+ 2512 013f 19       		.uleb128 0x19
+ 2513 0140 03       		.uleb128 0x3
+ 2514 0141 0E       		.uleb128 0xe
+ 2515 0142 3A       		.uleb128 0x3a
+ 2516 0143 0B       		.uleb128 0xb
+ 2517 0144 3B       		.uleb128 0x3b
+ 2518 0145 0B       		.uleb128 0xb
+ 2519 0146 6E       		.uleb128 0x6e
+ 2520 0147 0E       		.uleb128 0xe
+ 2521 0148 49       		.uleb128 0x49
+ 2522 0149 13       		.uleb128 0x13
+ 2523 014a 4C       		.uleb128 0x4c
+ 2524 014b 0B       		.uleb128 0xb
+ 2525 014c 4D       		.uleb128 0x4d
+ 2526 014d 18       		.uleb128 0x18
+ 2527 014e 1D       		.uleb128 0x1d
+ 2528 014f 13       		.uleb128 0x13
+ 2529 0150 32       		.uleb128 0x32
+ 2530 0151 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 56
+
+
+ 2531 0152 3C       		.uleb128 0x3c
+ 2532 0153 19       		.uleb128 0x19
+ 2533 0154 64       		.uleb128 0x64
+ 2534 0155 13       		.uleb128 0x13
+ 2535 0156 01       		.uleb128 0x1
+ 2536 0157 13       		.uleb128 0x13
+ 2537 0158 00       		.byte	0
+ 2538 0159 00       		.byte	0
+ 2539 015a 17       		.uleb128 0x17
+ 2540 015b 2E       		.uleb128 0x2e
+ 2541 015c 01       		.byte	0x1
+ 2542 015d 3F       		.uleb128 0x3f
+ 2543 015e 19       		.uleb128 0x19
+ 2544 015f 03       		.uleb128 0x3
+ 2545 0160 0E       		.uleb128 0xe
+ 2546 0161 3A       		.uleb128 0x3a
+ 2547 0162 0B       		.uleb128 0xb
+ 2548 0163 3B       		.uleb128 0x3b
+ 2549 0164 0B       		.uleb128 0xb
+ 2550 0165 6E       		.uleb128 0x6e
+ 2551 0166 0E       		.uleb128 0xe
+ 2552 0167 49       		.uleb128 0x49
+ 2553 0168 13       		.uleb128 0x13
+ 2554 0169 32       		.uleb128 0x32
+ 2555 016a 0B       		.uleb128 0xb
+ 2556 016b 3C       		.uleb128 0x3c
+ 2557 016c 19       		.uleb128 0x19
+ 2558 016d 01       		.uleb128 0x1
+ 2559 016e 13       		.uleb128 0x13
+ 2560 016f 00       		.byte	0
+ 2561 0170 00       		.byte	0
+ 2562 0171 18       		.uleb128 0x18
+ 2563 0172 2E       		.uleb128 0x2e
+ 2564 0173 01       		.byte	0x1
+ 2565 0174 3F       		.uleb128 0x3f
+ 2566 0175 19       		.uleb128 0x19
+ 2567 0176 03       		.uleb128 0x3
+ 2568 0177 0E       		.uleb128 0xe
+ 2569 0178 3A       		.uleb128 0x3a
+ 2570 0179 0B       		.uleb128 0xb
+ 2571 017a 3B       		.uleb128 0x3b
+ 2572 017b 0B       		.uleb128 0xb
+ 2573 017c 6E       		.uleb128 0x6e
+ 2574 017d 0E       		.uleb128 0xe
+ 2575 017e 49       		.uleb128 0x49
+ 2576 017f 13       		.uleb128 0x13
+ 2577 0180 32       		.uleb128 0x32
+ 2578 0181 0B       		.uleb128 0xb
+ 2579 0182 3C       		.uleb128 0x3c
+ 2580 0183 19       		.uleb128 0x19
+ 2581 0184 00       		.byte	0
+ 2582 0185 00       		.byte	0
+ 2583 0186 19       		.uleb128 0x19
+ 2584 0187 02       		.uleb128 0x2
+ 2585 0188 00       		.byte	0
+ 2586 0189 03       		.uleb128 0x3
+ 2587 018a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 57
+
+
+ 2588 018b 3C       		.uleb128 0x3c
+ 2589 018c 19       		.uleb128 0x19
+ 2590 018d 00       		.byte	0
+ 2591 018e 00       		.byte	0
+ 2592 018f 1A       		.uleb128 0x1a
+ 2593 0190 08       		.uleb128 0x8
+ 2594 0191 00       		.byte	0
+ 2595 0192 3A       		.uleb128 0x3a
+ 2596 0193 0B       		.uleb128 0xb
+ 2597 0194 3B       		.uleb128 0x3b
+ 2598 0195 0B       		.uleb128 0xb
+ 2599 0196 18       		.uleb128 0x18
+ 2600 0197 13       		.uleb128 0x13
+ 2601 0198 00       		.byte	0
+ 2602 0199 00       		.byte	0
+ 2603 019a 1B       		.uleb128 0x1b
+ 2604 019b 02       		.uleb128 0x2
+ 2605 019c 01       		.byte	0x1
+ 2606 019d 03       		.uleb128 0x3
+ 2607 019e 0E       		.uleb128 0xe
+ 2608 019f 3C       		.uleb128 0x3c
+ 2609 01a0 19       		.uleb128 0x19
+ 2610 01a1 01       		.uleb128 0x1
+ 2611 01a2 13       		.uleb128 0x13
+ 2612 01a3 00       		.byte	0
+ 2613 01a4 00       		.byte	0
+ 2614 01a5 1C       		.uleb128 0x1c
+ 2615 01a6 2E       		.uleb128 0x2e
+ 2616 01a7 01       		.byte	0x1
+ 2617 01a8 3F       		.uleb128 0x3f
+ 2618 01a9 19       		.uleb128 0x19
+ 2619 01aa 03       		.uleb128 0x3
+ 2620 01ab 0E       		.uleb128 0xe
+ 2621 01ac 3A       		.uleb128 0x3a
+ 2622 01ad 0B       		.uleb128 0xb
+ 2623 01ae 3B       		.uleb128 0x3b
+ 2624 01af 05       		.uleb128 0x5
+ 2625 01b0 6E       		.uleb128 0x6e
+ 2626 01b1 0E       		.uleb128 0xe
+ 2627 01b2 49       		.uleb128 0x49
+ 2628 01b3 13       		.uleb128 0x13
+ 2629 01b4 32       		.uleb128 0x32
+ 2630 01b5 0B       		.uleb128 0xb
+ 2631 01b6 3C       		.uleb128 0x3c
+ 2632 01b7 19       		.uleb128 0x19
+ 2633 01b8 64       		.uleb128 0x64
+ 2634 01b9 13       		.uleb128 0x13
+ 2635 01ba 01       		.uleb128 0x1
+ 2636 01bb 13       		.uleb128 0x13
+ 2637 01bc 00       		.byte	0
+ 2638 01bd 00       		.byte	0
+ 2639 01be 1D       		.uleb128 0x1d
+ 2640 01bf 2F       		.uleb128 0x2f
+ 2641 01c0 00       		.byte	0
+ 2642 01c1 03       		.uleb128 0x3
+ 2643 01c2 0E       		.uleb128 0xe
+ 2644 01c3 49       		.uleb128 0x49
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 58
+
+
+ 2645 01c4 13       		.uleb128 0x13
+ 2646 01c5 00       		.byte	0
+ 2647 01c6 00       		.byte	0
+ 2648 01c7 1E       		.uleb128 0x1e
+ 2649 01c8 30       		.uleb128 0x30
+ 2650 01c9 00       		.byte	0
+ 2651 01ca 03       		.uleb128 0x3
+ 2652 01cb 0E       		.uleb128 0xe
+ 2653 01cc 49       		.uleb128 0x49
+ 2654 01cd 13       		.uleb128 0x13
+ 2655 01ce 1C       		.uleb128 0x1c
+ 2656 01cf 0B       		.uleb128 0xb
+ 2657 01d0 00       		.byte	0
+ 2658 01d1 00       		.byte	0
+ 2659 01d2 1F       		.uleb128 0x1f
+ 2660 01d3 39       		.uleb128 0x39
+ 2661 01d4 01       		.byte	0x1
+ 2662 01d5 03       		.uleb128 0x3
+ 2663 01d6 0E       		.uleb128 0xe
+ 2664 01d7 3A       		.uleb128 0x3a
+ 2665 01d8 0B       		.uleb128 0xb
+ 2666 01d9 3B       		.uleb128 0x3b
+ 2667 01da 0B       		.uleb128 0xb
+ 2668 01db 01       		.uleb128 0x1
+ 2669 01dc 13       		.uleb128 0x13
+ 2670 01dd 00       		.byte	0
+ 2671 01de 00       		.byte	0
+ 2672 01df 20       		.uleb128 0x20
+ 2673 01e0 02       		.uleb128 0x2
+ 2674 01e1 01       		.byte	0x1
+ 2675 01e2 03       		.uleb128 0x3
+ 2676 01e3 0E       		.uleb128 0xe
+ 2677 01e4 0B       		.uleb128 0xb
+ 2678 01e5 0B       		.uleb128 0xb
+ 2679 01e6 3A       		.uleb128 0x3a
+ 2680 01e7 0B       		.uleb128 0xb
+ 2681 01e8 3B       		.uleb128 0x3b
+ 2682 01e9 0B       		.uleb128 0xb
+ 2683 01ea 1D       		.uleb128 0x1d
+ 2684 01eb 13       		.uleb128 0x13
+ 2685 01ec 01       		.uleb128 0x1
+ 2686 01ed 13       		.uleb128 0x13
+ 2687 01ee 00       		.byte	0
+ 2688 01ef 00       		.byte	0
+ 2689 01f0 21       		.uleb128 0x21
+ 2690 01f1 04       		.uleb128 0x4
+ 2691 01f2 01       		.byte	0x1
+ 2692 01f3 0B       		.uleb128 0xb
+ 2693 01f4 0B       		.uleb128 0xb
+ 2694 01f5 3A       		.uleb128 0x3a
+ 2695 01f6 0B       		.uleb128 0xb
+ 2696 01f7 3B       		.uleb128 0x3b
+ 2697 01f8 0B       		.uleb128 0xb
+ 2698 01f9 32       		.uleb128 0x32
+ 2699 01fa 0B       		.uleb128 0xb
+ 2700 01fb 01       		.uleb128 0x1
+ 2701 01fc 13       		.uleb128 0x13
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 59
+
+
+ 2702 01fd 00       		.byte	0
+ 2703 01fe 00       		.byte	0
+ 2704 01ff 22       		.uleb128 0x22
+ 2705 0200 28       		.uleb128 0x28
+ 2706 0201 00       		.byte	0
+ 2707 0202 03       		.uleb128 0x3
+ 2708 0203 0E       		.uleb128 0xe
+ 2709 0204 1C       		.uleb128 0x1c
+ 2710 0205 0D       		.uleb128 0xd
+ 2711 0206 00       		.byte	0
+ 2712 0207 00       		.byte	0
+ 2713 0208 23       		.uleb128 0x23
+ 2714 0209 1C       		.uleb128 0x1c
+ 2715 020a 00       		.byte	0
+ 2716 020b 49       		.uleb128 0x49
+ 2717 020c 13       		.uleb128 0x13
+ 2718 020d 38       		.uleb128 0x38
+ 2719 020e 0B       		.uleb128 0xb
+ 2720 020f 32       		.uleb128 0x32
+ 2721 0210 0B       		.uleb128 0xb
+ 2722 0211 00       		.byte	0
+ 2723 0212 00       		.byte	0
+ 2724 0213 24       		.uleb128 0x24
+ 2725 0214 2E       		.uleb128 0x2e
+ 2726 0215 01       		.byte	0x1
+ 2727 0216 3F       		.uleb128 0x3f
+ 2728 0217 19       		.uleb128 0x19
+ 2729 0218 03       		.uleb128 0x3
+ 2730 0219 0E       		.uleb128 0xe
+ 2731 021a 3A       		.uleb128 0x3a
+ 2732 021b 0B       		.uleb128 0xb
+ 2733 021c 3B       		.uleb128 0x3b
+ 2734 021d 0B       		.uleb128 0xb
+ 2735 021e 6E       		.uleb128 0x6e
+ 2736 021f 0E       		.uleb128 0xe
+ 2737 0220 49       		.uleb128 0x49
+ 2738 0221 13       		.uleb128 0x13
+ 2739 0222 4C       		.uleb128 0x4c
+ 2740 0223 0B       		.uleb128 0xb
+ 2741 0224 4D       		.uleb128 0x4d
+ 2742 0225 18       		.uleb128 0x18
+ 2743 0226 1D       		.uleb128 0x1d
+ 2744 0227 13       		.uleb128 0x13
+ 2745 0228 32       		.uleb128 0x32
+ 2746 0229 0B       		.uleb128 0xb
+ 2747 022a 3C       		.uleb128 0x3c
+ 2748 022b 19       		.uleb128 0x19
+ 2749 022c 64       		.uleb128 0x64
+ 2750 022d 13       		.uleb128 0x13
+ 2751 022e 00       		.byte	0
+ 2752 022f 00       		.byte	0
+ 2753 0230 25       		.uleb128 0x25
+ 2754 0231 34       		.uleb128 0x34
+ 2755 0232 00       		.byte	0
+ 2756 0233 03       		.uleb128 0x3
+ 2757 0234 0E       		.uleb128 0xe
+ 2758 0235 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 60
+
+
+ 2759 0236 0B       		.uleb128 0xb
+ 2760 0237 3B       		.uleb128 0x3b
+ 2761 0238 0B       		.uleb128 0xb
+ 2762 0239 49       		.uleb128 0x49
+ 2763 023a 13       		.uleb128 0x13
+ 2764 023b 3C       		.uleb128 0x3c
+ 2765 023c 19       		.uleb128 0x19
+ 2766 023d 1C       		.uleb128 0x1c
+ 2767 023e 0E       		.uleb128 0xe
+ 2768 023f 00       		.byte	0
+ 2769 0240 00       		.byte	0
+ 2770 0241 26       		.uleb128 0x26
+ 2771 0242 10       		.uleb128 0x10
+ 2772 0243 00       		.byte	0
+ 2773 0244 0B       		.uleb128 0xb
+ 2774 0245 0B       		.uleb128 0xb
+ 2775 0246 49       		.uleb128 0x49
+ 2776 0247 13       		.uleb128 0x13
+ 2777 0248 00       		.byte	0
+ 2778 0249 00       		.byte	0
+ 2779 024a 27       		.uleb128 0x27
+ 2780 024b 0D       		.uleb128 0xd
+ 2781 024c 00       		.byte	0
+ 2782 024d 03       		.uleb128 0x3
+ 2783 024e 0E       		.uleb128 0xe
+ 2784 024f 3A       		.uleb128 0x3a
+ 2785 0250 0B       		.uleb128 0xb
+ 2786 0251 3B       		.uleb128 0x3b
+ 2787 0252 0B       		.uleb128 0xb
+ 2788 0253 49       		.uleb128 0x49
+ 2789 0254 13       		.uleb128 0x13
+ 2790 0255 3F       		.uleb128 0x3f
+ 2791 0256 19       		.uleb128 0x19
+ 2792 0257 32       		.uleb128 0x32
+ 2793 0258 0B       		.uleb128 0xb
+ 2794 0259 3C       		.uleb128 0x3c
+ 2795 025a 19       		.uleb128 0x19
+ 2796 025b 00       		.byte	0
+ 2797 025c 00       		.byte	0
+ 2798 025d 28       		.uleb128 0x28
+ 2799 025e 2E       		.uleb128 0x2e
+ 2800 025f 00       		.byte	0
+ 2801 0260 3F       		.uleb128 0x3f
+ 2802 0261 19       		.uleb128 0x19
+ 2803 0262 03       		.uleb128 0x3
+ 2804 0263 0E       		.uleb128 0xe
+ 2805 0264 3A       		.uleb128 0x3a
+ 2806 0265 0B       		.uleb128 0xb
+ 2807 0266 3B       		.uleb128 0x3b
+ 2808 0267 0B       		.uleb128 0xb
+ 2809 0268 6E       		.uleb128 0x6e
+ 2810 0269 0E       		.uleb128 0xe
+ 2811 026a 32       		.uleb128 0x32
+ 2812 026b 0B       		.uleb128 0xb
+ 2813 026c 3C       		.uleb128 0x3c
+ 2814 026d 19       		.uleb128 0x19
+ 2815 026e 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 61
+
+
+ 2816 026f 00       		.byte	0
+ 2817 0270 29       		.uleb128 0x29
+ 2818 0271 2E       		.uleb128 0x2e
+ 2819 0272 00       		.byte	0
+ 2820 0273 3F       		.uleb128 0x3f
+ 2821 0274 19       		.uleb128 0x19
+ 2822 0275 03       		.uleb128 0x3
+ 2823 0276 0E       		.uleb128 0xe
+ 2824 0277 3A       		.uleb128 0x3a
+ 2825 0278 0B       		.uleb128 0xb
+ 2826 0279 3B       		.uleb128 0x3b
+ 2827 027a 0B       		.uleb128 0xb
+ 2828 027b 6E       		.uleb128 0x6e
+ 2829 027c 0E       		.uleb128 0xe
+ 2830 027d 49       		.uleb128 0x49
+ 2831 027e 13       		.uleb128 0x13
+ 2832 027f 32       		.uleb128 0x32
+ 2833 0280 0B       		.uleb128 0xb
+ 2834 0281 3C       		.uleb128 0x3c
+ 2835 0282 19       		.uleb128 0x19
+ 2836 0283 00       		.byte	0
+ 2837 0284 00       		.byte	0
+ 2838 0285 2A       		.uleb128 0x2a
+ 2839 0286 2E       		.uleb128 0x2e
+ 2840 0287 01       		.byte	0x1
+ 2841 0288 3F       		.uleb128 0x3f
+ 2842 0289 19       		.uleb128 0x19
+ 2843 028a 03       		.uleb128 0x3
+ 2844 028b 0E       		.uleb128 0xe
+ 2845 028c 3A       		.uleb128 0x3a
+ 2846 028d 0B       		.uleb128 0xb
+ 2847 028e 3B       		.uleb128 0x3b
+ 2848 028f 0B       		.uleb128 0xb
+ 2849 0290 6E       		.uleb128 0x6e
+ 2850 0291 0E       		.uleb128 0xe
+ 2851 0292 32       		.uleb128 0x32
+ 2852 0293 0B       		.uleb128 0xb
+ 2853 0294 3C       		.uleb128 0x3c
+ 2854 0295 19       		.uleb128 0x19
+ 2855 0296 64       		.uleb128 0x64
+ 2856 0297 13       		.uleb128 0x13
+ 2857 0298 01       		.uleb128 0x1
+ 2858 0299 13       		.uleb128 0x13
+ 2859 029a 00       		.byte	0
+ 2860 029b 00       		.byte	0
+ 2861 029c 2B       		.uleb128 0x2b
+ 2862 029d 15       		.uleb128 0x15
+ 2863 029e 01       		.byte	0x1
+ 2864 029f 49       		.uleb128 0x49
+ 2865 02a0 13       		.uleb128 0x13
+ 2866 02a1 01       		.uleb128 0x1
+ 2867 02a2 13       		.uleb128 0x13
+ 2868 02a3 00       		.byte	0
+ 2869 02a4 00       		.byte	0
+ 2870 02a5 2C       		.uleb128 0x2c
+ 2871 02a6 18       		.uleb128 0x18
+ 2872 02a7 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 62
+
+
+ 2873 02a8 00       		.byte	0
+ 2874 02a9 00       		.byte	0
+ 2875 02aa 2D       		.uleb128 0x2d
+ 2876 02ab 0F       		.uleb128 0xf
+ 2877 02ac 00       		.byte	0
+ 2878 02ad 0B       		.uleb128 0xb
+ 2879 02ae 0B       		.uleb128 0xb
+ 2880 02af 03       		.uleb128 0x3
+ 2881 02b0 0E       		.uleb128 0xe
+ 2882 02b1 49       		.uleb128 0x49
+ 2883 02b2 13       		.uleb128 0x13
+ 2884 02b3 00       		.byte	0
+ 2885 02b4 00       		.byte	0
+ 2886 02b5 2E       		.uleb128 0x2e
+ 2887 02b6 2E       		.uleb128 0x2e
+ 2888 02b7 01       		.byte	0x1
+ 2889 02b8 47       		.uleb128 0x47
+ 2890 02b9 13       		.uleb128 0x13
+ 2891 02ba 3A       		.uleb128 0x3a
+ 2892 02bb 0B       		.uleb128 0xb
+ 2893 02bc 3B       		.uleb128 0x3b
+ 2894 02bd 0B       		.uleb128 0xb
+ 2895 02be 20       		.uleb128 0x20
+ 2896 02bf 0B       		.uleb128 0xb
+ 2897 02c0 64       		.uleb128 0x64
+ 2898 02c1 13       		.uleb128 0x13
+ 2899 02c2 01       		.uleb128 0x1
+ 2900 02c3 13       		.uleb128 0x13
+ 2901 02c4 00       		.byte	0
+ 2902 02c5 00       		.byte	0
+ 2903 02c6 2F       		.uleb128 0x2f
+ 2904 02c7 05       		.uleb128 0x5
+ 2905 02c8 00       		.byte	0
+ 2906 02c9 03       		.uleb128 0x3
+ 2907 02ca 0E       		.uleb128 0xe
+ 2908 02cb 49       		.uleb128 0x49
+ 2909 02cc 13       		.uleb128 0x13
+ 2910 02cd 34       		.uleb128 0x34
+ 2911 02ce 19       		.uleb128 0x19
+ 2912 02cf 00       		.byte	0
+ 2913 02d0 00       		.byte	0
+ 2914 02d1 30       		.uleb128 0x30
+ 2915 02d2 2E       		.uleb128 0x2e
+ 2916 02d3 01       		.byte	0x1
+ 2917 02d4 31       		.uleb128 0x31
+ 2918 02d5 13       		.uleb128 0x13
+ 2919 02d6 6E       		.uleb128 0x6e
+ 2920 02d7 0E       		.uleb128 0xe
+ 2921 02d8 11       		.uleb128 0x11
+ 2922 02d9 01       		.uleb128 0x1
+ 2923 02da 12       		.uleb128 0x12
+ 2924 02db 06       		.uleb128 0x6
+ 2925 02dc 40       		.uleb128 0x40
+ 2926 02dd 18       		.uleb128 0x18
+ 2927 02de 64       		.uleb128 0x64
+ 2928 02df 13       		.uleb128 0x13
+ 2929 02e0 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 63
+
+
+ 2930 02e2 19       		.uleb128 0x19
+ 2931 02e3 01       		.uleb128 0x1
+ 2932 02e4 13       		.uleb128 0x13
+ 2933 02e5 00       		.byte	0
+ 2934 02e6 00       		.byte	0
+ 2935 02e7 31       		.uleb128 0x31
+ 2936 02e8 05       		.uleb128 0x5
+ 2937 02e9 00       		.byte	0
+ 2938 02ea 31       		.uleb128 0x31
+ 2939 02eb 13       		.uleb128 0x13
+ 2940 02ec 02       		.uleb128 0x2
+ 2941 02ed 18       		.uleb128 0x18
+ 2942 02ee 00       		.byte	0
+ 2943 02ef 00       		.byte	0
+ 2944 02f0 32       		.uleb128 0x32
+ 2945 02f1 2E       		.uleb128 0x2e
+ 2946 02f2 01       		.byte	0x1
+ 2947 02f3 47       		.uleb128 0x47
+ 2948 02f4 13       		.uleb128 0x13
+ 2949 02f5 20       		.uleb128 0x20
+ 2950 02f6 0B       		.uleb128 0xb
+ 2951 02f7 64       		.uleb128 0x64
+ 2952 02f8 13       		.uleb128 0x13
+ 2953 02f9 01       		.uleb128 0x1
+ 2954 02fa 13       		.uleb128 0x13
+ 2955 02fb 00       		.byte	0
+ 2956 02fc 00       		.byte	0
+ 2957 02fd 33       		.uleb128 0x33
+ 2958 02fe 05       		.uleb128 0x5
+ 2959 02ff 00       		.byte	0
+ 2960 0300 03       		.uleb128 0x3
+ 2961 0301 0E       		.uleb128 0xe
+ 2962 0302 3A       		.uleb128 0x3a
+ 2963 0303 0B       		.uleb128 0xb
+ 2964 0304 3B       		.uleb128 0x3b
+ 2965 0305 0B       		.uleb128 0xb
+ 2966 0306 49       		.uleb128 0x49
+ 2967 0307 13       		.uleb128 0x13
+ 2968 0308 00       		.byte	0
+ 2969 0309 00       		.byte	0
+ 2970 030a 34       		.uleb128 0x34
+ 2971 030b 05       		.uleb128 0x5
+ 2972 030c 00       		.byte	0
+ 2973 030d 03       		.uleb128 0x3
+ 2974 030e 08       		.uleb128 0x8
+ 2975 030f 3A       		.uleb128 0x3a
+ 2976 0310 0B       		.uleb128 0xb
+ 2977 0311 3B       		.uleb128 0x3b
+ 2978 0312 0B       		.uleb128 0xb
+ 2979 0313 49       		.uleb128 0x49
+ 2980 0314 13       		.uleb128 0x13
+ 2981 0315 00       		.byte	0
+ 2982 0316 00       		.byte	0
+ 2983 0317 35       		.uleb128 0x35
+ 2984 0318 2E       		.uleb128 0x2e
+ 2985 0319 01       		.byte	0x1
+ 2986 031a 47       		.uleb128 0x47
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 64
+
+
+ 2987 031b 13       		.uleb128 0x13
+ 2988 031c 11       		.uleb128 0x11
+ 2989 031d 01       		.uleb128 0x1
+ 2990 031e 12       		.uleb128 0x12
+ 2991 031f 06       		.uleb128 0x6
+ 2992 0320 40       		.uleb128 0x40
+ 2993 0321 18       		.uleb128 0x18
+ 2994 0322 64       		.uleb128 0x64
+ 2995 0323 13       		.uleb128 0x13
+ 2996 0324 9642     		.uleb128 0x2116
+ 2997 0326 19       		.uleb128 0x19
+ 2998 0327 01       		.uleb128 0x1
+ 2999 0328 13       		.uleb128 0x13
+ 3000 0329 00       		.byte	0
+ 3001 032a 00       		.byte	0
+ 3002 032b 36       		.uleb128 0x36
+ 3003 032c 05       		.uleb128 0x5
+ 3004 032d 00       		.byte	0
+ 3005 032e 03       		.uleb128 0x3
+ 3006 032f 0E       		.uleb128 0xe
+ 3007 0330 49       		.uleb128 0x49
+ 3008 0331 13       		.uleb128 0x13
+ 3009 0332 34       		.uleb128 0x34
+ 3010 0333 19       		.uleb128 0x19
+ 3011 0334 02       		.uleb128 0x2
+ 3012 0335 18       		.uleb128 0x18
+ 3013 0336 00       		.byte	0
+ 3014 0337 00       		.byte	0
+ 3015 0338 37       		.uleb128 0x37
+ 3016 0339 05       		.uleb128 0x5
+ 3017 033a 00       		.byte	0
+ 3018 033b 03       		.uleb128 0x3
+ 3019 033c 08       		.uleb128 0x8
+ 3020 033d 3A       		.uleb128 0x3a
+ 3021 033e 0B       		.uleb128 0xb
+ 3022 033f 3B       		.uleb128 0x3b
+ 3023 0340 0B       		.uleb128 0xb
+ 3024 0341 49       		.uleb128 0x49
+ 3025 0342 13       		.uleb128 0x13
+ 3026 0343 02       		.uleb128 0x2
+ 3027 0344 18       		.uleb128 0x18
+ 3028 0345 00       		.byte	0
+ 3029 0346 00       		.byte	0
+ 3030 0347 38       		.uleb128 0x38
+ 3031 0348 2E       		.uleb128 0x2e
+ 3032 0349 00       		.byte	0
+ 3033 034a 47       		.uleb128 0x47
+ 3034 034b 13       		.uleb128 0x13
+ 3035 034c 11       		.uleb128 0x11
+ 3036 034d 01       		.uleb128 0x1
+ 3037 034e 12       		.uleb128 0x12
+ 3038 034f 06       		.uleb128 0x6
+ 3039 0350 40       		.uleb128 0x40
+ 3040 0351 18       		.uleb128 0x18
+ 3041 0352 9742     		.uleb128 0x2117
+ 3042 0354 19       		.uleb128 0x19
+ 3043 0355 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 65
+
+
+ 3044 0356 00       		.byte	0
+ 3045 0357 39       		.uleb128 0x39
+ 3046 0358 2E       		.uleb128 0x2e
+ 3047 0359 01       		.byte	0x1
+ 3048 035a 31       		.uleb128 0x31
+ 3049 035b 13       		.uleb128 0x13
+ 3050 035c 6E       		.uleb128 0x6e
+ 3051 035d 0E       		.uleb128 0xe
+ 3052 035e 11       		.uleb128 0x11
+ 3053 035f 01       		.uleb128 0x1
+ 3054 0360 12       		.uleb128 0x12
+ 3055 0361 06       		.uleb128 0x6
+ 3056 0362 40       		.uleb128 0x40
+ 3057 0363 18       		.uleb128 0x18
+ 3058 0364 64       		.uleb128 0x64
+ 3059 0365 13       		.uleb128 0x13
+ 3060 0366 9642     		.uleb128 0x2116
+ 3061 0368 19       		.uleb128 0x19
+ 3062 0369 01       		.uleb128 0x1
+ 3063 036a 13       		.uleb128 0x13
+ 3064 036b 00       		.byte	0
+ 3065 036c 00       		.byte	0
+ 3066 036d 3A       		.uleb128 0x3a
+ 3067 036e 05       		.uleb128 0x5
+ 3068 036f 00       		.byte	0
+ 3069 0370 03       		.uleb128 0x3
+ 3070 0371 0E       		.uleb128 0xe
+ 3071 0372 3A       		.uleb128 0x3a
+ 3072 0373 0B       		.uleb128 0xb
+ 3073 0374 3B       		.uleb128 0x3b
+ 3074 0375 0B       		.uleb128 0xb
+ 3075 0376 49       		.uleb128 0x49
+ 3076 0377 13       		.uleb128 0x13
+ 3077 0378 02       		.uleb128 0x2
+ 3078 0379 18       		.uleb128 0x18
+ 3079 037a 00       		.byte	0
+ 3080 037b 00       		.byte	0
+ 3081 037c 3B       		.uleb128 0x3b
+ 3082 037d 0B       		.uleb128 0xb
+ 3083 037e 01       		.byte	0x1
+ 3084 037f 11       		.uleb128 0x11
+ 3085 0380 01       		.uleb128 0x1
+ 3086 0381 12       		.uleb128 0x12
+ 3087 0382 06       		.uleb128 0x6
+ 3088 0383 00       		.byte	0
+ 3089 0384 00       		.byte	0
+ 3090 0385 3C       		.uleb128 0x3c
+ 3091 0386 34       		.uleb128 0x34
+ 3092 0387 00       		.byte	0
+ 3093 0388 03       		.uleb128 0x3
+ 3094 0389 0E       		.uleb128 0xe
+ 3095 038a 3A       		.uleb128 0x3a
+ 3096 038b 0B       		.uleb128 0xb
+ 3097 038c 3B       		.uleb128 0x3b
+ 3098 038d 0B       		.uleb128 0xb
+ 3099 038e 49       		.uleb128 0x49
+ 3100 038f 13       		.uleb128 0x13
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 66
+
+
+ 3101 0390 02       		.uleb128 0x2
+ 3102 0391 18       		.uleb128 0x18
+ 3103 0392 00       		.byte	0
+ 3104 0393 00       		.byte	0
+ 3105 0394 3D       		.uleb128 0x3d
+ 3106 0395 34       		.uleb128 0x34
+ 3107 0396 00       		.byte	0
+ 3108 0397 03       		.uleb128 0x3
+ 3109 0398 08       		.uleb128 0x8
+ 3110 0399 3A       		.uleb128 0x3a
+ 3111 039a 0B       		.uleb128 0xb
+ 3112 039b 3B       		.uleb128 0x3b
+ 3113 039c 0B       		.uleb128 0xb
+ 3114 039d 49       		.uleb128 0x49
+ 3115 039e 13       		.uleb128 0x13
+ 3116 039f 02       		.uleb128 0x2
+ 3117 03a0 18       		.uleb128 0x18
+ 3118 03a1 00       		.byte	0
+ 3119 03a2 00       		.byte	0
+ 3120 03a3 3E       		.uleb128 0x3e
+ 3121 03a4 2E       		.uleb128 0x2e
+ 3122 03a5 01       		.byte	0x1
+ 3123 03a6 47       		.uleb128 0x47
+ 3124 03a7 13       		.uleb128 0x13
+ 3125 03a8 11       		.uleb128 0x11
+ 3126 03a9 01       		.uleb128 0x1
+ 3127 03aa 12       		.uleb128 0x12
+ 3128 03ab 06       		.uleb128 0x6
+ 3129 03ac 40       		.uleb128 0x40
+ 3130 03ad 18       		.uleb128 0x18
+ 3131 03ae 64       		.uleb128 0x64
+ 3132 03af 13       		.uleb128 0x13
+ 3133 03b0 9742     		.uleb128 0x2117
+ 3134 03b2 19       		.uleb128 0x19
+ 3135 03b3 01       		.uleb128 0x1
+ 3136 03b4 13       		.uleb128 0x13
+ 3137 03b5 00       		.byte	0
+ 3138 03b6 00       		.byte	0
+ 3139 03b7 3F       		.uleb128 0x3f
+ 3140 03b8 2E       		.uleb128 0x2e
+ 3141 03b9 00       		.byte	0
+ 3142 03ba 3F       		.uleb128 0x3f
+ 3143 03bb 19       		.uleb128 0x19
+ 3144 03bc 03       		.uleb128 0x3
+ 3145 03bd 0E       		.uleb128 0xe
+ 3146 03be 3A       		.uleb128 0x3a
+ 3147 03bf 0B       		.uleb128 0xb
+ 3148 03c0 3B       		.uleb128 0x3b
+ 3149 03c1 0B       		.uleb128 0xb
+ 3150 03c2 6E       		.uleb128 0x6e
+ 3151 03c3 0E       		.uleb128 0xe
+ 3152 03c4 3C       		.uleb128 0x3c
+ 3153 03c5 19       		.uleb128 0x19
+ 3154 03c6 00       		.byte	0
+ 3155 03c7 00       		.byte	0
+ 3156 03c8 40       		.uleb128 0x40
+ 3157 03c9 34       		.uleb128 0x34
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 67
+
+
+ 3158 03ca 00       		.byte	0
+ 3159 03cb 03       		.uleb128 0x3
+ 3160 03cc 0E       		.uleb128 0xe
+ 3161 03cd 3A       		.uleb128 0x3a
+ 3162 03ce 0B       		.uleb128 0xb
+ 3163 03cf 3B       		.uleb128 0x3b
+ 3164 03d0 0B       		.uleb128 0xb
+ 3165 03d1 6E       		.uleb128 0x6e
+ 3166 03d2 0E       		.uleb128 0xe
+ 3167 03d3 49       		.uleb128 0x49
+ 3168 03d4 13       		.uleb128 0x13
+ 3169 03d5 3F       		.uleb128 0x3f
+ 3170 03d6 19       		.uleb128 0x19
+ 3171 03d7 3C       		.uleb128 0x3c
+ 3172 03d8 19       		.uleb128 0x19
+ 3173 03d9 00       		.byte	0
+ 3174 03da 00       		.byte	0
+ 3175 03db 41       		.uleb128 0x41
+ 3176 03dc 2E       		.uleb128 0x2e
+ 3177 03dd 00       		.byte	0
+ 3178 03de 47       		.uleb128 0x47
+ 3179 03df 13       		.uleb128 0x13
+ 3180 03e0 11       		.uleb128 0x11
+ 3181 03e1 01       		.uleb128 0x1
+ 3182 03e2 12       		.uleb128 0x12
+ 3183 03e3 06       		.uleb128 0x6
+ 3184 03e4 40       		.uleb128 0x40
+ 3185 03e5 18       		.uleb128 0x18
+ 3186 03e6 9642     		.uleb128 0x2116
+ 3187 03e8 19       		.uleb128 0x19
+ 3188 03e9 00       		.byte	0
+ 3189 03ea 00       		.byte	0
+ 3190 03eb 42       		.uleb128 0x42
+ 3191 03ec 05       		.uleb128 0x5
+ 3192 03ed 00       		.byte	0
+ 3193 03ee 03       		.uleb128 0x3
+ 3194 03ef 08       		.uleb128 0x8
+ 3195 03f0 3A       		.uleb128 0x3a
+ 3196 03f1 0B       		.uleb128 0xb
+ 3197 03f2 3B       		.uleb128 0x3b
+ 3198 03f3 05       		.uleb128 0x5
+ 3199 03f4 49       		.uleb128 0x49
+ 3200 03f5 13       		.uleb128 0x13
+ 3201 03f6 02       		.uleb128 0x2
+ 3202 03f7 18       		.uleb128 0x18
+ 3203 03f8 00       		.byte	0
+ 3204 03f9 00       		.byte	0
+ 3205 03fa 43       		.uleb128 0x43
+ 3206 03fb 34       		.uleb128 0x34
+ 3207 03fc 00       		.byte	0
+ 3208 03fd 03       		.uleb128 0x3
+ 3209 03fe 08       		.uleb128 0x8
+ 3210 03ff 3A       		.uleb128 0x3a
+ 3211 0400 0B       		.uleb128 0xb
+ 3212 0401 3B       		.uleb128 0x3b
+ 3213 0402 05       		.uleb128 0x5
+ 3214 0403 49       		.uleb128 0x49
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 68
+
+
+ 3215 0404 13       		.uleb128 0x13
+ 3216 0405 02       		.uleb128 0x2
+ 3217 0406 18       		.uleb128 0x18
+ 3218 0407 00       		.byte	0
+ 3219 0408 00       		.byte	0
+ 3220 0409 44       		.uleb128 0x44
+ 3221 040a 2E       		.uleb128 0x2e
+ 3222 040b 01       		.byte	0x1
+ 3223 040c 03       		.uleb128 0x3
+ 3224 040d 0E       		.uleb128 0xe
+ 3225 040e 34       		.uleb128 0x34
+ 3226 040f 19       		.uleb128 0x19
+ 3227 0410 11       		.uleb128 0x11
+ 3228 0411 01       		.uleb128 0x1
+ 3229 0412 12       		.uleb128 0x12
+ 3230 0413 06       		.uleb128 0x6
+ 3231 0414 40       		.uleb128 0x40
+ 3232 0415 18       		.uleb128 0x18
+ 3233 0416 9642     		.uleb128 0x2116
+ 3234 0418 19       		.uleb128 0x19
+ 3235 0419 01       		.uleb128 0x1
+ 3236 041a 13       		.uleb128 0x13
+ 3237 041b 00       		.byte	0
+ 3238 041c 00       		.byte	0
+ 3239 041d 45       		.uleb128 0x45
+ 3240 041e 2E       		.uleb128 0x2e
+ 3241 041f 00       		.byte	0
+ 3242 0420 03       		.uleb128 0x3
+ 3243 0421 0E       		.uleb128 0xe
+ 3244 0422 34       		.uleb128 0x34
+ 3245 0423 19       		.uleb128 0x19
+ 3246 0424 11       		.uleb128 0x11
+ 3247 0425 01       		.uleb128 0x1
+ 3248 0426 12       		.uleb128 0x12
+ 3249 0427 06       		.uleb128 0x6
+ 3250 0428 40       		.uleb128 0x40
+ 3251 0429 18       		.uleb128 0x18
+ 3252 042a 9642     		.uleb128 0x2116
+ 3253 042c 19       		.uleb128 0x19
+ 3254 042d 00       		.byte	0
+ 3255 042e 00       		.byte	0
+ 3256 042f 46       		.uleb128 0x46
+ 3257 0430 34       		.uleb128 0x34
+ 3258 0431 00       		.byte	0
+ 3259 0432 03       		.uleb128 0x3
+ 3260 0433 0E       		.uleb128 0xe
+ 3261 0434 3A       		.uleb128 0x3a
+ 3262 0435 0B       		.uleb128 0xb
+ 3263 0436 3B       		.uleb128 0x3b
+ 3264 0437 0B       		.uleb128 0xb
+ 3265 0438 49       		.uleb128 0x49
+ 3266 0439 13       		.uleb128 0x13
+ 3267 043a 3F       		.uleb128 0x3f
+ 3268 043b 19       		.uleb128 0x19
+ 3269 043c 3C       		.uleb128 0x3c
+ 3270 043d 19       		.uleb128 0x19
+ 3271 043e 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 69
+
+
+ 3272 043f 00       		.byte	0
+ 3273 0440 47       		.uleb128 0x47
+ 3274 0441 34       		.uleb128 0x34
+ 3275 0442 00       		.byte	0
+ 3276 0443 03       		.uleb128 0x3
+ 3277 0444 08       		.uleb128 0x8
+ 3278 0445 3A       		.uleb128 0x3a
+ 3279 0446 0B       		.uleb128 0xb
+ 3280 0447 3B       		.uleb128 0x3b
+ 3281 0448 0B       		.uleb128 0xb
+ 3282 0449 49       		.uleb128 0x49
+ 3283 044a 13       		.uleb128 0x13
+ 3284 044b 3F       		.uleb128 0x3f
+ 3285 044c 19       		.uleb128 0x19
+ 3286 044d 3C       		.uleb128 0x3c
+ 3287 044e 19       		.uleb128 0x19
+ 3288 044f 00       		.byte	0
+ 3289 0450 00       		.byte	0
+ 3290 0451 48       		.uleb128 0x48
+ 3291 0452 34       		.uleb128 0x34
+ 3292 0453 00       		.byte	0
+ 3293 0454 47       		.uleb128 0x47
+ 3294 0455 13       		.uleb128 0x13
+ 3295 0456 02       		.uleb128 0x2
+ 3296 0457 18       		.uleb128 0x18
+ 3297 0458 00       		.byte	0
+ 3298 0459 00       		.byte	0
+ 3299 045a 49       		.uleb128 0x49
+ 3300 045b 01       		.uleb128 0x1
+ 3301 045c 01       		.byte	0x1
+ 3302 045d 49       		.uleb128 0x49
+ 3303 045e 13       		.uleb128 0x13
+ 3304 045f 01       		.uleb128 0x1
+ 3305 0460 13       		.uleb128 0x13
+ 3306 0461 00       		.byte	0
+ 3307 0462 00       		.byte	0
+ 3308 0463 4A       		.uleb128 0x4a
+ 3309 0464 21       		.uleb128 0x21
+ 3310 0465 00       		.byte	0
+ 3311 0466 49       		.uleb128 0x49
+ 3312 0467 13       		.uleb128 0x13
+ 3313 0468 2F       		.uleb128 0x2f
+ 3314 0469 0B       		.uleb128 0xb
+ 3315 046a 00       		.byte	0
+ 3316 046b 00       		.byte	0
+ 3317 046c 00       		.byte	0
+ 3318              		.section	.debug_aranges,"",%progbits
+ 3319 0000 84000000 		.4byte	0x84
+ 3320 0004 0200     		.2byte	0x2
+ 3321 0006 00000000 		.4byte	.Ldebug_info0
+ 3322 000a 04       		.byte	0x4
+ 3323 000b 00       		.byte	0
+ 3324 000c 0000     		.2byte	0
+ 3325 000e 0000     		.2byte	0
+ 3326 0010 00000000 		.4byte	.LFB21
+ 3327 0014 1C000000 		.4byte	.LFE21-.LFB21
+ 3328 0018 00000000 		.4byte	.LFB58
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 70
+
+
+ 3329 001c 2A000000 		.4byte	.LFE58-.LFB58
+ 3330 0020 00000000 		.4byte	.LFB60
+ 3331 0024 2E000000 		.4byte	.LFE60-.LFB60
+ 3332 0028 00000000 		.4byte	.LFB109
+ 3333 002c 14000000 		.4byte	.LFE109-.LFB109
+ 3334 0030 00000000 		.4byte	.LFB126
+ 3335 0034 30000000 		.4byte	.LFE126-.LFB126
+ 3336 0038 00000000 		.4byte	.LFB128
+ 3337 003c 5E000000 		.4byte	.LFE128-.LFB128
+ 3338 0040 00000000 		.4byte	.LFB129
+ 3339 0044 80000000 		.4byte	.LFE129-.LFB129
+ 3340 0048 00000000 		.4byte	.LFB130
+ 3341 004c 18000000 		.4byte	.LFE130-.LFB130
+ 3342 0050 00000000 		.4byte	.LFB131
+ 3343 0054 18000000 		.4byte	.LFE131-.LFB131
+ 3344 0058 00000000 		.4byte	.LFB132
+ 3345 005c 2C000000 		.4byte	.LFE132-.LFB132
+ 3346 0060 00000000 		.4byte	.LFB133
+ 3347 0064 50000000 		.4byte	.LFE133-.LFB133
+ 3348 0068 00000000 		.4byte	.LFB134
+ 3349 006c 54000000 		.4byte	.LFE134-.LFB134
+ 3350 0070 00000000 		.4byte	.LFB135
+ 3351 0074 48000000 		.4byte	.LFE135-.LFB135
+ 3352 0078 00000000 		.4byte	.LFB136
+ 3353 007c 18000000 		.4byte	.LFE136-.LFB136
+ 3354 0080 00000000 		.4byte	0
+ 3355 0084 00000000 		.4byte	0
+ 3356              		.section	.debug_ranges,"",%progbits
+ 3357              	.Ldebug_ranges0:
+ 3358 0000 00000000 		.4byte	.LFB21
+ 3359 0004 1C000000 		.4byte	.LFE21
+ 3360 0008 00000000 		.4byte	.LFB58
+ 3361 000c 2A000000 		.4byte	.LFE58
+ 3362 0010 00000000 		.4byte	.LFB60
+ 3363 0014 2E000000 		.4byte	.LFE60
+ 3364 0018 00000000 		.4byte	.LFB109
+ 3365 001c 14000000 		.4byte	.LFE109
+ 3366 0020 00000000 		.4byte	.LFB126
+ 3367 0024 30000000 		.4byte	.LFE126
+ 3368 0028 00000000 		.4byte	.LFB128
+ 3369 002c 5E000000 		.4byte	.LFE128
+ 3370 0030 00000000 		.4byte	.LFB129
+ 3371 0034 80000000 		.4byte	.LFE129
+ 3372 0038 00000000 		.4byte	.LFB130
+ 3373 003c 18000000 		.4byte	.LFE130
+ 3374 0040 00000000 		.4byte	.LFB131
+ 3375 0044 18000000 		.4byte	.LFE131
+ 3376 0048 00000000 		.4byte	.LFB132
+ 3377 004c 2C000000 		.4byte	.LFE132
+ 3378 0050 00000000 		.4byte	.LFB133
+ 3379 0054 50000000 		.4byte	.LFE133
+ 3380 0058 00000000 		.4byte	.LFB134
+ 3381 005c 54000000 		.4byte	.LFE134
+ 3382 0060 00000000 		.4byte	.LFB135
+ 3383 0064 48000000 		.4byte	.LFE135
+ 3384 0068 00000000 		.4byte	.LFB136
+ 3385 006c 18000000 		.4byte	.LFE136
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 71
+
+
+ 3386 0070 00000000 		.4byte	0
+ 3387 0074 00000000 		.4byte	0
+ 3388              		.section	.debug_line,"",%progbits
+ 3389              	.Ldebug_line0:
+ 3390 0000 5D030000 		.section	.debug_str,"MS",%progbits,1
+ 3390      02001402 
+ 3390      00000201 
+ 3390      FB0E0D00 
+ 3390      01010101 
+ 3391              	.LASF104:
+ 3392 0000 68656C6C 		.ascii	"hello\000"
+ 3392      6F00
+ 3393              	.LASF114:
+ 3394 0006 474E5520 		.ascii	"GNU C++ 4.9.3 20150303 (release) [ARM/embedded-4_9-"
+ 3394      432B2B20 
+ 3394      342E392E 
+ 3394      33203230 
+ 3394      31353033 
+ 3395 0039 6272616E 		.ascii	"branch revision 221220] -mcpu=cortex-m0 -mthumb -g "
+ 3395      63682072 
+ 3395      65766973 
+ 3395      696F6E20 
+ 3395      32323132 
+ 3396 006c 2D4F3020 		.ascii	"-O0 -ffunction-sections -ffat-lto-objects -fno-rtti"
+ 3396      2D666675 
+ 3396      6E637469 
+ 3396      6F6E2D73 
+ 3396      65637469 
+ 3397 009f 202D666E 		.ascii	" -fno-exceptions -funsigned-char -funsigned-bitfiel"
+ 3397      6F2D6578 
+ 3397      63657074 
+ 3397      696F6E73 
+ 3397      202D6675 
+ 3398 00d2 6473202D 		.ascii	"ds -fshort-enums\000"
+ 3398      6673686F 
+ 3398      72742D65 
+ 3398      6E756D73 
+ 3398      00
+ 3399              	.LASF67:
+ 3400 00e3 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware7getBaudEv\000"
+ 3400      3350736F 
+ 3400      63344861 
+ 3400      72647761 
+ 3400      72653767 
+ 3401              	.LASF32:
+ 3402 0100 73657269 		.ascii	"serialize\000"
+ 3402      616C697A 
+ 3402      6500
+ 3403              	.LASF71:
+ 3404 010a 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware4readEv\000"
+ 3404      3350736F 
+ 3404      63344861 
+ 3404      72647761 
+ 3404      72653472 
+ 3405              	.LASF125:
+ 3406 0124 6D696C6C 		.ascii	"millis\000"
+ 3406      697300
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 72
+
+
+ 3407              	.LASF122:
+ 3408 012b 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 3408      65726961 
+ 3408      6C5F6D73 
+ 3408      67732F52 
+ 3408      65717565 
+ 3409              	.LASF12:
+ 3410 0147 756E7369 		.ascii	"unsigned int\000"
+ 3410      676E6564 
+ 3410      20696E74 
+ 3410      00
+ 3411              	.LASF6:
+ 3412 0154 5F5F696E 		.ascii	"__int32_t\000"
+ 3412      7433325F 
+ 3412      7400
+ 3413              	.LASF124:
+ 3414 015e 5F5A4E38 		.ascii	"_ZN8SysTimer4initEv\000"
+ 3414      53797354 
+ 3414      696D6572 
+ 3414      34696E69 
+ 3414      74457600 
+ 3415              	.LASF95:
+ 3416 0172 48656C6C 		.ascii	"HelloWorld\000"
+ 3416      6F576F72 
+ 3416      6C6400
+ 3417              	.LASF83:
+ 3418 017d 5F5A4E38 		.ascii	"_ZN8std_msgs6String7getTypeEv\000"
+ 3418      7374645F 
+ 3418      6D736773 
+ 3418      36537472 
+ 3418      696E6737 
+ 3419              	.LASF127:
+ 3420 019b 5F5F7674 		.ascii	"__vtbl_ptr_type\000"
+ 3420      626C5F70 
+ 3420      74725F74 
+ 3420      79706500 
+ 3421              	.LASF50:
+ 3422 01ab 726F7373 		.ascii	"rosserial_msgs\000"
+ 3422      65726961 
+ 3422      6C5F6D73 
+ 3422      677300
+ 3423              	.LASF75:
+ 3424 01ba 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware4timeEv\000"
+ 3424      3350736F 
+ 3424      63344861 
+ 3424      72647761 
+ 3424      72653474 
+ 3425              	.LASF106:
+ 3426 01d4 6E657874 		.ascii	"next_time\000"
+ 3426      5F74696D 
+ 3426      6500
+ 3427              	.LASF113:
+ 3428 01de 55617274 		.ascii	"Uart0\000"
+ 3428      3000
+ 3429              	.LASF88:
+ 3430 01e4 5F5A4E33 		.ascii	"_ZN3ros3MsgC2Ev\000"
+ 3430      726F7333 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 73
+
+
+ 3430      4D736743 
+ 3430      32457600 
+ 3431              	.LASF55:
+ 3432 01f4 6D643573 		.ascii	"md5sum\000"
+ 3432      756D00
+ 3433              	.LASF24:
+ 3434 01fb 7075626C 		.ascii	"publish\000"
+ 3434      69736800 
+ 3435              	.LASF56:
+ 3436 0203 62756666 		.ascii	"buffer_size\000"
+ 3436      65725F73 
+ 3436      697A6500 
+ 3437              	.LASF16:
+ 3438 020f 75696E74 		.ascii	"uint32_t\000"
+ 3438      33325F74 
+ 3438      00
+ 3439              	.LASF20:
+ 3440 0218 666C6F61 		.ascii	"float\000"
+ 3440      7400
+ 3441              	.LASF73:
+ 3442 021e 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware5writeEPhi\000"
+ 3442      3350736F 
+ 3442      63344861 
+ 3442      72647761 
+ 3442      72653577 
+ 3443              	.LASF11:
+ 3444 023b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3444      206C6F6E 
+ 3444      6720756E 
+ 3444      7369676E 
+ 3444      65642069 
+ 3445              	.LASF39:
+ 3446 0252 5F5A4E33 		.ascii	"_ZN3ros3Msg6getMD5Ev\000"
+ 3446      726F7333 
+ 3446      4D736736 
+ 3446      6765744D 
+ 3446      44354576 
+ 3447              	.LASF43:
+ 3448 0267 64657365 		.ascii	"deserializeAvrFloat64\000"
+ 3448      7269616C 
+ 3448      697A6541 
+ 3448      7672466C 
+ 3448      6F617436 
+ 3449              	.LASF82:
+ 3450 027d 5F5A4E38 		.ascii	"_ZN8std_msgs6String11deserializeEPh\000"
+ 3450      7374645F 
+ 3450      6D736773 
+ 3450      36537472 
+ 3450      696E6731 
+ 3451              	.LASF54:
+ 3452 02a1 6D657373 		.ascii	"message_type\000"
+ 3452      6167655F 
+ 3452      74797065 
+ 3452      00
+ 3453              	.LASF4:
+ 3454 02ae 5F5F7569 		.ascii	"__uint16_t\000"
+ 3454      6E743136 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 74
+
+
+ 3454      5F7400
+ 3455              	.LASF27:
+ 3456 02b9 5075626C 		.ascii	"Publisher\000"
+ 3456      69736865 
+ 3456      7200
+ 3457              	.LASF74:
+ 3458 02c3 74696D65 		.ascii	"time\000"
+ 3458      00
+ 3459              	.LASF97:
+ 3460 02c8 6C6F6F70 		.ascii	"loop\000"
+ 3460      00
+ 3461              	.LASF112:
+ 3462 02cd 52455155 		.ascii	"REQUESTPARAM\000"
+ 3462      45535450 
+ 3462      4152414D 
+ 3462      00
+ 3463              	.LASF109:
+ 3464 02da 5F5F696E 		.ascii	"__initialize_p\000"
+ 3464      69746961 
+ 3464      6C697A65 
+ 3464      5F7000
+ 3465              	.LASF92:
+ 3466 02e9 6F666673 		.ascii	"offset\000"
+ 3466      657400
+ 3467              	.LASF77:
+ 3468 02f0 48617264 		.ascii	"HardwareSerial\000"
+ 3468      77617265 
+ 3468      53657269 
+ 3468      616C00
+ 3469              	.LASF31:
+ 3470 02ff 7E4D7367 		.ascii	"~Msg\000"
+ 3470      00
+ 3471              	.LASF110:
+ 3472 0304 5F5F7072 		.ascii	"__priority\000"
+ 3472      696F7269 
+ 3472      747900
+ 3473              	.LASF26:
+ 3474 030f 5F5A4E33 		.ascii	"_ZN3ros9Publisher7publishERKNS_3MsgE\000"
+ 3474      726F7339 
+ 3474      5075626C 
+ 3474      69736865 
+ 3474      72377075 
+ 3475              	.LASF76:
+ 3476 0334 4E6F6465 		.ascii	"NodeHandleBase_\000"
+ 3476      48616E64 
+ 3476      6C654261 
+ 3476      73655F00 
+ 3477              	.LASF45:
+ 3478 0344 4D41585F 		.ascii	"MAX_SUBSCRIBERS\000"
+ 3478      53554253 
+ 3478      43524942 
+ 3478      45525300 
+ 3479              	.LASF49:
+ 3480 0354 4E6F6465 		.ascii	"NodeHandle\000"
+ 3480      48616E64 
+ 3480      6C6500
+ 3481              	.LASF28:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 75
+
+
+ 3482 035f 67657445 		.ascii	"getEndpointType\000"
+ 3482      6E64706F 
+ 3482      696E7454 
+ 3482      79706500 
+ 3483              	.LASF129:
+ 3484 036f 5F474C4F 		.ascii	"_GLOBAL__sub_I__ZN10HelloWorld7str_msgE\000"
+ 3484      42414C5F 
+ 3484      5F737562 
+ 3484      5F495F5F 
+ 3484      5A4E3130 
+ 3485              	.LASF89:
+ 3486 0397 5F5A4E33 		.ascii	"_ZN3ros9PublisherC2EPKcPNS_3MsgEi\000"
+ 3486      726F7339 
+ 3486      5075626C 
+ 3486      69736865 
+ 3486      72433245 
+ 3487              	.LASF18:
+ 3488 03b9 63686172 		.ascii	"char\000"
+ 3488      00
+ 3489              	.LASF35:
+ 3490 03be 5F5A4E33 		.ascii	"_ZN3ros3Msg11deserializeEPh\000"
+ 3490      726F7333 
+ 3490      4D736731 
+ 3490      31646573 
+ 3490      65726961 
+ 3491              	.LASF98:
+ 3492 03da 5F5A4E31 		.ascii	"_ZN10HelloWorld5setupEv\000"
+ 3492      3048656C 
+ 3492      6C6F576F 
+ 3492      726C6435 
+ 3492      73657475 
+ 3493              	.LASF80:
+ 3494 03f2 64617461 		.ascii	"data\000"
+ 3494      00
+ 3495              	.LASF69:
+ 3496 03f7 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware4initEv\000"
+ 3496      3350736F 
+ 3496      63344861 
+ 3496      72647761 
+ 3496      72653469 
+ 3497              	.LASF93:
+ 3498 0411 6C656E67 		.ascii	"length_data\000"
+ 3498      74685F64 
+ 3498      61746100 
+ 3499              	.LASF13:
+ 3500 041d 75696E74 		.ascii	"uint8_t\000"
+ 3500      385F7400 
+ 3501              	.LASF51:
+ 3502 0425 546F7069 		.ascii	"TopicInfo\000"
+ 3502      63496E66 
+ 3502      6F00
+ 3503              	.LASF65:
+ 3504 042f 5F5A4E31 		.ascii	"_ZN13Psoc4Hardware7setBaudEl\000"
+ 3504      3350736F 
+ 3504      63344861 
+ 3504      72647761 
+ 3504      72653773 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 76
+
+
+ 3505              	.LASF94:
+ 3506 044c 696E6275 		.ascii	"inbuffer\000"
+ 3506      66666572 
+ 3506      00
+ 3507              	.LASF33:
+ 3508 0455 64657365 		.ascii	"deserialize\000"
+ 3508      7269616C 
+ 3508      697A6500 
+ 3509              	.LASF107:
+ 3510 0461 5F5A4E31 		.ascii	"_ZN10HelloWorld9next_timeE\000"
+ 3510      3048656C 
+ 3510      6C6F576F 
+ 3510      726C6439 
+ 3510      6E657874 
+ 3511              	.LASF101:
+ 3512 047c 63686174 		.ascii	"chatter\000"
+ 3512      74657200 
+ 3513              	.LASF10:
+ 3514 0484 6C6F6E67 		.ascii	"long long int\000"
+ 3514      206C6F6E 
+ 3514      6720696E 
+ 3514      7400
+ 3515              	.LASF72:
+ 3516 0492 77726974 		.ascii	"write\000"
+ 3516      6500
+ 3517              	.LASF52:
+ 3518 0498 746F7069 		.ascii	"topic_id\000"
+ 3518      635F6964 
+ 3518      00
+ 3519              	.LASF85:
+ 3520 04a1 5F5A4E38 		.ascii	"_ZN8std_msgs6String6getMD5Ev\000"
+ 3520      7374645F 
+ 3520      6D736773 
+ 3520      36537472 
+ 3520      696E6736 
+ 3521              	.LASF48:
+ 3522 04be 4F555450 		.ascii	"OUTPUT_SIZE\000"
+ 3522      55545F53 
+ 3522      495A4500 
+ 3523              	.LASF117:
+ 3524 04ca 5F5A4E33 		.ascii	"_ZN3ros3Msg21deserializeAvrFloat64EPKhPf\000"
+ 3524      726F7333 
+ 3524      4D736732 
+ 3524      31646573 
+ 3524      65726961 
+ 3525              	.LASF108:
+ 3526 04f3 626F6F6C 		.ascii	"bool\000"
+ 3526      00
+ 3527              	.LASF42:
+ 3528 04f8 5F5A4E33 		.ascii	"_ZN3ros3Msg19serializeAvrFloat64EPhf\000"
+ 3528      726F7333 
+ 3528      4D736731 
+ 3528      39736572 
+ 3528      69616C69 
+ 3529              	.LASF36:
+ 3530 051d 67657454 		.ascii	"getType\000"
+ 3530      79706500 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 77
+
+
+ 3531              	.LASF44:
+ 3532 0525 61647665 		.ascii	"advertise\000"
+ 3532      72746973 
+ 3532      6500
+ 3533              	.LASF119:
+ 3534 052f 5F5A4E33 		.ascii	"_ZN3ros11NodeHandle_I13Psoc4HardwareLi10ELi20ELi200"
+ 3534      726F7331 
+ 3534      314E6F64 
+ 3534      6548616E 
+ 3534      646C655F 
+ 3535 0562 454C6932 		.ascii	"ELi200EE9advertiseERNS_9PublisherE\000"
+ 3535      30304545 
+ 3535      39616476 
+ 3535      65727469 
+ 3535      73654552 
+ 3536              	.LASF41:
+ 3537 0585 5F5A4E33 		.ascii	"_ZN3ros9Publisher15getEndpointTypeEv\000"
+ 3537      726F7339 
+ 3537      5075626C 
+ 3537      69736865 
+ 3537      72313567 
+ 3538              	.LASF120:
+ 3539 05aa 48617264 		.ascii	"Hardware\000"
+ 3539      77617265 
+ 3539      00
+ 3540              	.LASF105:
+ 3541 05b3 5F5A4E31 		.ascii	"_ZN10HelloWorld5helloE\000"
+ 3541      3048656C 
+ 3541      6C6F576F 
+ 3541      726C6435 
+ 3541      68656C6C 
+ 3542              	.LASF34:
+ 3543 05ca 5F5A4E4B 		.ascii	"_ZNK3ros3Msg9serializeEPh\000"
+ 3543      33726F73 
+ 3543      334D7367 
+ 3543      39736572 
+ 3543      69616C69 
+ 3544              	.LASF61:
+ 3545 05e4 50736F63 		.ascii	"Psoc4Hardware\000"
+ 3545      34486172 
+ 3545      64776172 
+ 3545      6500
+ 3546              	.LASF21:
+ 3547 05f2 6C6F6E67 		.ascii	"long double\000"
+ 3547      20646F75 
+ 3547      626C6500 
+ 3548              	.LASF14:
+ 3549 05fe 75696E74 		.ascii	"uint16_t\000"
+ 3549      31365F74 
+ 3549      00
+ 3550              	.LASF64:
+ 3551 0607 73657442 		.ascii	"setBaud\000"
+ 3551      61756400 
+ 3552              	.LASF126:
+ 3553 060f 5F5A4E38 		.ascii	"_ZN8SysTimer6millisEv\000"
+ 3553      53797354 
+ 3553      696D6572 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 78
+
+
+ 3553      366D696C 
+ 3553      6C697345 
+ 3554              	.LASF128:
+ 3555 0625 5F5F7374 		.ascii	"__static_initialization_and_destruction_0\000"
+ 3555      61746963 
+ 3555      5F696E69 
+ 3555      7469616C 
+ 3555      697A6174 
+ 3556              	.LASF118:
+ 3557 064f 4E6F6465 		.ascii	"NodeHandle_<Psoc4Hardware, 10, 20, 200, 200>\000"
+ 3557      48616E64 
+ 3557      6C655F3C 
+ 3557      50736F63 
+ 3557      34486172 
+ 3558              	.LASF38:
+ 3559 067c 6765744D 		.ascii	"getMD5\000"
+ 3559      443500
+ 3560              	.LASF115:
+ 3561 0683 2E5C726F 		.ascii	".\\ros_lib\\examples\\HelloWorld\\HelloWorld.cpp\000"
+ 3561      735F6C69 
+ 3561      625C6578 
+ 3561      616D706C 
+ 3561      65735C48 
+ 3562              	.LASF78:
+ 3563 06b0 7374645F 		.ascii	"std_msgs\000"
+ 3563      6D736773 
+ 3563      00
+ 3564              	.LASF2:
+ 3565 06b9 73686F72 		.ascii	"short int\000"
+ 3565      7420696E 
+ 3565      7400
+ 3566              	.LASF111:
+ 3567 06c3 55617274 		.ascii	"Uart\000"
+ 3567      00
+ 3568              	.LASF91:
+ 3569 06c8 6F757462 		.ascii	"outbuffer\000"
+ 3569      75666665 
+ 3569      7200
+ 3570              	.LASF7:
+ 3571 06d2 6C6F6E67 		.ascii	"long int\000"
+ 3571      20696E74 
+ 3571      00
+ 3572              	.LASF116:
+ 3573 06db 453A5C50 		.ascii	"E:\\PSoC\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 3573      536F435C 
+ 3573      526F734F 
+ 3573      6E415374 
+ 3573      69636B5C 
+ 3574              	.LASF79:
+ 3575 0701 53747269 		.ascii	"String\000"
+ 3575      6E6700
+ 3576              	.LASF102:
+ 3577 0708 5F5A4E31 		.ascii	"_ZN10HelloWorld7str_msgE\000"
+ 3577      3048656C 
+ 3577      6C6F576F 
+ 3577      726C6437 
+ 3577      7374725F 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 79
+
+
+ 3578              	.LASF100:
+ 3579 0721 7374725F 		.ascii	"str_msg\000"
+ 3579      6D736700 
+ 3580              	.LASF29:
+ 3581 0729 656E6470 		.ascii	"endpoint_\000"
+ 3581      6F696E74 
+ 3581      5F00
+ 3582              	.LASF3:
+ 3583 0733 5F5F7569 		.ascii	"__uint8_t\000"
+ 3583      6E74385F 
+ 3583      7400
+ 3584              	.LASF123:
+ 3585 073d 6D696C6C 		.ascii	"millis_\000"
+ 3585      69735F00 
+ 3586              	.LASF70:
+ 3587 0745 72656164 		.ascii	"read\000"
+ 3587      00
+ 3588              	.LASF68:
+ 3589 074a 696E6974 		.ascii	"init\000"
+ 3589      00
+ 3590              	.LASF17:
+ 3591 074f 73697A65 		.ascii	"sizetype\000"
+ 3591      74797065 
+ 3591      00
+ 3592              	.LASF9:
+ 3593 0758 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3593      20756E73 
+ 3593      69676E65 
+ 3593      6420696E 
+ 3593      7400
+ 3594              	.LASF90:
+ 3595 076a 5F5A4E38 		.ascii	"_ZN8std_msgs6StringC2Ev\000"
+ 3595      7374645F 
+ 3595      6D736773 
+ 3595      36537472 
+ 3595      696E6743 
+ 3596              	.LASF30:
+ 3597 0782 5F767074 		.ascii	"_vptr.Msg\000"
+ 3597      722E4D73 
+ 3597      6700
+ 3598              	.LASF58:
+ 3599 078c 5F5A4E31 		.ascii	"_ZN14rosserial_msgs9TopicInfo11deserializeEPh\000"
+ 3599      34726F73 
+ 3599      73657269 
+ 3599      616C5F6D 
+ 3599      73677339 
+ 3600              	.LASF15:
+ 3601 07ba 696E7433 		.ascii	"int32_t\000"
+ 3601      325F7400 
+ 3602              	.LASF59:
+ 3603 07c2 5F5A4E31 		.ascii	"_ZN14rosserial_msgs9TopicInfo7getTypeEv\000"
+ 3603      34726F73 
+ 3603      73657269 
+ 3603      616C5F6D 
+ 3603      73677339 
+ 3604              	.LASF63:
+ 3605 07ea 62617564 		.ascii	"baud_\000"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 80
+
+
+ 3605      5F00
+ 3606              	.LASF103:
+ 3607 07f0 5F5A4E31 		.ascii	"_ZN10HelloWorld7chatterE\000"
+ 3607      3048656C 
+ 3607      6C6F576F 
+ 3607      726C6437 
+ 3607      63686174 
+ 3608              	.LASF84:
+ 3609 0809 5F5A4E31 		.ascii	"_ZN14rosserial_msgs9TopicInfo6getMD5Ev\000"
+ 3609      34726F73 
+ 3609      73657269 
+ 3609      616C5F6D 
+ 3609      73677339 
+ 3610              	.LASF1:
+ 3611 0830 756E7369 		.ascii	"unsigned char\000"
+ 3611      676E6564 
+ 3611      20636861 
+ 3611      7200
+ 3612              	.LASF96:
+ 3613 083e 73657475 		.ascii	"setup\000"
+ 3613      7000
+ 3614              	.LASF8:
+ 3615 0844 5F5F7569 		.ascii	"__uint32_t\000"
+ 3615      6E743332 
+ 3615      5F7400
+ 3616              	.LASF53:
+ 3617 084f 746F7069 		.ascii	"topic_name\000"
+ 3617      635F6E61 
+ 3617      6D6500
+ 3618              	.LASF121:
+ 3619 085a 49445F50 		.ascii	"ID_PUBLISHER\000"
+ 3619      55424C49 
+ 3619      53484552 
+ 3619      00
+ 3620              	.LASF99:
+ 3621 0867 5F5A4E31 		.ascii	"_ZN10HelloWorld4loopEv\000"
+ 3621      3048656C 
+ 3621      6C6F576F 
+ 3621      726C6434 
+ 3621      6C6F6F70 
+ 3622              	.LASF25:
+ 3623 087e 5F5A4E33 		.ascii	"_ZN3ros9Publisher7publishEPKNS_3MsgE\000"
+ 3623      726F7339 
+ 3623      5075626C 
+ 3623      69736865 
+ 3623      72377075 
+ 3624              	.LASF40:
+ 3625 08a3 73657269 		.ascii	"serializeAvrFloat64\000"
+ 3625      616C697A 
+ 3625      65417672 
+ 3625      466C6F61 
+ 3625      74363400 
+ 3626              	.LASF0:
+ 3627 08b7 7369676E 		.ascii	"signed char\000"
+ 3627      65642063 
+ 3627      68617200 
+ 3628              	.LASF5:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 81
+
+
+ 3629 08c3 73686F72 		.ascii	"short unsigned int\000"
+ 3629      7420756E 
+ 3629      7369676E 
+ 3629      65642069 
+ 3629      6E7400
+ 3630              	.LASF23:
+ 3631 08d6 6D73675F 		.ascii	"msg_\000"
+ 3631      00
+ 3632              	.LASF22:
+ 3633 08db 746F7069 		.ascii	"topic_\000"
+ 3633      635F00
+ 3634              	.LASF86:
+ 3635 08e2 74686973 		.ascii	"this\000"
+ 3635      00
+ 3636              	.LASF81:
+ 3637 08e7 5F5A4E4B 		.ascii	"_ZNK8std_msgs6String9serializeEPh\000"
+ 3637      38737464 
+ 3637      5F6D7367 
+ 3637      73365374 
+ 3637      72696E67 
+ 3638              	.LASF19:
+ 3639 0909 646F7562 		.ascii	"double\000"
+ 3639      6C6500
+ 3640              	.LASF37:
+ 3641 0910 5F5A4E33 		.ascii	"_ZN3ros3Msg7getTypeEv\000"
+ 3641      726F7333 
+ 3641      4D736737 
+ 3641      67657454 
+ 3641      79706545 
+ 3642              	.LASF57:
+ 3643 0926 5F5A4E4B 		.ascii	"_ZNK14rosserial_msgs9TopicInfo9serializeEPh\000"
+ 3643      3134726F 
+ 3643      73736572 
+ 3643      69616C5F 
+ 3643      6D736773 
+ 3644              	.LASF87:
+ 3645 0952 656E6470 		.ascii	"endpoint\000"
+ 3645      6F696E74 
+ 3645      00
+ 3646              	.LASF66:
+ 3647 095b 67657442 		.ascii	"getBaud\000"
+ 3647      61756400 
+ 3648              	.LASF62:
+ 3649 0963 696F7374 		.ascii	"iostream\000"
+ 3649      7265616D 
+ 3649      00
+ 3650              	.LASF60:
+ 3651 096c 53797354 		.ascii	"SysTimer\000"
+ 3651      696D6572 
+ 3651      00
+ 3652              	.LASF47:
+ 3653 0975 494E5055 		.ascii	"INPUT_SIZE\000"
+ 3653      545F5349 
+ 3653      5A4500
+ 3654              	.LASF46:
+ 3655 0980 4D41585F 		.ascii	"MAX_PUBLISHERS\000"
+ 3655      5055424C 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAaPC6t.s 			page 82
+
+
+ 3655      49534845 
+ 3655      525300
+ 3656              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

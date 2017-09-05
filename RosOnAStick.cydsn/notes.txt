@@ -1,0 +1,31 @@
+RosOnAStick notes
+
+Start new project from PSoC4 template. It gets automatically named Design0x.
+Rename project and workspace to RosOnAStick. Save.
+Change directory name from Design0x to RosOnAStick
+Delete old Design0x files.
+
+Download and install git for Windows from http://git-scm.com/downloads
+Choose option to add git to %PATH%
+
+Open windows command window and navigate to RosOnAStick.cydsn project directory (where main.c lives).
+git clone https://github.com/chuck-h/rosserial.git
+
+Build ros_lib (msg & srv headers) on a full ros environment (linux) and copy ros_lib to RosOnAStick.cydsn directory
+
+In Creator Project Build Settings GCC 4.7.3 Compiler Command Line insert
+-fno-rtti -fno-exceptions -funsigned-char -funsigned-bitfields -fshort-enums -I./ros_lib
+
+rename main.c to main.cpp by double clicking on it in the left (workspace explorer) pane.
+Bracket the project.h include in main.cpp
+extern "C" {
+#include <project.h>
+}
+
+Add .cpp and .h files from rosserial\rosserial_psoc4\src\ros_lib to project.
+Add .h files from rosserial\rosserial_client\src\ros_lib\ros to project
+Add .cpp files from rosserial\rosserial_client\src\ros_lib to project
+
+Set file type for each .cpp file (right click on file, Properties, General, File Type) to C_FILE
+
+

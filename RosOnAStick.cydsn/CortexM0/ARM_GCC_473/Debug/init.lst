@@ -1,0 +1,2506 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"init.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text._ZN8SysTimer4initEv,"axG",%progbits,_ZN8SysTimer4initEv,comdat
+  18              		.align	2
+  19              		.weak	_ZN8SysTimer4initEv
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	_ZN8SysTimer4initEv, %function
+  23              	_ZN8SysTimer4initEv:
+  24              	.LFB88:
+  25              		.file 1 ".\\ros_lib\\SysTimer.h"
+   1:.\ros_lib/SysTimer.h **** /* ========================================
+   2:.\ros_lib/SysTimer.h ****  *
+   3:.\ros_lib/SysTimer.h ****  * The following firmware was developed by Chuck Harrison
+   4:.\ros_lib/SysTimer.h ****  * This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+   5:.\ros_lib/SysTimer.h ****  * 
+   6:.\ros_lib/SysTimer.h ****  * http://creativecommons.org/licenses/by/3.0/deed.en_US
+   7:.\ros_lib/SysTimer.h ****  * 
+   8:.\ros_lib/SysTimer.h ****  * You are free to:
+   9:.\ros_lib/SysTimer.h ****  * -To Share — to copy, distribute and transmit the work 
+  10:.\ros_lib/SysTimer.h ****  * -To Remix — to adapt the work 
+  11:.\ros_lib/SysTimer.h ****  * -To make commercial use of the work
+  12:.\ros_lib/SysTimer.h ****  *
+  13:.\ros_lib/SysTimer.h ****  * ========================================
+  14:.\ros_lib/SysTimer.h ****  */
+  15:.\ros_lib/SysTimer.h **** 
+  16:.\ros_lib/SysTimer.h **** #ifndef ROS_SYSTIMER_H_
+  17:.\ros_lib/SysTimer.h **** #define ROS_SYSTIMER_H_
+  18:.\ros_lib/SysTimer.h **** 
+  19:.\ros_lib/SysTimer.h **** typedef void (* cyisraddress)(void); // should we #include the whole cytypes.h?
+  20:.\ros_lib/SysTimer.h **** #define CY_ISR(FuncName)        void FuncName (void)
+  21:.\ros_lib/SysTimer.h **** 
+  22:.\ros_lib/SysTimer.h **** extern "C" {
+  23:.\ros_lib/SysTimer.h **** cyisraddress CyIntSetSysVector(uint8_t number, cyisraddress address);
+  24:.\ros_lib/SysTimer.h **** }
+  25:.\ros_lib/SysTimer.h **** 
+  26:.\ros_lib/SysTimer.h **** CY_ISR(SysTick_ISR); //forward declaration for SysTimer::init()
+  27:.\ros_lib/SysTimer.h **** 
+  28:.\ros_lib/SysTimer.h **** #define SYSTICK_INTERRUPT_VECTOR_NUMBER 15u /* Cortex-M0 hard vector */
+  29:.\ros_lib/SysTimer.h **** 
+  30:.\ros_lib/SysTimer.h **** /* clock and interrupt rates, in Hz */
+  31:.\ros_lib/SysTimer.h **** #define CLOCK_FREQ     24000000u
+  32:.\ros_lib/SysTimer.h **** #define INTERRUPT_FREQ 1000u
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 2
+
+
+  33:.\ros_lib/SysTimer.h **** 
+  34:.\ros_lib/SysTimer.h **** 
+  35:.\ros_lib/SysTimer.h **** class SysTimer
+  36:.\ros_lib/SysTimer.h **** {
+  37:.\ros_lib/SysTimer.h ****   public:
+  38:.\ros_lib/SysTimer.h ****     static void init() {
+  26              		.loc 1 38 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  39:.\ros_lib/SysTimer.h ****       CyIntSetSysVector(SYSTICK_INTERRUPT_VECTOR_NUMBER, SysTick_ISR);
+  36              		.loc 1 39 0
+  37 0004 044B     		ldr	r3, .L2
+  38 0006 0F20     		mov	r0, #15
+  39 0008 191C     		mov	r1, r3
+  40 000a FFF7FEFF 		bl	CyIntSetSysVector
+  40:.\ros_lib/SysTimer.h ****       // must eventually do this:
+  41:.\ros_lib/SysTimer.h ****       //  SysTick_Config(CLOCK_FREQ / INTERRUPT_FREQ); /* defined in auto-generated core_cm0.h */
+  42:.\ros_lib/SysTimer.h ****       //  CyGlobalIntEnable;
+  43:.\ros_lib/SysTimer.h ****       millis_ = 0;
+  41              		.loc 1 43 0
+  42 000e 034B     		ldr	r3, .L2+4
+  43 0010 0022     		mov	r2, #0
+  44 0012 1A60     		str	r2, [r3]
+  44:.\ros_lib/SysTimer.h ****     };
+  45              		.loc 1 44 0
+  46 0014 BD46     		mov	sp, r7
+  47              		@ sp needed for prologue
+  48 0016 80BD     		pop	{r7, pc}
+  49              	.L3:
+  50              		.align	2
+  51              	.L2:
+  52 0018 00000000 		.word	_Z11SysTick_ISRv
+  53 001c 00000000 		.word	_ZN8SysTimer7millis_E
+  54              		.cfi_endproc
+  55              	.LFE88:
+  56              		.size	_ZN8SysTimer4initEv, .-_ZN8SysTimer4initEv
+  57              		.section	.text.NVIC_SetPriority,"ax",%progbits
+  58              		.align	2
+  59              		.code	16
+  60              		.thumb_func
+  61              		.type	NVIC_SetPriority, %function
+  62              	NVIC_SetPriority:
+  63              	.LFB134:
+  64              		.file 2 "./Generated_Source/PSoC4/core_cm0.h"
+   1:./Generated_Source/PSoC4/core_cm0.h **** /**************************************************************************//**
+   2:./Generated_Source/PSoC4/core_cm0.h ****  * @file     core_cm0.h
+   3:./Generated_Source/PSoC4/core_cm0.h ****  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
+   4:./Generated_Source/PSoC4/core_cm0.h ****  * @version  V3.20
+   5:./Generated_Source/PSoC4/core_cm0.h ****  * @date     25. February 2013
+   6:./Generated_Source/PSoC4/core_cm0.h ****  *
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 3
+
+
+   7:./Generated_Source/PSoC4/core_cm0.h ****  * @note
+   8:./Generated_Source/PSoC4/core_cm0.h ****  *
+   9:./Generated_Source/PSoC4/core_cm0.h ****  ******************************************************************************/
+  10:./Generated_Source/PSoC4/core_cm0.h **** /* Copyright (c) 2009 - 2013 ARM LIMITED
+  11:./Generated_Source/PSoC4/core_cm0.h **** 
+  12:./Generated_Source/PSoC4/core_cm0.h ****    All rights reserved.
+  13:./Generated_Source/PSoC4/core_cm0.h ****    Redistribution and use in source and binary forms, with or without
+  14:./Generated_Source/PSoC4/core_cm0.h ****    modification, are permitted provided that the following conditions are met:
+  15:./Generated_Source/PSoC4/core_cm0.h ****    - Redistributions of source code must retain the above copyright
+  16:./Generated_Source/PSoC4/core_cm0.h ****      notice, this list of conditions and the following disclaimer.
+  17:./Generated_Source/PSoC4/core_cm0.h ****    - Redistributions in binary form must reproduce the above copyright
+  18:./Generated_Source/PSoC4/core_cm0.h ****      notice, this list of conditions and the following disclaimer in the
+  19:./Generated_Source/PSoC4/core_cm0.h ****      documentation and/or other materials provided with the distribution.
+  20:./Generated_Source/PSoC4/core_cm0.h ****    - Neither the name of ARM nor the names of its contributors may be used
+  21:./Generated_Source/PSoC4/core_cm0.h ****      to endorse or promote products derived from this software without
+  22:./Generated_Source/PSoC4/core_cm0.h ****      specific prior written permission.
+  23:./Generated_Source/PSoC4/core_cm0.h ****    *
+  24:./Generated_Source/PSoC4/core_cm0.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  25:./Generated_Source/PSoC4/core_cm0.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  26:./Generated_Source/PSoC4/core_cm0.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  27:./Generated_Source/PSoC4/core_cm0.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  28:./Generated_Source/PSoC4/core_cm0.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  29:./Generated_Source/PSoC4/core_cm0.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  30:./Generated_Source/PSoC4/core_cm0.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  31:./Generated_Source/PSoC4/core_cm0.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  32:./Generated_Source/PSoC4/core_cm0.h ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  33:./Generated_Source/PSoC4/core_cm0.h ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  34:./Generated_Source/PSoC4/core_cm0.h ****    POSSIBILITY OF SUCH DAMAGE.
+  35:./Generated_Source/PSoC4/core_cm0.h ****    ---------------------------------------------------------------------------*/
+  36:./Generated_Source/PSoC4/core_cm0.h **** 
+  37:./Generated_Source/PSoC4/core_cm0.h **** 
+  38:./Generated_Source/PSoC4/core_cm0.h **** #if defined ( __ICCARM__ )
+  39:./Generated_Source/PSoC4/core_cm0.h ****  #pragma system_include  /* treat file as system include file for MISRA check */
+  40:./Generated_Source/PSoC4/core_cm0.h **** #endif
+  41:./Generated_Source/PSoC4/core_cm0.h **** 
+  42:./Generated_Source/PSoC4/core_cm0.h **** #ifdef __cplusplus
+  43:./Generated_Source/PSoC4/core_cm0.h ****  extern "C" {
+  44:./Generated_Source/PSoC4/core_cm0.h **** #endif
+  45:./Generated_Source/PSoC4/core_cm0.h **** 
+  46:./Generated_Source/PSoC4/core_cm0.h **** #ifndef __CORE_CM0_H_GENERIC
+  47:./Generated_Source/PSoC4/core_cm0.h **** #define __CORE_CM0_H_GENERIC
+  48:./Generated_Source/PSoC4/core_cm0.h **** 
+  49:./Generated_Source/PSoC4/core_cm0.h **** /** \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
+  50:./Generated_Source/PSoC4/core_cm0.h ****   CMSIS violates the following MISRA-C:2004 rules:
+  51:./Generated_Source/PSoC4/core_cm0.h **** 
+  52:./Generated_Source/PSoC4/core_cm0.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
+  53:./Generated_Source/PSoC4/core_cm0.h ****      Function definitions in header files are used to allow 'inlining'.
+  54:./Generated_Source/PSoC4/core_cm0.h **** 
+  55:./Generated_Source/PSoC4/core_cm0.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
+  56:./Generated_Source/PSoC4/core_cm0.h ****      Unions are used for effective representation of core registers.
+  57:./Generated_Source/PSoC4/core_cm0.h **** 
+  58:./Generated_Source/PSoC4/core_cm0.h ****    \li Advisory Rule 19.7, Function-like macro defined.<br>
+  59:./Generated_Source/PSoC4/core_cm0.h ****      Function-like macros are used to allow more efficient code.
+  60:./Generated_Source/PSoC4/core_cm0.h ****  */
+  61:./Generated_Source/PSoC4/core_cm0.h **** 
+  62:./Generated_Source/PSoC4/core_cm0.h **** 
+  63:./Generated_Source/PSoC4/core_cm0.h **** /*******************************************************************************
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 4
+
+
+  64:./Generated_Source/PSoC4/core_cm0.h ****  *                 CMSIS definitions
+  65:./Generated_Source/PSoC4/core_cm0.h ****  ******************************************************************************/
+  66:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup Cortex_M0
+  67:./Generated_Source/PSoC4/core_cm0.h ****   @{
+  68:./Generated_Source/PSoC4/core_cm0.h ****  */
+  69:./Generated_Source/PSoC4/core_cm0.h **** 
+  70:./Generated_Source/PSoC4/core_cm0.h **** /*  CMSIS CM0 definitions */
+  71:./Generated_Source/PSoC4/core_cm0.h **** #define __CM0_CMSIS_VERSION_MAIN  (0x03)                                   /*!< [31:16] CMSIS HAL m
+  72:./Generated_Source/PSoC4/core_cm0.h **** #define __CM0_CMSIS_VERSION_SUB   (0x20)                                   /*!< [15:0]  CMSIS HAL s
+  73:./Generated_Source/PSoC4/core_cm0.h **** #define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN << 16) | \
+  74:./Generated_Source/PSoC4/core_cm0.h ****                                     __CM0_CMSIS_VERSION_SUB          )     /*!< CMSIS HAL version n
+  75:./Generated_Source/PSoC4/core_cm0.h **** 
+  76:./Generated_Source/PSoC4/core_cm0.h **** #define __CORTEX_M                (0x00)                                   /*!< Cortex-M Core      
+  77:./Generated_Source/PSoC4/core_cm0.h **** 
+  78:./Generated_Source/PSoC4/core_cm0.h **** 
+  79:./Generated_Source/PSoC4/core_cm0.h **** #if   defined ( __CC_ARM )
+  80:./Generated_Source/PSoC4/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for ARM Comp
+  81:./Generated_Source/PSoC4/core_cm0.h ****   #define __INLINE         __inline                                   /*!< inline keyword for ARM C
+  82:./Generated_Source/PSoC4/core_cm0.h ****   #define __STATIC_INLINE  static __inline
+  83:./Generated_Source/PSoC4/core_cm0.h **** 
+  84:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __ICCARM__ )
+  85:./Generated_Source/PSoC4/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for IAR Comp
+  86:./Generated_Source/PSoC4/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for IAR C
+  87:./Generated_Source/PSoC4/core_cm0.h ****   #define __STATIC_INLINE  static inline
+  88:./Generated_Source/PSoC4/core_cm0.h **** 
+  89:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __GNUC__ )
+  90:./Generated_Source/PSoC4/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for GNU Comp
+  91:./Generated_Source/PSoC4/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for GNU C
+  92:./Generated_Source/PSoC4/core_cm0.h ****   #define __STATIC_INLINE  static inline
+  93:./Generated_Source/PSoC4/core_cm0.h **** 
+  94:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __TASKING__ )
+  95:./Generated_Source/PSoC4/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for TASKING 
+  96:./Generated_Source/PSoC4/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for TASKI
+  97:./Generated_Source/PSoC4/core_cm0.h ****   #define __STATIC_INLINE  static inline
+  98:./Generated_Source/PSoC4/core_cm0.h **** 
+  99:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 100:./Generated_Source/PSoC4/core_cm0.h **** 
+ 101:./Generated_Source/PSoC4/core_cm0.h **** /** __FPU_USED indicates whether an FPU is used or not. This core does not support an FPU at all
+ 102:./Generated_Source/PSoC4/core_cm0.h **** */
+ 103:./Generated_Source/PSoC4/core_cm0.h **** #define __FPU_USED       0
+ 104:./Generated_Source/PSoC4/core_cm0.h **** 
+ 105:./Generated_Source/PSoC4/core_cm0.h **** #if defined ( __CC_ARM )
+ 106:./Generated_Source/PSoC4/core_cm0.h ****   #if defined __TARGET_FPU_VFP
+ 107:./Generated_Source/PSoC4/core_cm0.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 108:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 109:./Generated_Source/PSoC4/core_cm0.h **** 
+ 110:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __ICCARM__ )
+ 111:./Generated_Source/PSoC4/core_cm0.h ****   #if defined __ARMVFP__
+ 112:./Generated_Source/PSoC4/core_cm0.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 113:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 114:./Generated_Source/PSoC4/core_cm0.h **** 
+ 115:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __GNUC__ )
+ 116:./Generated_Source/PSoC4/core_cm0.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
+ 117:./Generated_Source/PSoC4/core_cm0.h ****     #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
+ 118:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 119:./Generated_Source/PSoC4/core_cm0.h **** 
+ 120:./Generated_Source/PSoC4/core_cm0.h **** #elif defined ( __TASKING__ )
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 5
+
+
+ 121:./Generated_Source/PSoC4/core_cm0.h ****   #if defined __FPU_VFP__
+ 122:./Generated_Source/PSoC4/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 123:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 124:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 125:./Generated_Source/PSoC4/core_cm0.h **** 
+ 126:./Generated_Source/PSoC4/core_cm0.h **** #include <stdint.h>                      /* standard types definitions                      */
+ 127:./Generated_Source/PSoC4/core_cm0.h **** #include <core_cmInstr.h>                /* Core Instruction Access                         */
+ 128:./Generated_Source/PSoC4/core_cm0.h **** #include <core_cmFunc.h>                 /* Core Function Access                            */
+ 129:./Generated_Source/PSoC4/core_cm0.h **** 
+ 130:./Generated_Source/PSoC4/core_cm0.h **** #endif /* __CORE_CM0_H_GENERIC */
+ 131:./Generated_Source/PSoC4/core_cm0.h **** 
+ 132:./Generated_Source/PSoC4/core_cm0.h **** #ifndef __CMSIS_GENERIC
+ 133:./Generated_Source/PSoC4/core_cm0.h **** 
+ 134:./Generated_Source/PSoC4/core_cm0.h **** #ifndef __CORE_CM0_H_DEPENDANT
+ 135:./Generated_Source/PSoC4/core_cm0.h **** #define __CORE_CM0_H_DEPENDANT
+ 136:./Generated_Source/PSoC4/core_cm0.h **** 
+ 137:./Generated_Source/PSoC4/core_cm0.h **** /* check device defines and use defaults */
+ 138:./Generated_Source/PSoC4/core_cm0.h **** #if defined __CHECK_DEVICE_DEFINES
+ 139:./Generated_Source/PSoC4/core_cm0.h ****   #ifndef __CM0_REV
+ 140:./Generated_Source/PSoC4/core_cm0.h ****     #define __CM0_REV               0x0000
+ 141:./Generated_Source/PSoC4/core_cm0.h ****     #warning "__CM0_REV not defined in device header file; using default!"
+ 142:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 143:./Generated_Source/PSoC4/core_cm0.h **** 
+ 144:./Generated_Source/PSoC4/core_cm0.h ****   #ifndef __NVIC_PRIO_BITS
+ 145:./Generated_Source/PSoC4/core_cm0.h ****     #define __NVIC_PRIO_BITS          2
+ 146:./Generated_Source/PSoC4/core_cm0.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ 147:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 148:./Generated_Source/PSoC4/core_cm0.h **** 
+ 149:./Generated_Source/PSoC4/core_cm0.h ****   #ifndef __Vendor_SysTickConfig
+ 150:./Generated_Source/PSoC4/core_cm0.h ****     #define __Vendor_SysTickConfig    0
+ 151:./Generated_Source/PSoC4/core_cm0.h ****     #warning "__Vendor_SysTickConfig not defined in device header file; using default!"
+ 152:./Generated_Source/PSoC4/core_cm0.h ****   #endif
+ 153:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 154:./Generated_Source/PSoC4/core_cm0.h **** 
+ 155:./Generated_Source/PSoC4/core_cm0.h **** /* IO definitions (access restrictions to peripheral registers) */
+ 156:./Generated_Source/PSoC4/core_cm0.h **** /**
+ 157:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_glob_defs CMSIS Global Defines
+ 158:./Generated_Source/PSoC4/core_cm0.h **** 
+ 159:./Generated_Source/PSoC4/core_cm0.h ****     <strong>IO Type Qualifiers</strong> are used
+ 160:./Generated_Source/PSoC4/core_cm0.h ****     \li to specify the access to peripheral variables.
+ 161:./Generated_Source/PSoC4/core_cm0.h ****     \li for automatic generation of peripheral register debug information.
+ 162:./Generated_Source/PSoC4/core_cm0.h **** */
+ 163:./Generated_Source/PSoC4/core_cm0.h **** #ifdef __cplusplus
+ 164:./Generated_Source/PSoC4/core_cm0.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions                 */
+ 165:./Generated_Source/PSoC4/core_cm0.h **** #else
+ 166:./Generated_Source/PSoC4/core_cm0.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions                 */
+ 167:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 168:./Generated_Source/PSoC4/core_cm0.h **** #define     __O     volatile             /*!< Defines 'write only' permissions                */
+ 169:./Generated_Source/PSoC4/core_cm0.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions              */
+ 170:./Generated_Source/PSoC4/core_cm0.h **** 
+ 171:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group Cortex_M0 */
+ 172:./Generated_Source/PSoC4/core_cm0.h **** 
+ 173:./Generated_Source/PSoC4/core_cm0.h **** 
+ 174:./Generated_Source/PSoC4/core_cm0.h **** 
+ 175:./Generated_Source/PSoC4/core_cm0.h **** /*******************************************************************************
+ 176:./Generated_Source/PSoC4/core_cm0.h ****  *                 Register Abstraction
+ 177:./Generated_Source/PSoC4/core_cm0.h ****   Core Register contain:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 6
+
+
+ 178:./Generated_Source/PSoC4/core_cm0.h ****   - Core Register
+ 179:./Generated_Source/PSoC4/core_cm0.h ****   - Core NVIC Register
+ 180:./Generated_Source/PSoC4/core_cm0.h ****   - Core SCB Register
+ 181:./Generated_Source/PSoC4/core_cm0.h ****   - Core SysTick Register
+ 182:./Generated_Source/PSoC4/core_cm0.h ****  ******************************************************************************/
+ 183:./Generated_Source/PSoC4/core_cm0.h **** /** \defgroup CMSIS_core_register Defines and Type Definitions
+ 184:./Generated_Source/PSoC4/core_cm0.h ****     \brief Type definitions and defines for Cortex-M processor based devices.
+ 185:./Generated_Source/PSoC4/core_cm0.h **** */
+ 186:./Generated_Source/PSoC4/core_cm0.h **** 
+ 187:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup    CMSIS_core_register
+ 188:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup   CMSIS_CORE  Status and Control Registers
+ 189:./Generated_Source/PSoC4/core_cm0.h ****     \brief  Core Register type definitions.
+ 190:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 191:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 192:./Generated_Source/PSoC4/core_cm0.h **** 
+ 193:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Union type to access the Application Program Status Register (APSR).
+ 194:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 195:./Generated_Source/PSoC4/core_cm0.h **** typedef union
+ 196:./Generated_Source/PSoC4/core_cm0.h **** {
+ 197:./Generated_Source/PSoC4/core_cm0.h ****   struct
+ 198:./Generated_Source/PSoC4/core_cm0.h ****   {
+ 199:./Generated_Source/PSoC4/core_cm0.h **** #if (__CORTEX_M != 0x04)
+ 200:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:27;              /*!< bit:  0..26  Reserved                           */
+ 201:./Generated_Source/PSoC4/core_cm0.h **** #else
+ 202:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:16;              /*!< bit:  0..15  Reserved                           */
+ 203:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t GE:4;                       /*!< bit: 16..19  Greater than or Equal flags        */
+ 204:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved1:7;               /*!< bit: 20..26  Reserved                           */
+ 205:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 206:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag          */
+ 207:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag       */
+ 208:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag          */
+ 209:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag           */
+ 210:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag       */
+ 211:./Generated_Source/PSoC4/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 212:./Generated_Source/PSoC4/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 213:./Generated_Source/PSoC4/core_cm0.h **** } APSR_Type;
+ 214:./Generated_Source/PSoC4/core_cm0.h **** 
+ 215:./Generated_Source/PSoC4/core_cm0.h **** 
+ 216:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ 217:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 218:./Generated_Source/PSoC4/core_cm0.h **** typedef union
+ 219:./Generated_Source/PSoC4/core_cm0.h **** {
+ 220:./Generated_Source/PSoC4/core_cm0.h ****   struct
+ 221:./Generated_Source/PSoC4/core_cm0.h ****   {
+ 222:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number                   */
+ 223:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved                           */
+ 224:./Generated_Source/PSoC4/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 225:./Generated_Source/PSoC4/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 226:./Generated_Source/PSoC4/core_cm0.h **** } IPSR_Type;
+ 227:./Generated_Source/PSoC4/core_cm0.h **** 
+ 228:./Generated_Source/PSoC4/core_cm0.h **** 
+ 229:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ 230:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 231:./Generated_Source/PSoC4/core_cm0.h **** typedef union
+ 232:./Generated_Source/PSoC4/core_cm0.h **** {
+ 233:./Generated_Source/PSoC4/core_cm0.h ****   struct
+ 234:./Generated_Source/PSoC4/core_cm0.h ****   {
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 7
+
+
+ 235:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number                   */
+ 236:./Generated_Source/PSoC4/core_cm0.h **** #if (__CORTEX_M != 0x04)
+ 237:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved                           */
+ 238:./Generated_Source/PSoC4/core_cm0.h **** #else
+ 239:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:7;               /*!< bit:  9..15  Reserved                           */
+ 240:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t GE:4;                       /*!< bit: 16..19  Greater than or Equal flags        */
+ 241:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved1:4;               /*!< bit: 20..23  Reserved                           */
+ 242:./Generated_Source/PSoC4/core_cm0.h **** #endif
+ 243:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t T:1;                        /*!< bit:     24  Thumb bit        (read 0)          */
+ 244:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t IT:2;                       /*!< bit: 25..26  saved IT state   (read 0)          */
+ 245:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag          */
+ 246:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag       */
+ 247:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag          */
+ 248:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag           */
+ 249:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag       */
+ 250:./Generated_Source/PSoC4/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 251:./Generated_Source/PSoC4/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 252:./Generated_Source/PSoC4/core_cm0.h **** } xPSR_Type;
+ 253:./Generated_Source/PSoC4/core_cm0.h **** 
+ 254:./Generated_Source/PSoC4/core_cm0.h **** 
+ 255:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Union type to access the Control Registers (CONTROL).
+ 256:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 257:./Generated_Source/PSoC4/core_cm0.h **** typedef union
+ 258:./Generated_Source/PSoC4/core_cm0.h **** {
+ 259:./Generated_Source/PSoC4/core_cm0.h ****   struct
+ 260:./Generated_Source/PSoC4/core_cm0.h ****   {
+ 261:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t nPRIV:1;                    /*!< bit:      0  Execution privilege in Thread mode */
+ 262:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used                   */
+ 263:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t FPCA:1;                     /*!< bit:      2  FP extension active flag           */
+ 264:./Generated_Source/PSoC4/core_cm0.h ****     uint32_t _reserved0:29;              /*!< bit:  3..31  Reserved                           */
+ 265:./Generated_Source/PSoC4/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access                  */
+ 266:./Generated_Source/PSoC4/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access                  */
+ 267:./Generated_Source/PSoC4/core_cm0.h **** } CONTROL_Type;
+ 268:./Generated_Source/PSoC4/core_cm0.h **** 
+ 269:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group CMSIS_CORE */
+ 270:./Generated_Source/PSoC4/core_cm0.h **** 
+ 271:./Generated_Source/PSoC4/core_cm0.h **** 
+ 272:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup    CMSIS_core_register
+ 273:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+ 274:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Type definitions for the NVIC Registers
+ 275:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 276:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 277:./Generated_Source/PSoC4/core_cm0.h **** 
+ 278:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ 279:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 280:./Generated_Source/PSoC4/core_cm0.h **** typedef struct
+ 281:./Generated_Source/PSoC4/core_cm0.h **** {
+ 282:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t ISER[1];                 /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register   
+ 283:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED0[31];
+ 284:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t ICER[1];                 /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
+ 285:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RSERVED1[31];
+ 286:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t ISPR[1];                 /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register  
+ 287:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED2[31];
+ 288:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t ICPR[1];                 /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
+ 289:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED3[31];
+ 290:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED4[64];
+ 291:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t IP[8];                   /*!< Offset: 0x300 (R/W)  Interrupt Priority Register     
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 8
+
+
+ 292:./Generated_Source/PSoC4/core_cm0.h **** }  NVIC_Type;
+ 293:./Generated_Source/PSoC4/core_cm0.h **** 
+ 294:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group CMSIS_NVIC */
+ 295:./Generated_Source/PSoC4/core_cm0.h **** 
+ 296:./Generated_Source/PSoC4/core_cm0.h **** 
+ 297:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup  CMSIS_core_register
+ 298:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_SCB     System Control Block (SCB)
+ 299:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Type definitions for the System Control Block Registers
+ 300:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 301:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 302:./Generated_Source/PSoC4/core_cm0.h **** 
+ 303:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Structure type to access the System Control Block (SCB).
+ 304:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 305:./Generated_Source/PSoC4/core_cm0.h **** typedef struct
+ 306:./Generated_Source/PSoC4/core_cm0.h **** {
+ 307:./Generated_Source/PSoC4/core_cm0.h ****   __I  uint32_t CPUID;                   /*!< Offset: 0x000 (R/ )  CPUID Base Register             
+ 308:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t ICSR;                    /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
+ 309:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED0;
+ 310:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t AIRCR;                   /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
+ 311:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t SCR;                     /*!< Offset: 0x010 (R/W)  System Control Register         
+ 312:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t CCR;                     /*!< Offset: 0x014 (R/W)  Configuration Control Register  
+ 313:./Generated_Source/PSoC4/core_cm0.h ****        uint32_t RESERVED1;
+ 314:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t SHP[2];                  /*!< Offset: 0x01C (R/W)  System Handlers Priority Registe
+ 315:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t SHCSR;                   /*!< Offset: 0x024 (R/W)  System Handler Control and State
+ 316:./Generated_Source/PSoC4/core_cm0.h **** } SCB_Type;
+ 317:./Generated_Source/PSoC4/core_cm0.h **** 
+ 318:./Generated_Source/PSoC4/core_cm0.h **** /* SCB CPUID Register Definitions */
+ 319:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24                                             /*!< SCB 
+ 320:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
+ 321:./Generated_Source/PSoC4/core_cm0.h **** 
+ 322:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_VARIANT_Pos              20                                             /*!< SCB 
+ 323:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ 324:./Generated_Source/PSoC4/core_cm0.h **** 
+ 325:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16                                             /*!< SCB 
+ 326:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
+ 327:./Generated_Source/PSoC4/core_cm0.h **** 
+ 328:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_PARTNO_Pos                4                                             /*!< SCB 
+ 329:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFUL << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
+ 330:./Generated_Source/PSoC4/core_cm0.h **** 
+ 331:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_REVISION_Pos              0                                             /*!< SCB 
+ 332:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL << SCB_CPUID_REVISION_Pos)              /*!< SCB 
+ 333:./Generated_Source/PSoC4/core_cm0.h **** 
+ 334:./Generated_Source/PSoC4/core_cm0.h **** /* SCB Interrupt Control State Register Definitions */
+ 335:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Pos            31                                             /*!< SCB 
+ 336:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
+ 337:./Generated_Source/PSoC4/core_cm0.h **** 
+ 338:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSVSET_Pos             28                                             /*!< SCB 
+ 339:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
+ 340:./Generated_Source/PSoC4/core_cm0.h **** 
+ 341:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Pos             27                                             /*!< SCB 
+ 342:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
+ 343:./Generated_Source/PSoC4/core_cm0.h **** 
+ 344:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSTSET_Pos             26                                             /*!< SCB 
+ 345:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSTSET_Msk             (1UL << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
+ 346:./Generated_Source/PSoC4/core_cm0.h **** 
+ 347:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Pos             25                                             /*!< SCB 
+ 348:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1UL << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 9
+
+
+ 349:./Generated_Source/PSoC4/core_cm0.h **** 
+ 350:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23                                             /*!< SCB 
+ 351:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
+ 352:./Generated_Source/PSoC4/core_cm0.h **** 
+ 353:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_ISRPENDING_Pos            22                                             /*!< SCB 
+ 354:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
+ 355:./Generated_Source/PSoC4/core_cm0.h **** 
+ 356:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_VECTPENDING_Pos           12                                             /*!< SCB 
+ 357:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
+ 358:./Generated_Source/PSoC4/core_cm0.h **** 
+ 359:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Pos             0                                             /*!< SCB 
+ 360:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFUL << SCB_ICSR_VECTACTIVE_Pos)           /*!< SCB 
+ 361:./Generated_Source/PSoC4/core_cm0.h **** 
+ 362:./Generated_Source/PSoC4/core_cm0.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
+ 363:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTKEY_Pos              16                                             /*!< SCB 
+ 364:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFUL << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
+ 365:./Generated_Source/PSoC4/core_cm0.h **** 
+ 366:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16                                             /*!< SCB 
+ 367:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
+ 368:./Generated_Source/PSoC4/core_cm0.h **** 
+ 369:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Pos            15                                             /*!< SCB 
+ 370:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
+ 371:./Generated_Source/PSoC4/core_cm0.h **** 
+ 372:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2                                             /*!< SCB 
+ 373:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
+ 374:./Generated_Source/PSoC4/core_cm0.h **** 
+ 375:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1                                             /*!< SCB 
+ 376:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1UL << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
+ 377:./Generated_Source/PSoC4/core_cm0.h **** 
+ 378:./Generated_Source/PSoC4/core_cm0.h **** /* SCB System Control Register Definitions */
+ 379:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SEVONPEND_Pos               4                                             /*!< SCB 
+ 380:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
+ 381:./Generated_Source/PSoC4/core_cm0.h **** 
+ 382:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Pos               2                                             /*!< SCB 
+ 383:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
+ 384:./Generated_Source/PSoC4/core_cm0.h **** 
+ 385:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1                                             /*!< SCB 
+ 386:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
+ 387:./Generated_Source/PSoC4/core_cm0.h **** 
+ 388:./Generated_Source/PSoC4/core_cm0.h **** /* SCB Configuration Control Register Definitions */
+ 389:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CCR_STKALIGN_Pos                9                                             /*!< SCB 
+ 390:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CCR_STKALIGN_Msk               (1UL << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
+ 391:./Generated_Source/PSoC4/core_cm0.h **** 
+ 392:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3                                             /*!< SCB 
+ 393:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
+ 394:./Generated_Source/PSoC4/core_cm0.h **** 
+ 395:./Generated_Source/PSoC4/core_cm0.h **** /* SCB System Handler Control and State Register Definitions */
+ 396:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15                                             /*!< SCB 
+ 397:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1UL << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
+ 398:./Generated_Source/PSoC4/core_cm0.h **** 
+ 399:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group CMSIS_SCB */
+ 400:./Generated_Source/PSoC4/core_cm0.h **** 
+ 401:./Generated_Source/PSoC4/core_cm0.h **** 
+ 402:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup  CMSIS_core_register
+ 403:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+ 404:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Type definitions for the System Timer Registers.
+ 405:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 10
+
+
+ 406:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 407:./Generated_Source/PSoC4/core_cm0.h **** 
+ 408:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Structure type to access the System Timer (SysTick).
+ 409:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 410:./Generated_Source/PSoC4/core_cm0.h **** typedef struct
+ 411:./Generated_Source/PSoC4/core_cm0.h **** {
+ 412:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t CTRL;                    /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
+ 413:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t LOAD;                    /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register   
+ 414:./Generated_Source/PSoC4/core_cm0.h ****   __IO uint32_t VAL;                     /*!< Offset: 0x008 (R/W)  SysTick Current Value Register  
+ 415:./Generated_Source/PSoC4/core_cm0.h ****   __I  uint32_t CALIB;                   /*!< Offset: 0x00C (R/ )  SysTick Calibration Register    
+ 416:./Generated_Source/PSoC4/core_cm0.h **** } SysTick_Type;
+ 417:./Generated_Source/PSoC4/core_cm0.h **** 
+ 418:./Generated_Source/PSoC4/core_cm0.h **** /* SysTick Control / Status Register Definitions */
+ 419:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16                                             /*!< SysT
+ 420:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
+ 421:./Generated_Source/PSoC4/core_cm0.h **** 
+ 422:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2                                             /*!< SysT
+ 423:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
+ 424:./Generated_Source/PSoC4/core_cm0.h **** 
+ 425:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_TICKINT_Pos            1                                             /*!< SysT
+ 426:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
+ 427:./Generated_Source/PSoC4/core_cm0.h **** 
+ 428:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_ENABLE_Pos             0                                             /*!< SysT
+ 429:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL << SysTick_CTRL_ENABLE_Pos)               /*!< SysT
+ 430:./Generated_Source/PSoC4/core_cm0.h **** 
+ 431:./Generated_Source/PSoC4/core_cm0.h **** /* SysTick Reload Register Definitions */
+ 432:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_LOAD_RELOAD_Pos             0                                             /*!< SysT
+ 433:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL << SysTick_LOAD_RELOAD_Pos)        /*!< SysT
+ 434:./Generated_Source/PSoC4/core_cm0.h **** 
+ 435:./Generated_Source/PSoC4/core_cm0.h **** /* SysTick Current Register Definitions */
+ 436:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_VAL_CURRENT_Pos             0                                             /*!< SysT
+ 437:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysT
+ 438:./Generated_Source/PSoC4/core_cm0.h **** 
+ 439:./Generated_Source/PSoC4/core_cm0.h **** /* SysTick Calibration Register Definitions */
+ 440:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_NOREF_Pos            31                                             /*!< SysT
+ 441:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
+ 442:./Generated_Source/PSoC4/core_cm0.h **** 
+ 443:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_SKEW_Pos             30                                             /*!< SysT
+ 444:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysT
+ 445:./Generated_Source/PSoC4/core_cm0.h **** 
+ 446:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_TENMS_Pos             0                                             /*!< SysT
+ 447:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL << SysTick_VAL_CURRENT_Pos)        /*!< SysT
+ 448:./Generated_Source/PSoC4/core_cm0.h **** 
+ 449:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group CMSIS_SysTick */
+ 450:./Generated_Source/PSoC4/core_cm0.h **** 
+ 451:./Generated_Source/PSoC4/core_cm0.h **** 
+ 452:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup  CMSIS_core_register
+ 453:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
+ 454:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Cortex-M0 Core Debug Registers (DCB registers, SHCSR, and DFSR)
+ 455:./Generated_Source/PSoC4/core_cm0.h ****                 are only accessible over DAP and not via processor. Therefore
+ 456:./Generated_Source/PSoC4/core_cm0.h ****                 they are not covered by the Cortex-M0 header file.
+ 457:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 458:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 459:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of group CMSIS_CoreDebug */
+ 460:./Generated_Source/PSoC4/core_cm0.h **** 
+ 461:./Generated_Source/PSoC4/core_cm0.h **** 
+ 462:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup    CMSIS_core_register
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 11
+
+
+ 463:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup   CMSIS_core_base     Core Definitions
+ 464:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Definitions for base addresses, unions, and structures.
+ 465:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 466:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 467:./Generated_Source/PSoC4/core_cm0.h **** 
+ 468:./Generated_Source/PSoC4/core_cm0.h **** /* Memory mapping of Cortex-M0 Hardware */
+ 469:./Generated_Source/PSoC4/core_cm0.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
+ 470:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address    
+ 471:./Generated_Source/PSoC4/core_cm0.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address       
+ 472:./Generated_Source/PSoC4/core_cm0.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
+ 473:./Generated_Source/PSoC4/core_cm0.h **** 
+ 474:./Generated_Source/PSoC4/core_cm0.h **** #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct
+ 475:./Generated_Source/PSoC4/core_cm0.h **** #define SysTick             ((SysTick_Type   *)     SysTick_BASE  )   /*!< SysTick configuration st
+ 476:./Generated_Source/PSoC4/core_cm0.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
+ 477:./Generated_Source/PSoC4/core_cm0.h **** 
+ 478:./Generated_Source/PSoC4/core_cm0.h **** 
+ 479:./Generated_Source/PSoC4/core_cm0.h **** /*@} */
+ 480:./Generated_Source/PSoC4/core_cm0.h **** 
+ 481:./Generated_Source/PSoC4/core_cm0.h **** 
+ 482:./Generated_Source/PSoC4/core_cm0.h **** 
+ 483:./Generated_Source/PSoC4/core_cm0.h **** /*******************************************************************************
+ 484:./Generated_Source/PSoC4/core_cm0.h ****  *                Hardware Abstraction Layer
+ 485:./Generated_Source/PSoC4/core_cm0.h ****   Core Function Interface contains:
+ 486:./Generated_Source/PSoC4/core_cm0.h ****   - Core NVIC Functions
+ 487:./Generated_Source/PSoC4/core_cm0.h ****   - Core SysTick Functions
+ 488:./Generated_Source/PSoC4/core_cm0.h ****   - Core Register Access Functions
+ 489:./Generated_Source/PSoC4/core_cm0.h ****  ******************************************************************************/
+ 490:./Generated_Source/PSoC4/core_cm0.h **** /** \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
+ 491:./Generated_Source/PSoC4/core_cm0.h **** */
+ 492:./Generated_Source/PSoC4/core_cm0.h **** 
+ 493:./Generated_Source/PSoC4/core_cm0.h **** 
+ 494:./Generated_Source/PSoC4/core_cm0.h **** 
+ 495:./Generated_Source/PSoC4/core_cm0.h **** /* ##########################   NVIC functions  #################################### */
+ 496:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 497:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_Core_NVICFunctions NVIC Functions
+ 498:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Functions that manage interrupts and exceptions via the NVIC.
+ 499:./Generated_Source/PSoC4/core_cm0.h ****     @{
+ 500:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 501:./Generated_Source/PSoC4/core_cm0.h **** 
+ 502:./Generated_Source/PSoC4/core_cm0.h **** /* Interrupt Priorities are WORD accessible only under ARMv6M                   */
+ 503:./Generated_Source/PSoC4/core_cm0.h **** /* The following MACROS handle generation of the register offset and byte masks */
+ 504:./Generated_Source/PSoC4/core_cm0.h **** #define _BIT_SHIFT(IRQn)         (  (((uint32_t)(IRQn)       )    &  0x03) * 8 )
+ 505:./Generated_Source/PSoC4/core_cm0.h **** #define _SHP_IDX(IRQn)           ( ((((uint32_t)(IRQn) & 0x0F)-8) >>    2)     )
+ 506:./Generated_Source/PSoC4/core_cm0.h **** #define _IP_IDX(IRQn)            (   ((uint32_t)(IRQn)            >>    2)     )
+ 507:./Generated_Source/PSoC4/core_cm0.h **** 
+ 508:./Generated_Source/PSoC4/core_cm0.h **** 
+ 509:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Enable External Interrupt
+ 510:./Generated_Source/PSoC4/core_cm0.h **** 
+ 511:./Generated_Source/PSoC4/core_cm0.h ****     The function enables a device-specific interrupt in the NVIC interrupt controller.
+ 512:./Generated_Source/PSoC4/core_cm0.h **** 
+ 513:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 514:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 515:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+ 516:./Generated_Source/PSoC4/core_cm0.h **** {
+ 517:./Generated_Source/PSoC4/core_cm0.h ****   NVIC->ISER[0] = (1 << ((uint32_t)(IRQn) & 0x1F));
+ 518:./Generated_Source/PSoC4/core_cm0.h **** }
+ 519:./Generated_Source/PSoC4/core_cm0.h **** 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 12
+
+
+ 520:./Generated_Source/PSoC4/core_cm0.h **** 
+ 521:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Disable External Interrupt
+ 522:./Generated_Source/PSoC4/core_cm0.h **** 
+ 523:./Generated_Source/PSoC4/core_cm0.h ****     The function disables a device-specific interrupt in the NVIC interrupt controller.
+ 524:./Generated_Source/PSoC4/core_cm0.h **** 
+ 525:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 526:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 527:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
+ 528:./Generated_Source/PSoC4/core_cm0.h **** {
+ 529:./Generated_Source/PSoC4/core_cm0.h ****   NVIC->ICER[0] = (1 << ((uint32_t)(IRQn) & 0x1F));
+ 530:./Generated_Source/PSoC4/core_cm0.h **** }
+ 531:./Generated_Source/PSoC4/core_cm0.h **** 
+ 532:./Generated_Source/PSoC4/core_cm0.h **** 
+ 533:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Get Pending Interrupt
+ 534:./Generated_Source/PSoC4/core_cm0.h **** 
+ 535:./Generated_Source/PSoC4/core_cm0.h ****     The function reads the pending register in the NVIC and returns the pending bit
+ 536:./Generated_Source/PSoC4/core_cm0.h ****     for the specified interrupt.
+ 537:./Generated_Source/PSoC4/core_cm0.h **** 
+ 538:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  Interrupt number.
+ 539:./Generated_Source/PSoC4/core_cm0.h **** 
+ 540:./Generated_Source/PSoC4/core_cm0.h ****     \return             0  Interrupt status is not pending.
+ 541:./Generated_Source/PSoC4/core_cm0.h ****     \return             1  Interrupt status is pending.
+ 542:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 543:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 544:./Generated_Source/PSoC4/core_cm0.h **** {
+ 545:./Generated_Source/PSoC4/core_cm0.h ****   return((uint32_t) ((NVIC->ISPR[0] & (1 << ((uint32_t)(IRQn) & 0x1F)))?1:0));
+ 546:./Generated_Source/PSoC4/core_cm0.h **** }
+ 547:./Generated_Source/PSoC4/core_cm0.h **** 
+ 548:./Generated_Source/PSoC4/core_cm0.h **** 
+ 549:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Set Pending Interrupt
+ 550:./Generated_Source/PSoC4/core_cm0.h **** 
+ 551:./Generated_Source/PSoC4/core_cm0.h ****     The function sets the pending bit of an external interrupt.
+ 552:./Generated_Source/PSoC4/core_cm0.h **** 
+ 553:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  Interrupt number. Value cannot be negative.
+ 554:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 555:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 556:./Generated_Source/PSoC4/core_cm0.h **** {
+ 557:./Generated_Source/PSoC4/core_cm0.h ****   NVIC->ISPR[0] = (1 << ((uint32_t)(IRQn) & 0x1F));
+ 558:./Generated_Source/PSoC4/core_cm0.h **** }
+ 559:./Generated_Source/PSoC4/core_cm0.h **** 
+ 560:./Generated_Source/PSoC4/core_cm0.h **** 
+ 561:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Clear Pending Interrupt
+ 562:./Generated_Source/PSoC4/core_cm0.h **** 
+ 563:./Generated_Source/PSoC4/core_cm0.h ****     The function clears the pending bit of an external interrupt.
+ 564:./Generated_Source/PSoC4/core_cm0.h **** 
+ 565:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 566:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 567:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 568:./Generated_Source/PSoC4/core_cm0.h **** {
+ 569:./Generated_Source/PSoC4/core_cm0.h ****   NVIC->ICPR[0] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* Clear pending interrupt */
+ 570:./Generated_Source/PSoC4/core_cm0.h **** }
+ 571:./Generated_Source/PSoC4/core_cm0.h **** 
+ 572:./Generated_Source/PSoC4/core_cm0.h **** 
+ 573:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Set Interrupt Priority
+ 574:./Generated_Source/PSoC4/core_cm0.h **** 
+ 575:./Generated_Source/PSoC4/core_cm0.h ****     The function sets the priority of an interrupt.
+ 576:./Generated_Source/PSoC4/core_cm0.h **** 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 13
+
+
+ 577:./Generated_Source/PSoC4/core_cm0.h ****     \note The priority cannot be set for every core interrupt.
+ 578:./Generated_Source/PSoC4/core_cm0.h **** 
+ 579:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]      IRQn  Interrupt number.
+ 580:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]  priority  Priority to set.
+ 581:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 582:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+ 583:./Generated_Source/PSoC4/core_cm0.h **** {
+  65              		.loc 2 583 0
+  66              		.cfi_startproc
+  67 0000 B0B5     		push	{r4, r5, r7, lr}
+  68              	.LCFI2:
+  69              		.cfi_def_cfa_offset 16
+  70              		.cfi_offset 4, -16
+  71              		.cfi_offset 5, -12
+  72              		.cfi_offset 7, -8
+  73              		.cfi_offset 14, -4
+  74 0002 82B0     		sub	sp, sp, #8
+  75              	.LCFI3:
+  76              		.cfi_def_cfa_offset 24
+  77 0004 00AF     		add	r7, sp, #0
+  78              	.LCFI4:
+  79              		.cfi_def_cfa_register 7
+  80 0006 021C     		mov	r2, r0
+  81 0008 3960     		str	r1, [r7]
+  82 000a FB1D     		add	r3, r7, #7
+  83 000c 1A70     		strb	r2, [r3]
+ 584:./Generated_Source/PSoC4/core_cm0.h ****   if(IRQn < 0) {
+  84              		.loc 2 584 0
+  85 000e FB1D     		add	r3, r7, #7
+  86 0010 1B78     		ldrb	r3, [r3]
+  87 0012 7F2B     		cmp	r3, #127
+  88 0014 32D9     		bls	.L5
+ 585:./Generated_Source/PSoC4/core_cm0.h ****     SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+  89              		.loc 2 585 0
+  90 0016 3049     		ldr	r1, .L7
+  91 0018 FB1D     		add	r3, r7, #7
+  92 001a 1B78     		ldrb	r3, [r3]
+  93 001c 1A1C     		mov	r2, r3
+  94 001e 0F23     		mov	r3, #15
+  95 0020 1340     		and	r3, r2
+  96 0022 083B     		sub	r3, r3, #8
+  97 0024 9808     		lsr	r0, r3, #2
+ 586:./Generated_Source/PSoC4/core_cm0.h ****         (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+  98              		.loc 2 586 0
+  99 0026 2C4A     		ldr	r2, .L7
+ 100 0028 FB1D     		add	r3, r7, #7
+ 101 002a 1B78     		ldrb	r3, [r3]
+ 102 002c 1C1C     		mov	r4, r3
+ 103 002e 0F23     		mov	r3, #15
+ 104 0030 2340     		and	r3, r4
+ 105 0032 083B     		sub	r3, r3, #8
+ 106 0034 9B08     		lsr	r3, r3, #2
+ 585:./Generated_Source/PSoC4/core_cm0.h ****     SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 107              		.loc 2 585 0
+ 108 0036 0633     		add	r3, r3, #6
+ 109 0038 9B00     		lsl	r3, r3, #2
+ 110 003a D318     		add	r3, r2, r3
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 14
+
+
+ 111 003c 5B68     		ldr	r3, [r3, #4]
+ 112              		.loc 2 586 0
+ 113 003e FA1D     		add	r2, r7, #7
+ 114 0040 1278     		ldrb	r2, [r2]
+ 115 0042 141C     		mov	r4, r2
+ 116 0044 0322     		mov	r2, #3
+ 117 0046 2240     		and	r2, r4
+ 118 0048 D200     		lsl	r2, r2, #3
+ 119 004a FF24     		mov	r4, #255
+ 120 004c 251C     		mov	r5, r4
+ 121 004e 9540     		lsl	r5, r5, r2
+ 122 0050 2A1C     		mov	r2, r5
+ 123 0052 D243     		mvn	r2, r2
+ 124 0054 1A40     		and	r2, r3
+ 125 0056 3B68     		ldr	r3, [r7]
+ 126 0058 9C01     		lsl	r4, r3, #6
+ 127 005a FF23     		mov	r3, #255
+ 128 005c 1C40     		and	r4, r3
+ 129 005e FB1D     		add	r3, r7, #7
+ 130 0060 1B78     		ldrb	r3, [r3]
+ 131 0062 1D1C     		mov	r5, r3
+ 132 0064 0323     		mov	r3, #3
+ 133 0066 2B40     		and	r3, r5
+ 134 0068 DB00     		lsl	r3, r3, #3
+ 135 006a 251C     		mov	r5, r4
+ 136 006c 9D40     		lsl	r5, r5, r3
+ 137 006e 2B1C     		mov	r3, r5
+ 138 0070 1A43     		orr	r2, r3
+ 139 0072 831D     		add	r3, r0, #6
+ 140 0074 9B00     		lsl	r3, r3, #2
+ 141 0076 CB18     		add	r3, r1, r3
+ 142 0078 5A60     		str	r2, [r3, #4]
+ 143 007a 29E0     		b	.L4
+ 144              	.L5:
+ 587:./Generated_Source/PSoC4/core_cm0.h ****   else {
+ 588:./Generated_Source/PSoC4/core_cm0.h ****     NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 145              		.loc 2 588 0
+ 146 007c 174B     		ldr	r3, .L7+4
+ 147 007e FA1D     		add	r2, r7, #7
+ 148 0080 1278     		ldrb	r2, [r2]
+ 149 0082 52B2     		sxtb	r2, r2
+ 150 0084 9208     		lsr	r2, r2, #2
+ 589:./Generated_Source/PSoC4/core_cm0.h ****         (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+ 151              		.loc 2 589 0
+ 152 0086 1549     		ldr	r1, .L7+4
+ 153 0088 F81D     		add	r0, r7, #7
+ 154 008a 0078     		ldrb	r0, [r0]
+ 155 008c 40B2     		sxtb	r0, r0
+ 156 008e 8008     		lsr	r0, r0, #2
+ 588:./Generated_Source/PSoC4/core_cm0.h ****     NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 157              		.loc 2 588 0
+ 158 0090 C030     		add	r0, r0, #192
+ 159 0092 8000     		lsl	r0, r0, #2
+ 160 0094 4158     		ldr	r1, [r0, r1]
+ 161              		.loc 2 589 0
+ 162 0096 F81D     		add	r0, r7, #7
+ 163 0098 0078     		ldrb	r0, [r0]
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 15
+
+
+ 164 009a 041C     		mov	r4, r0
+ 165 009c 0320     		mov	r0, #3
+ 166 009e 2040     		and	r0, r4
+ 167 00a0 C000     		lsl	r0, r0, #3
+ 168 00a2 FF24     		mov	r4, #255
+ 169 00a4 251C     		mov	r5, r4
+ 170 00a6 8540     		lsl	r5, r5, r0
+ 171 00a8 281C     		mov	r0, r5
+ 172 00aa C043     		mvn	r0, r0
+ 173 00ac 0840     		and	r0, r1
+ 174 00ae 3968     		ldr	r1, [r7]
+ 175 00b0 8C01     		lsl	r4, r1, #6
+ 176 00b2 FF21     		mov	r1, #255
+ 177 00b4 0C40     		and	r4, r1
+ 178 00b6 F91D     		add	r1, r7, #7
+ 179 00b8 0978     		ldrb	r1, [r1]
+ 180 00ba 0D1C     		mov	r5, r1
+ 181 00bc 0321     		mov	r1, #3
+ 182 00be 2940     		and	r1, r5
+ 183 00c0 C900     		lsl	r1, r1, #3
+ 184 00c2 251C     		mov	r5, r4
+ 185 00c4 8D40     		lsl	r5, r5, r1
+ 186 00c6 291C     		mov	r1, r5
+ 187 00c8 0143     		orr	r1, r0
+ 188 00ca C032     		add	r2, r2, #192
+ 189 00cc 9200     		lsl	r2, r2, #2
+ 190 00ce D150     		str	r1, [r2, r3]
+ 191              	.L4:
+ 590:./Generated_Source/PSoC4/core_cm0.h **** }
+ 192              		.loc 2 590 0
+ 193 00d0 BD46     		mov	sp, r7
+ 194 00d2 02B0     		add	sp, sp, #8
+ 195              		@ sp needed for prologue
+ 196 00d4 B0BD     		pop	{r4, r5, r7, pc}
+ 197              	.L8:
+ 198 00d6 C046     		.align	2
+ 199              	.L7:
+ 200 00d8 00ED00E0 		.word	-536810240
+ 201 00dc 00E100E0 		.word	-536813312
+ 202              		.cfi_endproc
+ 203              	.LFE134:
+ 204              		.size	NVIC_SetPriority, .-NVIC_SetPriority
+ 205              		.section	.text.SysTick_Config,"ax",%progbits
+ 206              		.align	2
+ 207              		.code	16
+ 208              		.thumb_func
+ 209              		.type	SysTick_Config, %function
+ 210              	SysTick_Config:
+ 211              	.LFB137:
+ 591:./Generated_Source/PSoC4/core_cm0.h **** 
+ 592:./Generated_Source/PSoC4/core_cm0.h **** 
+ 593:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  Get Interrupt Priority
+ 594:./Generated_Source/PSoC4/core_cm0.h **** 
+ 595:./Generated_Source/PSoC4/core_cm0.h ****     The function reads the priority of an interrupt. The interrupt
+ 596:./Generated_Source/PSoC4/core_cm0.h ****     number can be positive to specify an external (device specific)
+ 597:./Generated_Source/PSoC4/core_cm0.h ****     interrupt, or negative to specify an internal (core) interrupt.
+ 598:./Generated_Source/PSoC4/core_cm0.h **** 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 16
+
+
+ 599:./Generated_Source/PSoC4/core_cm0.h **** 
+ 600:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]   IRQn  Interrupt number.
+ 601:./Generated_Source/PSoC4/core_cm0.h ****     \return             Interrupt Priority. Value is aligned automatically to the implemented
+ 602:./Generated_Source/PSoC4/core_cm0.h ****                         priority bits of the microcontroller.
+ 603:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 604:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
+ 605:./Generated_Source/PSoC4/core_cm0.h **** {
+ 606:./Generated_Source/PSoC4/core_cm0.h **** 
+ 607:./Generated_Source/PSoC4/core_cm0.h ****   if(IRQn < 0) {
+ 608:./Generated_Source/PSoC4/core_cm0.h ****     return((uint32_t)(((SCB->SHP[_SHP_IDX(IRQn)] >> _BIT_SHIFT(IRQn) ) & 0xFF) >> (8 - __NVIC_PRIO_
+ 609:./Generated_Source/PSoC4/core_cm0.h ****   else {
+ 610:./Generated_Source/PSoC4/core_cm0.h ****     return((uint32_t)(((NVIC->IP[ _IP_IDX(IRQn)] >> _BIT_SHIFT(IRQn) ) & 0xFF) >> (8 - __NVIC_PRIO_
+ 611:./Generated_Source/PSoC4/core_cm0.h **** }
+ 612:./Generated_Source/PSoC4/core_cm0.h **** 
+ 613:./Generated_Source/PSoC4/core_cm0.h **** 
+ 614:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  System Reset
+ 615:./Generated_Source/PSoC4/core_cm0.h **** 
+ 616:./Generated_Source/PSoC4/core_cm0.h ****     The function initiates a system reset request to reset the MCU.
+ 617:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 618:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE void NVIC_SystemReset(void)
+ 619:./Generated_Source/PSoC4/core_cm0.h **** {
+ 620:./Generated_Source/PSoC4/core_cm0.h ****   __DSB();                                                     /* Ensure all outstanding memory acc
+ 621:./Generated_Source/PSoC4/core_cm0.h ****                                                                   buffered write are completed befo
+ 622:./Generated_Source/PSoC4/core_cm0.h ****   SCB->AIRCR  = ((0x5FA << SCB_AIRCR_VECTKEY_Pos)      |
+ 623:./Generated_Source/PSoC4/core_cm0.h ****                  SCB_AIRCR_SYSRESETREQ_Msk);
+ 624:./Generated_Source/PSoC4/core_cm0.h ****   __DSB();                                                     /* Ensure completion of memory acces
+ 625:./Generated_Source/PSoC4/core_cm0.h ****   while(1);                                                    /* wait until reset */
+ 626:./Generated_Source/PSoC4/core_cm0.h **** }
+ 627:./Generated_Source/PSoC4/core_cm0.h **** 
+ 628:./Generated_Source/PSoC4/core_cm0.h **** /*@} end of CMSIS_Core_NVICFunctions */
+ 629:./Generated_Source/PSoC4/core_cm0.h **** 
+ 630:./Generated_Source/PSoC4/core_cm0.h **** 
+ 631:./Generated_Source/PSoC4/core_cm0.h **** 
+ 632:./Generated_Source/PSoC4/core_cm0.h **** /* ##################################    SysTick function  ########################################
+ 633:./Generated_Source/PSoC4/core_cm0.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 634:./Generated_Source/PSoC4/core_cm0.h ****     \defgroup CMSIS_Core_SysTickFunctions SysTick Functions
+ 635:./Generated_Source/PSoC4/core_cm0.h ****     \brief      Functions that configure the System.
+ 636:./Generated_Source/PSoC4/core_cm0.h ****   @{
+ 637:./Generated_Source/PSoC4/core_cm0.h ****  */
+ 638:./Generated_Source/PSoC4/core_cm0.h **** 
+ 639:./Generated_Source/PSoC4/core_cm0.h **** #if (__Vendor_SysTickConfig == 0)
+ 640:./Generated_Source/PSoC4/core_cm0.h **** 
+ 641:./Generated_Source/PSoC4/core_cm0.h **** /** \brief  System Tick Configuration
+ 642:./Generated_Source/PSoC4/core_cm0.h **** 
+ 643:./Generated_Source/PSoC4/core_cm0.h ****     The function initializes the System Timer and its interrupt, and starts the System Tick Timer.
+ 644:./Generated_Source/PSoC4/core_cm0.h ****     Counter is in free running mode to generate periodic interrupts.
+ 645:./Generated_Source/PSoC4/core_cm0.h **** 
+ 646:./Generated_Source/PSoC4/core_cm0.h ****     \param [in]  ticks  Number of ticks between two interrupts.
+ 647:./Generated_Source/PSoC4/core_cm0.h **** 
+ 648:./Generated_Source/PSoC4/core_cm0.h ****     \return          0  Function succeeded.
+ 649:./Generated_Source/PSoC4/core_cm0.h ****     \return          1  Function failed.
+ 650:./Generated_Source/PSoC4/core_cm0.h **** 
+ 651:./Generated_Source/PSoC4/core_cm0.h ****     \note     When the variable <b>__Vendor_SysTickConfig</b> is set to 1, then the
+ 652:./Generated_Source/PSoC4/core_cm0.h ****     function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+ 653:./Generated_Source/PSoC4/core_cm0.h ****     must contain a vendor-specific implementation of this function.
+ 654:./Generated_Source/PSoC4/core_cm0.h **** 
+ 655:./Generated_Source/PSoC4/core_cm0.h ****  */
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 17
+
+
+ 656:./Generated_Source/PSoC4/core_cm0.h **** __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+ 657:./Generated_Source/PSoC4/core_cm0.h **** {
+ 212              		.loc 2 657 0
+ 213              		.cfi_startproc
+ 214 0000 80B5     		push	{r7, lr}
+ 215              	.LCFI5:
+ 216              		.cfi_def_cfa_offset 8
+ 217              		.cfi_offset 7, -8
+ 218              		.cfi_offset 14, -4
+ 219 0002 82B0     		sub	sp, sp, #8
+ 220              	.LCFI6:
+ 221              		.cfi_def_cfa_offset 16
+ 222 0004 00AF     		add	r7, sp, #0
+ 223              	.LCFI7:
+ 224              		.cfi_def_cfa_register 7
+ 225 0006 7860     		str	r0, [r7, #4]
+ 658:./Generated_Source/PSoC4/core_cm0.h ****   if ((ticks - 1) > SysTick_LOAD_RELOAD_Msk)  return (1);      /* Reload value impossible */
+ 226              		.loc 2 658 0
+ 227 0008 7B68     		ldr	r3, [r7, #4]
+ 228 000a 5A1E     		sub	r2, r3, #1
+ 229 000c 0C4B     		ldr	r3, .L12
+ 230 000e 9A42     		cmp	r2, r3
+ 231 0010 01D9     		bls	.L10
+ 232              		.loc 2 658 0 is_stmt 0 discriminator 1
+ 233 0012 0123     		mov	r3, #1
+ 234 0014 10E0     		b	.L11
+ 235              	.L10:
+ 659:./Generated_Source/PSoC4/core_cm0.h **** 
+ 660:./Generated_Source/PSoC4/core_cm0.h ****   SysTick->LOAD  = ticks - 1;                                  /* set reload register */
+ 236              		.loc 2 660 0 is_stmt 1
+ 237 0016 0B4B     		ldr	r3, .L12+4
+ 238 0018 7A68     		ldr	r2, [r7, #4]
+ 239 001a 013A     		sub	r2, r2, #1
+ 240 001c 5A60     		str	r2, [r3, #4]
+ 661:./Generated_Source/PSoC4/core_cm0.h ****   NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Systick Interrup
+ 241              		.loc 2 661 0
+ 242 001e 0123     		mov	r3, #1
+ 243 0020 5B42     		neg	r3, r3
+ 244 0022 181C     		mov	r0, r3
+ 245 0024 0321     		mov	r1, #3
+ 246 0026 FFF7FEFF 		bl	NVIC_SetPriority
+ 662:./Generated_Source/PSoC4/core_cm0.h ****   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+ 247              		.loc 2 662 0
+ 248 002a 064B     		ldr	r3, .L12+4
+ 249 002c 0022     		mov	r2, #0
+ 250 002e 9A60     		str	r2, [r3, #8]
+ 663:./Generated_Source/PSoC4/core_cm0.h ****   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 664:./Generated_Source/PSoC4/core_cm0.h ****                    SysTick_CTRL_TICKINT_Msk   |
+ 665:./Generated_Source/PSoC4/core_cm0.h ****                    SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Ti
+ 251              		.loc 2 665 0
+ 252 0030 044B     		ldr	r3, .L12+4
+ 253 0032 0722     		mov	r2, #7
+ 254 0034 1A60     		str	r2, [r3]
+ 666:./Generated_Source/PSoC4/core_cm0.h ****   return (0);                                                  /* Function successful */
+ 255              		.loc 2 666 0
+ 256 0036 0023     		mov	r3, #0
+ 257              	.L11:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 18
+
+
+ 667:./Generated_Source/PSoC4/core_cm0.h **** }
+ 258              		.loc 2 667 0
+ 259 0038 181C     		mov	r0, r3
+ 260 003a BD46     		mov	sp, r7
+ 261 003c 02B0     		add	sp, sp, #8
+ 262              		@ sp needed for prologue
+ 263 003e 80BD     		pop	{r7, pc}
+ 264              	.L13:
+ 265              		.align	2
+ 266              	.L12:
+ 267 0040 FFFFFF00 		.word	16777215
+ 268 0044 10E000E0 		.word	-536813552
+ 269              		.cfi_endproc
+ 270              	.LFE137:
+ 271              		.size	SysTick_Config, .-SysTick_Config
+ 272              		.section	.text._Z4initv,"ax",%progbits
+ 273              		.align	2
+ 274              		.global	_Z4initv
+ 275              		.code	16
+ 276              		.thumb_func
+ 277              		.type	_Z4initv, %function
+ 278              	_Z4initv:
+ 279              	.LFB138:
+ 280              		.file 3 ".\\ros_lib\\init.cpp"
+   1:.\ros_lib/init.cpp **** /* Clock initialization for PSoc4 "RosOnAStick"
+   2:.\ros_lib/init.cpp ****  *
+   3:.\ros_lib/init.cpp ****  * Copyright C. Harrison
+   4:.\ros_lib/init.cpp ****  * BSD 2-clause license http://opensource.org/licenses/BSD-2-Clause
+   5:.\ros_lib/init.cpp ****  *
+   6:.\ros_lib/init.cpp ****  */
+   7:.\ros_lib/init.cpp ****  
+   8:.\ros_lib/init.cpp **** #include "ros.h"
+   9:.\ros_lib/init.cpp **** #include "SysTimer.h"
+  10:.\ros_lib/init.cpp **** extern "C" {
+  11:.\ros_lib/init.cpp ****   #include "project.h"
+  12:.\ros_lib/init.cpp **** }
+  13:.\ros_lib/init.cpp **** 
+  14:.\ros_lib/init.cpp **** void init(void)
+  15:.\ros_lib/init.cpp **** {
+ 281              		.loc 3 15 0
+ 282              		.cfi_startproc
+ 283 0000 80B5     		push	{r7, lr}
+ 284              	.LCFI8:
+ 285              		.cfi_def_cfa_offset 8
+ 286              		.cfi_offset 7, -8
+ 287              		.cfi_offset 14, -4
+ 288 0002 00AF     		add	r7, sp, #0
+ 289              	.LCFI9:
+ 290              		.cfi_def_cfa_register 7
+  16:.\ros_lib/init.cpp ****   SysTimer::init();
+ 291              		.loc 3 16 0
+ 292 0004 FFF7FEFF 		bl	_ZN8SysTimer4initEv
+  17:.\ros_lib/init.cpp ****   SysTick_Config(CLOCK_FREQ / INTERRUPT_FREQ); /* defined in auto-generated core_cm0.h */
+ 293              		.loc 3 17 0
+ 294 0008 034B     		ldr	r3, .L15
+ 295 000a 181C     		mov	r0, r3
+ 296 000c FFF7FEFF 		bl	SysTick_Config
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 19
+
+
+  18:.\ros_lib/init.cpp **** 
+  19:.\ros_lib/init.cpp ****   CyGlobalIntEnable;
+ 297              		.loc 3 19 0
+ 298              	@ 19 ".\ros_lib\init.cpp" 1
+ 299 0010 62B6     		CPSIE   i
+ 300              	@ 0 "" 2
+  20:.\ros_lib/init.cpp **** }
+ 301              		.loc 3 20 0
+ 302              		.code	16
+ 303 0012 BD46     		mov	sp, r7
+ 304              		@ sp needed for prologue
+ 305 0014 80BD     		pop	{r7, pc}
+ 306              	.L16:
+ 307 0016 C046     		.align	2
+ 308              	.L15:
+ 309 0018 C05D0000 		.word	24000
+ 310              		.cfi_endproc
+ 311              	.LFE138:
+ 312              		.size	_Z4initv, .-_Z4initv
+ 313              		.section	.rodata
+ 314              		.align	2
+ 315              		.type	_ZN14rosserial_msgsL12REQUESTPARAME, %object
+ 316              		.size	_ZN14rosserial_msgsL12REQUESTPARAME, 28
+ 317              	_ZN14rosserial_msgsL12REQUESTPARAME:
+ 318 0000 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 318      65726961 
+ 318      6C5F6D73 
+ 318      67732F52 
+ 318      65717565 
+ 319              		.text
+ 320              	.Letext0:
+ 321              		.file 4 "c:\\program files\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4.7.3\\
+ 322              		.file 5 "./Generated_Source/PSoC4/core_cm0_psoc4.h"
+ 323              		.file 6 "./ros_lib/rosserial_msgs/RequestParam.h"
+ 324              		.file 7 ".\\ros_lib\\Uarts.h"
+ 325              		.file 8 "./ros_lib/ros/msg.h"
+ 326              		.file 9 "./ros_lib/rosserial_msgs/TopicInfo.h"
+ 327              		.section	.debug_info,"",%progbits
+ 328              	.Ldebug_info0:
+ 329 0000 08040000 		.4byte	0x408
+ 330 0004 0200     		.2byte	0x2
+ 331 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 332 000a 04       		.byte	0x4
+ 333 000b 01       		.uleb128 0x1
+ 334 000c 4D000000 		.4byte	.LASF49
+ 335 0010 04       		.byte	0x4
+ 336 0011 06000000 		.4byte	.LASF50
+ 337 0015 CE020000 		.4byte	.LASF51
+ 338 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 339 001d 00000000 		.4byte	0
+ 340 0021 00000000 		.4byte	0
+ 341 0025 00000000 		.4byte	.Ldebug_line0
+ 342 0029 02       		.uleb128 0x2
+ 343 002a 01       		.byte	0x1
+ 344 002b 06       		.byte	0x6
+ 345 002c 93010000 		.4byte	.LASF0
+ 346 0030 02       		.uleb128 0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 20
+
+
+ 347 0031 01       		.byte	0x1
+ 348 0032 08       		.byte	0x8
+ 349 0033 5D010000 		.4byte	.LASF1
+ 350 0037 02       		.uleb128 0x2
+ 351 0038 02       		.byte	0x2
+ 352 0039 05       		.byte	0x5
+ 353 003a 43000000 		.4byte	.LASF2
+ 354 003e 02       		.uleb128 0x2
+ 355 003f 02       		.byte	0x2
+ 356 0040 07       		.byte	0x7
+ 357 0041 FB010000 		.4byte	.LASF3
+ 358 0045 02       		.uleb128 0x2
+ 359 0046 04       		.byte	0x4
+ 360 0047 05       		.byte	0x5
+ 361 0048 27020000 		.4byte	.LASF4
+ 362 004c 03       		.uleb128 0x3
+ 363 004d C1010000 		.4byte	.LASF20
+ 364 0051 04       		.byte	0x4
+ 365 0052 50       		.byte	0x50
+ 366 0053 57000000 		.4byte	0x57
+ 367 0057 02       		.uleb128 0x2
+ 368 0058 04       		.byte	0x4
+ 369 0059 07       		.byte	0x7
+ 370 005a 73020000 		.4byte	.LASF5
+ 371 005e 02       		.uleb128 0x2
+ 372 005f 08       		.byte	0x8
+ 373 0060 05       		.byte	0x5
+ 374 0061 24010000 		.4byte	.LASF6
+ 375 0065 02       		.uleb128 0x2
+ 376 0066 08       		.byte	0x8
+ 377 0067 07       		.byte	0x7
+ 378 0068 AA010000 		.4byte	.LASF7
+ 379 006c 04       		.uleb128 0x4
+ 380 006d 04       		.byte	0x4
+ 381 006e 05       		.byte	0x5
+ 382 006f 696E7400 		.ascii	"int\000"
+ 383 0073 02       		.uleb128 0x2
+ 384 0074 04       		.byte	0x4
+ 385 0075 07       		.byte	0x7
+ 386 0076 CA010000 		.4byte	.LASF8
+ 387 007a 02       		.uleb128 0x2
+ 388 007b 04       		.byte	0x4
+ 389 007c 07       		.byte	0x7
+ 390 007d 98000000 		.4byte	.LASF9
+ 391 0081 05       		.uleb128 0x5
+ 392 0082 57000000 		.4byte	0x57
+ 393 0086 91000000 		.4byte	0x91
+ 394 008a 06       		.uleb128 0x6
+ 395 008b 7A000000 		.4byte	0x7a
+ 396 008f 00       		.byte	0
+ 397 0090 00       		.byte	0
+ 398 0091 02       		.uleb128 0x2
+ 399 0092 01       		.byte	0x1
+ 400 0093 08       		.byte	0x8
+ 401 0094 1D020000 		.4byte	.LASF10
+ 402 0098 02       		.uleb128 0x2
+ 403 0099 08       		.byte	0x8
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 21
+
+
+ 404 009a 04       		.byte	0x4
+ 405 009b B8020000 		.4byte	.LASF11
+ 406 009f 05       		.uleb128 0x5
+ 407 00a0 57000000 		.4byte	0x57
+ 408 00a4 AF000000 		.4byte	0xaf
+ 409 00a8 06       		.uleb128 0x6
+ 410 00a9 7A000000 		.4byte	0x7a
+ 411 00ad 01       		.byte	0x1
+ 412 00ae 00       		.byte	0
+ 413 00af 02       		.uleb128 0x2
+ 414 00b0 04       		.byte	0x4
+ 415 00b1 04       		.byte	0x4
+ 416 00b2 10010000 		.4byte	.LASF12
+ 417 00b6 02       		.uleb128 0x2
+ 418 00b7 08       		.byte	0x8
+ 419 00b8 04       		.byte	0x4
+ 420 00b9 CC000000 		.4byte	.LASF13
+ 421 00bd 07       		.uleb128 0x7
+ 422 00be 726F7300 		.ascii	"ros\000"
+ 423 00c2 08       		.byte	0x8
+ 424 00c3 26       		.byte	0x26
+ 425 00c4 08       		.uleb128 0x8
+ 426 00c5 01010000 		.4byte	.LASF52
+ 427 00c9 09       		.byte	0x9
+ 428 00ca 0A       		.byte	0xa
+ 429 00cb F6000000 		.4byte	0xf6
+ 430 00cf 09       		.uleb128 0x9
+ 431 00d0 49010000 		.4byte	.LASF53
+ 432 00d4 01       		.byte	0x1
+ 433 00d5 E5000000 		.4byte	0xe5
+ 434 00d9 0A       		.uleb128 0xa
+ 435 00da 01       		.byte	0x1
+ 436 00db 09       		.byte	0x9
+ 437 00dc 14       		.byte	0x14
+ 438 00dd 0B       		.uleb128 0xb
+ 439 00de 92020000 		.4byte	.LASF14
+ 440 00e2 00       		.sleb128 0
+ 441 00e3 00       		.byte	0
+ 442 00e4 00       		.byte	0
+ 443 00e5 0C       		.uleb128 0xc
+ 444 00e6 85020000 		.4byte	.LASF47
+ 445 00ea 06       		.byte	0x6
+ 446 00eb 0B       		.byte	0xb
+ 447 00ec FB030000 		.4byte	0x3fb
+ 448 00f0 01       		.byte	0x1
+ 449 00f1 A1000000 		.4byte	.LASF54
+ 450 00f5 00       		.byte	0
+ 451 00f6 0D       		.uleb128 0xd
+ 452 00f7 26030000 		.4byte	.LASF55
+ 453 00fb 01       		.byte	0x1
+ 454 00fc 01       		.byte	0x1
+ 455 00fd 23       		.byte	0x23
+ 456 00fe 10010000 		.4byte	0x110
+ 457 0102 0E       		.uleb128 0xe
+ 458 0103 01       		.byte	0x1
+ 459 0104 22020000 		.4byte	.LASF56
+ 460 0108 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 22
+
+
+ 461 0109 26       		.byte	0x26
+ 462 010a 2F000000 		.4byte	.LASF57
+ 463 010e 01       		.byte	0x1
+ 464 010f 00       		.byte	0
+ 465 0110 0F       		.uleb128 0xf
+ 466 0111 D8000000 		.4byte	.LASF44
+ 467 0115 01       		.byte	0x1
+ 468 0116 05       		.byte	0x5
+ 469 0117 19       		.byte	0x19
+ 470 0118 3B010000 		.4byte	0x13b
+ 471 011c 0B       		.uleb128 0xb
+ 472 011d 9F020000 		.4byte	.LASF15
+ 473 0121 72       		.sleb128 -14
+ 474 0122 0B       		.uleb128 0xb
+ 475 0123 BD000000 		.4byte	.LASF16
+ 476 0127 73       		.sleb128 -13
+ 477 0128 0B       		.uleb128 0xb
+ 478 0129 E2010000 		.4byte	.LASF17
+ 479 012d 7B       		.sleb128 -5
+ 480 012e 0B       		.uleb128 0xb
+ 481 012f 38010000 		.4byte	.LASF18
+ 482 0133 7E       		.sleb128 -2
+ 483 0134 0B       		.uleb128 0xb
+ 484 0135 19000000 		.4byte	.LASF19
+ 485 0139 7F       		.sleb128 -1
+ 486 013a 00       		.byte	0
+ 487 013b 03       		.uleb128 0x3
+ 488 013c 7A010000 		.4byte	.LASF21
+ 489 0140 05       		.byte	0x5
+ 490 0141 23       		.byte	0x23
+ 491 0142 10010000 		.4byte	0x110
+ 492 0146 10       		.uleb128 0x10
+ 493 0147 2003     		.2byte	0x320
+ 494 0149 02       		.byte	0x2
+ 495 014a 1901     		.2byte	0x119
+ 496 014c 9F010000 		.4byte	.LASF58
+ 497 0150 F2010000 		.4byte	0x1f2
+ 498 0154 11       		.uleb128 0x11
+ 499 0155 46020000 		.4byte	.LASF22
+ 500 0159 02       		.byte	0x2
+ 501 015a 1A01     		.2byte	0x11a
+ 502 015c F2010000 		.4byte	0x1f2
+ 503 0160 02       		.byte	0x2
+ 504 0161 23       		.byte	0x23
+ 505 0162 00       		.uleb128 0
+ 506 0163 11       		.uleb128 0x11
+ 507 0164 E8000000 		.4byte	.LASF23
+ 508 0168 02       		.byte	0x2
+ 509 0169 1B01     		.2byte	0x11b
+ 510 016b F7010000 		.4byte	0x1f7
+ 511 016f 02       		.byte	0x2
+ 512 0170 23       		.byte	0x23
+ 513 0171 04       		.uleb128 0x4
+ 514 0172 11       		.uleb128 0x11
+ 515 0173 DD010000 		.4byte	.LASF24
+ 516 0177 02       		.byte	0x2
+ 517 0178 1C01     		.2byte	0x11c
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 23
+
+
+ 518 017a 07020000 		.4byte	0x207
+ 519 017e 03       		.byte	0x3
+ 520 017f 23       		.byte	0x23
+ 521 0180 8001     		.uleb128 0x80
+ 522 0182 11       		.uleb128 0x11
+ 523 0183 1B010000 		.4byte	.LASF25
+ 524 0187 02       		.byte	0x2
+ 525 0188 1D01     		.2byte	0x11d
+ 526 018a F7010000 		.4byte	0x1f7
+ 527 018e 03       		.byte	0x3
+ 528 018f 23       		.byte	0x23
+ 529 0190 8401     		.uleb128 0x84
+ 530 0192 11       		.uleb128 0x11
+ 531 0193 41020000 		.4byte	.LASF26
+ 532 0197 02       		.byte	0x2
+ 533 0198 1E01     		.2byte	0x11e
+ 534 019a 0C020000 		.4byte	0x20c
+ 535 019e 03       		.byte	0x3
+ 536 019f 23       		.byte	0x23
+ 537 01a0 8002     		.uleb128 0x100
+ 538 01a2 11       		.uleb128 0x11
+ 539 01a3 55020000 		.4byte	.LASF27
+ 540 01a7 02       		.byte	0x2
+ 541 01a8 1F01     		.2byte	0x11f
+ 542 01aa F7010000 		.4byte	0x1f7
+ 543 01ae 03       		.byte	0x3
+ 544 01af 23       		.byte	0x23
+ 545 01b0 8402     		.uleb128 0x104
+ 546 01b2 11       		.uleb128 0x11
+ 547 01b3 8E010000 		.4byte	.LASF28
+ 548 01b7 02       		.byte	0x2
+ 549 01b8 2001     		.2byte	0x120
+ 550 01ba 11020000 		.4byte	0x211
+ 551 01be 03       		.byte	0x3
+ 552 01bf 23       		.byte	0x23
+ 553 01c0 8003     		.uleb128 0x180
+ 554 01c2 11       		.uleb128 0x11
+ 555 01c3 5F020000 		.4byte	.LASF29
+ 556 01c7 02       		.byte	0x2
+ 557 01c8 2101     		.2byte	0x121
+ 558 01ca F7010000 		.4byte	0x1f7
+ 559 01ce 03       		.byte	0x3
+ 560 01cf 23       		.byte	0x23
+ 561 01d0 8403     		.uleb128 0x184
+ 562 01d2 11       		.uleb128 0x11
+ 563 01d3 69020000 		.4byte	.LASF30
+ 564 01d7 02       		.byte	0x2
+ 565 01d8 2201     		.2byte	0x122
+ 566 01da 16020000 		.4byte	0x216
+ 567 01de 03       		.byte	0x3
+ 568 01df 23       		.byte	0x23
+ 569 01e0 8004     		.uleb128 0x200
+ 570 01e2 12       		.uleb128 0x12
+ 571 01e3 495000   		.ascii	"IP\000"
+ 572 01e6 02       		.byte	0x2
+ 573 01e7 2301     		.2byte	0x123
+ 574 01e9 36020000 		.4byte	0x236
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 24
+
+
+ 575 01ed 03       		.byte	0x3
+ 576 01ee 23       		.byte	0x23
+ 577 01ef 8006     		.uleb128 0x300
+ 578 01f1 00       		.byte	0
+ 579 01f2 13       		.uleb128 0x13
+ 580 01f3 81000000 		.4byte	0x81
+ 581 01f7 05       		.uleb128 0x5
+ 582 01f8 57000000 		.4byte	0x57
+ 583 01fc 07020000 		.4byte	0x207
+ 584 0200 06       		.uleb128 0x6
+ 585 0201 7A000000 		.4byte	0x7a
+ 586 0205 1E       		.byte	0x1e
+ 587 0206 00       		.byte	0
+ 588 0207 13       		.uleb128 0x13
+ 589 0208 81000000 		.4byte	0x81
+ 590 020c 13       		.uleb128 0x13
+ 591 020d 81000000 		.4byte	0x81
+ 592 0211 13       		.uleb128 0x13
+ 593 0212 81000000 		.4byte	0x81
+ 594 0216 05       		.uleb128 0x5
+ 595 0217 57000000 		.4byte	0x57
+ 596 021b 26020000 		.4byte	0x226
+ 597 021f 06       		.uleb128 0x6
+ 598 0220 7A000000 		.4byte	0x7a
+ 599 0224 3F       		.byte	0x3f
+ 600 0225 00       		.byte	0
+ 601 0226 05       		.uleb128 0x5
+ 602 0227 57000000 		.4byte	0x57
+ 603 022b 36020000 		.4byte	0x236
+ 604 022f 06       		.uleb128 0x6
+ 605 0230 7A000000 		.4byte	0x7a
+ 606 0234 07       		.byte	0x7
+ 607 0235 00       		.byte	0
+ 608 0236 13       		.uleb128 0x13
+ 609 0237 26020000 		.4byte	0x226
+ 610 023b 14       		.uleb128 0x14
+ 611 023c 84010000 		.4byte	.LASF31
+ 612 0240 02       		.byte	0x2
+ 613 0241 2401     		.2byte	0x124
+ 614 0243 46010000 		.4byte	0x146
+ 615 0247 15       		.uleb128 0x15
+ 616 0248 28       		.byte	0x28
+ 617 0249 02       		.byte	0x2
+ 618 024a 3201     		.2byte	0x132
+ 619 024c 53010000 		.4byte	.LASF38
+ 620 0250 DC020000 		.4byte	0x2dc
+ 621 0254 11       		.uleb128 0x11
+ 622 0255 DD000000 		.4byte	.LASF32
+ 623 0259 02       		.byte	0x2
+ 624 025a 3301     		.2byte	0x133
+ 625 025c DC020000 		.4byte	0x2dc
+ 626 0260 02       		.byte	0x2
+ 627 0261 23       		.byte	0x23
+ 628 0262 00       		.uleb128 0
+ 629 0263 11       		.uleb128 0x11
+ 630 0264 16010000 		.4byte	.LASF33
+ 631 0268 02       		.byte	0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 25
+
+
+ 632 0269 3401     		.2byte	0x134
+ 633 026b DC020000 		.4byte	0x2dc
+ 634 026f 02       		.byte	0x2
+ 635 0270 23       		.byte	0x23
+ 636 0271 04       		.uleb128 0x4
+ 637 0272 11       		.uleb128 0x11
+ 638 0273 E8000000 		.4byte	.LASF23
+ 639 0277 02       		.byte	0x2
+ 640 0278 3501     		.2byte	0x135
+ 641 027a 4C000000 		.4byte	0x4c
+ 642 027e 02       		.byte	0x2
+ 643 027f 23       		.byte	0x23
+ 644 0280 08       		.uleb128 0x8
+ 645 0281 11       		.uleb128 0x11
+ 646 0282 6B010000 		.4byte	.LASF34
+ 647 0286 02       		.byte	0x2
+ 648 0287 3601     		.2byte	0x136
+ 649 0289 DC020000 		.4byte	0x2dc
+ 650 028d 02       		.byte	0x2
+ 651 028e 23       		.byte	0x23
+ 652 028f 0C       		.uleb128 0xc
+ 653 0290 12       		.uleb128 0x12
+ 654 0291 53435200 		.ascii	"SCR\000"
+ 655 0295 02       		.byte	0x2
+ 656 0296 3701     		.2byte	0x137
+ 657 0298 DC020000 		.4byte	0x2dc
+ 658 029c 02       		.byte	0x2
+ 659 029d 23       		.byte	0x23
+ 660 029e 10       		.uleb128 0x10
+ 661 029f 12       		.uleb128 0x12
+ 662 02a0 43435200 		.ascii	"CCR\000"
+ 663 02a4 02       		.byte	0x2
+ 664 02a5 3801     		.2byte	0x138
+ 665 02a7 DC020000 		.4byte	0x2dc
+ 666 02ab 02       		.byte	0x2
+ 667 02ac 23       		.byte	0x23
+ 668 02ad 14       		.uleb128 0x14
+ 669 02ae 11       		.uleb128 0x11
+ 670 02af 4B020000 		.4byte	.LASF35
+ 671 02b3 02       		.byte	0x2
+ 672 02b4 3901     		.2byte	0x139
+ 673 02b6 4C000000 		.4byte	0x4c
+ 674 02ba 02       		.byte	0x2
+ 675 02bb 23       		.byte	0x23
+ 676 02bc 18       		.uleb128 0x18
+ 677 02bd 12       		.uleb128 0x12
+ 678 02be 53485000 		.ascii	"SHP\000"
+ 679 02c2 02       		.byte	0x2
+ 680 02c3 3A01     		.2byte	0x13a
+ 681 02c5 E1020000 		.4byte	0x2e1
+ 682 02c9 02       		.byte	0x2
+ 683 02ca 23       		.byte	0x23
+ 684 02cb 1C       		.uleb128 0x1c
+ 685 02cc 11       		.uleb128 0x11
+ 686 02cd D7010000 		.4byte	.LASF36
+ 687 02d1 02       		.byte	0x2
+ 688 02d2 3B01     		.2byte	0x13b
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 26
+
+
+ 689 02d4 DC020000 		.4byte	0x2dc
+ 690 02d8 02       		.byte	0x2
+ 691 02d9 23       		.byte	0x23
+ 692 02da 24       		.uleb128 0x24
+ 693 02db 00       		.byte	0
+ 694 02dc 13       		.uleb128 0x13
+ 695 02dd 4C000000 		.4byte	0x4c
+ 696 02e1 13       		.uleb128 0x13
+ 697 02e2 9F000000 		.4byte	0x9f
+ 698 02e6 14       		.uleb128 0x14
+ 699 02e7 71010000 		.4byte	.LASF37
+ 700 02eb 02       		.byte	0x2
+ 701 02ec 3C01     		.2byte	0x13c
+ 702 02ee 47020000 		.4byte	0x247
+ 703 02f2 15       		.uleb128 0x15
+ 704 02f3 10       		.byte	0x10
+ 705 02f4 02       		.byte	0x2
+ 706 02f5 9B01     		.2byte	0x19b
+ 707 02f7 0E020000 		.4byte	.LASF39
+ 708 02fb 3C030000 		.4byte	0x33c
+ 709 02ff 11       		.uleb128 0x11
+ 710 0300 E3000000 		.4byte	.LASF40
+ 711 0304 02       		.byte	0x2
+ 712 0305 9C01     		.2byte	0x19c
+ 713 0307 DC020000 		.4byte	0x2dc
+ 714 030b 02       		.byte	0x2
+ 715 030c 23       		.byte	0x23
+ 716 030d 00       		.uleb128 0
+ 717 030e 11       		.uleb128 0x11
+ 718 030f B3020000 		.4byte	.LASF41
+ 719 0313 02       		.byte	0x2
+ 720 0314 9D01     		.2byte	0x19d
+ 721 0316 DC020000 		.4byte	0x2dc
+ 722 031a 02       		.byte	0x2
+ 723 031b 23       		.byte	0x23
+ 724 031c 04       		.uleb128 0x4
+ 725 031d 12       		.uleb128 0x12
+ 726 031e 56414C00 		.ascii	"VAL\000"
+ 727 0322 02       		.byte	0x2
+ 728 0323 9E01     		.2byte	0x19e
+ 729 0325 DC020000 		.4byte	0x2dc
+ 730 0329 02       		.byte	0x2
+ 731 032a 23       		.byte	0x23
+ 732 032b 08       		.uleb128 0x8
+ 733 032c 11       		.uleb128 0x11
+ 734 032d 32010000 		.4byte	.LASF42
+ 735 0331 02       		.byte	0x2
+ 736 0332 9F01     		.2byte	0x19f
+ 737 0334 DC020000 		.4byte	0x2dc
+ 738 0338 02       		.byte	0x2
+ 739 0339 23       		.byte	0x23
+ 740 033a 0C       		.uleb128 0xc
+ 741 033b 00       		.byte	0
+ 742 033c 14       		.uleb128 0x14
+ 743 033d EE010000 		.4byte	.LASF43
+ 744 0341 02       		.byte	0x2
+ 745 0342 A001     		.2byte	0x1a0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 27
+
+
+ 746 0344 F2020000 		.4byte	0x2f2
+ 747 0348 16       		.uleb128 0x16
+ 748 0349 02010000 		.4byte	0x102
+ 749 034d 00000000 		.4byte	.LFB88
+ 750 0351 20000000 		.4byte	.LFE88
+ 751 0355 00000000 		.4byte	.LLST0
+ 752 0359 01       		.byte	0x1
+ 753 035a 17       		.uleb128 0x17
+ 754 035b 30020000 		.4byte	.LASF59
+ 755 035f 02       		.byte	0x2
+ 756 0360 4602     		.2byte	0x246
+ 757 0362 00000000 		.4byte	.LFB134
+ 758 0366 E0000000 		.4byte	.LFE134
+ 759 036a 2C000000 		.4byte	.LLST1
+ 760 036e 01       		.byte	0x1
+ 761 036f 92030000 		.4byte	0x392
+ 762 0373 18       		.uleb128 0x18
+ 763 0374 D8000000 		.4byte	.LASF44
+ 764 0378 02       		.byte	0x2
+ 765 0379 4602     		.2byte	0x246
+ 766 037b 3B010000 		.4byte	0x13b
+ 767 037f 02       		.byte	0x2
+ 768 0380 91       		.byte	0x91
+ 769 0381 6F       		.sleb128 -17
+ 770 0382 18       		.uleb128 0x18
+ 771 0383 26000000 		.4byte	.LASF45
+ 772 0387 02       		.byte	0x2
+ 773 0388 4602     		.2byte	0x246
+ 774 038a 4C000000 		.4byte	0x4c
+ 775 038e 02       		.byte	0x2
+ 776 038f 91       		.byte	0x91
+ 777 0390 68       		.sleb128 -24
+ 778 0391 00       		.byte	0
+ 779 0392 19       		.uleb128 0x19
+ 780 0393 F2000000 		.4byte	.LASF60
+ 781 0397 02       		.byte	0x2
+ 782 0398 9002     		.2byte	0x290
+ 783 039a 4C000000 		.4byte	0x4c
+ 784 039e 00000000 		.4byte	.LFB137
+ 785 03a2 48000000 		.4byte	.LFE137
+ 786 03a6 64000000 		.4byte	.LLST2
+ 787 03aa 01       		.byte	0x1
+ 788 03ab BF030000 		.4byte	0x3bf
+ 789 03af 18       		.uleb128 0x18
+ 790 03b0 00000000 		.4byte	.LASF46
+ 791 03b4 02       		.byte	0x2
+ 792 03b5 9002     		.2byte	0x290
+ 793 03b7 4C000000 		.4byte	0x4c
+ 794 03bb 02       		.byte	0x2
+ 795 03bc 91       		.byte	0x91
+ 796 03bd 74       		.sleb128 -12
+ 797 03be 00       		.byte	0
+ 798 03bf 1A       		.uleb128 0x1a
+ 799 03c0 01       		.byte	0x1
+ 800 03c1 22020000 		.4byte	.LASF56
+ 801 03c5 03       		.byte	0x3
+ 802 03c6 0E       		.byte	0xe
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 28
+
+
+ 803 03c7 BF020000 		.4byte	.LASF61
+ 804 03cb 00000000 		.4byte	.LFB138
+ 805 03cf 1C000000 		.4byte	.LFE138
+ 806 03d3 9C000000 		.4byte	.LLST3
+ 807 03d7 01       		.byte	0x1
+ 808 03d8 1B       		.uleb128 0x1b
+ 809 03d9 44010000 		.4byte	.LASF62
+ 810 03dd 01       		.byte	0x1
+ 811 03de 1C       		.uleb128 0x1c
+ 812 03df C8020000 		.4byte	.LASF48
+ 813 03e3 07       		.byte	0x7
+ 814 03e4 1D       		.byte	0x1d
+ 815 03e5 D8030000 		.4byte	0x3d8
+ 816 03e9 01       		.byte	0x1
+ 817 03ea 01       		.byte	0x1
+ 818 03eb 05       		.uleb128 0x5
+ 819 03ec 91000000 		.4byte	0x91
+ 820 03f0 FB030000 		.4byte	0x3fb
+ 821 03f4 06       		.uleb128 0x6
+ 822 03f5 7A000000 		.4byte	0x7a
+ 823 03f9 1B       		.byte	0x1b
+ 824 03fa 00       		.byte	0
+ 825 03fb 1D       		.uleb128 0x1d
+ 826 03fc EB030000 		.4byte	0x3eb
+ 827 0400 1E       		.uleb128 0x1e
+ 828 0401 E5000000 		.4byte	0xe5
+ 829 0405 05       		.byte	0x5
+ 830 0406 03       		.byte	0x3
+ 831 0407 00000000 		.4byte	_ZN14rosserial_msgsL12REQUESTPARAME
+ 832 040b 00       		.byte	0
+ 833              		.section	.debug_abbrev,"",%progbits
+ 834              	.Ldebug_abbrev0:
+ 835 0000 01       		.uleb128 0x1
+ 836 0001 11       		.uleb128 0x11
+ 837 0002 01       		.byte	0x1
+ 838 0003 25       		.uleb128 0x25
+ 839 0004 0E       		.uleb128 0xe
+ 840 0005 13       		.uleb128 0x13
+ 841 0006 0B       		.uleb128 0xb
+ 842 0007 03       		.uleb128 0x3
+ 843 0008 0E       		.uleb128 0xe
+ 844 0009 1B       		.uleb128 0x1b
+ 845 000a 0E       		.uleb128 0xe
+ 846 000b 55       		.uleb128 0x55
+ 847 000c 06       		.uleb128 0x6
+ 848 000d 11       		.uleb128 0x11
+ 849 000e 01       		.uleb128 0x1
+ 850 000f 52       		.uleb128 0x52
+ 851 0010 01       		.uleb128 0x1
+ 852 0011 10       		.uleb128 0x10
+ 853 0012 06       		.uleb128 0x6
+ 854 0013 00       		.byte	0
+ 855 0014 00       		.byte	0
+ 856 0015 02       		.uleb128 0x2
+ 857 0016 24       		.uleb128 0x24
+ 858 0017 00       		.byte	0
+ 859 0018 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 29
+
+
+ 860 0019 0B       		.uleb128 0xb
+ 861 001a 3E       		.uleb128 0x3e
+ 862 001b 0B       		.uleb128 0xb
+ 863 001c 03       		.uleb128 0x3
+ 864 001d 0E       		.uleb128 0xe
+ 865 001e 00       		.byte	0
+ 866 001f 00       		.byte	0
+ 867 0020 03       		.uleb128 0x3
+ 868 0021 16       		.uleb128 0x16
+ 869 0022 00       		.byte	0
+ 870 0023 03       		.uleb128 0x3
+ 871 0024 0E       		.uleb128 0xe
+ 872 0025 3A       		.uleb128 0x3a
+ 873 0026 0B       		.uleb128 0xb
+ 874 0027 3B       		.uleb128 0x3b
+ 875 0028 0B       		.uleb128 0xb
+ 876 0029 49       		.uleb128 0x49
+ 877 002a 13       		.uleb128 0x13
+ 878 002b 00       		.byte	0
+ 879 002c 00       		.byte	0
+ 880 002d 04       		.uleb128 0x4
+ 881 002e 24       		.uleb128 0x24
+ 882 002f 00       		.byte	0
+ 883 0030 0B       		.uleb128 0xb
+ 884 0031 0B       		.uleb128 0xb
+ 885 0032 3E       		.uleb128 0x3e
+ 886 0033 0B       		.uleb128 0xb
+ 887 0034 03       		.uleb128 0x3
+ 888 0035 08       		.uleb128 0x8
+ 889 0036 00       		.byte	0
+ 890 0037 00       		.byte	0
+ 891 0038 05       		.uleb128 0x5
+ 892 0039 01       		.uleb128 0x1
+ 893 003a 01       		.byte	0x1
+ 894 003b 49       		.uleb128 0x49
+ 895 003c 13       		.uleb128 0x13
+ 896 003d 01       		.uleb128 0x1
+ 897 003e 13       		.uleb128 0x13
+ 898 003f 00       		.byte	0
+ 899 0040 00       		.byte	0
+ 900 0041 06       		.uleb128 0x6
+ 901 0042 21       		.uleb128 0x21
+ 902 0043 00       		.byte	0
+ 903 0044 49       		.uleb128 0x49
+ 904 0045 13       		.uleb128 0x13
+ 905 0046 2F       		.uleb128 0x2f
+ 906 0047 0B       		.uleb128 0xb
+ 907 0048 00       		.byte	0
+ 908 0049 00       		.byte	0
+ 909 004a 07       		.uleb128 0x7
+ 910 004b 39       		.uleb128 0x39
+ 911 004c 00       		.byte	0
+ 912 004d 03       		.uleb128 0x3
+ 913 004e 08       		.uleb128 0x8
+ 914 004f 3A       		.uleb128 0x3a
+ 915 0050 0B       		.uleb128 0xb
+ 916 0051 3B       		.uleb128 0x3b
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 30
+
+
+ 917 0052 0B       		.uleb128 0xb
+ 918 0053 00       		.byte	0
+ 919 0054 00       		.byte	0
+ 920 0055 08       		.uleb128 0x8
+ 921 0056 39       		.uleb128 0x39
+ 922 0057 01       		.byte	0x1
+ 923 0058 03       		.uleb128 0x3
+ 924 0059 0E       		.uleb128 0xe
+ 925 005a 3A       		.uleb128 0x3a
+ 926 005b 0B       		.uleb128 0xb
+ 927 005c 3B       		.uleb128 0x3b
+ 928 005d 0B       		.uleb128 0xb
+ 929 005e 01       		.uleb128 0x1
+ 930 005f 13       		.uleb128 0x13
+ 931 0060 00       		.byte	0
+ 932 0061 00       		.byte	0
+ 933 0062 09       		.uleb128 0x9
+ 934 0063 02       		.uleb128 0x2
+ 935 0064 01       		.byte	0x1
+ 936 0065 03       		.uleb128 0x3
+ 937 0066 0E       		.uleb128 0xe
+ 938 0067 3C       		.uleb128 0x3c
+ 939 0068 0C       		.uleb128 0xc
+ 940 0069 01       		.uleb128 0x1
+ 941 006a 13       		.uleb128 0x13
+ 942 006b 00       		.byte	0
+ 943 006c 00       		.byte	0
+ 944 006d 0A       		.uleb128 0xa
+ 945 006e 04       		.uleb128 0x4
+ 946 006f 01       		.byte	0x1
+ 947 0070 0B       		.uleb128 0xb
+ 948 0071 0B       		.uleb128 0xb
+ 949 0072 3A       		.uleb128 0x3a
+ 950 0073 0B       		.uleb128 0xb
+ 951 0074 3B       		.uleb128 0x3b
+ 952 0075 0B       		.uleb128 0xb
+ 953 0076 00       		.byte	0
+ 954 0077 00       		.byte	0
+ 955 0078 0B       		.uleb128 0xb
+ 956 0079 28       		.uleb128 0x28
+ 957 007a 00       		.byte	0
+ 958 007b 03       		.uleb128 0x3
+ 959 007c 0E       		.uleb128 0xe
+ 960 007d 1C       		.uleb128 0x1c
+ 961 007e 0D       		.uleb128 0xd
+ 962 007f 00       		.byte	0
+ 963 0080 00       		.byte	0
+ 964 0081 0C       		.uleb128 0xc
+ 965 0082 34       		.uleb128 0x34
+ 966 0083 00       		.byte	0
+ 967 0084 03       		.uleb128 0x3
+ 968 0085 0E       		.uleb128 0xe
+ 969 0086 3A       		.uleb128 0x3a
+ 970 0087 0B       		.uleb128 0xb
+ 971 0088 3B       		.uleb128 0x3b
+ 972 0089 0B       		.uleb128 0xb
+ 973 008a 49       		.uleb128 0x49
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 31
+
+
+ 974 008b 13       		.uleb128 0x13
+ 975 008c 3C       		.uleb128 0x3c
+ 976 008d 0C       		.uleb128 0xc
+ 977 008e 1C       		.uleb128 0x1c
+ 978 008f 0E       		.uleb128 0xe
+ 979 0090 00       		.byte	0
+ 980 0091 00       		.byte	0
+ 981 0092 0D       		.uleb128 0xd
+ 982 0093 02       		.uleb128 0x2
+ 983 0094 01       		.byte	0x1
+ 984 0095 03       		.uleb128 0x3
+ 985 0096 0E       		.uleb128 0xe
+ 986 0097 0B       		.uleb128 0xb
+ 987 0098 0B       		.uleb128 0xb
+ 988 0099 3A       		.uleb128 0x3a
+ 989 009a 0B       		.uleb128 0xb
+ 990 009b 3B       		.uleb128 0x3b
+ 991 009c 0B       		.uleb128 0xb
+ 992 009d 01       		.uleb128 0x1
+ 993 009e 13       		.uleb128 0x13
+ 994 009f 00       		.byte	0
+ 995 00a0 00       		.byte	0
+ 996 00a1 0E       		.uleb128 0xe
+ 997 00a2 2E       		.uleb128 0x2e
+ 998 00a3 00       		.byte	0
+ 999 00a4 3F       		.uleb128 0x3f
+ 1000 00a5 0C       		.uleb128 0xc
+ 1001 00a6 03       		.uleb128 0x3
+ 1002 00a7 0E       		.uleb128 0xe
+ 1003 00a8 3A       		.uleb128 0x3a
+ 1004 00a9 0B       		.uleb128 0xb
+ 1005 00aa 3B       		.uleb128 0x3b
+ 1006 00ab 0B       		.uleb128 0xb
+ 1007 00ac 8740     		.uleb128 0x2007
+ 1008 00ae 0E       		.uleb128 0xe
+ 1009 00af 3C       		.uleb128 0x3c
+ 1010 00b0 0C       		.uleb128 0xc
+ 1011 00b1 00       		.byte	0
+ 1012 00b2 00       		.byte	0
+ 1013 00b3 0F       		.uleb128 0xf
+ 1014 00b4 04       		.uleb128 0x4
+ 1015 00b5 01       		.byte	0x1
+ 1016 00b6 03       		.uleb128 0x3
+ 1017 00b7 0E       		.uleb128 0xe
+ 1018 00b8 0B       		.uleb128 0xb
+ 1019 00b9 0B       		.uleb128 0xb
+ 1020 00ba 3A       		.uleb128 0x3a
+ 1021 00bb 0B       		.uleb128 0xb
+ 1022 00bc 3B       		.uleb128 0x3b
+ 1023 00bd 0B       		.uleb128 0xb
+ 1024 00be 01       		.uleb128 0x1
+ 1025 00bf 13       		.uleb128 0x13
+ 1026 00c0 00       		.byte	0
+ 1027 00c1 00       		.byte	0
+ 1028 00c2 10       		.uleb128 0x10
+ 1029 00c3 13       		.uleb128 0x13
+ 1030 00c4 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 32
+
+
+ 1031 00c5 0B       		.uleb128 0xb
+ 1032 00c6 05       		.uleb128 0x5
+ 1033 00c7 3A       		.uleb128 0x3a
+ 1034 00c8 0B       		.uleb128 0xb
+ 1035 00c9 3B       		.uleb128 0x3b
+ 1036 00ca 05       		.uleb128 0x5
+ 1037 00cb 8740     		.uleb128 0x2007
+ 1038 00cd 0E       		.uleb128 0xe
+ 1039 00ce 01       		.uleb128 0x1
+ 1040 00cf 13       		.uleb128 0x13
+ 1041 00d0 00       		.byte	0
+ 1042 00d1 00       		.byte	0
+ 1043 00d2 11       		.uleb128 0x11
+ 1044 00d3 0D       		.uleb128 0xd
+ 1045 00d4 00       		.byte	0
+ 1046 00d5 03       		.uleb128 0x3
+ 1047 00d6 0E       		.uleb128 0xe
+ 1048 00d7 3A       		.uleb128 0x3a
+ 1049 00d8 0B       		.uleb128 0xb
+ 1050 00d9 3B       		.uleb128 0x3b
+ 1051 00da 05       		.uleb128 0x5
+ 1052 00db 49       		.uleb128 0x49
+ 1053 00dc 13       		.uleb128 0x13
+ 1054 00dd 38       		.uleb128 0x38
+ 1055 00de 0A       		.uleb128 0xa
+ 1056 00df 00       		.byte	0
+ 1057 00e0 00       		.byte	0
+ 1058 00e1 12       		.uleb128 0x12
+ 1059 00e2 0D       		.uleb128 0xd
+ 1060 00e3 00       		.byte	0
+ 1061 00e4 03       		.uleb128 0x3
+ 1062 00e5 08       		.uleb128 0x8
+ 1063 00e6 3A       		.uleb128 0x3a
+ 1064 00e7 0B       		.uleb128 0xb
+ 1065 00e8 3B       		.uleb128 0x3b
+ 1066 00e9 05       		.uleb128 0x5
+ 1067 00ea 49       		.uleb128 0x49
+ 1068 00eb 13       		.uleb128 0x13
+ 1069 00ec 38       		.uleb128 0x38
+ 1070 00ed 0A       		.uleb128 0xa
+ 1071 00ee 00       		.byte	0
+ 1072 00ef 00       		.byte	0
+ 1073 00f0 13       		.uleb128 0x13
+ 1074 00f1 35       		.uleb128 0x35
+ 1075 00f2 00       		.byte	0
+ 1076 00f3 49       		.uleb128 0x49
+ 1077 00f4 13       		.uleb128 0x13
+ 1078 00f5 00       		.byte	0
+ 1079 00f6 00       		.byte	0
+ 1080 00f7 14       		.uleb128 0x14
+ 1081 00f8 16       		.uleb128 0x16
+ 1082 00f9 00       		.byte	0
+ 1083 00fa 03       		.uleb128 0x3
+ 1084 00fb 0E       		.uleb128 0xe
+ 1085 00fc 3A       		.uleb128 0x3a
+ 1086 00fd 0B       		.uleb128 0xb
+ 1087 00fe 3B       		.uleb128 0x3b
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 33
+
+
+ 1088 00ff 05       		.uleb128 0x5
+ 1089 0100 49       		.uleb128 0x49
+ 1090 0101 13       		.uleb128 0x13
+ 1091 0102 00       		.byte	0
+ 1092 0103 00       		.byte	0
+ 1093 0104 15       		.uleb128 0x15
+ 1094 0105 13       		.uleb128 0x13
+ 1095 0106 01       		.byte	0x1
+ 1096 0107 0B       		.uleb128 0xb
+ 1097 0108 0B       		.uleb128 0xb
+ 1098 0109 3A       		.uleb128 0x3a
+ 1099 010a 0B       		.uleb128 0xb
+ 1100 010b 3B       		.uleb128 0x3b
+ 1101 010c 05       		.uleb128 0x5
+ 1102 010d 8740     		.uleb128 0x2007
+ 1103 010f 0E       		.uleb128 0xe
+ 1104 0110 01       		.uleb128 0x1
+ 1105 0111 13       		.uleb128 0x13
+ 1106 0112 00       		.byte	0
+ 1107 0113 00       		.byte	0
+ 1108 0114 16       		.uleb128 0x16
+ 1109 0115 2E       		.uleb128 0x2e
+ 1110 0116 00       		.byte	0
+ 1111 0117 47       		.uleb128 0x47
+ 1112 0118 13       		.uleb128 0x13
+ 1113 0119 11       		.uleb128 0x11
+ 1114 011a 01       		.uleb128 0x1
+ 1115 011b 12       		.uleb128 0x12
+ 1116 011c 01       		.uleb128 0x1
+ 1117 011d 40       		.uleb128 0x40
+ 1118 011e 06       		.uleb128 0x6
+ 1119 011f 9642     		.uleb128 0x2116
+ 1120 0121 0C       		.uleb128 0xc
+ 1121 0122 00       		.byte	0
+ 1122 0123 00       		.byte	0
+ 1123 0124 17       		.uleb128 0x17
+ 1124 0125 2E       		.uleb128 0x2e
+ 1125 0126 01       		.byte	0x1
+ 1126 0127 03       		.uleb128 0x3
+ 1127 0128 0E       		.uleb128 0xe
+ 1128 0129 3A       		.uleb128 0x3a
+ 1129 012a 0B       		.uleb128 0xb
+ 1130 012b 3B       		.uleb128 0x3b
+ 1131 012c 05       		.uleb128 0x5
+ 1132 012d 11       		.uleb128 0x11
+ 1133 012e 01       		.uleb128 0x1
+ 1134 012f 12       		.uleb128 0x12
+ 1135 0130 01       		.uleb128 0x1
+ 1136 0131 40       		.uleb128 0x40
+ 1137 0132 06       		.uleb128 0x6
+ 1138 0133 9742     		.uleb128 0x2117
+ 1139 0135 0C       		.uleb128 0xc
+ 1140 0136 01       		.uleb128 0x1
+ 1141 0137 13       		.uleb128 0x13
+ 1142 0138 00       		.byte	0
+ 1143 0139 00       		.byte	0
+ 1144 013a 18       		.uleb128 0x18
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 34
+
+
+ 1145 013b 05       		.uleb128 0x5
+ 1146 013c 00       		.byte	0
+ 1147 013d 03       		.uleb128 0x3
+ 1148 013e 0E       		.uleb128 0xe
+ 1149 013f 3A       		.uleb128 0x3a
+ 1150 0140 0B       		.uleb128 0xb
+ 1151 0141 3B       		.uleb128 0x3b
+ 1152 0142 05       		.uleb128 0x5
+ 1153 0143 49       		.uleb128 0x49
+ 1154 0144 13       		.uleb128 0x13
+ 1155 0145 02       		.uleb128 0x2
+ 1156 0146 0A       		.uleb128 0xa
+ 1157 0147 00       		.byte	0
+ 1158 0148 00       		.byte	0
+ 1159 0149 19       		.uleb128 0x19
+ 1160 014a 2E       		.uleb128 0x2e
+ 1161 014b 01       		.byte	0x1
+ 1162 014c 03       		.uleb128 0x3
+ 1163 014d 0E       		.uleb128 0xe
+ 1164 014e 3A       		.uleb128 0x3a
+ 1165 014f 0B       		.uleb128 0xb
+ 1166 0150 3B       		.uleb128 0x3b
+ 1167 0151 05       		.uleb128 0x5
+ 1168 0152 49       		.uleb128 0x49
+ 1169 0153 13       		.uleb128 0x13
+ 1170 0154 11       		.uleb128 0x11
+ 1171 0155 01       		.uleb128 0x1
+ 1172 0156 12       		.uleb128 0x12
+ 1173 0157 01       		.uleb128 0x1
+ 1174 0158 40       		.uleb128 0x40
+ 1175 0159 06       		.uleb128 0x6
+ 1176 015a 9642     		.uleb128 0x2116
+ 1177 015c 0C       		.uleb128 0xc
+ 1178 015d 01       		.uleb128 0x1
+ 1179 015e 13       		.uleb128 0x13
+ 1180 015f 00       		.byte	0
+ 1181 0160 00       		.byte	0
+ 1182 0161 1A       		.uleb128 0x1a
+ 1183 0162 2E       		.uleb128 0x2e
+ 1184 0163 00       		.byte	0
+ 1185 0164 3F       		.uleb128 0x3f
+ 1186 0165 0C       		.uleb128 0xc
+ 1187 0166 03       		.uleb128 0x3
+ 1188 0167 0E       		.uleb128 0xe
+ 1189 0168 3A       		.uleb128 0x3a
+ 1190 0169 0B       		.uleb128 0xb
+ 1191 016a 3B       		.uleb128 0x3b
+ 1192 016b 0B       		.uleb128 0xb
+ 1193 016c 8740     		.uleb128 0x2007
+ 1194 016e 0E       		.uleb128 0xe
+ 1195 016f 11       		.uleb128 0x11
+ 1196 0170 01       		.uleb128 0x1
+ 1197 0171 12       		.uleb128 0x12
+ 1198 0172 01       		.uleb128 0x1
+ 1199 0173 40       		.uleb128 0x40
+ 1200 0174 06       		.uleb128 0x6
+ 1201 0175 9642     		.uleb128 0x2116
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 35
+
+
+ 1202 0177 0C       		.uleb128 0xc
+ 1203 0178 00       		.byte	0
+ 1204 0179 00       		.byte	0
+ 1205 017a 1B       		.uleb128 0x1b
+ 1206 017b 02       		.uleb128 0x2
+ 1207 017c 00       		.byte	0
+ 1208 017d 03       		.uleb128 0x3
+ 1209 017e 0E       		.uleb128 0xe
+ 1210 017f 3C       		.uleb128 0x3c
+ 1211 0180 0C       		.uleb128 0xc
+ 1212 0181 00       		.byte	0
+ 1213 0182 00       		.byte	0
+ 1214 0183 1C       		.uleb128 0x1c
+ 1215 0184 34       		.uleb128 0x34
+ 1216 0185 00       		.byte	0
+ 1217 0186 03       		.uleb128 0x3
+ 1218 0187 0E       		.uleb128 0xe
+ 1219 0188 3A       		.uleb128 0x3a
+ 1220 0189 0B       		.uleb128 0xb
+ 1221 018a 3B       		.uleb128 0x3b
+ 1222 018b 0B       		.uleb128 0xb
+ 1223 018c 49       		.uleb128 0x49
+ 1224 018d 13       		.uleb128 0x13
+ 1225 018e 3F       		.uleb128 0x3f
+ 1226 018f 0C       		.uleb128 0xc
+ 1227 0190 3C       		.uleb128 0x3c
+ 1228 0191 0C       		.uleb128 0xc
+ 1229 0192 00       		.byte	0
+ 1230 0193 00       		.byte	0
+ 1231 0194 1D       		.uleb128 0x1d
+ 1232 0195 26       		.uleb128 0x26
+ 1233 0196 00       		.byte	0
+ 1234 0197 49       		.uleb128 0x49
+ 1235 0198 13       		.uleb128 0x13
+ 1236 0199 00       		.byte	0
+ 1237 019a 00       		.byte	0
+ 1238 019b 1E       		.uleb128 0x1e
+ 1239 019c 34       		.uleb128 0x34
+ 1240 019d 00       		.byte	0
+ 1241 019e 47       		.uleb128 0x47
+ 1242 019f 13       		.uleb128 0x13
+ 1243 01a0 02       		.uleb128 0x2
+ 1244 01a1 0A       		.uleb128 0xa
+ 1245 01a2 00       		.byte	0
+ 1246 01a3 00       		.byte	0
+ 1247 01a4 00       		.byte	0
+ 1248              		.section	.debug_loc,"",%progbits
+ 1249              	.Ldebug_loc0:
+ 1250              	.LLST0:
+ 1251 0000 00000000 		.4byte	.LFB88
+ 1252 0004 02000000 		.4byte	.LCFI0
+ 1253 0008 0200     		.2byte	0x2
+ 1254 000a 7D       		.byte	0x7d
+ 1255 000b 00       		.sleb128 0
+ 1256 000c 02000000 		.4byte	.LCFI0
+ 1257 0010 04000000 		.4byte	.LCFI1
+ 1258 0014 0200     		.2byte	0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 36
+
+
+ 1259 0016 7D       		.byte	0x7d
+ 1260 0017 08       		.sleb128 8
+ 1261 0018 04000000 		.4byte	.LCFI1
+ 1262 001c 20000000 		.4byte	.LFE88
+ 1263 0020 0200     		.2byte	0x2
+ 1264 0022 77       		.byte	0x77
+ 1265 0023 08       		.sleb128 8
+ 1266 0024 00000000 		.4byte	0
+ 1267 0028 00000000 		.4byte	0
+ 1268              	.LLST1:
+ 1269 002c 00000000 		.4byte	.LFB134
+ 1270 0030 02000000 		.4byte	.LCFI2
+ 1271 0034 0200     		.2byte	0x2
+ 1272 0036 7D       		.byte	0x7d
+ 1273 0037 00       		.sleb128 0
+ 1274 0038 02000000 		.4byte	.LCFI2
+ 1275 003c 04000000 		.4byte	.LCFI3
+ 1276 0040 0200     		.2byte	0x2
+ 1277 0042 7D       		.byte	0x7d
+ 1278 0043 10       		.sleb128 16
+ 1279 0044 04000000 		.4byte	.LCFI3
+ 1280 0048 06000000 		.4byte	.LCFI4
+ 1281 004c 0200     		.2byte	0x2
+ 1282 004e 7D       		.byte	0x7d
+ 1283 004f 18       		.sleb128 24
+ 1284 0050 06000000 		.4byte	.LCFI4
+ 1285 0054 E0000000 		.4byte	.LFE134
+ 1286 0058 0200     		.2byte	0x2
+ 1287 005a 77       		.byte	0x77
+ 1288 005b 18       		.sleb128 24
+ 1289 005c 00000000 		.4byte	0
+ 1290 0060 00000000 		.4byte	0
+ 1291              	.LLST2:
+ 1292 0064 00000000 		.4byte	.LFB137
+ 1293 0068 02000000 		.4byte	.LCFI5
+ 1294 006c 0200     		.2byte	0x2
+ 1295 006e 7D       		.byte	0x7d
+ 1296 006f 00       		.sleb128 0
+ 1297 0070 02000000 		.4byte	.LCFI5
+ 1298 0074 04000000 		.4byte	.LCFI6
+ 1299 0078 0200     		.2byte	0x2
+ 1300 007a 7D       		.byte	0x7d
+ 1301 007b 08       		.sleb128 8
+ 1302 007c 04000000 		.4byte	.LCFI6
+ 1303 0080 06000000 		.4byte	.LCFI7
+ 1304 0084 0200     		.2byte	0x2
+ 1305 0086 7D       		.byte	0x7d
+ 1306 0087 10       		.sleb128 16
+ 1307 0088 06000000 		.4byte	.LCFI7
+ 1308 008c 48000000 		.4byte	.LFE137
+ 1309 0090 0200     		.2byte	0x2
+ 1310 0092 77       		.byte	0x77
+ 1311 0093 10       		.sleb128 16
+ 1312 0094 00000000 		.4byte	0
+ 1313 0098 00000000 		.4byte	0
+ 1314              	.LLST3:
+ 1315 009c 00000000 		.4byte	.LFB138
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 37
+
+
+ 1316 00a0 02000000 		.4byte	.LCFI8
+ 1317 00a4 0200     		.2byte	0x2
+ 1318 00a6 7D       		.byte	0x7d
+ 1319 00a7 00       		.sleb128 0
+ 1320 00a8 02000000 		.4byte	.LCFI8
+ 1321 00ac 04000000 		.4byte	.LCFI9
+ 1322 00b0 0200     		.2byte	0x2
+ 1323 00b2 7D       		.byte	0x7d
+ 1324 00b3 08       		.sleb128 8
+ 1325 00b4 04000000 		.4byte	.LCFI9
+ 1326 00b8 1C000000 		.4byte	.LFE138
+ 1327 00bc 0200     		.2byte	0x2
+ 1328 00be 77       		.byte	0x77
+ 1329 00bf 08       		.sleb128 8
+ 1330 00c0 00000000 		.4byte	0
+ 1331 00c4 00000000 		.4byte	0
+ 1332              		.section	.debug_aranges,"",%progbits
+ 1333 0000 34000000 		.4byte	0x34
+ 1334 0004 0200     		.2byte	0x2
+ 1335 0006 00000000 		.4byte	.Ldebug_info0
+ 1336 000a 04       		.byte	0x4
+ 1337 000b 00       		.byte	0
+ 1338 000c 0000     		.2byte	0
+ 1339 000e 0000     		.2byte	0
+ 1340 0010 00000000 		.4byte	.LFB88
+ 1341 0014 20000000 		.4byte	.LFE88-.LFB88
+ 1342 0018 00000000 		.4byte	.LFB134
+ 1343 001c E0000000 		.4byte	.LFE134-.LFB134
+ 1344 0020 00000000 		.4byte	.LFB137
+ 1345 0024 48000000 		.4byte	.LFE137-.LFB137
+ 1346 0028 00000000 		.4byte	.LFB138
+ 1347 002c 1C000000 		.4byte	.LFE138-.LFB138
+ 1348 0030 00000000 		.4byte	0
+ 1349 0034 00000000 		.4byte	0
+ 1350              		.section	.debug_ranges,"",%progbits
+ 1351              	.Ldebug_ranges0:
+ 1352 0000 00000000 		.4byte	.LFB88
+ 1353 0004 20000000 		.4byte	.LFE88
+ 1354 0008 00000000 		.4byte	.LFB134
+ 1355 000c E0000000 		.4byte	.LFE134
+ 1356 0010 00000000 		.4byte	.LFB137
+ 1357 0014 48000000 		.4byte	.LFE137
+ 1358 0018 00000000 		.4byte	.LFB138
+ 1359 001c 1C000000 		.4byte	.LFE138
+ 1360 0020 00000000 		.4byte	0
+ 1361 0024 00000000 		.4byte	0
+ 1362              		.section	.debug_line,"",%progbits
+ 1363              	.Ldebug_line0:
+ 1364 0000 D9010000 		.section	.debug_str,"MS",%progbits,1
+ 1364      02006E01 
+ 1364      00000201 
+ 1364      FB0E0D00 
+ 1364      01010101 
+ 1365              	.LASF46:
+ 1366 0000 7469636B 		.ascii	"ticks\000"
+ 1366      7300
+ 1367              	.LASF50:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 38
+
+
+ 1368 0006 2E5C726F 		.ascii	".\\ros_lib\\init.cpp\000"
+ 1368      735F6C69 
+ 1368      625C696E 
+ 1368      69742E63 
+ 1368      707000
+ 1369              	.LASF19:
+ 1370 0019 53797354 		.ascii	"SysTick_IRQn\000"
+ 1370      69636B5F 
+ 1370      4952516E 
+ 1370      00
+ 1371              	.LASF45:
+ 1372 0026 7072696F 		.ascii	"priority\000"
+ 1372      72697479 
+ 1372      00
+ 1373              	.LASF57:
+ 1374 002f 5F5A4E38 		.ascii	"_ZN8SysTimer4initEv\000"
+ 1374      53797354 
+ 1374      696D6572 
+ 1374      34696E69 
+ 1374      74457600 
+ 1375              	.LASF2:
+ 1376 0043 73686F72 		.ascii	"short int\000"
+ 1376      7420696E 
+ 1376      7400
+ 1377              	.LASF49:
+ 1378 004d 474E5520 		.ascii	"GNU C++ 4.7.3 20130312 (release) [ARM/embedded-4_7-"
+ 1378      432B2B20 
+ 1378      342E372E 
+ 1378      33203230 
+ 1378      31333033 
+ 1379 0080 6272616E 		.ascii	"branch revision 196615]\000"
+ 1379      63682072 
+ 1379      65766973 
+ 1379      696F6E20 
+ 1379      31393636 
+ 1380              	.LASF9:
+ 1381 0098 73697A65 		.ascii	"sizetype\000"
+ 1381      74797065 
+ 1381      00
+ 1382              	.LASF54:
+ 1383 00a1 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 1383      65726961 
+ 1383      6C5F6D73 
+ 1383      67732F52 
+ 1383      65717565 
+ 1384              	.LASF16:
+ 1385 00bd 48617264 		.ascii	"HardFault_IRQn\000"
+ 1385      4661756C 
+ 1385      745F4952 
+ 1385      516E00
+ 1386              	.LASF13:
+ 1387 00cc 6C6F6E67 		.ascii	"long double\000"
+ 1387      20646F75 
+ 1387      626C6500 
+ 1388              	.LASF44:
+ 1389 00d8 4952516E 		.ascii	"IRQn\000"
+ 1389      00
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 39
+
+
+ 1390              	.LASF32:
+ 1391 00dd 43505549 		.ascii	"CPUID\000"
+ 1391      4400
+ 1392              	.LASF40:
+ 1393 00e3 4354524C 		.ascii	"CTRL\000"
+ 1393      00
+ 1394              	.LASF23:
+ 1395 00e8 52455345 		.ascii	"RESERVED0\000"
+ 1395      52564544 
+ 1395      3000
+ 1396              	.LASF60:
+ 1397 00f2 53797354 		.ascii	"SysTick_Config\000"
+ 1397      69636B5F 
+ 1397      436F6E66 
+ 1397      696700
+ 1398              	.LASF52:
+ 1399 0101 726F7373 		.ascii	"rosserial_msgs\000"
+ 1399      65726961 
+ 1399      6C5F6D73 
+ 1399      677300
+ 1400              	.LASF12:
+ 1401 0110 666C6F61 		.ascii	"float\000"
+ 1401      7400
+ 1402              	.LASF33:
+ 1403 0116 49435352 		.ascii	"ICSR\000"
+ 1403      00
+ 1404              	.LASF25:
+ 1405 011b 52534552 		.ascii	"RSERVED1\000"
+ 1405      56454431 
+ 1405      00
+ 1406              	.LASF6:
+ 1407 0124 6C6F6E67 		.ascii	"long long int\000"
+ 1407      206C6F6E 
+ 1407      6720696E 
+ 1407      7400
+ 1408              	.LASF42:
+ 1409 0132 43414C49 		.ascii	"CALIB\000"
+ 1409      4200
+ 1410              	.LASF18:
+ 1411 0138 50656E64 		.ascii	"PendSV_IRQn\000"
+ 1411      53565F49 
+ 1411      52516E00 
+ 1412              	.LASF62:
+ 1413 0144 55617274 		.ascii	"Uart\000"
+ 1413      00
+ 1414              	.LASF53:
+ 1415 0149 546F7069 		.ascii	"TopicInfo\000"
+ 1415      63496E66 
+ 1415      6F00
+ 1416              	.LASF38:
+ 1417 0153 38534342 		.ascii	"8SCB_Type\000"
+ 1417      5F547970 
+ 1417      6500
+ 1418              	.LASF1:
+ 1419 015d 756E7369 		.ascii	"unsigned char\000"
+ 1419      676E6564 
+ 1419      20636861 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 40
+
+
+ 1419      7200
+ 1420              	.LASF34:
+ 1421 016b 41495243 		.ascii	"AIRCR\000"
+ 1421      5200
+ 1422              	.LASF37:
+ 1423 0171 5343425F 		.ascii	"SCB_Type\000"
+ 1423      54797065 
+ 1423      00
+ 1424              	.LASF21:
+ 1425 017a 4952516E 		.ascii	"IRQn_Type\000"
+ 1425      5F547970 
+ 1425      6500
+ 1426              	.LASF31:
+ 1427 0184 4E564943 		.ascii	"NVIC_Type\000"
+ 1427      5F547970 
+ 1427      6500
+ 1428              	.LASF28:
+ 1429 018e 49435052 		.ascii	"ICPR\000"
+ 1429      00
+ 1430              	.LASF0:
+ 1431 0193 7369676E 		.ascii	"signed char\000"
+ 1431      65642063 
+ 1431      68617200 
+ 1432              	.LASF58:
+ 1433 019f 394E5649 		.ascii	"9NVIC_Type\000"
+ 1433      435F5479 
+ 1433      706500
+ 1434              	.LASF7:
+ 1435 01aa 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1435      206C6F6E 
+ 1435      6720756E 
+ 1435      7369676E 
+ 1435      65642069 
+ 1436              	.LASF20:
+ 1437 01c1 75696E74 		.ascii	"uint32_t\000"
+ 1437      33325F74 
+ 1437      00
+ 1438              	.LASF8:
+ 1439 01ca 756E7369 		.ascii	"unsigned int\000"
+ 1439      676E6564 
+ 1439      20696E74 
+ 1439      00
+ 1440              	.LASF36:
+ 1441 01d7 53484353 		.ascii	"SHCSR\000"
+ 1441      5200
+ 1442              	.LASF24:
+ 1443 01dd 49434552 		.ascii	"ICER\000"
+ 1443      00
+ 1444              	.LASF17:
+ 1445 01e2 53564361 		.ascii	"SVCall_IRQn\000"
+ 1445      6C6C5F49 
+ 1445      52516E00 
+ 1446              	.LASF43:
+ 1447 01ee 53797354 		.ascii	"SysTick_Type\000"
+ 1447      69636B5F 
+ 1447      54797065 
+ 1447      00
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 41
+
+
+ 1448              	.LASF3:
+ 1449 01fb 73686F72 		.ascii	"short unsigned int\000"
+ 1449      7420756E 
+ 1449      7369676E 
+ 1449      65642069 
+ 1449      6E7400
+ 1450              	.LASF39:
+ 1451 020e 31325379 		.ascii	"12SysTick_Type\000"
+ 1451      73546963 
+ 1451      6B5F5479 
+ 1451      706500
+ 1452              	.LASF10:
+ 1453 021d 63686172 		.ascii	"char\000"
+ 1453      00
+ 1454              	.LASF56:
+ 1455 0222 696E6974 		.ascii	"init\000"
+ 1455      00
+ 1456              	.LASF4:
+ 1457 0227 6C6F6E67 		.ascii	"long int\000"
+ 1457      20696E74 
+ 1457      00
+ 1458              	.LASF59:
+ 1459 0230 4E564943 		.ascii	"NVIC_SetPriority\000"
+ 1459      5F536574 
+ 1459      5072696F 
+ 1459      72697479 
+ 1459      00
+ 1460              	.LASF26:
+ 1461 0241 49535052 		.ascii	"ISPR\000"
+ 1461      00
+ 1462              	.LASF22:
+ 1463 0246 49534552 		.ascii	"ISER\000"
+ 1463      00
+ 1464              	.LASF35:
+ 1465 024b 52455345 		.ascii	"RESERVED1\000"
+ 1465      52564544 
+ 1465      3100
+ 1466              	.LASF27:
+ 1467 0255 52455345 		.ascii	"RESERVED2\000"
+ 1467      52564544 
+ 1467      3200
+ 1468              	.LASF29:
+ 1469 025f 52455345 		.ascii	"RESERVED3\000"
+ 1469      52564544 
+ 1469      3300
+ 1470              	.LASF30:
+ 1471 0269 52455345 		.ascii	"RESERVED4\000"
+ 1471      52564544 
+ 1471      3400
+ 1472              	.LASF5:
+ 1473 0273 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1473      20756E73 
+ 1473      69676E65 
+ 1473      6420696E 
+ 1473      7400
+ 1474              	.LASF47:
+ 1475 0285 52455155 		.ascii	"REQUESTPARAM\000"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccsYEGdP.s 			page 42
+
+
+ 1475      45535450 
+ 1475      4152414D 
+ 1475      00
+ 1476              	.LASF14:
+ 1477 0292 49445F50 		.ascii	"ID_PUBLISHER\000"
+ 1477      55424C49 
+ 1477      53484552 
+ 1477      00
+ 1478              	.LASF15:
+ 1479 029f 4E6F6E4D 		.ascii	"NonMaskableInt_IRQn\000"
+ 1479      61736B61 
+ 1479      626C6549 
+ 1479      6E745F49 
+ 1479      52516E00 
+ 1480              	.LASF41:
+ 1481 02b3 4C4F4144 		.ascii	"LOAD\000"
+ 1481      00
+ 1482              	.LASF11:
+ 1483 02b8 646F7562 		.ascii	"double\000"
+ 1483      6C6500
+ 1484              	.LASF61:
+ 1485 02bf 5F5A3469 		.ascii	"_Z4initv\000"
+ 1485      6E697476 
+ 1485      00
+ 1486              	.LASF48:
+ 1487 02c8 55617274 		.ascii	"Uart0\000"
+ 1487      3000
+ 1488              	.LASF51:
+ 1489 02ce 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 1489      6F63756D 
+ 1489      656E7473 
+ 1489      20616E64 
+ 1489      20536574 
+ 1490 02fd 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 1490      72656174 
+ 1490      6F725C52 
+ 1490      6F734F6E 
+ 1490      41537469 
+ 1491              	.LASF55:
+ 1492 0326 53797354 		.ascii	"SysTimer\000"
+ 1492      696D6572 
+ 1492      00
+ 1493              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

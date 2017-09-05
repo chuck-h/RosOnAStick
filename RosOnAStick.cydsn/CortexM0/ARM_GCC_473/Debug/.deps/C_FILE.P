@@ -1,0 +1,4 @@
+C:/Documents\ and\ Settings/Chuck/My\ Documents/PSoC\ Creator/RosOnAStick/RosOnAStick.cydsn/CortexM0/ARM_GCC_473/Debug/ADC.o : C:/Documents\ and\ Settings/Chuck/My\ Documents/PSoC\ Creator/RosOnAStick/RosOnAStick.cydsn/ros_lib/examples/ADC/ADC.cpp 
+
+C:/Documents\ and\ Settings/Chuck/My\ Documents/PSoC\ Creator/RosOnAStick/RosOnAStick.cydsn/ros_lib/examples/ADC/ADC.cpp : 
+

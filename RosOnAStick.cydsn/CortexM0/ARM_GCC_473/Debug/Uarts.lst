@@ -1,0 +1,2186 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Uarts.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	__aeabi_uidiv
+  18              		.section	.text._ZN4Uart5beginEm,"ax",%progbits
+  19              		.align	2
+  20              		.global	_ZN4Uart5beginEm
+  21              		.code	16
+  22              		.thumb_func
+  23              		.type	_ZN4Uart5beginEm, %function
+  24              	_ZN4Uart5beginEm:
+  25              	.LFB138:
+  26              		.file 1 ".\\ros_lib\\Uarts.cpp"
+   1:.\ros_lib/Uarts.cpp **** /* ========================================
+   2:.\ros_lib/Uarts.cpp ****  * PSoc4 "ROSOnAStick" Uart
+   3:.\ros_lib/Uarts.cpp ****  *
+   4:.\ros_lib/Uarts.cpp ****  * Copyright C. Harrison
+   5:.\ros_lib/Uarts.cpp ****  * BSD 2-clause license http://opensource.org/licenses/BSD-2-Clause
+   6:.\ros_lib/Uarts.cpp ****  *
+   7:.\ros_lib/Uarts.cpp ****  * ========================================
+   8:.\ros_lib/Uarts.cpp ****  */
+   9:.\ros_lib/Uarts.cpp **** 
+  10:.\ros_lib/Uarts.cpp **** #include "ros.h"
+  11:.\ros_lib/Uarts.cpp **** 
+  12:.\ros_lib/Uarts.cpp **** #include "Uarts.h"
+  13:.\ros_lib/Uarts.cpp **** extern "C" {
+  14:.\ros_lib/Uarts.cpp ****   #include "project.h"
+  15:.\ros_lib/Uarts.cpp **** }
+  16:.\ros_lib/Uarts.cpp **** 
+  17:.\ros_lib/Uarts.cpp **** void Uart::begin(unsigned long baud) {
+  27              		.loc 1 17 0
+  28              		.cfi_startproc
+  29 0000 80B5     		push	{r7, lr}
+  30              	.LCFI0:
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 7, -8
+  33              		.cfi_offset 14, -4
+  34 0002 84B0     		sub	sp, sp, #16
+  35              	.LCFI1:
+  36              		.cfi_def_cfa_offset 24
+  37 0004 00AF     		add	r7, sp, #0
+  38              	.LCFI2:
+  39              		.cfi_def_cfa_register 7
+  40 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 2
+
+
+  41 0008 3960     		str	r1, [r7]
+  42              	.LBB2:
+  18:.\ros_lib/Uarts.cpp ****   // compute clock divider D = HFCLK/(baud * oversampling_factor)
+  19:.\ros_lib/Uarts.cpp ****   uint32_t denom = baud * ROSSerial_UART_UART_OVS_FACTOR;
+  43              		.loc 1 19 0
+  44 000a 3B68     		ldr	r3, [r7]
+  45 000c 1B01     		lsl	r3, r3, #4
+  46 000e FB60     		str	r3, [r7, #12]
+  20:.\ros_lib/Uarts.cpp ****   uint16_t divider = (CYDEV_BCLK__HFCLK__HZ + (denom/2))/denom;
+  47              		.loc 1 20 0
+  48 0010 FB68     		ldr	r3, [r7, #12]
+  49 0012 5B08     		lsr	r3, r3, #1
+  50 0014 0B4A     		ldr	r2, .L2
+  51 0016 9B18     		add	r3, r3, r2
+  52 0018 181C     		mov	r0, r3
+  53 001a F968     		ldr	r1, [r7, #12]
+  54 001c FFF7FEFF 		bl	__aeabi_uidiv
+  55 0020 031C     		mov	r3, r0
+  56 0022 1A1C     		mov	r2, r3
+  57 0024 3B1C     		mov	r3, r7
+  58 0026 0A33     		add	r3, r3, #10
+  59 0028 1A80     		strh	r2, [r3]
+  21:.\ros_lib/Uarts.cpp ****   ROSSerial_UART_Clock_SetFractionalDividerRegister(divider, 0);
+  60              		.loc 1 21 0
+  61 002a 3B1C     		mov	r3, r7
+  62 002c 0A33     		add	r3, r3, #10
+  63 002e 1B88     		ldrh	r3, [r3]
+  64 0030 181C     		mov	r0, r3
+  65 0032 0021     		mov	r1, #0
+  66 0034 FFF7FEFF 		bl	ROSSerial_UART_Clock_SetFractionalDividerRegister
+  22:.\ros_lib/Uarts.cpp ****   ROSSerial_UART_Start();
+  67              		.loc 1 22 0
+  68 0038 FFF7FEFF 		bl	ROSSerial_UART_Start
+  69              	.LBE2:
+  23:.\ros_lib/Uarts.cpp **** };
+  70              		.loc 1 23 0
+  71 003c BD46     		mov	sp, r7
+  72 003e 04B0     		add	sp, sp, #16
+  73              		@ sp needed for prologue
+  74 0040 80BD     		pop	{r7, pc}
+  75              	.L3:
+  76 0042 C046     		.align	2
+  77              	.L2:
+  78 0044 00366E01 		.word	24000000
+  79              		.cfi_endproc
+  80              	.LFE138:
+  81              		.size	_ZN4Uart5beginEm, .-_ZN4Uart5beginEm
+  82              		.section	.text._ZN4Uart4readEv,"ax",%progbits
+  83              		.align	2
+  84              		.global	_ZN4Uart4readEv
+  85              		.code	16
+  86              		.thumb_func
+  87              		.type	_ZN4Uart4readEv, %function
+  88              	_ZN4Uart4readEv:
+  89              	.LFB139:
+  24:.\ros_lib/Uarts.cpp **** 
+  25:.\ros_lib/Uarts.cpp **** int Uart::read(void) {
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 3
+
+
+  90              		.loc 1 25 0
+  91              		.cfi_startproc
+  92 0000 80B5     		push	{r7, lr}
+  93              	.LCFI3:
+  94              		.cfi_def_cfa_offset 8
+  95              		.cfi_offset 7, -8
+  96              		.cfi_offset 14, -4
+  97 0002 84B0     		sub	sp, sp, #16
+  98              	.LCFI4:
+  99              		.cfi_def_cfa_offset 24
+ 100 0004 00AF     		add	r7, sp, #0
+ 101              	.LCFI5:
+ 102              		.cfi_def_cfa_register 7
+ 103 0006 7860     		str	r0, [r7, #4]
+ 104              	.LBB3:
+  26:.\ros_lib/Uarts.cpp ****   int32_t data = -1;
+ 105              		.loc 1 26 0
+ 106 0008 0123     		mov	r3, #1
+ 107 000a 5B42     		neg	r3, r3
+ 108 000c FB60     		str	r3, [r7, #12]
+  27:.\ros_lib/Uarts.cpp ****   if (ROSSerial_UART_SpiUartGetRxBufferSize() != 0) {
+ 109              		.loc 1 27 0
+ 110 000e FFF7FEFF 		bl	ROSSerial_UART_SpiUartGetRxBufferSize
+ 111 0012 031C     		mov	r3, r0
+ 112 0014 5A1E     		sub	r2, r3, #1
+ 113 0016 9341     		sbc	r3, r3, r2
+ 114 0018 DBB2     		uxtb	r3, r3
+ 115 001a 002B     		cmp	r3, #0
+ 116 001c 03D0     		beq	.L5
+  28:.\ros_lib/Uarts.cpp ****     // data is ready
+  29:.\ros_lib/Uarts.cpp ****     data = (int32_t)ROSSerial_UART_SpiUartReadRxData();
+ 117              		.loc 1 29 0
+ 118 001e FFF7FEFF 		bl	ROSSerial_UART_SpiUartReadRxData
+ 119 0022 031C     		mov	r3, r0
+ 120 0024 FB60     		str	r3, [r7, #12]
+ 121              	.L5:
+  30:.\ros_lib/Uarts.cpp ****   }
+  31:.\ros_lib/Uarts.cpp ****   // clear error flags
+  32:.\ros_lib/Uarts.cpp ****   if (ROSSerial_UART_CHECK_INTR_RX(ROSSerial_UART_INTR_RX_ERR)) {
+ 122              		.loc 1 32 0
+ 123 0026 094B     		ldr	r3, .L8
+ 124 0028 1A68     		ldr	r2, [r3]
+ 125 002a D823     		mov	r3, #216
+ 126 002c 9B00     		lsl	r3, r3, #2
+ 127 002e 1340     		and	r3, r2
+ 128 0030 5A1E     		sub	r2, r3, #1
+ 129 0032 9341     		sbc	r3, r3, r2
+ 130 0034 DBB2     		uxtb	r3, r3
+ 131 0036 002B     		cmp	r3, #0
+ 132 0038 03D0     		beq	.L6
+  33:.\ros_lib/Uarts.cpp ****     // TODO: test for meaningful error (i.e. not Buffer empty) & return -1
+  34:.\ros_lib/Uarts.cpp ****     ROSSerial_UART_ClearRxInterruptSource(ROSSerial_UART_INTR_RX_ERR);
+ 133              		.loc 1 34 0
+ 134 003a 044B     		ldr	r3, .L8
+ 135 003c D822     		mov	r2, #216
+ 136 003e 9200     		lsl	r2, r2, #2
+ 137 0040 1A60     		str	r2, [r3]
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 4
+
+
+ 138              	.L6:
+  35:.\ros_lib/Uarts.cpp ****   }
+  36:.\ros_lib/Uarts.cpp ****   return data;
+ 139              		.loc 1 36 0
+ 140 0042 FB68     		ldr	r3, [r7, #12]
+ 141              	.LBE3:
+  37:.\ros_lib/Uarts.cpp **** };
+ 142              		.loc 1 37 0
+ 143 0044 181C     		mov	r0, r3
+ 144 0046 BD46     		mov	sp, r7
+ 145 0048 04B0     		add	sp, sp, #16
+ 146              		@ sp needed for prologue
+ 147 004a 80BD     		pop	{r7, pc}
+ 148              	.L9:
+ 149              		.align	2
+ 150              	.L8:
+ 151 004c C00F0640 		.word	1074139072
+ 152              		.cfi_endproc
+ 153              	.LFE139:
+ 154              		.size	_ZN4Uart4readEv, .-_ZN4Uart4readEv
+ 155              		.section	.text._ZN4Uart5writeEh,"ax",%progbits
+ 156              		.align	2
+ 157              		.global	_ZN4Uart5writeEh
+ 158              		.code	16
+ 159              		.thumb_func
+ 160              		.type	_ZN4Uart5writeEh, %function
+ 161              	_ZN4Uart5writeEh:
+ 162              	.LFB140:
+  38:.\ros_lib/Uarts.cpp **** 
+  39:.\ros_lib/Uarts.cpp **** size_t Uart::write(uint8_t data) {
+ 163              		.loc 1 39 0
+ 164              		.cfi_startproc
+ 165 0000 80B5     		push	{r7, lr}
+ 166              	.LCFI6:
+ 167              		.cfi_def_cfa_offset 8
+ 168              		.cfi_offset 7, -8
+ 169              		.cfi_offset 14, -4
+ 170 0002 82B0     		sub	sp, sp, #8
+ 171              	.LCFI7:
+ 172              		.cfi_def_cfa_offset 16
+ 173 0004 00AF     		add	r7, sp, #0
+ 174              	.LCFI8:
+ 175              		.cfi_def_cfa_register 7
+ 176 0006 7860     		str	r0, [r7, #4]
+ 177 0008 0A1C     		mov	r2, r1
+ 178 000a FB1C     		add	r3, r7, #3
+ 179 000c 1A70     		strb	r2, [r3]
+  40:.\ros_lib/Uarts.cpp ****   ROSSerial_UART_SpiUartWriteTxData((uint32_t)data);
+ 180              		.loc 1 40 0
+ 181 000e FB1C     		add	r3, r7, #3
+ 182 0010 1B78     		ldrb	r3, [r3]
+ 183 0012 181C     		mov	r0, r3
+ 184 0014 FFF7FEFF 		bl	ROSSerial_UART_SpiUartWriteTxData
+  41:.\ros_lib/Uarts.cpp ****   return 1;
+ 185              		.loc 1 41 0
+ 186 0018 0123     		mov	r3, #1
+  42:.\ros_lib/Uarts.cpp **** };
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 5
+
+
+ 187              		.loc 1 42 0
+ 188 001a 181C     		mov	r0, r3
+ 189 001c BD46     		mov	sp, r7
+ 190 001e 02B0     		add	sp, sp, #8
+ 191              		@ sp needed for prologue
+ 192 0020 80BD     		pop	{r7, pc}
+ 193              		.cfi_endproc
+ 194              	.LFE140:
+ 195              		.size	_ZN4Uart5writeEh, .-_ZN4Uart5writeEh
+ 196 0022 C046     		.section	.text._ZN14HardwareSerialC2Ev,"axG",%progbits,_ZN14HardwareSerialC5Ev,comdat
+ 197              		.align	2
+ 198              		.weak	_ZN14HardwareSerialC2Ev
+ 199              		.code	16
+ 200              		.thumb_func
+ 201              		.type	_ZN14HardwareSerialC2Ev, %function
+ 202              	_ZN14HardwareSerialC2Ev:
+ 203              	.LFB143:
+ 204              		.file 2 ".\\ros_lib\\HardwareSerial.h"
+   1:.\ros_lib/HardwareSerial.h **** /*
+   2:.\ros_lib/HardwareSerial.h ****   Copyright (c) 2011 Arduino.  All right reserved.
+   3:.\ros_lib/HardwareSerial.h **** 
+   4:.\ros_lib/HardwareSerial.h ****   This library is free software; you can redistribute it and/or
+   5:.\ros_lib/HardwareSerial.h ****   modify it under the terms of the GNU Lesser General Public
+   6:.\ros_lib/HardwareSerial.h ****   License as published by the Free Software Foundation; either
+   7:.\ros_lib/HardwareSerial.h ****   version 2.1 of the License, or (at your option) any later version.
+   8:.\ros_lib/HardwareSerial.h **** 
+   9:.\ros_lib/HardwareSerial.h ****   This library is distributed in the hope that it will be useful,
+  10:.\ros_lib/HardwareSerial.h ****   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:.\ros_lib/HardwareSerial.h ****   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  12:.\ros_lib/HardwareSerial.h ****   See the GNU Lesser General Public License for more details.
+  13:.\ros_lib/HardwareSerial.h **** 
+  14:.\ros_lib/HardwareSerial.h ****   You should have received a copy of the GNU Lesser General Public
+  15:.\ros_lib/HardwareSerial.h ****   License along with this library; if not, write to the Free Software
+  16:.\ros_lib/HardwareSerial.h ****   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  17:.\ros_lib/HardwareSerial.h **** */
+  18:.\ros_lib/HardwareSerial.h **** 
+  19:.\ros_lib/HardwareSerial.h **** #ifndef HardwareSerial_h
+  20:.\ros_lib/HardwareSerial.h **** #define HardwareSerial_h
+  21:.\ros_lib/HardwareSerial.h **** 
+  22:.\ros_lib/HardwareSerial.h **** #include <inttypes.h>
+  23:.\ros_lib/HardwareSerial.h **** #include <cstddef>
+  24:.\ros_lib/HardwareSerial.h **** 
+  25:.\ros_lib/HardwareSerial.h **** /* functions exposed by embedded_linux_comms
+  26:.\ros_lib/HardwareSerial.h **** extern "C" int elCommInit(char *portName, int baud);
+  27:.\ros_lib/HardwareSerial.h **** extern "C" int elCommRead(int fd);
+  28:.\ros_lib/HardwareSerial.h **** extern "C" elCommWrite(int fd, uint8_t* data, int length);
+  29:.\ros_lib/HardwareSerial.h **** */
+  30:.\ros_lib/HardwareSerial.h **** 
+  31:.\ros_lib/HardwareSerial.h **** class HardwareSerial
+ 205              		.loc 2 31 0
+ 206              		.cfi_startproc
+ 207 0000 80B5     		push	{r7, lr}
+ 208              	.LCFI9:
+ 209              		.cfi_def_cfa_offset 8
+ 210              		.cfi_offset 7, -8
+ 211              		.cfi_offset 14, -4
+ 212 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 6
+
+
+ 213              	.LCFI10:
+ 214              		.cfi_def_cfa_offset 16
+ 215 0004 00AF     		add	r7, sp, #0
+ 216              	.LCFI11:
+ 217              		.cfi_def_cfa_register 7
+ 218 0006 7860     		str	r0, [r7, #4]
+ 219              	.LBB4:
+ 220              		.loc 2 31 0
+ 221 0008 7B68     		ldr	r3, [r7, #4]
+ 222 000a 034A     		ldr	r2, .L15
+ 223 000c 1A60     		str	r2, [r3]
+ 224              	.LBE4:
+ 225 000e 7B68     		ldr	r3, [r7, #4]
+ 226 0010 181C     		mov	r0, r3
+ 227 0012 BD46     		mov	sp, r7
+ 228 0014 02B0     		add	sp, sp, #8
+ 229              		@ sp needed for prologue
+ 230 0016 80BD     		pop	{r7, pc}
+ 231              	.L16:
+ 232              		.align	2
+ 233              	.L15:
+ 234 0018 08000000 		.word	_ZTV14HardwareSerial+8
+ 235              		.cfi_endproc
+ 236              	.LFE143:
+ 237              		.size	_ZN14HardwareSerialC2Ev, .-_ZN14HardwareSerialC2Ev
+ 238              		.weak	_ZN14HardwareSerialC1Ev
+ 239              		.thumb_set _ZN14HardwareSerialC1Ev,_ZN14HardwareSerialC2Ev
+ 240              		.section	.text._ZN4UartC2Ev,"axG",%progbits,_ZN4UartC5Ev,comdat
+ 241              		.align	2
+ 242              		.weak	_ZN4UartC2Ev
+ 243              		.code	16
+ 244              		.thumb_func
+ 245              		.type	_ZN4UartC2Ev, %function
+ 246              	_ZN4UartC2Ev:
+ 247              	.LFB145:
+ 248              		.file 3 ".\\ros_lib\\Uarts.h"
+   1:.\ros_lib/Uarts.h **** /* ========================================
+   2:.\ros_lib/Uarts.h ****  *
+   3:.\ros_lib/Uarts.h ****  * The following firmware was developed by Chuck Harrison
+   4:.\ros_lib/Uarts.h ****  * This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+   5:.\ros_lib/Uarts.h ****  * 
+   6:.\ros_lib/Uarts.h ****  * http://creativecommons.org/licenses/by/3.0/deed.en_US
+   7:.\ros_lib/Uarts.h ****  * 
+   8:.\ros_lib/Uarts.h ****  * You are free to:
+   9:.\ros_lib/Uarts.h ****  * -To Share — to copy, distribute and transmit the work 
+  10:.\ros_lib/Uarts.h ****  * -To Remix — to adapt the work 
+  11:.\ros_lib/Uarts.h ****  * -To make commercial use of the work
+  12:.\ros_lib/Uarts.h ****  *
+  13:.\ros_lib/Uarts.h ****  * ========================================
+  14:.\ros_lib/Uarts.h ****  */
+  15:.\ros_lib/Uarts.h **** 
+  16:.\ros_lib/Uarts.h **** #ifndef ROS_UARTS_H_
+  17:.\ros_lib/Uarts.h **** #define ROS_UARTS_H_
+  18:.\ros_lib/Uarts.h **** 
+  19:.\ros_lib/Uarts.h **** #include "HardwareSerial.h"
+  20:.\ros_lib/Uarts.h **** 
+  21:.\ros_lib/Uarts.h **** class Uart : public HardwareSerial
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 7
+
+
+ 249              		.loc 3 21 0
+ 250              		.cfi_startproc
+ 251 0000 80B5     		push	{r7, lr}
+ 252              	.LCFI12:
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 7, -8
+ 255              		.cfi_offset 14, -4
+ 256 0002 82B0     		sub	sp, sp, #8
+ 257              	.LCFI13:
+ 258              		.cfi_def_cfa_offset 16
+ 259 0004 00AF     		add	r7, sp, #0
+ 260              	.LCFI14:
+ 261              		.cfi_def_cfa_register 7
+ 262 0006 7860     		str	r0, [r7, #4]
+ 263              	.LBB5:
+ 264              		.loc 3 21 0
+ 265 0008 7B68     		ldr	r3, [r7, #4]
+ 266 000a 181C     		mov	r0, r3
+ 267 000c FFF7FEFF 		bl	_ZN14HardwareSerialC2Ev
+ 268 0010 7B68     		ldr	r3, [r7, #4]
+ 269 0012 034A     		ldr	r2, .L20
+ 270 0014 1A60     		str	r2, [r3]
+ 271              	.LBE5:
+ 272 0016 7B68     		ldr	r3, [r7, #4]
+ 273 0018 181C     		mov	r0, r3
+ 274 001a BD46     		mov	sp, r7
+ 275 001c 02B0     		add	sp, sp, #8
+ 276              		@ sp needed for prologue
+ 277 001e 80BD     		pop	{r7, pc}
+ 278              	.L21:
+ 279              		.align	2
+ 280              	.L20:
+ 281 0020 08000000 		.word	_ZTV4Uart+8
+ 282              		.cfi_endproc
+ 283              	.LFE145:
+ 284              		.size	_ZN4UartC2Ev, .-_ZN4UartC2Ev
+ 285              		.weak	_ZN4UartC1Ev
+ 286              		.thumb_set _ZN4UartC1Ev,_ZN4UartC2Ev
+ 287              		.global	Uart0
+ 288              		.bss
+ 289              		.align	2
+ 290              		.type	Uart0, %object
+ 291              		.size	Uart0, 4
+ 292              	Uart0:
+ 293 0000 00000000 		.space	4
+ 294              		.global	_ZTV4Uart
+ 295              		.section	.rodata
+ 296              		.align	3
+ 297              		.type	_ZTV4Uart, %object
+ 298              		.size	_ZTV4Uart, 20
+ 299              	_ZTV4Uart:
+ 300 0000 00000000 		.word	0
+ 301 0004 00000000 		.word	0
+ 302 0008 00000000 		.word	_ZN4Uart5beginEm
+ 303 000c 00000000 		.word	_ZN4Uart4readEv
+ 304 0010 00000000 		.word	_ZN4Uart5writeEh
+ 305              		.weak	_ZTV14HardwareSerial
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 8
+
+
+ 306              		.section	.rodata._ZTV14HardwareSerial,"aG",%progbits,_ZTV14HardwareSerial,comdat
+ 307              		.align	3
+ 308              		.type	_ZTV14HardwareSerial, %object
+ 309              		.size	_ZTV14HardwareSerial, 20
+ 310              	_ZTV14HardwareSerial:
+ 311 0000 00000000 		.word	0
+ 312 0004 00000000 		.word	0
+ 313 0008 00000000 		.word	__cxa_pure_virtual
+ 314 000c 00000000 		.word	__cxa_pure_virtual
+ 315 0010 00000000 		.word	__cxa_pure_virtual
+ 316 0014 00000000 		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 317              		.align	2
+ 318              		.code	16
+ 319              		.thumb_func
+ 320              		.type	_Z41__static_initialization_and_destruction_0ii, %function
+ 321              	_Z41__static_initialization_and_destruction_0ii:
+ 322              	.LFB147:
+  43:.\ros_lib/Uarts.cpp **** 
+  44:.\ros_lib/Uarts.cpp **** Uart Uart0;
+ 323              		.loc 1 44 0
+ 324              		.cfi_startproc
+ 325 0000 80B5     		push	{r7, lr}
+ 326              	.LCFI15:
+ 327              		.cfi_def_cfa_offset 8
+ 328              		.cfi_offset 7, -8
+ 329              		.cfi_offset 14, -4
+ 330 0002 82B0     		sub	sp, sp, #8
+ 331              	.LCFI16:
+ 332              		.cfi_def_cfa_offset 16
+ 333 0004 00AF     		add	r7, sp, #0
+ 334              	.LCFI17:
+ 335              		.cfi_def_cfa_register 7
+ 336 0006 7860     		str	r0, [r7, #4]
+ 337 0008 3960     		str	r1, [r7]
+ 338              		.loc 1 44 0
+ 339 000a 7B68     		ldr	r3, [r7, #4]
+ 340 000c 012B     		cmp	r3, #1
+ 341 000e 07D1     		bne	.L22
+ 342              		.loc 1 44 0 is_stmt 0 discriminator 1
+ 343 0010 3A68     		ldr	r2, [r7]
+ 344 0012 054B     		ldr	r3, .L24
+ 345 0014 9A42     		cmp	r2, r3
+ 346 0016 03D1     		bne	.L22
+ 347              		.loc 1 44 0 discriminator 3
+ 348 0018 044B     		ldr	r3, .L24+4
+ 349 001a 181C     		mov	r0, r3
+ 350 001c FFF7FEFF 		bl	_ZN4UartC1Ev
+ 351              	.L22:
+ 352              		.loc 1 44 0
+ 353 0020 BD46     		mov	sp, r7
+ 354 0022 02B0     		add	sp, sp, #8
+ 355              		@ sp needed for prologue
+ 356 0024 80BD     		pop	{r7, pc}
+ 357              	.L25:
+ 358 0026 C046     		.align	2
+ 359              	.L24:
+ 360 0028 FFFF0000 		.word	65535
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 9
+
+
+ 361 002c 00000000 		.word	Uart0
+ 362              		.cfi_endproc
+ 363              	.LFE147:
+ 364              		.size	_Z41__static_initialization_and_destruction_0ii, .-_Z41__static_initialization_and_destructi
+ 365              		.section	.rodata
+ 366              		.align	2
+ 367              		.type	_ZN14rosserial_msgsL12REQUESTPARAME, %object
+ 368              		.size	_ZN14rosserial_msgsL12REQUESTPARAME, 28
+ 369              	_ZN14rosserial_msgsL12REQUESTPARAME:
+ 370 0014 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 370      65726961 
+ 370      6C5F6D73 
+ 370      67732F52 
+ 370      65717565 
+ 371              		.section	.text._GLOBAL__sub_I__ZN4Uart5beginEm,"ax",%progbits
+ 372              		.align	2
+ 373              		.code	16
+ 374              		.thumb_func
+ 375              		.type	_GLOBAL__sub_I__ZN4Uart5beginEm, %function
+ 376              	_GLOBAL__sub_I__ZN4Uart5beginEm:
+ 377              	.LFB148:
+ 378              		.loc 1 44 0 is_stmt 1
+ 379              		.cfi_startproc
+ 380 0000 80B5     		push	{r7, lr}
+ 381              	.LCFI18:
+ 382              		.cfi_def_cfa_offset 8
+ 383              		.cfi_offset 7, -8
+ 384              		.cfi_offset 14, -4
+ 385 0002 00AF     		add	r7, sp, #0
+ 386              	.LCFI19:
+ 387              		.cfi_def_cfa_register 7
+ 388              		.loc 1 44 0
+ 389 0004 034B     		ldr	r3, .L27
+ 390 0006 0120     		mov	r0, #1
+ 391 0008 191C     		mov	r1, r3
+ 392 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 393 000e BD46     		mov	sp, r7
+ 394              		@ sp needed for prologue
+ 395 0010 80BD     		pop	{r7, pc}
+ 396              	.L28:
+ 397 0012 C046     		.align	2
+ 398              	.L27:
+ 399 0014 FFFF0000 		.word	65535
+ 400              		.cfi_endproc
+ 401              	.LFE148:
+ 402              		.size	_GLOBAL__sub_I__ZN4Uart5beginEm, .-_GLOBAL__sub_I__ZN4Uart5beginEm
+ 403              		.section	.init_array,"aw",%init_array
+ 404              		.align	2
+ 405 0000 00000000 		.word	_GLOBAL__sub_I__ZN4Uart5beginEm(target1)
+ 406              		.text
+ 407              	.Letext0:
+ 408              		.file 4 "c:\\program files\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4.7.3\\
+ 409              		.file 5 "c:\\program files\\cypress\\psoc creator\\3.0\\psoc creator\\import\\gnu_cs\\arm\\4.7.3\\
+ 410              		.file 6 "./Generated_Source/PSoC4/cytypes.h"
+ 411              		.file 7 "./ros_lib/rosserial_msgs/RequestParam.h"
+ 412              		.file 8 "./ros_lib/ros/msg.h"
+ 413              		.file 9 "./ros_lib/rosserial_msgs/TopicInfo.h"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 10
+
+
+ 414              		.section	.debug_info,"",%progbits
+ 415              	.Ldebug_info0:
+ 416 0000 BC040000 		.4byte	0x4bc
+ 417 0004 0200     		.2byte	0x2
+ 418 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 419 000a 04       		.byte	0x4
+ 420 000b 01       		.uleb128 0x1
+ 421 000c CC000000 		.4byte	.LASF43
+ 422 0010 04       		.byte	0x4
+ 423 0011 FE020000 		.4byte	.LASF44
+ 424 0015 00000000 		.4byte	.LASF45
+ 425 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 426 001d 00000000 		.4byte	0
+ 427 0021 00000000 		.4byte	0
+ 428 0025 00000000 		.4byte	.Ldebug_line0
+ 429 0029 02       		.uleb128 0x2
+ 430 002a 01       		.byte	0x1
+ 431 002b 06       		.byte	0x6
+ 432 002c 23010000 		.4byte	.LASF0
+ 433 0030 03       		.uleb128 0x3
+ 434 0031 07020000 		.4byte	.LASF3
+ 435 0035 04       		.byte	0x4
+ 436 0036 2A       		.byte	0x2a
+ 437 0037 3B000000 		.4byte	0x3b
+ 438 003b 02       		.uleb128 0x2
+ 439 003c 01       		.byte	0x1
+ 440 003d 08       		.byte	0x8
+ 441 003e 86010000 		.4byte	.LASF1
+ 442 0042 02       		.uleb128 0x2
+ 443 0043 02       		.byte	0x2
+ 444 0044 05       		.byte	0x5
+ 445 0045 52020000 		.4byte	.LASF2
+ 446 0049 03       		.uleb128 0x3
+ 447 004a 49020000 		.4byte	.LASF4
+ 448 004e 04       		.byte	0x4
+ 449 004f 36       		.byte	0x36
+ 450 0050 54000000 		.4byte	0x54
+ 451 0054 02       		.uleb128 0x2
+ 452 0055 02       		.byte	0x2
+ 453 0056 07       		.byte	0x7
+ 454 0057 5B010000 		.4byte	.LASF5
+ 455 005b 03       		.uleb128 0x3
+ 456 005c 25020000 		.4byte	.LASF6
+ 457 0060 04       		.byte	0x4
+ 458 0061 4F       		.byte	0x4f
+ 459 0062 66000000 		.4byte	0x66
+ 460 0066 02       		.uleb128 0x2
+ 461 0067 04       		.byte	0x4
+ 462 0068 05       		.byte	0x5
+ 463 0069 1C020000 		.4byte	.LASF7
+ 464 006d 03       		.uleb128 0x3
+ 465 006e A5020000 		.4byte	.LASF8
+ 466 0072 04       		.byte	0x4
+ 467 0073 50       		.byte	0x50
+ 468 0074 78000000 		.4byte	0x78
+ 469 0078 02       		.uleb128 0x2
+ 470 0079 04       		.byte	0x4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 11
+
+
+ 471 007a 07       		.byte	0x7
+ 472 007b 49010000 		.4byte	.LASF9
+ 473 007f 02       		.uleb128 0x2
+ 474 0080 08       		.byte	0x8
+ 475 0081 05       		.byte	0x5
+ 476 0082 36020000 		.4byte	.LASF10
+ 477 0086 02       		.uleb128 0x2
+ 478 0087 08       		.byte	0x8
+ 479 0088 07       		.byte	0x7
+ 480 0089 F0010000 		.4byte	.LASF11
+ 481 008d 04       		.uleb128 0x4
+ 482 008e 04       		.byte	0x4
+ 483 008f 05       		.byte	0x5
+ 484 0090 696E7400 		.ascii	"int\000"
+ 485 0094 02       		.uleb128 0x2
+ 486 0095 04       		.byte	0x4
+ 487 0096 07       		.byte	0x7
+ 488 0097 D3010000 		.4byte	.LASF12
+ 489 009b 02       		.uleb128 0x2
+ 490 009c 04       		.byte	0x4
+ 491 009d 07       		.byte	0x7
+ 492 009e 2D020000 		.4byte	.LASF13
+ 493 00a2 02       		.uleb128 0x2
+ 494 00a3 01       		.byte	0x1
+ 495 00a4 08       		.byte	0x8
+ 496 00a5 44020000 		.4byte	.LASF14
+ 497 00a9 03       		.uleb128 0x3
+ 498 00aa 69000000 		.4byte	.LASF15
+ 499 00ae 05       		.byte	0x5
+ 500 00af D5       		.byte	0xd5
+ 501 00b0 94000000 		.4byte	0x94
+ 502 00b4 02       		.uleb128 0x2
+ 503 00b5 08       		.byte	0x8
+ 504 00b6 04       		.byte	0x4
+ 505 00b7 94010000 		.4byte	.LASF16
+ 506 00bb 02       		.uleb128 0x2
+ 507 00bc 04       		.byte	0x4
+ 508 00bd 04       		.byte	0x4
+ 509 00be 17010000 		.4byte	.LASF17
+ 510 00c2 02       		.uleb128 0x2
+ 511 00c3 08       		.byte	0x8
+ 512 00c4 04       		.byte	0x4
+ 513 00c5 E3020000 		.4byte	.LASF18
+ 514 00c9 05       		.uleb128 0x5
+ 515 00ca 726F7300 		.ascii	"ros\000"
+ 516 00ce 08       		.byte	0x8
+ 517 00cf 26       		.byte	0x26
+ 518 00d0 06       		.uleb128 0x6
+ 519 00d1 3A010000 		.4byte	.LASF46
+ 520 00d5 09       		.byte	0x9
+ 521 00d6 0A       		.byte	0xa
+ 522 00d7 EC000000 		.4byte	0xec
+ 523 00db 07       		.uleb128 0x7
+ 524 00dc 6E010000 		.4byte	.LASF41
+ 525 00e0 07       		.byte	0x7
+ 526 00e1 0B       		.byte	0xb
+ 527 00e2 AF040000 		.4byte	0x4af
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 12
+
+
+ 528 00e6 01       		.byte	0x1
+ 529 00e7 5C020000 		.4byte	.LASF47
+ 530 00eb 00       		.byte	0
+ 531 00ec 08       		.uleb128 0x8
+ 532 00ed 3C030000 		.4byte	.LASF19
+ 533 00f1 04       		.byte	0x4
+ 534 00f2 02       		.byte	0x2
+ 535 00f3 1F       		.byte	0x1f
+ 536 00f4 EC000000 		.4byte	0xec
+ 537 00f8 BF010000 		.4byte	0x1bf
+ 538 00fc 09       		.uleb128 0x9
+ 539 00fd AE020000 		.4byte	.LASF48
+ 540 0101 CB020000 		.4byte	0x2cb
+ 541 0105 02       		.byte	0x2
+ 542 0106 23       		.byte	0x23
+ 543 0107 00       		.uleb128 0
+ 544 0108 01       		.byte	0x1
+ 545 0109 0A       		.uleb128 0xa
+ 546 010a 01       		.byte	0x1
+ 547 010b 3C030000 		.4byte	.LASF19
+ 548 010f BF010000 		.4byte	0x1bf
+ 549 0113 01       		.byte	0x1
+ 550 0114 01       		.byte	0x1
+ 551 0115 1D010000 		.4byte	0x11d
+ 552 0119 29010000 		.4byte	0x129
+ 553 011d 0B       		.uleb128 0xb
+ 554 011e BF010000 		.4byte	0x1bf
+ 555 0122 01       		.byte	0x1
+ 556 0123 0C       		.uleb128 0xc
+ 557 0124 DB020000 		.4byte	0x2db
+ 558 0128 00       		.byte	0
+ 559 0129 0A       		.uleb128 0xa
+ 560 012a 01       		.byte	0x1
+ 561 012b 3C030000 		.4byte	.LASF19
+ 562 012f BF010000 		.4byte	0x1bf
+ 563 0133 01       		.byte	0x1
+ 564 0134 01       		.byte	0x1
+ 565 0135 3D010000 		.4byte	0x13d
+ 566 0139 44010000 		.4byte	0x144
+ 567 013d 0B       		.uleb128 0xb
+ 568 013e BF010000 		.4byte	0x1bf
+ 569 0142 01       		.byte	0x1
+ 570 0143 00       		.byte	0
+ 571 0144 0D       		.uleb128 0xd
+ 572 0145 01       		.byte	0x1
+ 573 0146 AA000000 		.4byte	.LASF20
+ 574 014a 02       		.byte	0x2
+ 575 014b 22       		.byte	0x22
+ 576 014c B0000000 		.4byte	.LASF22
+ 577 0150 01       		.byte	0x1
+ 578 0151 02       		.byte	0x2
+ 579 0152 10       		.byte	0x10
+ 580 0153 00       		.uleb128 0
+ 581 0154 EC000000 		.4byte	0xec
+ 582 0158 01       		.byte	0x1
+ 583 0159 61010000 		.4byte	0x161
+ 584 015d 6D010000 		.4byte	0x16d
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 13
+
+
+ 585 0161 0B       		.uleb128 0xb
+ 586 0162 BF010000 		.4byte	0x1bf
+ 587 0166 01       		.byte	0x1
+ 588 0167 0C       		.uleb128 0xc
+ 589 0168 78000000 		.4byte	0x78
+ 590 016c 00       		.byte	0
+ 591 016d 0E       		.uleb128 0xe
+ 592 016e 01       		.byte	0x1
+ 593 016f AC010000 		.4byte	.LASF28
+ 594 0173 02       		.byte	0x2
+ 595 0174 23       		.byte	0x23
+ 596 0175 B1010000 		.4byte	.LASF29
+ 597 0179 8D000000 		.4byte	0x8d
+ 598 017d 01       		.byte	0x1
+ 599 017e 02       		.byte	0x2
+ 600 017f 10       		.byte	0x10
+ 601 0180 01       		.uleb128 0x1
+ 602 0181 EC000000 		.4byte	0xec
+ 603 0185 01       		.byte	0x1
+ 604 0186 8E010000 		.4byte	0x18e
+ 605 018a 95010000 		.4byte	0x195
+ 606 018e 0B       		.uleb128 0xb
+ 607 018f BF010000 		.4byte	0x1bf
+ 608 0193 01       		.byte	0x1
+ 609 0194 00       		.byte	0
+ 610 0195 0F       		.uleb128 0xf
+ 611 0196 01       		.byte	0x1
+ 612 0197 7B010000 		.4byte	.LASF21
+ 613 019b 02       		.byte	0x2
+ 614 019c 24       		.byte	0x24
+ 615 019d 89020000 		.4byte	.LASF23
+ 616 01a1 A9000000 		.4byte	0xa9
+ 617 01a5 01       		.byte	0x1
+ 618 01a6 02       		.byte	0x2
+ 619 01a7 10       		.byte	0x10
+ 620 01a8 02       		.uleb128 0x2
+ 621 01a9 EC000000 		.4byte	0xec
+ 622 01ad 01       		.byte	0x1
+ 623 01ae B2010000 		.4byte	0x1b2
+ 624 01b2 0B       		.uleb128 0xb
+ 625 01b3 BF010000 		.4byte	0x1bf
+ 626 01b7 01       		.byte	0x1
+ 627 01b8 0C       		.uleb128 0xc
+ 628 01b9 30000000 		.4byte	0x30
+ 629 01bd 00       		.byte	0
+ 630 01be 00       		.byte	0
+ 631 01bf 10       		.uleb128 0x10
+ 632 01c0 04       		.byte	0x4
+ 633 01c1 EC000000 		.4byte	0xec
+ 634 01c5 03       		.uleb128 0x3
+ 635 01c6 CC010000 		.4byte	.LASF24
+ 636 01ca 06       		.byte	0x6
+ 637 01cb 5D       		.byte	0x5d
+ 638 01cc 78000000 		.4byte	0x78
+ 639 01d0 03       		.uleb128 0x3
+ 640 01d1 58000000 		.4byte	.LASF25
+ 641 01d5 06       		.byte	0x6
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 14
+
+
+ 642 01d6 F2       		.byte	0xf2
+ 643 01d7 DB010000 		.4byte	0x1db
+ 644 01db 11       		.uleb128 0x11
+ 645 01dc C5010000 		.4byte	0x1c5
+ 646 01e0 08       		.uleb128 0x8
+ 647 01e1 A5000000 		.4byte	.LASF26
+ 648 01e5 04       		.byte	0x4
+ 649 01e6 03       		.byte	0x3
+ 650 01e7 15       		.byte	0x15
+ 651 01e8 EC000000 		.4byte	0xec
+ 652 01ec AF020000 		.4byte	0x2af
+ 653 01f0 12       		.uleb128 0x12
+ 654 01f1 EC000000 		.4byte	0xec
+ 655 01f5 02       		.byte	0x2
+ 656 01f6 23       		.byte	0x23
+ 657 01f7 00       		.uleb128 0
+ 658 01f8 01       		.byte	0x1
+ 659 01f9 0A       		.uleb128 0xa
+ 660 01fa 01       		.byte	0x1
+ 661 01fb A5000000 		.4byte	.LASF26
+ 662 01ff AF020000 		.4byte	0x2af
+ 663 0203 01       		.byte	0x1
+ 664 0204 01       		.byte	0x1
+ 665 0205 0D020000 		.4byte	0x20d
+ 666 0209 19020000 		.4byte	0x219
+ 667 020d 0B       		.uleb128 0xb
+ 668 020e AF020000 		.4byte	0x2af
+ 669 0212 01       		.byte	0x1
+ 670 0213 0C       		.uleb128 0xc
+ 671 0214 B5020000 		.4byte	0x2b5
+ 672 0218 00       		.byte	0
+ 673 0219 0A       		.uleb128 0xa
+ 674 021a 01       		.byte	0x1
+ 675 021b A5000000 		.4byte	.LASF26
+ 676 021f AF020000 		.4byte	0x2af
+ 677 0223 01       		.byte	0x1
+ 678 0224 01       		.byte	0x1
+ 679 0225 2D020000 		.4byte	0x22d
+ 680 0229 34020000 		.4byte	0x234
+ 681 022d 0B       		.uleb128 0xb
+ 682 022e AF020000 		.4byte	0x2af
+ 683 0232 01       		.byte	0x1
+ 684 0233 00       		.byte	0
+ 685 0234 0D       		.uleb128 0xd
+ 686 0235 01       		.byte	0x1
+ 687 0236 AA000000 		.4byte	.LASF20
+ 688 023a 01       		.byte	0x1
+ 689 023b 11       		.byte	0x11
+ 690 023c 78020000 		.4byte	.LASF27
+ 691 0240 01       		.byte	0x1
+ 692 0241 02       		.byte	0x2
+ 693 0242 10       		.byte	0x10
+ 694 0243 00       		.uleb128 0
+ 695 0244 E0010000 		.4byte	0x1e0
+ 696 0248 01       		.byte	0x1
+ 697 0249 51020000 		.4byte	0x251
+ 698 024d 5D020000 		.4byte	0x25d
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 15
+
+
+ 699 0251 0B       		.uleb128 0xb
+ 700 0252 AF020000 		.4byte	0x2af
+ 701 0256 01       		.byte	0x1
+ 702 0257 0C       		.uleb128 0xc
+ 703 0258 78000000 		.4byte	0x78
+ 704 025c 00       		.byte	0
+ 705 025d 0E       		.uleb128 0xe
+ 706 025e 01       		.byte	0x1
+ 707 025f AC010000 		.4byte	.LASF28
+ 708 0263 01       		.byte	0x1
+ 709 0264 19       		.byte	0x19
+ 710 0265 88000000 		.4byte	.LASF30
+ 711 0269 8D000000 		.4byte	0x8d
+ 712 026d 01       		.byte	0x1
+ 713 026e 02       		.byte	0x2
+ 714 026f 10       		.byte	0x10
+ 715 0270 01       		.uleb128 0x1
+ 716 0271 E0010000 		.4byte	0x1e0
+ 717 0275 01       		.byte	0x1
+ 718 0276 7E020000 		.4byte	0x27e
+ 719 027a 85020000 		.4byte	0x285
+ 720 027e 0B       		.uleb128 0xb
+ 721 027f AF020000 		.4byte	0x2af
+ 722 0283 01       		.byte	0x1
+ 723 0284 00       		.byte	0
+ 724 0285 0F       		.uleb128 0xf
+ 725 0286 01       		.byte	0x1
+ 726 0287 7B010000 		.4byte	.LASF21
+ 727 028b 01       		.byte	0x1
+ 728 028c 27       		.byte	0x27
+ 729 028d 9B010000 		.4byte	.LASF31
+ 730 0291 A9000000 		.4byte	0xa9
+ 731 0295 01       		.byte	0x1
+ 732 0296 02       		.byte	0x2
+ 733 0297 10       		.byte	0x10
+ 734 0298 02       		.uleb128 0x2
+ 735 0299 E0010000 		.4byte	0x1e0
+ 736 029d 01       		.byte	0x1
+ 737 029e A2020000 		.4byte	0x2a2
+ 738 02a2 0B       		.uleb128 0xb
+ 739 02a3 AF020000 		.4byte	0x2af
+ 740 02a7 01       		.byte	0x1
+ 741 02a8 0C       		.uleb128 0xc
+ 742 02a9 30000000 		.4byte	0x30
+ 743 02ad 00       		.byte	0
+ 744 02ae 00       		.byte	0
+ 745 02af 10       		.uleb128 0x10
+ 746 02b0 04       		.byte	0x4
+ 747 02b1 E0010000 		.4byte	0x1e0
+ 748 02b5 13       		.uleb128 0x13
+ 749 02b6 04       		.byte	0x4
+ 750 02b7 BB020000 		.4byte	0x2bb
+ 751 02bb 14       		.uleb128 0x14
+ 752 02bc E0010000 		.4byte	0x1e0
+ 753 02c0 15       		.uleb128 0x15
+ 754 02c1 8D000000 		.4byte	0x8d
+ 755 02c5 CB020000 		.4byte	0x2cb
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 16
+
+
+ 756 02c9 16       		.uleb128 0x16
+ 757 02ca 00       		.byte	0
+ 758 02cb 10       		.uleb128 0x10
+ 759 02cc 04       		.byte	0x4
+ 760 02cd D1020000 		.4byte	0x2d1
+ 761 02d1 17       		.uleb128 0x17
+ 762 02d2 04       		.byte	0x4
+ 763 02d3 E0010000 		.4byte	.LASF49
+ 764 02d7 C0020000 		.4byte	0x2c0
+ 765 02db 13       		.uleb128 0x13
+ 766 02dc 04       		.byte	0x4
+ 767 02dd E1020000 		.4byte	0x2e1
+ 768 02e1 14       		.uleb128 0x14
+ 769 02e2 EC000000 		.4byte	0xec
+ 770 02e6 18       		.uleb128 0x18
+ 771 02e7 34020000 		.4byte	0x234
+ 772 02eb 00000000 		.4byte	.LFB138
+ 773 02ef 48000000 		.4byte	.LFE138
+ 774 02f3 00000000 		.4byte	.LLST0
+ 775 02f7 00030000 		.4byte	0x300
+ 776 02fb 01       		.byte	0x1
+ 777 02fc 42030000 		.4byte	0x342
+ 778 0300 19       		.uleb128 0x19
+ 779 0301 35010000 		.4byte	.LASF34
+ 780 0305 42030000 		.4byte	0x342
+ 781 0309 01       		.byte	0x1
+ 782 030a 02       		.byte	0x2
+ 783 030b 91       		.byte	0x91
+ 784 030c 6C       		.sleb128 -20
+ 785 030d 1A       		.uleb128 0x1a
+ 786 030e 81010000 		.4byte	.LASF36
+ 787 0312 01       		.byte	0x1
+ 788 0313 11       		.byte	0x11
+ 789 0314 78000000 		.4byte	0x78
+ 790 0318 02       		.byte	0x2
+ 791 0319 91       		.byte	0x91
+ 792 031a 68       		.sleb128 -24
+ 793 031b 1B       		.uleb128 0x1b
+ 794 031c 0A000000 		.4byte	.LBB2
+ 795 0320 3C000000 		.4byte	.LBE2
+ 796 0324 1C       		.uleb128 0x1c
+ 797 0325 1D010000 		.4byte	.LASF32
+ 798 0329 01       		.byte	0x1
+ 799 032a 13       		.byte	0x13
+ 800 032b 6D000000 		.4byte	0x6d
+ 801 032f 02       		.byte	0x2
+ 802 0330 91       		.byte	0x91
+ 803 0331 74       		.sleb128 -12
+ 804 0332 1C       		.uleb128 0x1c
+ 805 0333 98000000 		.4byte	.LASF33
+ 806 0337 01       		.byte	0x1
+ 807 0338 14       		.byte	0x14
+ 808 0339 49000000 		.4byte	0x49
+ 809 033d 02       		.byte	0x2
+ 810 033e 91       		.byte	0x91
+ 811 033f 72       		.sleb128 -14
+ 812 0340 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 17
+
+
+ 813 0341 00       		.byte	0
+ 814 0342 14       		.uleb128 0x14
+ 815 0343 AF020000 		.4byte	0x2af
+ 816 0347 18       		.uleb128 0x18
+ 817 0348 5D020000 		.4byte	0x25d
+ 818 034c 00000000 		.4byte	.LFB139
+ 819 0350 50000000 		.4byte	.LFE139
+ 820 0354 38000000 		.4byte	.LLST1
+ 821 0358 61030000 		.4byte	0x361
+ 822 035c 01       		.byte	0x1
+ 823 035d 87030000 		.4byte	0x387
+ 824 0361 19       		.uleb128 0x19
+ 825 0362 35010000 		.4byte	.LASF34
+ 826 0366 42030000 		.4byte	0x342
+ 827 036a 01       		.byte	0x1
+ 828 036b 02       		.byte	0x2
+ 829 036c 91       		.byte	0x91
+ 830 036d 6C       		.sleb128 -20
+ 831 036e 1B       		.uleb128 0x1b
+ 832 036f 08000000 		.4byte	.LBB3
+ 833 0373 44000000 		.4byte	.LBE3
+ 834 0377 1C       		.uleb128 0x1c
+ 835 0378 A0000000 		.4byte	.LASF35
+ 836 037c 01       		.byte	0x1
+ 837 037d 1A       		.byte	0x1a
+ 838 037e 5B000000 		.4byte	0x5b
+ 839 0382 02       		.byte	0x2
+ 840 0383 91       		.byte	0x91
+ 841 0384 74       		.sleb128 -12
+ 842 0385 00       		.byte	0
+ 843 0386 00       		.byte	0
+ 844 0387 18       		.uleb128 0x18
+ 845 0388 85020000 		.4byte	0x285
+ 846 038c 00000000 		.4byte	.LFB140
+ 847 0390 22000000 		.4byte	.LFE140
+ 848 0394 70000000 		.4byte	.LLST2
+ 849 0398 A1030000 		.4byte	0x3a1
+ 850 039c 01       		.byte	0x1
+ 851 039d BD030000 		.4byte	0x3bd
+ 852 03a1 19       		.uleb128 0x19
+ 853 03a2 35010000 		.4byte	.LASF34
+ 854 03a6 42030000 		.4byte	0x342
+ 855 03aa 01       		.byte	0x1
+ 856 03ab 02       		.byte	0x2
+ 857 03ac 91       		.byte	0x91
+ 858 03ad 74       		.sleb128 -12
+ 859 03ae 1A       		.uleb128 0x1a
+ 860 03af A0000000 		.4byte	.LASF35
+ 861 03b3 01       		.byte	0x1
+ 862 03b4 27       		.byte	0x27
+ 863 03b5 30000000 		.4byte	0x30
+ 864 03b9 02       		.byte	0x2
+ 865 03ba 91       		.byte	0x91
+ 866 03bb 73       		.sleb128 -13
+ 867 03bc 00       		.byte	0
+ 868 03bd 1D       		.uleb128 0x1d
+ 869 03be 29010000 		.4byte	0x129
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 18
+
+
+ 870 03c2 02       		.byte	0x2
+ 871 03c3 1F       		.byte	0x1f
+ 872 03c4 02       		.byte	0x2
+ 873 03c5 CD030000 		.4byte	0x3cd
+ 874 03c9 D8030000 		.4byte	0x3d8
+ 875 03cd 1E       		.uleb128 0x1e
+ 876 03ce 35010000 		.4byte	.LASF34
+ 877 03d2 D8030000 		.4byte	0x3d8
+ 878 03d6 01       		.byte	0x1
+ 879 03d7 00       		.byte	0
+ 880 03d8 14       		.uleb128 0x14
+ 881 03d9 BF010000 		.4byte	0x1bf
+ 882 03dd 1F       		.uleb128 0x1f
+ 883 03de BD030000 		.4byte	0x3bd
+ 884 03e2 70000000 		.4byte	.LASF37
+ 885 03e6 00000000 		.4byte	.LFB143
+ 886 03ea 1C000000 		.4byte	.LFE143
+ 887 03ee A8000000 		.4byte	.LLST3
+ 888 03f2 FB030000 		.4byte	0x3fb
+ 889 03f6 01       		.byte	0x1
+ 890 03f7 04040000 		.4byte	0x404
+ 891 03fb 20       		.uleb128 0x20
+ 892 03fc CD030000 		.4byte	0x3cd
+ 893 0400 02       		.byte	0x2
+ 894 0401 91       		.byte	0x91
+ 895 0402 74       		.sleb128 -12
+ 896 0403 00       		.byte	0
+ 897 0404 1D       		.uleb128 0x1d
+ 898 0405 19020000 		.4byte	0x219
+ 899 0409 03       		.byte	0x3
+ 900 040a 15       		.byte	0x15
+ 901 040b 02       		.byte	0x2
+ 902 040c 14040000 		.4byte	0x414
+ 903 0410 1F040000 		.4byte	0x41f
+ 904 0414 1E       		.uleb128 0x1e
+ 905 0415 35010000 		.4byte	.LASF34
+ 906 0419 42030000 		.4byte	0x342
+ 907 041d 01       		.byte	0x1
+ 908 041e 00       		.byte	0
+ 909 041f 21       		.uleb128 0x21
+ 910 0420 04040000 		.4byte	0x404
+ 911 0424 0F020000 		.4byte	.LASF38
+ 912 0428 00000000 		.4byte	.LFB145
+ 913 042c 24000000 		.4byte	.LFE145
+ 914 0430 E0000000 		.4byte	.LLST4
+ 915 0434 3D040000 		.4byte	0x43d
+ 916 0438 01       		.byte	0x1
+ 917 0439 46040000 		.4byte	0x446
+ 918 043d 20       		.uleb128 0x20
+ 919 043e 14040000 		.4byte	0x414
+ 920 0442 02       		.byte	0x2
+ 921 0443 91       		.byte	0x91
+ 922 0444 74       		.sleb128 -12
+ 923 0445 00       		.byte	0
+ 924 0446 22       		.uleb128 0x22
+ 925 0447 12030000 		.4byte	.LASF50
+ 926 044b 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 19
+
+
+ 927 044c 00000000 		.4byte	.LFB147
+ 928 0450 30000000 		.4byte	.LFE147
+ 929 0454 18010000 		.4byte	.LLST5
+ 930 0458 01       		.byte	0x1
+ 931 0459 7A040000 		.4byte	0x47a
+ 932 045d 1A       		.uleb128 0x1a
+ 933 045e EF020000 		.4byte	.LASF39
+ 934 0462 01       		.byte	0x1
+ 935 0463 2C       		.byte	0x2c
+ 936 0464 8D000000 		.4byte	0x8d
+ 937 0468 02       		.byte	0x2
+ 938 0469 91       		.byte	0x91
+ 939 046a 74       		.sleb128 -12
+ 940 046b 1A       		.uleb128 0x1a
+ 941 046c 5E000000 		.4byte	.LASF40
+ 942 0470 01       		.byte	0x1
+ 943 0471 2C       		.byte	0x2c
+ 944 0472 8D000000 		.4byte	0x8d
+ 945 0476 02       		.byte	0x2
+ 946 0477 91       		.byte	0x91
+ 947 0478 70       		.sleb128 -16
+ 948 0479 00       		.byte	0
+ 949 047a 23       		.uleb128 0x23
+ 950 047b C3020000 		.4byte	.LASF51
+ 951 047f 01       		.byte	0x1
+ 952 0480 00000000 		.4byte	.LFB148
+ 953 0484 18000000 		.4byte	.LFE148
+ 954 0488 50010000 		.4byte	.LLST6
+ 955 048c 01       		.byte	0x1
+ 956 048d 24       		.uleb128 0x24
+ 957 048e 2F010000 		.4byte	.LASF42
+ 958 0492 01       		.byte	0x1
+ 959 0493 2C       		.byte	0x2c
+ 960 0494 E0010000 		.4byte	0x1e0
+ 961 0498 01       		.byte	0x1
+ 962 0499 05       		.byte	0x5
+ 963 049a 03       		.byte	0x3
+ 964 049b 00000000 		.4byte	Uart0
+ 965 049f 25       		.uleb128 0x25
+ 966 04a0 A2000000 		.4byte	0xa2
+ 967 04a4 AF040000 		.4byte	0x4af
+ 968 04a8 26       		.uleb128 0x26
+ 969 04a9 9B000000 		.4byte	0x9b
+ 970 04ad 1B       		.byte	0x1b
+ 971 04ae 00       		.byte	0
+ 972 04af 14       		.uleb128 0x14
+ 973 04b0 9F040000 		.4byte	0x49f
+ 974 04b4 27       		.uleb128 0x27
+ 975 04b5 DB000000 		.4byte	0xdb
+ 976 04b9 05       		.byte	0x5
+ 977 04ba 03       		.byte	0x3
+ 978 04bb 14000000 		.4byte	_ZN14rosserial_msgsL12REQUESTPARAME
+ 979 04bf 00       		.byte	0
+ 980              		.section	.debug_abbrev,"",%progbits
+ 981              	.Ldebug_abbrev0:
+ 982 0000 01       		.uleb128 0x1
+ 983 0001 11       		.uleb128 0x11
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 20
+
+
+ 984 0002 01       		.byte	0x1
+ 985 0003 25       		.uleb128 0x25
+ 986 0004 0E       		.uleb128 0xe
+ 987 0005 13       		.uleb128 0x13
+ 988 0006 0B       		.uleb128 0xb
+ 989 0007 03       		.uleb128 0x3
+ 990 0008 0E       		.uleb128 0xe
+ 991 0009 1B       		.uleb128 0x1b
+ 992 000a 0E       		.uleb128 0xe
+ 993 000b 55       		.uleb128 0x55
+ 994 000c 06       		.uleb128 0x6
+ 995 000d 11       		.uleb128 0x11
+ 996 000e 01       		.uleb128 0x1
+ 997 000f 52       		.uleb128 0x52
+ 998 0010 01       		.uleb128 0x1
+ 999 0011 10       		.uleb128 0x10
+ 1000 0012 06       		.uleb128 0x6
+ 1001 0013 00       		.byte	0
+ 1002 0014 00       		.byte	0
+ 1003 0015 02       		.uleb128 0x2
+ 1004 0016 24       		.uleb128 0x24
+ 1005 0017 00       		.byte	0
+ 1006 0018 0B       		.uleb128 0xb
+ 1007 0019 0B       		.uleb128 0xb
+ 1008 001a 3E       		.uleb128 0x3e
+ 1009 001b 0B       		.uleb128 0xb
+ 1010 001c 03       		.uleb128 0x3
+ 1011 001d 0E       		.uleb128 0xe
+ 1012 001e 00       		.byte	0
+ 1013 001f 00       		.byte	0
+ 1014 0020 03       		.uleb128 0x3
+ 1015 0021 16       		.uleb128 0x16
+ 1016 0022 00       		.byte	0
+ 1017 0023 03       		.uleb128 0x3
+ 1018 0024 0E       		.uleb128 0xe
+ 1019 0025 3A       		.uleb128 0x3a
+ 1020 0026 0B       		.uleb128 0xb
+ 1021 0027 3B       		.uleb128 0x3b
+ 1022 0028 0B       		.uleb128 0xb
+ 1023 0029 49       		.uleb128 0x49
+ 1024 002a 13       		.uleb128 0x13
+ 1025 002b 00       		.byte	0
+ 1026 002c 00       		.byte	0
+ 1027 002d 04       		.uleb128 0x4
+ 1028 002e 24       		.uleb128 0x24
+ 1029 002f 00       		.byte	0
+ 1030 0030 0B       		.uleb128 0xb
+ 1031 0031 0B       		.uleb128 0xb
+ 1032 0032 3E       		.uleb128 0x3e
+ 1033 0033 0B       		.uleb128 0xb
+ 1034 0034 03       		.uleb128 0x3
+ 1035 0035 08       		.uleb128 0x8
+ 1036 0036 00       		.byte	0
+ 1037 0037 00       		.byte	0
+ 1038 0038 05       		.uleb128 0x5
+ 1039 0039 39       		.uleb128 0x39
+ 1040 003a 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 21
+
+
+ 1041 003b 03       		.uleb128 0x3
+ 1042 003c 08       		.uleb128 0x8
+ 1043 003d 3A       		.uleb128 0x3a
+ 1044 003e 0B       		.uleb128 0xb
+ 1045 003f 3B       		.uleb128 0x3b
+ 1046 0040 0B       		.uleb128 0xb
+ 1047 0041 00       		.byte	0
+ 1048 0042 00       		.byte	0
+ 1049 0043 06       		.uleb128 0x6
+ 1050 0044 39       		.uleb128 0x39
+ 1051 0045 01       		.byte	0x1
+ 1052 0046 03       		.uleb128 0x3
+ 1053 0047 0E       		.uleb128 0xe
+ 1054 0048 3A       		.uleb128 0x3a
+ 1055 0049 0B       		.uleb128 0xb
+ 1056 004a 3B       		.uleb128 0x3b
+ 1057 004b 0B       		.uleb128 0xb
+ 1058 004c 01       		.uleb128 0x1
+ 1059 004d 13       		.uleb128 0x13
+ 1060 004e 00       		.byte	0
+ 1061 004f 00       		.byte	0
+ 1062 0050 07       		.uleb128 0x7
+ 1063 0051 34       		.uleb128 0x34
+ 1064 0052 00       		.byte	0
+ 1065 0053 03       		.uleb128 0x3
+ 1066 0054 0E       		.uleb128 0xe
+ 1067 0055 3A       		.uleb128 0x3a
+ 1068 0056 0B       		.uleb128 0xb
+ 1069 0057 3B       		.uleb128 0x3b
+ 1070 0058 0B       		.uleb128 0xb
+ 1071 0059 49       		.uleb128 0x49
+ 1072 005a 13       		.uleb128 0x13
+ 1073 005b 3C       		.uleb128 0x3c
+ 1074 005c 0C       		.uleb128 0xc
+ 1075 005d 1C       		.uleb128 0x1c
+ 1076 005e 0E       		.uleb128 0xe
+ 1077 005f 00       		.byte	0
+ 1078 0060 00       		.byte	0
+ 1079 0061 08       		.uleb128 0x8
+ 1080 0062 02       		.uleb128 0x2
+ 1081 0063 01       		.byte	0x1
+ 1082 0064 03       		.uleb128 0x3
+ 1083 0065 0E       		.uleb128 0xe
+ 1084 0066 0B       		.uleb128 0xb
+ 1085 0067 0B       		.uleb128 0xb
+ 1086 0068 3A       		.uleb128 0x3a
+ 1087 0069 0B       		.uleb128 0xb
+ 1088 006a 3B       		.uleb128 0x3b
+ 1089 006b 0B       		.uleb128 0xb
+ 1090 006c 1D       		.uleb128 0x1d
+ 1091 006d 13       		.uleb128 0x13
+ 1092 006e 01       		.uleb128 0x1
+ 1093 006f 13       		.uleb128 0x13
+ 1094 0070 00       		.byte	0
+ 1095 0071 00       		.byte	0
+ 1096 0072 09       		.uleb128 0x9
+ 1097 0073 0D       		.uleb128 0xd
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 22
+
+
+ 1098 0074 00       		.byte	0
+ 1099 0075 03       		.uleb128 0x3
+ 1100 0076 0E       		.uleb128 0xe
+ 1101 0077 49       		.uleb128 0x49
+ 1102 0078 13       		.uleb128 0x13
+ 1103 0079 38       		.uleb128 0x38
+ 1104 007a 0A       		.uleb128 0xa
+ 1105 007b 34       		.uleb128 0x34
+ 1106 007c 0C       		.uleb128 0xc
+ 1107 007d 00       		.byte	0
+ 1108 007e 00       		.byte	0
+ 1109 007f 0A       		.uleb128 0xa
+ 1110 0080 2E       		.uleb128 0x2e
+ 1111 0081 01       		.byte	0x1
+ 1112 0082 3F       		.uleb128 0x3f
+ 1113 0083 0C       		.uleb128 0xc
+ 1114 0084 03       		.uleb128 0x3
+ 1115 0085 0E       		.uleb128 0xe
+ 1116 0086 49       		.uleb128 0x49
+ 1117 0087 13       		.uleb128 0x13
+ 1118 0088 34       		.uleb128 0x34
+ 1119 0089 0C       		.uleb128 0xc
+ 1120 008a 3C       		.uleb128 0x3c
+ 1121 008b 0C       		.uleb128 0xc
+ 1122 008c 64       		.uleb128 0x64
+ 1123 008d 13       		.uleb128 0x13
+ 1124 008e 01       		.uleb128 0x1
+ 1125 008f 13       		.uleb128 0x13
+ 1126 0090 00       		.byte	0
+ 1127 0091 00       		.byte	0
+ 1128 0092 0B       		.uleb128 0xb
+ 1129 0093 05       		.uleb128 0x5
+ 1130 0094 00       		.byte	0
+ 1131 0095 49       		.uleb128 0x49
+ 1132 0096 13       		.uleb128 0x13
+ 1133 0097 34       		.uleb128 0x34
+ 1134 0098 0C       		.uleb128 0xc
+ 1135 0099 00       		.byte	0
+ 1136 009a 00       		.byte	0
+ 1137 009b 0C       		.uleb128 0xc
+ 1138 009c 05       		.uleb128 0x5
+ 1139 009d 00       		.byte	0
+ 1140 009e 49       		.uleb128 0x49
+ 1141 009f 13       		.uleb128 0x13
+ 1142 00a0 00       		.byte	0
+ 1143 00a1 00       		.byte	0
+ 1144 00a2 0D       		.uleb128 0xd
+ 1145 00a3 2E       		.uleb128 0x2e
+ 1146 00a4 01       		.byte	0x1
+ 1147 00a5 3F       		.uleb128 0x3f
+ 1148 00a6 0C       		.uleb128 0xc
+ 1149 00a7 03       		.uleb128 0x3
+ 1150 00a8 0E       		.uleb128 0xe
+ 1151 00a9 3A       		.uleb128 0x3a
+ 1152 00aa 0B       		.uleb128 0xb
+ 1153 00ab 3B       		.uleb128 0x3b
+ 1154 00ac 0B       		.uleb128 0xb
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 23
+
+
+ 1155 00ad 8740     		.uleb128 0x2007
+ 1156 00af 0E       		.uleb128 0xe
+ 1157 00b0 4C       		.uleb128 0x4c
+ 1158 00b1 0B       		.uleb128 0xb
+ 1159 00b2 4D       		.uleb128 0x4d
+ 1160 00b3 0A       		.uleb128 0xa
+ 1161 00b4 1D       		.uleb128 0x1d
+ 1162 00b5 13       		.uleb128 0x13
+ 1163 00b6 3C       		.uleb128 0x3c
+ 1164 00b7 0C       		.uleb128 0xc
+ 1165 00b8 64       		.uleb128 0x64
+ 1166 00b9 13       		.uleb128 0x13
+ 1167 00ba 01       		.uleb128 0x1
+ 1168 00bb 13       		.uleb128 0x13
+ 1169 00bc 00       		.byte	0
+ 1170 00bd 00       		.byte	0
+ 1171 00be 0E       		.uleb128 0xe
+ 1172 00bf 2E       		.uleb128 0x2e
+ 1173 00c0 01       		.byte	0x1
+ 1174 00c1 3F       		.uleb128 0x3f
+ 1175 00c2 0C       		.uleb128 0xc
+ 1176 00c3 03       		.uleb128 0x3
+ 1177 00c4 0E       		.uleb128 0xe
+ 1178 00c5 3A       		.uleb128 0x3a
+ 1179 00c6 0B       		.uleb128 0xb
+ 1180 00c7 3B       		.uleb128 0x3b
+ 1181 00c8 0B       		.uleb128 0xb
+ 1182 00c9 8740     		.uleb128 0x2007
+ 1183 00cb 0E       		.uleb128 0xe
+ 1184 00cc 49       		.uleb128 0x49
+ 1185 00cd 13       		.uleb128 0x13
+ 1186 00ce 4C       		.uleb128 0x4c
+ 1187 00cf 0B       		.uleb128 0xb
+ 1188 00d0 4D       		.uleb128 0x4d
+ 1189 00d1 0A       		.uleb128 0xa
+ 1190 00d2 1D       		.uleb128 0x1d
+ 1191 00d3 13       		.uleb128 0x13
+ 1192 00d4 3C       		.uleb128 0x3c
+ 1193 00d5 0C       		.uleb128 0xc
+ 1194 00d6 64       		.uleb128 0x64
+ 1195 00d7 13       		.uleb128 0x13
+ 1196 00d8 01       		.uleb128 0x1
+ 1197 00d9 13       		.uleb128 0x13
+ 1198 00da 00       		.byte	0
+ 1199 00db 00       		.byte	0
+ 1200 00dc 0F       		.uleb128 0xf
+ 1201 00dd 2E       		.uleb128 0x2e
+ 1202 00de 01       		.byte	0x1
+ 1203 00df 3F       		.uleb128 0x3f
+ 1204 00e0 0C       		.uleb128 0xc
+ 1205 00e1 03       		.uleb128 0x3
+ 1206 00e2 0E       		.uleb128 0xe
+ 1207 00e3 3A       		.uleb128 0x3a
+ 1208 00e4 0B       		.uleb128 0xb
+ 1209 00e5 3B       		.uleb128 0x3b
+ 1210 00e6 0B       		.uleb128 0xb
+ 1211 00e7 8740     		.uleb128 0x2007
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 24
+
+
+ 1212 00e9 0E       		.uleb128 0xe
+ 1213 00ea 49       		.uleb128 0x49
+ 1214 00eb 13       		.uleb128 0x13
+ 1215 00ec 4C       		.uleb128 0x4c
+ 1216 00ed 0B       		.uleb128 0xb
+ 1217 00ee 4D       		.uleb128 0x4d
+ 1218 00ef 0A       		.uleb128 0xa
+ 1219 00f0 1D       		.uleb128 0x1d
+ 1220 00f1 13       		.uleb128 0x13
+ 1221 00f2 3C       		.uleb128 0x3c
+ 1222 00f3 0C       		.uleb128 0xc
+ 1223 00f4 64       		.uleb128 0x64
+ 1224 00f5 13       		.uleb128 0x13
+ 1225 00f6 00       		.byte	0
+ 1226 00f7 00       		.byte	0
+ 1227 00f8 10       		.uleb128 0x10
+ 1228 00f9 0F       		.uleb128 0xf
+ 1229 00fa 00       		.byte	0
+ 1230 00fb 0B       		.uleb128 0xb
+ 1231 00fc 0B       		.uleb128 0xb
+ 1232 00fd 49       		.uleb128 0x49
+ 1233 00fe 13       		.uleb128 0x13
+ 1234 00ff 00       		.byte	0
+ 1235 0100 00       		.byte	0
+ 1236 0101 11       		.uleb128 0x11
+ 1237 0102 35       		.uleb128 0x35
+ 1238 0103 00       		.byte	0
+ 1239 0104 49       		.uleb128 0x49
+ 1240 0105 13       		.uleb128 0x13
+ 1241 0106 00       		.byte	0
+ 1242 0107 00       		.byte	0
+ 1243 0108 12       		.uleb128 0x12
+ 1244 0109 1C       		.uleb128 0x1c
+ 1245 010a 00       		.byte	0
+ 1246 010b 49       		.uleb128 0x49
+ 1247 010c 13       		.uleb128 0x13
+ 1248 010d 38       		.uleb128 0x38
+ 1249 010e 0A       		.uleb128 0xa
+ 1250 010f 32       		.uleb128 0x32
+ 1251 0110 0B       		.uleb128 0xb
+ 1252 0111 00       		.byte	0
+ 1253 0112 00       		.byte	0
+ 1254 0113 13       		.uleb128 0x13
+ 1255 0114 10       		.uleb128 0x10
+ 1256 0115 00       		.byte	0
+ 1257 0116 0B       		.uleb128 0xb
+ 1258 0117 0B       		.uleb128 0xb
+ 1259 0118 49       		.uleb128 0x49
+ 1260 0119 13       		.uleb128 0x13
+ 1261 011a 00       		.byte	0
+ 1262 011b 00       		.byte	0
+ 1263 011c 14       		.uleb128 0x14
+ 1264 011d 26       		.uleb128 0x26
+ 1265 011e 00       		.byte	0
+ 1266 011f 49       		.uleb128 0x49
+ 1267 0120 13       		.uleb128 0x13
+ 1268 0121 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 25
+
+
+ 1269 0122 00       		.byte	0
+ 1270 0123 15       		.uleb128 0x15
+ 1271 0124 15       		.uleb128 0x15
+ 1272 0125 01       		.byte	0x1
+ 1273 0126 49       		.uleb128 0x49
+ 1274 0127 13       		.uleb128 0x13
+ 1275 0128 01       		.uleb128 0x1
+ 1276 0129 13       		.uleb128 0x13
+ 1277 012a 00       		.byte	0
+ 1278 012b 00       		.byte	0
+ 1279 012c 16       		.uleb128 0x16
+ 1280 012d 18       		.uleb128 0x18
+ 1281 012e 00       		.byte	0
+ 1282 012f 00       		.byte	0
+ 1283 0130 00       		.byte	0
+ 1284 0131 17       		.uleb128 0x17
+ 1285 0132 0F       		.uleb128 0xf
+ 1286 0133 00       		.byte	0
+ 1287 0134 0B       		.uleb128 0xb
+ 1288 0135 0B       		.uleb128 0xb
+ 1289 0136 03       		.uleb128 0x3
+ 1290 0137 0E       		.uleb128 0xe
+ 1291 0138 49       		.uleb128 0x49
+ 1292 0139 13       		.uleb128 0x13
+ 1293 013a 00       		.byte	0
+ 1294 013b 00       		.byte	0
+ 1295 013c 18       		.uleb128 0x18
+ 1296 013d 2E       		.uleb128 0x2e
+ 1297 013e 01       		.byte	0x1
+ 1298 013f 47       		.uleb128 0x47
+ 1299 0140 13       		.uleb128 0x13
+ 1300 0141 11       		.uleb128 0x11
+ 1301 0142 01       		.uleb128 0x1
+ 1302 0143 12       		.uleb128 0x12
+ 1303 0144 01       		.uleb128 0x1
+ 1304 0145 40       		.uleb128 0x40
+ 1305 0146 06       		.uleb128 0x6
+ 1306 0147 64       		.uleb128 0x64
+ 1307 0148 13       		.uleb128 0x13
+ 1308 0149 9642     		.uleb128 0x2116
+ 1309 014b 0C       		.uleb128 0xc
+ 1310 014c 01       		.uleb128 0x1
+ 1311 014d 13       		.uleb128 0x13
+ 1312 014e 00       		.byte	0
+ 1313 014f 00       		.byte	0
+ 1314 0150 19       		.uleb128 0x19
+ 1315 0151 05       		.uleb128 0x5
+ 1316 0152 00       		.byte	0
+ 1317 0153 03       		.uleb128 0x3
+ 1318 0154 0E       		.uleb128 0xe
+ 1319 0155 49       		.uleb128 0x49
+ 1320 0156 13       		.uleb128 0x13
+ 1321 0157 34       		.uleb128 0x34
+ 1322 0158 0C       		.uleb128 0xc
+ 1323 0159 02       		.uleb128 0x2
+ 1324 015a 0A       		.uleb128 0xa
+ 1325 015b 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 26
+
+
+ 1326 015c 00       		.byte	0
+ 1327 015d 1A       		.uleb128 0x1a
+ 1328 015e 05       		.uleb128 0x5
+ 1329 015f 00       		.byte	0
+ 1330 0160 03       		.uleb128 0x3
+ 1331 0161 0E       		.uleb128 0xe
+ 1332 0162 3A       		.uleb128 0x3a
+ 1333 0163 0B       		.uleb128 0xb
+ 1334 0164 3B       		.uleb128 0x3b
+ 1335 0165 0B       		.uleb128 0xb
+ 1336 0166 49       		.uleb128 0x49
+ 1337 0167 13       		.uleb128 0x13
+ 1338 0168 02       		.uleb128 0x2
+ 1339 0169 0A       		.uleb128 0xa
+ 1340 016a 00       		.byte	0
+ 1341 016b 00       		.byte	0
+ 1342 016c 1B       		.uleb128 0x1b
+ 1343 016d 0B       		.uleb128 0xb
+ 1344 016e 01       		.byte	0x1
+ 1345 016f 11       		.uleb128 0x11
+ 1346 0170 01       		.uleb128 0x1
+ 1347 0171 12       		.uleb128 0x12
+ 1348 0172 01       		.uleb128 0x1
+ 1349 0173 00       		.byte	0
+ 1350 0174 00       		.byte	0
+ 1351 0175 1C       		.uleb128 0x1c
+ 1352 0176 34       		.uleb128 0x34
+ 1353 0177 00       		.byte	0
+ 1354 0178 03       		.uleb128 0x3
+ 1355 0179 0E       		.uleb128 0xe
+ 1356 017a 3A       		.uleb128 0x3a
+ 1357 017b 0B       		.uleb128 0xb
+ 1358 017c 3B       		.uleb128 0x3b
+ 1359 017d 0B       		.uleb128 0xb
+ 1360 017e 49       		.uleb128 0x49
+ 1361 017f 13       		.uleb128 0x13
+ 1362 0180 02       		.uleb128 0x2
+ 1363 0181 0A       		.uleb128 0xa
+ 1364 0182 00       		.byte	0
+ 1365 0183 00       		.byte	0
+ 1366 0184 1D       		.uleb128 0x1d
+ 1367 0185 2E       		.uleb128 0x2e
+ 1368 0186 01       		.byte	0x1
+ 1369 0187 47       		.uleb128 0x47
+ 1370 0188 13       		.uleb128 0x13
+ 1371 0189 3A       		.uleb128 0x3a
+ 1372 018a 0B       		.uleb128 0xb
+ 1373 018b 3B       		.uleb128 0x3b
+ 1374 018c 0B       		.uleb128 0xb
+ 1375 018d 20       		.uleb128 0x20
+ 1376 018e 0B       		.uleb128 0xb
+ 1377 018f 64       		.uleb128 0x64
+ 1378 0190 13       		.uleb128 0x13
+ 1379 0191 01       		.uleb128 0x1
+ 1380 0192 13       		.uleb128 0x13
+ 1381 0193 00       		.byte	0
+ 1382 0194 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 27
+
+
+ 1383 0195 1E       		.uleb128 0x1e
+ 1384 0196 05       		.uleb128 0x5
+ 1385 0197 00       		.byte	0
+ 1386 0198 03       		.uleb128 0x3
+ 1387 0199 0E       		.uleb128 0xe
+ 1388 019a 49       		.uleb128 0x49
+ 1389 019b 13       		.uleb128 0x13
+ 1390 019c 34       		.uleb128 0x34
+ 1391 019d 0C       		.uleb128 0xc
+ 1392 019e 00       		.byte	0
+ 1393 019f 00       		.byte	0
+ 1394 01a0 1F       		.uleb128 0x1f
+ 1395 01a1 2E       		.uleb128 0x2e
+ 1396 01a2 01       		.byte	0x1
+ 1397 01a3 31       		.uleb128 0x31
+ 1398 01a4 13       		.uleb128 0x13
+ 1399 01a5 8740     		.uleb128 0x2007
+ 1400 01a7 0E       		.uleb128 0xe
+ 1401 01a8 11       		.uleb128 0x11
+ 1402 01a9 01       		.uleb128 0x1
+ 1403 01aa 12       		.uleb128 0x12
+ 1404 01ab 01       		.uleb128 0x1
+ 1405 01ac 40       		.uleb128 0x40
+ 1406 01ad 06       		.uleb128 0x6
+ 1407 01ae 64       		.uleb128 0x64
+ 1408 01af 13       		.uleb128 0x13
+ 1409 01b0 9742     		.uleb128 0x2117
+ 1410 01b2 0C       		.uleb128 0xc
+ 1411 01b3 01       		.uleb128 0x1
+ 1412 01b4 13       		.uleb128 0x13
+ 1413 01b5 00       		.byte	0
+ 1414 01b6 00       		.byte	0
+ 1415 01b7 20       		.uleb128 0x20
+ 1416 01b8 05       		.uleb128 0x5
+ 1417 01b9 00       		.byte	0
+ 1418 01ba 31       		.uleb128 0x31
+ 1419 01bb 13       		.uleb128 0x13
+ 1420 01bc 02       		.uleb128 0x2
+ 1421 01bd 0A       		.uleb128 0xa
+ 1422 01be 00       		.byte	0
+ 1423 01bf 00       		.byte	0
+ 1424 01c0 21       		.uleb128 0x21
+ 1425 01c1 2E       		.uleb128 0x2e
+ 1426 01c2 01       		.byte	0x1
+ 1427 01c3 31       		.uleb128 0x31
+ 1428 01c4 13       		.uleb128 0x13
+ 1429 01c5 8740     		.uleb128 0x2007
+ 1430 01c7 0E       		.uleb128 0xe
+ 1431 01c8 11       		.uleb128 0x11
+ 1432 01c9 01       		.uleb128 0x1
+ 1433 01ca 12       		.uleb128 0x12
+ 1434 01cb 01       		.uleb128 0x1
+ 1435 01cc 40       		.uleb128 0x40
+ 1436 01cd 06       		.uleb128 0x6
+ 1437 01ce 64       		.uleb128 0x64
+ 1438 01cf 13       		.uleb128 0x13
+ 1439 01d0 9642     		.uleb128 0x2116
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 28
+
+
+ 1440 01d2 0C       		.uleb128 0xc
+ 1441 01d3 01       		.uleb128 0x1
+ 1442 01d4 13       		.uleb128 0x13
+ 1443 01d5 00       		.byte	0
+ 1444 01d6 00       		.byte	0
+ 1445 01d7 22       		.uleb128 0x22
+ 1446 01d8 2E       		.uleb128 0x2e
+ 1447 01d9 01       		.byte	0x1
+ 1448 01da 03       		.uleb128 0x3
+ 1449 01db 0E       		.uleb128 0xe
+ 1450 01dc 34       		.uleb128 0x34
+ 1451 01dd 0C       		.uleb128 0xc
+ 1452 01de 11       		.uleb128 0x11
+ 1453 01df 01       		.uleb128 0x1
+ 1454 01e0 12       		.uleb128 0x12
+ 1455 01e1 01       		.uleb128 0x1
+ 1456 01e2 40       		.uleb128 0x40
+ 1457 01e3 06       		.uleb128 0x6
+ 1458 01e4 9642     		.uleb128 0x2116
+ 1459 01e6 0C       		.uleb128 0xc
+ 1460 01e7 01       		.uleb128 0x1
+ 1461 01e8 13       		.uleb128 0x13
+ 1462 01e9 00       		.byte	0
+ 1463 01ea 00       		.byte	0
+ 1464 01eb 23       		.uleb128 0x23
+ 1465 01ec 2E       		.uleb128 0x2e
+ 1466 01ed 00       		.byte	0
+ 1467 01ee 03       		.uleb128 0x3
+ 1468 01ef 0E       		.uleb128 0xe
+ 1469 01f0 34       		.uleb128 0x34
+ 1470 01f1 0C       		.uleb128 0xc
+ 1471 01f2 11       		.uleb128 0x11
+ 1472 01f3 01       		.uleb128 0x1
+ 1473 01f4 12       		.uleb128 0x12
+ 1474 01f5 01       		.uleb128 0x1
+ 1475 01f6 40       		.uleb128 0x40
+ 1476 01f7 06       		.uleb128 0x6
+ 1477 01f8 9642     		.uleb128 0x2116
+ 1478 01fa 0C       		.uleb128 0xc
+ 1479 01fb 00       		.byte	0
+ 1480 01fc 00       		.byte	0
+ 1481 01fd 24       		.uleb128 0x24
+ 1482 01fe 34       		.uleb128 0x34
+ 1483 01ff 00       		.byte	0
+ 1484 0200 03       		.uleb128 0x3
+ 1485 0201 0E       		.uleb128 0xe
+ 1486 0202 3A       		.uleb128 0x3a
+ 1487 0203 0B       		.uleb128 0xb
+ 1488 0204 3B       		.uleb128 0x3b
+ 1489 0205 0B       		.uleb128 0xb
+ 1490 0206 49       		.uleb128 0x49
+ 1491 0207 13       		.uleb128 0x13
+ 1492 0208 3F       		.uleb128 0x3f
+ 1493 0209 0C       		.uleb128 0xc
+ 1494 020a 02       		.uleb128 0x2
+ 1495 020b 0A       		.uleb128 0xa
+ 1496 020c 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 29
+
+
+ 1497 020d 00       		.byte	0
+ 1498 020e 25       		.uleb128 0x25
+ 1499 020f 01       		.uleb128 0x1
+ 1500 0210 01       		.byte	0x1
+ 1501 0211 49       		.uleb128 0x49
+ 1502 0212 13       		.uleb128 0x13
+ 1503 0213 01       		.uleb128 0x1
+ 1504 0214 13       		.uleb128 0x13
+ 1505 0215 00       		.byte	0
+ 1506 0216 00       		.byte	0
+ 1507 0217 26       		.uleb128 0x26
+ 1508 0218 21       		.uleb128 0x21
+ 1509 0219 00       		.byte	0
+ 1510 021a 49       		.uleb128 0x49
+ 1511 021b 13       		.uleb128 0x13
+ 1512 021c 2F       		.uleb128 0x2f
+ 1513 021d 0B       		.uleb128 0xb
+ 1514 021e 00       		.byte	0
+ 1515 021f 00       		.byte	0
+ 1516 0220 27       		.uleb128 0x27
+ 1517 0221 34       		.uleb128 0x34
+ 1518 0222 00       		.byte	0
+ 1519 0223 47       		.uleb128 0x47
+ 1520 0224 13       		.uleb128 0x13
+ 1521 0225 02       		.uleb128 0x2
+ 1522 0226 0A       		.uleb128 0xa
+ 1523 0227 00       		.byte	0
+ 1524 0228 00       		.byte	0
+ 1525 0229 00       		.byte	0
+ 1526              		.section	.debug_loc,"",%progbits
+ 1527              	.Ldebug_loc0:
+ 1528              	.LLST0:
+ 1529 0000 00000000 		.4byte	.LFB138
+ 1530 0004 02000000 		.4byte	.LCFI0
+ 1531 0008 0200     		.2byte	0x2
+ 1532 000a 7D       		.byte	0x7d
+ 1533 000b 00       		.sleb128 0
+ 1534 000c 02000000 		.4byte	.LCFI0
+ 1535 0010 04000000 		.4byte	.LCFI1
+ 1536 0014 0200     		.2byte	0x2
+ 1537 0016 7D       		.byte	0x7d
+ 1538 0017 08       		.sleb128 8
+ 1539 0018 04000000 		.4byte	.LCFI1
+ 1540 001c 06000000 		.4byte	.LCFI2
+ 1541 0020 0200     		.2byte	0x2
+ 1542 0022 7D       		.byte	0x7d
+ 1543 0023 18       		.sleb128 24
+ 1544 0024 06000000 		.4byte	.LCFI2
+ 1545 0028 48000000 		.4byte	.LFE138
+ 1546 002c 0200     		.2byte	0x2
+ 1547 002e 77       		.byte	0x77
+ 1548 002f 18       		.sleb128 24
+ 1549 0030 00000000 		.4byte	0
+ 1550 0034 00000000 		.4byte	0
+ 1551              	.LLST1:
+ 1552 0038 00000000 		.4byte	.LFB139
+ 1553 003c 02000000 		.4byte	.LCFI3
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 30
+
+
+ 1554 0040 0200     		.2byte	0x2
+ 1555 0042 7D       		.byte	0x7d
+ 1556 0043 00       		.sleb128 0
+ 1557 0044 02000000 		.4byte	.LCFI3
+ 1558 0048 04000000 		.4byte	.LCFI4
+ 1559 004c 0200     		.2byte	0x2
+ 1560 004e 7D       		.byte	0x7d
+ 1561 004f 08       		.sleb128 8
+ 1562 0050 04000000 		.4byte	.LCFI4
+ 1563 0054 06000000 		.4byte	.LCFI5
+ 1564 0058 0200     		.2byte	0x2
+ 1565 005a 7D       		.byte	0x7d
+ 1566 005b 18       		.sleb128 24
+ 1567 005c 06000000 		.4byte	.LCFI5
+ 1568 0060 50000000 		.4byte	.LFE139
+ 1569 0064 0200     		.2byte	0x2
+ 1570 0066 77       		.byte	0x77
+ 1571 0067 18       		.sleb128 24
+ 1572 0068 00000000 		.4byte	0
+ 1573 006c 00000000 		.4byte	0
+ 1574              	.LLST2:
+ 1575 0070 00000000 		.4byte	.LFB140
+ 1576 0074 02000000 		.4byte	.LCFI6
+ 1577 0078 0200     		.2byte	0x2
+ 1578 007a 7D       		.byte	0x7d
+ 1579 007b 00       		.sleb128 0
+ 1580 007c 02000000 		.4byte	.LCFI6
+ 1581 0080 04000000 		.4byte	.LCFI7
+ 1582 0084 0200     		.2byte	0x2
+ 1583 0086 7D       		.byte	0x7d
+ 1584 0087 08       		.sleb128 8
+ 1585 0088 04000000 		.4byte	.LCFI7
+ 1586 008c 06000000 		.4byte	.LCFI8
+ 1587 0090 0200     		.2byte	0x2
+ 1588 0092 7D       		.byte	0x7d
+ 1589 0093 10       		.sleb128 16
+ 1590 0094 06000000 		.4byte	.LCFI8
+ 1591 0098 22000000 		.4byte	.LFE140
+ 1592 009c 0200     		.2byte	0x2
+ 1593 009e 77       		.byte	0x77
+ 1594 009f 10       		.sleb128 16
+ 1595 00a0 00000000 		.4byte	0
+ 1596 00a4 00000000 		.4byte	0
+ 1597              	.LLST3:
+ 1598 00a8 00000000 		.4byte	.LFB143
+ 1599 00ac 02000000 		.4byte	.LCFI9
+ 1600 00b0 0200     		.2byte	0x2
+ 1601 00b2 7D       		.byte	0x7d
+ 1602 00b3 00       		.sleb128 0
+ 1603 00b4 02000000 		.4byte	.LCFI9
+ 1604 00b8 04000000 		.4byte	.LCFI10
+ 1605 00bc 0200     		.2byte	0x2
+ 1606 00be 7D       		.byte	0x7d
+ 1607 00bf 08       		.sleb128 8
+ 1608 00c0 04000000 		.4byte	.LCFI10
+ 1609 00c4 06000000 		.4byte	.LCFI11
+ 1610 00c8 0200     		.2byte	0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 31
+
+
+ 1611 00ca 7D       		.byte	0x7d
+ 1612 00cb 10       		.sleb128 16
+ 1613 00cc 06000000 		.4byte	.LCFI11
+ 1614 00d0 1C000000 		.4byte	.LFE143
+ 1615 00d4 0200     		.2byte	0x2
+ 1616 00d6 77       		.byte	0x77
+ 1617 00d7 10       		.sleb128 16
+ 1618 00d8 00000000 		.4byte	0
+ 1619 00dc 00000000 		.4byte	0
+ 1620              	.LLST4:
+ 1621 00e0 00000000 		.4byte	.LFB145
+ 1622 00e4 02000000 		.4byte	.LCFI12
+ 1623 00e8 0200     		.2byte	0x2
+ 1624 00ea 7D       		.byte	0x7d
+ 1625 00eb 00       		.sleb128 0
+ 1626 00ec 02000000 		.4byte	.LCFI12
+ 1627 00f0 04000000 		.4byte	.LCFI13
+ 1628 00f4 0200     		.2byte	0x2
+ 1629 00f6 7D       		.byte	0x7d
+ 1630 00f7 08       		.sleb128 8
+ 1631 00f8 04000000 		.4byte	.LCFI13
+ 1632 00fc 06000000 		.4byte	.LCFI14
+ 1633 0100 0200     		.2byte	0x2
+ 1634 0102 7D       		.byte	0x7d
+ 1635 0103 10       		.sleb128 16
+ 1636 0104 06000000 		.4byte	.LCFI14
+ 1637 0108 24000000 		.4byte	.LFE145
+ 1638 010c 0200     		.2byte	0x2
+ 1639 010e 77       		.byte	0x77
+ 1640 010f 10       		.sleb128 16
+ 1641 0110 00000000 		.4byte	0
+ 1642 0114 00000000 		.4byte	0
+ 1643              	.LLST5:
+ 1644 0118 00000000 		.4byte	.LFB147
+ 1645 011c 02000000 		.4byte	.LCFI15
+ 1646 0120 0200     		.2byte	0x2
+ 1647 0122 7D       		.byte	0x7d
+ 1648 0123 00       		.sleb128 0
+ 1649 0124 02000000 		.4byte	.LCFI15
+ 1650 0128 04000000 		.4byte	.LCFI16
+ 1651 012c 0200     		.2byte	0x2
+ 1652 012e 7D       		.byte	0x7d
+ 1653 012f 08       		.sleb128 8
+ 1654 0130 04000000 		.4byte	.LCFI16
+ 1655 0134 06000000 		.4byte	.LCFI17
+ 1656 0138 0200     		.2byte	0x2
+ 1657 013a 7D       		.byte	0x7d
+ 1658 013b 10       		.sleb128 16
+ 1659 013c 06000000 		.4byte	.LCFI17
+ 1660 0140 30000000 		.4byte	.LFE147
+ 1661 0144 0200     		.2byte	0x2
+ 1662 0146 77       		.byte	0x77
+ 1663 0147 10       		.sleb128 16
+ 1664 0148 00000000 		.4byte	0
+ 1665 014c 00000000 		.4byte	0
+ 1666              	.LLST6:
+ 1667 0150 00000000 		.4byte	.LFB148
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 32
+
+
+ 1668 0154 02000000 		.4byte	.LCFI18
+ 1669 0158 0200     		.2byte	0x2
+ 1670 015a 7D       		.byte	0x7d
+ 1671 015b 00       		.sleb128 0
+ 1672 015c 02000000 		.4byte	.LCFI18
+ 1673 0160 04000000 		.4byte	.LCFI19
+ 1674 0164 0200     		.2byte	0x2
+ 1675 0166 7D       		.byte	0x7d
+ 1676 0167 08       		.sleb128 8
+ 1677 0168 04000000 		.4byte	.LCFI19
+ 1678 016c 18000000 		.4byte	.LFE148
+ 1679 0170 0200     		.2byte	0x2
+ 1680 0172 77       		.byte	0x77
+ 1681 0173 08       		.sleb128 8
+ 1682 0174 00000000 		.4byte	0
+ 1683 0178 00000000 		.4byte	0
+ 1684              		.section	.debug_aranges,"",%progbits
+ 1685 0000 4C000000 		.4byte	0x4c
+ 1686 0004 0200     		.2byte	0x2
+ 1687 0006 00000000 		.4byte	.Ldebug_info0
+ 1688 000a 04       		.byte	0x4
+ 1689 000b 00       		.byte	0
+ 1690 000c 0000     		.2byte	0
+ 1691 000e 0000     		.2byte	0
+ 1692 0010 00000000 		.4byte	.LFB138
+ 1693 0014 48000000 		.4byte	.LFE138-.LFB138
+ 1694 0018 00000000 		.4byte	.LFB139
+ 1695 001c 50000000 		.4byte	.LFE139-.LFB139
+ 1696 0020 00000000 		.4byte	.LFB140
+ 1697 0024 22000000 		.4byte	.LFE140-.LFB140
+ 1698 0028 00000000 		.4byte	.LFB143
+ 1699 002c 1C000000 		.4byte	.LFE143-.LFB143
+ 1700 0030 00000000 		.4byte	.LFB145
+ 1701 0034 24000000 		.4byte	.LFE145-.LFB145
+ 1702 0038 00000000 		.4byte	.LFB147
+ 1703 003c 30000000 		.4byte	.LFE147-.LFB147
+ 1704 0040 00000000 		.4byte	.LFB148
+ 1705 0044 18000000 		.4byte	.LFE148-.LFB148
+ 1706 0048 00000000 		.4byte	0
+ 1707 004c 00000000 		.4byte	0
+ 1708              		.section	.debug_ranges,"",%progbits
+ 1709              	.Ldebug_ranges0:
+ 1710 0000 00000000 		.4byte	.LFB138
+ 1711 0004 48000000 		.4byte	.LFE138
+ 1712 0008 00000000 		.4byte	.LFB139
+ 1713 000c 50000000 		.4byte	.LFE139
+ 1714 0010 00000000 		.4byte	.LFB140
+ 1715 0014 22000000 		.4byte	.LFE140
+ 1716 0018 00000000 		.4byte	.LFB143
+ 1717 001c 1C000000 		.4byte	.LFE143
+ 1718 0020 00000000 		.4byte	.LFB145
+ 1719 0024 24000000 		.4byte	.LFE145
+ 1720 0028 00000000 		.4byte	.LFB147
+ 1721 002c 30000000 		.4byte	.LFE147
+ 1722 0030 00000000 		.4byte	.LFB148
+ 1723 0034 18000000 		.4byte	.LFE148
+ 1724 0038 00000000 		.4byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 33
+
+
+ 1725 003c 00000000 		.4byte	0
+ 1726              		.section	.debug_line,"",%progbits
+ 1727              	.Ldebug_line0:
+ 1728 0000 78020000 		.section	.debug_str,"MS",%progbits,1
+ 1728      0200E601 
+ 1728      00000201 
+ 1728      FB0E0D00 
+ 1728      01010101 
+ 1729              	.LASF45:
+ 1730 0000 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 1730      6F63756D 
+ 1730      656E7473 
+ 1730      20616E64 
+ 1730      20536574 
+ 1731 002f 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 1731      72656174 
+ 1731      6F725C52 
+ 1731      6F734F6E 
+ 1731      41537469 
+ 1732              	.LASF25:
+ 1733 0058 72656733 		.ascii	"reg32\000"
+ 1733      3200
+ 1734              	.LASF40:
+ 1735 005e 5F5F7072 		.ascii	"__priority\000"
+ 1735      696F7269 
+ 1735      747900
+ 1736              	.LASF15:
+ 1737 0069 73697A65 		.ascii	"size_t\000"
+ 1737      5F7400
+ 1738              	.LASF37:
+ 1739 0070 5F5A4E31 		.ascii	"_ZN14HardwareSerialC2Ev\000"
+ 1739      34486172 
+ 1739      64776172 
+ 1739      65536572 
+ 1739      69616C43 
+ 1740              	.LASF30:
+ 1741 0088 5F5A4E34 		.ascii	"_ZN4Uart4readEv\000"
+ 1741      55617274 
+ 1741      34726561 
+ 1741      64457600 
+ 1742              	.LASF33:
+ 1743 0098 64697669 		.ascii	"divider\000"
+ 1743      64657200 
+ 1744              	.LASF35:
+ 1745 00a0 64617461 		.ascii	"data\000"
+ 1745      00
+ 1746              	.LASF26:
+ 1747 00a5 55617274 		.ascii	"Uart\000"
+ 1747      00
+ 1748              	.LASF20:
+ 1749 00aa 62656769 		.ascii	"begin\000"
+ 1749      6E00
+ 1750              	.LASF22:
+ 1751 00b0 5F5A4E31 		.ascii	"_ZN14HardwareSerial5beginEm\000"
+ 1751      34486172 
+ 1751      64776172 
+ 1751      65536572 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 34
+
+
+ 1751      69616C35 
+ 1752              	.LASF43:
+ 1753 00cc 474E5520 		.ascii	"GNU C++ 4.7.3 20130312 (release) [ARM/embedded-4_7-"
+ 1753      432B2B20 
+ 1753      342E372E 
+ 1753      33203230 
+ 1753      31333033 
+ 1754 00ff 6272616E 		.ascii	"branch revision 196615]\000"
+ 1754      63682072 
+ 1754      65766973 
+ 1754      696F6E20 
+ 1754      31393636 
+ 1755              	.LASF17:
+ 1756 0117 666C6F61 		.ascii	"float\000"
+ 1756      7400
+ 1757              	.LASF32:
+ 1758 011d 64656E6F 		.ascii	"denom\000"
+ 1758      6D00
+ 1759              	.LASF0:
+ 1760 0123 7369676E 		.ascii	"signed char\000"
+ 1760      65642063 
+ 1760      68617200 
+ 1761              	.LASF42:
+ 1762 012f 55617274 		.ascii	"Uart0\000"
+ 1762      3000
+ 1763              	.LASF34:
+ 1764 0135 74686973 		.ascii	"this\000"
+ 1764      00
+ 1765              	.LASF46:
+ 1766 013a 726F7373 		.ascii	"rosserial_msgs\000"
+ 1766      65726961 
+ 1766      6C5F6D73 
+ 1766      677300
+ 1767              	.LASF9:
+ 1768 0149 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1768      20756E73 
+ 1768      69676E65 
+ 1768      6420696E 
+ 1768      7400
+ 1769              	.LASF5:
+ 1770 015b 73686F72 		.ascii	"short unsigned int\000"
+ 1770      7420756E 
+ 1770      7369676E 
+ 1770      65642069 
+ 1770      6E7400
+ 1771              	.LASF41:
+ 1772 016e 52455155 		.ascii	"REQUESTPARAM\000"
+ 1772      45535450 
+ 1772      4152414D 
+ 1772      00
+ 1773              	.LASF21:
+ 1774 017b 77726974 		.ascii	"write\000"
+ 1774      6500
+ 1775              	.LASF36:
+ 1776 0181 62617564 		.ascii	"baud\000"
+ 1776      00
+ 1777              	.LASF1:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 35
+
+
+ 1778 0186 756E7369 		.ascii	"unsigned char\000"
+ 1778      676E6564 
+ 1778      20636861 
+ 1778      7200
+ 1779              	.LASF16:
+ 1780 0194 646F7562 		.ascii	"double\000"
+ 1780      6C6500
+ 1781              	.LASF31:
+ 1782 019b 5F5A4E34 		.ascii	"_ZN4Uart5writeEh\000"
+ 1782      55617274 
+ 1782      35777269 
+ 1782      74654568 
+ 1782      00
+ 1783              	.LASF28:
+ 1784 01ac 72656164 		.ascii	"read\000"
+ 1784      00
+ 1785              	.LASF29:
+ 1786 01b1 5F5A4E31 		.ascii	"_ZN14HardwareSerial4readEv\000"
+ 1786      34486172 
+ 1786      64776172 
+ 1786      65536572 
+ 1786      69616C34 
+ 1787              	.LASF24:
+ 1788 01cc 75696E74 		.ascii	"uint32\000"
+ 1788      333200
+ 1789              	.LASF12:
+ 1790 01d3 756E7369 		.ascii	"unsigned int\000"
+ 1790      676E6564 
+ 1790      20696E74 
+ 1790      00
+ 1791              	.LASF49:
+ 1792 01e0 5F5F7674 		.ascii	"__vtbl_ptr_type\000"
+ 1792      626C5F70 
+ 1792      74725F74 
+ 1792      79706500 
+ 1793              	.LASF11:
+ 1794 01f0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1794      206C6F6E 
+ 1794      6720756E 
+ 1794      7369676E 
+ 1794      65642069 
+ 1795              	.LASF3:
+ 1796 0207 75696E74 		.ascii	"uint8_t\000"
+ 1796      385F7400 
+ 1797              	.LASF38:
+ 1798 020f 5F5A4E34 		.ascii	"_ZN4UartC2Ev\000"
+ 1798      55617274 
+ 1798      43324576 
+ 1798      00
+ 1799              	.LASF7:
+ 1800 021c 6C6F6E67 		.ascii	"long int\000"
+ 1800      20696E74 
+ 1800      00
+ 1801              	.LASF6:
+ 1802 0225 696E7433 		.ascii	"int32_t\000"
+ 1802      325F7400 
+ 1803              	.LASF13:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 36
+
+
+ 1804 022d 73697A65 		.ascii	"sizetype\000"
+ 1804      74797065 
+ 1804      00
+ 1805              	.LASF10:
+ 1806 0236 6C6F6E67 		.ascii	"long long int\000"
+ 1806      206C6F6E 
+ 1806      6720696E 
+ 1806      7400
+ 1807              	.LASF14:
+ 1808 0244 63686172 		.ascii	"char\000"
+ 1808      00
+ 1809              	.LASF4:
+ 1810 0249 75696E74 		.ascii	"uint16_t\000"
+ 1810      31365F74 
+ 1810      00
+ 1811              	.LASF2:
+ 1812 0252 73686F72 		.ascii	"short int\000"
+ 1812      7420696E 
+ 1812      7400
+ 1813              	.LASF47:
+ 1814 025c 726F7373 		.ascii	"rosserial_msgs/RequestParam\000"
+ 1814      65726961 
+ 1814      6C5F6D73 
+ 1814      67732F52 
+ 1814      65717565 
+ 1815              	.LASF27:
+ 1816 0278 5F5A4E34 		.ascii	"_ZN4Uart5beginEm\000"
+ 1816      55617274 
+ 1816      35626567 
+ 1816      696E456D 
+ 1816      00
+ 1817              	.LASF23:
+ 1818 0289 5F5A4E31 		.ascii	"_ZN14HardwareSerial5writeEh\000"
+ 1818      34486172 
+ 1818      64776172 
+ 1818      65536572 
+ 1818      69616C35 
+ 1819              	.LASF8:
+ 1820 02a5 75696E74 		.ascii	"uint32_t\000"
+ 1820      33325F74 
+ 1820      00
+ 1821              	.LASF48:
+ 1822 02ae 5F767074 		.ascii	"_vptr.HardwareSerial\000"
+ 1822      722E4861 
+ 1822      72647761 
+ 1822      72655365 
+ 1822      7269616C 
+ 1823              	.LASF51:
+ 1824 02c3 5F474C4F 		.ascii	"_GLOBAL__sub_I__ZN4Uart5beginEm\000"
+ 1824      42414C5F 
+ 1824      5F737562 
+ 1824      5F495F5F 
+ 1824      5A4E3455 
+ 1825              	.LASF18:
+ 1826 02e3 6C6F6E67 		.ascii	"long double\000"
+ 1826      20646F75 
+ 1826      626C6500 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccOfkxMw.s 			page 37
+
+
+ 1827              	.LASF39:
+ 1828 02ef 5F5F696E 		.ascii	"__initialize_p\000"
+ 1828      69746961 
+ 1828      6C697A65 
+ 1828      5F7000
+ 1829              	.LASF44:
+ 1830 02fe 2E5C726F 		.ascii	".\\ros_lib\\Uarts.cpp\000"
+ 1830      735F6C69 
+ 1830      625C5561 
+ 1830      7274732E 
+ 1830      63707000 
+ 1831              	.LASF50:
+ 1832 0312 5F5F7374 		.ascii	"__static_initialization_and_destruction_0\000"
+ 1832      61746963 
+ 1832      5F696E69 
+ 1832      7469616C 
+ 1832      697A6174 
+ 1833              	.LASF19:
+ 1834 033c 48617264 		.ascii	"HardwareSerial\000"
+ 1834      77617265 
+ 1834      53657269 
+ 1834      616C00
+ 1835              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

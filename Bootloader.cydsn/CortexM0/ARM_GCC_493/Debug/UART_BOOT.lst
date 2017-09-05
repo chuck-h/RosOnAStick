@@ -1,0 +1,1485 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"UART_BOOT.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.UART_CyBtldrCommStart,"ax",%progbits
+  18              		.align	1
+  19              		.global	UART_CyBtldrCommStart
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	UART_CyBtldrCommStart, %function
+  23              	UART_CyBtldrCommStart:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\UART_BOOT.c"
+   1:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/UART_BOOT.c **** * File Name: UART_BOOT.c
+   3:.\Generated_Source\PSoC4/UART_BOOT.c **** * Version 1.20
+   4:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+   5:.\Generated_Source\PSoC4/UART_BOOT.c **** * Description:
+   6:.\Generated_Source\PSoC4/UART_BOOT.c **** *  This file provides the source code to the API for the bootloader
+   7:.\Generated_Source\PSoC4/UART_BOOT.c **** *  communication support in SCB Component.
+   8:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+   9:.\Generated_Source\PSoC4/UART_BOOT.c **** * Note:
+  10:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  11:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC4/UART_BOOT.c **** * Copyright 2013-2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC4/UART_BOOT.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC4/UART_BOOT.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC4/UART_BOOT.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  18:.\Generated_Source\PSoC4/UART_BOOT.c **** #include "UART.h"
+  19:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  20:.\Generated_Source\PSoC4/UART_BOOT.c **** #if(UART_SCB_MODE_I2C_INC)
+  21:.\Generated_Source\PSoC4/UART_BOOT.c ****     #include "UART_I2C.h"
+  22:.\Generated_Source\PSoC4/UART_BOOT.c **** #endif /* (UART_SCB_MODE_I2C_INC) */
+  23:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  24:.\Generated_Source\PSoC4/UART_BOOT.c **** #if(UART_SCB_MODE_EZI2C_INC)
+  25:.\Generated_Source\PSoC4/UART_BOOT.c ****     #include "UART_EZI2C.h"
+  26:.\Generated_Source\PSoC4/UART_BOOT.c **** #endif /* (UART_SCB_MODE_EZI2C_INC) */
+  27:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  28:.\Generated_Source\PSoC4/UART_BOOT.c **** #if(UART_SCB_MODE_SPI_INC || UART_SCB_MODE_UART_INC)
+  29:.\Generated_Source\PSoC4/UART_BOOT.c ****     #include "UART_SPI_UART.h"
+  30:.\Generated_Source\PSoC4/UART_BOOT.c **** #endif /* (UART_SCB_MODE_SPI_INC || UART_SCB_MODE_UART_INC) */
+  31:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  32:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/UART_BOOT.c **** #if defined(CYDEV_BOOTLOADER_IO_COMP) && ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_UART) || \
+  34:.\Generated_Source\PSoC4/UART_BOOT.c ****                                           (CYDEV_BOOTLOADER_IO_COMP == CyBtldr_Custom_Interface))
+  35:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  36:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+  37:.\Generated_Source\PSoC4/UART_BOOT.c **** * Function Name: UART_CyBtldrCommStart
+  38:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+  39:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  40:.\Generated_Source\PSoC4/UART_BOOT.c **** * Summary:
+  41:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Calls the CyBtldrCommStart function of the bootloader communication
+  42:.\Generated_Source\PSoC4/UART_BOOT.c **** *  component for the selected mode.
+  43:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  44:.\Generated_Source\PSoC4/UART_BOOT.c **** * Parameters:
+  45:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+  46:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  47:.\Generated_Source\PSoC4/UART_BOOT.c **** * Return:
+  48:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+  49:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  50:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+  51:.\Generated_Source\PSoC4/UART_BOOT.c **** void UART_CyBtldrCommStart(void)
+  52:.\Generated_Source\PSoC4/UART_BOOT.c **** {
+  26              		.loc 1 52 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  53:.\Generated_Source\PSoC4/UART_BOOT.c ****     #if(UART_SCB_MODE_UNCONFIG_CONST_CFG)
+  54:.\Generated_Source\PSoC4/UART_BOOT.c ****         if(UART_SCB_MODE_I2C_RUNTM_CFG)
+  55:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+  56:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_I2CCyBtldrCommStart();
+  57:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+  58:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_SPI_RUNTM_CFG)
+  59:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+  60:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_SpiCyBtldrCommStart();
+  61:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+  62:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_UART_RUNTM_CFG)
+  63:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+  64:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_UartCyBtldrCommStart();
+  65:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+  66:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_EZI2C_RUNTM_CFG)
+  67:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+  68:.\Generated_Source\PSoC4/UART_BOOT.c ****              UART_EzI2CCyBtldrCommStart();
+  69:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+  70:.\Generated_Source\PSoC4/UART_BOOT.c ****         else
+  71:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+  72:.\Generated_Source\PSoC4/UART_BOOT.c ****             /* Unknown mode: do nothing */
+  73:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+  74:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_I2C_CONST_CFG)
+  75:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_I2CCyBtldrCommStart();
+  76:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  77:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_SPI_CONST_CFG)
+  78:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_SpiCyBtldrCommStart();
+  79:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  80:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_UART_CONST_CFG)
+  81:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_UartCyBtldrCommStart();
+  32              		.loc 1 81 0
+  33 0002 FFF7FEFF 		bl	UART_UartCyBtldrCommStart
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 3
+
+
+  34              	.LVL0:
+  82:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  83:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_EZI2C_CONST_CFG)
+  84:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_EzI2CCyBtldrCommStart();
+  85:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  86:.\Generated_Source\PSoC4/UART_BOOT.c ****     #else
+  87:.\Generated_Source\PSoC4/UART_BOOT.c ****         /* Do nothing */
+  88:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  89:.\Generated_Source\PSoC4/UART_BOOT.c ****     #endif /* (UART_SCB_MODE_UNCONFIG_CONST_CFG) */
+  90:.\Generated_Source\PSoC4/UART_BOOT.c **** }
+  35              		.loc 1 90 0
+  36              		@ sp needed
+  37 0006 08BD     		pop	{r3, pc}
+  38              		.cfi_endproc
+  39              	.LFE0:
+  40              		.size	UART_CyBtldrCommStart, .-UART_CyBtldrCommStart
+  41              		.section	.text.UART_CyBtldrCommStop,"ax",%progbits
+  42              		.align	1
+  43              		.global	UART_CyBtldrCommStop
+  44              		.code	16
+  45              		.thumb_func
+  46              		.type	UART_CyBtldrCommStop, %function
+  47              	UART_CyBtldrCommStop:
+  48              	.LFB1:
+  91:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  92:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+  93:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+  94:.\Generated_Source\PSoC4/UART_BOOT.c **** * Function Name: UART_CyBtldrCommStop
+  95:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+  96:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+  97:.\Generated_Source\PSoC4/UART_BOOT.c **** * Summary:
+  98:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Calls CyBtldrCommStop function function of the bootloader communication
+  99:.\Generated_Source\PSoC4/UART_BOOT.c **** *  component for selected mode.
+ 100:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 101:.\Generated_Source\PSoC4/UART_BOOT.c **** * Parameters:
+ 102:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+ 103:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 104:.\Generated_Source\PSoC4/UART_BOOT.c **** * Return:
+ 105:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+ 106:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 107:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+ 108:.\Generated_Source\PSoC4/UART_BOOT.c **** void UART_CyBtldrCommStop(void)
+ 109:.\Generated_Source\PSoC4/UART_BOOT.c **** {
+  49              		.loc 1 109 0
+  50              		.cfi_startproc
+  51 0000 08B5     		push	{r3, lr}
+  52              		.cfi_def_cfa_offset 8
+  53              		.cfi_offset 3, -8
+  54              		.cfi_offset 14, -4
+ 110:.\Generated_Source\PSoC4/UART_BOOT.c ****     #if(UART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 111:.\Generated_Source\PSoC4/UART_BOOT.c ****         if(UART_SCB_MODE_I2C_RUNTM_CFG)
+ 112:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 113:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_I2CCyBtldrCommStop();
+ 114:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 115:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_SPI_RUNTM_CFG)
+ 116:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 117:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_SpiCyBtldrCommStop();
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 4
+
+
+ 118:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 119:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_UART_RUNTM_CFG)
+ 120:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 121:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_UartCyBtldrCommStop();
+ 122:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 123:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_EZI2C_RUNTM_CFG)
+ 124:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 125:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_EzI2CCyBtldrCommStop();
+ 126:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 127:.\Generated_Source\PSoC4/UART_BOOT.c ****         else
+ 128:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 129:.\Generated_Source\PSoC4/UART_BOOT.c ****             /* Unknown mode: do nothing */
+ 130:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 131:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_I2C_CONST_CFG)
+ 132:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_I2CCyBtldrCommStop();
+ 133:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 134:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_SPI_CONST_CFG)
+ 135:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_SpiCyBtldrCommStop();
+ 136:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 137:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_UART_CONST_CFG)
+ 138:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_UartCyBtldrCommStop();
+  55              		.loc 1 138 0
+  56 0002 FFF7FEFF 		bl	UART_UartCyBtldrCommStop
+  57              	.LVL1:
+ 139:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 140:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_EZI2C_CONST_CFG)
+ 141:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_EzI2CCyBtldrCommStop();
+ 142:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 143:.\Generated_Source\PSoC4/UART_BOOT.c ****     #else
+ 144:.\Generated_Source\PSoC4/UART_BOOT.c ****         /* Do nothing */
+ 145:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 146:.\Generated_Source\PSoC4/UART_BOOT.c ****     #endif /* (UART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 147:.\Generated_Source\PSoC4/UART_BOOT.c **** }
+  58              		.loc 1 147 0
+  59              		@ sp needed
+  60 0006 08BD     		pop	{r3, pc}
+  61              		.cfi_endproc
+  62              	.LFE1:
+  63              		.size	UART_CyBtldrCommStop, .-UART_CyBtldrCommStop
+  64              		.section	.text.UART_CyBtldrCommReset,"ax",%progbits
+  65              		.align	1
+  66              		.global	UART_CyBtldrCommReset
+  67              		.code	16
+  68              		.thumb_func
+  69              		.type	UART_CyBtldrCommReset, %function
+  70              	UART_CyBtldrCommReset:
+  71              	.LFB2:
+ 148:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 149:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 150:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+ 151:.\Generated_Source\PSoC4/UART_BOOT.c **** * Function Name: UART_CyBtldrCommReset
+ 152:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+ 153:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 154:.\Generated_Source\PSoC4/UART_BOOT.c **** * Summary:
+ 155:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Calls the CyBtldrCommReset function of the bootloader communication
+ 156:.\Generated_Source\PSoC4/UART_BOOT.c **** *  component for the selected mode.
+ 157:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 5
+
+
+ 158:.\Generated_Source\PSoC4/UART_BOOT.c **** * Parameters:
+ 159:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+ 160:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 161:.\Generated_Source\PSoC4/UART_BOOT.c **** * Return:
+ 162:.\Generated_Source\PSoC4/UART_BOOT.c **** *  None
+ 163:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 164:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+ 165:.\Generated_Source\PSoC4/UART_BOOT.c **** void UART_CyBtldrCommReset(void)
+ 166:.\Generated_Source\PSoC4/UART_BOOT.c **** {
+  72              		.loc 1 166 0
+  73              		.cfi_startproc
+  74 0000 08B5     		push	{r3, lr}
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 3, -8
+  77              		.cfi_offset 14, -4
+ 167:.\Generated_Source\PSoC4/UART_BOOT.c ****     #if(UART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 168:.\Generated_Source\PSoC4/UART_BOOT.c ****         if(UART_SCB_MODE_I2C_RUNTM_CFG)
+ 169:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 170:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_I2CCyBtldrCommReset();
+ 171:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 172:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_SPI_RUNTM_CFG)
+ 173:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 174:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_SpiCyBtldrCommReset();
+ 175:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 176:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_UART_RUNTM_CFG)
+ 177:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 178:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_UartCyBtldrCommReset();
+ 179:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 180:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_EZI2C_RUNTM_CFG)
+ 181:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 182:.\Generated_Source\PSoC4/UART_BOOT.c ****             UART_EzI2CCyBtldrCommReset();
+ 183:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 184:.\Generated_Source\PSoC4/UART_BOOT.c ****         else
+ 185:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 186:.\Generated_Source\PSoC4/UART_BOOT.c ****             /* Unknown mode: do nothing */
+ 187:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 188:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_I2C_CONST_CFG)
+ 189:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_I2CCyBtldrCommReset();
+ 190:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 191:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_SPI_CONST_CFG)
+ 192:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_SpiCyBtldrCommReset();
+ 193:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 194:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_UART_CONST_CFG)
+ 195:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_UartCyBtldrCommReset();
+  78              		.loc 1 195 0
+  79 0002 FFF7FEFF 		bl	UART_UartCyBtldrCommReset
+  80              	.LVL2:
+ 196:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 197:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_EZI2C_CONST_CFG)
+ 198:.\Generated_Source\PSoC4/UART_BOOT.c ****         UART_EzI2CCyBtldrCommReset();
+ 199:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 200:.\Generated_Source\PSoC4/UART_BOOT.c ****     #else
+ 201:.\Generated_Source\PSoC4/UART_BOOT.c ****         /* Do nothing */
+ 202:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 203:.\Generated_Source\PSoC4/UART_BOOT.c ****     #endif /* (UART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 204:.\Generated_Source\PSoC4/UART_BOOT.c **** }
+  81              		.loc 1 204 0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 6
+
+
+  82              		@ sp needed
+  83 0006 08BD     		pop	{r3, pc}
+  84              		.cfi_endproc
+  85              	.LFE2:
+  86              		.size	UART_CyBtldrCommReset, .-UART_CyBtldrCommReset
+  87              		.section	.text.UART_CyBtldrCommRead,"ax",%progbits
+  88              		.align	1
+  89              		.global	UART_CyBtldrCommRead
+  90              		.code	16
+  91              		.thumb_func
+  92              		.type	UART_CyBtldrCommRead, %function
+  93              	UART_CyBtldrCommRead:
+  94              	.LFB3:
+ 205:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 206:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 207:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+ 208:.\Generated_Source\PSoC4/UART_BOOT.c **** * Function Name: UART_CyBtldrCommRead
+ 209:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+ 210:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 211:.\Generated_Source\PSoC4/UART_BOOT.c **** * Summary:
+ 212:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Calls the CyBtldrCommRead function of the bootloader communication
+ 213:.\Generated_Source\PSoC4/UART_BOOT.c **** *  component for the selected mode.
+ 214:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 215:.\Generated_Source\PSoC4/UART_BOOT.c **** * Parameters:
+ 216:.\Generated_Source\PSoC4/UART_BOOT.c **** *  pData:    Pointer to storage for the block of data to be read from the
+ 217:.\Generated_Source\PSoC4/UART_BOOT.c **** *            bootloader host
+ 218:.\Generated_Source\PSoC4/UART_BOOT.c **** *  size:     Number of bytes to be read.
+ 219:.\Generated_Source\PSoC4/UART_BOOT.c **** *  count:    Pointer to the variable to write the number of bytes actually
+ 220:.\Generated_Source\PSoC4/UART_BOOT.c **** *            read.
+ 221:.\Generated_Source\PSoC4/UART_BOOT.c **** *  timeOut:  Number of units in 10 ms to wait before returning because of a
+ 222:.\Generated_Source\PSoC4/UART_BOOT.c **** *            timeout.
+ 223:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 224:.\Generated_Source\PSoC4/UART_BOOT.c **** * Return:
+ 225:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Returns CYRET_SUCCESS if no problem was encountered or returns the value
+ 226:.\Generated_Source\PSoC4/UART_BOOT.c **** *  that best describes the problem.
+ 227:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 228:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+ 229:.\Generated_Source\PSoC4/UART_BOOT.c **** cystatus UART_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint8 timeOut)
+ 230:.\Generated_Source\PSoC4/UART_BOOT.c **** {
+  95              		.loc 1 230 0
+  96              		.cfi_startproc
+  97              	.LVL3:
+  98 0000 08B5     		push	{r3, lr}
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 3, -8
+ 101              		.cfi_offset 14, -4
+ 231:.\Generated_Source\PSoC4/UART_BOOT.c ****     cystatus status;
+ 232:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 233:.\Generated_Source\PSoC4/UART_BOOT.c ****     #if(UART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 234:.\Generated_Source\PSoC4/UART_BOOT.c ****         if(UART_SCB_MODE_I2C_RUNTM_CFG)
+ 235:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 236:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_I2CCyBtldrCommRead(pData, size, count, timeOut);
+ 237:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 238:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_SPI_RUNTM_CFG)
+ 239:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 240:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_SpiCyBtldrCommRead(pData, size, count, timeOut);
+ 241:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 7
+
+
+ 242:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_UART_RUNTM_CFG)
+ 243:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 244:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_UartCyBtldrCommRead(pData, size, count, timeOut);
+ 245:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 246:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_EZI2C_RUNTM_CFG)
+ 247:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 248:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_EzI2CCyBtldrCommRead(pData, size, count, timeOut);
+ 249:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 250:.\Generated_Source\PSoC4/UART_BOOT.c ****         else
+ 251:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 252:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = CYRET_INVALID_STATE; /* Unknown mode: return status */
+ 253:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 254:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 255:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_I2C_CONST_CFG)
+ 256:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_I2CCyBtldrCommRead(pData, size, count, timeOut);
+ 257:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 258:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_SPI_CONST_CFG)
+ 259:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_SpiCyBtldrCommRead(pData, size, count, timeOut);
+ 260:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 261:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_UART_CONST_CFG)
+ 262:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_UartCyBtldrCommRead(pData, size, count, timeOut);
+ 102              		.loc 1 262 0
+ 103 0002 FFF7FEFF 		bl	UART_UartCyBtldrCommRead
+ 104              	.LVL4:
+ 263:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 264:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_EZI2C_CONST_CFG)
+ 265:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_EzI2CCyBtldrCommRead(pData, size, count, timeOut);
+ 266:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 267:.\Generated_Source\PSoC4/UART_BOOT.c ****     #else
+ 268:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = CYRET_INVALID_STATE; /* Unknown mode: return status */
+ 269:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 270:.\Generated_Source\PSoC4/UART_BOOT.c ****     #endif /* (UART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 271:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 272:.\Generated_Source\PSoC4/UART_BOOT.c ****     return(status);
+ 273:.\Generated_Source\PSoC4/UART_BOOT.c **** }
+ 105              		.loc 1 273 0
+ 106              		@ sp needed
+ 107 0006 08BD     		pop	{r3, pc}
+ 108              		.cfi_endproc
+ 109              	.LFE3:
+ 110              		.size	UART_CyBtldrCommRead, .-UART_CyBtldrCommRead
+ 111              		.section	.text.UART_CyBtldrCommWrite,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	UART_CyBtldrCommWrite
+ 114              		.code	16
+ 115              		.thumb_func
+ 116              		.type	UART_CyBtldrCommWrite, %function
+ 117              	UART_CyBtldrCommWrite:
+ 118              	.LFB4:
+ 274:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 275:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 276:.\Generated_Source\PSoC4/UART_BOOT.c **** /*******************************************************************************
+ 277:.\Generated_Source\PSoC4/UART_BOOT.c **** * Function Name: UART_CyBtldrCommWrite
+ 278:.\Generated_Source\PSoC4/UART_BOOT.c **** ********************************************************************************
+ 279:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 280:.\Generated_Source\PSoC4/UART_BOOT.c **** * Summary:
+ 281:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Calls the CyBtldrCommWrite  function of the bootloader communication
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 8
+
+
+ 282:.\Generated_Source\PSoC4/UART_BOOT.c **** *  component for the selected mode.
+ 283:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 284:.\Generated_Source\PSoC4/UART_BOOT.c **** * Parameters:
+ 285:.\Generated_Source\PSoC4/UART_BOOT.c **** *  pData:    Pointer to the block of data to be written to the bootloader host.
+ 286:.\Generated_Source\PSoC4/UART_BOOT.c **** *  size:     Number of bytes to be written.
+ 287:.\Generated_Source\PSoC4/UART_BOOT.c **** *  count:    Pointer to the variable to write the number of bytes actually
+ 288:.\Generated_Source\PSoC4/UART_BOOT.c **** *            written.
+ 289:.\Generated_Source\PSoC4/UART_BOOT.c **** *  timeOut:  Number of units in 10 ms to wait before returning because of a
+ 290:.\Generated_Source\PSoC4/UART_BOOT.c **** *            timeout.
+ 291:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 292:.\Generated_Source\PSoC4/UART_BOOT.c **** * Return:
+ 293:.\Generated_Source\PSoC4/UART_BOOT.c **** *  Returns CYRET_SUCCESS if no problem was encountered or returns the value
+ 294:.\Generated_Source\PSoC4/UART_BOOT.c **** *  that best describes the problem.
+ 295:.\Generated_Source\PSoC4/UART_BOOT.c **** *
+ 296:.\Generated_Source\PSoC4/UART_BOOT.c **** *******************************************************************************/
+ 297:.\Generated_Source\PSoC4/UART_BOOT.c **** cystatus UART_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 * count, uint8 timeOut)
+ 298:.\Generated_Source\PSoC4/UART_BOOT.c **** {
+ 119              		.loc 1 298 0
+ 120              		.cfi_startproc
+ 121              	.LVL5:
+ 122 0000 08B5     		push	{r3, lr}
+ 123              		.cfi_def_cfa_offset 8
+ 124              		.cfi_offset 3, -8
+ 125              		.cfi_offset 14, -4
+ 299:.\Generated_Source\PSoC4/UART_BOOT.c ****     cystatus status;
+ 300:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 301:.\Generated_Source\PSoC4/UART_BOOT.c ****     #if(UART_SCB_MODE_UNCONFIG_CONST_CFG)
+ 302:.\Generated_Source\PSoC4/UART_BOOT.c ****         if(UART_SCB_MODE_I2C_RUNTM_CFG)
+ 303:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 304:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_I2CCyBtldrCommWrite(pData, size, count, timeOut);
+ 305:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 306:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_SPI_RUNTM_CFG)
+ 307:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 308:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_SpiCyBtldrCommWrite(pData, size, count, timeOut);
+ 309:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 310:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_UART_RUNTM_CFG)
+ 311:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 312:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_UartCyBtldrCommWrite(pData, size, count, timeOut);
+ 313:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 314:.\Generated_Source\PSoC4/UART_BOOT.c ****         else if(UART_SCB_MODE_EZI2C_RUNTM_CFG)
+ 315:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 316:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = UART_EzI2CCyBtldrCommWrite(pData, size, count, timeOut);
+ 317:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 318:.\Generated_Source\PSoC4/UART_BOOT.c ****         else
+ 319:.\Generated_Source\PSoC4/UART_BOOT.c ****         {
+ 320:.\Generated_Source\PSoC4/UART_BOOT.c ****             status = CYRET_INVALID_STATE; /* Unknown mode */
+ 321:.\Generated_Source\PSoC4/UART_BOOT.c ****         }
+ 322:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_I2C_CONST_CFG)
+ 323:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_I2CCyBtldrCommWrite(pData, size, count, timeOut);
+ 324:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 325:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_SPI_CONST_CFG)
+ 326:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_SpiCyBtldrCommWrite(pData, size, count, timeOut);
+ 327:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 328:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_UART_CONST_CFG)
+ 329:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_UartCyBtldrCommWrite(pData, size, count, timeOut);
+ 126              		.loc 1 329 0
+ 127 0002 FFF7FEFF 		bl	UART_UartCyBtldrCommWrite
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 9
+
+
+ 128              	.LVL6:
+ 330:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 331:.\Generated_Source\PSoC4/UART_BOOT.c ****     #elif(UART_SCB_MODE_EZI2C_CONST_CFG)
+ 332:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = UART_EzI2CCyBtldrCommWrite(pData, size, count, timeOut);
+ 333:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 334:.\Generated_Source\PSoC4/UART_BOOT.c ****     #else
+ 335:.\Generated_Source\PSoC4/UART_BOOT.c ****         status = CYRET_INVALID_STATE; /* Unknown mode */
+ 336:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 337:.\Generated_Source\PSoC4/UART_BOOT.c ****     #endif /* (UART_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 338:.\Generated_Source\PSoC4/UART_BOOT.c **** 
+ 339:.\Generated_Source\PSoC4/UART_BOOT.c ****     return(status);
+ 340:.\Generated_Source\PSoC4/UART_BOOT.c **** }
+ 129              		.loc 1 340 0
+ 130              		@ sp needed
+ 131 0006 08BD     		pop	{r3, pc}
+ 132              		.cfi_endproc
+ 133              	.LFE4:
+ 134              		.size	UART_CyBtldrCommWrite, .-UART_CyBtldrCommWrite
+ 135              		.text
+ 136              	.Letext0:
+ 137              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 138              		.file 3 ".\\Generated_Source\\PSoC4\\UART_SPI_UART.h"
+ 139              		.section	.debug_info,"",%progbits
+ 140              	.Ldebug_info0:
+ 141 0000 73020000 		.4byte	0x273
+ 142 0004 0400     		.2byte	0x4
+ 143 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 144 000a 04       		.byte	0x4
+ 145 000b 01       		.uleb128 0x1
+ 146 000c 09000000 		.4byte	.LASF29
+ 147 0010 01       		.byte	0x1
+ 148 0011 3B010000 		.4byte	.LASF30
+ 149 0015 74020000 		.4byte	.LASF31
+ 150 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 151 001d 00000000 		.4byte	0
+ 152 0021 00000000 		.4byte	.Ldebug_line0
+ 153 0025 02       		.uleb128 0x2
+ 154 0026 01       		.byte	0x1
+ 155 0027 06       		.byte	0x6
+ 156 0028 68020000 		.4byte	.LASF0
+ 157 002c 02       		.uleb128 0x2
+ 158 002d 01       		.byte	0x1
+ 159 002e 08       		.byte	0x8
+ 160 002f 60010000 		.4byte	.LASF1
+ 161 0033 02       		.uleb128 0x2
+ 162 0034 02       		.byte	0x2
+ 163 0035 05       		.byte	0x5
+ 164 0036 3C020000 		.4byte	.LASF2
+ 165 003a 02       		.uleb128 0x2
+ 166 003b 02       		.byte	0x2
+ 167 003c 07       		.byte	0x7
+ 168 003d 9D000000 		.4byte	.LASF3
+ 169 0041 02       		.uleb128 0x2
+ 170 0042 04       		.byte	0x4
+ 171 0043 05       		.byte	0x5
+ 172 0044 5F020000 		.4byte	.LASF4
+ 173 0048 02       		.uleb128 0x2
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 10
+
+
+ 174 0049 04       		.byte	0x4
+ 175 004a 07       		.byte	0x7
+ 176 004b 23010000 		.4byte	.LASF5
+ 177 004f 02       		.uleb128 0x2
+ 178 0050 08       		.byte	0x8
+ 179 0051 05       		.byte	0x5
+ 180 0052 10020000 		.4byte	.LASF6
+ 181 0056 02       		.uleb128 0x2
+ 182 0057 08       		.byte	0x8
+ 183 0058 07       		.byte	0x7
+ 184 0059 CE010000 		.4byte	.LASF7
+ 185 005d 03       		.uleb128 0x3
+ 186 005e 04       		.byte	0x4
+ 187 005f 05       		.byte	0x5
+ 188 0060 696E7400 		.ascii	"int\000"
+ 189 0064 02       		.uleb128 0x2
+ 190 0065 04       		.byte	0x4
+ 191 0066 07       		.byte	0x7
+ 192 0067 AC010000 		.4byte	.LASF8
+ 193 006b 04       		.uleb128 0x4
+ 194 006c 35010000 		.4byte	.LASF9
+ 195 0070 02       		.byte	0x2
+ 196 0071 5B       		.byte	0x5b
+ 197 0072 2C000000 		.4byte	0x2c
+ 198 0076 04       		.uleb128 0x4
+ 199 0077 A5010000 		.4byte	.LASF10
+ 200 007b 02       		.byte	0x2
+ 201 007c 5C       		.byte	0x5c
+ 202 007d 3A000000 		.4byte	0x3a
+ 203 0081 02       		.uleb128 0x2
+ 204 0082 04       		.byte	0x4
+ 205 0083 04       		.byte	0x4
+ 206 0084 E9000000 		.4byte	.LASF11
+ 207 0088 02       		.uleb128 0x2
+ 208 0089 08       		.byte	0x8
+ 209 008a 04       		.byte	0x4
+ 210 008b 88010000 		.4byte	.LASF12
+ 211 008f 02       		.uleb128 0x2
+ 212 0090 01       		.byte	0x1
+ 213 0091 08       		.byte	0x8
+ 214 0092 37020000 		.4byte	.LASF13
+ 215 0096 04       		.uleb128 0x4
+ 216 0097 00000000 		.4byte	.LASF14
+ 217 009b 02       		.byte	0x2
+ 218 009c E8       		.byte	0xe8
+ 219 009d 48000000 		.4byte	0x48
+ 220 00a1 02       		.uleb128 0x2
+ 221 00a2 04       		.byte	0x4
+ 222 00a3 07       		.byte	0x7
+ 223 00a4 07020000 		.4byte	.LASF15
+ 224 00a8 05       		.uleb128 0x5
+ 225 00a9 04       		.byte	0x4
+ 226 00aa 6B000000 		.4byte	0x6b
+ 227 00ae 06       		.uleb128 0x6
+ 228 00af CD000000 		.4byte	.LASF16
+ 229 00b3 01       		.byte	0x1
+ 230 00b4 33       		.byte	0x33
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 11
+
+
+ 231 00b5 00000000 		.4byte	.LFB0
+ 232 00b9 08000000 		.4byte	.LFE0-.LFB0
+ 233 00bd 01       		.uleb128 0x1
+ 234 00be 9C       		.byte	0x9c
+ 235 00bf CD000000 		.4byte	0xcd
+ 236 00c3 07       		.uleb128 0x7
+ 237 00c4 06000000 		.4byte	.LVL0
+ 238 00c8 18020000 		.4byte	0x218
+ 239 00cc 00       		.byte	0
+ 240 00cd 06       		.uleb128 0x6
+ 241 00ce B9010000 		.4byte	.LASF17
+ 242 00d2 01       		.byte	0x1
+ 243 00d3 6C       		.byte	0x6c
+ 244 00d4 00000000 		.4byte	.LFB1
+ 245 00d8 08000000 		.4byte	.LFE1-.LFB1
+ 246 00dc 01       		.uleb128 0x1
+ 247 00dd 9C       		.byte	0x9c
+ 248 00de EC000000 		.4byte	0xec
+ 249 00e2 07       		.uleb128 0x7
+ 250 00e3 06000000 		.4byte	.LVL1
+ 251 00e7 20020000 		.4byte	0x220
+ 252 00eb 00       		.byte	0
+ 253 00ec 06       		.uleb128 0x6
+ 254 00ed B0000000 		.4byte	.LASF18
+ 255 00f1 01       		.byte	0x1
+ 256 00f2 A5       		.byte	0xa5
+ 257 00f3 00000000 		.4byte	.LFB2
+ 258 00f7 08000000 		.4byte	.LFE2-.LFB2
+ 259 00fb 01       		.uleb128 0x1
+ 260 00fc 9C       		.byte	0x9c
+ 261 00fd 0B010000 		.4byte	0x10b
+ 262 0101 07       		.uleb128 0x7
+ 263 0102 06000000 		.4byte	.LVL2
+ 264 0106 28020000 		.4byte	0x228
+ 265 010a 00       		.byte	0
+ 266 010b 08       		.uleb128 0x8
+ 267 010c 0E010000 		.4byte	.LASF23
+ 268 0110 01       		.byte	0x1
+ 269 0111 E5       		.byte	0xe5
+ 270 0112 96000000 		.4byte	0x96
+ 271 0116 00000000 		.4byte	.LFB3
+ 272 011a 08000000 		.4byte	.LFE3-.LFB3
+ 273 011e 01       		.uleb128 0x1
+ 274 011f 9C       		.byte	0x9c
+ 275 0120 86010000 		.4byte	0x186
+ 276 0124 09       		.uleb128 0x9
+ 277 0125 E3000000 		.4byte	.LASF19
+ 278 0129 01       		.byte	0x1
+ 279 012a E5       		.byte	0xe5
+ 280 012b A8000000 		.4byte	0xa8
+ 281 012f 00000000 		.4byte	.LLST0
+ 282 0133 09       		.uleb128 0x9
+ 283 0134 EF000000 		.4byte	.LASF20
+ 284 0138 01       		.byte	0x1
+ 285 0139 E5       		.byte	0xe5
+ 286 013a 76000000 		.4byte	0x76
+ 287 013e 21000000 		.4byte	.LLST1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 12
+
+
+ 288 0142 09       		.uleb128 0x9
+ 289 0143 97000000 		.4byte	.LASF21
+ 290 0147 01       		.byte	0x1
+ 291 0148 E5       		.byte	0xe5
+ 292 0149 86010000 		.4byte	0x186
+ 293 014d 42000000 		.4byte	.LLST2
+ 294 0151 09       		.uleb128 0x9
+ 295 0152 FF010000 		.4byte	.LASF22
+ 296 0156 01       		.byte	0x1
+ 297 0157 E5       		.byte	0xe5
+ 298 0158 6B000000 		.4byte	0x6b
+ 299 015c 63000000 		.4byte	.LLST3
+ 300 0160 0A       		.uleb128 0xa
+ 301 0161 C6000000 		.4byte	.LASF25
+ 302 0165 01       		.byte	0x1
+ 303 0166 E7       		.byte	0xe7
+ 304 0167 96000000 		.4byte	0x96
+ 305 016b 01       		.uleb128 0x1
+ 306 016c 50       		.byte	0x50
+ 307 016d 0B       		.uleb128 0xb
+ 308 016e 06000000 		.4byte	.LVL4
+ 309 0172 30020000 		.4byte	0x230
+ 310 0176 0C       		.uleb128 0xc
+ 311 0177 01       		.uleb128 0x1
+ 312 0178 52       		.byte	0x52
+ 313 0179 03       		.uleb128 0x3
+ 314 017a F3       		.byte	0xf3
+ 315 017b 01       		.uleb128 0x1
+ 316 017c 52       		.byte	0x52
+ 317 017d 0C       		.uleb128 0xc
+ 318 017e 01       		.uleb128 0x1
+ 319 017f 50       		.byte	0x50
+ 320 0180 03       		.uleb128 0x3
+ 321 0181 F3       		.byte	0xf3
+ 322 0182 01       		.uleb128 0x1
+ 323 0183 50       		.byte	0x50
+ 324 0184 00       		.byte	0
+ 325 0185 00       		.byte	0
+ 326 0186 05       		.uleb128 0x5
+ 327 0187 04       		.byte	0x4
+ 328 0188 76000000 		.4byte	0x76
+ 329 018c 0D       		.uleb128 0xd
+ 330 018d 8F010000 		.4byte	.LASF24
+ 331 0191 01       		.byte	0x1
+ 332 0192 2901     		.2byte	0x129
+ 333 0194 96000000 		.4byte	0x96
+ 334 0198 00000000 		.4byte	.LFB4
+ 335 019c 08000000 		.4byte	.LFE4-.LFB4
+ 336 01a0 01       		.uleb128 0x1
+ 337 01a1 9C       		.byte	0x9c
+ 338 01a2 0D020000 		.4byte	0x20d
+ 339 01a6 0E       		.uleb128 0xe
+ 340 01a7 E3000000 		.4byte	.LASF19
+ 341 01ab 01       		.byte	0x1
+ 342 01ac 2901     		.2byte	0x129
+ 343 01ae 0D020000 		.4byte	0x20d
+ 344 01b2 84000000 		.4byte	.LLST4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 13
+
+
+ 345 01b6 0E       		.uleb128 0xe
+ 346 01b7 EF000000 		.4byte	.LASF20
+ 347 01bb 01       		.byte	0x1
+ 348 01bc 2901     		.2byte	0x129
+ 349 01be 76000000 		.4byte	0x76
+ 350 01c2 A5000000 		.4byte	.LLST5
+ 351 01c6 0E       		.uleb128 0xe
+ 352 01c7 97000000 		.4byte	.LASF21
+ 353 01cb 01       		.byte	0x1
+ 354 01cc 2901     		.2byte	0x129
+ 355 01ce 86010000 		.4byte	0x186
+ 356 01d2 C6000000 		.4byte	.LLST6
+ 357 01d6 0E       		.uleb128 0xe
+ 358 01d7 FF010000 		.4byte	.LASF22
+ 359 01db 01       		.byte	0x1
+ 360 01dc 2901     		.2byte	0x129
+ 361 01de 6B000000 		.4byte	0x6b
+ 362 01e2 E7000000 		.4byte	.LLST7
+ 363 01e6 0F       		.uleb128 0xf
+ 364 01e7 C6000000 		.4byte	.LASF25
+ 365 01eb 01       		.byte	0x1
+ 366 01ec 2B01     		.2byte	0x12b
+ 367 01ee 96000000 		.4byte	0x96
+ 368 01f2 01       		.uleb128 0x1
+ 369 01f3 50       		.byte	0x50
+ 370 01f4 0B       		.uleb128 0xb
+ 371 01f5 06000000 		.4byte	.LVL6
+ 372 01f9 55020000 		.4byte	0x255
+ 373 01fd 0C       		.uleb128 0xc
+ 374 01fe 01       		.uleb128 0x1
+ 375 01ff 52       		.byte	0x52
+ 376 0200 03       		.uleb128 0x3
+ 377 0201 F3       		.byte	0xf3
+ 378 0202 01       		.uleb128 0x1
+ 379 0203 52       		.byte	0x52
+ 380 0204 0C       		.uleb128 0xc
+ 381 0205 01       		.uleb128 0x1
+ 382 0206 50       		.byte	0x50
+ 383 0207 03       		.uleb128 0x3
+ 384 0208 F3       		.byte	0xf3
+ 385 0209 01       		.uleb128 0x1
+ 386 020a 50       		.byte	0x50
+ 387 020b 00       		.byte	0
+ 388 020c 00       		.byte	0
+ 389 020d 05       		.uleb128 0x5
+ 390 020e 04       		.byte	0x4
+ 391 020f 13020000 		.4byte	0x213
+ 392 0213 10       		.uleb128 0x10
+ 393 0214 6B000000 		.4byte	0x6b
+ 394 0218 11       		.uleb128 0x11
+ 395 0219 6E010000 		.4byte	.LASF26
+ 396 021d 03       		.byte	0x3
+ 397 021e 5201     		.2byte	0x152
+ 398 0220 11       		.uleb128 0x11
+ 399 0221 1E020000 		.4byte	.LASF27
+ 400 0225 03       		.byte	0x3
+ 401 0226 5301     		.2byte	0x153
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 14
+
+
+ 402 0228 11       		.uleb128 0x11
+ 403 0229 F4000000 		.4byte	.LASF28
+ 404 022d 03       		.byte	0x3
+ 405 022e 5401     		.2byte	0x154
+ 406 0230 12       		.uleb128 0x12
+ 407 0231 46020000 		.4byte	.LASF32
+ 408 0235 03       		.byte	0x3
+ 409 0236 5501     		.2byte	0x155
+ 410 0238 96000000 		.4byte	0x96
+ 411 023c 55020000 		.4byte	0x255
+ 412 0240 13       		.uleb128 0x13
+ 413 0241 A8000000 		.4byte	0xa8
+ 414 0245 13       		.uleb128 0x13
+ 415 0246 76000000 		.4byte	0x76
+ 416 024a 13       		.uleb128 0x13
+ 417 024b 86010000 		.4byte	0x186
+ 418 024f 13       		.uleb128 0x13
+ 419 0250 6B000000 		.4byte	0x6b
+ 420 0254 00       		.byte	0
+ 421 0255 14       		.uleb128 0x14
+ 422 0256 E5010000 		.4byte	.LASF33
+ 423 025a 03       		.byte	0x3
+ 424 025b 5601     		.2byte	0x156
+ 425 025d 96000000 		.4byte	0x96
+ 426 0261 13       		.uleb128 0x13
+ 427 0262 0D020000 		.4byte	0x20d
+ 428 0266 13       		.uleb128 0x13
+ 429 0267 76000000 		.4byte	0x76
+ 430 026b 13       		.uleb128 0x13
+ 431 026c 86010000 		.4byte	0x186
+ 432 0270 13       		.uleb128 0x13
+ 433 0271 6B000000 		.4byte	0x6b
+ 434 0275 00       		.byte	0
+ 435 0276 00       		.byte	0
+ 436              		.section	.debug_abbrev,"",%progbits
+ 437              	.Ldebug_abbrev0:
+ 438 0000 01       		.uleb128 0x1
+ 439 0001 11       		.uleb128 0x11
+ 440 0002 01       		.byte	0x1
+ 441 0003 25       		.uleb128 0x25
+ 442 0004 0E       		.uleb128 0xe
+ 443 0005 13       		.uleb128 0x13
+ 444 0006 0B       		.uleb128 0xb
+ 445 0007 03       		.uleb128 0x3
+ 446 0008 0E       		.uleb128 0xe
+ 447 0009 1B       		.uleb128 0x1b
+ 448 000a 0E       		.uleb128 0xe
+ 449 000b 55       		.uleb128 0x55
+ 450 000c 17       		.uleb128 0x17
+ 451 000d 11       		.uleb128 0x11
+ 452 000e 01       		.uleb128 0x1
+ 453 000f 10       		.uleb128 0x10
+ 454 0010 17       		.uleb128 0x17
+ 455 0011 00       		.byte	0
+ 456 0012 00       		.byte	0
+ 457 0013 02       		.uleb128 0x2
+ 458 0014 24       		.uleb128 0x24
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 15
+
+
+ 459 0015 00       		.byte	0
+ 460 0016 0B       		.uleb128 0xb
+ 461 0017 0B       		.uleb128 0xb
+ 462 0018 3E       		.uleb128 0x3e
+ 463 0019 0B       		.uleb128 0xb
+ 464 001a 03       		.uleb128 0x3
+ 465 001b 0E       		.uleb128 0xe
+ 466 001c 00       		.byte	0
+ 467 001d 00       		.byte	0
+ 468 001e 03       		.uleb128 0x3
+ 469 001f 24       		.uleb128 0x24
+ 470 0020 00       		.byte	0
+ 471 0021 0B       		.uleb128 0xb
+ 472 0022 0B       		.uleb128 0xb
+ 473 0023 3E       		.uleb128 0x3e
+ 474 0024 0B       		.uleb128 0xb
+ 475 0025 03       		.uleb128 0x3
+ 476 0026 08       		.uleb128 0x8
+ 477 0027 00       		.byte	0
+ 478 0028 00       		.byte	0
+ 479 0029 04       		.uleb128 0x4
+ 480 002a 16       		.uleb128 0x16
+ 481 002b 00       		.byte	0
+ 482 002c 03       		.uleb128 0x3
+ 483 002d 0E       		.uleb128 0xe
+ 484 002e 3A       		.uleb128 0x3a
+ 485 002f 0B       		.uleb128 0xb
+ 486 0030 3B       		.uleb128 0x3b
+ 487 0031 0B       		.uleb128 0xb
+ 488 0032 49       		.uleb128 0x49
+ 489 0033 13       		.uleb128 0x13
+ 490 0034 00       		.byte	0
+ 491 0035 00       		.byte	0
+ 492 0036 05       		.uleb128 0x5
+ 493 0037 0F       		.uleb128 0xf
+ 494 0038 00       		.byte	0
+ 495 0039 0B       		.uleb128 0xb
+ 496 003a 0B       		.uleb128 0xb
+ 497 003b 49       		.uleb128 0x49
+ 498 003c 13       		.uleb128 0x13
+ 499 003d 00       		.byte	0
+ 500 003e 00       		.byte	0
+ 501 003f 06       		.uleb128 0x6
+ 502 0040 2E       		.uleb128 0x2e
+ 503 0041 01       		.byte	0x1
+ 504 0042 3F       		.uleb128 0x3f
+ 505 0043 19       		.uleb128 0x19
+ 506 0044 03       		.uleb128 0x3
+ 507 0045 0E       		.uleb128 0xe
+ 508 0046 3A       		.uleb128 0x3a
+ 509 0047 0B       		.uleb128 0xb
+ 510 0048 3B       		.uleb128 0x3b
+ 511 0049 0B       		.uleb128 0xb
+ 512 004a 27       		.uleb128 0x27
+ 513 004b 19       		.uleb128 0x19
+ 514 004c 11       		.uleb128 0x11
+ 515 004d 01       		.uleb128 0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 16
+
+
+ 516 004e 12       		.uleb128 0x12
+ 517 004f 06       		.uleb128 0x6
+ 518 0050 40       		.uleb128 0x40
+ 519 0051 18       		.uleb128 0x18
+ 520 0052 9742     		.uleb128 0x2117
+ 521 0054 19       		.uleb128 0x19
+ 522 0055 01       		.uleb128 0x1
+ 523 0056 13       		.uleb128 0x13
+ 524 0057 00       		.byte	0
+ 525 0058 00       		.byte	0
+ 526 0059 07       		.uleb128 0x7
+ 527 005a 898201   		.uleb128 0x4109
+ 528 005d 00       		.byte	0
+ 529 005e 11       		.uleb128 0x11
+ 530 005f 01       		.uleb128 0x1
+ 531 0060 31       		.uleb128 0x31
+ 532 0061 13       		.uleb128 0x13
+ 533 0062 00       		.byte	0
+ 534 0063 00       		.byte	0
+ 535 0064 08       		.uleb128 0x8
+ 536 0065 2E       		.uleb128 0x2e
+ 537 0066 01       		.byte	0x1
+ 538 0067 3F       		.uleb128 0x3f
+ 539 0068 19       		.uleb128 0x19
+ 540 0069 03       		.uleb128 0x3
+ 541 006a 0E       		.uleb128 0xe
+ 542 006b 3A       		.uleb128 0x3a
+ 543 006c 0B       		.uleb128 0xb
+ 544 006d 3B       		.uleb128 0x3b
+ 545 006e 0B       		.uleb128 0xb
+ 546 006f 27       		.uleb128 0x27
+ 547 0070 19       		.uleb128 0x19
+ 548 0071 49       		.uleb128 0x49
+ 549 0072 13       		.uleb128 0x13
+ 550 0073 11       		.uleb128 0x11
+ 551 0074 01       		.uleb128 0x1
+ 552 0075 12       		.uleb128 0x12
+ 553 0076 06       		.uleb128 0x6
+ 554 0077 40       		.uleb128 0x40
+ 555 0078 18       		.uleb128 0x18
+ 556 0079 9742     		.uleb128 0x2117
+ 557 007b 19       		.uleb128 0x19
+ 558 007c 01       		.uleb128 0x1
+ 559 007d 13       		.uleb128 0x13
+ 560 007e 00       		.byte	0
+ 561 007f 00       		.byte	0
+ 562 0080 09       		.uleb128 0x9
+ 563 0081 05       		.uleb128 0x5
+ 564 0082 00       		.byte	0
+ 565 0083 03       		.uleb128 0x3
+ 566 0084 0E       		.uleb128 0xe
+ 567 0085 3A       		.uleb128 0x3a
+ 568 0086 0B       		.uleb128 0xb
+ 569 0087 3B       		.uleb128 0x3b
+ 570 0088 0B       		.uleb128 0xb
+ 571 0089 49       		.uleb128 0x49
+ 572 008a 13       		.uleb128 0x13
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 17
+
+
+ 573 008b 02       		.uleb128 0x2
+ 574 008c 17       		.uleb128 0x17
+ 575 008d 00       		.byte	0
+ 576 008e 00       		.byte	0
+ 577 008f 0A       		.uleb128 0xa
+ 578 0090 34       		.uleb128 0x34
+ 579 0091 00       		.byte	0
+ 580 0092 03       		.uleb128 0x3
+ 581 0093 0E       		.uleb128 0xe
+ 582 0094 3A       		.uleb128 0x3a
+ 583 0095 0B       		.uleb128 0xb
+ 584 0096 3B       		.uleb128 0x3b
+ 585 0097 0B       		.uleb128 0xb
+ 586 0098 49       		.uleb128 0x49
+ 587 0099 13       		.uleb128 0x13
+ 588 009a 02       		.uleb128 0x2
+ 589 009b 18       		.uleb128 0x18
+ 590 009c 00       		.byte	0
+ 591 009d 00       		.byte	0
+ 592 009e 0B       		.uleb128 0xb
+ 593 009f 898201   		.uleb128 0x4109
+ 594 00a2 01       		.byte	0x1
+ 595 00a3 11       		.uleb128 0x11
+ 596 00a4 01       		.uleb128 0x1
+ 597 00a5 31       		.uleb128 0x31
+ 598 00a6 13       		.uleb128 0x13
+ 599 00a7 00       		.byte	0
+ 600 00a8 00       		.byte	0
+ 601 00a9 0C       		.uleb128 0xc
+ 602 00aa 8A8201   		.uleb128 0x410a
+ 603 00ad 00       		.byte	0
+ 604 00ae 02       		.uleb128 0x2
+ 605 00af 18       		.uleb128 0x18
+ 606 00b0 9142     		.uleb128 0x2111
+ 607 00b2 18       		.uleb128 0x18
+ 608 00b3 00       		.byte	0
+ 609 00b4 00       		.byte	0
+ 610 00b5 0D       		.uleb128 0xd
+ 611 00b6 2E       		.uleb128 0x2e
+ 612 00b7 01       		.byte	0x1
+ 613 00b8 3F       		.uleb128 0x3f
+ 614 00b9 19       		.uleb128 0x19
+ 615 00ba 03       		.uleb128 0x3
+ 616 00bb 0E       		.uleb128 0xe
+ 617 00bc 3A       		.uleb128 0x3a
+ 618 00bd 0B       		.uleb128 0xb
+ 619 00be 3B       		.uleb128 0x3b
+ 620 00bf 05       		.uleb128 0x5
+ 621 00c0 27       		.uleb128 0x27
+ 622 00c1 19       		.uleb128 0x19
+ 623 00c2 49       		.uleb128 0x49
+ 624 00c3 13       		.uleb128 0x13
+ 625 00c4 11       		.uleb128 0x11
+ 626 00c5 01       		.uleb128 0x1
+ 627 00c6 12       		.uleb128 0x12
+ 628 00c7 06       		.uleb128 0x6
+ 629 00c8 40       		.uleb128 0x40
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 18
+
+
+ 630 00c9 18       		.uleb128 0x18
+ 631 00ca 9742     		.uleb128 0x2117
+ 632 00cc 19       		.uleb128 0x19
+ 633 00cd 01       		.uleb128 0x1
+ 634 00ce 13       		.uleb128 0x13
+ 635 00cf 00       		.byte	0
+ 636 00d0 00       		.byte	0
+ 637 00d1 0E       		.uleb128 0xe
+ 638 00d2 05       		.uleb128 0x5
+ 639 00d3 00       		.byte	0
+ 640 00d4 03       		.uleb128 0x3
+ 641 00d5 0E       		.uleb128 0xe
+ 642 00d6 3A       		.uleb128 0x3a
+ 643 00d7 0B       		.uleb128 0xb
+ 644 00d8 3B       		.uleb128 0x3b
+ 645 00d9 05       		.uleb128 0x5
+ 646 00da 49       		.uleb128 0x49
+ 647 00db 13       		.uleb128 0x13
+ 648 00dc 02       		.uleb128 0x2
+ 649 00dd 17       		.uleb128 0x17
+ 650 00de 00       		.byte	0
+ 651 00df 00       		.byte	0
+ 652 00e0 0F       		.uleb128 0xf
+ 653 00e1 34       		.uleb128 0x34
+ 654 00e2 00       		.byte	0
+ 655 00e3 03       		.uleb128 0x3
+ 656 00e4 0E       		.uleb128 0xe
+ 657 00e5 3A       		.uleb128 0x3a
+ 658 00e6 0B       		.uleb128 0xb
+ 659 00e7 3B       		.uleb128 0x3b
+ 660 00e8 05       		.uleb128 0x5
+ 661 00e9 49       		.uleb128 0x49
+ 662 00ea 13       		.uleb128 0x13
+ 663 00eb 02       		.uleb128 0x2
+ 664 00ec 18       		.uleb128 0x18
+ 665 00ed 00       		.byte	0
+ 666 00ee 00       		.byte	0
+ 667 00ef 10       		.uleb128 0x10
+ 668 00f0 26       		.uleb128 0x26
+ 669 00f1 00       		.byte	0
+ 670 00f2 49       		.uleb128 0x49
+ 671 00f3 13       		.uleb128 0x13
+ 672 00f4 00       		.byte	0
+ 673 00f5 00       		.byte	0
+ 674 00f6 11       		.uleb128 0x11
+ 675 00f7 2E       		.uleb128 0x2e
+ 676 00f8 00       		.byte	0
+ 677 00f9 3F       		.uleb128 0x3f
+ 678 00fa 19       		.uleb128 0x19
+ 679 00fb 03       		.uleb128 0x3
+ 680 00fc 0E       		.uleb128 0xe
+ 681 00fd 3A       		.uleb128 0x3a
+ 682 00fe 0B       		.uleb128 0xb
+ 683 00ff 3B       		.uleb128 0x3b
+ 684 0100 05       		.uleb128 0x5
+ 685 0101 27       		.uleb128 0x27
+ 686 0102 19       		.uleb128 0x19
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 19
+
+
+ 687 0103 3C       		.uleb128 0x3c
+ 688 0104 19       		.uleb128 0x19
+ 689 0105 00       		.byte	0
+ 690 0106 00       		.byte	0
+ 691 0107 12       		.uleb128 0x12
+ 692 0108 2E       		.uleb128 0x2e
+ 693 0109 01       		.byte	0x1
+ 694 010a 3F       		.uleb128 0x3f
+ 695 010b 19       		.uleb128 0x19
+ 696 010c 03       		.uleb128 0x3
+ 697 010d 0E       		.uleb128 0xe
+ 698 010e 3A       		.uleb128 0x3a
+ 699 010f 0B       		.uleb128 0xb
+ 700 0110 3B       		.uleb128 0x3b
+ 701 0111 05       		.uleb128 0x5
+ 702 0112 27       		.uleb128 0x27
+ 703 0113 19       		.uleb128 0x19
+ 704 0114 49       		.uleb128 0x49
+ 705 0115 13       		.uleb128 0x13
+ 706 0116 3C       		.uleb128 0x3c
+ 707 0117 19       		.uleb128 0x19
+ 708 0118 01       		.uleb128 0x1
+ 709 0119 13       		.uleb128 0x13
+ 710 011a 00       		.byte	0
+ 711 011b 00       		.byte	0
+ 712 011c 13       		.uleb128 0x13
+ 713 011d 05       		.uleb128 0x5
+ 714 011e 00       		.byte	0
+ 715 011f 49       		.uleb128 0x49
+ 716 0120 13       		.uleb128 0x13
+ 717 0121 00       		.byte	0
+ 718 0122 00       		.byte	0
+ 719 0123 14       		.uleb128 0x14
+ 720 0124 2E       		.uleb128 0x2e
+ 721 0125 01       		.byte	0x1
+ 722 0126 3F       		.uleb128 0x3f
+ 723 0127 19       		.uleb128 0x19
+ 724 0128 03       		.uleb128 0x3
+ 725 0129 0E       		.uleb128 0xe
+ 726 012a 3A       		.uleb128 0x3a
+ 727 012b 0B       		.uleb128 0xb
+ 728 012c 3B       		.uleb128 0x3b
+ 729 012d 05       		.uleb128 0x5
+ 730 012e 27       		.uleb128 0x27
+ 731 012f 19       		.uleb128 0x19
+ 732 0130 49       		.uleb128 0x49
+ 733 0131 13       		.uleb128 0x13
+ 734 0132 3C       		.uleb128 0x3c
+ 735 0133 19       		.uleb128 0x19
+ 736 0134 00       		.byte	0
+ 737 0135 00       		.byte	0
+ 738 0136 00       		.byte	0
+ 739              		.section	.debug_loc,"",%progbits
+ 740              	.Ldebug_loc0:
+ 741              	.LLST0:
+ 742 0000 00000000 		.4byte	.LVL3
+ 743 0004 05000000 		.4byte	.LVL4-1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 20
+
+
+ 744 0008 0100     		.2byte	0x1
+ 745 000a 50       		.byte	0x50
+ 746 000b 05000000 		.4byte	.LVL4-1
+ 747 000f 08000000 		.4byte	.LFE3
+ 748 0013 0400     		.2byte	0x4
+ 749 0015 F3       		.byte	0xf3
+ 750 0016 01       		.uleb128 0x1
+ 751 0017 50       		.byte	0x50
+ 752 0018 9F       		.byte	0x9f
+ 753 0019 00000000 		.4byte	0
+ 754 001d 00000000 		.4byte	0
+ 755              	.LLST1:
+ 756 0021 00000000 		.4byte	.LVL3
+ 757 0025 05000000 		.4byte	.LVL4-1
+ 758 0029 0100     		.2byte	0x1
+ 759 002b 51       		.byte	0x51
+ 760 002c 05000000 		.4byte	.LVL4-1
+ 761 0030 08000000 		.4byte	.LFE3
+ 762 0034 0400     		.2byte	0x4
+ 763 0036 F3       		.byte	0xf3
+ 764 0037 01       		.uleb128 0x1
+ 765 0038 51       		.byte	0x51
+ 766 0039 9F       		.byte	0x9f
+ 767 003a 00000000 		.4byte	0
+ 768 003e 00000000 		.4byte	0
+ 769              	.LLST2:
+ 770 0042 00000000 		.4byte	.LVL3
+ 771 0046 05000000 		.4byte	.LVL4-1
+ 772 004a 0100     		.2byte	0x1
+ 773 004c 52       		.byte	0x52
+ 774 004d 05000000 		.4byte	.LVL4-1
+ 775 0051 08000000 		.4byte	.LFE3
+ 776 0055 0400     		.2byte	0x4
+ 777 0057 F3       		.byte	0xf3
+ 778 0058 01       		.uleb128 0x1
+ 779 0059 52       		.byte	0x52
+ 780 005a 9F       		.byte	0x9f
+ 781 005b 00000000 		.4byte	0
+ 782 005f 00000000 		.4byte	0
+ 783              	.LLST3:
+ 784 0063 00000000 		.4byte	.LVL3
+ 785 0067 05000000 		.4byte	.LVL4-1
+ 786 006b 0100     		.2byte	0x1
+ 787 006d 53       		.byte	0x53
+ 788 006e 05000000 		.4byte	.LVL4-1
+ 789 0072 08000000 		.4byte	.LFE3
+ 790 0076 0400     		.2byte	0x4
+ 791 0078 F3       		.byte	0xf3
+ 792 0079 01       		.uleb128 0x1
+ 793 007a 53       		.byte	0x53
+ 794 007b 9F       		.byte	0x9f
+ 795 007c 00000000 		.4byte	0
+ 796 0080 00000000 		.4byte	0
+ 797              	.LLST4:
+ 798 0084 00000000 		.4byte	.LVL5
+ 799 0088 05000000 		.4byte	.LVL6-1
+ 800 008c 0100     		.2byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 21
+
+
+ 801 008e 50       		.byte	0x50
+ 802 008f 05000000 		.4byte	.LVL6-1
+ 803 0093 08000000 		.4byte	.LFE4
+ 804 0097 0400     		.2byte	0x4
+ 805 0099 F3       		.byte	0xf3
+ 806 009a 01       		.uleb128 0x1
+ 807 009b 50       		.byte	0x50
+ 808 009c 9F       		.byte	0x9f
+ 809 009d 00000000 		.4byte	0
+ 810 00a1 00000000 		.4byte	0
+ 811              	.LLST5:
+ 812 00a5 00000000 		.4byte	.LVL5
+ 813 00a9 05000000 		.4byte	.LVL6-1
+ 814 00ad 0100     		.2byte	0x1
+ 815 00af 51       		.byte	0x51
+ 816 00b0 05000000 		.4byte	.LVL6-1
+ 817 00b4 08000000 		.4byte	.LFE4
+ 818 00b8 0400     		.2byte	0x4
+ 819 00ba F3       		.byte	0xf3
+ 820 00bb 01       		.uleb128 0x1
+ 821 00bc 51       		.byte	0x51
+ 822 00bd 9F       		.byte	0x9f
+ 823 00be 00000000 		.4byte	0
+ 824 00c2 00000000 		.4byte	0
+ 825              	.LLST6:
+ 826 00c6 00000000 		.4byte	.LVL5
+ 827 00ca 05000000 		.4byte	.LVL6-1
+ 828 00ce 0100     		.2byte	0x1
+ 829 00d0 52       		.byte	0x52
+ 830 00d1 05000000 		.4byte	.LVL6-1
+ 831 00d5 08000000 		.4byte	.LFE4
+ 832 00d9 0400     		.2byte	0x4
+ 833 00db F3       		.byte	0xf3
+ 834 00dc 01       		.uleb128 0x1
+ 835 00dd 52       		.byte	0x52
+ 836 00de 9F       		.byte	0x9f
+ 837 00df 00000000 		.4byte	0
+ 838 00e3 00000000 		.4byte	0
+ 839              	.LLST7:
+ 840 00e7 00000000 		.4byte	.LVL5
+ 841 00eb 05000000 		.4byte	.LVL6-1
+ 842 00ef 0100     		.2byte	0x1
+ 843 00f1 53       		.byte	0x53
+ 844 00f2 05000000 		.4byte	.LVL6-1
+ 845 00f6 08000000 		.4byte	.LFE4
+ 846 00fa 0400     		.2byte	0x4
+ 847 00fc F3       		.byte	0xf3
+ 848 00fd 01       		.uleb128 0x1
+ 849 00fe 53       		.byte	0x53
+ 850 00ff 9F       		.byte	0x9f
+ 851 0100 00000000 		.4byte	0
+ 852 0104 00000000 		.4byte	0
+ 853              		.section	.debug_aranges,"",%progbits
+ 854 0000 3C000000 		.4byte	0x3c
+ 855 0004 0200     		.2byte	0x2
+ 856 0006 00000000 		.4byte	.Ldebug_info0
+ 857 000a 04       		.byte	0x4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 22
+
+
+ 858 000b 00       		.byte	0
+ 859 000c 0000     		.2byte	0
+ 860 000e 0000     		.2byte	0
+ 861 0010 00000000 		.4byte	.LFB0
+ 862 0014 08000000 		.4byte	.LFE0-.LFB0
+ 863 0018 00000000 		.4byte	.LFB1
+ 864 001c 08000000 		.4byte	.LFE1-.LFB1
+ 865 0020 00000000 		.4byte	.LFB2
+ 866 0024 08000000 		.4byte	.LFE2-.LFB2
+ 867 0028 00000000 		.4byte	.LFB3
+ 868 002c 08000000 		.4byte	.LFE3-.LFB3
+ 869 0030 00000000 		.4byte	.LFB4
+ 870 0034 08000000 		.4byte	.LFE4-.LFB4
+ 871 0038 00000000 		.4byte	0
+ 872 003c 00000000 		.4byte	0
+ 873              		.section	.debug_ranges,"",%progbits
+ 874              	.Ldebug_ranges0:
+ 875 0000 00000000 		.4byte	.LFB0
+ 876 0004 08000000 		.4byte	.LFE0
+ 877 0008 00000000 		.4byte	.LFB1
+ 878 000c 08000000 		.4byte	.LFE1
+ 879 0010 00000000 		.4byte	.LFB2
+ 880 0014 08000000 		.4byte	.LFE2
+ 881 0018 00000000 		.4byte	.LFB3
+ 882 001c 08000000 		.4byte	.LFE3
+ 883 0020 00000000 		.4byte	.LFB4
+ 884 0024 08000000 		.4byte	.LFE4
+ 885 0028 00000000 		.4byte	0
+ 886 002c 00000000 		.4byte	0
+ 887              		.section	.debug_line,"",%progbits
+ 888              	.Ldebug_line0:
+ 889 0000 E5000000 		.section	.debug_str,"MS",%progbits,1
+ 889      02007200 
+ 889      00000201 
+ 889      FB0E0D00 
+ 889      01010101 
+ 890              	.LASF14:
+ 891 0000 63797374 		.ascii	"cystatus\000"
+ 891      61747573 
+ 891      00
+ 892              	.LASF29:
+ 893 0009 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 893      4320342E 
+ 893      392E3320 
+ 893      32303135 
+ 893      30333033 
+ 894 003c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 894      20726576 
+ 894      6973696F 
+ 894      6E203232 
+ 894      31323230 
+ 895 006f 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 895      66756E63 
+ 895      74696F6E 
+ 895      2D736563 
+ 895      74696F6E 
+ 896              	.LASF21:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 23
+
+
+ 897 0097 636F756E 		.ascii	"count\000"
+ 897      7400
+ 898              	.LASF3:
+ 899 009d 73686F72 		.ascii	"short unsigned int\000"
+ 899      7420756E 
+ 899      7369676E 
+ 899      65642069 
+ 899      6E7400
+ 900              	.LASF18:
+ 901 00b0 55415254 		.ascii	"UART_CyBtldrCommReset\000"
+ 901      5F437942 
+ 901      746C6472 
+ 901      436F6D6D 
+ 901      52657365 
+ 902              	.LASF25:
+ 903 00c6 73746174 		.ascii	"status\000"
+ 903      757300
+ 904              	.LASF16:
+ 905 00cd 55415254 		.ascii	"UART_CyBtldrCommStart\000"
+ 905      5F437942 
+ 905      746C6472 
+ 905      436F6D6D 
+ 905      53746172 
+ 906              	.LASF19:
+ 907 00e3 70446174 		.ascii	"pData\000"
+ 907      6100
+ 908              	.LASF11:
+ 909 00e9 666C6F61 		.ascii	"float\000"
+ 909      7400
+ 910              	.LASF20:
+ 911 00ef 73697A65 		.ascii	"size\000"
+ 911      00
+ 912              	.LASF28:
+ 913 00f4 55415254 		.ascii	"UART_UartCyBtldrCommReset\000"
+ 913      5F556172 
+ 913      74437942 
+ 913      746C6472 
+ 913      436F6D6D 
+ 914              	.LASF23:
+ 915 010e 55415254 		.ascii	"UART_CyBtldrCommRead\000"
+ 915      5F437942 
+ 915      746C6472 
+ 915      436F6D6D 
+ 915      52656164 
+ 916              	.LASF5:
+ 917 0123 6C6F6E67 		.ascii	"long unsigned int\000"
+ 917      20756E73 
+ 917      69676E65 
+ 917      6420696E 
+ 917      7400
+ 918              	.LASF9:
+ 919 0135 75696E74 		.ascii	"uint8\000"
+ 919      3800
+ 920              	.LASF30:
+ 921 013b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UART_BOOT.c\000"
+ 921      6E657261 
+ 921      7465645F 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 24
+
+
+ 921      536F7572 
+ 921      63655C50 
+ 922              	.LASF1:
+ 923 0160 756E7369 		.ascii	"unsigned char\000"
+ 923      676E6564 
+ 923      20636861 
+ 923      7200
+ 924              	.LASF26:
+ 925 016e 55415254 		.ascii	"UART_UartCyBtldrCommStart\000"
+ 925      5F556172 
+ 925      74437942 
+ 925      746C6472 
+ 925      436F6D6D 
+ 926              	.LASF12:
+ 927 0188 646F7562 		.ascii	"double\000"
+ 927      6C6500
+ 928              	.LASF24:
+ 929 018f 55415254 		.ascii	"UART_CyBtldrCommWrite\000"
+ 929      5F437942 
+ 929      746C6472 
+ 929      436F6D6D 
+ 929      57726974 
+ 930              	.LASF10:
+ 931 01a5 75696E74 		.ascii	"uint16\000"
+ 931      313600
+ 932              	.LASF8:
+ 933 01ac 756E7369 		.ascii	"unsigned int\000"
+ 933      676E6564 
+ 933      20696E74 
+ 933      00
+ 934              	.LASF17:
+ 935 01b9 55415254 		.ascii	"UART_CyBtldrCommStop\000"
+ 935      5F437942 
+ 935      746C6472 
+ 935      436F6D6D 
+ 935      53746F70 
+ 936              	.LASF7:
+ 937 01ce 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 937      206C6F6E 
+ 937      6720756E 
+ 937      7369676E 
+ 937      65642069 
+ 938              	.LASF33:
+ 939 01e5 55415254 		.ascii	"UART_UartCyBtldrCommWrite\000"
+ 939      5F556172 
+ 939      74437942 
+ 939      746C6472 
+ 939      436F6D6D 
+ 940              	.LASF22:
+ 941 01ff 74696D65 		.ascii	"timeOut\000"
+ 941      4F757400 
+ 942              	.LASF15:
+ 943 0207 73697A65 		.ascii	"sizetype\000"
+ 943      74797065 
+ 943      00
+ 944              	.LASF6:
+ 945 0210 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccvKoZuj.s 			page 25
+
+
+ 945      206C6F6E 
+ 945      6720696E 
+ 945      7400
+ 946              	.LASF27:
+ 947 021e 55415254 		.ascii	"UART_UartCyBtldrCommStop\000"
+ 947      5F556172 
+ 947      74437942 
+ 947      746C6472 
+ 947      436F6D6D 
+ 948              	.LASF13:
+ 949 0237 63686172 		.ascii	"char\000"
+ 949      00
+ 950              	.LASF2:
+ 951 023c 73686F72 		.ascii	"short int\000"
+ 951      7420696E 
+ 951      7400
+ 952              	.LASF32:
+ 953 0246 55415254 		.ascii	"UART_UartCyBtldrCommRead\000"
+ 953      5F556172 
+ 953      74437942 
+ 953      746C6472 
+ 953      436F6D6D 
+ 954              	.LASF4:
+ 955 025f 6C6F6E67 		.ascii	"long int\000"
+ 955      20696E74 
+ 955      00
+ 956              	.LASF0:
+ 957 0268 7369676E 		.ascii	"signed char\000"
+ 957      65642063 
+ 957      68617200 
+ 958              	.LASF31:
+ 959 0274 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 959      6F63756D 
+ 959      656E7473 
+ 959      20616E64 
+ 959      20536574 
+ 960 02a3 6F432043 		.ascii	"oC Creator\\RosOnAStick\\Bootloader.cydsn\000"
+ 960      72656174 
+ 960      6F725C52 
+ 960      6F734F6E 
+ 960      41537469 
+ 961              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

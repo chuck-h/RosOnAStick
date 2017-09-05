@@ -1,0 +1,991 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"UpDown_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	UpDown_backup:
+  20 0000 00000000 		.space	12
+  20      00000000 
+  20      00000000 
+  21              		.section	.text.UpDown_SaveConfig,"ax",%progbits
+  22              		.align	2
+  23              		.global	UpDown_SaveConfig
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	UpDown_SaveConfig, %function
+  27              	UpDown_SaveConfig:
+  28              	.LFB0:
+  29              		.file 1 ".\\Generated_Source\\PSoC4\\UpDown_PM.c"
+   1:.\Generated_Source\PSoC4/UpDown_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/UpDown_PM.c **** * File Name: UpDown_PM.c  
+   3:.\Generated_Source\PSoC4/UpDown_PM.c **** * Version 2.40
+   4:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+   5:.\Generated_Source\PSoC4/UpDown_PM.c **** *  Description:
+   6:.\Generated_Source\PSoC4/UpDown_PM.c **** *    This file provides the power management source code to API for the
+   7:.\Generated_Source\PSoC4/UpDown_PM.c **** *    Counter.  
+   8:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+   9:.\Generated_Source\PSoC4/UpDown_PM.c **** *   Note:
+  10:.\Generated_Source\PSoC4/UpDown_PM.c **** *     None
+  11:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  12:.\Generated_Source\PSoC4/UpDown_PM.c **** *******************************************************************************
+  13:.\Generated_Source\PSoC4/UpDown_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/UpDown_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:.\Generated_Source\PSoC4/UpDown_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:.\Generated_Source\PSoC4/UpDown_PM.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/UpDown_PM.c **** ********************************************************************************/
+  18:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  19:.\Generated_Source\PSoC4/UpDown_PM.c **** #include "UpDown.h"
+  20:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  21:.\Generated_Source\PSoC4/UpDown_PM.c **** static UpDown_backupStruct UpDown_backup;
+  22:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  23:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  24:.\Generated_Source\PSoC4/UpDown_PM.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC4/UpDown_PM.c **** * Function Name: UpDown_SaveConfig
+  26:.\Generated_Source\PSoC4/UpDown_PM.c **** ********************************************************************************
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 2
+
+
+  27:.\Generated_Source\PSoC4/UpDown_PM.c **** * Summary:
+  28:.\Generated_Source\PSoC4/UpDown_PM.c **** *     Save the current user configuration
+  29:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  30:.\Generated_Source\PSoC4/UpDown_PM.c **** * Parameters:  
+  31:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+  32:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  33:.\Generated_Source\PSoC4/UpDown_PM.c **** * Return: 
+  34:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+  35:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  36:.\Generated_Source\PSoC4/UpDown_PM.c **** * Global variables:
+  37:.\Generated_Source\PSoC4/UpDown_PM.c **** *  UpDown_backup:  Variables of this global structure are modified to 
+  38:.\Generated_Source\PSoC4/UpDown_PM.c **** *  store the values of non retention configuration registers when Sleep() API is 
+  39:.\Generated_Source\PSoC4/UpDown_PM.c **** *  called.
+  40:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  41:.\Generated_Source\PSoC4/UpDown_PM.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/UpDown_PM.c **** void UpDown_SaveConfig(void) 
+  43:.\Generated_Source\PSoC4/UpDown_PM.c **** {
+  30              		.loc 1 43 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 7, -8
+  36              		.cfi_offset 14, -4
+  37 0002 00AF     		add	r7, sp, #0
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_register 7
+  44:.\Generated_Source\PSoC4/UpDown_PM.c ****     #if (!UpDown_UsingFixedFunction)
+  45:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  46:.\Generated_Source\PSoC4/UpDown_PM.c ****         UpDown_backup.CounterUdb = UpDown_ReadCounter();
+  40              		.loc 1 46 0
+  41 0004 FFF7FEFF 		bl	UpDown_ReadCounter
+  42 0008 021C     		mov	r2, r0
+  43 000a 054B     		ldr	r3, .L2
+  44 000c 5A60     		str	r2, [r3, #4]
+  47:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  48:.\Generated_Source\PSoC4/UpDown_PM.c ****         #if (CY_UDB_V0)
+  49:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CounterPeriod = UpDown_ReadPeriod();
+  50:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CompareValue = UpDown_ReadCompare();
+  51:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.InterruptMaskValue = UpDown_STATUS_MASK;
+  52:.\Generated_Source\PSoC4/UpDown_PM.c ****         #endif /* CY_UDB_V0 */
+  53:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  54:.\Generated_Source\PSoC4/UpDown_PM.c ****         #if(!UpDown_ControlRegRemoved)
+  55:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CounterControlRegister = UpDown_ReadControlRegister();
+  45              		.loc 1 55 0
+  46 000e FFF7FEFF 		bl	UpDown_ReadControlRegister
+  47 0012 031C     		mov	r3, r0
+  48 0014 1A1C     		mov	r2, r3
+  49 0016 024B     		ldr	r3, .L2
+  50 0018 1A72     		strb	r2, [r3, #8]
+  56:.\Generated_Source\PSoC4/UpDown_PM.c ****         #endif /* (!UpDown_ControlRegRemoved) */
+  57:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  58:.\Generated_Source\PSoC4/UpDown_PM.c ****     #endif /* (!UpDown_UsingFixedFunction) */
+  59:.\Generated_Source\PSoC4/UpDown_PM.c **** }
+  51              		.loc 1 59 0
+  52 001a BD46     		mov	sp, r7
+  53              		@ sp needed for prologue
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 3
+
+
+  54 001c 80BD     		pop	{r7, pc}
+  55              	.L3:
+  56 001e C046     		.align	2
+  57              	.L2:
+  58 0020 00000000 		.word	UpDown_backup
+  59              		.cfi_endproc
+  60              	.LFE0:
+  61              		.size	UpDown_SaveConfig, .-UpDown_SaveConfig
+  62              		.section	.text.UpDown_RestoreConfig,"ax",%progbits
+  63              		.align	2
+  64              		.global	UpDown_RestoreConfig
+  65              		.code	16
+  66              		.thumb_func
+  67              		.type	UpDown_RestoreConfig, %function
+  68              	UpDown_RestoreConfig:
+  69              	.LFB1:
+  60:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  61:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  62:.\Generated_Source\PSoC4/UpDown_PM.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC4/UpDown_PM.c **** * Function Name: UpDown_RestoreConfig
+  64:.\Generated_Source\PSoC4/UpDown_PM.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  66:.\Generated_Source\PSoC4/UpDown_PM.c **** * Summary:
+  67:.\Generated_Source\PSoC4/UpDown_PM.c **** *  Restores the current user configuration.
+  68:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  69:.\Generated_Source\PSoC4/UpDown_PM.c **** * Parameters:  
+  70:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+  71:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  72:.\Generated_Source\PSoC4/UpDown_PM.c **** * Return: 
+  73:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+  74:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  75:.\Generated_Source\PSoC4/UpDown_PM.c **** * Global variables:
+  76:.\Generated_Source\PSoC4/UpDown_PM.c **** *  UpDown_backup:  Variables of this global structure are used to 
+  77:.\Generated_Source\PSoC4/UpDown_PM.c **** *  restore the values of non retention registers on wakeup from sleep mode.
+  78:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+  79:.\Generated_Source\PSoC4/UpDown_PM.c **** *******************************************************************************/
+  80:.\Generated_Source\PSoC4/UpDown_PM.c **** void UpDown_RestoreConfig(void) 
+  81:.\Generated_Source\PSoC4/UpDown_PM.c **** {      
+  70              		.loc 1 81 0
+  71              		.cfi_startproc
+  72 0000 80B5     		push	{r7, lr}
+  73              	.LCFI2:
+  74              		.cfi_def_cfa_offset 8
+  75              		.cfi_offset 7, -8
+  76              		.cfi_offset 14, -4
+  77 0002 00AF     		add	r7, sp, #0
+  78              	.LCFI3:
+  79              		.cfi_def_cfa_register 7
+  82:.\Generated_Source\PSoC4/UpDown_PM.c ****     #if (!UpDown_UsingFixedFunction)
+  83:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  84:.\Generated_Source\PSoC4/UpDown_PM.c ****         #if (CY_UDB_V0)
+  85:.\Generated_Source\PSoC4/UpDown_PM.c ****             uint8 UpDown_interruptState;
+  86:.\Generated_Source\PSoC4/UpDown_PM.c ****         #endif  /* (CY_UDB_V0) */
+  87:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  88:.\Generated_Source\PSoC4/UpDown_PM.c ****        UpDown_WriteCounter(UpDown_backup.CounterUdb);
+  80              		.loc 1 88 0
+  81 0004 054B     		ldr	r3, .L5
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 4
+
+
+  82 0006 5B68     		ldr	r3, [r3, #4]
+  83 0008 181C     		mov	r0, r3
+  84 000a FFF7FEFF 		bl	UpDown_WriteCounter
+  89:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  90:.\Generated_Source\PSoC4/UpDown_PM.c ****         #if (CY_UDB_V0)
+  91:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_WritePeriod(UpDown_backup.CounterPeriod);
+  92:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_WriteCompare(UpDown_backup.CompareValue);
+  93:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  94:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_interruptState = CyEnterCriticalSection();
+  95:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_STATUS_AUX_CTRL |= UpDown_STATUS_ACTL_INT_EN_MASK;
+  96:.\Generated_Source\PSoC4/UpDown_PM.c ****             CyExitCriticalSection(UpDown_interruptState);
+  97:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+  98:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_STATUS_MASK = UpDown_backup.InterruptMaskValue;
+  99:.\Generated_Source\PSoC4/UpDown_PM.c ****         #endif  /* (CY_UDB_V0) */
+ 100:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 101:.\Generated_Source\PSoC4/UpDown_PM.c ****         #if(!UpDown_ControlRegRemoved)
+ 102:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_WriteControlRegister(UpDown_backup.CounterControlRegister);
+  85              		.loc 1 102 0
+  86 000e 034B     		ldr	r3, .L5
+  87 0010 1B7A     		ldrb	r3, [r3, #8]
+  88 0012 181C     		mov	r0, r3
+  89 0014 FFF7FEFF 		bl	UpDown_WriteControlRegister
+ 103:.\Generated_Source\PSoC4/UpDown_PM.c ****         #endif /* (!UpDown_ControlRegRemoved) */
+ 104:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 105:.\Generated_Source\PSoC4/UpDown_PM.c ****     #endif /* (!UpDown_UsingFixedFunction) */
+ 106:.\Generated_Source\PSoC4/UpDown_PM.c **** }
+  90              		.loc 1 106 0
+  91 0018 BD46     		mov	sp, r7
+  92              		@ sp needed for prologue
+  93 001a 80BD     		pop	{r7, pc}
+  94              	.L6:
+  95              		.align	2
+  96              	.L5:
+  97 001c 00000000 		.word	UpDown_backup
+  98              		.cfi_endproc
+  99              	.LFE1:
+ 100              		.size	UpDown_RestoreConfig, .-UpDown_RestoreConfig
+ 101              		.section	.text.UpDown_Sleep,"ax",%progbits
+ 102              		.align	2
+ 103              		.global	UpDown_Sleep
+ 104              		.code	16
+ 105              		.thumb_func
+ 106              		.type	UpDown_Sleep, %function
+ 107              	UpDown_Sleep:
+ 108              	.LFB2:
+ 107:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 108:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 109:.\Generated_Source\PSoC4/UpDown_PM.c **** /*******************************************************************************
+ 110:.\Generated_Source\PSoC4/UpDown_PM.c **** * Function Name: UpDown_Sleep
+ 111:.\Generated_Source\PSoC4/UpDown_PM.c **** ********************************************************************************
+ 112:.\Generated_Source\PSoC4/UpDown_PM.c **** * Summary:
+ 113:.\Generated_Source\PSoC4/UpDown_PM.c **** *     Stop and Save the user configuration
+ 114:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 115:.\Generated_Source\PSoC4/UpDown_PM.c **** * Parameters:  
+ 116:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+ 117:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 118:.\Generated_Source\PSoC4/UpDown_PM.c **** * Return: 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 5
+
+
+ 119:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+ 120:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 121:.\Generated_Source\PSoC4/UpDown_PM.c **** * Global variables:
+ 122:.\Generated_Source\PSoC4/UpDown_PM.c **** *  UpDown_backup.enableState:  Is modified depending on the enable 
+ 123:.\Generated_Source\PSoC4/UpDown_PM.c **** *  state of the block before entering sleep mode.
+ 124:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 125:.\Generated_Source\PSoC4/UpDown_PM.c **** *******************************************************************************/
+ 126:.\Generated_Source\PSoC4/UpDown_PM.c **** void UpDown_Sleep(void) 
+ 127:.\Generated_Source\PSoC4/UpDown_PM.c **** {
+ 109              		.loc 1 127 0
+ 110              		.cfi_startproc
+ 111 0000 80B5     		push	{r7, lr}
+ 112              	.LCFI4:
+ 113              		.cfi_def_cfa_offset 8
+ 114              		.cfi_offset 7, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 00AF     		add	r7, sp, #0
+ 117              	.LCFI5:
+ 118              		.cfi_def_cfa_register 7
+ 128:.\Generated_Source\PSoC4/UpDown_PM.c ****     #if(!UpDown_ControlRegRemoved)
+ 129:.\Generated_Source\PSoC4/UpDown_PM.c ****         /* Save Counter's enable state */
+ 130:.\Generated_Source\PSoC4/UpDown_PM.c ****         if(UpDown_CTRL_ENABLE == (UpDown_CONTROL & UpDown_CTRL_ENABLE))
+ 119              		.loc 1 130 0
+ 120 0004 094B     		ldr	r3, .L10
+ 121 0006 1B78     		ldrb	r3, [r3]
+ 122 0008 DBB2     		uxtb	r3, r3
+ 123 000a DBB2     		uxtb	r3, r3
+ 124 000c 5BB2     		sxtb	r3, r3
+ 125 000e 002B     		cmp	r3, #0
+ 126 0010 03DA     		bge	.L8
+ 131:.\Generated_Source\PSoC4/UpDown_PM.c ****         {
+ 132:.\Generated_Source\PSoC4/UpDown_PM.c ****             /* Counter is enabled */
+ 133:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CounterEnableState = 1u;
+ 127              		.loc 1 133 0
+ 128 0012 074B     		ldr	r3, .L10+4
+ 129 0014 0122     		mov	r2, #1
+ 130 0016 1A70     		strb	r2, [r3]
+ 131 0018 02E0     		b	.L9
+ 132              	.L8:
+ 134:.\Generated_Source\PSoC4/UpDown_PM.c ****         }
+ 135:.\Generated_Source\PSoC4/UpDown_PM.c ****         else
+ 136:.\Generated_Source\PSoC4/UpDown_PM.c ****         {
+ 137:.\Generated_Source\PSoC4/UpDown_PM.c ****             /* Counter is disabled */
+ 138:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CounterEnableState = 0u;
+ 133              		.loc 1 138 0
+ 134 001a 054B     		ldr	r3, .L10+4
+ 135 001c 0022     		mov	r2, #0
+ 136 001e 1A70     		strb	r2, [r3]
+ 137              	.L9:
+ 139:.\Generated_Source\PSoC4/UpDown_PM.c ****         }
+ 140:.\Generated_Source\PSoC4/UpDown_PM.c ****     #else
+ 141:.\Generated_Source\PSoC4/UpDown_PM.c ****         UpDown_backup.CounterEnableState = 1u;
+ 142:.\Generated_Source\PSoC4/UpDown_PM.c ****         if(UpDown_backup.CounterEnableState != 0u)
+ 143:.\Generated_Source\PSoC4/UpDown_PM.c ****         {
+ 144:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_backup.CounterEnableState = 0u;
+ 145:.\Generated_Source\PSoC4/UpDown_PM.c ****         }
+ 146:.\Generated_Source\PSoC4/UpDown_PM.c ****     #endif /* (!UpDown_ControlRegRemoved) */
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 6
+
+
+ 147:.\Generated_Source\PSoC4/UpDown_PM.c ****     
+ 148:.\Generated_Source\PSoC4/UpDown_PM.c ****     UpDown_Stop();
+ 138              		.loc 1 148 0
+ 139 0020 FFF7FEFF 		bl	UpDown_Stop
+ 149:.\Generated_Source\PSoC4/UpDown_PM.c ****     UpDown_SaveConfig();
+ 140              		.loc 1 149 0
+ 141 0024 FFF7FEFF 		bl	UpDown_SaveConfig
+ 150:.\Generated_Source\PSoC4/UpDown_PM.c **** }
+ 142              		.loc 1 150 0
+ 143 0028 BD46     		mov	sp, r7
+ 144              		@ sp needed for prologue
+ 145 002a 80BD     		pop	{r7, pc}
+ 146              	.L11:
+ 147              		.align	2
+ 148              	.L10:
+ 149 002c 70000F40 		.word	1074724976
+ 150 0030 00000000 		.word	UpDown_backup
+ 151              		.cfi_endproc
+ 152              	.LFE2:
+ 153              		.size	UpDown_Sleep, .-UpDown_Sleep
+ 154              		.section	.text.UpDown_Wakeup,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	UpDown_Wakeup
+ 157              		.code	16
+ 158              		.thumb_func
+ 159              		.type	UpDown_Wakeup, %function
+ 160              	UpDown_Wakeup:
+ 161              	.LFB3:
+ 151:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 152:.\Generated_Source\PSoC4/UpDown_PM.c **** 
+ 153:.\Generated_Source\PSoC4/UpDown_PM.c **** /*******************************************************************************
+ 154:.\Generated_Source\PSoC4/UpDown_PM.c **** * Function Name: UpDown_Wakeup
+ 155:.\Generated_Source\PSoC4/UpDown_PM.c **** ********************************************************************************
+ 156:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 157:.\Generated_Source\PSoC4/UpDown_PM.c **** * Summary:
+ 158:.\Generated_Source\PSoC4/UpDown_PM.c **** *  Restores and enables the user configuration
+ 159:.\Generated_Source\PSoC4/UpDown_PM.c **** *  
+ 160:.\Generated_Source\PSoC4/UpDown_PM.c **** * Parameters:  
+ 161:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+ 162:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 163:.\Generated_Source\PSoC4/UpDown_PM.c **** * Return: 
+ 164:.\Generated_Source\PSoC4/UpDown_PM.c **** *  void
+ 165:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 166:.\Generated_Source\PSoC4/UpDown_PM.c **** * Global variables:
+ 167:.\Generated_Source\PSoC4/UpDown_PM.c **** *  UpDown_backup.enableState:  Is used to restore the enable state of 
+ 168:.\Generated_Source\PSoC4/UpDown_PM.c **** *  block on wakeup from sleep mode.
+ 169:.\Generated_Source\PSoC4/UpDown_PM.c **** *
+ 170:.\Generated_Source\PSoC4/UpDown_PM.c **** *******************************************************************************/
+ 171:.\Generated_Source\PSoC4/UpDown_PM.c **** void UpDown_Wakeup(void) 
+ 172:.\Generated_Source\PSoC4/UpDown_PM.c **** {
+ 162              		.loc 1 172 0
+ 163              		.cfi_startproc
+ 164 0000 80B5     		push	{r7, lr}
+ 165              	.LCFI6:
+ 166              		.cfi_def_cfa_offset 8
+ 167              		.cfi_offset 7, -8
+ 168              		.cfi_offset 14, -4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 7
+
+
+ 169 0002 00AF     		add	r7, sp, #0
+ 170              	.LCFI7:
+ 171              		.cfi_def_cfa_register 7
+ 173:.\Generated_Source\PSoC4/UpDown_PM.c ****     UpDown_RestoreConfig();
+ 172              		.loc 1 173 0
+ 173 0004 FFF7FEFF 		bl	UpDown_RestoreConfig
+ 174:.\Generated_Source\PSoC4/UpDown_PM.c ****     #if(!UpDown_ControlRegRemoved)
+ 175:.\Generated_Source\PSoC4/UpDown_PM.c ****         if(UpDown_backup.CounterEnableState == 1u)
+ 174              		.loc 1 175 0
+ 175 0008 034B     		ldr	r3, .L14
+ 176 000a 1B78     		ldrb	r3, [r3]
+ 177 000c 012B     		cmp	r3, #1
+ 178 000e 01D1     		bne	.L12
+ 176:.\Generated_Source\PSoC4/UpDown_PM.c ****         {
+ 177:.\Generated_Source\PSoC4/UpDown_PM.c ****             /* Enable Counter's operation */
+ 178:.\Generated_Source\PSoC4/UpDown_PM.c ****             UpDown_Enable();
+ 179              		.loc 1 178 0
+ 180 0010 FFF7FEFF 		bl	UpDown_Enable
+ 181              	.L12:
+ 179:.\Generated_Source\PSoC4/UpDown_PM.c ****         } /* Do nothing if Counter was disabled before */    
+ 180:.\Generated_Source\PSoC4/UpDown_PM.c ****     #endif /* (!UpDown_ControlRegRemoved) */
+ 181:.\Generated_Source\PSoC4/UpDown_PM.c ****     
+ 182:.\Generated_Source\PSoC4/UpDown_PM.c **** }
+ 182              		.loc 1 182 0
+ 183 0014 BD46     		mov	sp, r7
+ 184              		@ sp needed for prologue
+ 185 0016 80BD     		pop	{r7, pc}
+ 186              	.L15:
+ 187              		.align	2
+ 188              	.L14:
+ 189 0018 00000000 		.word	UpDown_backup
+ 190              		.cfi_endproc
+ 191              	.LFE3:
+ 192              		.size	UpDown_Wakeup, .-UpDown_Wakeup
+ 193              		.text
+ 194              	.Letext0:
+ 195              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 196              		.file 3 ".\\Generated_Source\\PSoC4\\UpDown.h"
+ 197              		.section	.debug_info,"",%progbits
+ 198              	.Ldebug_info0:
+ 199 0000 55010000 		.4byte	0x155
+ 200 0004 0200     		.2byte	0x2
+ 201 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 202 000a 04       		.byte	0x4
+ 203 000b 01       		.uleb128 0x1
+ 204 000c 3D000000 		.4byte	.LASF24
+ 205 0010 01       		.byte	0x1
+ 206 0011 B1010000 		.4byte	.LASF25
+ 207 0015 F2000000 		.4byte	.LASF26
+ 208 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 209 001d 00000000 		.4byte	0
+ 210 0021 00000000 		.4byte	0
+ 211 0025 00000000 		.4byte	.Ldebug_line0
+ 212 0029 02       		.uleb128 0x2
+ 213 002a 01       		.byte	0x1
+ 214 002b 06       		.byte	0x6
+ 215 002c A5010000 		.4byte	.LASF0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 8
+
+
+ 216 0030 02       		.uleb128 0x2
+ 217 0031 01       		.byte	0x1
+ 218 0032 08       		.byte	0x8
+ 219 0033 E4000000 		.4byte	.LASF1
+ 220 0037 02       		.uleb128 0x2
+ 221 0038 02       		.byte	0x2
+ 222 0039 05       		.byte	0x5
+ 223 003a ED010000 		.4byte	.LASF2
+ 224 003e 02       		.uleb128 0x2
+ 225 003f 02       		.byte	0x2
+ 226 0040 07       		.byte	0x7
+ 227 0041 92010000 		.4byte	.LASF3
+ 228 0045 02       		.uleb128 0x2
+ 229 0046 04       		.byte	0x4
+ 230 0047 05       		.byte	0x5
+ 231 0048 4F010000 		.4byte	.LASF4
+ 232 004c 02       		.uleb128 0x2
+ 233 004d 04       		.byte	0x4
+ 234 004e 07       		.byte	0x7
+ 235 004f 8C000000 		.4byte	.LASF5
+ 236 0053 02       		.uleb128 0x2
+ 237 0054 08       		.byte	0x8
+ 238 0055 05       		.byte	0x5
+ 239 0056 00000000 		.4byte	.LASF6
+ 240 005a 02       		.uleb128 0x2
+ 241 005b 08       		.byte	0x8
+ 242 005c 07       		.byte	0x7
+ 243 005d 9E000000 		.4byte	.LASF7
+ 244 0061 03       		.uleb128 0x3
+ 245 0062 04       		.byte	0x4
+ 246 0063 05       		.byte	0x5
+ 247 0064 696E7400 		.ascii	"int\000"
+ 248 0068 02       		.uleb128 0x2
+ 249 0069 04       		.byte	0x4
+ 250 006a 07       		.byte	0x7
+ 251 006b 29000000 		.4byte	.LASF8
+ 252 006f 04       		.uleb128 0x4
+ 253 0070 86000000 		.4byte	.LASF9
+ 254 0074 02       		.byte	0x2
+ 255 0075 5B       		.byte	0x5b
+ 256 0076 30000000 		.4byte	0x30
+ 257 007a 04       		.uleb128 0x4
+ 258 007b 36000000 		.4byte	.LASF10
+ 259 007f 02       		.byte	0x2
+ 260 0080 5D       		.byte	0x5d
+ 261 0081 4C000000 		.4byte	0x4c
+ 262 0085 02       		.uleb128 0x2
+ 263 0086 04       		.byte	0x4
+ 264 0087 04       		.byte	0x4
+ 265 0088 C9000000 		.4byte	.LASF11
+ 266 008c 02       		.uleb128 0x2
+ 267 008d 08       		.byte	0x8
+ 268 008e 04       		.byte	0x4
+ 269 008f 6B010000 		.4byte	.LASF12
+ 270 0093 02       		.uleb128 0x2
+ 271 0094 01       		.byte	0x1
+ 272 0095 08       		.byte	0x8
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 9
+
+
+ 273 0096 4A010000 		.4byte	.LASF13
+ 274 009a 04       		.uleb128 0x4
+ 275 009b F7010000 		.4byte	.LASF14
+ 276 009f 02       		.byte	0x2
+ 277 00a0 F0       		.byte	0xf0
+ 278 00a1 A5000000 		.4byte	0xa5
+ 279 00a5 05       		.uleb128 0x5
+ 280 00a6 6F000000 		.4byte	0x6f
+ 281 00aa 02       		.uleb128 0x2
+ 282 00ab 04       		.byte	0x4
+ 283 00ac 07       		.byte	0x7
+ 284 00ad 07020000 		.4byte	.LASF15
+ 285 00b1 06       		.uleb128 0x6
+ 286 00b2 0C       		.byte	0xc
+ 287 00b3 03       		.byte	0x3
+ 288 00b4 38       		.byte	0x38
+ 289 00b5 E4000000 		.4byte	0xe4
+ 290 00b9 07       		.uleb128 0x7
+ 291 00ba 58010000 		.4byte	.LASF16
+ 292 00be 03       		.byte	0x3
+ 293 00bf 3A       		.byte	0x3a
+ 294 00c0 6F000000 		.4byte	0x6f
+ 295 00c4 02       		.byte	0x2
+ 296 00c5 23       		.byte	0x23
+ 297 00c6 00       		.uleb128 0
+ 298 00c7 07       		.uleb128 0x7
+ 299 00c8 FC010000 		.4byte	.LASF17
+ 300 00cc 03       		.byte	0x3
+ 301 00cd 3B       		.byte	0x3b
+ 302 00ce 7A000000 		.4byte	0x7a
+ 303 00d2 02       		.byte	0x2
+ 304 00d3 23       		.byte	0x23
+ 305 00d4 04       		.uleb128 0x4
+ 306 00d5 07       		.uleb128 0x7
+ 307 00d6 D6010000 		.4byte	.LASF18
+ 308 00da 03       		.byte	0x3
+ 309 00db 44       		.byte	0x44
+ 310 00dc 6F000000 		.4byte	0x6f
+ 311 00e0 02       		.byte	0x2
+ 312 00e1 23       		.byte	0x23
+ 313 00e2 08       		.uleb128 0x8
+ 314 00e3 00       		.byte	0
+ 315 00e4 04       		.uleb128 0x4
+ 316 00e5 B5000000 		.4byte	.LASF19
+ 317 00e9 03       		.byte	0x3
+ 318 00ea 47       		.byte	0x47
+ 319 00eb B1000000 		.4byte	0xb1
+ 320 00ef 08       		.uleb128 0x8
+ 321 00f0 01       		.byte	0x1
+ 322 00f1 80010000 		.4byte	.LASF20
+ 323 00f5 01       		.byte	0x1
+ 324 00f6 2A       		.byte	0x2a
+ 325 00f7 01       		.byte	0x1
+ 326 00f8 00000000 		.4byte	.LFB0
+ 327 00fc 24000000 		.4byte	.LFE0
+ 328 0100 00000000 		.4byte	.LLST0
+ 329 0104 01       		.byte	0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 10
+
+
+ 330 0105 08       		.uleb128 0x8
+ 331 0106 01       		.byte	0x1
+ 332 0107 CF000000 		.4byte	.LASF21
+ 333 010b 01       		.byte	0x1
+ 334 010c 50       		.byte	0x50
+ 335 010d 01       		.byte	0x1
+ 336 010e 00000000 		.4byte	.LFB1
+ 337 0112 20000000 		.4byte	.LFE1
+ 338 0116 2C000000 		.4byte	.LLST1
+ 339 011a 01       		.byte	0x1
+ 340 011b 08       		.uleb128 0x8
+ 341 011c 01       		.byte	0x1
+ 342 011d 1C000000 		.4byte	.LASF22
+ 343 0121 01       		.byte	0x1
+ 344 0122 7E       		.byte	0x7e
+ 345 0123 01       		.byte	0x1
+ 346 0124 00000000 		.4byte	.LFB2
+ 347 0128 34000000 		.4byte	.LFE2
+ 348 012c 58000000 		.4byte	.LLST2
+ 349 0130 01       		.byte	0x1
+ 350 0131 08       		.uleb128 0x8
+ 351 0132 01       		.byte	0x1
+ 352 0133 72010000 		.4byte	.LASF23
+ 353 0137 01       		.byte	0x1
+ 354 0138 AB       		.byte	0xab
+ 355 0139 01       		.byte	0x1
+ 356 013a 00000000 		.4byte	.LFB3
+ 357 013e 1C000000 		.4byte	.LFE3
+ 358 0142 84000000 		.4byte	.LLST3
+ 359 0146 01       		.byte	0x1
+ 360 0147 09       		.uleb128 0x9
+ 361 0148 0E000000 		.4byte	.LASF27
+ 362 014c 01       		.byte	0x1
+ 363 014d 15       		.byte	0x15
+ 364 014e E4000000 		.4byte	0xe4
+ 365 0152 05       		.byte	0x5
+ 366 0153 03       		.byte	0x3
+ 367 0154 00000000 		.4byte	UpDown_backup
+ 368 0158 00       		.byte	0
+ 369              		.section	.debug_abbrev,"",%progbits
+ 370              	.Ldebug_abbrev0:
+ 371 0000 01       		.uleb128 0x1
+ 372 0001 11       		.uleb128 0x11
+ 373 0002 01       		.byte	0x1
+ 374 0003 25       		.uleb128 0x25
+ 375 0004 0E       		.uleb128 0xe
+ 376 0005 13       		.uleb128 0x13
+ 377 0006 0B       		.uleb128 0xb
+ 378 0007 03       		.uleb128 0x3
+ 379 0008 0E       		.uleb128 0xe
+ 380 0009 1B       		.uleb128 0x1b
+ 381 000a 0E       		.uleb128 0xe
+ 382 000b 55       		.uleb128 0x55
+ 383 000c 06       		.uleb128 0x6
+ 384 000d 11       		.uleb128 0x11
+ 385 000e 01       		.uleb128 0x1
+ 386 000f 52       		.uleb128 0x52
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 11
+
+
+ 387 0010 01       		.uleb128 0x1
+ 388 0011 10       		.uleb128 0x10
+ 389 0012 06       		.uleb128 0x6
+ 390 0013 00       		.byte	0
+ 391 0014 00       		.byte	0
+ 392 0015 02       		.uleb128 0x2
+ 393 0016 24       		.uleb128 0x24
+ 394 0017 00       		.byte	0
+ 395 0018 0B       		.uleb128 0xb
+ 396 0019 0B       		.uleb128 0xb
+ 397 001a 3E       		.uleb128 0x3e
+ 398 001b 0B       		.uleb128 0xb
+ 399 001c 03       		.uleb128 0x3
+ 400 001d 0E       		.uleb128 0xe
+ 401 001e 00       		.byte	0
+ 402 001f 00       		.byte	0
+ 403 0020 03       		.uleb128 0x3
+ 404 0021 24       		.uleb128 0x24
+ 405 0022 00       		.byte	0
+ 406 0023 0B       		.uleb128 0xb
+ 407 0024 0B       		.uleb128 0xb
+ 408 0025 3E       		.uleb128 0x3e
+ 409 0026 0B       		.uleb128 0xb
+ 410 0027 03       		.uleb128 0x3
+ 411 0028 08       		.uleb128 0x8
+ 412 0029 00       		.byte	0
+ 413 002a 00       		.byte	0
+ 414 002b 04       		.uleb128 0x4
+ 415 002c 16       		.uleb128 0x16
+ 416 002d 00       		.byte	0
+ 417 002e 03       		.uleb128 0x3
+ 418 002f 0E       		.uleb128 0xe
+ 419 0030 3A       		.uleb128 0x3a
+ 420 0031 0B       		.uleb128 0xb
+ 421 0032 3B       		.uleb128 0x3b
+ 422 0033 0B       		.uleb128 0xb
+ 423 0034 49       		.uleb128 0x49
+ 424 0035 13       		.uleb128 0x13
+ 425 0036 00       		.byte	0
+ 426 0037 00       		.byte	0
+ 427 0038 05       		.uleb128 0x5
+ 428 0039 35       		.uleb128 0x35
+ 429 003a 00       		.byte	0
+ 430 003b 49       		.uleb128 0x49
+ 431 003c 13       		.uleb128 0x13
+ 432 003d 00       		.byte	0
+ 433 003e 00       		.byte	0
+ 434 003f 06       		.uleb128 0x6
+ 435 0040 13       		.uleb128 0x13
+ 436 0041 01       		.byte	0x1
+ 437 0042 0B       		.uleb128 0xb
+ 438 0043 0B       		.uleb128 0xb
+ 439 0044 3A       		.uleb128 0x3a
+ 440 0045 0B       		.uleb128 0xb
+ 441 0046 3B       		.uleb128 0x3b
+ 442 0047 0B       		.uleb128 0xb
+ 443 0048 01       		.uleb128 0x1
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 12
+
+
+ 444 0049 13       		.uleb128 0x13
+ 445 004a 00       		.byte	0
+ 446 004b 00       		.byte	0
+ 447 004c 07       		.uleb128 0x7
+ 448 004d 0D       		.uleb128 0xd
+ 449 004e 00       		.byte	0
+ 450 004f 03       		.uleb128 0x3
+ 451 0050 0E       		.uleb128 0xe
+ 452 0051 3A       		.uleb128 0x3a
+ 453 0052 0B       		.uleb128 0xb
+ 454 0053 3B       		.uleb128 0x3b
+ 455 0054 0B       		.uleb128 0xb
+ 456 0055 49       		.uleb128 0x49
+ 457 0056 13       		.uleb128 0x13
+ 458 0057 38       		.uleb128 0x38
+ 459 0058 0A       		.uleb128 0xa
+ 460 0059 00       		.byte	0
+ 461 005a 00       		.byte	0
+ 462 005b 08       		.uleb128 0x8
+ 463 005c 2E       		.uleb128 0x2e
+ 464 005d 00       		.byte	0
+ 465 005e 3F       		.uleb128 0x3f
+ 466 005f 0C       		.uleb128 0xc
+ 467 0060 03       		.uleb128 0x3
+ 468 0061 0E       		.uleb128 0xe
+ 469 0062 3A       		.uleb128 0x3a
+ 470 0063 0B       		.uleb128 0xb
+ 471 0064 3B       		.uleb128 0x3b
+ 472 0065 0B       		.uleb128 0xb
+ 473 0066 27       		.uleb128 0x27
+ 474 0067 0C       		.uleb128 0xc
+ 475 0068 11       		.uleb128 0x11
+ 476 0069 01       		.uleb128 0x1
+ 477 006a 12       		.uleb128 0x12
+ 478 006b 01       		.uleb128 0x1
+ 479 006c 40       		.uleb128 0x40
+ 480 006d 06       		.uleb128 0x6
+ 481 006e 9642     		.uleb128 0x2116
+ 482 0070 0C       		.uleb128 0xc
+ 483 0071 00       		.byte	0
+ 484 0072 00       		.byte	0
+ 485 0073 09       		.uleb128 0x9
+ 486 0074 34       		.uleb128 0x34
+ 487 0075 00       		.byte	0
+ 488 0076 03       		.uleb128 0x3
+ 489 0077 0E       		.uleb128 0xe
+ 490 0078 3A       		.uleb128 0x3a
+ 491 0079 0B       		.uleb128 0xb
+ 492 007a 3B       		.uleb128 0x3b
+ 493 007b 0B       		.uleb128 0xb
+ 494 007c 49       		.uleb128 0x49
+ 495 007d 13       		.uleb128 0x13
+ 496 007e 02       		.uleb128 0x2
+ 497 007f 0A       		.uleb128 0xa
+ 498 0080 00       		.byte	0
+ 499 0081 00       		.byte	0
+ 500 0082 00       		.byte	0
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 13
+
+
+ 501              		.section	.debug_loc,"",%progbits
+ 502              	.Ldebug_loc0:
+ 503              	.LLST0:
+ 504 0000 00000000 		.4byte	.LFB0
+ 505 0004 02000000 		.4byte	.LCFI0
+ 506 0008 0200     		.2byte	0x2
+ 507 000a 7D       		.byte	0x7d
+ 508 000b 00       		.sleb128 0
+ 509 000c 02000000 		.4byte	.LCFI0
+ 510 0010 04000000 		.4byte	.LCFI1
+ 511 0014 0200     		.2byte	0x2
+ 512 0016 7D       		.byte	0x7d
+ 513 0017 08       		.sleb128 8
+ 514 0018 04000000 		.4byte	.LCFI1
+ 515 001c 24000000 		.4byte	.LFE0
+ 516 0020 0200     		.2byte	0x2
+ 517 0022 77       		.byte	0x77
+ 518 0023 08       		.sleb128 8
+ 519 0024 00000000 		.4byte	0
+ 520 0028 00000000 		.4byte	0
+ 521              	.LLST1:
+ 522 002c 00000000 		.4byte	.LFB1
+ 523 0030 02000000 		.4byte	.LCFI2
+ 524 0034 0200     		.2byte	0x2
+ 525 0036 7D       		.byte	0x7d
+ 526 0037 00       		.sleb128 0
+ 527 0038 02000000 		.4byte	.LCFI2
+ 528 003c 04000000 		.4byte	.LCFI3
+ 529 0040 0200     		.2byte	0x2
+ 530 0042 7D       		.byte	0x7d
+ 531 0043 08       		.sleb128 8
+ 532 0044 04000000 		.4byte	.LCFI3
+ 533 0048 20000000 		.4byte	.LFE1
+ 534 004c 0200     		.2byte	0x2
+ 535 004e 77       		.byte	0x77
+ 536 004f 08       		.sleb128 8
+ 537 0050 00000000 		.4byte	0
+ 538 0054 00000000 		.4byte	0
+ 539              	.LLST2:
+ 540 0058 00000000 		.4byte	.LFB2
+ 541 005c 02000000 		.4byte	.LCFI4
+ 542 0060 0200     		.2byte	0x2
+ 543 0062 7D       		.byte	0x7d
+ 544 0063 00       		.sleb128 0
+ 545 0064 02000000 		.4byte	.LCFI4
+ 546 0068 04000000 		.4byte	.LCFI5
+ 547 006c 0200     		.2byte	0x2
+ 548 006e 7D       		.byte	0x7d
+ 549 006f 08       		.sleb128 8
+ 550 0070 04000000 		.4byte	.LCFI5
+ 551 0074 34000000 		.4byte	.LFE2
+ 552 0078 0200     		.2byte	0x2
+ 553 007a 77       		.byte	0x77
+ 554 007b 08       		.sleb128 8
+ 555 007c 00000000 		.4byte	0
+ 556 0080 00000000 		.4byte	0
+ 557              	.LLST3:
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 14
+
+
+ 558 0084 00000000 		.4byte	.LFB3
+ 559 0088 02000000 		.4byte	.LCFI6
+ 560 008c 0200     		.2byte	0x2
+ 561 008e 7D       		.byte	0x7d
+ 562 008f 00       		.sleb128 0
+ 563 0090 02000000 		.4byte	.LCFI6
+ 564 0094 04000000 		.4byte	.LCFI7
+ 565 0098 0200     		.2byte	0x2
+ 566 009a 7D       		.byte	0x7d
+ 567 009b 08       		.sleb128 8
+ 568 009c 04000000 		.4byte	.LCFI7
+ 569 00a0 1C000000 		.4byte	.LFE3
+ 570 00a4 0200     		.2byte	0x2
+ 571 00a6 77       		.byte	0x77
+ 572 00a7 08       		.sleb128 8
+ 573 00a8 00000000 		.4byte	0
+ 574 00ac 00000000 		.4byte	0
+ 575              		.section	.debug_aranges,"",%progbits
+ 576 0000 34000000 		.4byte	0x34
+ 577 0004 0200     		.2byte	0x2
+ 578 0006 00000000 		.4byte	.Ldebug_info0
+ 579 000a 04       		.byte	0x4
+ 580 000b 00       		.byte	0
+ 581 000c 0000     		.2byte	0
+ 582 000e 0000     		.2byte	0
+ 583 0010 00000000 		.4byte	.LFB0
+ 584 0014 24000000 		.4byte	.LFE0-.LFB0
+ 585 0018 00000000 		.4byte	.LFB1
+ 586 001c 20000000 		.4byte	.LFE1-.LFB1
+ 587 0020 00000000 		.4byte	.LFB2
+ 588 0024 34000000 		.4byte	.LFE2-.LFB2
+ 589 0028 00000000 		.4byte	.LFB3
+ 590 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 591 0030 00000000 		.4byte	0
+ 592 0034 00000000 		.4byte	0
+ 593              		.section	.debug_ranges,"",%progbits
+ 594              	.Ldebug_ranges0:
+ 595 0000 00000000 		.4byte	.LFB0
+ 596 0004 24000000 		.4byte	.LFE0
+ 597 0008 00000000 		.4byte	.LFB1
+ 598 000c 20000000 		.4byte	.LFE1
+ 599 0010 00000000 		.4byte	.LFB2
+ 600 0014 34000000 		.4byte	.LFE2
+ 601 0018 00000000 		.4byte	.LFB3
+ 602 001c 1C000000 		.4byte	.LFE3
+ 603 0020 00000000 		.4byte	0
+ 604 0024 00000000 		.4byte	0
+ 605              		.section	.debug_line,"",%progbits
+ 606              	.Ldebug_line0:
+ 607 0000 AF000000 		.section	.debug_str,"MS",%progbits,1
+ 607      02005400 
+ 607      00000201 
+ 607      FB0E0D00 
+ 607      01010101 
+ 608              	.LASF6:
+ 609 0000 6C6F6E67 		.ascii	"long long int\000"
+ 609      206C6F6E 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 15
+
+
+ 609      6720696E 
+ 609      7400
+ 610              	.LASF27:
+ 611 000e 5570446F 		.ascii	"UpDown_backup\000"
+ 611      776E5F62 
+ 611      61636B75 
+ 611      7000
+ 612              	.LASF22:
+ 613 001c 5570446F 		.ascii	"UpDown_Sleep\000"
+ 613      776E5F53 
+ 613      6C656570 
+ 613      00
+ 614              	.LASF8:
+ 615 0029 756E7369 		.ascii	"unsigned int\000"
+ 615      676E6564 
+ 615      20696E74 
+ 615      00
+ 616              	.LASF10:
+ 617 0036 75696E74 		.ascii	"uint32\000"
+ 617      333200
+ 618              	.LASF24:
+ 619 003d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 619      4320342E 
+ 619      372E3320 
+ 619      32303133 
+ 619      30333132 
+ 620 0070 616E6368 		.ascii	"anch revision 196615]\000"
+ 620      20726576 
+ 620      6973696F 
+ 620      6E203139 
+ 620      36363135 
+ 621              	.LASF9:
+ 622 0086 75696E74 		.ascii	"uint8\000"
+ 622      3800
+ 623              	.LASF5:
+ 624 008c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 624      20756E73 
+ 624      69676E65 
+ 624      6420696E 
+ 624      7400
+ 625              	.LASF7:
+ 626 009e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 626      206C6F6E 
+ 626      6720756E 
+ 626      7369676E 
+ 626      65642069 
+ 627              	.LASF19:
+ 628 00b5 5570446F 		.ascii	"UpDown_backupStruct\000"
+ 628      776E5F62 
+ 628      61636B75 
+ 628      70537472 
+ 628      75637400 
+ 629              	.LASF11:
+ 630 00c9 666C6F61 		.ascii	"float\000"
+ 630      7400
+ 631              	.LASF21:
+ 632 00cf 5570446F 		.ascii	"UpDown_RestoreConfig\000"
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 16
+
+
+ 632      776E5F52 
+ 632      6573746F 
+ 632      7265436F 
+ 632      6E666967 
+ 633              	.LASF1:
+ 634 00e4 756E7369 		.ascii	"unsigned char\000"
+ 634      676E6564 
+ 634      20636861 
+ 634      7200
+ 635              	.LASF26:
+ 636 00f2 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 636      6F63756D 
+ 636      656E7473 
+ 636      20616E64 
+ 636      20536574 
+ 637 0121 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 637      72656174 
+ 637      6F725C52 
+ 637      6F734F6E 
+ 637      41537469 
+ 638              	.LASF13:
+ 639 014a 63686172 		.ascii	"char\000"
+ 639      00
+ 640              	.LASF4:
+ 641 014f 6C6F6E67 		.ascii	"long int\000"
+ 641      20696E74 
+ 641      00
+ 642              	.LASF16:
+ 643 0158 436F756E 		.ascii	"CounterEnableState\000"
+ 643      74657245 
+ 643      6E61626C 
+ 643      65537461 
+ 643      746500
+ 644              	.LASF12:
+ 645 016b 646F7562 		.ascii	"double\000"
+ 645      6C6500
+ 646              	.LASF23:
+ 647 0172 5570446F 		.ascii	"UpDown_Wakeup\000"
+ 647      776E5F57 
+ 647      616B6575 
+ 647      7000
+ 648              	.LASF20:
+ 649 0180 5570446F 		.ascii	"UpDown_SaveConfig\000"
+ 649      776E5F53 
+ 649      61766543 
+ 649      6F6E6669 
+ 649      6700
+ 650              	.LASF3:
+ 651 0192 73686F72 		.ascii	"short unsigned int\000"
+ 651      7420756E 
+ 651      7369676E 
+ 651      65642069 
+ 651      6E7400
+ 652              	.LASF0:
+ 653 01a5 7369676E 		.ascii	"signed char\000"
+ 653      65642063 
+ 653      68617200 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\cc3zs1Gc.s 			page 17
+
+
+ 654              	.LASF25:
+ 655 01b1 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UpDown_PM.c\000"
+ 655      6E657261 
+ 655      7465645F 
+ 655      536F7572 
+ 655      63655C50 
+ 656              	.LASF18:
+ 657 01d6 436F756E 		.ascii	"CounterControlRegister\000"
+ 657      74657243 
+ 657      6F6E7472 
+ 657      6F6C5265 
+ 657      67697374 
+ 658              	.LASF2:
+ 659 01ed 73686F72 		.ascii	"short int\000"
+ 659      7420696E 
+ 659      7400
+ 660              	.LASF14:
+ 661 01f7 72656738 		.ascii	"reg8\000"
+ 661      00
+ 662              	.LASF17:
+ 663 01fc 436F756E 		.ascii	"CounterUdb\000"
+ 663      74657255 
+ 663      646200
+ 664              	.LASF15:
+ 665 0207 73697A65 		.ascii	"sizetype\000"
+ 665      74797065 
+ 665      00
+ 666              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

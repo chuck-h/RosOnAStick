@@ -1,0 +1,7 @@
+C:\Program Files\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d3955e07-22be-4846-b0f4-6d42974c22be
+C:\Program Files\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|76c263ba-66ae-49cc-a572-ecf6d453456c
+C:\Program Files\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f2e49d08-5800-4f36-8e6d-85e39eaebfdb
+C:\Program Files\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|474ef05b-9786-4c97-9092-17ceb57f2784
+C:\Program Files\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|bd67d173-4ee5-47a6-823b-12f3f9497b3f
+C:\Documents and Settings\Chuck\My Documents\PSoC Creator\RosOnAStick\Bootloader.cydsn\Bootloader.cyprj|bbc5b442-7475-4ad7-a2d2-15329b244601
+C:\Documents and Settings\Chuck\My Documents\PSoC Creator\RosOnAStick\RosOnAStick.cydsn\RosOnAStick.cyprj|3aa32a69-9baa-46c5-95f8-11c2709ad309

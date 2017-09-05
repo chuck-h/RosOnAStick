@@ -1,0 +1,5060 @@
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"cybootloader.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	cy_meta_loader
+  18              		.section	.cyloadermeta,"a",%progbits
+  19              		.align	2
+  20              		.type	cy_meta_loader, %object
+  21              		.size	cy_meta_loader, 64
+  22              	cy_meta_loader:
+  23 0000 00       		.byte	0
+  24 0001 00       		.byte	0
+  25 0002 00       		.byte	0
+  26 0003 00       		.byte	0
+  27 0004 00       		.byte	0
+  28 0005 00       		.byte	0
+  29 0006 00       		.byte	0
+  30 0007 00       		.byte	0
+  31 0008 00       		.byte	0
+  32 0009 00       		.byte	0
+  33 000a 00       		.byte	0
+  34 000b 00       		.byte	0
+  35 000c 00       		.byte	0
+  36 000d 00       		.byte	0
+  37 000e 00       		.byte	0
+  38 000f 00       		.byte	0
+  39 0010 00       		.byte	0
+  40 0011 00       		.byte	0
+  41 0012 01       		.byte	1
+  42 0013 00       		.byte	0
+  43 0014 01       		.byte	1
+  44 0015 00       		.byte	0
+  45 0016 00       		.byte	0
+  46 0017 00       		.byte	0
+  47 0018 00       		.byte	0
+  48 0019 00       		.byte	0
+  49 001a 00       		.byte	0
+  50 001b 00       		.byte	0
+  51 001c 00       		.byte	0
+  52 001d 00       		.byte	0
+  53 001e 00       		.byte	0
+  54 001f 00       		.byte	0
+  55 0020 00       		.byte	0
+  56 0021 00       		.byte	0
+  57 0022 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 2
+
+
+  58 0023 00       		.byte	0
+  59 0024 00       		.byte	0
+  60 0025 00       		.byte	0
+  61 0026 00       		.byte	0
+  62 0027 00       		.byte	0
+  63 0028 00       		.byte	0
+  64 0029 00       		.byte	0
+  65 002a 00       		.byte	0
+  66 002b 00       		.byte	0
+  67 002c 00       		.byte	0
+  68 002d 00       		.byte	0
+  69 002e 00       		.byte	0
+  70 002f 00       		.byte	0
+  71 0030 00       		.byte	0
+  72 0031 00       		.byte	0
+  73 0032 00       		.byte	0
+  74 0033 00       		.byte	0
+  75 0034 00       		.byte	0
+  76 0035 00       		.byte	0
+  77 0036 00       		.byte	0
+  78 0037 00       		.byte	0
+  79 0038 00       		.byte	0
+  80 0039 00       		.byte	0
+  81 003a 00       		.byte	0
+  82 003b 00       		.byte	0
+  83 003c 00       		.byte	0
+  84 003d 00       		.byte	0
+  85 003e 00       		.byte	0
+  86 003f 00       		.byte	0
+  87              		.global	cy_bootloader
+  88              		.section	.cybootloader,"a",%progbits
+  89              		.align	2
+  90              		.type	cy_bootloader, %object
+  91              		.size	cy_bootloader, 4224
+  92              	cy_bootloader:
+  93 0000 00       		.byte	0
+  94 0001 10       		.byte	16
+  95 0002 00       		.byte	0
+  96 0003 20       		.byte	32
+  97 0004 11       		.byte	17
+  98 0005 00       		.byte	0
+  99 0006 00       		.byte	0
+ 100 0007 00       		.byte	0
+ 101 0008 51       		.byte	81
+ 102 0009 03       		.byte	3
+ 103 000a 00       		.byte	0
+ 104 000b 00       		.byte	0
+ 105 000c 51       		.byte	81
+ 106 000d 03       		.byte	3
+ 107 000e 00       		.byte	0
+ 108 000f 00       		.byte	0
+ 109 0010 08       		.byte	8
+ 110 0011 B5       		.byte	-75
+ 111 0012 00       		.byte	0
+ 112 0013 F0       		.byte	-16
+ 113 0014 EB       		.byte	-21
+ 114 0015 FB       		.byte	-5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 3
+
+
+ 115 0016 00       		.byte	0
+ 116 0017 F0       		.byte	-16
+ 117 0018 9D       		.byte	-99
+ 118 0019 F9       		.byte	-7
+ 119 001a 00       		.byte	0
+ 120 001b 00       		.byte	0
+ 121 001c F8       		.byte	-8
+ 122 001d B5       		.byte	-75
+ 123 001e 72       		.byte	114
+ 124 001f B6       		.byte	-74
+ 125 0020 80       		.byte	-128
+ 126 0021 22       		.byte	34
+ 127 0022 00       		.byte	0
+ 128 0023 21       		.byte	33
+ 129 0024 D2       		.byte	-46
+ 130 0025 00       		.byte	0
+ 131 0026 44       		.byte	68
+ 132 0027 48       		.byte	72
+ 133 0028 00       		.byte	0
+ 134 0029 F0       		.byte	-16
+ 135 002a C3       		.byte	-61
+ 136 002b FF       		.byte	-1
+ 137 002c 80       		.byte	-128
+ 138 002d 22       		.byte	34
+ 139 002e 00       		.byte	0
+ 140 002f 24       		.byte	36
+ 141 0030 42       		.byte	66
+ 142 0031 48       		.byte	72
+ 143 0032 00       		.byte	0
+ 144 0033 21       		.byte	33
+ 145 0034 D2       		.byte	-46
+ 146 0035 00       		.byte	0
+ 147 0036 00       		.byte	0
+ 148 0037 F0       		.byte	-16
+ 149 0038 BC       		.byte	-68
+ 150 0039 FF       		.byte	-1
+ 151 003a 20       		.byte	32
+ 152 003b 1C       		.byte	28
+ 153 003c 40       		.byte	64
+ 154 003d 4A       		.byte	74
+ 155 003e FF       		.byte	-1
+ 156 003f 25       		.byte	37
+ 157 0040 A7       		.byte	-89
+ 158 0041 58       		.byte	88
+ 159 0042 10       		.byte	16
+ 160 0043 32       		.byte	50
+ 161 0044 3E       		.byte	62
+ 162 0045 1C       		.byte	28
+ 163 0046 11       		.byte	17
+ 164 0047 1C       		.byte	28
+ 165 0048 43       		.byte	67
+ 166 0049 00       		.byte	0
+ 167 004a AE       		.byte	-82
+ 168 004b 43       		.byte	67
+ 169 004c 3D       		.byte	61
+ 170 004d 40       		.byte	64
+ 171 004e 01       		.byte	1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 4
+
+
+ 172 004f 33       		.byte	51
+ 173 0050 40       		.byte	64
+ 174 0051 19       		.byte	25
+ 175 0052 D3       		.byte	-45
+ 176 0053 18       		.byte	24
+ 177 0054 42       		.byte	66
+ 178 0055 00       		.byte	0
+ 179 0056 01       		.byte	1
+ 180 0057 32       		.byte	50
+ 181 0058 8A       		.byte	-118
+ 182 0059 18       		.byte	24
+ 183 005a 93       		.byte	-109
+ 184 005b 42       		.byte	66
+ 185 005c 06       		.byte	6
+ 186 005d D0       		.byte	-48
+ 187 005e 59       		.byte	89
+ 188 005f 1E       		.byte	30
+ 189 0060 09       		.byte	9
+ 190 0061 78       		.byte	120
+ 191 0062 1D       		.byte	29
+ 192 0063 78       		.byte	120
+ 193 0064 89       		.byte	-119
+ 194 0065 19       		.byte	25
+ 195 0066 0D       		.byte	13
+ 196 0067 70       		.byte	112
+ 197 0068 02       		.byte	2
+ 198 0069 33       		.byte	51
+ 199 006a F6       		.byte	-10
+ 200 006b E7       		.byte	-25
+ 201 006c 04       		.byte	4
+ 202 006d 34       		.byte	52
+ 203 006e 10       		.byte	16
+ 204 006f 2C       		.byte	44
+ 205 0070 E4       		.byte	-28
+ 206 0071 D1       		.byte	-47
+ 207 0072 C0       		.byte	-64
+ 208 0073 22       		.byte	34
+ 209 0074 33       		.byte	51
+ 210 0075 4B       		.byte	75
+ 211 0076 92       		.byte	-110
+ 212 0077 04       		.byte	4
+ 213 0078 1A       		.byte	26
+ 214 0079 60       		.byte	96
+ 215 007a 99       		.byte	-103
+ 216 007b 22       		.byte	34
+ 217 007c 00       		.byte	0
+ 218 007d 25       		.byte	37
+ 219 007e 32       		.byte	50
+ 220 007f 4B       		.byte	75
+ 221 0080 80       		.byte	-128
+ 222 0081 26       		.byte	38
+ 223 0082 1A       		.byte	26
+ 224 0083 60       		.byte	96
+ 225 0084 31       		.byte	49
+ 226 0085 4B       		.byte	75
+ 227 0086 32       		.byte	50
+ 228 0087 4A       		.byte	74
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 5
+
+
+ 229 0088 1D       		.byte	29
+ 230 0089 60       		.byte	96
+ 231 008a 32       		.byte	50
+ 232 008b 4B       		.byte	75
+ 233 008c 36       		.byte	54
+ 234 008d 06       		.byte	6
+ 235 008e 1D       		.byte	29
+ 236 008f 60       		.byte	96
+ 237 0090 99       		.byte	-103
+ 238 0091 23       		.byte	35
+ 239 0092 1B       		.byte	27
+ 240 0093 04       		.byte	4
+ 241 0094 13       		.byte	19
+ 242 0095 60       		.byte	96
+ 243 0096 30       		.byte	48
+ 244 0097 4A       		.byte	74
+ 245 0098 02       		.byte	2
+ 246 0099 21       		.byte	33
+ 247 009a 16       		.byte	22
+ 248 009b 60       		.byte	96
+ 249 009c 2F       		.byte	47
+ 250 009d 4A       		.byte	74
+ 251 009e 3C       		.byte	60
+ 252 009f 27       		.byte	39
+ 253 00a0 13       		.byte	19
+ 254 00a1 60       		.byte	96
+ 255 00a2 80       		.byte	-128
+ 256 00a3 22       		.byte	34
+ 257 00a4 2E       		.byte	46
+ 258 00a5 4B       		.byte	75
+ 259 00a6 92       		.byte	-110
+ 260 00a7 05       		.byte	5
+ 261 00a8 1A       		.byte	26
+ 262 00a9 60       		.byte	96
+ 263 00aa 2E       		.byte	46
+ 264 00ab 4A       		.byte	74
+ 265 00ac 2E       		.byte	46
+ 266 00ad 4B       		.byte	75
+ 267 00ae 2F       		.byte	47
+ 268 00af 48       		.byte	72
+ 269 00b0 1A       		.byte	26
+ 270 00b1 60       		.byte	96
+ 271 00b2 2F       		.byte	47
+ 272 00b3 4A       		.byte	74
+ 273 00b4 13       		.byte	19
+ 274 00b5 78       		.byte	120
+ 275 00b6 0B       		.byte	11
+ 276 00b7 43       		.byte	67
+ 277 00b8 13       		.byte	19
+ 278 00b9 70       		.byte	112
+ 279 00ba 03       		.byte	3
+ 280 00bb 78       		.byte	120
+ 281 00bc BB       		.byte	-69
+ 282 00bd 43       		.byte	67
+ 283 00be 28       		.byte	40
+ 284 00bf 3F       		.byte	63
+ 285 00c0 3B       		.byte	59
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 6
+
+
+ 286 00c1 43       		.byte	67
+ 287 00c2 03       		.byte	3
+ 288 00c3 70       		.byte	112
+ 289 00c4 16       		.byte	22
+ 290 00c5 20       		.byte	32
+ 291 00c6 13       		.byte	19
+ 292 00c7 78       		.byte	120
+ 293 00c8 2A       		.byte	42
+ 294 00c9 4F       		.byte	79
+ 295 00ca 03       		.byte	3
+ 296 00cb 43       		.byte	67
+ 297 00cc 13       		.byte	19
+ 298 00cd 70       		.byte	112
+ 299 00ce 80       		.byte	-128
+ 300 00cf 22       		.byte	34
+ 301 00d0 29       		.byte	41
+ 302 00d1 4B       		.byte	75
+ 303 00d2 40       		.byte	64
+ 304 00d3 18       		.byte	24
+ 305 00d4 1A       		.byte	26
+ 306 00d5 60       		.byte	96
+ 307 00d6 80       		.byte	-128
+ 308 00d7 22       		.byte	34
+ 309 00d8 28       		.byte	40
+ 310 00d9 4B       		.byte	75
+ 311 00da D2       		.byte	-46
+ 312 00db 03       		.byte	3
+ 313 00dc 1A       		.byte	26
+ 314 00dd 60       		.byte	96
+ 315 00de 40       		.byte	64
+ 316 00df 22       		.byte	34
+ 317 00e0 27       		.byte	39
+ 318 00e1 4B       		.byte	75
+ 319 00e2 1A       		.byte	26
+ 320 00e3 60       		.byte	96
+ 321 00e4 C0       		.byte	-64
+ 322 00e5 22       		.byte	34
+ 323 00e6 27       		.byte	39
+ 324 00e7 4B       		.byte	75
+ 325 00e8 52       		.byte	82
+ 326 00e9 03       		.byte	3
+ 327 00ea 1A       		.byte	26
+ 328 00eb 60       		.byte	96
+ 329 00ec 31       		.byte	49
+ 330 00ed 22       		.byte	34
+ 331 00ee 26       		.byte	38
+ 332 00ef 4B       		.byte	75
+ 333 00f0 19       		.byte	25
+ 334 00f1 60       		.byte	96
+ 335 00f2 26       		.byte	38
+ 336 00f3 4B       		.byte	75
+ 337 00f4 1A       		.byte	26
+ 338 00f5 60       		.byte	96
+ 339 00f6 80       		.byte	-128
+ 340 00f7 22       		.byte	34
+ 341 00f8 25       		.byte	37
+ 342 00f9 4B       		.byte	75
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 7
+
+
+ 343 00fa D2       		.byte	-46
+ 344 00fb 02       		.byte	2
+ 345 00fc 19       		.byte	25
+ 346 00fd 60       		.byte	96
+ 347 00fe 3B       		.byte	59
+ 348 00ff 68       		.byte	104
+ 349 0100 13       		.byte	19
+ 350 0101 43       		.byte	67
+ 351 0102 3B       		.byte	59
+ 352 0103 60       		.byte	96
+ 353 0104 00       		.byte	0
+ 354 0105 F0       		.byte	-16
+ 355 0106 F8       		.byte	-8
+ 356 0107 FD       		.byte	-3
+ 357 0108 3A       		.byte	58
+ 358 0109 68       		.byte	104
+ 359 010a 22       		.byte	34
+ 360 010b 4B       		.byte	75
+ 361 010c 13       		.byte	19
+ 362 010d 40       		.byte	64
+ 363 010e 3B       		.byte	59
+ 364 010f 60       		.byte	96
+ 365 0110 21       		.byte	33
+ 366 0111 4A       		.byte	74
+ 367 0112 22       		.byte	34
+ 368 0113 4B       		.byte	75
+ 369 0114 1A       		.byte	26
+ 370 0115 60       		.byte	96
+ 371 0116 20       		.byte	32
+ 372 0117 22       		.byte	34
+ 373 0118 21       		.byte	33
+ 374 0119 4B       		.byte	75
+ 375 011a 1C       		.byte	28
+ 376 011b 60       		.byte	96
+ 377 011c 21       		.byte	33
+ 378 011d 4B       		.byte	75
+ 379 011e 1A       		.byte	26
+ 380 011f 60       		.byte	96
+ 381 0120 21       		.byte	33
+ 382 0121 4B       		.byte	75
+ 383 0122 22       		.byte	34
+ 384 0123 4A       		.byte	74
+ 385 0124 1E       		.byte	30
+ 386 0125 60       		.byte	96
+ 387 0126 22       		.byte	34
+ 388 0127 4B       		.byte	75
+ 389 0128 1A       		.byte	26
+ 390 0129 60       		.byte	96
+ 391 012a 22       		.byte	34
+ 392 012b 4A       		.byte	74
+ 393 012c 22       		.byte	34
+ 394 012d 4B       		.byte	75
+ 395 012e 1A       		.byte	26
+ 396 012f 60       		.byte	96
+ 397 0130 22       		.byte	34
+ 398 0131 4B       		.byte	75
+ 399 0132 1D       		.byte	29
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 8
+
+
+ 400 0133 60       		.byte	96
+ 401 0134 F8       		.byte	-8
+ 402 0135 BD       		.byte	-67
+ 403 0136 C0       		.byte	-64
+ 404 0137 46       		.byte	70
+ 405 0138 00       		.byte	0
+ 406 0139 30       		.byte	48
+ 407 013a 0F       		.byte	15
+ 408 013b 40       		.byte	64
+ 409 013c 00       		.byte	0
+ 410 013d 40       		.byte	64
+ 411 013e 0F       		.byte	15
+ 412 013f 40       		.byte	64
+ 413 0140 D0       		.byte	-48
+ 414 0141 0F       		.byte	15
+ 415 0142 00       		.byte	0
+ 416 0143 00       		.byte	0
+ 417 0144 04       		.byte	4
+ 418 0145 00       		.byte	0
+ 419 0146 01       		.byte	1
+ 420 0147 40       		.byte	64
+ 421 0148 10       		.byte	16
+ 422 0149 00       		.byte	0
+ 423 014a 01       		.byte	1
+ 424 014b 40       		.byte	64
+ 425 014c 0C       		.byte	12
+ 426 014d 00       		.byte	0
+ 427 014e 01       		.byte	1
+ 428 014f 40       		.byte	64
+ 429 0150 00       		.byte	0
+ 430 0151 50       		.byte	80
+ 431 0152 0F       		.byte	15
+ 432 0153 40       		.byte	64
+ 433 0154 08       		.byte	8
+ 434 0155 03       		.byte	3
+ 435 0156 04       		.byte	4
+ 436 0157 40       		.byte	64
+ 437 0158 04       		.byte	4
+ 438 0159 50       		.byte	80
+ 439 015a 0F       		.byte	15
+ 440 015b 40       		.byte	64
+ 441 015c 10       		.byte	16
+ 442 015d 50       		.byte	80
+ 443 015e 0F       		.byte	15
+ 444 015f 40       		.byte	64
+ 445 0160 18       		.byte	24
+ 446 0161 50       		.byte	80
+ 447 0162 0F       		.byte	15
+ 448 0163 40       		.byte	64
+ 449 0164 10       		.byte	16
+ 450 0165 00       		.byte	0
+ 451 0166 01       		.byte	1
+ 452 0167 00       		.byte	0
+ 453 0168 20       		.byte	32
+ 454 0169 01       		.byte	1
+ 455 016a 05       		.byte	5
+ 456 016b 40       		.byte	64
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 9
+
+
+ 457 016c 01       		.byte	1
+ 458 016d 70       		.byte	112
+ 459 016e 0F       		.byte	15
+ 460 016f 40       		.byte	64
+ 461 0170 00       		.byte	0
+ 462 0171 70       		.byte	112
+ 463 0172 0F       		.byte	15
+ 464 0173 40       		.byte	64
+ 465 0174 00       		.byte	0
+ 466 0175 01       		.byte	1
+ 467 0176 0B       		.byte	11
+ 468 0177 40       		.byte	64
+ 469 0178 00       		.byte	0
+ 470 0179 00       		.byte	0
+ 471 017a 04       		.byte	4
+ 472 017b 40       		.byte	64
+ 473 017c 08       		.byte	8
+ 474 017d 00       		.byte	0
+ 475 017e 04       		.byte	4
+ 476 017f 40       		.byte	64
+ 477 0180 00       		.byte	0
+ 478 0181 01       		.byte	1
+ 479 0182 04       		.byte	4
+ 480 0183 40       		.byte	64
+ 481 0184 08       		.byte	8
+ 482 0185 01       		.byte	1
+ 483 0186 04       		.byte	4
+ 484 0187 40       		.byte	64
+ 485 0188 00       		.byte	0
+ 486 0189 04       		.byte	4
+ 487 018a 04       		.byte	4
+ 488 018b 40       		.byte	64
+ 489 018c 08       		.byte	8
+ 490 018d 04       		.byte	4
+ 491 018e 04       		.byte	4
+ 492 018f 40       		.byte	64
+ 493 0190 18       		.byte	24
+ 494 0191 04       		.byte	4
+ 495 0192 04       		.byte	4
+ 496 0193 40       		.byte	64
+ 497 0194 FF       		.byte	-1
+ 498 0195 FF       		.byte	-1
+ 499 0196 FB       		.byte	-5
+ 500 0197 FF       		.byte	-1
+ 501 0198 06       		.byte	6
+ 502 0199 00       		.byte	0
+ 503 019a 00       		.byte	0
+ 504 019b 80       		.byte	-128
+ 505 019c 04       		.byte	4
+ 506 019d 01       		.byte	1
+ 507 019e 0B       		.byte	11
+ 508 019f 40       		.byte	64
+ 509 01a0 08       		.byte	8
+ 510 01a1 02       		.byte	2
+ 511 01a2 02       		.byte	2
+ 512 01a3 40       		.byte	64
+ 513 01a4 20       		.byte	32
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 10
+
+
+ 514 01a5 02       		.byte	2
+ 515 01a6 02       		.byte	2
+ 516 01a7 40       		.byte	64
+ 517 01a8 08       		.byte	8
+ 518 01a9 01       		.byte	1
+ 519 01aa 0B       		.byte	11
+ 520 01ab 40       		.byte	64
+ 521 01ac 10       		.byte	16
+ 522 01ad 00       		.byte	0
+ 523 01ae 00       		.byte	0
+ 524 01af 80       		.byte	-128
+ 525 01b0 00       		.byte	0
+ 526 01b1 00       		.byte	0
+ 527 01b2 02       		.byte	2
+ 528 01b3 40       		.byte	64
+ 529 01b4 AF       		.byte	-81
+ 530 01b5 04       		.byte	4
+ 531 01b6 00       		.byte	0
+ 532 01b7 80       		.byte	-128
+ 533 01b8 40       		.byte	64
+ 534 01b9 00       		.byte	0
+ 535 01ba 02       		.byte	2
+ 536 01bb 40       		.byte	64
+ 537 01bc 0C       		.byte	12
+ 538 01bd 02       		.byte	2
+ 539 01be 0B       		.byte	11
+ 540 01bf 40       		.byte	64
+ 541 01c0 10       		.byte	16
+ 542 01c1 B5       		.byte	-75
+ 543 01c2 06       		.byte	6
+ 544 01c3 4C       		.byte	76
+ 545 01c4 23       		.byte	35
+ 546 01c5 78       		.byte	120
+ 547 01c6 00       		.byte	0
+ 548 01c7 2B       		.byte	43
+ 549 01c8 07       		.byte	7
+ 550 01c9 D1       		.byte	-47
+ 551 01ca 05       		.byte	5
+ 552 01cb 4B       		.byte	75
+ 553 01cc 00       		.byte	0
+ 554 01cd 2B       		.byte	43
+ 555 01ce 02       		.byte	2
+ 556 01cf D0       		.byte	-48
+ 557 01d0 04       		.byte	4
+ 558 01d1 48       		.byte	72
+ 559 01d2 00       		.byte	0
+ 560 01d3 E0       		.byte	-32
+ 561 01d4 00       		.byte	0
+ 562 01d5 BF       		.byte	-65
+ 563 01d6 01       		.byte	1
+ 564 01d7 23       		.byte	35
+ 565 01d8 23       		.byte	35
+ 566 01d9 70       		.byte	112
+ 567 01da 10       		.byte	16
+ 568 01db BD       		.byte	-67
+ 569 01dc F0       		.byte	-16
+ 570 01dd 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 11
+
+
+ 571 01de 00       		.byte	0
+ 572 01df 20       		.byte	32
+ 573 01e0 00       		.byte	0
+ 574 01e1 00       		.byte	0
+ 575 01e2 00       		.byte	0
+ 576 01e3 00       		.byte	0
+ 577 01e4 CC       		.byte	-52
+ 578 01e5 0F       		.byte	15
+ 579 01e6 00       		.byte	0
+ 580 01e7 00       		.byte	0
+ 581 01e8 08       		.byte	8
+ 582 01e9 B5       		.byte	-75
+ 583 01ea 08       		.byte	8
+ 584 01eb 4B       		.byte	75
+ 585 01ec 00       		.byte	0
+ 586 01ed 2B       		.byte	43
+ 587 01ee 03       		.byte	3
+ 588 01ef D0       		.byte	-48
+ 589 01f0 07       		.byte	7
+ 590 01f1 48       		.byte	72
+ 591 01f2 08       		.byte	8
+ 592 01f3 49       		.byte	73
+ 593 01f4 00       		.byte	0
+ 594 01f5 E0       		.byte	-32
+ 595 01f6 00       		.byte	0
+ 596 01f7 BF       		.byte	-65
+ 597 01f8 07       		.byte	7
+ 598 01f9 48       		.byte	72
+ 599 01fa 03       		.byte	3
+ 600 01fb 68       		.byte	104
+ 601 01fc 00       		.byte	0
+ 602 01fd 2B       		.byte	43
+ 603 01fe 00       		.byte	0
+ 604 01ff D1       		.byte	-47
+ 605 0200 08       		.byte	8
+ 606 0201 BD       		.byte	-67
+ 607 0202 06       		.byte	6
+ 608 0203 4B       		.byte	75
+ 609 0204 00       		.byte	0
+ 610 0205 2B       		.byte	43
+ 611 0206 FB       		.byte	-5
+ 612 0207 D0       		.byte	-48
+ 613 0208 98       		.byte	-104
+ 614 0209 47       		.byte	71
+ 615 020a F9       		.byte	-7
+ 616 020b E7       		.byte	-25
+ 617 020c 00       		.byte	0
+ 618 020d 00       		.byte	0
+ 619 020e 00       		.byte	0
+ 620 020f 00       		.byte	0
+ 621 0210 CC       		.byte	-52
+ 622 0211 0F       		.byte	15
+ 623 0212 00       		.byte	0
+ 624 0213 00       		.byte	0
+ 625 0214 F4       		.byte	-12
+ 626 0215 00       		.byte	0
+ 627 0216 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 12
+
+
+ 628 0217 20       		.byte	32
+ 629 0218 D0       		.byte	-48
+ 630 0219 00       		.byte	0
+ 631 021a 00       		.byte	0
+ 632 021b 20       		.byte	32
+ 633 021c 00       		.byte	0
+ 634 021d 00       		.byte	0
+ 635 021e 00       		.byte	0
+ 636 021f 00       		.byte	0
+ 637 0220 10       		.byte	16
+ 638 0221 B5       		.byte	-75
+ 639 0222 62       		.byte	98
+ 640 0223 B6       		.byte	-74
+ 641 0224 00       		.byte	0
+ 642 0225 F0       		.byte	-16
+ 643 0226 84       		.byte	-124
+ 644 0227 FC       		.byte	-4
+ 645 0228 00       		.byte	0
+ 646 0229 28       		.byte	40
+ 647 022a 0E       		.byte	14
+ 648 022b D1       		.byte	-47
+ 649 022c 65       		.byte	101
+ 650 022d 24       		.byte	36
+ 651 022e 01       		.byte	1
+ 652 022f 20       		.byte	32
+ 653 0230 00       		.byte	0
+ 654 0231 F0       		.byte	-16
+ 655 0232 42       		.byte	66
+ 656 0233 FD       		.byte	-3
+ 657 0234 00       		.byte	0
+ 658 0235 F0       		.byte	-16
+ 659 0236 7C       		.byte	124
+ 660 0237 FC       		.byte	-4
+ 661 0238 00       		.byte	0
+ 662 0239 28       		.byte	40
+ 663 023a 06       		.byte	6
+ 664 023b D1       		.byte	-47
+ 665 023c 01       		.byte	1
+ 666 023d 3C       		.byte	60
+ 667 023e E4       		.byte	-28
+ 668 023f B2       		.byte	-78
+ 669 0240 00       		.byte	0
+ 670 0241 2C       		.byte	44
+ 671 0242 F4       		.byte	-12
+ 672 0243 D1       		.byte	-47
+ 673 0244 40       		.byte	64
+ 674 0245 22       		.byte	34
+ 675 0246 03       		.byte	3
+ 676 0247 4B       		.byte	75
+ 677 0248 1A       		.byte	26
+ 678 0249 60       		.byte	96
+ 679 024a 00       		.byte	0
+ 680 024b F0       		.byte	-16
+ 681 024c 63       		.byte	99
+ 682 024d FC       		.byte	-4
+ 683 024e 00       		.byte	0
+ 684 024f F0       		.byte	-16
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 13
+
+
+ 685 0250 9F       		.byte	-97
+ 686 0251 FA       		.byte	-6
+ 687 0252 FE       		.byte	-2
+ 688 0253 E7       		.byte	-25
+ 689 0254 C0       		.byte	-64
+ 690 0255 00       		.byte	0
+ 691 0256 00       		.byte	0
+ 692 0257 20       		.byte	32
+ 693 0258 08       		.byte	8
+ 694 0259 B5       		.byte	-75
+ 695 025a 00       		.byte	0
+ 696 025b F0       		.byte	-16
+ 697 025c F1       		.byte	-15
+ 698 025d FA       		.byte	-6
+ 699 025e 00       		.byte	0
+ 700 025f F0       		.byte	-16
+ 701 0260 25       		.byte	37
+ 702 0261 FB       		.byte	-5
+ 703 0262 00       		.byte	0
+ 704 0263 F0       		.byte	-16
+ 705 0264 8D       		.byte	-115
+ 706 0265 FB       		.byte	-5
+ 707 0266 08       		.byte	8
+ 708 0267 BD       		.byte	-67
+ 709 0268 70       		.byte	112
+ 710 0269 B5       		.byte	-75
+ 711 026a 0D       		.byte	13
+ 712 026b 1C       		.byte	28
+ 713 026c 16       		.byte	22
+ 714 026d 1C       		.byte	28
+ 715 026e 00       		.byte	0
+ 716 026f 24       		.byte	36
+ 717 0270 03       		.byte	3
+ 718 0271 4B       		.byte	75
+ 719 0272 C9       		.byte	-55
+ 720 0273 B2       		.byte	-78
+ 721 0274 1C       		.byte	28
+ 722 0275 80       		.byte	-128
+ 723 0276 00       		.byte	0
+ 724 0277 F0       		.byte	-16
+ 725 0278 77       		.byte	119
+ 726 0279 FB       		.byte	-5
+ 727 027a 35       		.byte	53
+ 728 027b 80       		.byte	-128
+ 729 027c 20       		.byte	32
+ 730 027d 1C       		.byte	28
+ 731 027e 70       		.byte	112
+ 732 027f BD       		.byte	-67
+ 733 0280 0C       		.byte	12
+ 734 0281 01       		.byte	1
+ 735 0282 00       		.byte	0
+ 736 0283 20       		.byte	32
+ 737 0284 F0       		.byte	-16
+ 738 0285 B5       		.byte	-75
+ 739 0286 0A       		.byte	10
+ 740 0287 26       		.byte	38
+ 741 0288 17       		.byte	23
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 14
+
+
+ 742 0289 1C       		.byte	28
+ 743 028a 00       		.byte	0
+ 744 028b 24       		.byte	36
+ 745 028c 5E       		.byte	94
+ 746 028d 43       		.byte	67
+ 747 028e 87       		.byte	-121
+ 748 028f B0       		.byte	-80
+ 749 0290 03       		.byte	3
+ 750 0291 90       		.byte	-112
+ 751 0292 05       		.byte	5
+ 752 0293 91       		.byte	-111
+ 753 0294 2D       		.byte	45
+ 754 0295 4D       		.byte	77
+ 755 0296 B4       		.byte	-76
+ 756 0297 42       		.byte	66
+ 757 0298 1A       		.byte	26
+ 758 0299 DA       		.byte	-38
+ 759 029a 00       		.byte	0
+ 760 029b F0       		.byte	-16
+ 761 029c F9       		.byte	-7
+ 762 029d FA       		.byte	-6
+ 763 029e 80       		.byte	-128
+ 764 029f B2       		.byte	-78
+ 765 02a0 28       		.byte	40
+ 766 02a1 80       		.byte	-128
+ 767 02a2 2B       		.byte	43
+ 768 02a3 88       		.byte	-120
+ 769 02a4 00       		.byte	0
+ 770 02a5 2B       		.byte	43
+ 771 02a6 0D       		.byte	13
+ 772 02a7 D0       		.byte	-48
+ 773 02a8 02       		.byte	2
+ 774 02a9 20       		.byte	32
+ 775 02aa 2C       		.byte	44
+ 776 02ab 88       		.byte	-120
+ 777 02ac 00       		.byte	0
+ 778 02ad F0       		.byte	-16
+ 779 02ae 04       		.byte	4
+ 780 02af FD       		.byte	-3
+ 781 02b0 00       		.byte	0
+ 782 02b1 F0       		.byte	-16
+ 783 02b2 EE       		.byte	-18
+ 784 02b3 FA       		.byte	-6
+ 785 02b4 80       		.byte	-128
+ 786 02b5 B2       		.byte	-78
+ 787 02b6 28       		.byte	40
+ 788 02b7 80       		.byte	-128
+ 789 02b8 2B       		.byte	43
+ 790 02b9 88       		.byte	-120
+ 791 02ba A4       		.byte	-92
+ 792 02bb B2       		.byte	-78
+ 793 02bc A3       		.byte	-93
+ 794 02bd 42       		.byte	66
+ 795 02be F3       		.byte	-13
+ 796 02bf D8       		.byte	-40
+ 797 02c0 00       		.byte	0
+ 798 02c1 23       		.byte	35
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 15
+
+
+ 799 02c2 06       		.byte	6
+ 800 02c3 E0       		.byte	-32
+ 801 02c4 01       		.byte	1
+ 802 02c5 20       		.byte	32
+ 803 02c6 01       		.byte	1
+ 804 02c7 34       		.byte	52
+ 805 02c8 00       		.byte	0
+ 806 02c9 F0       		.byte	-16
+ 807 02ca F6       		.byte	-10
+ 808 02cb FC       		.byte	-4
+ 809 02cc A4       		.byte	-92
+ 810 02cd B2       		.byte	-78
+ 811 02ce E1       		.byte	-31
+ 812 02cf E7       		.byte	-25
+ 813 02d0 05       		.byte	5
+ 814 02d1 23       		.byte	35
+ 815 02d2 00       		.byte	0
+ 816 02d3 24       		.byte	36
+ 817 02d4 01       		.byte	1
+ 818 02d5 93       		.byte	-109
+ 819 02d6 3C       		.byte	60
+ 820 02d7 80       		.byte	-128
+ 821 02d8 2B       		.byte	43
+ 822 02d9 88       		.byte	-120
+ 823 02da 00       		.byte	0
+ 824 02db 2B       		.byte	43
+ 825 02dc 32       		.byte	50
+ 826 02dd D0       		.byte	-48
+ 827 02de 2E       		.byte	46
+ 828 02df 88       		.byte	-120
+ 829 02e0 3B       		.byte	59
+ 830 02e1 88       		.byte	-120
+ 831 02e2 B6       		.byte	-74
+ 832 02e3 B2       		.byte	-78
+ 833 02e4 F3       		.byte	-13
+ 834 02e5 18       		.byte	24
+ 835 02e6 05       		.byte	5
+ 836 02e7 9A       		.byte	-102
+ 837 02e8 9B       		.byte	-101
+ 838 02e9 B2       		.byte	-78
+ 839 02ea 3B       		.byte	59
+ 840 02eb 80       		.byte	-128
+ 841 02ec 93       		.byte	-109
+ 842 02ed 42       		.byte	66
+ 843 02ee 20       		.byte	32
+ 844 02ef D2       		.byte	-46
+ 845 02f0 A3       		.byte	-93
+ 846 02f1 19       		.byte	25
+ 847 02f2 9B       		.byte	-101
+ 848 02f3 B2       		.byte	-78
+ 849 02f4 02       		.byte	2
+ 850 02f5 93       		.byte	-109
+ 851 02f6 02       		.byte	2
+ 852 02f7 9B       		.byte	-101
+ 853 02f8 9C       		.byte	-100
+ 854 02f9 42       		.byte	66
+ 855 02fa 09       		.byte	9
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 16
+
+
+ 856 02fb D0       		.byte	-48
+ 857 02fc 63       		.byte	99
+ 858 02fd 1C       		.byte	28
+ 859 02fe 9B       		.byte	-101
+ 860 02ff B2       		.byte	-78
+ 861 0300 04       		.byte	4
+ 862 0301 93       		.byte	-109
+ 863 0302 03       		.byte	3
+ 864 0303 9B       		.byte	-101
+ 865 0304 1C       		.byte	28
+ 866 0305 19       		.byte	25
+ 867 0306 00       		.byte	0
+ 868 0307 F0       		.byte	-16
+ 869 0308 A9       		.byte	-87
+ 870 0309 FA       		.byte	-6
+ 871 030a 20       		.byte	32
+ 872 030b 70       		.byte	112
+ 873 030c 04       		.byte	4
+ 874 030d 9C       		.byte	-100
+ 875 030e F2       		.byte	-14
+ 876 030f E7       		.byte	-25
+ 877 0310 72       		.byte	114
+ 878 0311 B6       		.byte	-74
+ 879 0312 2B       		.byte	43
+ 880 0313 88       		.byte	-120
+ 881 0314 9E       		.byte	-98
+ 882 0315 1B       		.byte	27
+ 883 0316 B6       		.byte	-74
+ 884 0317 B2       		.byte	-78
+ 885 0318 2E       		.byte	46
+ 886 0319 80       		.byte	-128
+ 887 031a 62       		.byte	98
+ 888 031b B6       		.byte	-74
+ 889 031c 03       		.byte	3
+ 890 031d 9B       		.byte	-101
+ 891 031e 02       		.byte	2
+ 892 031f 9A       		.byte	-102
+ 893 0320 9B       		.byte	-101
+ 894 0321 18       		.byte	24
+ 895 0322 01       		.byte	1
+ 896 0323 3B       		.byte	59
+ 897 0324 1B       		.byte	27
+ 898 0325 78       		.byte	120
+ 899 0326 17       		.byte	23
+ 900 0327 2B       		.byte	43
+ 901 0328 0A       		.byte	10
+ 902 0329 D0       		.byte	-48
+ 903 032a 05       		.byte	5
+ 904 032b 20       		.byte	32
+ 905 032c 00       		.byte	0
+ 906 032d F0       		.byte	-16
+ 907 032e C4       		.byte	-60
+ 908 032f FC       		.byte	-4
+ 909 0330 06       		.byte	6
+ 910 0331 E0       		.byte	-32
+ 911 0332 9E       		.byte	-98
+ 912 0333 1B       		.byte	27
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 17
+
+
+ 913 0334 3E       		.byte	62
+ 914 0335 80       		.byte	-128
+ 915 0336 00       		.byte	0
+ 916 0337 F0       		.byte	-16
+ 917 0338 B9       		.byte	-71
+ 918 0339 FA       		.byte	-6
+ 919 033a 05       		.byte	5
+ 920 033b 23       		.byte	35
+ 921 033c 01       		.byte	1
+ 922 033d 93       		.byte	-109
+ 923 033e 01       		.byte	1
+ 924 033f E0       		.byte	-32
+ 925 0340 02       		.byte	2
+ 926 0341 9C       		.byte	-100
+ 927 0342 C9       		.byte	-55
+ 928 0343 E7       		.byte	-25
+ 929 0344 01       		.byte	1
+ 930 0345 98       		.byte	-104
+ 931 0346 07       		.byte	7
+ 932 0347 B0       		.byte	-80
+ 933 0348 F0       		.byte	-16
+ 934 0349 BD       		.byte	-67
+ 935 034a C0       		.byte	-64
+ 936 034b 46       		.byte	70
+ 937 034c 0C       		.byte	12
+ 938 034d 01       		.byte	1
+ 939 034e 00       		.byte	0
+ 940 034f 20       		.byte	32
+ 941 0350 FE       		.byte	-2
+ 942 0351 E7       		.byte	-25
+ 943 0352 00       		.byte	0
+ 944 0353 00       		.byte	0
+ 945 0354 70       		.byte	112
+ 946 0355 B5       		.byte	-75
+ 947 0356 10       		.byte	16
+ 948 0357 49       		.byte	73
+ 949 0358 10       		.byte	16
+ 950 0359 4B       		.byte	75
+ 951 035a 01       		.byte	1
+ 952 035b 39       		.byte	57
+ 953 035c 4A       		.byte	74
+ 954 035d 1C       		.byte	28
+ 955 035e 15       		.byte	21
+ 956 035f D0       		.byte	-48
+ 957 0360 00       		.byte	0
+ 958 0361 22       		.byte	34
+ 959 0362 1E       		.byte	30
+ 960 0363 68       		.byte	104
+ 961 0364 5C       		.byte	92
+ 962 0365 68       		.byte	104
+ 963 0366 9D       		.byte	-99
+ 964 0367 68       		.byte	104
+ 965 0368 A0       		.byte	-96
+ 966 0369 18       		.byte	24
+ 967 036a AA       		.byte	-86
+ 968 036b 42       		.byte	66
+ 969 036c 03       		.byte	3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 18
+
+
+ 970 036d D0       		.byte	-48
+ 971 036e B0       		.byte	-80
+ 972 036f 58       		.byte	88
+ 973 0370 A0       		.byte	-96
+ 974 0371 50       		.byte	80
+ 975 0372 04       		.byte	4
+ 976 0373 32       		.byte	50
+ 977 0374 F8       		.byte	-8
+ 978 0375 E7       		.byte	-25
+ 979 0376 02       		.byte	2
+ 980 0377 1C       		.byte	28
+ 981 0378 DC       		.byte	-36
+ 982 0379 68       		.byte	104
+ 983 037a 15       		.byte	21
+ 984 037b 1A       		.byte	26
+ 985 037c A5       		.byte	-91
+ 986 037d 42       		.byte	66
+ 987 037e 02       		.byte	2
+ 988 037f D0       		.byte	-48
+ 989 0380 00       		.byte	0
+ 990 0381 25       		.byte	37
+ 991 0382 20       		.byte	32
+ 992 0383 C2       		.byte	-62
+ 993 0384 F9       		.byte	-7
+ 994 0385 E7       		.byte	-25
+ 995 0386 10       		.byte	16
+ 996 0387 33       		.byte	51
+ 997 0388 01       		.byte	1
+ 998 0389 39       		.byte	57
+ 999 038a E7       		.byte	-25
+ 1000 038b E7       		.byte	-25
+ 1001 038c 00       		.byte	0
+ 1002 038d F0       		.byte	-16
+ 1003 038e E2       		.byte	-30
+ 1004 038f FD       		.byte	-3
+ 1005 0390 FF       		.byte	-1
+ 1006 0391 F7       		.byte	-9
+ 1007 0392 46       		.byte	70
+ 1008 0393 FF       		.byte	-1
+ 1009 0394 FE       		.byte	-2
+ 1010 0395 E7       		.byte	-25
+ 1011 0396 C0       		.byte	-64
+ 1012 0397 46       		.byte	70
+ 1013 0398 01       		.byte	1
+ 1014 0399 00       		.byte	0
+ 1015 039a 00       		.byte	0
+ 1016 039b 00       		.byte	0
+ 1017 039c 50       		.byte	80
+ 1018 039d 10       		.byte	16
+ 1019 039e 00       		.byte	0
+ 1020 039f 00       		.byte	0
+ 1021 03a0 08       		.byte	8
+ 1022 03a1 B5       		.byte	-75
+ 1023 03a2 00       		.byte	0
+ 1024 03a3 23       		.byte	35
+ 1025 03a4 9A       		.byte	-102
+ 1026 03a5 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 19
+
+
+ 1027 03a6 0D       		.byte	13
+ 1028 03a7 49       		.byte	73
+ 1029 03a8 03       		.byte	3
+ 1030 03a9 2B       		.byte	43
+ 1031 03aa 01       		.byte	1
+ 1032 03ab D8       		.byte	-40
+ 1033 03ac 0C       		.byte	12
+ 1034 03ad 49       		.byte	73
+ 1035 03ae 89       		.byte	-119
+ 1036 03af 58       		.byte	88
+ 1037 03b0 0C       		.byte	12
+ 1038 03b1 48       		.byte	72
+ 1039 03b2 01       		.byte	1
+ 1040 03b3 33       		.byte	51
+ 1041 03b4 81       		.byte	-127
+ 1042 03b5 50       		.byte	80
+ 1043 03b6 30       		.byte	48
+ 1044 03b7 2B       		.byte	43
+ 1045 03b8 F4       		.byte	-12
+ 1046 03b9 D1       		.byte	-47
+ 1047 03ba FF       		.byte	-1
+ 1048 03bb F7       		.byte	-9
+ 1049 03bc 2F       		.byte	47
+ 1050 03bd FE       		.byte	-2
+ 1051 03be 00       		.byte	0
+ 1052 03bf 22       		.byte	34
+ 1053 03c0 09       		.byte	9
+ 1054 03c1 4B       		.byte	75
+ 1055 03c2 1A       		.byte	26
+ 1056 03c3 60       		.byte	96
+ 1057 03c4 09       		.byte	9
+ 1058 03c5 4B       		.byte	75
+ 1059 03c6 1A       		.byte	26
+ 1060 03c7 68       		.byte	104
+ 1061 03c8 00       		.byte	0
+ 1062 03c9 2A       		.byte	42
+ 1063 03ca 00       		.byte	0
+ 1064 03cb D1       		.byte	-47
+ 1065 03cc 1A       		.byte	26
+ 1066 03cd 60       		.byte	96
+ 1067 03ce 80       		.byte	-128
+ 1068 03cf 22       		.byte	34
+ 1069 03d0 01       		.byte	1
+ 1070 03d1 21       		.byte	33
+ 1071 03d2 D2       		.byte	-46
+ 1072 03d3 05       		.byte	5
+ 1073 03d4 13       		.byte	19
+ 1074 03d5 68       		.byte	104
+ 1075 03d6 0B       		.byte	11
+ 1076 03d7 43       		.byte	67
+ 1077 03d8 13       		.byte	19
+ 1078 03d9 60       		.byte	96
+ 1079 03da 08       		.byte	8
+ 1080 03db BD       		.byte	-67
+ 1081 03dc 51       		.byte	81
+ 1082 03dd 03       		.byte	3
+ 1083 03de 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 20
+
+
+ 1084 03df 00       		.byte	0
+ 1085 03e0 00       		.byte	0
+ 1086 03e1 00       		.byte	0
+ 1087 03e2 00       		.byte	0
+ 1088 03e3 00       		.byte	0
+ 1089 03e4 00       		.byte	0
+ 1090 03e5 00       		.byte	0
+ 1091 03e6 00       		.byte	0
+ 1092 03e7 20       		.byte	32
+ 1093 03e8 C8       		.byte	-56
+ 1094 03e9 00       		.byte	0
+ 1095 03ea 00       		.byte	0
+ 1096 03eb 20       		.byte	32
+ 1097 03ec C0       		.byte	-64
+ 1098 03ed 00       		.byte	0
+ 1099 03ee 00       		.byte	0
+ 1100 03ef 20       		.byte	32
+ 1101 03f0 00       		.byte	0
+ 1102 03f1 47       		.byte	71
+ 1103 03f2 00       		.byte	0
+ 1104 03f3 00       		.byte	0
+ 1105 03f4 38       		.byte	56
+ 1106 03f5 B5       		.byte	-75
+ 1107 03f6 04       		.byte	4
+ 1108 03f7 1C       		.byte	28
+ 1109 03f8 01       		.byte	1
+ 1110 03f9 38       		.byte	56
+ 1111 03fa 06       		.byte	6
+ 1112 03fb 28       		.byte	40
+ 1113 03fc 0B       		.byte	11
+ 1114 03fd D8       		.byte	-40
+ 1115 03fe 00       		.byte	0
+ 1116 03ff F0       		.byte	-16
+ 1117 0400 9F       		.byte	-97
+ 1118 0401 FD       		.byte	-3
+ 1119 0402 16       		.byte	22
+ 1120 0403 11       		.byte	17
+ 1121 0404 06       		.byte	6
+ 1122 0405 0F       		.byte	15
+ 1123 0406 04       		.byte	4
+ 1124 0407 08       		.byte	8
+ 1125 0408 18       		.byte	24
+ 1126 0409 00       		.byte	0
+ 1127 040a 16       		.byte	22
+ 1128 040b 4A       		.byte	74
+ 1129 040c 0B       		.byte	11
+ 1130 040d E0       		.byte	-32
+ 1131 040e 16       		.byte	22
+ 1132 040f 4A       		.byte	74
+ 1133 0410 10       		.byte	16
+ 1134 0411 E0       		.byte	-32
+ 1135 0412 16       		.byte	22
+ 1136 0413 4A       		.byte	74
+ 1137 0414 07       		.byte	7
+ 1138 0415 E0       		.byte	-32
+ 1139 0416 00       		.byte	0
+ 1140 0417 20       		.byte	32
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 21
+
+
+ 1141 0418 00       		.byte	0
+ 1142 0419 F0       		.byte	-16
+ 1143 041a 40       		.byte	64
+ 1144 041b FC       		.byte	-4
+ 1145 041c 00       		.byte	0
+ 1146 041d 22       		.byte	34
+ 1147 041e 02       		.byte	2
+ 1148 041f E0       		.byte	-32
+ 1149 0420 13       		.byte	19
+ 1150 0421 4A       		.byte	74
+ 1151 0422 00       		.byte	0
+ 1152 0423 E0       		.byte	-32
+ 1153 0424 13       		.byte	19
+ 1154 0425 4A       		.byte	74
+ 1155 0426 53       		.byte	83
+ 1156 0427 78       		.byte	120
+ 1157 0428 10       		.byte	16
+ 1158 0429 78       		.byte	120
+ 1159 042a 00       		.byte	0
+ 1160 042b 02       		.byte	2
+ 1161 042c 0B       		.byte	11
+ 1162 042d E0       		.byte	-32
+ 1163 042e 12       		.byte	18
+ 1164 042f 4A       		.byte	74
+ 1165 0430 00       		.byte	0
+ 1166 0431 E0       		.byte	-32
+ 1167 0432 12       		.byte	18
+ 1168 0433 4A       		.byte	74
+ 1169 0434 D5       		.byte	-43
+ 1170 0435 78       		.byte	120
+ 1171 0436 91       		.byte	-111
+ 1172 0437 78       		.byte	120
+ 1173 0438 53       		.byte	83
+ 1174 0439 78       		.byte	120
+ 1175 043a 10       		.byte	16
+ 1176 043b 78       		.byte	120
+ 1177 043c 0A       		.byte	10
+ 1178 043d 02       		.byte	2
+ 1179 043e 00       		.byte	0
+ 1180 043f 06       		.byte	6
+ 1181 0440 28       		.byte	40
+ 1182 0441 43       		.byte	67
+ 1183 0442 10       		.byte	16
+ 1184 0443 43       		.byte	67
+ 1185 0444 1B       		.byte	27
+ 1186 0445 04       		.byte	4
+ 1187 0446 18       		.byte	24
+ 1188 0447 43       		.byte	67
+ 1189 0448 02       		.byte	2
+ 1190 0449 2C       		.byte	44
+ 1191 044a 04       		.byte	4
+ 1192 044b D0       		.byte	-48
+ 1193 044c 03       		.byte	3
+ 1194 044d 2C       		.byte	44
+ 1195 044e 07       		.byte	7
+ 1196 044f D0       		.byte	-48
+ 1197 0450 01       		.byte	1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 22
+
+
+ 1198 0451 2C       		.byte	44
+ 1199 0452 06       		.byte	6
+ 1200 0453 D1       		.byte	-47
+ 1201 0454 04       		.byte	4
+ 1202 0455 E0       		.byte	-32
+ 1203 0456 03       		.byte	3
+ 1204 0457 0A       		.byte	10
+ 1205 0458 00       		.byte	0
+ 1206 0459 02       		.byte	2
+ 1207 045a 18       		.byte	24
+ 1208 045b 43       		.byte	67
+ 1209 045c 80       		.byte	-128
+ 1210 045d B2       		.byte	-78
+ 1211 045e 00       		.byte	0
+ 1212 045f E0       		.byte	-32
+ 1213 0460 00       		.byte	0
+ 1214 0461 BA       		.byte	-70
+ 1215 0462 38       		.byte	56
+ 1216 0463 BD       		.byte	-67
+ 1217 0464 D6       		.byte	-42
+ 1218 0465 7F       		.byte	127
+ 1219 0466 00       		.byte	0
+ 1220 0467 00       		.byte	0
+ 1221 0468 C9       		.byte	-55
+ 1222 0469 7F       		.byte	127
+ 1223 046a 00       		.byte	0
+ 1224 046b 00       		.byte	0
+ 1225 046c D4       		.byte	-44
+ 1226 046d 7F       		.byte	127
+ 1227 046e 00       		.byte	0
+ 1228 046f 00       		.byte	0
+ 1229 0470 D2       		.byte	-46
+ 1230 0471 7F       		.byte	127
+ 1231 0472 00       		.byte	0
+ 1232 0473 00       		.byte	0
+ 1233 0474 C5       		.byte	-59
+ 1234 0475 7F       		.byte	127
+ 1235 0476 00       		.byte	0
+ 1236 0477 00       		.byte	0
+ 1237 0478 C1       		.byte	-63
+ 1238 0479 7F       		.byte	127
+ 1239 047a 00       		.byte	0
+ 1240 047b 00       		.byte	0
+ 1241 047c D8       		.byte	-40
+ 1242 047d 7F       		.byte	127
+ 1243 047e 00       		.byte	0
+ 1244 047f 00       		.byte	0
+ 1245 0480 38       		.byte	56
+ 1246 0481 B5       		.byte	-75
+ 1247 0482 02       		.byte	2
+ 1248 0483 20       		.byte	32
+ 1249 0484 FF       		.byte	-1
+ 1250 0485 F7       		.byte	-9
+ 1251 0486 B6       		.byte	-74
+ 1252 0487 FF       		.byte	-1
+ 1253 0488 05       		.byte	5
+ 1254 0489 1C       		.byte	28
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 23
+
+
+ 1255 048a 03       		.byte	3
+ 1256 048b 20       		.byte	32
+ 1257 048c FF       		.byte	-1
+ 1258 048d F7       		.byte	-9
+ 1259 048e B2       		.byte	-78
+ 1260 048f FF       		.byte	-1
+ 1261 0490 01       		.byte	1
+ 1262 0491 35       		.byte	53
+ 1263 0492 ED       		.byte	-19
+ 1264 0493 01       		.byte	1
+ 1265 0494 2C       		.byte	44
+ 1266 0495 18       		.byte	24
+ 1267 0496 02       		.byte	2
+ 1268 0497 20       		.byte	32
+ 1269 0498 FF       		.byte	-1
+ 1270 0499 F7       		.byte	-9
+ 1271 049a AC       		.byte	-84
+ 1272 049b FF       		.byte	-1
+ 1273 049c 00       		.byte	0
+ 1274 049d 23       		.byte	35
+ 1275 049e 1A       		.byte	26
+ 1276 049f 1C       		.byte	28
+ 1277 04a0 01       		.byte	1
+ 1278 04a1 30       		.byte	48
+ 1279 04a2 C0       		.byte	-64
+ 1280 04a3 01       		.byte	1
+ 1281 04a4 A0       		.byte	-96
+ 1282 04a5 42       		.byte	66
+ 1283 04a6 09       		.byte	9
+ 1284 04a7 D2       		.byte	-46
+ 1285 04a8 05       		.byte	5
+ 1286 04a9 78       		.byte	120
+ 1287 04aa 69       		.byte	105
+ 1288 04ab 1E       		.byte	30
+ 1289 04ac C9       		.byte	-55
+ 1290 04ad B2       		.byte	-78
+ 1291 04ae FD       		.byte	-3
+ 1292 04af 29       		.byte	41
+ 1293 04b0 00       		.byte	0
+ 1294 04b1 D8       		.byte	-40
+ 1295 04b2 01       		.byte	1
+ 1296 04b3 22       		.byte	34
+ 1297 04b4 EB       		.byte	-21
+ 1298 04b5 18       		.byte	24
+ 1299 04b6 DB       		.byte	-37
+ 1300 04b7 B2       		.byte	-78
+ 1301 04b8 01       		.byte	1
+ 1302 04b9 30       		.byte	48
+ 1303 04ba F3       		.byte	-13
+ 1304 04bb E7       		.byte	-25
+ 1305 04bc 05       		.byte	5
+ 1306 04bd 49       		.byte	73
+ 1307 04be 5B       		.byte	91
+ 1308 04bf 42       		.byte	66
+ 1309 04c0 09       		.byte	9
+ 1310 04c1 78       		.byte	120
+ 1311 04c2 DB       		.byte	-37
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 24
+
+
+ 1312 04c3 B2       		.byte	-78
+ 1313 04c4 06       		.byte	6
+ 1314 04c5 20       		.byte	32
+ 1315 04c6 8B       		.byte	-117
+ 1316 04c7 42       		.byte	66
+ 1317 04c8 03       		.byte	3
+ 1318 04c9 D1       		.byte	-47
+ 1319 04ca 53       		.byte	83
+ 1320 04cb 42       		.byte	66
+ 1321 04cc 5A       		.byte	90
+ 1322 04cd 41       		.byte	65
+ 1323 04ce 52       		.byte	82
+ 1324 04cf 42       		.byte	66
+ 1325 04d0 10       		.byte	16
+ 1326 04d1 40       		.byte	64
+ 1327 04d2 38       		.byte	56
+ 1328 04d3 BD       		.byte	-67
+ 1329 04d4 C0       		.byte	-64
+ 1330 04d5 7F       		.byte	127
+ 1331 04d6 00       		.byte	0
+ 1332 04d7 00       		.byte	0
+ 1333 04d8 F0       		.byte	-16
+ 1334 04d9 B5       		.byte	-75
+ 1335 04da A3       		.byte	-93
+ 1336 04db 4C       		.byte	76
+ 1337 04dc A5       		.byte	-91
+ 1338 04dd 44       		.byte	68
+ 1339 04de FF       		.byte	-1
+ 1340 04df F7       		.byte	-9
+ 1341 04e0 BB       		.byte	-69
+ 1342 04e1 FE       		.byte	-2
+ 1343 04e2 62       		.byte	98
+ 1344 04e3 B6       		.byte	-74
+ 1345 04e4 00       		.byte	0
+ 1346 04e5 27       		.byte	39
+ 1347 04e6 01       		.byte	1
+ 1348 04e7 97       		.byte	-105
+ 1349 04e8 00       		.byte	0
+ 1350 04e9 24       		.byte	36
+ 1351 04ea 96       		.byte	-106
+ 1352 04eb 21       		.byte	33
+ 1353 04ec 26       		.byte	38
+ 1354 04ed AE       		.byte	-82
+ 1355 04ee 05       		.byte	5
+ 1356 04ef AD       		.byte	-83
+ 1357 04f0 30       		.byte	48
+ 1358 04f1 1C       		.byte	28
+ 1359 04f2 49       		.byte	73
+ 1360 04f3 00       		.byte	0
+ 1361 04f4 2A       		.byte	42
+ 1362 04f5 1C       		.byte	28
+ 1363 04f6 FF       		.byte	-1
+ 1364 04f7 23       		.byte	35
+ 1365 04f8 FF       		.byte	-1
+ 1366 04f9 F7       		.byte	-9
+ 1367 04fa C4       		.byte	-60
+ 1368 04fb FE       		.byte	-2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 25
+
+
+ 1369 04fc 02       		.byte	2
+ 1370 04fd 90       		.byte	-112
+ 1371 04fe 00       		.byte	0
+ 1372 04ff 28       		.byte	40
+ 1373 0500 F3       		.byte	-13
+ 1374 0501 D1       		.byte	-47
+ 1375 0502 2B       		.byte	43
+ 1376 0503 88       		.byte	-120
+ 1377 0504 18       		.byte	24
+ 1378 0505 1E       		.byte	30
+ 1379 0506 06       		.byte	6
+ 1380 0507 28       		.byte	40
+ 1381 0508 00       		.byte	0
+ 1382 0509 D8       		.byte	-40
+ 1383 050a 29       		.byte	41
+ 1384 050b E1       		.byte	-31
+ 1385 050c 32       		.byte	50
+ 1386 050d 78       		.byte	120
+ 1387 050e 04       		.byte	4
+ 1388 050f 23       		.byte	35
+ 1389 0510 01       		.byte	1
+ 1390 0511 2A       		.byte	42
+ 1391 0512 5F       		.byte	95
+ 1392 0513 D1       		.byte	-47
+ 1393 0514 F5       		.byte	-11
+ 1394 0515 78       		.byte	120
+ 1395 0516 B2       		.byte	-78
+ 1396 0517 78       		.byte	120
+ 1397 0518 2D       		.byte	45
+ 1398 0519 02       		.byte	2
+ 1399 051a 15       		.byte	21
+ 1400 051b 43       		.byte	67
+ 1401 051c 72       		.byte	114
+ 1402 051d 19       		.byte	25
+ 1403 051e 51       		.byte	81
+ 1404 051f 79       		.byte	121
+ 1405 0520 03       		.byte	3
+ 1406 0521 91       		.byte	-111
+ 1407 0522 11       		.byte	17
+ 1408 0523 79       		.byte	121
+ 1409 0524 8C       		.byte	-116
+ 1410 0525 46       		.byte	70
+ 1411 0526 E9       		.byte	-23
+ 1412 0527 1D       		.byte	29
+ 1413 0528 81       		.byte	-127
+ 1414 0529 42       		.byte	66
+ 1415 052a 00       		.byte	0
+ 1416 052b D9       		.byte	-39
+ 1417 052c 1A       		.byte	26
+ 1418 052d E1       		.byte	-31
+ 1419 052e 92       		.byte	-110
+ 1420 052f 79       		.byte	121
+ 1421 0530 17       		.byte	23
+ 1422 0531 2A       		.byte	42
+ 1423 0532 4F       		.byte	79
+ 1424 0533 D1       		.byte	-47
+ 1425 0534 EB       		.byte	-21
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 26
+
+
+ 1426 0535 18       		.byte	24
+ 1427 0536 02       		.byte	2
+ 1428 0537 98       		.byte	-104
+ 1429 0538 9B       		.byte	-101
+ 1430 0539 B2       		.byte	-78
+ 1431 053a 00       		.byte	0
+ 1432 053b 2B       		.byte	43
+ 1433 053c 09       		.byte	9
+ 1434 053d D0       		.byte	-48
+ 1435 053e BC       		.byte	-68
+ 1436 053f AA       		.byte	-86
+ 1437 0540 8A       		.byte	-118
+ 1438 0541 49       		.byte	73
+ 1439 0542 D2       		.byte	-46
+ 1440 0543 18       		.byte	24
+ 1441 0544 52       		.byte	82
+ 1442 0545 18       		.byte	24
+ 1443 0546 12       		.byte	18
+ 1444 0547 78       		.byte	120
+ 1445 0548 01       		.byte	1
+ 1446 0549 3B       		.byte	59
+ 1447 054a 80       		.byte	-128
+ 1448 054b 18       		.byte	24
+ 1449 054c 80       		.byte	-128
+ 1450 054d B2       		.byte	-78
+ 1451 054e 9B       		.byte	-101
+ 1452 054f B2       		.byte	-78
+ 1453 0550 F3       		.byte	-13
+ 1454 0551 E7       		.byte	-25
+ 1455 0552 03       		.byte	3
+ 1456 0553 9B       		.byte	-101
+ 1457 0554 40       		.byte	64
+ 1458 0555 42       		.byte	66
+ 1459 0556 1A       		.byte	26
+ 1460 0557 02       		.byte	2
+ 1461 0558 63       		.byte	99
+ 1462 0559 46       		.byte	70
+ 1463 055a 80       		.byte	-128
+ 1464 055b B2       		.byte	-78
+ 1465 055c 1A       		.byte	26
+ 1466 055d 43       		.byte	67
+ 1467 055e 08       		.byte	8
+ 1468 055f 23       		.byte	35
+ 1469 0560 82       		.byte	-126
+ 1470 0561 42       		.byte	66
+ 1471 0562 37       		.byte	55
+ 1472 0563 D1       		.byte	-47
+ 1473 0564 65       		.byte	101
+ 1474 0565 E0       		.byte	-32
+ 1475 0566 34       		.byte	52
+ 1476 0567 2A       		.byte	42
+ 1477 0568 00       		.byte	0
+ 1478 0569 D0       		.byte	-48
+ 1479 056a 98       		.byte	-104
+ 1480 056b E0       		.byte	-32
+ 1481 056c 01       		.byte	1
+ 1482 056d 2F       		.byte	47
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 27
+
+
+ 1483 056e 00       		.byte	0
+ 1484 056f D0       		.byte	-48
+ 1485 0570 F6       		.byte	-10
+ 1486 0571 E0       		.byte	-32
+ 1487 0572 03       		.byte	3
+ 1488 0573 2D       		.byte	45
+ 1489 0574 00       		.byte	0
+ 1490 0575 D0       		.byte	-48
+ 1491 0576 F3       		.byte	-13
+ 1492 0577 E0       		.byte	-32
+ 1493 0578 71       		.byte	113
+ 1494 0579 A8       		.byte	-88
+ 1495 057a 00       		.byte	0
+ 1496 057b 21       		.byte	33
+ 1497 057c 4C       		.byte	76
+ 1498 057d 32       		.byte	50
+ 1499 057e 00       		.byte	0
+ 1500 057f F0       		.byte	-16
+ 1501 0580 18       		.byte	24
+ 1502 0581 FD       		.byte	-3
+ 1503 0582 80       		.byte	-128
+ 1504 0583 24       		.byte	36
+ 1505 0584 8F       		.byte	-113
+ 1506 0585 21       		.byte	33
+ 1507 0586 71       		.byte	113
+ 1508 0587 AB       		.byte	-85
+ 1509 0588 18       		.byte	24
+ 1510 0589 19       		.byte	25
+ 1511 058a 04       		.byte	4
+ 1512 058b AB       		.byte	-85
+ 1513 058c 64       		.byte	100
+ 1514 058d 19       		.byte	25
+ 1515 058e EA       		.byte	-22
+ 1516 058f 1E       		.byte	30
+ 1517 0590 C9       		.byte	-55
+ 1518 0591 18       		.byte	24
+ 1519 0592 A4       		.byte	-92
+ 1520 0593 B2       		.byte	-78
+ 1521 0594 00       		.byte	0
+ 1522 0595 F0       		.byte	-16
+ 1523 0596 04       		.byte	4
+ 1524 0597 FD       		.byte	-3
+ 1525 0598 83       		.byte	-125
+ 1526 0599 2C       		.byte	44
+ 1527 059a 00       		.byte	0
+ 1528 059b D0       		.byte	-48
+ 1529 059c DA       		.byte	-38
+ 1530 059d E0       		.byte	-32
+ 1531 059e B4       		.byte	-76
+ 1532 059f 79       		.byte	121
+ 1533 05a0 73       		.byte	115
+ 1534 05a1 79       		.byte	121
+ 1535 05a2 24       		.byte	36
+ 1536 05a3 02       		.byte	2
+ 1537 05a4 1C       		.byte	28
+ 1538 05a5 43       		.byte	67
+ 1539 05a6 01       		.byte	1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 28
+
+
+ 1540 05a7 9B       		.byte	-101
+ 1541 05a8 00       		.byte	0
+ 1542 05a9 2B       		.byte	43
+ 1543 05aa 0A       		.byte	10
+ 1544 05ab D1       		.byte	-47
+ 1545 05ac 19       		.byte	25
+ 1546 05ad 1C       		.byte	28
+ 1547 05ae 80       		.byte	-128
+ 1548 05af 22       		.byte	34
+ 1549 05b0 06       		.byte	6
+ 1550 05b1 A8       		.byte	-88
+ 1551 05b2 00       		.byte	0
+ 1552 05b3 F0       		.byte	-16
+ 1553 05b4 FE       		.byte	-2
+ 1554 05b5 FC       		.byte	-4
+ 1555 05b6 FF       		.byte	-1
+ 1556 05b7 20       		.byte	32
+ 1557 05b8 06       		.byte	6
+ 1558 05b9 A9       		.byte	-87
+ 1559 05ba 00       		.byte	0
+ 1560 05bb F0       		.byte	-16
+ 1561 05bc D1       		.byte	-47
+ 1562 05bd FA       		.byte	-6
+ 1563 05be 01       		.byte	1
+ 1564 05bf 23       		.byte	35
+ 1565 05c0 01       		.byte	1
+ 1566 05c1 93       		.byte	-109
+ 1567 05c2 20       		.byte	32
+ 1568 05c3 1C       		.byte	28
+ 1569 05c4 71       		.byte	113
+ 1570 05c5 A9       		.byte	-87
+ 1571 05c6 00       		.byte	0
+ 1572 05c7 F0       		.byte	-16
+ 1573 05c8 CB       		.byte	-53
+ 1574 05c9 FA       		.byte	-6
+ 1575 05ca 01       		.byte	1
+ 1576 05cb 27       		.byte	39
+ 1577 05cc 04       		.byte	4
+ 1578 05cd 1E       		.byte	30
+ 1579 05ce 00       		.byte	0
+ 1580 05cf D0       		.byte	-48
+ 1581 05d0 C3       		.byte	-61
+ 1582 05d1 E0       		.byte	-32
+ 1583 05d2 00       		.byte	0
+ 1584 05d3 23       		.byte	35
+ 1585 05d4 00       		.byte	0
+ 1586 05d5 21       		.byte	33
+ 1587 05d6 04       		.byte	4
+ 1588 05d7 AA       		.byte	-86
+ 1589 05d8 01       		.byte	1
+ 1590 05d9 20       		.byte	32
+ 1591 05da 06       		.byte	6
+ 1592 05db 32       		.byte	50
+ 1593 05dc 73       		.byte	115
+ 1594 05dd 70       		.byte	112
+ 1595 05de 00       		.byte	0
+ 1596 05df 23       		.byte	35
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 29
+
+
+ 1597 05e0 94       		.byte	-108
+ 1598 05e1 46       		.byte	70
+ 1599 05e2 30       		.byte	48
+ 1600 05e3 70       		.byte	112
+ 1601 05e4 08       		.byte	8
+ 1602 05e5 1D       		.byte	29
+ 1603 05e6 11       		.byte	17
+ 1604 05e7 80       		.byte	-128
+ 1605 05e8 B1       		.byte	-79
+ 1606 05e9 70       		.byte	112
+ 1607 05ea F3       		.byte	-13
+ 1608 05eb 70       		.byte	112
+ 1609 05ec 80       		.byte	-128
+ 1610 05ed B2       		.byte	-78
+ 1611 05ee BC       		.byte	-68
+ 1612 05ef AD       		.byte	-83
+ 1613 05f0 5E       		.byte	94
+ 1614 05f1 4A       		.byte	74
+ 1615 05f2 2D       		.byte	45
+ 1616 05f3 18       		.byte	24
+ 1617 05f4 AD       		.byte	-83
+ 1618 05f5 18       		.byte	24
+ 1619 05f6 2D       		.byte	45
+ 1620 05f7 78       		.byte	120
+ 1621 05f8 01       		.byte	1
+ 1622 05f9 38       		.byte	56
+ 1623 05fa 5B       		.byte	91
+ 1624 05fb 19       		.byte	25
+ 1625 05fc 80       		.byte	-128
+ 1626 05fd B2       		.byte	-78
+ 1627 05fe 9B       		.byte	-101
+ 1628 05ff B2       		.byte	-78
+ 1629 0600 00       		.byte	0
+ 1630 0601 28       		.byte	40
+ 1631 0602 F4       		.byte	-12
+ 1632 0603 D1       		.byte	-47
+ 1633 0604 BC       		.byte	-68
+ 1634 0605 AA       		.byte	-86
+ 1635 0606 50       		.byte	80
+ 1636 0607 18       		.byte	24
+ 1637 0608 59       		.byte	89
+ 1638 0609 4A       		.byte	74
+ 1639 060a 5B       		.byte	91
+ 1640 060b 42       		.byte	66
+ 1641 060c 85       		.byte	-123
+ 1642 060d 18       		.byte	24
+ 1643 060e 59       		.byte	89
+ 1644 060f 4A       		.byte	74
+ 1645 0610 9B       		.byte	-101
+ 1646 0611 B2       		.byte	-78
+ 1647 0612 2B       		.byte	43
+ 1648 0613 70       		.byte	112
+ 1649 0614 85       		.byte	-123
+ 1650 0615 18       		.byte	24
+ 1651 0616 1B       		.byte	27
+ 1652 0617 0A       		.byte	10
+ 1653 0618 2B       		.byte	43
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 30
+
+
+ 1654 0619 70       		.byte	112
+ 1655 061a 57       		.byte	87
+ 1656 061b 4B       		.byte	75
+ 1657 061c 07       		.byte	7
+ 1658 061d 31       		.byte	49
+ 1659 061e C3       		.byte	-61
+ 1660 061f 18       		.byte	24
+ 1661 0620 17       		.byte	23
+ 1662 0621 20       		.byte	32
+ 1663 0622 89       		.byte	-119
+ 1664 0623 B2       		.byte	-78
+ 1665 0624 18       		.byte	24
+ 1666 0625 70       		.byte	112
+ 1667 0626 62       		.byte	98
+ 1668 0627 46       		.byte	70
+ 1669 0628 30       		.byte	48
+ 1670 0629 1C       		.byte	28
+ 1671 062a 96       		.byte	-106
+ 1672 062b 23       		.byte	35
+ 1673 062c FF       		.byte	-1
+ 1674 062d F7       		.byte	-9
+ 1675 062e 1C       		.byte	28
+ 1676 062f FE       		.byte	-2
+ 1677 0630 5B       		.byte	91
+ 1678 0631 E7       		.byte	-25
+ 1679 0632 8C       		.byte	-116
+ 1680 0633 22       		.byte	34
+ 1681 0634 89       		.byte	-119
+ 1682 0635 21       		.byte	33
+ 1683 0636 04       		.byte	4
+ 1684 0637 AB       		.byte	-85
+ 1685 0638 9B       		.byte	-101
+ 1686 0639 18       		.byte	24
+ 1687 063a 04       		.byte	4
+ 1688 063b AA       		.byte	-86
+ 1689 063c 52       		.byte	82
+ 1690 063d 18       		.byte	24
+ 1691 063e 12       		.byte	18
+ 1692 063f 78       		.byte	120
+ 1693 0640 1B       		.byte	27
+ 1694 0641 78       		.byte	120
+ 1695 0642 10       		.byte	16
+ 1696 0643 1C       		.byte	28
+ 1697 0644 31       		.byte	49
+ 1698 0645 38       		.byte	56
+ 1699 0646 0A       		.byte	10
+ 1700 0647 28       		.byte	40
+ 1701 0648 01       		.byte	1
+ 1702 0649 D9       		.byte	-39
+ 1703 064a 05       		.byte	5
+ 1704 064b 23       		.byte	35
+ 1705 064c C2       		.byte	-62
+ 1706 064d E7       		.byte	-25
+ 1707 064e 00       		.byte	0
+ 1708 064f F0       		.byte	-16
+ 1709 0650 6D       		.byte	109
+ 1710 0651 FC       		.byte	-4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 31
+
+
+ 1711 0652 06       		.byte	6
+ 1712 0653 13       		.byte	19
+ 1713 0654 FC       		.byte	-4
+ 1714 0655 8A       		.byte	-118
+ 1715 0656 2B       		.byte	43
+ 1716 0657 FC       		.byte	-4
+ 1717 0658 2E       		.byte	46
+ 1718 0659 40       		.byte	64
+ 1719 065a 8A       		.byte	-118
+ 1720 065b 4E       		.byte	78
+ 1721 065c 77       		.byte	119
+ 1722 065d 00       		.byte	0
+ 1723 065e 01       		.byte	1
+ 1724 065f 2F       		.byte	47
+ 1725 0660 7E       		.byte	126
+ 1726 0661 D1       		.byte	-47
+ 1727 0662 00       		.byte	0
+ 1728 0663 2D       		.byte	45
+ 1729 0664 7C       		.byte	124
+ 1730 0665 D1       		.byte	-47
+ 1731 0666 FF       		.byte	-1
+ 1732 0667 F7       		.byte	-9
+ 1733 0668 0B       		.byte	11
+ 1734 0669 FF       		.byte	-1
+ 1735 066a 8C       		.byte	-116
+ 1736 066b 21       		.byte	33
+ 1737 066c 43       		.byte	67
+ 1738 066d 42       		.byte	66
+ 1739 066e 43       		.byte	67
+ 1740 066f 41       		.byte	65
+ 1741 0670 04       		.byte	4
+ 1742 0671 AA       		.byte	-86
+ 1743 0672 52       		.byte	82
+ 1744 0673 18       		.byte	24
+ 1745 0674 13       		.byte	19
+ 1746 0675 70       		.byte	112
+ 1747 0676 60       		.byte	96
+ 1748 0677 E0       		.byte	-32
+ 1749 0678 01       		.byte	1
+ 1750 0679 2F       		.byte	47
+ 1751 067a 71       		.byte	113
+ 1752 067b D1       		.byte	-47
+ 1753 067c 01       		.byte	1
+ 1754 067d 2D       		.byte	45
+ 1755 067e 6F       		.byte	111
+ 1756 067f D1       		.byte	-47
+ 1757 0680 00       		.byte	0
+ 1758 0681 2B       		.byte	43
+ 1759 0682 6D       		.byte	109
+ 1760 0683 D1       		.byte	-47
+ 1761 0684 3D       		.byte	61
+ 1762 0685 4A       		.byte	74
+ 1763 0686 04       		.byte	4
+ 1764 0687 21       		.byte	33
+ 1765 0688 12       		.byte	18
+ 1766 0689 68       		.byte	104
+ 1767 068a 12       		.byte	18
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 32
+
+
+ 1768 068b 68       		.byte	104
+ 1769 068c F3       		.byte	-13
+ 1770 068d 71       		.byte	113
+ 1771 068e 92       		.byte	-110
+ 1772 068f B2       		.byte	-78
+ 1773 0690 D2       		.byte	-46
+ 1774 0691 09       		.byte	9
+ 1775 0692 32       		.byte	50
+ 1776 0693 71       		.byte	113
+ 1777 0694 12       		.byte	18
+ 1778 0695 0A       		.byte	10
+ 1779 0696 72       		.byte	114
+ 1780 0697 71       		.byte	113
+ 1781 0698 FF       		.byte	-1
+ 1782 0699 22       		.byte	34
+ 1783 069a B2       		.byte	-78
+ 1784 069b 71       		.byte	113
+ 1785 069c 9B       		.byte	-101
+ 1786 069d E7       		.byte	-25
+ 1787 069e 01       		.byte	1
+ 1788 069f 2F       		.byte	47
+ 1789 06a0 5E       		.byte	94
+ 1790 06a1 D1       		.byte	-47
+ 1791 06a2 02       		.byte	2
+ 1792 06a3 2D       		.byte	45
+ 1793 06a4 5C       		.byte	92
+ 1794 06a5 D9       		.byte	-39
+ 1795 06a6 6D       		.byte	109
+ 1796 06a7 E7       		.byte	-25
+ 1797 06a8 01       		.byte	1
+ 1798 06a9 2F       		.byte	47
+ 1799 06aa 59       		.byte	89
+ 1800 06ab D1       		.byte	-47
+ 1801 06ac 1C       		.byte	28
+ 1802 06ad E7       		.byte	-25
+ 1803 06ae 01       		.byte	1
+ 1804 06af 2F       		.byte	47
+ 1805 06b0 56       		.byte	86
+ 1806 06b1 D1       		.byte	-47
+ 1807 06b2 63       		.byte	99
+ 1808 06b3 19       		.byte	25
+ 1809 06b4 02       		.byte	2
+ 1810 06b5 93       		.byte	-109
+ 1811 06b6 96       		.byte	-106
+ 1812 06b7 23       		.byte	35
+ 1813 06b8 02       		.byte	2
+ 1814 06b9 9A       		.byte	-102
+ 1815 06ba 5B       		.byte	91
+ 1816 06bb 00       		.byte	0
+ 1817 06bc 9A       		.byte	-102
+ 1818 06bd 42       		.byte	66
+ 1819 06be 51       		.byte	81
+ 1820 06bf DC       		.byte	-36
+ 1821 06c0 71       		.byte	113
+ 1822 06c1 AB       		.byte	-85
+ 1823 06c2 18       		.byte	24
+ 1824 06c3 19       		.byte	25
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 33
+
+
+ 1825 06c4 27       		.byte	39
+ 1826 06c5 A9       		.byte	-87
+ 1827 06c6 2A       		.byte	42
+ 1828 06c7 1C       		.byte	28
+ 1829 06c8 00       		.byte	0
+ 1830 06c9 F0       		.byte	-16
+ 1831 06ca 6A       		.byte	106
+ 1832 06cb FC       		.byte	-4
+ 1833 06cc 6B       		.byte	107
+ 1834 06cd 46       		.byte	70
+ 1835 06ce 1C       		.byte	28
+ 1836 06cf 89       		.byte	-119
+ 1837 06d0 7F       		.byte	127
+ 1838 06d1 E7       		.byte	-25
+ 1839 06d2 00       		.byte	0
+ 1840 06d3 2D       		.byte	45
+ 1841 06d4 44       		.byte	68
+ 1842 06d5 D1       		.byte	-47
+ 1843 06d6 06       		.byte	6
+ 1844 06d7 AB       		.byte	-85
+ 1845 06d8 19       		.byte	25
+ 1846 06d9 1C       		.byte	28
+ 1847 06da 29       		.byte	41
+ 1848 06db 4A       		.byte	74
+ 1849 06dc 81       		.byte	-127
+ 1850 06dd CA       		.byte	-54
+ 1851 06de 81       		.byte	-127
+ 1852 06df C1       		.byte	-63
+ 1853 06e0 27       		.byte	39
+ 1854 06e1 AA       		.byte	-86
+ 1855 06e2 03       		.byte	3
+ 1856 06e3 CB       		.byte	-53
+ 1857 06e4 03       		.byte	3
+ 1858 06e5 C2       		.byte	-62
+ 1859 06e6 01       		.byte	1
+ 1860 06e7 27       		.byte	39
+ 1861 06e8 2B       		.byte	43
+ 1862 06e9 1C       		.byte	28
+ 1863 06ea 08       		.byte	8
+ 1864 06eb 21       		.byte	33
+ 1865 06ec 73       		.byte	115
+ 1866 06ed E7       		.byte	-25
+ 1867 06ee 01       		.byte	1
+ 1868 06ef 2F       		.byte	47
+ 1869 06f0 36       		.byte	54
+ 1870 06f1 D1       		.byte	-47
+ 1871 06f2 03       		.byte	3
+ 1872 06f3 2D       		.byte	45
+ 1873 06f4 34       		.byte	52
+ 1874 06f5 D1       		.byte	-47
+ 1875 06f6 B0       		.byte	-80
+ 1876 06f7 79       		.byte	121
+ 1877 06f8 72       		.byte	114
+ 1878 06f9 79       		.byte	121
+ 1879 06fa 00       		.byte	0
+ 1880 06fb 02       		.byte	2
+ 1881 06fc 10       		.byte	16
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 34
+
+
+ 1882 06fd 43       		.byte	67
+ 1883 06fe 1A       		.byte	26
+ 1884 06ff 02       		.byte	2
+ 1885 0700 82       		.byte	-126
+ 1886 0701 18       		.byte	24
+ 1887 0702 D2       		.byte	-46
+ 1888 0703 01       		.byte	1
+ 1889 0704 15       		.byte	21
+ 1890 0705 1C       		.byte	28
+ 1891 0706 00       		.byte	0
+ 1892 0707 21       		.byte	33
+ 1893 0708 01       		.byte	1
+ 1894 0709 3A       		.byte	58
+ 1895 070a 7F       		.byte	127
+ 1896 070b 35       		.byte	53
+ 1897 070c 02       		.byte	2
+ 1898 070d 92       		.byte	-110
+ 1899 070e 2A       		.byte	42
+ 1900 070f 78       		.byte	120
+ 1901 0710 01       		.byte	1
+ 1902 0711 3D       		.byte	61
+ 1903 0712 94       		.byte	-108
+ 1904 0713 46       		.byte	70
+ 1905 0714 02       		.byte	2
+ 1906 0715 9A       		.byte	-102
+ 1907 0716 61       		.byte	97
+ 1908 0717 44       		.byte	68
+ 1909 0718 C9       		.byte	-55
+ 1910 0719 B2       		.byte	-78
+ 1911 071a 95       		.byte	-107
+ 1912 071b 42       		.byte	66
+ 1913 071c F7       		.byte	-9
+ 1914 071d D1       		.byte	-47
+ 1915 071e 00       		.byte	0
+ 1916 071f 2B       		.byte	43
+ 1917 0720 08       		.byte	8
+ 1918 0721 D1       		.byte	-47
+ 1919 0722 FF       		.byte	-1
+ 1920 0723 28       		.byte	40
+ 1921 0724 06       		.byte	6
+ 1922 0725 D1       		.byte	-47
+ 1923 0726 17       		.byte	23
+ 1924 0727 4B       		.byte	75
+ 1925 0728 1B       		.byte	27
+ 1926 0729 78       		.byte	120
+ 1927 072a C9       		.byte	-55
+ 1928 072b 1A       		.byte	26
+ 1929 072c 16       		.byte	22
+ 1930 072d 4B       		.byte	75
+ 1931 072e 1B       		.byte	27
+ 1932 072f 78       		.byte	120
+ 1933 0730 C9       		.byte	-55
+ 1934 0731 1A       		.byte	26
+ 1935 0732 C9       		.byte	-55
+ 1936 0733 B2       		.byte	-78
+ 1937 0734 49       		.byte	73
+ 1938 0735 42       		.byte	66
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 35
+
+
+ 1939 0736 26       		.byte	38
+ 1940 0737 AB       		.byte	-85
+ 1941 0738 19       		.byte	25
+ 1942 0739 71       		.byte	113
+ 1943 073a 00       		.byte	0
+ 1944 073b 23       		.byte	35
+ 1945 073c 01       		.byte	1
+ 1946 073d 21       		.byte	33
+ 1947 073e 4A       		.byte	74
+ 1948 073f E7       		.byte	-25
+ 1949 0740 FF       		.byte	-1
+ 1950 0741 F7       		.byte	-9
+ 1951 0742 9E       		.byte	-98
+ 1952 0743 FE       		.byte	-2
+ 1953 0744 00       		.byte	0
+ 1954 0745 28       		.byte	40
+ 1955 0746 02       		.byte	2
+ 1956 0747 D1       		.byte	-47
+ 1957 0748 80       		.byte	-128
+ 1958 0749 22       		.byte	34
+ 1959 074a 10       		.byte	16
+ 1960 074b 4B       		.byte	75
+ 1961 074c 1A       		.byte	26
+ 1962 074d 60       		.byte	96
+ 1963 074e 00       		.byte	0
+ 1964 074f F0       		.byte	-16
+ 1965 0750 A7       		.byte	-89
+ 1966 0751 FA       		.byte	-6
+ 1967 0752 05       		.byte	5
+ 1968 0753 E0       		.byte	-32
+ 1969 0754 01       		.byte	1
+ 1970 0755 27       		.byte	39
+ 1971 0756 00       		.byte	0
+ 1972 0757 24       		.byte	36
+ 1973 0758 04       		.byte	4
+ 1974 0759 E0       		.byte	-32
+ 1975 075a 00       		.byte	0
+ 1976 075b 24       		.byte	36
+ 1977 075c 0A       		.byte	10
+ 1978 075d 23       		.byte	35
+ 1979 075e 39       		.byte	57
+ 1980 075f E7       		.byte	-25
+ 1981 0760 04       		.byte	4
+ 1982 0761 23       		.byte	35
+ 1983 0762 37       		.byte	55
+ 1984 0763 E7       		.byte	-25
+ 1985 0764 03       		.byte	3
+ 1986 0765 23       		.byte	35
+ 1987 0766 35       		.byte	53
+ 1988 0767 E7       		.byte	-25
+ 1989 0768 0C       		.byte	12
+ 1990 0769 FD       		.byte	-3
+ 1991 076a FF       		.byte	-1
+ 1992 076b FF       		.byte	-1
+ 1993 076c A7       		.byte	-89
+ 1994 076d FD       		.byte	-3
+ 1995 076e FF       		.byte	-1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 36
+
+
+ 1996 076f FF       		.byte	-1
+ 1997 0770 AC       		.byte	-84
+ 1998 0771 FD       		.byte	-3
+ 1999 0772 FF       		.byte	-1
+ 2000 0773 FF       		.byte	-1
+ 2001 0774 AD       		.byte	-83
+ 2002 0775 FD       		.byte	-3
+ 2003 0776 FF       		.byte	-1
+ 2004 0777 FF       		.byte	-1
+ 2005 0778 AE       		.byte	-82
+ 2006 0779 FD       		.byte	-3
+ 2007 077a FF       		.byte	-1
+ 2008 077b FF       		.byte	-1
+ 2009 077c D4       		.byte	-44
+ 2010 077d 00       		.byte	0
+ 2011 077e 00       		.byte	0
+ 2012 077f 20       		.byte	32
+ 2013 0780 F4       		.byte	-12
+ 2014 0781 0F       		.byte	15
+ 2015 0782 00       		.byte	0
+ 2016 0783 00       		.byte	0
+ 2017 0784 D0       		.byte	-48
+ 2018 0785 7F       		.byte	127
+ 2019 0786 00       		.byte	0
+ 2020 0787 00       		.byte	0
+ 2021 0788 D1       		.byte	-47
+ 2022 0789 7F       		.byte	127
+ 2023 078a 00       		.byte	0
+ 2024 078b 00       		.byte	0
+ 2025 078c C0       		.byte	-64
+ 2026 078d 00       		.byte	0
+ 2027 078e 00       		.byte	0
+ 2028 078f 20       		.byte	32
+ 2029 0790 14       		.byte	20
+ 2030 0791 4A       		.byte	74
+ 2031 0792 10       		.byte	16
+ 2032 0793 B5       		.byte	-75
+ 2033 0794 13       		.byte	19
+ 2034 0795 68       		.byte	104
+ 2035 0796 18       		.byte	24
+ 2036 0797 68       		.byte	104
+ 2037 0798 00       		.byte	0
+ 2038 0799 23       		.byte	35
+ 2039 079a 01       		.byte	1
+ 2040 079b 1C       		.byte	28
+ 2041 079c 01       		.byte	1
+ 2042 079d 39       		.byte	57
+ 2043 079e BF       		.byte	-65
+ 2044 079f 29       		.byte	41
+ 2045 07a0 03       		.byte	3
+ 2046 07a1 D0       		.byte	-48
+ 2047 07a2 0C       		.byte	12
+ 2048 07a3 78       		.byte	120
+ 2049 07a4 1B       		.byte	27
+ 2050 07a5 19       		.byte	25
+ 2051 07a6 DB       		.byte	-37
+ 2052 07a7 B2       		.byte	-78
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 37
+
+
+ 2053 07a8 F8       		.byte	-8
+ 2054 07a9 E7       		.byte	-25
+ 2055 07aa 52       		.byte	82
+ 2056 07ab 68       		.byte	104
+ 2057 07ac 12       		.byte	18
+ 2058 07ad 78       		.byte	120
+ 2059 07ae D3       		.byte	-45
+ 2060 07af 1A       		.byte	26
+ 2061 07b0 DB       		.byte	-37
+ 2062 07b1 B2       		.byte	-78
+ 2063 07b2 93       		.byte	-109
+ 2064 07b3 42       		.byte	66
+ 2065 07b4 01       		.byte	1
+ 2066 07b5 D1       		.byte	-47
+ 2067 07b6 00       		.byte	0
+ 2068 07b7 28       		.byte	40
+ 2069 07b8 02       		.byte	2
+ 2070 07b9 D1       		.byte	-47
+ 2071 07ba 00       		.byte	0
+ 2072 07bb 20       		.byte	32
+ 2073 07bc 00       		.byte	0
+ 2074 07bd F0       		.byte	-16
+ 2075 07be 6E       		.byte	110
+ 2076 07bf FA       		.byte	-6
+ 2077 07c0 FF       		.byte	-1
+ 2078 07c1 F7       		.byte	-9
+ 2079 07c2 5E       		.byte	94
+ 2080 07c3 FE       		.byte	-2
+ 2081 07c4 08       		.byte	8
+ 2082 07c5 4B       		.byte	75
+ 2083 07c6 19       		.byte	25
+ 2084 07c7 68       		.byte	104
+ 2085 07c8 1A       		.byte	26
+ 2086 07c9 1C       		.byte	28
+ 2087 07ca 40       		.byte	64
+ 2088 07cb 29       		.byte	41
+ 2089 07cc 01       		.byte	1
+ 2090 07cd D0       		.byte	-48
+ 2091 07ce 00       		.byte	0
+ 2092 07cf 28       		.byte	40
+ 2093 07d0 03       		.byte	3
+ 2094 07d1 D0       		.byte	-48
+ 2095 07d2 00       		.byte	0
+ 2096 07d3 23       		.byte	35
+ 2097 07d4 13       		.byte	19
+ 2098 07d5 60       		.byte	96
+ 2099 07d6 FF       		.byte	-1
+ 2100 07d7 F7       		.byte	-9
+ 2101 07d8 7F       		.byte	127
+ 2102 07d9 FE       		.byte	-2
+ 2103 07da 80       		.byte	-128
+ 2104 07db 22       		.byte	34
+ 2105 07dc 1A       		.byte	26
+ 2106 07dd 60       		.byte	96
+ 2107 07de 00       		.byte	0
+ 2108 07df F0       		.byte	-16
+ 2109 07e0 5F       		.byte	95
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 38
+
+
+ 2110 07e1 FA       		.byte	-6
+ 2111 07e2 10       		.byte	16
+ 2112 07e3 BD       		.byte	-67
+ 2113 07e4 D4       		.byte	-44
+ 2114 07e5 00       		.byte	0
+ 2115 07e6 00       		.byte	0
+ 2116 07e7 20       		.byte	32
+ 2117 07e8 C0       		.byte	-64
+ 2118 07e9 00       		.byte	0
+ 2119 07ea 00       		.byte	0
+ 2120 07eb 20       		.byte	32
+ 2121 07ec 08       		.byte	8
+ 2122 07ed B5       		.byte	-75
+ 2123 07ee 0B       		.byte	11
+ 2124 07ef 4B       		.byte	75
+ 2125 07f0 1A       		.byte	26
+ 2126 07f1 68       		.byte	104
+ 2127 07f2 10       		.byte	16
+ 2128 07f3 23       		.byte	35
+ 2129 07f4 13       		.byte	19
+ 2130 07f5 40       		.byte	64
+ 2131 07f6 0A       		.byte	10
+ 2132 07f7 4A       		.byte	74
+ 2133 07f8 00       		.byte	0
+ 2134 07f9 D1       		.byte	-47
+ 2135 07fa 13       		.byte	19
+ 2136 07fb 60       		.byte	96
+ 2137 07fc 13       		.byte	19
+ 2138 07fd 68       		.byte	104
+ 2139 07fe 80       		.byte	-128
+ 2140 07ff 2B       		.byte	43
+ 2141 0800 0B       		.byte	11
+ 2142 0801 D1       		.byte	-47
+ 2143 0802 00       		.byte	0
+ 2144 0803 23       		.byte	35
+ 2145 0804 01       		.byte	1
+ 2146 0805 20       		.byte	32
+ 2147 0806 13       		.byte	19
+ 2148 0807 60       		.byte	96
+ 2149 0808 FF       		.byte	-1
+ 2150 0809 F7       		.byte	-9
+ 2151 080a F4       		.byte	-12
+ 2152 080b FD       		.byte	-3
+ 2153 080c 00       		.byte	0
+ 2154 080d 28       		.byte	40
+ 2155 080e 04       		.byte	4
+ 2156 080f D0       		.byte	-48
+ 2157 0810 01       		.byte	1
+ 2158 0811 20       		.byte	32
+ 2159 0812 FF       		.byte	-1
+ 2160 0813 F7       		.byte	-9
+ 2161 0814 EF       		.byte	-17
+ 2162 0815 FD       		.byte	-3
+ 2163 0816 FF       		.byte	-1
+ 2164 0817 F7       		.byte	-9
+ 2165 0818 EB       		.byte	-21
+ 2166 0819 FD       		.byte	-3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 39
+
+
+ 2167 081a 08       		.byte	8
+ 2168 081b BD       		.byte	-67
+ 2169 081c 00       		.byte	0
+ 2170 081d 03       		.byte	3
+ 2171 081e 0B       		.byte	11
+ 2172 081f 40       		.byte	64
+ 2173 0820 C0       		.byte	-64
+ 2174 0821 00       		.byte	0
+ 2175 0822 00       		.byte	0
+ 2176 0823 20       		.byte	32
+ 2177 0824 80       		.byte	-128
+ 2178 0825 21       		.byte	33
+ 2179 0826 05       		.byte	5
+ 2180 0827 4A       		.byte	74
+ 2181 0828 08       		.byte	8
+ 2182 0829 B5       		.byte	-75
+ 2183 082a 13       		.byte	19
+ 2184 082b 68       		.byte	104
+ 2185 082c 09       		.byte	9
+ 2186 082d 06       		.byte	6
+ 2187 082e 0B       		.byte	11
+ 2188 082f 43       		.byte	67
+ 2189 0830 13       		.byte	19
+ 2190 0831 60       		.byte	96
+ 2191 0832 0A       		.byte	10
+ 2192 0833 20       		.byte	32
+ 2193 0834 00       		.byte	0
+ 2194 0835 F0       		.byte	-16
+ 2195 0836 1E       		.byte	30
+ 2196 0837 FA       		.byte	-6
+ 2197 0838 08       		.byte	8
+ 2198 0839 BD       		.byte	-67
+ 2199 083a C0       		.byte	-64
+ 2200 083b 46       		.byte	70
+ 2201 083c 00       		.byte	0
+ 2202 083d 00       		.byte	0
+ 2203 083e 06       		.byte	6
+ 2204 083f 40       		.byte	64
+ 2205 0840 10       		.byte	16
+ 2206 0841 B5       		.byte	-75
+ 2207 0842 05       		.byte	5
+ 2208 0843 4C       		.byte	76
+ 2209 0844 23       		.byte	35
+ 2210 0845 78       		.byte	120
+ 2211 0846 00       		.byte	0
+ 2212 0847 2B       		.byte	43
+ 2213 0848 03       		.byte	3
+ 2214 0849 D1       		.byte	-47
+ 2215 084a 00       		.byte	0
+ 2216 084b F0       		.byte	-16
+ 2217 084c BB       		.byte	-69
+ 2218 084d F8       		.byte	-8
+ 2219 084e 01       		.byte	1
+ 2220 084f 23       		.byte	35
+ 2221 0850 23       		.byte	35
+ 2222 0851 70       		.byte	112
+ 2223 0852 FF       		.byte	-1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 40
+
+
+ 2224 0853 F7       		.byte	-9
+ 2225 0854 E7       		.byte	-25
+ 2226 0855 FF       		.byte	-1
+ 2227 0856 10       		.byte	16
+ 2228 0857 BD       		.byte	-67
+ 2229 0858 10       		.byte	16
+ 2230 0859 01       		.byte	1
+ 2231 085a 00       		.byte	0
+ 2232 085b 20       		.byte	32
+ 2233 085c 09       		.byte	9
+ 2234 085d 4B       		.byte	75
+ 2235 085e 0A       		.byte	10
+ 2236 085f 49       		.byte	73
+ 2237 0860 1A       		.byte	26
+ 2238 0861 68       		.byte	104
+ 2239 0862 0B       		.byte	11
+ 2240 0863 68       		.byte	104
+ 2241 0864 00       		.byte	0
+ 2242 0865 20       		.byte	32
+ 2243 0866 9A       		.byte	-102
+ 2244 0867 42       		.byte	66
+ 2245 0868 0A       		.byte	10
+ 2246 0869 D0       		.byte	-48
+ 2247 086a 0B       		.byte	11
+ 2248 086b 68       		.byte	104
+ 2249 086c 5A       		.byte	90
+ 2250 086d 1C       		.byte	28
+ 2251 086e 40       		.byte	64
+ 2252 086f 3B       		.byte	59
+ 2253 0870 58       		.byte	88
+ 2254 0871 1E       		.byte	30
+ 2255 0872 83       		.byte	-125
+ 2256 0873 41       		.byte	65
+ 2257 0874 5B       		.byte	91
+ 2258 0875 42       		.byte	66
+ 2259 0876 1A       		.byte	26
+ 2260 0877 40       		.byte	64
+ 2261 0878 04       		.byte	4
+ 2262 0879 4B       		.byte	75
+ 2263 087a 98       		.byte	-104
+ 2264 087b 5C       		.byte	92
+ 2265 087c 0A       		.byte	10
+ 2266 087d 60       		.byte	96
+ 2267 087e C0       		.byte	-64
+ 2268 087f B2       		.byte	-78
+ 2269 0880 70       		.byte	112
+ 2270 0881 47       		.byte	71
+ 2271 0882 C0       		.byte	-64
+ 2272 0883 46       		.byte	70
+ 2273 0884 AC       		.byte	-84
+ 2274 0885 01       		.byte	1
+ 2275 0886 00       		.byte	0
+ 2276 0887 20       		.byte	32
+ 2277 0888 24       		.byte	36
+ 2278 0889 01       		.byte	1
+ 2279 088a 00       		.byte	0
+ 2280 088b 20       		.byte	32
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 41
+
+
+ 2281 088c 68       		.byte	104
+ 2282 088d 01       		.byte	1
+ 2283 088e 00       		.byte	0
+ 2284 088f 20       		.byte	32
+ 2285 0890 04       		.byte	4
+ 2286 0891 4B       		.byte	75
+ 2287 0892 18       		.byte	24
+ 2288 0893 68       		.byte	104
+ 2289 0894 04       		.byte	4
+ 2290 0895 4B       		.byte	75
+ 2291 0896 1A       		.byte	26
+ 2292 0897 68       		.byte	104
+ 2293 0898 1B       		.byte	27
+ 2294 0899 68       		.byte	104
+ 2295 089a 90       		.byte	-112
+ 2296 089b 42       		.byte	66
+ 2297 089c 00       		.byte	0
+ 2298 089d D2       		.byte	-46
+ 2299 089e 41       		.byte	65
+ 2300 089f 30       		.byte	48
+ 2301 08a0 C0       		.byte	-64
+ 2302 08a1 1A       		.byte	26
+ 2303 08a2 70       		.byte	112
+ 2304 08a3 47       		.byte	71
+ 2305 08a4 AC       		.byte	-84
+ 2306 08a5 01       		.byte	1
+ 2307 08a6 00       		.byte	0
+ 2308 08a7 20       		.byte	32
+ 2309 08a8 24       		.byte	36
+ 2310 08a9 01       		.byte	1
+ 2311 08aa 00       		.byte	0
+ 2312 08ab 20       		.byte	32
+ 2313 08ac 00       		.byte	0
+ 2314 08ad 20       		.byte	32
+ 2315 08ae 30       		.byte	48
+ 2316 08af B5       		.byte	-75
+ 2317 08b0 80       		.byte	-128
+ 2318 08b1 25       		.byte	37
+ 2319 08b2 0B       		.byte	11
+ 2320 08b3 4A       		.byte	74
+ 2321 08b4 0B       		.byte	11
+ 2322 08b5 4B       		.byte	75
+ 2323 08b6 14       		.byte	20
+ 2324 08b7 68       		.byte	104
+ 2325 08b8 10       		.byte	16
+ 2326 08b9 60       		.byte	96
+ 2327 08ba 19       		.byte	25
+ 2328 08bb 68       		.byte	104
+ 2329 08bc 6D       		.byte	109
+ 2330 08bd 02       		.byte	2
+ 2331 08be 29       		.byte	41
+ 2332 08bf 43       		.byte	67
+ 2333 08c0 19       		.byte	25
+ 2334 08c1 60       		.byte	96
+ 2335 08c2 1D       		.byte	29
+ 2336 08c3 68       		.byte	104
+ 2337 08c4 08       		.byte	8
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 42
+
+
+ 2338 08c5 49       		.byte	73
+ 2339 08c6 29       		.byte	41
+ 2340 08c7 40       		.byte	64
+ 2341 08c8 19       		.byte	25
+ 2342 08c9 60       		.byte	96
+ 2343 08ca 08       		.byte	8
+ 2344 08cb 4B       		.byte	75
+ 2345 08cc 19       		.byte	25
+ 2346 08cd 68       		.byte	104
+ 2347 08ce 08       		.byte	8
+ 2348 08cf 4B       		.byte	75
+ 2349 08d0 19       		.byte	25
+ 2350 08d1 60       		.byte	96
+ 2351 08d2 08       		.byte	8
+ 2352 08d3 4B       		.byte	75
+ 2353 08d4 08       		.byte	8
+ 2354 08d5 49       		.byte	73
+ 2355 08d6 18       		.byte	24
+ 2356 08d7 70       		.byte	112
+ 2357 08d8 08       		.byte	8
+ 2358 08d9 4B       		.byte	75
+ 2359 08da 19       		.byte	25
+ 2360 08db 60       		.byte	96
+ 2361 08dc 14       		.byte	20
+ 2362 08dd 60       		.byte	96
+ 2363 08de 30       		.byte	48
+ 2364 08df BD       		.byte	-67
+ 2365 08e0 C8       		.byte	-56
+ 2366 08e1 0F       		.byte	15
+ 2367 08e2 06       		.byte	6
+ 2368 08e3 40       		.byte	64
+ 2369 08e4 04       		.byte	4
+ 2370 08e5 03       		.byte	3
+ 2371 08e6 06       		.byte	6
+ 2372 08e7 40       		.byte	64
+ 2373 08e8 FF       		.byte	-1
+ 2374 08e9 FF       		.byte	-1
+ 2375 08ea FE       		.byte	-2
+ 2376 08eb FF       		.byte	-1
+ 2377 08ec 24       		.byte	36
+ 2378 08ed 01       		.byte	1
+ 2379 08ee 00       		.byte	0
+ 2380 08ef 20       		.byte	32
+ 2381 08f0 AC       		.byte	-84
+ 2382 08f1 01       		.byte	1
+ 2383 08f2 00       		.byte	0
+ 2384 08f3 20       		.byte	32
+ 2385 08f4 A9       		.byte	-87
+ 2386 08f5 01       		.byte	1
+ 2387 08f6 00       		.byte	0
+ 2388 08f7 20       		.byte	32
+ 2389 08f8 ED       		.byte	-19
+ 2390 08f9 0F       		.byte	15
+ 2391 08fa 00       		.byte	0
+ 2392 08fb 00       		.byte	0
+ 2393 08fc C0       		.byte	-64
+ 2394 08fd 0F       		.byte	15
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 43
+
+
+ 2395 08fe 06       		.byte	6
+ 2396 08ff 40       		.byte	64
+ 2397 0900 12       		.byte	18
+ 2398 0901 4A       		.byte	74
+ 2399 0902 10       		.byte	16
+ 2400 0903 B5       		.byte	-75
+ 2401 0904 13       		.byte	19
+ 2402 0905 68       		.byte	104
+ 2403 0906 59       		.byte	89
+ 2404 0907 1C       		.byte	28
+ 2405 0908 3F       		.byte	63
+ 2406 0909 3B       		.byte	59
+ 2407 090a 5C       		.byte	92
+ 2408 090b 1E       		.byte	30
+ 2409 090c A3       		.byte	-93
+ 2410 090d 41       		.byte	65
+ 2411 090e 5B       		.byte	91
+ 2412 090f 42       		.byte	66
+ 2413 0910 19       		.byte	25
+ 2414 0911 40       		.byte	64
+ 2415 0912 0F       		.byte	15
+ 2416 0913 4B       		.byte	75
+ 2417 0914 1C       		.byte	28
+ 2418 0915 68       		.byte	104
+ 2419 0916 A1       		.byte	-95
+ 2420 0917 42       		.byte	66
+ 2421 0918 FB       		.byte	-5
+ 2422 0919 D0       		.byte	-48
+ 2423 091a 14       		.byte	20
+ 2424 091b 68       		.byte	104
+ 2425 091c 1B       		.byte	27
+ 2426 091d 68       		.byte	104
+ 2427 091e 9C       		.byte	-100
+ 2428 091f 42       		.byte	66
+ 2429 0920 08       		.byte	8
+ 2430 0921 D1       		.byte	-47
+ 2431 0922 0C       		.byte	12
+ 2432 0923 4B       		.byte	75
+ 2433 0924 1C       		.byte	28
+ 2434 0925 68       		.byte	104
+ 2435 0926 0F       		.byte	15
+ 2436 0927 23       		.byte	35
+ 2437 0928 23       		.byte	35
+ 2438 0929 40       		.byte	64
+ 2439 092a 08       		.byte	8
+ 2440 092b 2B       		.byte	43
+ 2441 092c 02       		.byte	2
+ 2442 092d D0       		.byte	-48
+ 2443 092e 0A       		.byte	10
+ 2444 092f 4B       		.byte	75
+ 2445 0930 18       		.byte	24
+ 2446 0931 60       		.byte	96
+ 2447 0932 0A       		.byte	10
+ 2448 0933 E0       		.byte	-32
+ 2449 0934 02       		.byte	2
+ 2450 0935 24       		.byte	36
+ 2451 0936 09       		.byte	9
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 44
+
+
+ 2452 0937 4B       		.byte	75
+ 2453 0938 C0       		.byte	-64
+ 2454 0939 B2       		.byte	-78
+ 2455 093a 1C       		.byte	28
+ 2456 093b 60       		.byte	96
+ 2457 093c 08       		.byte	8
+ 2458 093d 4B       		.byte	75
+ 2459 093e 58       		.byte	88
+ 2460 093f 54       		.byte	84
+ 2461 0940 11       		.byte	17
+ 2462 0941 60       		.byte	96
+ 2463 0942 08       		.byte	8
+ 2464 0943 4A       		.byte	74
+ 2465 0944 13       		.byte	19
+ 2466 0945 68       		.byte	104
+ 2467 0946 23       		.byte	35
+ 2468 0947 43       		.byte	67
+ 2469 0948 13       		.byte	19
+ 2470 0949 60       		.byte	96
+ 2471 094a 10       		.byte	16
+ 2472 094b BD       		.byte	-67
+ 2473 094c 20       		.byte	32
+ 2474 094d 01       		.byte	1
+ 2475 094e 00       		.byte	0
+ 2476 094f 20       		.byte	32
+ 2477 0950 1C       		.byte	28
+ 2478 0951 01       		.byte	1
+ 2479 0952 00       		.byte	0
+ 2480 0953 20       		.byte	32
+ 2481 0954 08       		.byte	8
+ 2482 0955 02       		.byte	2
+ 2483 0956 06       		.byte	6
+ 2484 0957 40       		.byte	64
+ 2485 0958 40       		.byte	64
+ 2486 0959 02       		.byte	2
+ 2487 095a 06       		.byte	6
+ 2488 095b 40       		.byte	64
+ 2489 095c 80       		.byte	-128
+ 2490 095d 0F       		.byte	15
+ 2491 095e 06       		.byte	6
+ 2492 095f 40       		.byte	64
+ 2493 0960 28       		.byte	40
+ 2494 0961 01       		.byte	1
+ 2495 0962 00       		.byte	0
+ 2496 0963 20       		.byte	32
+ 2497 0964 88       		.byte	-120
+ 2498 0965 0F       		.byte	15
+ 2499 0966 06       		.byte	6
+ 2500 0967 40       		.byte	64
+ 2501 0968 38       		.byte	56
+ 2502 0969 B5       		.byte	-75
+ 2503 096a 04       		.byte	4
+ 2504 096b 1C       		.byte	28
+ 2505 096c 45       		.byte	69
+ 2506 096d 18       		.byte	24
+ 2507 096e AC       		.byte	-84
+ 2508 096f 42       		.byte	66
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 45
+
+
+ 2509 0970 04       		.byte	4
+ 2510 0971 D0       		.byte	-48
+ 2511 0972 20       		.byte	32
+ 2512 0973 78       		.byte	120
+ 2513 0974 FF       		.byte	-1
+ 2514 0975 F7       		.byte	-9
+ 2515 0976 C4       		.byte	-60
+ 2516 0977 FF       		.byte	-1
+ 2517 0978 01       		.byte	1
+ 2518 0979 34       		.byte	52
+ 2519 097a F8       		.byte	-8
+ 2520 097b E7       		.byte	-25
+ 2521 097c 38       		.byte	56
+ 2522 097d BD       		.byte	-67
+ 2523 097e 00       		.byte	0
+ 2524 097f 00       		.byte	0
+ 2525 0980 00       		.byte	0
+ 2526 0981 23       		.byte	35
+ 2527 0982 10       		.byte	16
+ 2528 0983 B5       		.byte	-75
+ 2529 0984 80       		.byte	-128
+ 2530 0985 24       		.byte	36
+ 2531 0986 0A       		.byte	10
+ 2532 0987 4A       		.byte	74
+ 2533 0988 64       		.byte	100
+ 2534 0989 02       		.byte	2
+ 2535 098a 11       		.byte	17
+ 2536 098b 68       		.byte	104
+ 2537 098c 13       		.byte	19
+ 2538 098d 60       		.byte	96
+ 2539 098e 09       		.byte	9
+ 2540 098f 4B       		.byte	75
+ 2541 0990 18       		.byte	24
+ 2542 0991 68       		.byte	104
+ 2543 0992 20       		.byte	32
+ 2544 0993 43       		.byte	67
+ 2545 0994 18       		.byte	24
+ 2546 0995 60       		.byte	96
+ 2547 0996 1C       		.byte	28
+ 2548 0997 68       		.byte	104
+ 2549 0998 07       		.byte	7
+ 2550 0999 48       		.byte	72
+ 2551 099a 20       		.byte	32
+ 2552 099b 40       		.byte	64
+ 2553 099c 18       		.byte	24
+ 2554 099d 60       		.byte	96
+ 2555 099e 07       		.byte	7
+ 2556 099f 4B       		.byte	75
+ 2557 09a0 18       		.byte	24
+ 2558 09a1 68       		.byte	104
+ 2559 09a2 07       		.byte	7
+ 2560 09a3 4B       		.byte	75
+ 2561 09a4 18       		.byte	24
+ 2562 09a5 60       		.byte	96
+ 2563 09a6 02       		.byte	2
+ 2564 09a7 23       		.byte	35
+ 2565 09a8 99       		.byte	-103
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 46
+
+
+ 2566 09a9 43       		.byte	67
+ 2567 09aa 11       		.byte	17
+ 2568 09ab 60       		.byte	96
+ 2569 09ac 10       		.byte	16
+ 2570 09ad BD       		.byte	-67
+ 2571 09ae C0       		.byte	-64
+ 2572 09af 46       		.byte	70
+ 2573 09b0 88       		.byte	-120
+ 2574 09b1 0F       		.byte	15
+ 2575 09b2 06       		.byte	6
+ 2576 09b3 40       		.byte	64
+ 2577 09b4 04       		.byte	4
+ 2578 09b5 02       		.byte	2
+ 2579 09b6 06       		.byte	6
+ 2580 09b7 40       		.byte	64
+ 2581 09b8 FF       		.byte	-1
+ 2582 09b9 FF       		.byte	-1
+ 2583 09ba FE       		.byte	-2
+ 2584 09bb FF       		.byte	-1
+ 2585 09bc 1C       		.byte	28
+ 2586 09bd 01       		.byte	1
+ 2587 09be 00       		.byte	0
+ 2588 09bf 20       		.byte	32
+ 2589 09c0 20       		.byte	32
+ 2590 09c1 01       		.byte	1
+ 2591 09c2 00       		.byte	0
+ 2592 09c3 20       		.byte	32
+ 2593 09c4 10       		.byte	16
+ 2594 09c5 B5       		.byte	-75
+ 2595 09c6 1D       		.byte	29
+ 2596 09c7 4A       		.byte	74
+ 2597 09c8 00       		.byte	0
+ 2598 09c9 24       		.byte	36
+ 2599 09ca 1D       		.byte	29
+ 2600 09cb 4B       		.byte	75
+ 2601 09cc 07       		.byte	7
+ 2602 09cd 20       		.byte	32
+ 2603 09ce 1A       		.byte	26
+ 2604 09cf 60       		.byte	96
+ 2605 09d0 01       		.byte	1
+ 2606 09d1 22       		.byte	34
+ 2607 09d2 1C       		.byte	28
+ 2608 09d3 4B       		.byte	75
+ 2609 09d4 1C       		.byte	28
+ 2610 09d5 49       		.byte	73
+ 2611 09d6 1C       		.byte	28
+ 2612 09d7 60       		.byte	96
+ 2613 09d8 1C       		.byte	28
+ 2614 09d9 4B       		.byte	75
+ 2615 09da 1A       		.byte	26
+ 2616 09db 60       		.byte	96
+ 2617 09dc 1C       		.byte	28
+ 2618 09dd 4B       		.byte	75
+ 2619 09de 0B       		.byte	11
+ 2620 09df 60       		.byte	96
+ 2621 09e0 1C       		.byte	28
+ 2622 09e1 49       		.byte	73
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 47
+
+
+ 2623 09e2 08       		.byte	8
+ 2624 09e3 60       		.byte	96
+ 2625 09e4 1C       		.byte	28
+ 2626 09e5 49       		.byte	73
+ 2627 09e6 03       		.byte	3
+ 2628 09e7 30       		.byte	48
+ 2629 09e8 0C       		.byte	12
+ 2630 09e9 60       		.byte	96
+ 2631 09ea 1C       		.byte	28
+ 2632 09eb 49       		.byte	73
+ 2633 09ec 0A       		.byte	10
+ 2634 09ed 60       		.byte	96
+ 2635 09ee 1C       		.byte	28
+ 2636 09ef 4A       		.byte	74
+ 2637 09f0 13       		.byte	19
+ 2638 09f1 60       		.byte	96
+ 2639 09f2 1C       		.byte	28
+ 2640 09f3 4B       		.byte	75
+ 2641 09f4 1C       		.byte	28
+ 2642 09f5 60       		.byte	96
+ 2643 09f6 00       		.byte	0
+ 2644 09f7 F0       		.byte	-16
+ 2645 09f8 47       		.byte	71
+ 2646 09f9 F9       		.byte	-7
+ 2647 09fa 0A       		.byte	10
+ 2648 09fb 20       		.byte	32
+ 2649 09fc 03       		.byte	3
+ 2650 09fd 21       		.byte	33
+ 2651 09fe 00       		.byte	0
+ 2652 09ff F0       		.byte	-16
+ 2653 0a00 1B       		.byte	27
+ 2654 0a01 F9       		.byte	-7
+ 2655 0a02 19       		.byte	25
+ 2656 0a03 49       		.byte	73
+ 2657 0a04 0A       		.byte	10
+ 2658 0a05 20       		.byte	32
+ 2659 0a06 00       		.byte	0
+ 2660 0a07 F0       		.byte	-16
+ 2661 0a08 0B       		.byte	11
+ 2662 0a09 F9       		.byte	-7
+ 2663 0a0a 04       		.byte	4
+ 2664 0a0b 22       		.byte	34
+ 2665 0a0c 17       		.byte	23
+ 2666 0a0d 4B       		.byte	75
+ 2667 0a0e 1C       		.byte	28
+ 2668 0a0f 60       		.byte	96
+ 2669 0a10 17       		.byte	23
+ 2670 0a11 4B       		.byte	75
+ 2671 0a12 1C       		.byte	28
+ 2672 0a13 60       		.byte	96
+ 2673 0a14 17       		.byte	23
+ 2674 0a15 4B       		.byte	75
+ 2675 0a16 1C       		.byte	28
+ 2676 0a17 60       		.byte	96
+ 2677 0a18 17       		.byte	23
+ 2678 0a19 4B       		.byte	75
+ 2679 0a1a 1C       		.byte	28
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 48
+
+
+ 2680 0a1b 60       		.byte	96
+ 2681 0a1c 17       		.byte	23
+ 2682 0a1d 4B       		.byte	75
+ 2683 0a1e 1A       		.byte	26
+ 2684 0a1f 60       		.byte	96
+ 2685 0a20 17       		.byte	23
+ 2686 0a21 4B       		.byte	75
+ 2687 0a22 1C       		.byte	28
+ 2688 0a23 60       		.byte	96
+ 2689 0a24 17       		.byte	23
+ 2690 0a25 4B       		.byte	75
+ 2691 0a26 1C       		.byte	28
+ 2692 0a27 60       		.byte	96
+ 2693 0a28 17       		.byte	23
+ 2694 0a29 4B       		.byte	75
+ 2695 0a2a 1C       		.byte	28
+ 2696 0a2b 60       		.byte	96
+ 2697 0a2c 17       		.byte	23
+ 2698 0a2d 4B       		.byte	75
+ 2699 0a2e 1C       		.byte	28
+ 2700 0a2f 70       		.byte	112
+ 2701 0a30 17       		.byte	23
+ 2702 0a31 4B       		.byte	75
+ 2703 0a32 1C       		.byte	28
+ 2704 0a33 60       		.byte	96
+ 2705 0a34 17       		.byte	23
+ 2706 0a35 4B       		.byte	75
+ 2707 0a36 1C       		.byte	28
+ 2708 0a37 60       		.byte	96
+ 2709 0a38 10       		.byte	16
+ 2710 0a39 BD       		.byte	-67
+ 2711 0a3a C0       		.byte	-64
+ 2712 0a3b 46       		.byte	70
+ 2713 0a3c 0B       		.byte	11
+ 2714 0a3d 00       		.byte	0
+ 2715 0a3e 00       		.byte	0
+ 2716 0a3f 02       		.byte	2
+ 2717 0a40 00       		.byte	0
+ 2718 0a41 00       		.byte	0
+ 2719 0a42 06       		.byte	6
+ 2720 0a43 40       		.byte	64
+ 2721 0a44 40       		.byte	64
+ 2722 0a45 00       		.byte	0
+ 2723 0a46 06       		.byte	6
+ 2724 0a47 40       		.byte	64
+ 2725 0a48 00       		.byte	0
+ 2726 0a49 03       		.byte	3
+ 2727 0a4a 06       		.byte	6
+ 2728 0a4b 40       		.byte	64
+ 2729 0a4c 48       		.byte	72
+ 2730 0a4d 00       		.byte	0
+ 2731 0a4e 06       		.byte	6
+ 2732 0a4f 40       		.byte	64
+ 2733 0a50 07       		.byte	7
+ 2734 0a51 00       		.byte	0
+ 2735 0a52 00       		.byte	0
+ 2736 0a53 80       		.byte	-128
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 49
+
+
+ 2737 0a54 04       		.byte	4
+ 2738 0a55 03       		.byte	3
+ 2739 0a56 06       		.byte	6
+ 2740 0a57 40       		.byte	64
+ 2741 0a58 10       		.byte	16
+ 2742 0a59 03       		.byte	3
+ 2743 0a5a 06       		.byte	6
+ 2744 0a5b 40       		.byte	64
+ 2745 0a5c 44       		.byte	68
+ 2746 0a5d 00       		.byte	0
+ 2747 0a5e 06       		.byte	6
+ 2748 0a5f 40       		.byte	64
+ 2749 0a60 00       		.byte	0
+ 2750 0a61 02       		.byte	2
+ 2751 0a62 06       		.byte	6
+ 2752 0a63 40       		.byte	64
+ 2753 0a64 04       		.byte	4
+ 2754 0a65 02       		.byte	2
+ 2755 0a66 06       		.byte	6
+ 2756 0a67 40       		.byte	64
+ 2757 0a68 49       		.byte	73
+ 2758 0a69 0E       		.byte	14
+ 2759 0a6a 00       		.byte	0
+ 2760 0a6b 00       		.byte	0
+ 2761 0a6c 88       		.byte	-120
+ 2762 0a6d 0E       		.byte	14
+ 2763 0a6e 06       		.byte	6
+ 2764 0a6f 40       		.byte	64
+ 2765 0a70 C8       		.byte	-56
+ 2766 0a71 0E       		.byte	14
+ 2767 0a72 06       		.byte	6
+ 2768 0a73 40       		.byte	64
+ 2769 0a74 48       		.byte	72
+ 2770 0a75 0F       		.byte	15
+ 2771 0a76 06       		.byte	6
+ 2772 0a77 40       		.byte	64
+ 2773 0a78 08       		.byte	8
+ 2774 0a79 0F       		.byte	15
+ 2775 0a7a 06       		.byte	6
+ 2776 0a7b 40       		.byte	64
+ 2777 0a7c C8       		.byte	-56
+ 2778 0a7d 0F       		.byte	15
+ 2779 0a7e 06       		.byte	6
+ 2780 0a7f 40       		.byte	64
+ 2781 0a80 88       		.byte	-120
+ 2782 0a81 0F       		.byte	15
+ 2783 0a82 06       		.byte	6
+ 2784 0a83 40       		.byte	64
+ 2785 0a84 AC       		.byte	-84
+ 2786 0a85 01       		.byte	1
+ 2787 0a86 00       		.byte	0
+ 2788 0a87 20       		.byte	32
+ 2789 0a88 24       		.byte	36
+ 2790 0a89 01       		.byte	1
+ 2791 0a8a 00       		.byte	0
+ 2792 0a8b 20       		.byte	32
+ 2793 0a8c A9       		.byte	-87
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 50
+
+
+ 2794 0a8d 01       		.byte	1
+ 2795 0a8e 00       		.byte	0
+ 2796 0a8f 20       		.byte	32
+ 2797 0a90 20       		.byte	32
+ 2798 0a91 01       		.byte	1
+ 2799 0a92 00       		.byte	0
+ 2800 0a93 20       		.byte	32
+ 2801 0a94 1C       		.byte	28
+ 2802 0a95 01       		.byte	1
+ 2803 0a96 00       		.byte	0
+ 2804 0a97 20       		.byte	32
+ 2805 0a98 84       		.byte	-124
+ 2806 0a99 22       		.byte	34
+ 2807 0a9a 80       		.byte	-128
+ 2808 0a9b 21       		.byte	33
+ 2809 0a9c 0D       		.byte	13
+ 2810 0a9d 4B       		.byte	75
+ 2811 0a9e D2       		.byte	-46
+ 2812 0a9f 04       		.byte	4
+ 2813 0aa0 1A       		.byte	26
+ 2814 0aa1 60       		.byte	96
+ 2815 0aa2 1A       		.byte	26
+ 2816 0aa3 68       		.byte	104
+ 2817 0aa4 49       		.byte	73
+ 2818 0aa5 02       		.byte	2
+ 2819 0aa6 0A       		.byte	10
+ 2820 0aa7 43       		.byte	67
+ 2821 0aa8 1A       		.byte	26
+ 2822 0aa9 60       		.byte	96
+ 2823 0aaa 1A       		.byte	26
+ 2824 0aab 68       		.byte	104
+ 2825 0aac 0A       		.byte	10
+ 2826 0aad 49       		.byte	73
+ 2827 0aae 1A       		.byte	26
+ 2828 0aaf 60       		.byte	96
+ 2829 0ab0 C3       		.byte	-61
+ 2830 0ab1 22       		.byte	34
+ 2831 0ab2 0A       		.byte	10
+ 2832 0ab3 4B       		.byte	75
+ 2833 0ab4 92       		.byte	-110
+ 2834 0ab5 00       		.byte	0
+ 2835 0ab6 1A       		.byte	26
+ 2836 0ab7 60       		.byte	96
+ 2837 0ab8 00       		.byte	0
+ 2838 0ab9 22       		.byte	34
+ 2839 0aba 09       		.byte	9
+ 2840 0abb 4B       		.byte	75
+ 2841 0abc 1A       		.byte	26
+ 2842 0abd 60       		.byte	96
+ 2843 0abe 09       		.byte	9
+ 2844 0abf 4B       		.byte	75
+ 2845 0ac0 09       		.byte	9
+ 2846 0ac1 4A       		.byte	74
+ 2847 0ac2 13       		.byte	19
+ 2848 0ac3 60       		.byte	96
+ 2849 0ac4 09       		.byte	9
+ 2850 0ac5 4A       		.byte	74
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 51
+
+
+ 2851 0ac6 11       		.byte	17
+ 2852 0ac7 60       		.byte	96
+ 2853 0ac8 09       		.byte	9
+ 2854 0ac9 4A       		.byte	74
+ 2855 0aca 13       		.byte	19
+ 2856 0acb 60       		.byte	96
+ 2857 0acc 1C       		.byte	28
+ 2858 0acd 22       		.byte	34
+ 2859 0ace 09       		.byte	9
+ 2860 0acf 4B       		.byte	75
+ 2861 0ad0 1A       		.byte	26
+ 2862 0ad1 60       		.byte	96
+ 2863 0ad2 70       		.byte	112
+ 2864 0ad3 47       		.byte	71
+ 2865 0ad4 00       		.byte	0
+ 2866 0ad5 01       		.byte	1
+ 2867 0ad6 05       		.byte	5
+ 2868 0ad7 40       		.byte	64
+ 2869 0ad8 88       		.byte	-120
+ 2870 0ad9 13       		.byte	19
+ 2871 0ada 00       		.byte	0
+ 2872 0adb 00       		.byte	0
+ 2873 0adc 24       		.byte	36
+ 2874 0add 01       		.byte	1
+ 2875 0ade 05       		.byte	5
+ 2876 0adf 40       		.byte	64
+ 2877 0ae0 38       		.byte	56
+ 2878 0ae1 01       		.byte	1
+ 2879 0ae2 05       		.byte	5
+ 2880 0ae3 40       		.byte	64
+ 2881 0ae4 10       		.byte	16
+ 2882 0ae5 27       		.byte	39
+ 2883 0ae6 00       		.byte	0
+ 2884 0ae7 00       		.byte	0
+ 2885 0ae8 14       		.byte	20
+ 2886 0ae9 01       		.byte	1
+ 2887 0aea 05       		.byte	5
+ 2888 0aeb 40       		.byte	64
+ 2889 0aec 0C       		.byte	12
+ 2890 0aed 01       		.byte	1
+ 2891 0aee 05       		.byte	5
+ 2892 0aef 40       		.byte	64
+ 2893 0af0 08       		.byte	8
+ 2894 0af1 01       		.byte	1
+ 2895 0af2 05       		.byte	5
+ 2896 0af3 40       		.byte	64
+ 2897 0af4 28       		.byte	40
+ 2898 0af5 01       		.byte	1
+ 2899 0af6 05       		.byte	5
+ 2900 0af7 40       		.byte	64
+ 2901 0af8 08       		.byte	8
+ 2902 0af9 B5       		.byte	-75
+ 2903 0afa 00       		.byte	0
+ 2904 0afb F0       		.byte	-16
+ 2905 0afc 2A       		.byte	42
+ 2906 0afd F8       		.byte	-8
+ 2907 0afe 01       		.byte	1
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 52
+
+
+ 2908 0aff 21       		.byte	33
+ 2909 0b00 03       		.byte	3
+ 2910 0b01 4A       		.byte	74
+ 2911 0b02 13       		.byte	19
+ 2912 0b03 68       		.byte	104
+ 2913 0b04 0B       		.byte	11
+ 2914 0b05 43       		.byte	67
+ 2915 0b06 13       		.byte	19
+ 2916 0b07 60       		.byte	96
+ 2917 0b08 00       		.byte	0
+ 2918 0b09 F0       		.byte	-16
+ 2919 0b0a 27       		.byte	39
+ 2920 0b0b F8       		.byte	-8
+ 2921 0b0c 08       		.byte	8
+ 2922 0b0d BD       		.byte	-67
+ 2923 0b0e C0       		.byte	-64
+ 2924 0b0f 46       		.byte	70
+ 2925 0b10 00       		.byte	0
+ 2926 0b11 00       		.byte	0
+ 2927 0b12 05       		.byte	5
+ 2928 0b13 40       		.byte	64
+ 2929 0b14 10       		.byte	16
+ 2930 0b15 B5       		.byte	-75
+ 2931 0b16 05       		.byte	5
+ 2932 0b17 4C       		.byte	76
+ 2933 0b18 23       		.byte	35
+ 2934 0b19 78       		.byte	120
+ 2935 0b1a 00       		.byte	0
+ 2936 0b1b 2B       		.byte	43
+ 2937 0b1c 03       		.byte	3
+ 2938 0b1d D1       		.byte	-47
+ 2939 0b1e FF       		.byte	-1
+ 2940 0b1f F7       		.byte	-9
+ 2941 0b20 BB       		.byte	-69
+ 2942 0b21 FF       		.byte	-1
+ 2943 0b22 01       		.byte	1
+ 2944 0b23 23       		.byte	35
+ 2945 0b24 23       		.byte	35
+ 2946 0b25 70       		.byte	112
+ 2947 0b26 FF       		.byte	-1
+ 2948 0b27 F7       		.byte	-9
+ 2949 0b28 E7       		.byte	-25
+ 2950 0b29 FF       		.byte	-1
+ 2951 0b2a 10       		.byte	16
+ 2952 0b2b BD       		.byte	-67
+ 2953 0b2c 18       		.byte	24
+ 2954 0b2d 01       		.byte	1
+ 2955 0b2e 00       		.byte	0
+ 2956 0b2f 20       		.byte	32
+ 2957 0b30 02       		.byte	2
+ 2958 0b31 4B       		.byte	75
+ 2959 0b32 18       		.byte	24
+ 2960 0b33 68       		.byte	104
+ 2961 0b34 00       		.byte	0
+ 2962 0b35 06       		.byte	6
+ 2963 0b36 C0       		.byte	-64
+ 2964 0b37 0F       		.byte	15
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 53
+
+
+ 2965 0b38 70       		.byte	112
+ 2966 0b39 47       		.byte	71
+ 2967 0b3a C0       		.byte	-64
+ 2968 0b3b 46       		.byte	70
+ 2969 0b3c 04       		.byte	4
+ 2970 0b3d 00       		.byte	0
+ 2971 0b3e 04       		.byte	4
+ 2972 0b3f 40       		.byte	64
+ 2973 0b40 02       		.byte	2
+ 2974 0b41 30       		.byte	48
+ 2975 0b42 80       		.byte	-128
+ 2976 0b43 08       		.byte	8
+ 2977 0b44 04       		.byte	4
+ 2978 0b45 D0       		.byte	-48
+ 2979 0b46 C0       		.byte	-64
+ 2980 0b47 46       		.byte	70
+ 2981 0b48 01       		.byte	1
+ 2982 0b49 38       		.byte	56
+ 2983 0b4a FD       		.byte	-3
+ 2984 0b4b D1       		.byte	-47
+ 2985 0b4c C0       		.byte	-64
+ 2986 0b4d 46       		.byte	70
+ 2987 0b4e C0       		.byte	-64
+ 2988 0b4f 46       		.byte	70
+ 2989 0b50 70       		.byte	112
+ 2990 0b51 47       		.byte	71
+ 2991 0b52 EF       		.byte	-17
+ 2992 0b53 F3       		.byte	-13
+ 2993 0b54 10       		.byte	16
+ 2994 0b55 80       		.byte	-128
+ 2995 0b56 72       		.byte	114
+ 2996 0b57 B6       		.byte	-74
+ 2997 0b58 70       		.byte	112
+ 2998 0b59 47       		.byte	71
+ 2999 0b5a 80       		.byte	-128
+ 3000 0b5b F3       		.byte	-13
+ 3001 0b5c 10       		.byte	16
+ 3002 0b5d 88       		.byte	-120
+ 3003 0b5e 70       		.byte	112
+ 3004 0b5f 47       		.byte	71
+ 3005 0b60 00       		.byte	0
+ 3006 0b61 23       		.byte	35
+ 3007 0b62 F0       		.byte	-16
+ 3008 0b63 B5       		.byte	-75
+ 3009 0b64 A7       		.byte	-89
+ 3010 0b65 B0       		.byte	-80
+ 3011 0b66 01       		.byte	1
+ 3012 0b67 93       		.byte	-109
+ 3013 0b68 FF       		.byte	-1
+ 3014 0b69 28       		.byte	40
+ 3015 0b6a 46       		.byte	70
+ 3016 0b6b D8       		.byte	-40
+ 3017 0b6c 99       		.byte	-103
+ 3018 0b6d 42       		.byte	66
+ 3019 0b6e 44       		.byte	68
+ 3020 0b6f D0       		.byte	-48
+ 3021 0b70 24       		.byte	36
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 54
+
+
+ 3022 0b71 4B       		.byte	75
+ 3023 0b72 25       		.byte	37
+ 3024 0b73 4D       		.byte	77
+ 3025 0b74 04       		.byte	4
+ 3026 0b75 AF       		.byte	-81
+ 3027 0b76 2F       		.byte	47
+ 3028 0b77 60       		.byte	96
+ 3029 0b78 04       		.byte	4
+ 3030 0b79 93       		.byte	-109
+ 3031 0b7a 7F       		.byte	127
+ 3032 0b7b 23       		.byte	35
+ 3033 0b7c 04       		.byte	4
+ 3034 0b7d 1C       		.byte	28
+ 3035 0b7e 80       		.byte	-128
+ 3036 0b7f 22       		.byte	34
+ 3037 0b80 06       		.byte	6
+ 3038 0b81 A8       		.byte	-88
+ 3039 0b82 7B       		.byte	123
+ 3040 0b83 60       		.byte	96
+ 3041 0b84 21       		.byte	33
+ 3042 0b85 4E       		.byte	78
+ 3043 0b86 00       		.byte	0
+ 3044 0b87 F0       		.byte	-16
+ 3045 0b88 0B       		.byte	11
+ 3046 0b89 FA       		.byte	-6
+ 3047 0b8a 21       		.byte	33
+ 3048 0b8b 4B       		.byte	75
+ 3049 0b8c 33       		.byte	51
+ 3050 0b8d 60       		.byte	96
+ 3051 0b8e 33       		.byte	51
+ 3052 0b8f 68       		.byte	104
+ 3053 0b90 00       		.byte	0
+ 3054 0b91 2B       		.byte	43
+ 3055 0b92 FC       		.byte	-4
+ 3056 0b93 DB       		.byte	-37
+ 3057 0b94 2B       		.byte	43
+ 3058 0b95 68       		.byte	104
+ 3059 0b96 02       		.byte	2
+ 3060 0b97 93       		.byte	-109
+ 3061 0b98 A0       		.byte	-96
+ 3062 0b99 23       		.byte	35
+ 3063 0b9a 02       		.byte	2
+ 3064 0b9b 9A       		.byte	-102
+ 3065 0b9c 1B       		.byte	27
+ 3066 0b9d 06       		.byte	6
+ 3067 0b9e 9A       		.byte	-102
+ 3068 0b9f 42       		.byte	66
+ 3069 0ba0 01       		.byte	1
+ 3070 0ba1 D1       		.byte	-47
+ 3071 0ba2 00       		.byte	0
+ 3072 0ba3 23       		.byte	35
+ 3073 0ba4 04       		.byte	4
+ 3074 0ba5 E0       		.byte	-32
+ 3075 0ba6 02       		.byte	2
+ 3076 0ba7 9B       		.byte	-101
+ 3077 0ba8 1B       		.byte	27
+ 3078 0ba9 0F       		.byte	15
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 55
+
+
+ 3079 0baa 0F       		.byte	15
+ 3080 0bab 2B       		.byte	43
+ 3081 0bac 02       		.byte	2
+ 3082 0bad D1       		.byte	-47
+ 3083 0bae 06       		.byte	6
+ 3084 0baf 3B       		.byte	59
+ 3085 0bb0 01       		.byte	1
+ 3086 0bb1 93       		.byte	-109
+ 3087 0bb2 03       		.byte	3
+ 3088 0bb3 E0       		.byte	-32
+ 3089 0bb4 2B       		.byte	43
+ 3090 0bb5 68       		.byte	104
+ 3091 0bb6 1B       		.byte	27
+ 3092 0bb7 0F       		.byte	15
+ 3093 0bb8 0A       		.byte	10
+ 3094 0bb9 2B       		.byte	43
+ 3095 0bba FB       		.byte	-5
+ 3096 0bbb D1       		.byte	-47
+ 3097 0bbc 01       		.byte	1
+ 3098 0bbd 9B       		.byte	-101
+ 3099 0bbe 00       		.byte	0
+ 3100 0bbf 2B       		.byte	43
+ 3101 0bc0 1D       		.byte	29
+ 3102 0bc1 D1       		.byte	-47
+ 3103 0bc2 14       		.byte	20
+ 3104 0bc3 48       		.byte	72
+ 3105 0bc4 24       		.byte	36
+ 3106 0bc5 04       		.byte	4
+ 3107 0bc6 2F       		.byte	47
+ 3108 0bc7 60       		.byte	96
+ 3109 0bc8 04       		.byte	4
+ 3110 0bc9 43       		.byte	67
+ 3111 0bca 04       		.byte	4
+ 3112 0bcb 94       		.byte	-108
+ 3113 0bcc FF       		.byte	-1
+ 3114 0bcd F7       		.byte	-9
+ 3115 0bce C1       		.byte	-63
+ 3116 0bcf FF       		.byte	-1
+ 3117 0bd0 11       		.byte	17
+ 3118 0bd1 4B       		.byte	75
+ 3119 0bd2 1A       		.byte	26
+ 3120 0bd3 68       		.byte	104
+ 3121 0bd4 03       		.byte	3
+ 3122 0bd5 92       		.byte	-110
+ 3123 0bd6 11       		.byte	17
+ 3124 0bd7 4A       		.byte	74
+ 3125 0bd8 32       		.byte	50
+ 3126 0bd9 60       		.byte	96
+ 3127 0bda 32       		.byte	50
+ 3128 0bdb 68       		.byte	104
+ 3129 0bdc 00       		.byte	0
+ 3130 0bdd 2A       		.byte	42
+ 3131 0bde FC       		.byte	-4
+ 3132 0bdf DB       		.byte	-37
+ 3133 0be0 03       		.byte	3
+ 3134 0be1 9A       		.byte	-102
+ 3135 0be2 1A       		.byte	26
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 56
+
+
+ 3136 0be3 60       		.byte	96
+ 3137 0be4 FF       		.byte	-1
+ 3138 0be5 F7       		.byte	-9
+ 3139 0be6 B9       		.byte	-71
+ 3140 0be7 FF       		.byte	-1
+ 3141 0be8 2B       		.byte	43
+ 3142 0be9 68       		.byte	104
+ 3143 0bea 02       		.byte	2
+ 3144 0beb 93       		.byte	-109
+ 3145 0bec A0       		.byte	-96
+ 3146 0bed 23       		.byte	35
+ 3147 0bee 02       		.byte	2
+ 3148 0bef 9A       		.byte	-102
+ 3149 0bf0 1B       		.byte	27
+ 3150 0bf1 06       		.byte	6
+ 3151 0bf2 9A       		.byte	-102
+ 3152 0bf3 42       		.byte	66
+ 3153 0bf4 03       		.byte	3
+ 3154 0bf5 D0       		.byte	-48
+ 3155 0bf6 02       		.byte	2
+ 3156 0bf7 9B       		.byte	-101
+ 3157 0bf8 00       		.byte	0
+ 3158 0bf9 E0       		.byte	-32
+ 3159 0bfa 01       		.byte	1
+ 3160 0bfb 23       		.byte	35
+ 3161 0bfc 01       		.byte	1
+ 3162 0bfd 93       		.byte	-109
+ 3163 0bfe 01       		.byte	1
+ 3164 0bff 98       		.byte	-104
+ 3165 0c00 27       		.byte	39
+ 3166 0c01 B0       		.byte	-80
+ 3167 0c02 F0       		.byte	-16
+ 3168 0c03 BD       		.byte	-67
+ 3169 0c04 B6       		.byte	-74
+ 3170 0c05 D7       		.byte	-41
+ 3171 0c06 00       		.byte	0
+ 3172 0c07 00       		.byte	0
+ 3173 0c08 08       		.byte	8
+ 3174 0c09 00       		.byte	0
+ 3175 0c0a 00       		.byte	0
+ 3176 0c0b 40       		.byte	64
+ 3177 0c0c 04       		.byte	4
+ 3178 0c0d 00       		.byte	0
+ 3179 0c0e 00       		.byte	0
+ 3180 0c0f 40       		.byte	64
+ 3181 0c10 04       		.byte	4
+ 3182 0c11 00       		.byte	0
+ 3183 0c12 00       		.byte	0
+ 3184 0c13 80       		.byte	-128
+ 3185 0c14 B6       		.byte	-74
+ 3186 0c15 D8       		.byte	-40
+ 3187 0c16 00       		.byte	0
+ 3188 0c17 00       		.byte	0
+ 3189 0c18 08       		.byte	8
+ 3190 0c19 01       		.byte	1
+ 3191 0c1a 0B       		.byte	11
+ 3192 0c1b 40       		.byte	64
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 57
+
+
+ 3193 0c1c 05       		.byte	5
+ 3194 0c1d 00       		.byte	0
+ 3195 0c1e 00       		.byte	0
+ 3196 0c1f 80       		.byte	-128
+ 3197 0c20 1F       		.byte	31
+ 3198 0c21 28       		.byte	40
+ 3199 0c22 00       		.byte	0
+ 3200 0c23 D9       		.byte	-39
+ 3201 0c24 01       		.byte	1
+ 3202 0c25 BE       		.byte	-66
+ 3203 0c26 03       		.byte	3
+ 3204 0c27 4B       		.byte	75
+ 3205 0c28 80       		.byte	-128
+ 3206 0c29 00       		.byte	0
+ 3207 0c2a C3       		.byte	-61
+ 3208 0c2b 18       		.byte	24
+ 3209 0c2c 18       		.byte	24
+ 3210 0c2d 68       		.byte	104
+ 3211 0c2e 19       		.byte	25
+ 3212 0c2f 60       		.byte	96
+ 3213 0c30 70       		.byte	112
+ 3214 0c31 47       		.byte	71
+ 3215 0c32 C0       		.byte	-64
+ 3216 0c33 46       		.byte	70
+ 3217 0c34 40       		.byte	64
+ 3218 0c35 00       		.byte	0
+ 3219 0c36 00       		.byte	0
+ 3220 0c37 20       		.byte	32
+ 3221 0c38 38       		.byte	56
+ 3222 0c39 B5       		.byte	-75
+ 3223 0c3a 04       		.byte	4
+ 3224 0c3b 1C       		.byte	28
+ 3225 0c3c 0D       		.byte	13
+ 3226 0c3d 1E       		.byte	30
+ 3227 0c3e 03       		.byte	3
+ 3228 0c3f 2D       		.byte	45
+ 3229 0c40 00       		.byte	0
+ 3230 0c41 D9       		.byte	-39
+ 3231 0c42 01       		.byte	1
+ 3232 0c43 BE       		.byte	-66
+ 3233 0c44 1F       		.byte	31
+ 3234 0c45 2C       		.byte	44
+ 3235 0c46 00       		.byte	0
+ 3236 0c47 D9       		.byte	-39
+ 3237 0c48 01       		.byte	1
+ 3238 0c49 BE       		.byte	-66
+ 3239 0c4a FF       		.byte	-1
+ 3240 0c4b F7       		.byte	-9
+ 3241 0c4c 82       		.byte	-126
+ 3242 0c4d FF       		.byte	-1
+ 3243 0c4e A3       		.byte	-93
+ 3244 0c4f 08       		.byte	8
+ 3245 0c50 07       		.byte	7
+ 3246 0c51 4A       		.byte	74
+ 3247 0c52 9B       		.byte	-101
+ 3248 0c53 00       		.byte	0
+ 3249 0c54 9B       		.byte	-101
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 58
+
+
+ 3250 0c55 18       		.byte	24
+ 3251 0c56 03       		.byte	3
+ 3252 0c57 22       		.byte	34
+ 3253 0c58 14       		.byte	20
+ 3254 0c59 40       		.byte	64
+ 3255 0c5a 94       		.byte	-108
+ 3256 0c5b 40       		.byte	64
+ 3257 0c5c 06       		.byte	6
+ 3258 0c5d 34       		.byte	52
+ 3259 0c5e A2       		.byte	-94
+ 3260 0c5f 40       		.byte	64
+ 3261 0c60 A5       		.byte	-91
+ 3262 0c61 40       		.byte	64
+ 3263 0c62 19       		.byte	25
+ 3264 0c63 68       		.byte	104
+ 3265 0c64 91       		.byte	-111
+ 3266 0c65 43       		.byte	67
+ 3267 0c66 29       		.byte	41
+ 3268 0c67 43       		.byte	67
+ 3269 0c68 19       		.byte	25
+ 3270 0c69 60       		.byte	96
+ 3271 0c6a FF       		.byte	-1
+ 3272 0c6b F7       		.byte	-9
+ 3273 0c6c 76       		.byte	118
+ 3274 0c6d FF       		.byte	-1
+ 3275 0c6e 38       		.byte	56
+ 3276 0c6f BD       		.byte	-67
+ 3277 0c70 00       		.byte	0
+ 3278 0c71 E4       		.byte	-28
+ 3279 0c72 00       		.byte	0
+ 3280 0c73 E0       		.byte	-32
+ 3281 0c74 1F       		.byte	31
+ 3282 0c75 23       		.byte	35
+ 3283 0c76 18       		.byte	24
+ 3284 0c77 40       		.byte	64
+ 3285 0c78 1E       		.byte	30
+ 3286 0c79 3B       		.byte	59
+ 3287 0c7a 83       		.byte	-125
+ 3288 0c7b 40       		.byte	64
+ 3289 0c7c 18       		.byte	24
+ 3290 0c7d 1C       		.byte	28
+ 3291 0c7e 01       		.byte	1
+ 3292 0c7f 4B       		.byte	75
+ 3293 0c80 18       		.byte	24
+ 3294 0c81 60       		.byte	96
+ 3295 0c82 70       		.byte	112
+ 3296 0c83 47       		.byte	71
+ 3297 0c84 00       		.byte	0
+ 3298 0c85 E1       		.byte	-31
+ 3299 0c86 00       		.byte	0
+ 3300 0c87 E0       		.byte	-32
+ 3301 0c88 1F       		.byte	31
+ 3302 0c89 23       		.byte	35
+ 3303 0c8a 18       		.byte	24
+ 3304 0c8b 40       		.byte	64
+ 3305 0c8c 1E       		.byte	30
+ 3306 0c8d 3B       		.byte	59
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 59
+
+
+ 3307 0c8e 83       		.byte	-125
+ 3308 0c8f 40       		.byte	64
+ 3309 0c90 18       		.byte	24
+ 3310 0c91 1C       		.byte	28
+ 3311 0c92 01       		.byte	1
+ 3312 0c93 4B       		.byte	75
+ 3313 0c94 18       		.byte	24
+ 3314 0c95 60       		.byte	96
+ 3315 0c96 70       		.byte	112
+ 3316 0c97 47       		.byte	71
+ 3317 0c98 80       		.byte	-128
+ 3318 0c99 E1       		.byte	-31
+ 3319 0c9a 00       		.byte	0
+ 3320 0c9b E0       		.byte	-32
+ 3321 0c9c 01       		.byte	1
+ 3322 0c9d BE       		.byte	-66
+ 3323 0c9e 70       		.byte	112
+ 3324 0c9f 47       		.byte	71
+ 3325 0ca0 03       		.byte	3
+ 3326 0ca1 4A       		.byte	74
+ 3327 0ca2 04       		.byte	4
+ 3328 0ca3 49       		.byte	73
+ 3329 0ca4 13       		.byte	19
+ 3330 0ca5 68       		.byte	104
+ 3331 0ca6 9B       		.byte	-101
+ 3332 0ca7 B2       		.byte	-78
+ 3333 0ca8 0B       		.byte	11
+ 3334 0ca9 43       		.byte	67
+ 3335 0caa 13       		.byte	19
+ 3336 0cab 60       		.byte	96
+ 3337 0cac 70       		.byte	112
+ 3338 0cad 47       		.byte	71
+ 3339 0cae C0       		.byte	-64
+ 3340 0caf 46       		.byte	70
+ 3341 0cb0 0C       		.byte	12
+ 3342 0cb1 ED       		.byte	-19
+ 3343 0cb2 00       		.byte	0
+ 3344 0cb3 E0       		.byte	-32
+ 3345 0cb4 04       		.byte	4
+ 3346 0cb5 00       		.byte	0
+ 3347 0cb6 FA       		.byte	-6
+ 3348 0cb7 05       		.byte	5
+ 3349 0cb8 10       		.byte	16
+ 3350 0cb9 B5       		.byte	-75
+ 3351 0cba 04       		.byte	4
+ 3352 0cbb 1C       		.byte	28
+ 3353 0cbc 80       		.byte	-128
+ 3354 0cbd 22       		.byte	34
+ 3355 0cbe 07       		.byte	7
+ 3356 0cbf 4B       		.byte	75
+ 3357 0cc0 12       		.byte	18
+ 3358 0cc1 02       		.byte	2
+ 3359 0cc2 94       		.byte	-108
+ 3360 0cc3 42       		.byte	66
+ 3361 0cc4 05       		.byte	5
+ 3362 0cc5 D9       		.byte	-39
+ 3363 0cc6 18       		.byte	24
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 60
+
+
+ 3364 0cc7 68       		.byte	104
+ 3365 0cc8 FF       		.byte	-1
+ 3366 0cc9 F7       		.byte	-9
+ 3367 0cca 3A       		.byte	58
+ 3368 0ccb FF       		.byte	-1
+ 3369 0ccc 04       		.byte	4
+ 3370 0ccd 4B       		.byte	75
+ 3371 0cce E4       		.byte	-28
+ 3372 0ccf 18       		.byte	24
+ 3373 0cd0 F4       		.byte	-12
+ 3374 0cd1 E7       		.byte	-25
+ 3375 0cd2 58       		.byte	88
+ 3376 0cd3 68       		.byte	104
+ 3377 0cd4 60       		.byte	96
+ 3378 0cd5 43       		.byte	67
+ 3379 0cd6 FF       		.byte	-1
+ 3380 0cd7 F7       		.byte	-9
+ 3381 0cd8 33       		.byte	51
+ 3382 0cd9 FF       		.byte	-1
+ 3383 0cda 10       		.byte	16
+ 3384 0cdb BD       		.byte	-67
+ 3385 0cdc DC       		.byte	-36
+ 3386 0cdd 00       		.byte	0
+ 3387 0cde 00       		.byte	0
+ 3388 0cdf 20       		.byte	32
+ 3389 0ce0 00       		.byte	0
+ 3390 0ce1 80       		.byte	-128
+ 3391 0ce2 FF       		.byte	-1
+ 3392 0ce3 FF       		.byte	-1
+ 3393 0ce4 08       		.byte	8
+ 3394 0ce5 B5       		.byte	-75
+ 3395 0ce6 03       		.byte	3
+ 3396 0ce7 4B       		.byte	75
+ 3397 0ce8 1B       		.byte	27
+ 3398 0ce9 7A       		.byte	122
+ 3399 0cea 58       		.byte	88
+ 3400 0ceb 43       		.byte	67
+ 3401 0cec FF       		.byte	-1
+ 3402 0ced F7       		.byte	-9
+ 3403 0cee 28       		.byte	40
+ 3404 0cef FF       		.byte	-1
+ 3405 0cf0 08       		.byte	8
+ 3406 0cf1 BD       		.byte	-67
+ 3407 0cf2 C0       		.byte	-64
+ 3408 0cf3 46       		.byte	70
+ 3409 0cf4 DC       		.byte	-36
+ 3410 0cf5 00       		.byte	0
+ 3411 0cf6 00       		.byte	0
+ 3412 0cf7 20       		.byte	32
+ 3413 0cf8 F0       		.byte	-16
+ 3414 0cf9 B5       		.byte	-75
+ 3415 0cfa C3       		.byte	-61
+ 3416 0cfb 1E       		.byte	30
+ 3417 0cfc 85       		.byte	-123
+ 3418 0cfd B0       		.byte	-80
+ 3419 0cfe 00       		.byte	0
+ 3420 0cff 93       		.byte	-109
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 61
+
+
+ 3421 0d00 2D       		.byte	45
+ 3422 0d01 2B       		.byte	43
+ 3423 0d02 77       		.byte	119
+ 3424 0d03 D8       		.byte	-40
+ 3425 0d04 06       		.byte	6
+ 3426 0d05 1C       		.byte	28
+ 3427 0d06 FF       		.byte	-1
+ 3428 0d07 F7       		.byte	-9
+ 3429 0d08 24       		.byte	36
+ 3430 0d09 FF       		.byte	-1
+ 3431 0d0a 00       		.byte	0
+ 3432 0d0b 23       		.byte	35
+ 3433 0d0c 03       		.byte	3
+ 3434 0d0d 90       		.byte	-112
+ 3435 0d0e 3F       		.byte	63
+ 3436 0d0f 22       		.byte	34
+ 3437 0d10 3A       		.byte	58
+ 3438 0d11 49       		.byte	73
+ 3439 0d12 3B       		.byte	59
+ 3440 0d13 4F       		.byte	79
+ 3441 0d14 58       		.byte	88
+ 3442 0d15 5C       		.byte	92
+ 3443 0d16 3C       		.byte	60
+ 3444 0d17 68       		.byte	104
+ 3445 0d18 01       		.byte	1
+ 3446 0d19 91       		.byte	-111
+ 3447 0d1a 22       		.byte	34
+ 3448 0d1b 40       		.byte	64
+ 3449 0d1c 90       		.byte	-112
+ 3450 0d1d 42       		.byte	66
+ 3451 0d1e 01       		.byte	1
+ 3452 0d1f D1       		.byte	-47
+ 3453 0d20 03       		.byte	3
+ 3454 0d21 33       		.byte	51
+ 3455 0d22 03       		.byte	3
+ 3456 0d23 E0       		.byte	-32
+ 3457 0d24 01       		.byte	1
+ 3458 0d25 33       		.byte	51
+ 3459 0d26 2E       		.byte	46
+ 3460 0d27 2B       		.byte	43
+ 3461 0d28 F1       		.byte	-15
+ 3462 0d29 D1       		.byte	-47
+ 3463 0d2a 02       		.byte	2
+ 3464 0d2b 33       		.byte	51
+ 3465 0d2c 35       		.byte	53
+ 3466 0d2d 4A       		.byte	74
+ 3467 0d2e 12       		.byte	18
+ 3468 0d2f 78       		.byte	120
+ 3469 0d30 96       		.byte	-106
+ 3470 0d31 42       		.byte	66
+ 3471 0d32 04       		.byte	4
+ 3472 0d33 D8       		.byte	-40
+ 3473 0d34 34       		.byte	52
+ 3474 0d35 4A       		.byte	74
+ 3475 0d36 15       		.byte	21
+ 3476 0d37 78       		.byte	120
+ 3477 0d38 34       		.byte	52
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 62
+
+
+ 3478 0d39 4A       		.byte	74
+ 3479 0d3a ED       		.byte	-19
+ 3480 0d3b B2       		.byte	-78
+ 3481 0d3c 1E       		.byte	30
+ 3482 0d3d E0       		.byte	-32
+ 3483 0d3e 34       		.byte	52
+ 3484 0d3f 4A       		.byte	74
+ 3485 0d40 12       		.byte	18
+ 3486 0d41 78       		.byte	120
+ 3487 0d42 96       		.byte	-106
+ 3488 0d43 42       		.byte	66
+ 3489 0d44 04       		.byte	4
+ 3490 0d45 D8       		.byte	-40
+ 3491 0d46 33       		.byte	51
+ 3492 0d47 4A       		.byte	74
+ 3493 0d48 15       		.byte	21
+ 3494 0d49 78       		.byte	120
+ 3495 0d4a 33       		.byte	51
+ 3496 0d4b 4A       		.byte	74
+ 3497 0d4c ED       		.byte	-19
+ 3498 0d4d B2       		.byte	-78
+ 3499 0d4e 15       		.byte	21
+ 3500 0d4f E0       		.byte	-32
+ 3501 0d50 32       		.byte	50
+ 3502 0d51 4A       		.byte	74
+ 3503 0d52 12       		.byte	18
+ 3504 0d53 78       		.byte	120
+ 3505 0d54 96       		.byte	-106
+ 3506 0d55 42       		.byte	66
+ 3507 0d56 04       		.byte	4
+ 3508 0d57 D8       		.byte	-40
+ 3509 0d58 31       		.byte	49
+ 3510 0d59 4A       		.byte	74
+ 3511 0d5a 15       		.byte	21
+ 3512 0d5b 78       		.byte	120
+ 3513 0d5c 31       		.byte	49
+ 3514 0d5d 4A       		.byte	74
+ 3515 0d5e ED       		.byte	-19
+ 3516 0d5f B2       		.byte	-78
+ 3517 0d60 0C       		.byte	12
+ 3518 0d61 E0       		.byte	-32
+ 3519 0d62 31       		.byte	49
+ 3520 0d63 4A       		.byte	74
+ 3521 0d64 12       		.byte	18
+ 3522 0d65 78       		.byte	120
+ 3523 0d66 96       		.byte	-106
+ 3524 0d67 42       		.byte	66
+ 3525 0d68 04       		.byte	4
+ 3526 0d69 D8       		.byte	-40
+ 3527 0d6a 30       		.byte	48
+ 3528 0d6b 4A       		.byte	74
+ 3529 0d6c 15       		.byte	21
+ 3530 0d6d 78       		.byte	120
+ 3531 0d6e 30       		.byte	48
+ 3532 0d6f 4A       		.byte	74
+ 3533 0d70 ED       		.byte	-19
+ 3534 0d71 B2       		.byte	-78
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 63
+
+
+ 3535 0d72 03       		.byte	3
+ 3536 0d73 E0       		.byte	-32
+ 3537 0d74 2F       		.byte	47
+ 3538 0d75 4A       		.byte	74
+ 3539 0d76 15       		.byte	21
+ 3540 0d77 78       		.byte	120
+ 3541 0d78 2F       		.byte	47
+ 3542 0d79 4A       		.byte	74
+ 3543 0d7a ED       		.byte	-19
+ 3544 0d7b B2       		.byte	-78
+ 3545 0d7c 14       		.byte	20
+ 3546 0d7d 78       		.byte	120
+ 3547 0d7e 2E       		.byte	46
+ 3548 0d7f 4A       		.byte	74
+ 3549 0d80 E4       		.byte	-28
+ 3550 0d81 B2       		.byte	-78
+ 3551 0d82 B2       		.byte	-78
+ 3552 0d83 18       		.byte	24
+ 3553 0d84 02       		.byte	2
+ 3554 0d85 92       		.byte	-110
+ 3555 0d86 2A       		.byte	42
+ 3556 0d87 2B       		.byte	43
+ 3557 0d88 07       		.byte	7
+ 3558 0d89 D9       		.byte	-39
+ 3559 0d8a 2A       		.byte	42
+ 3560 0d8b 2E       		.byte	46
+ 3561 0d8c 1B       		.byte	27
+ 3562 0d8d D9       		.byte	-39
+ 3563 0d8e 19       		.byte	25
+ 3564 0d8f 23       		.byte	35
+ 3565 0d90 05       		.byte	5
+ 3566 0d91 20       		.byte	32
+ 3567 0d92 3B       		.byte	59
+ 3568 0d93 60       		.byte	96
+ 3569 0d94 FF       		.byte	-1
+ 3570 0d95 F7       		.byte	-9
+ 3571 0d96 D4       		.byte	-44
+ 3572 0d97 FE       		.byte	-2
+ 3573 0d98 01       		.byte	1
+ 3574 0d99 E0       		.byte	-32
+ 3575 0d9a 9E       		.byte	-98
+ 3576 0d9b 42       		.byte	66
+ 3577 0d9c 13       		.byte	19
+ 3578 0d9d D9       		.byte	-39
+ 3579 0d9e 02       		.byte	2
+ 3580 0d9f 9B       		.byte	-101
+ 3581 0da0 26       		.byte	38
+ 3582 0da1 4A       		.byte	74
+ 3583 0da2 1B       		.byte	27
+ 3584 0da3 78       		.byte	120
+ 3585 0da4 05       		.byte	5
+ 3586 0da5 20       		.byte	32
+ 3587 0da6 DB       		.byte	-37
+ 3588 0da7 B2       		.byte	-78
+ 3589 0da8 13       		.byte	19
+ 3590 0da9 60       		.byte	96
+ 3591 0daa 25       		.byte	37
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 64
+
+
+ 3592 0dab 4B       		.byte	75
+ 3593 0dac 1D       		.byte	29
+ 3594 0dad 60       		.byte	96
+ 3595 0dae 25       		.byte	37
+ 3596 0daf 4B       		.byte	75
+ 3597 0db0 1C       		.byte	28
+ 3598 0db1 60       		.byte	96
+ 3599 0db2 FF       		.byte	-1
+ 3600 0db3 F7       		.byte	-9
+ 3601 0db4 97       		.byte	-105
+ 3602 0db5 FF       		.byte	-1
+ 3603 0db6 01       		.byte	1
+ 3604 0db7 9B       		.byte	-101
+ 3605 0db8 00       		.byte	0
+ 3606 0db9 9A       		.byte	-102
+ 3607 0dba 05       		.byte	5
+ 3608 0dbb 20       		.byte	32
+ 3609 0dbc 9B       		.byte	-101
+ 3610 0dbd 5C       		.byte	92
+ 3611 0dbe 3B       		.byte	59
+ 3612 0dbf 60       		.byte	96
+ 3613 0dc0 FF       		.byte	-1
+ 3614 0dc1 F7       		.byte	-9
+ 3615 0dc2 BE       		.byte	-66
+ 3616 0dc3 FE       		.byte	-2
+ 3617 0dc4 12       		.byte	18
+ 3618 0dc5 E0       		.byte	-32
+ 3619 0dc6 00       		.byte	0
+ 3620 0dc7 9A       		.byte	-102
+ 3621 0dc8 01       		.byte	1
+ 3622 0dc9 9B       		.byte	-101
+ 3623 0dca 05       		.byte	5
+ 3624 0dcb 20       		.byte	32
+ 3625 0dcc 9B       		.byte	-101
+ 3626 0dcd 5C       		.byte	92
+ 3627 0dce 3B       		.byte	59
+ 3628 0dcf 60       		.byte	96
+ 3629 0dd0 FF       		.byte	-1
+ 3630 0dd1 F7       		.byte	-9
+ 3631 0dd2 B6       		.byte	-74
+ 3632 0dd3 FE       		.byte	-2
+ 3633 0dd4 02       		.byte	2
+ 3634 0dd5 9B       		.byte	-101
+ 3635 0dd6 19       		.byte	25
+ 3636 0dd7 4A       		.byte	74
+ 3637 0dd8 1B       		.byte	27
+ 3638 0dd9 78       		.byte	120
+ 3639 0dda 05       		.byte	5
+ 3640 0ddb 20       		.byte	32
+ 3641 0ddc DB       		.byte	-37
+ 3642 0ddd B2       		.byte	-78
+ 3643 0dde 13       		.byte	19
+ 3644 0ddf 60       		.byte	96
+ 3645 0de0 17       		.byte	23
+ 3646 0de1 4B       		.byte	75
+ 3647 0de2 1D       		.byte	29
+ 3648 0de3 60       		.byte	96
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 65
+
+
+ 3649 0de4 17       		.byte	23
+ 3650 0de5 4B       		.byte	75
+ 3651 0de6 1C       		.byte	28
+ 3652 0de7 60       		.byte	96
+ 3653 0de8 FF       		.byte	-1
+ 3654 0de9 F7       		.byte	-9
+ 3655 0dea 7C       		.byte	124
+ 3656 0deb FF       		.byte	-1
+ 3657 0dec 03       		.byte	3
+ 3658 0ded 98       		.byte	-104
+ 3659 0dee FF       		.byte	-1
+ 3660 0def F7       		.byte	-9
+ 3661 0df0 B4       		.byte	-76
+ 3662 0df1 FE       		.byte	-2
+ 3663 0df2 00       		.byte	0
+ 3664 0df3 E0       		.byte	-32
+ 3665 0df4 01       		.byte	1
+ 3666 0df5 BE       		.byte	-66
+ 3667 0df6 05       		.byte	5
+ 3668 0df7 B0       		.byte	-80
+ 3669 0df8 F0       		.byte	-16
+ 3670 0df9 BD       		.byte	-67
+ 3671 0dfa C0       		.byte	-64
+ 3672 0dfb 46       		.byte	70
+ 3673 0dfc FC       		.byte	-4
+ 3674 0dfd 0F       		.byte	15
+ 3675 0dfe 00       		.byte	0
+ 3676 0dff 00       		.byte	0
+ 3677 0e00 2C       		.byte	44
+ 3678 0e01 FF       		.byte	-1
+ 3679 0e02 0B       		.byte	11
+ 3680 0e03 40       		.byte	64
+ 3681 0e04 C0       		.byte	-64
+ 3682 0e05 F1       		.byte	-15
+ 3683 0e06 FF       		.byte	-1
+ 3684 0e07 0F       		.byte	15
+ 3685 0e08 C1       		.byte	-63
+ 3686 0e09 F1       		.byte	-15
+ 3687 0e0a FF       		.byte	-1
+ 3688 0e0b 0F       		.byte	15
+ 3689 0e0c C2       		.byte	-62
+ 3690 0e0d F1       		.byte	-15
+ 3691 0e0e FF       		.byte	-1
+ 3692 0e0f 0F       		.byte	15
+ 3693 0e10 C3       		.byte	-61
+ 3694 0e11 F1       		.byte	-15
+ 3695 0e12 FF       		.byte	-1
+ 3696 0e13 0F       		.byte	15
+ 3697 0e14 C4       		.byte	-60
+ 3698 0e15 F1       		.byte	-15
+ 3699 0e16 FF       		.byte	-1
+ 3700 0e17 0F       		.byte	15
+ 3701 0e18 C5       		.byte	-59
+ 3702 0e19 F1       		.byte	-15
+ 3703 0e1a FF       		.byte	-1
+ 3704 0e1b 0F       		.byte	15
+ 3705 0e1c C6       		.byte	-58
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 66
+
+
+ 3706 0e1d F1       		.byte	-15
+ 3707 0e1e FF       		.byte	-1
+ 3708 0e1f 0F       		.byte	15
+ 3709 0e20 C7       		.byte	-57
+ 3710 0e21 F1       		.byte	-15
+ 3711 0e22 FF       		.byte	-1
+ 3712 0e23 0F       		.byte	15
+ 3713 0e24 C8       		.byte	-56
+ 3714 0e25 F1       		.byte	-15
+ 3715 0e26 FF       		.byte	-1
+ 3716 0e27 0F       		.byte	15
+ 3717 0e28 C9       		.byte	-55
+ 3718 0e29 F1       		.byte	-15
+ 3719 0e2a FF       		.byte	-1
+ 3720 0e2b 0F       		.byte	15
+ 3721 0e2c CA       		.byte	-54
+ 3722 0e2d F1       		.byte	-15
+ 3723 0e2e FF       		.byte	-1
+ 3724 0e2f 0F       		.byte	15
+ 3725 0e30 CB       		.byte	-53
+ 3726 0e31 F1       		.byte	-15
+ 3727 0e32 FF       		.byte	-1
+ 3728 0e33 0F       		.byte	15
+ 3729 0e34 CC       		.byte	-52
+ 3730 0e35 F1       		.byte	-15
+ 3731 0e36 FF       		.byte	-1
+ 3732 0e37 0F       		.byte	15
+ 3733 0e38 CD       		.byte	-51
+ 3734 0e39 F1       		.byte	-15
+ 3735 0e3a FF       		.byte	-1
+ 3736 0e3b 0F       		.byte	15
+ 3737 0e3c 28       		.byte	40
+ 3738 0e3d FF       		.byte	-1
+ 3739 0e3e 0B       		.byte	11
+ 3740 0e3f 40       		.byte	64
+ 3741 0e40 1C       		.byte	28
+ 3742 0e41 FF       		.byte	-1
+ 3743 0e42 0B       		.byte	11
+ 3744 0e43 40       		.byte	64
+ 3745 0e44 20       		.byte	32
+ 3746 0e45 FF       		.byte	-1
+ 3747 0e46 0B       		.byte	11
+ 3748 0e47 40       		.byte	64
+ 3749 0e48 27       		.byte	39
+ 3750 0e49 4B       		.byte	75
+ 3751 0e4a 10       		.byte	16
+ 3752 0e4b B5       		.byte	-75
+ 3753 0e4c 1B       		.byte	27
+ 3754 0e4d 68       		.byte	104
+ 3755 0e4e 00       		.byte	0
+ 3756 0e4f 2B       		.byte	43
+ 3757 0e50 00       		.byte	0
+ 3758 0e51 D0       		.byte	-48
+ 3759 0e52 98       		.byte	-104
+ 3760 0e53 47       		.byte	71
+ 3761 0e54 25       		.byte	37
+ 3762 0e55 4B       		.byte	75
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 67
+
+
+ 3763 0e56 1B       		.byte	27
+ 3764 0e57 68       		.byte	104
+ 3765 0e58 5B       		.byte	91
+ 3766 0e59 07       		.byte	7
+ 3767 0e5a 1D       		.byte	29
+ 3768 0e5b D5       		.byte	-43
+ 3769 0e5c 24       		.byte	36
+ 3770 0e5d 4B       		.byte	75
+ 3771 0e5e 1B       		.byte	27
+ 3772 0e5f 68       		.byte	104
+ 3773 0e60 1B       		.byte	27
+ 3774 0e61 07       		.byte	7
+ 3775 0e62 16       		.byte	22
+ 3776 0e63 D0       		.byte	-48
+ 3777 0e64 23       		.byte	35
+ 3778 0e65 4B       		.byte	75
+ 3779 0e66 24       		.byte	36
+ 3780 0e67 48       		.byte	72
+ 3781 0e68 19       		.byte	25
+ 3782 0e69 68       		.byte	104
+ 3783 0e6a 03       		.byte	3
+ 3784 0e6b 68       		.byte	104
+ 3785 0e6c 5A       		.byte	90
+ 3786 0e6d 1C       		.byte	28
+ 3787 0e6e 40       		.byte	64
+ 3788 0e6f 3B       		.byte	59
+ 3789 0e70 5C       		.byte	92
+ 3790 0e71 1E       		.byte	30
+ 3791 0e72 A3       		.byte	-93
+ 3792 0e73 41       		.byte	65
+ 3793 0e74 5B       		.byte	91
+ 3794 0e75 42       		.byte	66
+ 3795 0e76 1A       		.byte	26
+ 3796 0e77 40       		.byte	64
+ 3797 0e78 20       		.byte	32
+ 3798 0e79 4B       		.byte	75
+ 3799 0e7a 1B       		.byte	27
+ 3800 0e7b 68       		.byte	104
+ 3801 0e7c 9A       		.byte	-102
+ 3802 0e7d 42       		.byte	66
+ 3803 0e7e 03       		.byte	3
+ 3804 0e7f D1       		.byte	-47
+ 3805 0e80 20       		.byte	32
+ 3806 0e81 22       		.byte	34
+ 3807 0e82 1F       		.byte	31
+ 3808 0e83 4B       		.byte	75
+ 3809 0e84 1A       		.byte	26
+ 3810 0e85 70       		.byte	112
+ 3811 0e86 E9       		.byte	-23
+ 3812 0e87 E7       		.byte	-25
+ 3813 0e88 CB       		.byte	-53
+ 3814 0e89 B2       		.byte	-78
+ 3815 0e8a 1E       		.byte	30
+ 3816 0e8b 49       		.byte	73
+ 3817 0e8c 8B       		.byte	-117
+ 3818 0e8d 54       		.byte	84
+ 3819 0e8e 02       		.byte	2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 68
+
+
+ 3820 0e8f 60       		.byte	96
+ 3821 0e90 E4       		.byte	-28
+ 3822 0e91 E7       		.byte	-25
+ 3823 0e92 04       		.byte	4
+ 3824 0e93 22       		.byte	34
+ 3825 0e94 1C       		.byte	28
+ 3826 0e95 4B       		.byte	75
+ 3827 0e96 1A       		.byte	26
+ 3828 0e97 60       		.byte	96
+ 3829 0e98 1C       		.byte	28
+ 3830 0e99 4B       		.byte	75
+ 3831 0e9a 1B       		.byte	27
+ 3832 0e9b 68       		.byte	104
+ 3833 0e9c 9B       		.byte	-101
+ 3834 0e9d 07       		.byte	7
+ 3835 0e9e 21       		.byte	33
+ 3836 0e9f D5       		.byte	-43
+ 3837 0ea0 1B       		.byte	27
+ 3838 0ea1 4B       		.byte	75
+ 3839 0ea2 1A       		.byte	26
+ 3840 0ea3 68       		.byte	104
+ 3841 0ea4 0F       		.byte	15
+ 3842 0ea5 23       		.byte	35
+ 3843 0ea6 13       		.byte	19
+ 3844 0ea7 40       		.byte	64
+ 3845 0ea8 08       		.byte	8
+ 3846 0ea9 2B       		.byte	43
+ 3847 0eaa 18       		.byte	24
+ 3848 0eab D0       		.byte	-48
+ 3849 0eac 19       		.byte	25
+ 3850 0ead 4B       		.byte	75
+ 3851 0eae 1A       		.byte	26
+ 3852 0eaf 49       		.byte	73
+ 3853 0eb0 1A       		.byte	26
+ 3854 0eb1 68       		.byte	104
+ 3855 0eb2 0B       		.byte	11
+ 3856 0eb3 68       		.byte	104
+ 3857 0eb4 9A       		.byte	-102
+ 3858 0eb5 42       		.byte	66
+ 3859 0eb6 0D       		.byte	13
+ 3860 0eb7 D0       		.byte	-48
+ 3861 0eb8 0B       		.byte	11
+ 3862 0eb9 68       		.byte	104
+ 3863 0eba 5A       		.byte	90
+ 3864 0ebb 1C       		.byte	28
+ 3865 0ebc 3F       		.byte	63
+ 3866 0ebd 3B       		.byte	59
+ 3867 0ebe 58       		.byte	88
+ 3868 0ebf 1E       		.byte	30
+ 3869 0ec0 83       		.byte	-125
+ 3870 0ec1 41       		.byte	65
+ 3871 0ec2 5B       		.byte	91
+ 3872 0ec3 42       		.byte	66
+ 3873 0ec4 1A       		.byte	26
+ 3874 0ec5 40       		.byte	64
+ 3875 0ec6 15       		.byte	21
+ 3876 0ec7 4B       		.byte	75
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 69
+
+
+ 3877 0ec8 15       		.byte	21
+ 3878 0ec9 48       		.byte	72
+ 3879 0eca 9B       		.byte	-101
+ 3880 0ecb 5C       		.byte	92
+ 3881 0ecc DB       		.byte	-37
+ 3882 0ecd B2       		.byte	-78
+ 3883 0ece 03       		.byte	3
+ 3884 0ecf 60       		.byte	96
+ 3885 0ed0 0A       		.byte	10
+ 3886 0ed1 60       		.byte	96
+ 3887 0ed2 E5       		.byte	-27
+ 3888 0ed3 E7       		.byte	-25
+ 3889 0ed4 02       		.byte	2
+ 3890 0ed5 21       		.byte	33
+ 3891 0ed6 13       		.byte	19
+ 3892 0ed7 4A       		.byte	74
+ 3893 0ed8 13       		.byte	19
+ 3894 0ed9 68       		.byte	104
+ 3895 0eda 8B       		.byte	-117
+ 3896 0edb 43       		.byte	67
+ 3897 0edc 13       		.byte	19
+ 3898 0edd 60       		.byte	96
+ 3899 0ede 02       		.byte	2
+ 3900 0edf 22       		.byte	34
+ 3901 0ee0 11       		.byte	17
+ 3902 0ee1 4B       		.byte	75
+ 3903 0ee2 1A       		.byte	26
+ 3904 0ee3 60       		.byte	96
+ 3905 0ee4 10       		.byte	16
+ 3906 0ee5 BD       		.byte	-67
+ 3907 0ee6 C0       		.byte	-64
+ 3908 0ee7 46       		.byte	70
+ 3909 0ee8 14       		.byte	20
+ 3910 0ee9 01       		.byte	1
+ 3911 0eea 00       		.byte	0
+ 3912 0eeb 20       		.byte	32
+ 3913 0eec CC       		.byte	-52
+ 3914 0eed 0F       		.byte	15
+ 3915 0eee 06       		.byte	6
+ 3916 0eef 40       		.byte	64
+ 3917 0ef0 08       		.byte	8
+ 3918 0ef1 03       		.byte	3
+ 3919 0ef2 06       		.byte	6
+ 3920 0ef3 40       		.byte	64
+ 3921 0ef4 40       		.byte	64
+ 3922 0ef5 03       		.byte	3
+ 3923 0ef6 06       		.byte	6
+ 3924 0ef7 40       		.byte	64
+ 3925 0ef8 AC       		.byte	-84
+ 3926 0ef9 01       		.byte	1
+ 3927 0efa 00       		.byte	0
+ 3928 0efb 20       		.byte	32
+ 3929 0efc 24       		.byte	36
+ 3930 0efd 01       		.byte	1
+ 3931 0efe 00       		.byte	0
+ 3932 0eff 20       		.byte	32
+ 3933 0f00 A9       		.byte	-87
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 70
+
+
+ 3934 0f01 01       		.byte	1
+ 3935 0f02 00       		.byte	0
+ 3936 0f03 20       		.byte	32
+ 3937 0f04 68       		.byte	104
+ 3938 0f05 01       		.byte	1
+ 3939 0f06 00       		.byte	0
+ 3940 0f07 20       		.byte	32
+ 3941 0f08 C0       		.byte	-64
+ 3942 0f09 0F       		.byte	15
+ 3943 0f0a 06       		.byte	6
+ 3944 0f0b 40       		.byte	64
+ 3945 0f0c 8C       		.byte	-116
+ 3946 0f0d 0F       		.byte	15
+ 3947 0f0e 06       		.byte	6
+ 3948 0f0f 40       		.byte	64
+ 3949 0f10 08       		.byte	8
+ 3950 0f11 02       		.byte	2
+ 3951 0f12 06       		.byte	6
+ 3952 0f13 40       		.byte	64
+ 3953 0f14 20       		.byte	32
+ 3954 0f15 01       		.byte	1
+ 3955 0f16 00       		.byte	0
+ 3956 0f17 20       		.byte	32
+ 3957 0f18 1C       		.byte	28
+ 3958 0f19 01       		.byte	1
+ 3959 0f1a 00       		.byte	0
+ 3960 0f1b 20       		.byte	32
+ 3961 0f1c 28       		.byte	40
+ 3962 0f1d 01       		.byte	1
+ 3963 0f1e 00       		.byte	0
+ 3964 0f1f 20       		.byte	32
+ 3965 0f20 40       		.byte	64
+ 3966 0f21 02       		.byte	2
+ 3967 0f22 06       		.byte	6
+ 3968 0f23 40       		.byte	64
+ 3969 0f24 88       		.byte	-120
+ 3970 0f25 0F       		.byte	15
+ 3971 0f26 06       		.byte	6
+ 3972 0f27 40       		.byte	64
+ 3973 0f28 80       		.byte	-128
+ 3974 0f29 0F       		.byte	15
+ 3975 0f2a 06       		.byte	6
+ 3976 0f2b 40       		.byte	64
+ 3977 0f2c 02       		.byte	2
+ 3978 0f2d B4       		.byte	-76
+ 3979 0f2e 71       		.byte	113
+ 3980 0f2f 46       		.byte	70
+ 3981 0f30 49       		.byte	73
+ 3982 0f31 08       		.byte	8
+ 3983 0f32 49       		.byte	73
+ 3984 0f33 00       		.byte	0
+ 3985 0f34 09       		.byte	9
+ 3986 0f35 56       		.byte	86
+ 3987 0f36 49       		.byte	73
+ 3988 0f37 00       		.byte	0
+ 3989 0f38 8E       		.byte	-114
+ 3990 0f39 44       		.byte	68
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 71
+
+
+ 3991 0f3a 02       		.byte	2
+ 3992 0f3b BC       		.byte	-68
+ 3993 0f3c 70       		.byte	112
+ 3994 0f3d 47       		.byte	71
+ 3995 0f3e C0       		.byte	-64
+ 3996 0f3f 46       		.byte	70
+ 3997 0f40 02       		.byte	2
+ 3998 0f41 B4       		.byte	-76
+ 3999 0f42 71       		.byte	113
+ 4000 0f43 46       		.byte	70
+ 4001 0f44 49       		.byte	73
+ 4002 0f45 08       		.byte	8
+ 4003 0f46 49       		.byte	73
+ 4004 0f47 00       		.byte	0
+ 4005 0f48 09       		.byte	9
+ 4006 0f49 5C       		.byte	92
+ 4007 0f4a 49       		.byte	73
+ 4008 0f4b 00       		.byte	0
+ 4009 0f4c 8E       		.byte	-114
+ 4010 0f4d 44       		.byte	68
+ 4011 0f4e 02       		.byte	2
+ 4012 0f4f BC       		.byte	-68
+ 4013 0f50 70       		.byte	112
+ 4014 0f51 47       		.byte	71
+ 4015 0f52 C0       		.byte	-64
+ 4016 0f53 46       		.byte	70
+ 4017 0f54 0E       		.byte	14
+ 4018 0f55 4B       		.byte	75
+ 4019 0f56 70       		.byte	112
+ 4020 0f57 B5       		.byte	-75
+ 4021 0f58 00       		.byte	0
+ 4022 0f59 25       		.byte	37
+ 4023 0f5a 1E       		.byte	30
+ 4024 0f5b 1C       		.byte	28
+ 4025 0f5c 0D       		.byte	13
+ 4026 0f5d 4C       		.byte	76
+ 4027 0f5e E4       		.byte	-28
+ 4028 0f5f 1A       		.byte	26
+ 4029 0f60 A4       		.byte	-92
+ 4030 0f61 10       		.byte	16
+ 4031 0f62 A5       		.byte	-91
+ 4032 0f63 42       		.byte	66
+ 4033 0f64 04       		.byte	4
+ 4034 0f65 D0       		.byte	-48
+ 4035 0f66 AB       		.byte	-85
+ 4036 0f67 00       		.byte	0
+ 4037 0f68 F3       		.byte	-13
+ 4038 0f69 58       		.byte	88
+ 4039 0f6a 98       		.byte	-104
+ 4040 0f6b 47       		.byte	71
+ 4041 0f6c 01       		.byte	1
+ 4042 0f6d 35       		.byte	53
+ 4043 0f6e F8       		.byte	-8
+ 4044 0f6f E7       		.byte	-25
+ 4045 0f70 00       		.byte	0
+ 4046 0f71 F0       		.byte	-16
+ 4047 0f72 5C       		.byte	92
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 72
+
+
+ 4048 0f73 F8       		.byte	-8
+ 4049 0f74 08       		.byte	8
+ 4050 0f75 4B       		.byte	75
+ 4051 0f76 00       		.byte	0
+ 4052 0f77 25       		.byte	37
+ 4053 0f78 1E       		.byte	30
+ 4054 0f79 1C       		.byte	28
+ 4055 0f7a 08       		.byte	8
+ 4056 0f7b 4C       		.byte	76
+ 4057 0f7c E4       		.byte	-28
+ 4058 0f7d 1A       		.byte	26
+ 4059 0f7e A4       		.byte	-92
+ 4060 0f7f 10       		.byte	16
+ 4061 0f80 A5       		.byte	-91
+ 4062 0f81 42       		.byte	66
+ 4063 0f82 04       		.byte	4
+ 4064 0f83 D0       		.byte	-48
+ 4065 0f84 AB       		.byte	-85
+ 4066 0f85 00       		.byte	0
+ 4067 0f86 F3       		.byte	-13
+ 4068 0f87 58       		.byte	88
+ 4069 0f88 98       		.byte	-104
+ 4070 0f89 47       		.byte	71
+ 4071 0f8a 01       		.byte	1
+ 4072 0f8b 35       		.byte	53
+ 4073 0f8c F8       		.byte	-8
+ 4074 0f8d E7       		.byte	-25
+ 4075 0f8e 70       		.byte	112
+ 4076 0f8f BD       		.byte	-67
+ 4077 0f90 38       		.byte	56
+ 4078 0f91 10       		.byte	16
+ 4079 0f92 00       		.byte	0
+ 4080 0f93 00       		.byte	0
+ 4081 0f94 38       		.byte	56
+ 4082 0f95 10       		.byte	16
+ 4083 0f96 00       		.byte	0
+ 4084 0f97 00       		.byte	0
+ 4085 0f98 38       		.byte	56
+ 4086 0f99 10       		.byte	16
+ 4087 0f9a 00       		.byte	0
+ 4088 0f9b 00       		.byte	0
+ 4089 0f9c 40       		.byte	64
+ 4090 0f9d 10       		.byte	16
+ 4091 0f9e 00       		.byte	0
+ 4092 0f9f 00       		.byte	0
+ 4093 0fa0 00       		.byte	0
+ 4094 0fa1 23       		.byte	35
+ 4095 0fa2 10       		.byte	16
+ 4096 0fa3 B5       		.byte	-75
+ 4097 0fa4 93       		.byte	-109
+ 4098 0fa5 42       		.byte	66
+ 4099 0fa6 03       		.byte	3
+ 4100 0fa7 D0       		.byte	-48
+ 4101 0fa8 CC       		.byte	-52
+ 4102 0fa9 5C       		.byte	92
+ 4103 0faa C4       		.byte	-60
+ 4104 0fab 54       		.byte	84
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 73
+
+
+ 4105 0fac 01       		.byte	1
+ 4106 0fad 33       		.byte	51
+ 4107 0fae F9       		.byte	-7
+ 4108 0faf E7       		.byte	-25
+ 4109 0fb0 10       		.byte	16
+ 4110 0fb1 BD       		.byte	-67
+ 4111 0fb2 03       		.byte	3
+ 4112 0fb3 1C       		.byte	28
+ 4113 0fb4 82       		.byte	-126
+ 4114 0fb5 18       		.byte	24
+ 4115 0fb6 93       		.byte	-109
+ 4116 0fb7 42       		.byte	66
+ 4117 0fb8 02       		.byte	2
+ 4118 0fb9 D0       		.byte	-48
+ 4119 0fba 19       		.byte	25
+ 4120 0fbb 70       		.byte	112
+ 4121 0fbc 01       		.byte	1
+ 4122 0fbd 33       		.byte	51
+ 4123 0fbe FA       		.byte	-6
+ 4124 0fbf E7       		.byte	-25
+ 4125 0fc0 70       		.byte	112
+ 4126 0fc1 47       		.byte	71
+ 4127 0fc2 00       		.byte	0
+ 4128 0fc3 00       		.byte	0
+ 4129 0fc4 80       		.byte	-128
+ 4130 0fc5 10       		.byte	16
+ 4131 0fc6 00       		.byte	0
+ 4132 0fc7 00       		.byte	0
+ 4133 0fc8 6E       		.byte	110
+ 4134 0fc9 00       		.byte	0
+ 4135 0fca 00       		.byte	0
+ 4136 0fcb 00       		.byte	0
+ 4137 0fcc 00       		.byte	0
+ 4138 0fcd 00       		.byte	0
+ 4139 0fce 00       		.byte	0
+ 4140 0fcf 00       		.byte	0
+ 4141 0fd0 01       		.byte	1
+ 4142 0fd1 33       		.byte	51
+ 4143 0fd2 0F       		.byte	15
+ 4144 0fd3 40       		.byte	64
+ 4145 0fd4 03       		.byte	3
+ 4146 0fd5 41       		.byte	65
+ 4147 0fd6 0F       		.byte	15
+ 4148 0fd7 40       		.byte	64
+ 4149 0fd8 04       		.byte	4
+ 4150 0fd9 43       		.byte	67
+ 4151 0fda 0F       		.byte	15
+ 4152 0fdb 40       		.byte	64
+ 4153 0fdc 02       		.byte	2
+ 4154 0fdd 60       		.byte	96
+ 4155 0fde 0F       		.byte	15
+ 4156 0fdf 40       		.byte	64
+ 4157 0fe0 E6       		.byte	-26
+ 4158 0fe1 10       		.byte	16
+ 4159 0fe2 62       		.byte	98
+ 4160 0fe3 04       		.byte	4
+ 4161 0fe4 8E       		.byte	-114
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 74
+
+
+ 4162 0fe5 04       		.byte	4
+ 4163 0fe6 D8       		.byte	-40
+ 4164 0fe7 40       		.byte	64
+ 4165 0fe8 18       		.byte	24
+ 4166 0fe9 80       		.byte	-128
+ 4167 0fea 8C       		.byte	-116
+ 4168 0feb 40       		.byte	64
+ 4169 0fec C6       		.byte	-58
+ 4170 0fed 08       		.byte	8
+ 4171 0fee E6       		.byte	-26
+ 4172 0fef 08       		.byte	8
+ 4173 0ff0 02       		.byte	2
+ 4174 0ff1 01       		.byte	1
+ 4175 0ff2 11       		.byte	17
+ 4176 0ff3 01       		.byte	1
+ 4177 0ff4 93       		.byte	-109
+ 4178 0ff5 11       		.byte	17
+ 4179 0ff6 C8       		.byte	-56
+ 4180 0ff7 04       		.byte	4
+ 4181 0ff8 11       		.byte	17
+ 4182 0ff9 14       		.byte	20
+ 4183 0ffa 01       		.byte	1
+ 4184 0ffb 01       		.byte	1
+ 4185 0ffc 03       		.byte	3
+ 4186 0ffd 04       		.byte	4
+ 4187 0ffe 05       		.byte	5
+ 4188 0fff 06       		.byte	6
+ 4189 1000 07       		.byte	7
+ 4190 1001 08       		.byte	8
+ 4191 1002 09       		.byte	9
+ 4192 1003 0A       		.byte	10
+ 4193 1004 0B       		.byte	11
+ 4194 1005 0C       		.byte	12
+ 4195 1006 0E       		.byte	14
+ 4196 1007 0F       		.byte	15
+ 4197 1008 10       		.byte	16
+ 4198 1009 11       		.byte	17
+ 4199 100a 12       		.byte	18
+ 4200 100b 13       		.byte	19
+ 4201 100c 14       		.byte	20
+ 4202 100d 15       		.byte	21
+ 4203 100e 16       		.byte	22
+ 4204 100f 17       		.byte	23
+ 4205 1010 18       		.byte	24
+ 4206 1011 19       		.byte	25
+ 4207 1012 1B       		.byte	27
+ 4208 1013 1C       		.byte	28
+ 4209 1014 1D       		.byte	29
+ 4210 1015 1E       		.byte	30
+ 4211 1016 1F       		.byte	31
+ 4212 1017 20       		.byte	32
+ 4213 1018 21       		.byte	33
+ 4214 1019 22       		.byte	34
+ 4215 101a 23       		.byte	35
+ 4216 101b 25       		.byte	37
+ 4217 101c 26       		.byte	38
+ 4218 101d 27       		.byte	39
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 75
+
+
+ 4219 101e 28       		.byte	40
+ 4220 101f 29       		.byte	41
+ 4221 1020 2A       		.byte	42
+ 4222 1021 2B       		.byte	43
+ 4223 1022 2E       		.byte	46
+ 4224 1023 2F       		.byte	47
+ 4225 1024 30       		.byte	48
+ 4226 1025 31       		.byte	49
+ 4227 1026 32       		.byte	50
+ 4228 1027 33       		.byte	51
+ 4229 1028 34       		.byte	52
+ 4230 1029 35       		.byte	53
+ 4231 102a 00       		.byte	0
+ 4232 102b 00       		.byte	0
+ 4233 102c F8       		.byte	-8
+ 4234 102d B5       		.byte	-75
+ 4235 102e C0       		.byte	-64
+ 4236 102f 46       		.byte	70
+ 4237 1030 F8       		.byte	-8
+ 4238 1031 BC       		.byte	-68
+ 4239 1032 08       		.byte	8
+ 4240 1033 BC       		.byte	-68
+ 4241 1034 9E       		.byte	-98
+ 4242 1035 46       		.byte	70
+ 4243 1036 70       		.byte	112
+ 4244 1037 47       		.byte	71
+ 4245 1038 E9       		.byte	-23
+ 4246 1039 01       		.byte	1
+ 4247 103a 00       		.byte	0
+ 4248 103b 00       		.byte	0
+ 4249 103c A1       		.byte	-95
+ 4250 103d 03       		.byte	3
+ 4251 103e 00       		.byte	0
+ 4252 103f 00       		.byte	0
+ 4253 1040 F8       		.byte	-8
+ 4254 1041 B5       		.byte	-75
+ 4255 1042 C0       		.byte	-64
+ 4256 1043 46       		.byte	70
+ 4257 1044 F8       		.byte	-8
+ 4258 1045 BC       		.byte	-68
+ 4259 1046 08       		.byte	8
+ 4260 1047 BC       		.byte	-68
+ 4261 1048 9E       		.byte	-98
+ 4262 1049 46       		.byte	70
+ 4263 104a 70       		.byte	112
+ 4264 104b 47       		.byte	71
+ 4265 104c C1       		.byte	-63
+ 4266 104d 01       		.byte	1
+ 4267 104e 00       		.byte	0
+ 4268 104f 00       		.byte	0
+ 4269 1050 60       		.byte	96
+ 4270 1051 10       		.byte	16
+ 4271 1052 00       		.byte	0
+ 4272 1053 00       		.byte	0
+ 4273 1054 D0       		.byte	-48
+ 4274 1055 00       		.byte	0
+ 4275 1056 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 76
+
+
+ 4276 1057 20       		.byte	32
+ 4277 1058 20       		.byte	32
+ 4278 1059 00       		.byte	0
+ 4279 105a 00       		.byte	0
+ 4280 105b 00       		.byte	0
+ 4281 105c C0       		.byte	-64
+ 4282 105d 00       		.byte	0
+ 4283 105e 00       		.byte	0
+ 4284 105f 00       		.byte	0
+ 4285 1060 00       		.byte	0
+ 4286 1061 00       		.byte	0
+ 4287 1062 00       		.byte	0
+ 4288 1063 00       		.byte	0
+ 4289 1064 C4       		.byte	-60
+ 4290 1065 0F       		.byte	15
+ 4291 1066 00       		.byte	0
+ 4292 1067 00       		.byte	0
+ 4293 1068 C8       		.byte	-56
+ 4294 1069 0F       		.byte	15
+ 4295 106a 00       		.byte	0
+ 4296 106b 00       		.byte	0
+ 4297 106c 00       		.byte	0
+ 4298 106d 00       		.byte	0
+ 4299 106e E0       		.byte	-32
+ 4300 106f 2E       		.byte	46
+ 4301 1070 C0       		.byte	-64
+ 4302 1071 5D       		.byte	93
+ 4303 1072 00       		.byte	0
+ 4304 1073 00       		.byte	0
+ 4305 1074 18       		.byte	24
+ 4306 1075 00       		.byte	0
+ 4307 1076 00       		.byte	0
+ 4308 1077 00       		.byte	0
+ 4309 1078 00       		.byte	0
+ 4310 1079 36       		.byte	54
+ 4311 107a 6E       		.byte	110
+ 4312 107b 01       		.byte	1
+ 4313 107c 00       		.byte	0
+ 4314 107d 00       		.byte	0
+ 4315 107e 00       		.byte	0
+ 4316 107f 00       		.byte	0
+ 4317              		.global	cy_metadata
+ 4318              		.section	.cymeta,"a",%progbits
+ 4319              		.align	2
+ 4320              		.type	cy_metadata, %object
+ 4321              		.size	cy_metadata, 12
+ 4322              	cy_metadata:
+ 4323 0000 00       		.byte	0
+ 4324 0001 02       		.byte	2
+ 4325 0002 04       		.byte	4
+ 4326 0003 C8       		.byte	-56
+ 4327 0004 11       		.byte	17
+ 4328 0005 93       		.byte	-109
+ 4329 0006 11       		.byte	17
+ 4330 0007 00       		.byte	0
+ 4331 0008 04       		.byte	4
+ 4332 0009 CD       		.byte	-51
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 77
+
+
+ 4333 000a 5A       		.byte	90
+ 4334 000b BC       		.byte	-68
+ 4335              		.global	cy_meta_flashprotect
+ 4336              		.section	.cyflashprotect,"a",%progbits
+ 4337              		.align	2
+ 4338              		.type	cy_meta_flashprotect, %object
+ 4339              		.size	cy_meta_flashprotect, 32
+ 4340              	cy_meta_flashprotect:
+ 4341 0000 FF       		.byte	-1
+ 4342 0001 FF       		.byte	-1
+ 4343 0002 03       		.byte	3
+ 4344 0003 00       		.byte	0
+ 4345 0004 00       		.byte	0
+ 4346 0005 00       		.byte	0
+ 4347 0006 00       		.byte	0
+ 4348 0007 00       		.byte	0
+ 4349 0008 00       		.byte	0
+ 4350 0009 00       		.byte	0
+ 4351 000a 00       		.byte	0
+ 4352 000b 00       		.byte	0
+ 4353 000c 00       		.byte	0
+ 4354 000d 00       		.byte	0
+ 4355 000e 00       		.byte	0
+ 4356 000f 00       		.byte	0
+ 4357 0010 00       		.byte	0
+ 4358 0011 00       		.byte	0
+ 4359 0012 00       		.byte	0
+ 4360 0013 00       		.byte	0
+ 4361 0014 00       		.byte	0
+ 4362 0015 00       		.byte	0
+ 4363 0016 00       		.byte	0
+ 4364 0017 00       		.byte	0
+ 4365 0018 00       		.byte	0
+ 4366 0019 00       		.byte	0
+ 4367 001a 00       		.byte	0
+ 4368 001b 00       		.byte	0
+ 4369 001c 00       		.byte	0
+ 4370 001d 00       		.byte	0
+ 4371 001e 00       		.byte	0
+ 4372 001f 00       		.byte	0
+ 4373              		.global	cy_meta_chipprotect
+ 4374              		.section	.cychipprotect,"a",%progbits
+ 4375              		.align	2
+ 4376              		.type	cy_meta_chipprotect, %object
+ 4377              		.size	cy_meta_chipprotect, 1
+ 4378              	cy_meta_chipprotect:
+ 4379 0000 01       		.byte	1
+ 4380 0001 000000   		.text
+ 4381              	.Letext0:
+ 4382              		.file 1 ".\\Generated_Source\\PSoC4\\cybootloader.c"
+ 4383              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 4384              		.section	.debug_info,"",%progbits
+ 4385              	.Ldebug_info0:
+ 4386 0000 49010000 		.4byte	0x149
+ 4387 0004 0400     		.2byte	0x4
+ 4388 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 4389 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 78
+
+
+ 4390 000b 01       		.uleb128 0x1
+ 4391 000c 9C000000 		.4byte	.LASF18
+ 4392 0010 01       		.byte	0x1
+ 4393 0011 8B010000 		.4byte	.LASF19
+ 4394 0015 22000000 		.4byte	.LASF20
+ 4395 0019 00000000 		.4byte	.Ldebug_line0
+ 4396 001d 02       		.uleb128 0x2
+ 4397 001e 01       		.byte	0x1
+ 4398 001f 06       		.byte	0x6
+ 4399 0020 14020000 		.4byte	.LASF0
+ 4400 0024 02       		.uleb128 0x2
+ 4401 0025 01       		.byte	0x1
+ 4402 0026 08       		.byte	0x8
+ 4403 0027 69000000 		.4byte	.LASF1
+ 4404 002b 02       		.uleb128 0x2
+ 4405 002c 02       		.byte	0x2
+ 4406 002d 05       		.byte	0x5
+ 4407 002e FB010000 		.4byte	.LASF2
+ 4408 0032 02       		.uleb128 0x2
+ 4409 0033 02       		.byte	0x2
+ 4410 0034 07       		.byte	0x7
+ 4411 0035 89000000 		.4byte	.LASF3
+ 4412 0039 02       		.uleb128 0x2
+ 4413 003a 04       		.byte	0x4
+ 4414 003b 05       		.byte	0x5
+ 4415 003c 0B020000 		.4byte	.LASF4
+ 4416 0040 02       		.uleb128 0x2
+ 4417 0041 04       		.byte	0x4
+ 4418 0042 07       		.byte	0x7
+ 4419 0043 77000000 		.4byte	.LASF5
+ 4420 0047 02       		.uleb128 0x2
+ 4421 0048 08       		.byte	0x8
+ 4422 0049 05       		.byte	0x5
+ 4423 004a E8010000 		.4byte	.LASF6
+ 4424 004e 02       		.uleb128 0x2
+ 4425 004f 08       		.byte	0x8
+ 4426 0050 07       		.byte	0x7
+ 4427 0051 B3010000 		.4byte	.LASF7
+ 4428 0055 03       		.uleb128 0x3
+ 4429 0056 04       		.byte	0x4
+ 4430 0057 05       		.byte	0x5
+ 4431 0058 696E7400 		.ascii	"int\000"
+ 4432 005c 02       		.uleb128 0x2
+ 4433 005d 04       		.byte	0x4
+ 4434 005e 07       		.byte	0x7
+ 4435 005f 7E010000 		.4byte	.LASF8
+ 4436 0063 04       		.uleb128 0x4
+ 4437 0064 05020000 		.4byte	.LASF21
+ 4438 0068 02       		.byte	0x2
+ 4439 0069 5B       		.byte	0x5b
+ 4440 006a 24000000 		.4byte	0x24
+ 4441 006e 02       		.uleb128 0x2
+ 4442 006f 04       		.byte	0x4
+ 4443 0070 04       		.byte	0x4
+ 4444 0071 63000000 		.4byte	.LASF9
+ 4445 0075 02       		.uleb128 0x2
+ 4446 0076 08       		.byte	0x8
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 79
+
+
+ 4447 0077 04       		.byte	0x4
+ 4448 0078 77010000 		.4byte	.LASF10
+ 4449 007c 02       		.uleb128 0x2
+ 4450 007d 01       		.byte	0x1
+ 4451 007e 08       		.byte	0x8
+ 4452 007f F6010000 		.4byte	.LASF11
+ 4453 0083 05       		.uleb128 0x5
+ 4454 0084 63000000 		.4byte	0x63
+ 4455 0088 93000000 		.4byte	0x93
+ 4456 008c 06       		.uleb128 0x6
+ 4457 008d 93000000 		.4byte	0x93
+ 4458 0091 3F       		.byte	0x3f
+ 4459 0092 00       		.byte	0
+ 4460 0093 02       		.uleb128 0x2
+ 4461 0094 04       		.byte	0x4
+ 4462 0095 07       		.byte	0x7
+ 4463 0096 DF010000 		.4byte	.LASF12
+ 4464 009a 07       		.uleb128 0x7
+ 4465 009b 48000000 		.4byte	.LASF13
+ 4466 009f 01       		.byte	0x1
+ 4467 00a0 0E       		.byte	0xe
+ 4468 00a1 AB000000 		.4byte	0xab
+ 4469 00a5 05       		.uleb128 0x5
+ 4470 00a6 03       		.byte	0x3
+ 4471 00a7 00000000 		.4byte	cy_meta_loader
+ 4472 00ab 08       		.uleb128 0x8
+ 4473 00ac 83000000 		.4byte	0x83
+ 4474 00b0 05       		.uleb128 0x5
+ 4475 00b1 63000000 		.4byte	0x63
+ 4476 00b5 C1000000 		.4byte	0xc1
+ 4477 00b9 09       		.uleb128 0x9
+ 4478 00ba 93000000 		.4byte	0x93
+ 4479 00be 7F10     		.2byte	0x107f
+ 4480 00c0 00       		.byte	0
+ 4481 00c1 07       		.uleb128 0x7
+ 4482 00c2 14000000 		.4byte	.LASF14
+ 4483 00c6 01       		.byte	0x1
+ 4484 00c7 21       		.byte	0x21
+ 4485 00c8 D2000000 		.4byte	0xd2
+ 4486 00cc 05       		.uleb128 0x5
+ 4487 00cd 03       		.byte	0x3
+ 4488 00ce 00000000 		.4byte	cy_bootloader
+ 4489 00d2 08       		.uleb128 0x8
+ 4490 00d3 B0000000 		.4byte	0xb0
+ 4491 00d7 05       		.uleb128 0x5
+ 4492 00d8 63000000 		.4byte	0x63
+ 4493 00dc E7000000 		.4byte	0xe7
+ 4494 00e0 06       		.uleb128 0x6
+ 4495 00e1 93000000 		.4byte	0x93
+ 4496 00e5 0B       		.byte	0xb
+ 4497 00e6 00       		.byte	0
+ 4498 00e7 0A       		.uleb128 0xa
+ 4499 00e8 57000000 		.4byte	.LASF15
+ 4500 00ec 01       		.byte	0x1
+ 4501 00ed 3A02     		.2byte	0x23a
+ 4502 00ef F9000000 		.4byte	0xf9
+ 4503 00f3 05       		.uleb128 0x5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 80
+
+
+ 4504 00f4 03       		.byte	0x3
+ 4505 00f5 00000000 		.4byte	cy_metadata
+ 4506 00f9 08       		.uleb128 0x8
+ 4507 00fa D7000000 		.4byte	0xd7
+ 4508 00fe 05       		.uleb128 0x5
+ 4509 00ff 63000000 		.4byte	0x63
+ 4510 0103 0E010000 		.4byte	0x10e
+ 4511 0107 06       		.uleb128 0x6
+ 4512 0108 93000000 		.4byte	0x93
+ 4513 010c 1F       		.byte	0x1f
+ 4514 010d 00       		.byte	0
+ 4515 010e 0A       		.uleb128 0xa
+ 4516 010f CA010000 		.4byte	.LASF16
+ 4517 0113 01       		.byte	0x1
+ 4518 0114 4502     		.2byte	0x245
+ 4519 0116 20010000 		.4byte	0x120
+ 4520 011a 05       		.uleb128 0x5
+ 4521 011b 03       		.byte	0x3
+ 4522 011c 00000000 		.4byte	cy_meta_flashprotect
+ 4523 0120 08       		.uleb128 0x8
+ 4524 0121 FE000000 		.4byte	0xfe
+ 4525 0125 05       		.uleb128 0x5
+ 4526 0126 63000000 		.4byte	0x63
+ 4527 012a 35010000 		.4byte	0x135
+ 4528 012e 06       		.uleb128 0x6
+ 4529 012f 93000000 		.4byte	0x93
+ 4530 0133 00       		.byte	0
+ 4531 0134 00       		.byte	0
+ 4532 0135 0A       		.uleb128 0xa
+ 4533 0136 00000000 		.4byte	.LASF17
+ 4534 013a 01       		.byte	0x1
+ 4535 013b 5202     		.2byte	0x252
+ 4536 013d 47010000 		.4byte	0x147
+ 4537 0141 05       		.uleb128 0x5
+ 4538 0142 03       		.byte	0x3
+ 4539 0143 00000000 		.4byte	cy_meta_chipprotect
+ 4540 0147 08       		.uleb128 0x8
+ 4541 0148 25010000 		.4byte	0x125
+ 4542 014c 00       		.byte	0
+ 4543              		.section	.debug_abbrev,"",%progbits
+ 4544              	.Ldebug_abbrev0:
+ 4545 0000 01       		.uleb128 0x1
+ 4546 0001 11       		.uleb128 0x11
+ 4547 0002 01       		.byte	0x1
+ 4548 0003 25       		.uleb128 0x25
+ 4549 0004 0E       		.uleb128 0xe
+ 4550 0005 13       		.uleb128 0x13
+ 4551 0006 0B       		.uleb128 0xb
+ 4552 0007 03       		.uleb128 0x3
+ 4553 0008 0E       		.uleb128 0xe
+ 4554 0009 1B       		.uleb128 0x1b
+ 4555 000a 0E       		.uleb128 0xe
+ 4556 000b 10       		.uleb128 0x10
+ 4557 000c 17       		.uleb128 0x17
+ 4558 000d 00       		.byte	0
+ 4559 000e 00       		.byte	0
+ 4560 000f 02       		.uleb128 0x2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 81
+
+
+ 4561 0010 24       		.uleb128 0x24
+ 4562 0011 00       		.byte	0
+ 4563 0012 0B       		.uleb128 0xb
+ 4564 0013 0B       		.uleb128 0xb
+ 4565 0014 3E       		.uleb128 0x3e
+ 4566 0015 0B       		.uleb128 0xb
+ 4567 0016 03       		.uleb128 0x3
+ 4568 0017 0E       		.uleb128 0xe
+ 4569 0018 00       		.byte	0
+ 4570 0019 00       		.byte	0
+ 4571 001a 03       		.uleb128 0x3
+ 4572 001b 24       		.uleb128 0x24
+ 4573 001c 00       		.byte	0
+ 4574 001d 0B       		.uleb128 0xb
+ 4575 001e 0B       		.uleb128 0xb
+ 4576 001f 3E       		.uleb128 0x3e
+ 4577 0020 0B       		.uleb128 0xb
+ 4578 0021 03       		.uleb128 0x3
+ 4579 0022 08       		.uleb128 0x8
+ 4580 0023 00       		.byte	0
+ 4581 0024 00       		.byte	0
+ 4582 0025 04       		.uleb128 0x4
+ 4583 0026 16       		.uleb128 0x16
+ 4584 0027 00       		.byte	0
+ 4585 0028 03       		.uleb128 0x3
+ 4586 0029 0E       		.uleb128 0xe
+ 4587 002a 3A       		.uleb128 0x3a
+ 4588 002b 0B       		.uleb128 0xb
+ 4589 002c 3B       		.uleb128 0x3b
+ 4590 002d 0B       		.uleb128 0xb
+ 4591 002e 49       		.uleb128 0x49
+ 4592 002f 13       		.uleb128 0x13
+ 4593 0030 00       		.byte	0
+ 4594 0031 00       		.byte	0
+ 4595 0032 05       		.uleb128 0x5
+ 4596 0033 01       		.uleb128 0x1
+ 4597 0034 01       		.byte	0x1
+ 4598 0035 49       		.uleb128 0x49
+ 4599 0036 13       		.uleb128 0x13
+ 4600 0037 01       		.uleb128 0x1
+ 4601 0038 13       		.uleb128 0x13
+ 4602 0039 00       		.byte	0
+ 4603 003a 00       		.byte	0
+ 4604 003b 06       		.uleb128 0x6
+ 4605 003c 21       		.uleb128 0x21
+ 4606 003d 00       		.byte	0
+ 4607 003e 49       		.uleb128 0x49
+ 4608 003f 13       		.uleb128 0x13
+ 4609 0040 2F       		.uleb128 0x2f
+ 4610 0041 0B       		.uleb128 0xb
+ 4611 0042 00       		.byte	0
+ 4612 0043 00       		.byte	0
+ 4613 0044 07       		.uleb128 0x7
+ 4614 0045 34       		.uleb128 0x34
+ 4615 0046 00       		.byte	0
+ 4616 0047 03       		.uleb128 0x3
+ 4617 0048 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 82
+
+
+ 4618 0049 3A       		.uleb128 0x3a
+ 4619 004a 0B       		.uleb128 0xb
+ 4620 004b 3B       		.uleb128 0x3b
+ 4621 004c 0B       		.uleb128 0xb
+ 4622 004d 49       		.uleb128 0x49
+ 4623 004e 13       		.uleb128 0x13
+ 4624 004f 3F       		.uleb128 0x3f
+ 4625 0050 19       		.uleb128 0x19
+ 4626 0051 02       		.uleb128 0x2
+ 4627 0052 18       		.uleb128 0x18
+ 4628 0053 00       		.byte	0
+ 4629 0054 00       		.byte	0
+ 4630 0055 08       		.uleb128 0x8
+ 4631 0056 26       		.uleb128 0x26
+ 4632 0057 00       		.byte	0
+ 4633 0058 49       		.uleb128 0x49
+ 4634 0059 13       		.uleb128 0x13
+ 4635 005a 00       		.byte	0
+ 4636 005b 00       		.byte	0
+ 4637 005c 09       		.uleb128 0x9
+ 4638 005d 21       		.uleb128 0x21
+ 4639 005e 00       		.byte	0
+ 4640 005f 49       		.uleb128 0x49
+ 4641 0060 13       		.uleb128 0x13
+ 4642 0061 2F       		.uleb128 0x2f
+ 4643 0062 05       		.uleb128 0x5
+ 4644 0063 00       		.byte	0
+ 4645 0064 00       		.byte	0
+ 4646 0065 0A       		.uleb128 0xa
+ 4647 0066 34       		.uleb128 0x34
+ 4648 0067 00       		.byte	0
+ 4649 0068 03       		.uleb128 0x3
+ 4650 0069 0E       		.uleb128 0xe
+ 4651 006a 3A       		.uleb128 0x3a
+ 4652 006b 0B       		.uleb128 0xb
+ 4653 006c 3B       		.uleb128 0x3b
+ 4654 006d 05       		.uleb128 0x5
+ 4655 006e 49       		.uleb128 0x49
+ 4656 006f 13       		.uleb128 0x13
+ 4657 0070 3F       		.uleb128 0x3f
+ 4658 0071 19       		.uleb128 0x19
+ 4659 0072 02       		.uleb128 0x2
+ 4660 0073 18       		.uleb128 0x18
+ 4661 0074 00       		.byte	0
+ 4662 0075 00       		.byte	0
+ 4663 0076 00       		.byte	0
+ 4664              		.section	.debug_aranges,"",%progbits
+ 4665 0000 14000000 		.4byte	0x14
+ 4666 0004 0200     		.2byte	0x2
+ 4667 0006 00000000 		.4byte	.Ldebug_info0
+ 4668 000a 04       		.byte	0x4
+ 4669 000b 00       		.byte	0
+ 4670 000c 0000     		.2byte	0
+ 4671 000e 0000     		.2byte	0
+ 4672 0010 00000000 		.4byte	0
+ 4673 0014 00000000 		.4byte	0
+ 4674              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 83
+
+
+ 4675              	.Ldebug_line0:
+ 4676 0000 51000000 		.section	.debug_str,"MS",%progbits,1
+ 4676      02004B00 
+ 4676      00000201 
+ 4676      FB0E0D00 
+ 4676      01010101 
+ 4677              	.LASF17:
+ 4678 0000 63795F6D 		.ascii	"cy_meta_chipprotect\000"
+ 4678      6574615F 
+ 4678      63686970 
+ 4678      70726F74 
+ 4678      65637400 
+ 4679              	.LASF14:
+ 4680 0014 63795F62 		.ascii	"cy_bootloader\000"
+ 4680      6F6F746C 
+ 4680      6F616465 
+ 4680      7200
+ 4681              	.LASF20:
+ 4682 0022 453A5C50 		.ascii	"E:\\PSoC\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 4682      536F435C 
+ 4682      526F734F 
+ 4682      6E415374 
+ 4682      69636B5C 
+ 4683              	.LASF13:
+ 4684 0048 63795F6D 		.ascii	"cy_meta_loader\000"
+ 4684      6574615F 
+ 4684      6C6F6164 
+ 4684      657200
+ 4685              	.LASF15:
+ 4686 0057 63795F6D 		.ascii	"cy_metadata\000"
+ 4686      65746164 
+ 4686      61746100 
+ 4687              	.LASF9:
+ 4688 0063 666C6F61 		.ascii	"float\000"
+ 4688      7400
+ 4689              	.LASF1:
+ 4690 0069 756E7369 		.ascii	"unsigned char\000"
+ 4690      676E6564 
+ 4690      20636861 
+ 4690      7200
+ 4691              	.LASF5:
+ 4692 0077 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4692      20756E73 
+ 4692      69676E65 
+ 4692      6420696E 
+ 4692      7400
+ 4693              	.LASF3:
+ 4694 0089 73686F72 		.ascii	"short unsigned int\000"
+ 4694      7420756E 
+ 4694      7369676E 
+ 4694      65642069 
+ 4694      6E7400
+ 4695              	.LASF18:
+ 4696 009c 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 4696      4320342E 
+ 4696      392E3320 
+ 4696      32303135 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 84
+
+
+ 4696      30333033 
+ 4697 00cf 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 4697      20726576 
+ 4697      6973696F 
+ 4697      6E203232 
+ 4697      31323230 
+ 4698 0102 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects -fno-rtti -"
+ 4698      66756E63 
+ 4698      74696F6E 
+ 4698      2D736563 
+ 4698      74696F6E 
+ 4699 0135 666E6F2D 		.ascii	"fno-exceptions -funsigned-char -funsigned-bitfields"
+ 4699      65786365 
+ 4699      7074696F 
+ 4699      6E73202D 
+ 4699      66756E73 
+ 4700 0168 202D6673 		.ascii	" -fshort-enums\000"
+ 4700      686F7274 
+ 4700      2D656E75 
+ 4700      6D7300
+ 4701              	.LASF10:
+ 4702 0177 646F7562 		.ascii	"double\000"
+ 4702      6C6500
+ 4703              	.LASF8:
+ 4704 017e 756E7369 		.ascii	"unsigned int\000"
+ 4704      676E6564 
+ 4704      20696E74 
+ 4704      00
+ 4705              	.LASF19:
+ 4706 018b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\cybootloader.c\000"
+ 4706      6E657261 
+ 4706      7465645F 
+ 4706      536F7572 
+ 4706      63655C50 
+ 4707              	.LASF7:
+ 4708 01b3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4708      206C6F6E 
+ 4708      6720756E 
+ 4708      7369676E 
+ 4708      65642069 
+ 4709              	.LASF16:
+ 4710 01ca 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 4710      6574615F 
+ 4710      666C6173 
+ 4710      6870726F 
+ 4710      74656374 
+ 4711              	.LASF12:
+ 4712 01df 73697A65 		.ascii	"sizetype\000"
+ 4712      74797065 
+ 4712      00
+ 4713              	.LASF6:
+ 4714 01e8 6C6F6E67 		.ascii	"long long int\000"
+ 4714      206C6F6E 
+ 4714      6720696E 
+ 4714      7400
+ 4715              	.LASF11:
+ 4716 01f6 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccTRpn1m.s 			page 85
+
+
+ 4716      00
+ 4717              	.LASF2:
+ 4718 01fb 73686F72 		.ascii	"short int\000"
+ 4718      7420696E 
+ 4718      7400
+ 4719              	.LASF21:
+ 4720 0205 75696E74 		.ascii	"uint8\000"
+ 4720      3800
+ 4721              	.LASF4:
+ 4722 020b 6C6F6E67 		.ascii	"long int\000"
+ 4722      20696E74 
+ 4722      00
+ 4723              	.LASF0:
+ 4724 0214 7369676E 		.ascii	"signed char\000"
+ 4724      65642063 
+ 4724      68617200 
+ 4725              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

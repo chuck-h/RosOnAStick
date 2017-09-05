@@ -1,0 +1,2244 @@
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"UpDown.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	UpDown_initVar
+  18              		.bss
+  19              		.type	UpDown_initVar, %object
+  20              		.size	UpDown_initVar, 1
+  21              	UpDown_initVar:
+  22 0000 00       		.space	1
+  23              		.section	.text.UpDown_Init,"ax",%progbits
+  24              		.align	2
+  25              		.global	UpDown_Init
+  26              		.code	16
+  27              		.thumb_func
+  28              		.type	UpDown_Init, %function
+  29              	UpDown_Init:
+  30              	.LFB0:
+  31              		.file 1 ".\\Generated_Source\\PSoC4\\UpDown.c"
+   1:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/UpDown.c **** * File Name: UpDown.c  
+   3:.\Generated_Source\PSoC4/UpDown.c **** * Version 2.40
+   4:.\Generated_Source\PSoC4/UpDown.c **** *
+   5:.\Generated_Source\PSoC4/UpDown.c **** *  Description:
+   6:.\Generated_Source\PSoC4/UpDown.c **** *     The Counter component consists of a 8, 16, 24 or 32-bit counter with
+   7:.\Generated_Source\PSoC4/UpDown.c **** *     a selectable period between 2 and 2^Width - 1.  
+   8:.\Generated_Source\PSoC4/UpDown.c **** *
+   9:.\Generated_Source\PSoC4/UpDown.c **** *   Note:
+  10:.\Generated_Source\PSoC4/UpDown.c **** *     None
+  11:.\Generated_Source\PSoC4/UpDown.c **** *
+  12:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************
+  13:.\Generated_Source\PSoC4/UpDown.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/UpDown.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:.\Generated_Source\PSoC4/UpDown.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:.\Generated_Source\PSoC4/UpDown.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************/
+  18:.\Generated_Source\PSoC4/UpDown.c **** 
+  19:.\Generated_Source\PSoC4/UpDown.c **** #include "UpDown.h"
+  20:.\Generated_Source\PSoC4/UpDown.c **** 
+  21:.\Generated_Source\PSoC4/UpDown.c **** uint8 UpDown_initVar = 0u;
+  22:.\Generated_Source\PSoC4/UpDown.c **** 
+  23:.\Generated_Source\PSoC4/UpDown.c **** 
+  24:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_Init
+  26:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 2
+
+
+  27:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+  28:.\Generated_Source\PSoC4/UpDown.c **** *     Initialize to the schematic state
+  29:.\Generated_Source\PSoC4/UpDown.c **** * 
+  30:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+  31:.\Generated_Source\PSoC4/UpDown.c **** *  void  
+  32:.\Generated_Source\PSoC4/UpDown.c **** *
+  33:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+  34:.\Generated_Source\PSoC4/UpDown.c **** *  void
+  35:.\Generated_Source\PSoC4/UpDown.c **** *
+  36:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_Init(void) 
+  38:.\Generated_Source\PSoC4/UpDown.c **** {
+  32              		.loc 1 38 0
+  33              		.cfi_startproc
+  34 0000 90B5     		push	{r4, r7, lr}
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 7, -8
+  38              		.cfi_offset 14, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 24
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  39:.\Generated_Source\PSoC4/UpDown.c ****         #if (!UpDown_UsingFixedFunction && !UpDown_ControlRegRemoved)
+  40:.\Generated_Source\PSoC4/UpDown.c ****             uint8 ctrl;
+  41:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (!UpDown_UsingFixedFunction && !UpDown_ControlRegRemoved) */
+  42:.\Generated_Source\PSoC4/UpDown.c ****         
+  43:.\Generated_Source\PSoC4/UpDown.c ****         #if(!UpDown_UsingFixedFunction) 
+  44:.\Generated_Source\PSoC4/UpDown.c ****             /* Interrupt State Backup for Critical Region*/
+  45:.\Generated_Source\PSoC4/UpDown.c ****             uint8 UpDown_interruptState;
+  46:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (!UpDown_UsingFixedFunction) */
+  47:.\Generated_Source\PSoC4/UpDown.c ****         
+  48:.\Generated_Source\PSoC4/UpDown.c ****         #if (UpDown_UsingFixedFunction)
+  49:.\Generated_Source\PSoC4/UpDown.c ****             /* Clear all bits but the enable bit (if it's already set for Timer operation */
+  50:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_CONTROL &= UpDown_CTRL_ENABLE;
+  51:.\Generated_Source\PSoC4/UpDown.c ****             
+  52:.\Generated_Source\PSoC4/UpDown.c ****             /* Clear the mode bits for continuous run mode */
+  53:.\Generated_Source\PSoC4/UpDown.c ****             #if (CY_PSOC5A)
+  54:.\Generated_Source\PSoC4/UpDown.c ****                 UpDown_CONTROL2 &= ((uint8)(~UpDown_CTRL_MODE_MASK));
+  55:.\Generated_Source\PSoC4/UpDown.c ****             #endif /* (CY_PSOC5A) */
+  56:.\Generated_Source\PSoC4/UpDown.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  57:.\Generated_Source\PSoC4/UpDown.c ****                 UpDown_CONTROL3 &= ((uint8)(~UpDown_CTRL_MODE_MASK));                
+  58:.\Generated_Source\PSoC4/UpDown.c ****             #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+  59:.\Generated_Source\PSoC4/UpDown.c ****             /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  60:.\Generated_Source\PSoC4/UpDown.c ****             #if (UpDown_RunModeUsed != 0x0u)
+  61:.\Generated_Source\PSoC4/UpDown.c ****                 /* Set 3rd bit of Control register to enable one shot mode */
+  62:.\Generated_Source\PSoC4/UpDown.c ****                 UpDown_CONTROL |= UpDown_ONESHOT;
+  63:.\Generated_Source\PSoC4/UpDown.c ****             #endif /* (UpDown_RunModeUsed != 0x0u) */
+  64:.\Generated_Source\PSoC4/UpDown.c ****             
+  65:.\Generated_Source\PSoC4/UpDown.c ****             /* Set the IRQ to use the status register interrupts */
+  66:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_CONTROL2 |= UpDown_CTRL2_IRQ_SEL;
+  67:.\Generated_Source\PSoC4/UpDown.c ****             
+  68:.\Generated_Source\PSoC4/UpDown.c ****             /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+  69:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_RT1 &= ((uint8)(~UpDown_RT1_MASK));
+  70:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_RT1 |= UpDown_SYNC;     
+  71:.\Generated_Source\PSoC4/UpDown.c ****                     
+  72:.\Generated_Source\PSoC4/UpDown.c ****             /*Enable DSI Sync all all inputs of the Timer*/
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 3
+
+
+  73:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_RT1 &= ((uint8)(~UpDown_SYNCDSI_MASK));
+  74:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_RT1 |= UpDown_SYNCDSI_EN;
+  75:.\Generated_Source\PSoC4/UpDown.c **** 
+  76:.\Generated_Source\PSoC4/UpDown.c ****         #else
+  77:.\Generated_Source\PSoC4/UpDown.c ****             #if(!UpDown_ControlRegRemoved)
+  78:.\Generated_Source\PSoC4/UpDown.c ****             /* Set the default compare mode defined in the parameter */
+  79:.\Generated_Source\PSoC4/UpDown.c ****             ctrl = UpDown_CONTROL & ((uint8)(~UpDown_CTRL_CMPMODE_MASK));
+  43              		.loc 1 79 0
+  44 0006 214B     		ldr	r3, .L2
+  45 0008 1B78     		ldrb	r3, [r3]
+  46 000a DAB2     		uxtb	r2, r3
+  47 000c FB1D     		add	r3, r7, #7
+  48 000e 0721     		mov	r1, #7
+  49 0010 8A43     		bic	r2, r1
+  50 0012 1A70     		strb	r2, [r3]
+  80:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_CONTROL = ctrl | UpDown_DEFAULT_COMPARE_MODE;
+  51              		.loc 1 80 0
+  52 0014 1D4A     		ldr	r2, .L2
+  53 0016 FB1D     		add	r3, r7, #7
+  54 0018 1B78     		ldrb	r3, [r3]
+  55 001a 0121     		mov	r1, #1
+  56 001c 0B43     		orr	r3, r1
+  57 001e DBB2     		uxtb	r3, r3
+  58 0020 1370     		strb	r3, [r2]
+  81:.\Generated_Source\PSoC4/UpDown.c ****             
+  82:.\Generated_Source\PSoC4/UpDown.c ****             /* Set the default capture mode defined in the parameter */
+  83:.\Generated_Source\PSoC4/UpDown.c ****             ctrl = UpDown_CONTROL & ((uint8)(~UpDown_CTRL_CAPMODE_MASK));
+  59              		.loc 1 83 0
+  60 0022 1A4B     		ldr	r3, .L2
+  61 0024 1B78     		ldrb	r3, [r3]
+  62 0026 DAB2     		uxtb	r2, r3
+  63 0028 FB1D     		add	r3, r7, #7
+  64 002a 0321     		mov	r1, #3
+  65 002c 8A43     		bic	r2, r1
+  66 002e 1A70     		strb	r2, [r3]
+  84:.\Generated_Source\PSoC4/UpDown.c ****             
+  85:.\Generated_Source\PSoC4/UpDown.c ****             #if( 0 != UpDown_CAPTURE_MODE_CONF)
+  86:.\Generated_Source\PSoC4/UpDown.c ****                 UpDown_CONTROL = ctrl | UpDown_DEFAULT_CAPTURE_MODE;
+  87:.\Generated_Source\PSoC4/UpDown.c ****             #else
+  88:.\Generated_Source\PSoC4/UpDown.c ****                 UpDown_CONTROL = ctrl;
+  67              		.loc 1 88 0
+  68 0030 164A     		ldr	r2, .L2
+  69 0032 FB1D     		add	r3, r7, #7
+  70 0034 1B78     		ldrb	r3, [r3]
+  71 0036 1370     		strb	r3, [r2]
+  89:.\Generated_Source\PSoC4/UpDown.c ****             #endif /* 0 != UpDown_CAPTURE_MODE */ 
+  90:.\Generated_Source\PSoC4/UpDown.c ****             
+  91:.\Generated_Source\PSoC4/UpDown.c ****             #endif /* (!UpDown_ControlRegRemoved) */
+  92:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (UpDown_UsingFixedFunction) */
+  93:.\Generated_Source\PSoC4/UpDown.c ****         
+  94:.\Generated_Source\PSoC4/UpDown.c ****         /* Clear all data in the FIFO's */
+  95:.\Generated_Source\PSoC4/UpDown.c ****         #if (!UpDown_UsingFixedFunction)
+  96:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_ClearFIFO();
+  72              		.loc 1 96 0
+  73 0038 FFF7FEFF 		bl	UpDown_ClearFIFO
+  97:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (!UpDown_UsingFixedFunction) */
+  98:.\Generated_Source\PSoC4/UpDown.c ****         
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 4
+
+
+  99:.\Generated_Source\PSoC4/UpDown.c ****         /* Set Initial values from Configuration */
+ 100:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_WritePeriod(UpDown_INIT_PERIOD_VALUE);
+  74              		.loc 1 100 0
+  75 003c 0223     		mov	r3, #2
+  76 003e 5B42     		neg	r3, r3
+  77 0040 181C     		mov	r0, r3
+  78 0042 FFF7FEFF 		bl	UpDown_WritePeriod
+ 101:.\Generated_Source\PSoC4/UpDown.c ****         #if (!(UpDown_UsingFixedFunction && (CY_PSOC5A)))
+ 102:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_WriteCounter(UpDown_INIT_COUNTER_VALUE);
+  79              		.loc 1 102 0
+  80 0046 0223     		mov	r3, #2
+  81 0048 5B42     		neg	r3, r3
+  82 004a 181C     		mov	r0, r3
+  83 004c FFF7FEFF 		bl	UpDown_WriteCounter
+ 103:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (!(UpDown_UsingFixedFunction && (CY_PSOC5A))) */
+ 104:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_SetInterruptMode(UpDown_INIT_INTERRUPTS_MASK);
+  84              		.loc 1 104 0
+  85 0050 0020     		mov	r0, #0
+  86 0052 FFF7FEFF 		bl	UpDown_SetInterruptMode
+ 105:.\Generated_Source\PSoC4/UpDown.c ****         
+ 106:.\Generated_Source\PSoC4/UpDown.c ****         #if (!UpDown_UsingFixedFunction)
+ 107:.\Generated_Source\PSoC4/UpDown.c ****             /* Read the status register to clear the unwanted interrupts */
+ 108:.\Generated_Source\PSoC4/UpDown.c ****             (void)UpDown_ReadStatusRegister();
+  87              		.loc 1 108 0
+  88 0056 FFF7FEFF 		bl	UpDown_ReadStatusRegister
+ 109:.\Generated_Source\PSoC4/UpDown.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 110:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_WriteCompare(UpDown_INIT_COMPARE_VALUE);
+  89              		.loc 1 110 0
+  90 005a 8020     		mov	r0, #128
+  91 005c FFF7FEFF 		bl	UpDown_WriteCompare
+ 111:.\Generated_Source\PSoC4/UpDown.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 112:.\Generated_Source\PSoC4/UpDown.c ****             
+ 113:.\Generated_Source\PSoC4/UpDown.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 114:.\Generated_Source\PSoC4/UpDown.c ****             /* Enter Critical Region*/
+ 115:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_interruptState = CyEnterCriticalSection();
+  92              		.loc 1 115 0
+  93 0060 BC1D     		add	r4, r7, #6
+  94 0062 FFF7FEFF 		bl	CyEnterCriticalSection
+  95 0066 031C     		mov	r3, r0
+  96 0068 2370     		strb	r3, [r4]
+ 116:.\Generated_Source\PSoC4/UpDown.c ****             
+ 117:.\Generated_Source\PSoC4/UpDown.c ****             UpDown_STATUS_AUX_CTRL |= UpDown_STATUS_ACTL_INT_EN_MASK;
+  97              		.loc 1 117 0
+  98 006a 094A     		ldr	r2, .L2+4
+  99 006c 084B     		ldr	r3, .L2+4
+ 100 006e 1B78     		ldrb	r3, [r3]
+ 101 0070 DBB2     		uxtb	r3, r3
+ 102 0072 1021     		mov	r1, #16
+ 103 0074 0B43     		orr	r3, r1
+ 104 0076 DBB2     		uxtb	r3, r3
+ 105 0078 1370     		strb	r3, [r2]
+ 118:.\Generated_Source\PSoC4/UpDown.c ****             
+ 119:.\Generated_Source\PSoC4/UpDown.c ****             /* Exit Critical Region*/
+ 120:.\Generated_Source\PSoC4/UpDown.c ****             CyExitCriticalSection(UpDown_interruptState);
+ 106              		.loc 1 120 0
+ 107 007a BB1D     		add	r3, r7, #6
+ 108 007c 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 5
+
+
+ 109 007e 181C     		mov	r0, r3
+ 110 0080 FFF7FEFF 		bl	CyExitCriticalSection
+ 121:.\Generated_Source\PSoC4/UpDown.c ****             
+ 122:.\Generated_Source\PSoC4/UpDown.c ****         #endif /* (!UpDown_UsingFixedFunction) */
+ 123:.\Generated_Source\PSoC4/UpDown.c **** }
+ 111              		.loc 1 123 0
+ 112 0084 BD46     		mov	sp, r7
+ 113 0086 03B0     		add	sp, sp, #12
+ 114              		@ sp needed
+ 115 0088 90BD     		pop	{r4, r7, pc}
+ 116              	.L3:
+ 117 008a C046     		.align	2
+ 118              	.L2:
+ 119 008c 71000F40 		.word	1074724977
+ 120 0090 93000F40 		.word	1074725011
+ 121              		.cfi_endproc
+ 122              	.LFE0:
+ 123              		.size	UpDown_Init, .-UpDown_Init
+ 124              		.section	.text.UpDown_Enable,"ax",%progbits
+ 125              		.align	2
+ 126              		.global	UpDown_Enable
+ 127              		.code	16
+ 128              		.thumb_func
+ 129              		.type	UpDown_Enable, %function
+ 130              	UpDown_Enable:
+ 131              	.LFB1:
+ 124:.\Generated_Source\PSoC4/UpDown.c **** 
+ 125:.\Generated_Source\PSoC4/UpDown.c **** 
+ 126:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 127:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_Enable
+ 128:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 129:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 130:.\Generated_Source\PSoC4/UpDown.c **** *     Enable the Counter
+ 131:.\Generated_Source\PSoC4/UpDown.c **** * 
+ 132:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 133:.\Generated_Source\PSoC4/UpDown.c **** *  void  
+ 134:.\Generated_Source\PSoC4/UpDown.c **** *
+ 135:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 136:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 137:.\Generated_Source\PSoC4/UpDown.c **** *
+ 138:.\Generated_Source\PSoC4/UpDown.c **** * Side Effects: 
+ 139:.\Generated_Source\PSoC4/UpDown.c **** *   If the Enable mode is set to Hardware only then this function has no effect 
+ 140:.\Generated_Source\PSoC4/UpDown.c **** *   on the operation of the counter.
+ 141:.\Generated_Source\PSoC4/UpDown.c **** *
+ 142:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 143:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_Enable(void) 
+ 144:.\Generated_Source\PSoC4/UpDown.c **** {
+ 132              		.loc 1 144 0
+ 133              		.cfi_startproc
+ 134 0000 80B5     		push	{r7, lr}
+ 135              		.cfi_def_cfa_offset 8
+ 136              		.cfi_offset 7, -8
+ 137              		.cfi_offset 14, -4
+ 138 0002 00AF     		add	r7, sp, #0
+ 139              		.cfi_def_cfa_register 7
+ 145:.\Generated_Source\PSoC4/UpDown.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 146:.\Generated_Source\PSoC4/UpDown.c ****     #if (UpDown_UsingFixedFunction)
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 6
+
+
+ 147:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_ENABLE |= UpDown_BLOCK_EN_MASK;
+ 148:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_STBY_ENABLE |= UpDown_BLOCK_STBY_EN_MASK;
+ 149:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */  
+ 150:.\Generated_Source\PSoC4/UpDown.c ****         
+ 151:.\Generated_Source\PSoC4/UpDown.c ****     /* Enable the counter from the control register  */
+ 152:.\Generated_Source\PSoC4/UpDown.c ****     /* If Fixed Function then make sure Mode is set correctly */
+ 153:.\Generated_Source\PSoC4/UpDown.c ****     /* else make sure reset is clear */
+ 154:.\Generated_Source\PSoC4/UpDown.c ****     #if(!UpDown_ControlRegRemoved || UpDown_UsingFixedFunction)
+ 155:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_CONTROL |= UpDown_CTRL_ENABLE;                
+ 140              		.loc 1 155 0
+ 141 0004 0549     		ldr	r1, .L5
+ 142 0006 054B     		ldr	r3, .L5
+ 143 0008 1B78     		ldrb	r3, [r3]
+ 144 000a DBB2     		uxtb	r3, r3
+ 145 000c 8022     		mov	r2, #128
+ 146 000e 5242     		neg	r2, r2
+ 147 0010 1343     		orr	r3, r2
+ 148 0012 DBB2     		uxtb	r3, r3
+ 149 0014 0B70     		strb	r3, [r1]
+ 156:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (!UpDown_ControlRegRemoved || UpDown_UsingFixedFunction) */
+ 157:.\Generated_Source\PSoC4/UpDown.c ****     
+ 158:.\Generated_Source\PSoC4/UpDown.c **** }
+ 150              		.loc 1 158 0
+ 151 0016 BD46     		mov	sp, r7
+ 152              		@ sp needed
+ 153 0018 80BD     		pop	{r7, pc}
+ 154              	.L6:
+ 155 001a C046     		.align	2
+ 156              	.L5:
+ 157 001c 71000F40 		.word	1074724977
+ 158              		.cfi_endproc
+ 159              	.LFE1:
+ 160              		.size	UpDown_Enable, .-UpDown_Enable
+ 161              		.section	.text.UpDown_Start,"ax",%progbits
+ 162              		.align	2
+ 163              		.global	UpDown_Start
+ 164              		.code	16
+ 165              		.thumb_func
+ 166              		.type	UpDown_Start, %function
+ 167              	UpDown_Start:
+ 168              	.LFB2:
+ 159:.\Generated_Source\PSoC4/UpDown.c **** 
+ 160:.\Generated_Source\PSoC4/UpDown.c **** 
+ 161:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 162:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_Start
+ 163:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 164:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 165:.\Generated_Source\PSoC4/UpDown.c **** *  Enables the counter for operation 
+ 166:.\Generated_Source\PSoC4/UpDown.c **** *
+ 167:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 168:.\Generated_Source\PSoC4/UpDown.c **** *  void  
+ 169:.\Generated_Source\PSoC4/UpDown.c **** *
+ 170:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 171:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 172:.\Generated_Source\PSoC4/UpDown.c **** *
+ 173:.\Generated_Source\PSoC4/UpDown.c **** * Global variables:
+ 174:.\Generated_Source\PSoC4/UpDown.c **** *  UpDown_initVar: Is modified when this function is called for the  
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 7
+
+
+ 175:.\Generated_Source\PSoC4/UpDown.c **** *   first time. Is used to ensure that initialization happens only once.
+ 176:.\Generated_Source\PSoC4/UpDown.c **** *
+ 177:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 178:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_Start(void) 
+ 179:.\Generated_Source\PSoC4/UpDown.c **** {
+ 169              		.loc 1 179 0
+ 170              		.cfi_startproc
+ 171 0000 80B5     		push	{r7, lr}
+ 172              		.cfi_def_cfa_offset 8
+ 173              		.cfi_offset 7, -8
+ 174              		.cfi_offset 14, -4
+ 175 0002 00AF     		add	r7, sp, #0
+ 176              		.cfi_def_cfa_register 7
+ 180:.\Generated_Source\PSoC4/UpDown.c ****     if(UpDown_initVar == 0u)
+ 177              		.loc 1 180 0
+ 178 0004 064B     		ldr	r3, .L9
+ 179 0006 1B78     		ldrb	r3, [r3]
+ 180 0008 002B     		cmp	r3, #0
+ 181 000a 04D1     		bne	.L8
+ 181:.\Generated_Source\PSoC4/UpDown.c ****     {
+ 182:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_Init();
+ 182              		.loc 1 182 0
+ 183 000c FFF7FEFF 		bl	UpDown_Init
+ 183:.\Generated_Source\PSoC4/UpDown.c ****         
+ 184:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_initVar = 1u; /* Clear this bit for Initialization */        
+ 184              		.loc 1 184 0
+ 185 0010 034B     		ldr	r3, .L9
+ 186 0012 0122     		mov	r2, #1
+ 187 0014 1A70     		strb	r2, [r3]
+ 188              	.L8:
+ 185:.\Generated_Source\PSoC4/UpDown.c ****     }
+ 186:.\Generated_Source\PSoC4/UpDown.c ****     
+ 187:.\Generated_Source\PSoC4/UpDown.c ****     /* Enable the Counter */
+ 188:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_Enable();        
+ 189              		.loc 1 188 0
+ 190 0016 FFF7FEFF 		bl	UpDown_Enable
+ 189:.\Generated_Source\PSoC4/UpDown.c **** }
+ 191              		.loc 1 189 0
+ 192 001a BD46     		mov	sp, r7
+ 193              		@ sp needed
+ 194 001c 80BD     		pop	{r7, pc}
+ 195              	.L10:
+ 196 001e C046     		.align	2
+ 197              	.L9:
+ 198 0020 00000000 		.word	UpDown_initVar
+ 199              		.cfi_endproc
+ 200              	.LFE2:
+ 201              		.size	UpDown_Start, .-UpDown_Start
+ 202              		.section	.text.UpDown_Stop,"ax",%progbits
+ 203              		.align	2
+ 204              		.global	UpDown_Stop
+ 205              		.code	16
+ 206              		.thumb_func
+ 207              		.type	UpDown_Stop, %function
+ 208              	UpDown_Stop:
+ 209              	.LFB3:
+ 190:.\Generated_Source\PSoC4/UpDown.c **** 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 8
+
+
+ 191:.\Generated_Source\PSoC4/UpDown.c **** 
+ 192:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 193:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_Stop
+ 194:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 195:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 196:.\Generated_Source\PSoC4/UpDown.c **** * Halts the counter, but does not change any modes or disable interrupts.
+ 197:.\Generated_Source\PSoC4/UpDown.c **** *
+ 198:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 199:.\Generated_Source\PSoC4/UpDown.c **** *  void  
+ 200:.\Generated_Source\PSoC4/UpDown.c **** *
+ 201:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 202:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 203:.\Generated_Source\PSoC4/UpDown.c **** *
+ 204:.\Generated_Source\PSoC4/UpDown.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 205:.\Generated_Source\PSoC4/UpDown.c **** *               has no effect on the operation of the counter.
+ 206:.\Generated_Source\PSoC4/UpDown.c **** *
+ 207:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 208:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_Stop(void) 
+ 209:.\Generated_Source\PSoC4/UpDown.c **** {
+ 210              		.loc 1 209 0
+ 211              		.cfi_startproc
+ 212 0000 80B5     		push	{r7, lr}
+ 213              		.cfi_def_cfa_offset 8
+ 214              		.cfi_offset 7, -8
+ 215              		.cfi_offset 14, -4
+ 216 0002 00AF     		add	r7, sp, #0
+ 217              		.cfi_def_cfa_register 7
+ 210:.\Generated_Source\PSoC4/UpDown.c ****     /* Disable Counter */
+ 211:.\Generated_Source\PSoC4/UpDown.c ****     #if(!UpDown_ControlRegRemoved || UpDown_UsingFixedFunction)
+ 212:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_CONTROL &= ((uint8)(~UpDown_CTRL_ENABLE));        
+ 218              		.loc 1 212 0
+ 219 0004 044A     		ldr	r2, .L12
+ 220 0006 044B     		ldr	r3, .L12
+ 221 0008 1B78     		ldrb	r3, [r3]
+ 222 000a DBB2     		uxtb	r3, r3
+ 223 000c 7F21     		mov	r1, #127
+ 224 000e 0B40     		and	r3, r1
+ 225 0010 DBB2     		uxtb	r3, r3
+ 226 0012 1370     		strb	r3, [r2]
+ 213:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (!UpDown_ControlRegRemoved || UpDown_UsingFixedFunction) */
+ 214:.\Generated_Source\PSoC4/UpDown.c ****     
+ 215:.\Generated_Source\PSoC4/UpDown.c ****     /* Globally disable the Fixed Function Block chosen */
+ 216:.\Generated_Source\PSoC4/UpDown.c ****     #if (UpDown_UsingFixedFunction)
+ 217:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_ENABLE &= ((uint8)(~UpDown_BLOCK_EN_MASK));
+ 218:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_STBY_ENABLE &= ((uint8)(~UpDown_BLOCK_STBY_EN_MASK));
+ 219:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 220:.\Generated_Source\PSoC4/UpDown.c **** }
+ 227              		.loc 1 220 0
+ 228 0014 BD46     		mov	sp, r7
+ 229              		@ sp needed
+ 230 0016 80BD     		pop	{r7, pc}
+ 231              	.L13:
+ 232              		.align	2
+ 233              	.L12:
+ 234 0018 71000F40 		.word	1074724977
+ 235              		.cfi_endproc
+ 236              	.LFE3:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 9
+
+
+ 237              		.size	UpDown_Stop, .-UpDown_Stop
+ 238              		.section	.text.UpDown_SetInterruptMode,"ax",%progbits
+ 239              		.align	2
+ 240              		.global	UpDown_SetInterruptMode
+ 241              		.code	16
+ 242              		.thumb_func
+ 243              		.type	UpDown_SetInterruptMode, %function
+ 244              	UpDown_SetInterruptMode:
+ 245              	.LFB4:
+ 221:.\Generated_Source\PSoC4/UpDown.c **** 
+ 222:.\Generated_Source\PSoC4/UpDown.c **** 
+ 223:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 224:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_SetInterruptMode
+ 225:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 226:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 227:.\Generated_Source\PSoC4/UpDown.c **** * Configures which interrupt sources are enabled to generate the final interrupt
+ 228:.\Generated_Source\PSoC4/UpDown.c **** *
+ 229:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 230:.\Generated_Source\PSoC4/UpDown.c **** *  InterruptsMask: This parameter is an or'd collection of the status bits
+ 231:.\Generated_Source\PSoC4/UpDown.c **** *                   which will be allowed to generate the counters interrupt.   
+ 232:.\Generated_Source\PSoC4/UpDown.c **** *
+ 233:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 234:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 235:.\Generated_Source\PSoC4/UpDown.c **** *
+ 236:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 237:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_SetInterruptMode(uint8 interruptsMask) 
+ 238:.\Generated_Source\PSoC4/UpDown.c **** {
+ 246              		.loc 1 238 0
+ 247              		.cfi_startproc
+ 248 0000 80B5     		push	{r7, lr}
+ 249              		.cfi_def_cfa_offset 8
+ 250              		.cfi_offset 7, -8
+ 251              		.cfi_offset 14, -4
+ 252 0002 82B0     		sub	sp, sp, #8
+ 253              		.cfi_def_cfa_offset 16
+ 254 0004 00AF     		add	r7, sp, #0
+ 255              		.cfi_def_cfa_register 7
+ 256 0006 021C     		mov	r2, r0
+ 257 0008 FB1D     		add	r3, r7, #7
+ 258 000a 1A70     		strb	r2, [r3]
+ 239:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_STATUS_MASK = interruptsMask;
+ 259              		.loc 1 239 0
+ 260 000c 034A     		ldr	r2, .L15
+ 261 000e FB1D     		add	r3, r7, #7
+ 262 0010 1B78     		ldrb	r3, [r3]
+ 263 0012 1370     		strb	r3, [r2]
+ 240:.\Generated_Source\PSoC4/UpDown.c **** }
+ 264              		.loc 1 240 0
+ 265 0014 BD46     		mov	sp, r7
+ 266 0016 02B0     		add	sp, sp, #8
+ 267              		@ sp needed
+ 268 0018 80BD     		pop	{r7, pc}
+ 269              	.L16:
+ 270 001a C046     		.align	2
+ 271              	.L15:
+ 272 001c 83000F40 		.word	1074724995
+ 273              		.cfi_endproc
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 10
+
+
+ 274              	.LFE4:
+ 275              		.size	UpDown_SetInterruptMode, .-UpDown_SetInterruptMode
+ 276              		.section	.text.UpDown_ReadStatusRegister,"ax",%progbits
+ 277              		.align	2
+ 278              		.global	UpDown_ReadStatusRegister
+ 279              		.code	16
+ 280              		.thumb_func
+ 281              		.type	UpDown_ReadStatusRegister, %function
+ 282              	UpDown_ReadStatusRegister:
+ 283              	.LFB5:
+ 241:.\Generated_Source\PSoC4/UpDown.c **** 
+ 242:.\Generated_Source\PSoC4/UpDown.c **** 
+ 243:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 244:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadStatusRegister
+ 245:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 246:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 247:.\Generated_Source\PSoC4/UpDown.c **** *   Reads the status register and returns it's state. This function should use
+ 248:.\Generated_Source\PSoC4/UpDown.c **** *       defined types for the bit-field information as the bits in this
+ 249:.\Generated_Source\PSoC4/UpDown.c **** *       register may be permuteable.
+ 250:.\Generated_Source\PSoC4/UpDown.c **** *
+ 251:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 252:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 253:.\Generated_Source\PSoC4/UpDown.c **** *
+ 254:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 255:.\Generated_Source\PSoC4/UpDown.c **** *  (uint8) The contents of the status register
+ 256:.\Generated_Source\PSoC4/UpDown.c **** *
+ 257:.\Generated_Source\PSoC4/UpDown.c **** * Side Effects:
+ 258:.\Generated_Source\PSoC4/UpDown.c **** *   Status register bits may be clear on read. 
+ 259:.\Generated_Source\PSoC4/UpDown.c **** *
+ 260:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 261:.\Generated_Source\PSoC4/UpDown.c **** uint8   UpDown_ReadStatusRegister(void) 
+ 262:.\Generated_Source\PSoC4/UpDown.c **** {
+ 284              		.loc 1 262 0
+ 285              		.cfi_startproc
+ 286 0000 80B5     		push	{r7, lr}
+ 287              		.cfi_def_cfa_offset 8
+ 288              		.cfi_offset 7, -8
+ 289              		.cfi_offset 14, -4
+ 290 0002 00AF     		add	r7, sp, #0
+ 291              		.cfi_def_cfa_register 7
+ 263:.\Generated_Source\PSoC4/UpDown.c ****     return UpDown_STATUS;
+ 292              		.loc 1 263 0
+ 293 0004 024B     		ldr	r3, .L19
+ 294 0006 1B78     		ldrb	r3, [r3]
+ 295 0008 DBB2     		uxtb	r3, r3
+ 264:.\Generated_Source\PSoC4/UpDown.c **** }
+ 296              		.loc 1 264 0
+ 297 000a 181C     		mov	r0, r3
+ 298 000c BD46     		mov	sp, r7
+ 299              		@ sp needed
+ 300 000e 80BD     		pop	{r7, pc}
+ 301              	.L20:
+ 302              		.align	2
+ 303              	.L19:
+ 304 0010 63000F40 		.word	1074724963
+ 305              		.cfi_endproc
+ 306              	.LFE5:
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 11
+
+
+ 307              		.size	UpDown_ReadStatusRegister, .-UpDown_ReadStatusRegister
+ 308              		.section	.text.UpDown_ReadControlRegister,"ax",%progbits
+ 309              		.align	2
+ 310              		.global	UpDown_ReadControlRegister
+ 311              		.code	16
+ 312              		.thumb_func
+ 313              		.type	UpDown_ReadControlRegister, %function
+ 314              	UpDown_ReadControlRegister:
+ 315              	.LFB6:
+ 265:.\Generated_Source\PSoC4/UpDown.c **** 
+ 266:.\Generated_Source\PSoC4/UpDown.c **** 
+ 267:.\Generated_Source\PSoC4/UpDown.c **** #if(!UpDown_ControlRegRemoved)
+ 268:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 269:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadControlRegister
+ 270:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 271:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 272:.\Generated_Source\PSoC4/UpDown.c **** *   Reads the control register and returns it's state. This function should use
+ 273:.\Generated_Source\PSoC4/UpDown.c **** *       defined types for the bit-field information as the bits in this
+ 274:.\Generated_Source\PSoC4/UpDown.c **** *       register may be permuteable.
+ 275:.\Generated_Source\PSoC4/UpDown.c **** *
+ 276:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 277:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 278:.\Generated_Source\PSoC4/UpDown.c **** *
+ 279:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 280:.\Generated_Source\PSoC4/UpDown.c **** *  (uint8) The contents of the control register
+ 281:.\Generated_Source\PSoC4/UpDown.c **** *
+ 282:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 283:.\Generated_Source\PSoC4/UpDown.c **** uint8   UpDown_ReadControlRegister(void) 
+ 284:.\Generated_Source\PSoC4/UpDown.c **** {
+ 316              		.loc 1 284 0
+ 317              		.cfi_startproc
+ 318 0000 80B5     		push	{r7, lr}
+ 319              		.cfi_def_cfa_offset 8
+ 320              		.cfi_offset 7, -8
+ 321              		.cfi_offset 14, -4
+ 322 0002 00AF     		add	r7, sp, #0
+ 323              		.cfi_def_cfa_register 7
+ 285:.\Generated_Source\PSoC4/UpDown.c ****     return UpDown_CONTROL;
+ 324              		.loc 1 285 0
+ 325 0004 024B     		ldr	r3, .L23
+ 326 0006 1B78     		ldrb	r3, [r3]
+ 327 0008 DBB2     		uxtb	r3, r3
+ 286:.\Generated_Source\PSoC4/UpDown.c **** }
+ 328              		.loc 1 286 0
+ 329 000a 181C     		mov	r0, r3
+ 330 000c BD46     		mov	sp, r7
+ 331              		@ sp needed
+ 332 000e 80BD     		pop	{r7, pc}
+ 333              	.L24:
+ 334              		.align	2
+ 335              	.L23:
+ 336 0010 71000F40 		.word	1074724977
+ 337              		.cfi_endproc
+ 338              	.LFE6:
+ 339              		.size	UpDown_ReadControlRegister, .-UpDown_ReadControlRegister
+ 340              		.section	.text.UpDown_WriteControlRegister,"ax",%progbits
+ 341              		.align	2
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 12
+
+
+ 342              		.global	UpDown_WriteControlRegister
+ 343              		.code	16
+ 344              		.thumb_func
+ 345              		.type	UpDown_WriteControlRegister, %function
+ 346              	UpDown_WriteControlRegister:
+ 347              	.LFB7:
+ 287:.\Generated_Source\PSoC4/UpDown.c **** 
+ 288:.\Generated_Source\PSoC4/UpDown.c **** 
+ 289:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 290:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_WriteControlRegister
+ 291:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 292:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 293:.\Generated_Source\PSoC4/UpDown.c **** *   Sets the bit-field of the control register.  This function should use
+ 294:.\Generated_Source\PSoC4/UpDown.c **** *       defined types for the bit-field information as the bits in this
+ 295:.\Generated_Source\PSoC4/UpDown.c **** *       register may be permuteable.
+ 296:.\Generated_Source\PSoC4/UpDown.c **** *
+ 297:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 298:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 299:.\Generated_Source\PSoC4/UpDown.c **** *
+ 300:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 301:.\Generated_Source\PSoC4/UpDown.c **** *  (uint8) The contents of the control register
+ 302:.\Generated_Source\PSoC4/UpDown.c **** *
+ 303:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 304:.\Generated_Source\PSoC4/UpDown.c **** void    UpDown_WriteControlRegister(uint8 control) 
+ 305:.\Generated_Source\PSoC4/UpDown.c **** {
+ 348              		.loc 1 305 0
+ 349              		.cfi_startproc
+ 350 0000 80B5     		push	{r7, lr}
+ 351              		.cfi_def_cfa_offset 8
+ 352              		.cfi_offset 7, -8
+ 353              		.cfi_offset 14, -4
+ 354 0002 82B0     		sub	sp, sp, #8
+ 355              		.cfi_def_cfa_offset 16
+ 356 0004 00AF     		add	r7, sp, #0
+ 357              		.cfi_def_cfa_register 7
+ 358 0006 021C     		mov	r2, r0
+ 359 0008 FB1D     		add	r3, r7, #7
+ 360 000a 1A70     		strb	r2, [r3]
+ 306:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_CONTROL = control;
+ 361              		.loc 1 306 0
+ 362 000c 034A     		ldr	r2, .L26
+ 363 000e FB1D     		add	r3, r7, #7
+ 364 0010 1B78     		ldrb	r3, [r3]
+ 365 0012 1370     		strb	r3, [r2]
+ 307:.\Generated_Source\PSoC4/UpDown.c **** }
+ 366              		.loc 1 307 0
+ 367 0014 BD46     		mov	sp, r7
+ 368 0016 02B0     		add	sp, sp, #8
+ 369              		@ sp needed
+ 370 0018 80BD     		pop	{r7, pc}
+ 371              	.L27:
+ 372 001a C046     		.align	2
+ 373              	.L26:
+ 374 001c 71000F40 		.word	1074724977
+ 375              		.cfi_endproc
+ 376              	.LFE7:
+ 377              		.size	UpDown_WriteControlRegister, .-UpDown_WriteControlRegister
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 13
+
+
+ 378              		.section	.text.UpDown_WriteCounter,"ax",%progbits
+ 379              		.align	2
+ 380              		.global	UpDown_WriteCounter
+ 381              		.code	16
+ 382              		.thumb_func
+ 383              		.type	UpDown_WriteCounter, %function
+ 384              	UpDown_WriteCounter:
+ 385              	.LFB8:
+ 308:.\Generated_Source\PSoC4/UpDown.c **** 
+ 309:.\Generated_Source\PSoC4/UpDown.c **** #endif  /* (!UpDown_ControlRegRemoved) */
+ 310:.\Generated_Source\PSoC4/UpDown.c **** 
+ 311:.\Generated_Source\PSoC4/UpDown.c **** 
+ 312:.\Generated_Source\PSoC4/UpDown.c **** #if (!(UpDown_UsingFixedFunction && (CY_PSOC5A)))
+ 313:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 314:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_WriteCounter
+ 315:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 316:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 317:.\Generated_Source\PSoC4/UpDown.c **** *   This funtion is used to set the counter to a specific value
+ 318:.\Generated_Source\PSoC4/UpDown.c **** *
+ 319:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 320:.\Generated_Source\PSoC4/UpDown.c **** *  counter:  New counter value. 
+ 321:.\Generated_Source\PSoC4/UpDown.c **** *
+ 322:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 323:.\Generated_Source\PSoC4/UpDown.c **** *  void 
+ 324:.\Generated_Source\PSoC4/UpDown.c **** *
+ 325:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 326:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_WriteCounter(uint32 counter) \
+ 327:.\Generated_Source\PSoC4/UpDown.c ****                                    
+ 328:.\Generated_Source\PSoC4/UpDown.c **** {
+ 386              		.loc 1 328 0
+ 387              		.cfi_startproc
+ 388 0000 80B5     		push	{r7, lr}
+ 389              		.cfi_def_cfa_offset 8
+ 390              		.cfi_offset 7, -8
+ 391              		.cfi_offset 14, -4
+ 392 0002 82B0     		sub	sp, sp, #8
+ 393              		.cfi_def_cfa_offset 16
+ 394 0004 00AF     		add	r7, sp, #0
+ 395              		.cfi_def_cfa_register 7
+ 396 0006 7860     		str	r0, [r7, #4]
+ 329:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ 330:.\Generated_Source\PSoC4/UpDown.c ****         /* assert if block is already enabled */
+ 331:.\Generated_Source\PSoC4/UpDown.c ****         CYASSERT (0u == (UpDown_GLOBAL_ENABLE & UpDown_BLOCK_EN_MASK));
+ 332:.\Generated_Source\PSoC4/UpDown.c ****         /* If block is disabled, enable it and then write the counter */
+ 333:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_ENABLE |= UpDown_BLOCK_EN_MASK;
+ 334:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG16(UpDown_COUNTER_LSB_PTR, (uint16)counter);
+ 335:.\Generated_Source\PSoC4/UpDown.c ****         UpDown_GLOBAL_ENABLE &= ((uint8)(~UpDown_BLOCK_EN_MASK));
+ 336:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 337:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG32(UpDown_COUNTER_LSB_PTR, counter);
+ 397              		.loc 1 337 0
+ 398 0008 024B     		ldr	r3, .L29
+ 399 000a 7A68     		ldr	r2, [r7, #4]
+ 400 000c 1A60     		str	r2, [r3]
+ 338:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 339:.\Generated_Source\PSoC4/UpDown.c **** }
+ 401              		.loc 1 339 0
+ 402 000e BD46     		mov	sp, r7
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 14
+
+
+ 403 0010 02B0     		add	sp, sp, #8
+ 404              		@ sp needed
+ 405 0012 80BD     		pop	{r7, pc}
+ 406              	.L30:
+ 407              		.align	2
+ 408              	.L29:
+ 409 0014 00200F40 		.word	1074733056
+ 410              		.cfi_endproc
+ 411              	.LFE8:
+ 412              		.size	UpDown_WriteCounter, .-UpDown_WriteCounter
+ 413              		.section	.text.UpDown_ReadCounter,"ax",%progbits
+ 414              		.align	2
+ 415              		.global	UpDown_ReadCounter
+ 416              		.code	16
+ 417              		.thumb_func
+ 418              		.type	UpDown_ReadCounter, %function
+ 419              	UpDown_ReadCounter:
+ 420              	.LFB9:
+ 340:.\Generated_Source\PSoC4/UpDown.c **** #endif /* (!(UpDown_UsingFixedFunction && (CY_PSOC5A))) */
+ 341:.\Generated_Source\PSoC4/UpDown.c **** 
+ 342:.\Generated_Source\PSoC4/UpDown.c **** 
+ 343:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 344:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadCounter
+ 345:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 346:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 347:.\Generated_Source\PSoC4/UpDown.c **** * Returns the current value of the counter.  It doesn't matter
+ 348:.\Generated_Source\PSoC4/UpDown.c **** * if the counter is enabled or running.
+ 349:.\Generated_Source\PSoC4/UpDown.c **** *
+ 350:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 351:.\Generated_Source\PSoC4/UpDown.c **** *  void:  
+ 352:.\Generated_Source\PSoC4/UpDown.c **** *
+ 353:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 354:.\Generated_Source\PSoC4/UpDown.c **** *  (uint32) The present value of the counter.
+ 355:.\Generated_Source\PSoC4/UpDown.c **** *
+ 356:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 357:.\Generated_Source\PSoC4/UpDown.c **** uint32 UpDown_ReadCounter(void) 
+ 358:.\Generated_Source\PSoC4/UpDown.c **** {
+ 421              		.loc 1 358 0
+ 422              		.cfi_startproc
+ 423 0000 80B5     		push	{r7, lr}
+ 424              		.cfi_def_cfa_offset 8
+ 425              		.cfi_offset 7, -8
+ 426              		.cfi_offset 14, -4
+ 427 0002 00AF     		add	r7, sp, #0
+ 428              		.cfi_def_cfa_register 7
+ 359:.\Generated_Source\PSoC4/UpDown.c ****     /* Force capture by reading Accumulator */
+ 360:.\Generated_Source\PSoC4/UpDown.c ****     /* Must first do a software capture to be able to read the counter */
+ 361:.\Generated_Source\PSoC4/UpDown.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 362:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ 363:.\Generated_Source\PSoC4/UpDown.c **** 		(void)CY_GET_REG16(UpDown_COUNTER_LSB_PTR);
+ 364:.\Generated_Source\PSoC4/UpDown.c **** 	#else
+ 365:.\Generated_Source\PSoC4/UpDown.c **** 		(void)CY_GET_REG8(UpDown_COUNTER_LSB_PTR_8BIT);
+ 429              		.loc 1 365 0
+ 430 0004 034B     		ldr	r3, .L33
+ 431 0006 1B78     		ldrb	r3, [r3]
+ 366:.\Generated_Source\PSoC4/UpDown.c **** 	#endif/* (UpDown_UsingFixedFunction) */
+ 367:.\Generated_Source\PSoC4/UpDown.c ****     
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 15
+
+
+ 368:.\Generated_Source\PSoC4/UpDown.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 369:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ 370:.\Generated_Source\PSoC4/UpDown.c ****         return ((uint32)CY_GET_REG16(UpDown_STATICCOUNT_LSB_PTR));
+ 371:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 372:.\Generated_Source\PSoC4/UpDown.c ****         return (CY_GET_REG32(UpDown_STATICCOUNT_LSB_PTR));
+ 432              		.loc 1 372 0
+ 433 0008 034B     		ldr	r3, .L33+4
+ 434 000a 1B68     		ldr	r3, [r3]
+ 373:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 374:.\Generated_Source\PSoC4/UpDown.c **** }
+ 435              		.loc 1 374 0
+ 436 000c 181C     		mov	r0, r3
+ 437 000e BD46     		mov	sp, r7
+ 438              		@ sp needed
+ 439 0010 80BD     		pop	{r7, pc}
+ 440              	.L34:
+ 441 0012 C046     		.align	2
+ 442              	.L33:
+ 443 0014 00000F40 		.word	1074724864
+ 444 0018 00210F40 		.word	1074733312
+ 445              		.cfi_endproc
+ 446              	.LFE9:
+ 447              		.size	UpDown_ReadCounter, .-UpDown_ReadCounter
+ 448              		.section	.text.UpDown_ReadCapture,"ax",%progbits
+ 449              		.align	2
+ 450              		.global	UpDown_ReadCapture
+ 451              		.code	16
+ 452              		.thumb_func
+ 453              		.type	UpDown_ReadCapture, %function
+ 454              	UpDown_ReadCapture:
+ 455              	.LFB10:
+ 375:.\Generated_Source\PSoC4/UpDown.c **** 
+ 376:.\Generated_Source\PSoC4/UpDown.c **** 
+ 377:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 378:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadCapture
+ 379:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 380:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 381:.\Generated_Source\PSoC4/UpDown.c **** *   This function returns the last value captured.
+ 382:.\Generated_Source\PSoC4/UpDown.c **** *
+ 383:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 384:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 385:.\Generated_Source\PSoC4/UpDown.c **** *
+ 386:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 387:.\Generated_Source\PSoC4/UpDown.c **** *  (uint32) Present Capture value.
+ 388:.\Generated_Source\PSoC4/UpDown.c **** *
+ 389:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 390:.\Generated_Source\PSoC4/UpDown.c **** uint32 UpDown_ReadCapture(void) 
+ 391:.\Generated_Source\PSoC4/UpDown.c **** {
+ 456              		.loc 1 391 0
+ 457              		.cfi_startproc
+ 458 0000 80B5     		push	{r7, lr}
+ 459              		.cfi_def_cfa_offset 8
+ 460              		.cfi_offset 7, -8
+ 461              		.cfi_offset 14, -4
+ 462 0002 00AF     		add	r7, sp, #0
+ 463              		.cfi_def_cfa_register 7
+ 392:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 16
+
+
+ 393:.\Generated_Source\PSoC4/UpDown.c ****         return ((uint32)CY_GET_REG16(UpDown_STATICCOUNT_LSB_PTR));
+ 394:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 395:.\Generated_Source\PSoC4/UpDown.c ****         return (CY_GET_REG32(UpDown_STATICCOUNT_LSB_PTR));
+ 464              		.loc 1 395 0
+ 465 0004 024B     		ldr	r3, .L37
+ 466 0006 1B68     		ldr	r3, [r3]
+ 396:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 397:.\Generated_Source\PSoC4/UpDown.c **** }
+ 467              		.loc 1 397 0
+ 468 0008 181C     		mov	r0, r3
+ 469 000a BD46     		mov	sp, r7
+ 470              		@ sp needed
+ 471 000c 80BD     		pop	{r7, pc}
+ 472              	.L38:
+ 473 000e C046     		.align	2
+ 474              	.L37:
+ 475 0010 00210F40 		.word	1074733312
+ 476              		.cfi_endproc
+ 477              	.LFE10:
+ 478              		.size	UpDown_ReadCapture, .-UpDown_ReadCapture
+ 479              		.section	.text.UpDown_WritePeriod,"ax",%progbits
+ 480              		.align	2
+ 481              		.global	UpDown_WritePeriod
+ 482              		.code	16
+ 483              		.thumb_func
+ 484              		.type	UpDown_WritePeriod, %function
+ 485              	UpDown_WritePeriod:
+ 486              	.LFB11:
+ 398:.\Generated_Source\PSoC4/UpDown.c **** 
+ 399:.\Generated_Source\PSoC4/UpDown.c **** 
+ 400:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 401:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_WritePeriod
+ 402:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 403:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 404:.\Generated_Source\PSoC4/UpDown.c **** * Changes the period of the counter.  The new period 
+ 405:.\Generated_Source\PSoC4/UpDown.c **** * will be loaded the next time terminal count is detected.
+ 406:.\Generated_Source\PSoC4/UpDown.c **** *
+ 407:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 408:.\Generated_Source\PSoC4/UpDown.c **** *  period: (uint32) A value of 0 will result in
+ 409:.\Generated_Source\PSoC4/UpDown.c **** *         the counter remaining at zero.  
+ 410:.\Generated_Source\PSoC4/UpDown.c **** *
+ 411:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 412:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 413:.\Generated_Source\PSoC4/UpDown.c **** *
+ 414:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 415:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_WritePeriod(uint32 period) 
+ 416:.\Generated_Source\PSoC4/UpDown.c **** {
+ 487              		.loc 1 416 0
+ 488              		.cfi_startproc
+ 489 0000 80B5     		push	{r7, lr}
+ 490              		.cfi_def_cfa_offset 8
+ 491              		.cfi_offset 7, -8
+ 492              		.cfi_offset 14, -4
+ 493 0002 82B0     		sub	sp, sp, #8
+ 494              		.cfi_def_cfa_offset 16
+ 495 0004 00AF     		add	r7, sp, #0
+ 496              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 17
+
+
+ 497 0006 7860     		str	r0, [r7, #4]
+ 417:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ 418:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG16(UpDown_PERIOD_LSB_PTR,(uint16)period);
+ 419:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 420:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG32(UpDown_PERIOD_LSB_PTR, period);
+ 498              		.loc 1 420 0
+ 499 0008 024B     		ldr	r3, .L40
+ 500 000a 7A68     		ldr	r2, [r7, #4]
+ 501 000c 1A60     		str	r2, [r3]
+ 421:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 422:.\Generated_Source\PSoC4/UpDown.c **** }
+ 502              		.loc 1 422 0
+ 503 000e BD46     		mov	sp, r7
+ 504 0010 02B0     		add	sp, sp, #8
+ 505              		@ sp needed
+ 506 0012 80BD     		pop	{r7, pc}
+ 507              	.L41:
+ 508              		.align	2
+ 509              	.L40:
+ 510 0014 80200F40 		.word	1074733184
+ 511              		.cfi_endproc
+ 512              	.LFE11:
+ 513              		.size	UpDown_WritePeriod, .-UpDown_WritePeriod
+ 514              		.section	.text.UpDown_ReadPeriod,"ax",%progbits
+ 515              		.align	2
+ 516              		.global	UpDown_ReadPeriod
+ 517              		.code	16
+ 518              		.thumb_func
+ 519              		.type	UpDown_ReadPeriod, %function
+ 520              	UpDown_ReadPeriod:
+ 521              	.LFB12:
+ 423:.\Generated_Source\PSoC4/UpDown.c **** 
+ 424:.\Generated_Source\PSoC4/UpDown.c **** 
+ 425:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 426:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadPeriod
+ 427:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 428:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 429:.\Generated_Source\PSoC4/UpDown.c **** * Reads the current period value without affecting counter operation.
+ 430:.\Generated_Source\PSoC4/UpDown.c **** *
+ 431:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 432:.\Generated_Source\PSoC4/UpDown.c **** *  void:  
+ 433:.\Generated_Source\PSoC4/UpDown.c **** *
+ 434:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 435:.\Generated_Source\PSoC4/UpDown.c **** *  (uint32) Present period value.
+ 436:.\Generated_Source\PSoC4/UpDown.c **** *
+ 437:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 438:.\Generated_Source\PSoC4/UpDown.c **** uint32 UpDown_ReadPeriod(void) 
+ 439:.\Generated_Source\PSoC4/UpDown.c **** {
+ 522              		.loc 1 439 0
+ 523              		.cfi_startproc
+ 524 0000 80B5     		push	{r7, lr}
+ 525              		.cfi_def_cfa_offset 8
+ 526              		.cfi_offset 7, -8
+ 527              		.cfi_offset 14, -4
+ 528 0002 00AF     		add	r7, sp, #0
+ 529              		.cfi_def_cfa_register 7
+ 440:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 18
+
+
+ 441:.\Generated_Source\PSoC4/UpDown.c ****         return ((uint32)CY_GET_REG16(UpDown_PERIOD_LSB_PTR));
+ 442:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 443:.\Generated_Source\PSoC4/UpDown.c ****         return (CY_GET_REG32(UpDown_PERIOD_LSB_PTR));
+ 530              		.loc 1 443 0
+ 531 0004 024B     		ldr	r3, .L44
+ 532 0006 1B68     		ldr	r3, [r3]
+ 444:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 445:.\Generated_Source\PSoC4/UpDown.c **** }
+ 533              		.loc 1 445 0
+ 534 0008 181C     		mov	r0, r3
+ 535 000a BD46     		mov	sp, r7
+ 536              		@ sp needed
+ 537 000c 80BD     		pop	{r7, pc}
+ 538              	.L45:
+ 539 000e C046     		.align	2
+ 540              	.L44:
+ 541 0010 80200F40 		.word	1074733184
+ 542              		.cfi_endproc
+ 543              	.LFE12:
+ 544              		.size	UpDown_ReadPeriod, .-UpDown_ReadPeriod
+ 545              		.section	.text.UpDown_WriteCompare,"ax",%progbits
+ 546              		.align	2
+ 547              		.global	UpDown_WriteCompare
+ 548              		.code	16
+ 549              		.thumb_func
+ 550              		.type	UpDown_WriteCompare, %function
+ 551              	UpDown_WriteCompare:
+ 552              	.LFB13:
+ 446:.\Generated_Source\PSoC4/UpDown.c **** 
+ 447:.\Generated_Source\PSoC4/UpDown.c **** 
+ 448:.\Generated_Source\PSoC4/UpDown.c **** #if (!UpDown_UsingFixedFunction)
+ 449:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 450:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_WriteCompare
+ 451:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 452:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 453:.\Generated_Source\PSoC4/UpDown.c **** * Changes the compare value.  The compare output will 
+ 454:.\Generated_Source\PSoC4/UpDown.c **** * reflect the new value on the next UDB clock.  The compare output will be 
+ 455:.\Generated_Source\PSoC4/UpDown.c **** * driven high when the present counter value compares true based on the 
+ 456:.\Generated_Source\PSoC4/UpDown.c **** * configured compare mode setting. 
+ 457:.\Generated_Source\PSoC4/UpDown.c **** *
+ 458:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 459:.\Generated_Source\PSoC4/UpDown.c **** *  Compare:  New compare value. 
+ 460:.\Generated_Source\PSoC4/UpDown.c **** *
+ 461:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 462:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 463:.\Generated_Source\PSoC4/UpDown.c **** *
+ 464:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 465:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_WriteCompare(uint32 compare) \
+ 466:.\Generated_Source\PSoC4/UpDown.c ****                                    
+ 467:.\Generated_Source\PSoC4/UpDown.c **** {
+ 553              		.loc 1 467 0
+ 554              		.cfi_startproc
+ 555 0000 80B5     		push	{r7, lr}
+ 556              		.cfi_def_cfa_offset 8
+ 557              		.cfi_offset 7, -8
+ 558              		.cfi_offset 14, -4
+ 559 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 19
+
+
+ 560              		.cfi_def_cfa_offset 16
+ 561 0004 00AF     		add	r7, sp, #0
+ 562              		.cfi_def_cfa_register 7
+ 563 0006 7860     		str	r0, [r7, #4]
+ 468:.\Generated_Source\PSoC4/UpDown.c ****     #if(UpDown_UsingFixedFunction)
+ 469:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG16(UpDown_COMPARE_LSB_PTR, (uint16)compare);
+ 470:.\Generated_Source\PSoC4/UpDown.c ****     #else
+ 471:.\Generated_Source\PSoC4/UpDown.c ****         CY_SET_REG32(UpDown_COMPARE_LSB_PTR, compare);
+ 564              		.loc 1 471 0
+ 565 0008 024B     		ldr	r3, .L47
+ 566 000a 7A68     		ldr	r2, [r7, #4]
+ 567 000c 1A60     		str	r2, [r3]
+ 472:.\Generated_Source\PSoC4/UpDown.c ****     #endif /* (UpDown_UsingFixedFunction) */
+ 473:.\Generated_Source\PSoC4/UpDown.c **** }
+ 568              		.loc 1 473 0
+ 569 000e BD46     		mov	sp, r7
+ 570 0010 02B0     		add	sp, sp, #8
+ 571              		@ sp needed
+ 572 0012 80BD     		pop	{r7, pc}
+ 573              	.L48:
+ 574              		.align	2
+ 575              	.L47:
+ 576 0014 C0200F40 		.word	1074733248
+ 577              		.cfi_endproc
+ 578              	.LFE13:
+ 579              		.size	UpDown_WriteCompare, .-UpDown_WriteCompare
+ 580              		.section	.text.UpDown_ReadCompare,"ax",%progbits
+ 581              		.align	2
+ 582              		.global	UpDown_ReadCompare
+ 583              		.code	16
+ 584              		.thumb_func
+ 585              		.type	UpDown_ReadCompare, %function
+ 586              	UpDown_ReadCompare:
+ 587              	.LFB14:
+ 474:.\Generated_Source\PSoC4/UpDown.c **** 
+ 475:.\Generated_Source\PSoC4/UpDown.c **** 
+ 476:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 477:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ReadCompare
+ 478:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 479:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 480:.\Generated_Source\PSoC4/UpDown.c **** * Returns the compare value.
+ 481:.\Generated_Source\PSoC4/UpDown.c **** *
+ 482:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 483:.\Generated_Source\PSoC4/UpDown.c **** *  void:
+ 484:.\Generated_Source\PSoC4/UpDown.c **** *
+ 485:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 486:.\Generated_Source\PSoC4/UpDown.c **** *  (uint32) Present compare value.
+ 487:.\Generated_Source\PSoC4/UpDown.c **** *
+ 488:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 489:.\Generated_Source\PSoC4/UpDown.c **** uint32 UpDown_ReadCompare(void) 
+ 490:.\Generated_Source\PSoC4/UpDown.c **** {
+ 588              		.loc 1 490 0
+ 589              		.cfi_startproc
+ 590 0000 80B5     		push	{r7, lr}
+ 591              		.cfi_def_cfa_offset 8
+ 592              		.cfi_offset 7, -8
+ 593              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 20
+
+
+ 594 0002 00AF     		add	r7, sp, #0
+ 595              		.cfi_def_cfa_register 7
+ 491:.\Generated_Source\PSoC4/UpDown.c ****     return (CY_GET_REG32(UpDown_COMPARE_LSB_PTR));
+ 596              		.loc 1 491 0
+ 597 0004 024B     		ldr	r3, .L51
+ 598 0006 1B68     		ldr	r3, [r3]
+ 492:.\Generated_Source\PSoC4/UpDown.c **** }
+ 599              		.loc 1 492 0
+ 600 0008 181C     		mov	r0, r3
+ 601 000a BD46     		mov	sp, r7
+ 602              		@ sp needed
+ 603 000c 80BD     		pop	{r7, pc}
+ 604              	.L52:
+ 605 000e C046     		.align	2
+ 606              	.L51:
+ 607 0010 C0200F40 		.word	1074733248
+ 608              		.cfi_endproc
+ 609              	.LFE14:
+ 610              		.size	UpDown_ReadCompare, .-UpDown_ReadCompare
+ 611              		.section	.text.UpDown_ClearFIFO,"ax",%progbits
+ 612              		.align	2
+ 613              		.global	UpDown_ClearFIFO
+ 614              		.code	16
+ 615              		.thumb_func
+ 616              		.type	UpDown_ClearFIFO, %function
+ 617              	UpDown_ClearFIFO:
+ 618              	.LFB15:
+ 493:.\Generated_Source\PSoC4/UpDown.c **** 
+ 494:.\Generated_Source\PSoC4/UpDown.c **** 
+ 495:.\Generated_Source\PSoC4/UpDown.c **** #if (UpDown_COMPARE_MODE_SOFTWARE)
+ 496:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 497:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_SetCompareMode
+ 498:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 499:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 500:.\Generated_Source\PSoC4/UpDown.c **** *  Sets the software controlled Compare Mode.
+ 501:.\Generated_Source\PSoC4/UpDown.c **** *
+ 502:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:
+ 503:.\Generated_Source\PSoC4/UpDown.c **** *  compareMode:  Compare Mode Enumerated Type.
+ 504:.\Generated_Source\PSoC4/UpDown.c **** *
+ 505:.\Generated_Source\PSoC4/UpDown.c **** * Return:
+ 506:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 507:.\Generated_Source\PSoC4/UpDown.c **** *
+ 508:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 509:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_SetCompareMode(uint8 compareMode) 
+ 510:.\Generated_Source\PSoC4/UpDown.c **** {
+ 511:.\Generated_Source\PSoC4/UpDown.c ****     /* Clear the compare mode bits in the control register */
+ 512:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_CONTROL &= ((uint8)(~UpDown_CTRL_CMPMODE_MASK));
+ 513:.\Generated_Source\PSoC4/UpDown.c ****     
+ 514:.\Generated_Source\PSoC4/UpDown.c ****     /* Write the new setting */
+ 515:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_CONTROL |= compareMode;
+ 516:.\Generated_Source\PSoC4/UpDown.c **** }
+ 517:.\Generated_Source\PSoC4/UpDown.c **** #endif  /* (UpDown_COMPARE_MODE_SOFTWARE) */
+ 518:.\Generated_Source\PSoC4/UpDown.c **** 
+ 519:.\Generated_Source\PSoC4/UpDown.c **** 
+ 520:.\Generated_Source\PSoC4/UpDown.c **** #if (UpDown_CAPTURE_MODE_SOFTWARE)
+ 521:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 522:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_SetCaptureMode
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 21
+
+
+ 523:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 524:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 525:.\Generated_Source\PSoC4/UpDown.c **** *  Sets the software controlled Capture Mode.
+ 526:.\Generated_Source\PSoC4/UpDown.c **** *
+ 527:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:
+ 528:.\Generated_Source\PSoC4/UpDown.c **** *  captureMode:  Capture Mode Enumerated Type.
+ 529:.\Generated_Source\PSoC4/UpDown.c **** *
+ 530:.\Generated_Source\PSoC4/UpDown.c **** * Return:
+ 531:.\Generated_Source\PSoC4/UpDown.c **** *  void
+ 532:.\Generated_Source\PSoC4/UpDown.c **** *
+ 533:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 534:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_SetCaptureMode(uint8 captureMode) 
+ 535:.\Generated_Source\PSoC4/UpDown.c **** {
+ 536:.\Generated_Source\PSoC4/UpDown.c ****     /* Clear the capture mode bits in the control register */
+ 537:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_CONTROL &= ((uint8)(~UpDown_CTRL_CAPMODE_MASK));
+ 538:.\Generated_Source\PSoC4/UpDown.c ****     
+ 539:.\Generated_Source\PSoC4/UpDown.c ****     /* Write the new setting */
+ 540:.\Generated_Source\PSoC4/UpDown.c ****     UpDown_CONTROL |= ((uint8)((uint8)captureMode << UpDown_CTRL_CAPMODE0_SHIFT));
+ 541:.\Generated_Source\PSoC4/UpDown.c **** }
+ 542:.\Generated_Source\PSoC4/UpDown.c **** #endif  /* (UpDown_CAPTURE_MODE_SOFTWARE) */
+ 543:.\Generated_Source\PSoC4/UpDown.c **** 
+ 544:.\Generated_Source\PSoC4/UpDown.c **** 
+ 545:.\Generated_Source\PSoC4/UpDown.c **** /*******************************************************************************
+ 546:.\Generated_Source\PSoC4/UpDown.c **** * Function Name: UpDown_ClearFIFO
+ 547:.\Generated_Source\PSoC4/UpDown.c **** ********************************************************************************
+ 548:.\Generated_Source\PSoC4/UpDown.c **** * Summary:
+ 549:.\Generated_Source\PSoC4/UpDown.c **** *   This function clears all capture data from the capture FIFO
+ 550:.\Generated_Source\PSoC4/UpDown.c **** *
+ 551:.\Generated_Source\PSoC4/UpDown.c **** * Parameters:  
+ 552:.\Generated_Source\PSoC4/UpDown.c **** *  void:
+ 553:.\Generated_Source\PSoC4/UpDown.c **** *
+ 554:.\Generated_Source\PSoC4/UpDown.c **** * Return: 
+ 555:.\Generated_Source\PSoC4/UpDown.c **** *  None
+ 556:.\Generated_Source\PSoC4/UpDown.c **** *
+ 557:.\Generated_Source\PSoC4/UpDown.c **** *******************************************************************************/
+ 558:.\Generated_Source\PSoC4/UpDown.c **** void UpDown_ClearFIFO(void) 
+ 559:.\Generated_Source\PSoC4/UpDown.c **** {
+ 619              		.loc 1 559 0
+ 620              		.cfi_startproc
+ 621 0000 80B5     		push	{r7, lr}
+ 622              		.cfi_def_cfa_offset 8
+ 623              		.cfi_offset 7, -8
+ 624              		.cfi_offset 14, -4
+ 625 0002 00AF     		add	r7, sp, #0
+ 626              		.cfi_def_cfa_register 7
+ 560:.\Generated_Source\PSoC4/UpDown.c **** 
+ 561:.\Generated_Source\PSoC4/UpDown.c ****     while(0u != (UpDown_ReadStatusRegister() & UpDown_STATUS_FIFONEMP))
+ 627              		.loc 1 561 0
+ 628 0004 01E0     		b	.L54
+ 629              	.L55:
+ 562:.\Generated_Source\PSoC4/UpDown.c ****     {
+ 563:.\Generated_Source\PSoC4/UpDown.c ****         (void)UpDown_ReadCapture();
+ 630              		.loc 1 563 0
+ 631 0006 FFF7FEFF 		bl	UpDown_ReadCapture
+ 632              	.L54:
+ 561:.\Generated_Source\PSoC4/UpDown.c ****     {
+ 633              		.loc 1 561 0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 22
+
+
+ 634 000a FFF7FEFF 		bl	UpDown_ReadStatusRegister
+ 635 000e 031C     		mov	r3, r0
+ 636 0010 1A1C     		mov	r2, r3
+ 637 0012 4023     		mov	r3, #64
+ 638 0014 1340     		and	r3, r2
+ 639 0016 F6D1     		bne	.L55
+ 564:.\Generated_Source\PSoC4/UpDown.c ****     }
+ 565:.\Generated_Source\PSoC4/UpDown.c **** 
+ 566:.\Generated_Source\PSoC4/UpDown.c **** }
+ 640              		.loc 1 566 0
+ 641 0018 BD46     		mov	sp, r7
+ 642              		@ sp needed
+ 643 001a 80BD     		pop	{r7, pc}
+ 644              		.cfi_endproc
+ 645              	.LFE15:
+ 646              		.size	UpDown_ClearFIFO, .-UpDown_ClearFIFO
+ 647              		.text
+ 648              	.Letext0:
+ 649              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 650              		.section	.debug_info,"",%progbits
+ 651              	.Ldebug_info0:
+ 652 0000 82020000 		.4byte	0x282
+ 653 0004 0400     		.2byte	0x4
+ 654 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 655 000a 04       		.byte	0x4
+ 656 000b 01       		.uleb128 0x1
+ 657 000c 28010000 		.4byte	.LASF40
+ 658 0010 01       		.byte	0x1
+ 659 0011 42020000 		.4byte	.LASF41
+ 660 0015 5D000000 		.4byte	.LASF42
+ 661 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 662 001d 00000000 		.4byte	0
+ 663 0021 00000000 		.4byte	.Ldebug_line0
+ 664 0025 02       		.uleb128 0x2
+ 665 0026 01       		.byte	0x1
+ 666 0027 06       		.byte	0x6
+ 667 0028 23030000 		.4byte	.LASF0
+ 668 002c 02       		.uleb128 0x2
+ 669 002d 01       		.byte	0x1
+ 670 002e 08       		.byte	0x8
+ 671 002f B5000000 		.4byte	.LASF1
+ 672 0033 02       		.uleb128 0x2
+ 673 0034 02       		.byte	0x2
+ 674 0035 05       		.byte	0x5
+ 675 0036 B8020000 		.4byte	.LASF2
+ 676 003a 02       		.uleb128 0x2
+ 677 003b 02       		.byte	0x2
+ 678 003c 07       		.byte	0x7
+ 679 003d 37000000 		.4byte	.LASF3
+ 680 0041 02       		.uleb128 0x2
+ 681 0042 04       		.byte	0x4
+ 682 0043 05       		.byte	0x5
+ 683 0044 F5020000 		.4byte	.LASF4
+ 684 0048 02       		.uleb128 0x2
+ 685 0049 04       		.byte	0x4
+ 686 004a 07       		.byte	0x7
+ 687 004b ED000000 		.4byte	.LASF5
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 23
+
+
+ 688 004f 02       		.uleb128 0x2
+ 689 0050 08       		.byte	0x8
+ 690 0051 05       		.byte	0x5
+ 691 0052 98020000 		.4byte	.LASF6
+ 692 0056 02       		.uleb128 0x2
+ 693 0057 08       		.byte	0x8
+ 694 0058 07       		.byte	0x7
+ 695 0059 64020000 		.4byte	.LASF7
+ 696 005d 03       		.uleb128 0x3
+ 697 005e 04       		.byte	0x4
+ 698 005f 05       		.byte	0x5
+ 699 0060 696E7400 		.ascii	"int\000"
+ 700 0064 02       		.uleb128 0x2
+ 701 0065 04       		.byte	0x4
+ 702 0066 07       		.byte	0x7
+ 703 0067 35020000 		.4byte	.LASF8
+ 704 006b 04       		.uleb128 0x4
+ 705 006c FF000000 		.4byte	.LASF9
+ 706 0070 02       		.byte	0x2
+ 707 0071 5B       		.byte	0x5b
+ 708 0072 2C000000 		.4byte	0x2c
+ 709 0076 04       		.uleb128 0x4
+ 710 0077 2E020000 		.4byte	.LASF10
+ 711 007b 02       		.byte	0x2
+ 712 007c 5D       		.byte	0x5d
+ 713 007d 48000000 		.4byte	0x48
+ 714 0081 02       		.uleb128 0x2
+ 715 0082 04       		.byte	0x4
+ 716 0083 04       		.byte	0x4
+ 717 0084 A7000000 		.4byte	.LASF11
+ 718 0088 02       		.uleb128 0x2
+ 719 0089 08       		.byte	0x8
+ 720 008a 04       		.byte	0x4
+ 721 008b 14020000 		.4byte	.LASF12
+ 722 008f 02       		.uleb128 0x2
+ 723 0090 01       		.byte	0x1
+ 724 0091 08       		.byte	0x8
+ 725 0092 A6020000 		.4byte	.LASF13
+ 726 0096 04       		.uleb128 0x4
+ 727 0097 7B020000 		.4byte	.LASF14
+ 728 009b 02       		.byte	0x2
+ 729 009c F0       		.byte	0xf0
+ 730 009d A1000000 		.4byte	0xa1
+ 731 00a1 05       		.uleb128 0x5
+ 732 00a2 6B000000 		.4byte	0x6b
+ 733 00a6 04       		.uleb128 0x4
+ 734 00a7 00000000 		.4byte	.LASF15
+ 735 00ab 02       		.byte	0x2
+ 736 00ac F2       		.byte	0xf2
+ 737 00ad B1000000 		.4byte	0xb1
+ 738 00b1 05       		.uleb128 0x5
+ 739 00b2 76000000 		.4byte	0x76
+ 740 00b6 02       		.uleb128 0x2
+ 741 00b7 04       		.byte	0x4
+ 742 00b8 07       		.byte	0x7
+ 743 00b9 80020000 		.4byte	.LASF16
+ 744 00bd 06       		.uleb128 0x6
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 24
+
+
+ 745 00be 9B000000 		.4byte	.LASF22
+ 746 00c2 01       		.byte	0x1
+ 747 00c3 25       		.byte	0x25
+ 748 00c4 00000000 		.4byte	.LFB0
+ 749 00c8 94000000 		.4byte	.LFE0-.LFB0
+ 750 00cc 01       		.uleb128 0x1
+ 751 00cd 9C       		.byte	0x9c
+ 752 00ce EF000000 		.4byte	0xef
+ 753 00d2 07       		.uleb128 0x7
+ 754 00d3 DD020000 		.4byte	.LASF17
+ 755 00d7 01       		.byte	0x1
+ 756 00d8 28       		.byte	0x28
+ 757 00d9 6B000000 		.4byte	0x6b
+ 758 00dd 02       		.uleb128 0x2
+ 759 00de 91       		.byte	0x91
+ 760 00df 6F       		.sleb128 -17
+ 761 00e0 07       		.uleb128 0x7
+ 762 00e1 D7000000 		.4byte	.LASF18
+ 763 00e5 01       		.byte	0x1
+ 764 00e6 2D       		.byte	0x2d
+ 765 00e7 6B000000 		.4byte	0x6b
+ 766 00eb 02       		.uleb128 0x2
+ 767 00ec 91       		.byte	0x91
+ 768 00ed 6E       		.sleb128 -18
+ 769 00ee 00       		.byte	0
+ 770 00ef 08       		.uleb128 0x8
+ 771 00f0 06000000 		.4byte	.LASF19
+ 772 00f4 01       		.byte	0x1
+ 773 00f5 8F       		.byte	0x8f
+ 774 00f6 00000000 		.4byte	.LFB1
+ 775 00fa 20000000 		.4byte	.LFE1-.LFB1
+ 776 00fe 01       		.uleb128 0x1
+ 777 00ff 9C       		.byte	0x9c
+ 778 0100 09       		.uleb128 0x9
+ 779 0101 AB020000 		.4byte	.LASF20
+ 780 0105 01       		.byte	0x1
+ 781 0106 B2       		.byte	0xb2
+ 782 0107 00000000 		.4byte	.LFB2
+ 783 010b 24000000 		.4byte	.LFE2-.LFB2
+ 784 010f 01       		.uleb128 0x1
+ 785 0110 9C       		.byte	0x9c
+ 786 0111 08       		.uleb128 0x8
+ 787 0112 1C010000 		.4byte	.LASF21
+ 788 0116 01       		.byte	0x1
+ 789 0117 D0       		.byte	0xd0
+ 790 0118 00000000 		.4byte	.LFB3
+ 791 011c 1C000000 		.4byte	.LFE3-.LFB3
+ 792 0120 01       		.uleb128 0x1
+ 793 0121 9C       		.byte	0x9c
+ 794 0122 0A       		.uleb128 0xa
+ 795 0123 83000000 		.4byte	.LASF23
+ 796 0127 01       		.byte	0x1
+ 797 0128 ED       		.byte	0xed
+ 798 0129 00000000 		.4byte	.LFB4
+ 799 012d 20000000 		.4byte	.LFE4-.LFB4
+ 800 0131 01       		.uleb128 0x1
+ 801 0132 9C       		.byte	0x9c
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 25
+
+
+ 802 0133 46010000 		.4byte	0x146
+ 803 0137 0B       		.uleb128 0xb
+ 804 0138 0D010000 		.4byte	.LASF27
+ 805 013c 01       		.byte	0x1
+ 806 013d ED       		.byte	0xed
+ 807 013e 6B000000 		.4byte	0x6b
+ 808 0142 02       		.uleb128 0x2
+ 809 0143 91       		.byte	0x91
+ 810 0144 77       		.sleb128 -9
+ 811 0145 00       		.byte	0
+ 812 0146 0C       		.uleb128 0xc
+ 813 0147 4B030000 		.4byte	.LASF24
+ 814 014b 01       		.byte	0x1
+ 815 014c 0501     		.2byte	0x105
+ 816 014e 6B000000 		.4byte	0x6b
+ 817 0152 00000000 		.4byte	.LFB5
+ 818 0156 14000000 		.4byte	.LFE5-.LFB5
+ 819 015a 01       		.uleb128 0x1
+ 820 015b 9C       		.byte	0x9c
+ 821 015c 0C       		.uleb128 0xc
+ 822 015d C2020000 		.4byte	.LASF25
+ 823 0161 01       		.byte	0x1
+ 824 0162 1B01     		.2byte	0x11b
+ 825 0164 6B000000 		.4byte	0x6b
+ 826 0168 00000000 		.4byte	.LFB6
+ 827 016c 14000000 		.4byte	.LFE6-.LFB6
+ 828 0170 01       		.uleb128 0x1
+ 829 0171 9C       		.byte	0x9c
+ 830 0172 0D       		.uleb128 0xd
+ 831 0173 14000000 		.4byte	.LASF26
+ 832 0177 01       		.byte	0x1
+ 833 0178 3001     		.2byte	0x130
+ 834 017a 00000000 		.4byte	.LFB7
+ 835 017e 20000000 		.4byte	.LFE7-.LFB7
+ 836 0182 01       		.uleb128 0x1
+ 837 0183 9C       		.byte	0x9c
+ 838 0184 98010000 		.4byte	0x198
+ 839 0188 0E       		.uleb128 0xe
+ 840 0189 05010000 		.4byte	.LASF28
+ 841 018d 01       		.byte	0x1
+ 842 018e 3001     		.2byte	0x130
+ 843 0190 6B000000 		.4byte	0x6b
+ 844 0194 02       		.uleb128 0x2
+ 845 0195 91       		.byte	0x91
+ 846 0196 77       		.sleb128 -9
+ 847 0197 00       		.byte	0
+ 848 0198 0D       		.uleb128 0xd
+ 849 0199 C3000000 		.4byte	.LASF29
+ 850 019d 01       		.byte	0x1
+ 851 019e 4601     		.2byte	0x146
+ 852 01a0 00000000 		.4byte	.LFB8
+ 853 01a4 18000000 		.4byte	.LFE8-.LFB8
+ 854 01a8 01       		.uleb128 0x1
+ 855 01a9 9C       		.byte	0x9c
+ 856 01aa BE010000 		.4byte	0x1be
+ 857 01ae 0E       		.uleb128 0xe
+ 858 01af AD000000 		.4byte	.LASF30
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 26
+
+
+ 859 01b3 01       		.byte	0x1
+ 860 01b4 4601     		.2byte	0x146
+ 861 01b6 76000000 		.4byte	0x76
+ 862 01ba 02       		.uleb128 0x2
+ 863 01bb 91       		.byte	0x91
+ 864 01bc 74       		.sleb128 -12
+ 865 01bd 00       		.byte	0
+ 866 01be 0C       		.uleb128 0xc
+ 867 01bf E2020000 		.4byte	.LASF31
+ 868 01c3 01       		.byte	0x1
+ 869 01c4 6501     		.2byte	0x165
+ 870 01c6 76000000 		.4byte	0x76
+ 871 01ca 00000000 		.4byte	.LFB9
+ 872 01ce 1C000000 		.4byte	.LFE9-.LFB9
+ 873 01d2 01       		.uleb128 0x1
+ 874 01d3 9C       		.byte	0x9c
+ 875 01d4 0C       		.uleb128 0xc
+ 876 01d5 FE020000 		.4byte	.LASF32
+ 877 01d9 01       		.byte	0x1
+ 878 01da 8601     		.2byte	0x186
+ 879 01dc 76000000 		.4byte	0x76
+ 880 01e0 00000000 		.4byte	.LFB10
+ 881 01e4 14000000 		.4byte	.LFE10-.LFB10
+ 882 01e8 01       		.uleb128 0x1
+ 883 01e9 9C       		.byte	0x9c
+ 884 01ea 0D       		.uleb128 0xd
+ 885 01eb 4A000000 		.4byte	.LASF33
+ 886 01ef 01       		.byte	0x1
+ 887 01f0 9F01     		.2byte	0x19f
+ 888 01f2 00000000 		.4byte	.LFB11
+ 889 01f6 18000000 		.4byte	.LFE11-.LFB11
+ 890 01fa 01       		.uleb128 0x1
+ 891 01fb 9C       		.byte	0x9c
+ 892 01fc 10020000 		.4byte	0x210
+ 893 0200 0E       		.uleb128 0xe
+ 894 0201 30000000 		.4byte	.LASF34
+ 895 0205 01       		.byte	0x1
+ 896 0206 9F01     		.2byte	0x19f
+ 897 0208 76000000 		.4byte	0x76
+ 898 020c 02       		.uleb128 0x2
+ 899 020d 91       		.byte	0x91
+ 900 020e 74       		.sleb128 -12
+ 901 020f 00       		.byte	0
+ 902 0210 0C       		.uleb128 0xc
+ 903 0211 11030000 		.4byte	.LASF35
+ 904 0215 01       		.byte	0x1
+ 905 0216 B601     		.2byte	0x1b6
+ 906 0218 76000000 		.4byte	0x76
+ 907 021c 00000000 		.4byte	.LFB12
+ 908 0220 14000000 		.4byte	.LFE12-.LFB12
+ 909 0224 01       		.uleb128 0x1
+ 910 0225 9C       		.byte	0x9c
+ 911 0226 0D       		.uleb128 0xd
+ 912 0227 37030000 		.4byte	.LASF36
+ 913 022b 01       		.byte	0x1
+ 914 022c D101     		.2byte	0x1d1
+ 915 022e 00000000 		.4byte	.LFB13
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 27
+
+
+ 916 0232 18000000 		.4byte	.LFE13-.LFB13
+ 917 0236 01       		.uleb128 0x1
+ 918 0237 9C       		.byte	0x9c
+ 919 0238 4C020000 		.4byte	0x24c
+ 920 023c 0E       		.uleb128 0xe
+ 921 023d 2F030000 		.4byte	.LASF37
+ 922 0241 01       		.byte	0x1
+ 923 0242 D101     		.2byte	0x1d1
+ 924 0244 76000000 		.4byte	0x76
+ 925 0248 02       		.uleb128 0x2
+ 926 0249 91       		.byte	0x91
+ 927 024a 74       		.sleb128 -12
+ 928 024b 00       		.byte	0
+ 929 024c 0C       		.uleb128 0xc
+ 930 024d 1B020000 		.4byte	.LASF38
+ 931 0251 01       		.byte	0x1
+ 932 0252 E901     		.2byte	0x1e9
+ 933 0254 76000000 		.4byte	0x76
+ 934 0258 00000000 		.4byte	.LFB14
+ 935 025c 14000000 		.4byte	.LFE14-.LFB14
+ 936 0260 01       		.uleb128 0x1
+ 937 0261 9C       		.byte	0x9c
+ 938 0262 0F       		.uleb128 0xf
+ 939 0263 03020000 		.4byte	.LASF39
+ 940 0267 01       		.byte	0x1
+ 941 0268 2E02     		.2byte	0x22e
+ 942 026a 00000000 		.4byte	.LFB15
+ 943 026e 1C000000 		.4byte	.LFE15-.LFB15
+ 944 0272 01       		.uleb128 0x1
+ 945 0273 9C       		.byte	0x9c
+ 946 0274 10       		.uleb128 0x10
+ 947 0275 89020000 		.4byte	.LASF43
+ 948 0279 01       		.byte	0x1
+ 949 027a 15       		.byte	0x15
+ 950 027b 6B000000 		.4byte	0x6b
+ 951 027f 05       		.uleb128 0x5
+ 952 0280 03       		.byte	0x3
+ 953 0281 00000000 		.4byte	UpDown_initVar
+ 954 0285 00       		.byte	0
+ 955              		.section	.debug_abbrev,"",%progbits
+ 956              	.Ldebug_abbrev0:
+ 957 0000 01       		.uleb128 0x1
+ 958 0001 11       		.uleb128 0x11
+ 959 0002 01       		.byte	0x1
+ 960 0003 25       		.uleb128 0x25
+ 961 0004 0E       		.uleb128 0xe
+ 962 0005 13       		.uleb128 0x13
+ 963 0006 0B       		.uleb128 0xb
+ 964 0007 03       		.uleb128 0x3
+ 965 0008 0E       		.uleb128 0xe
+ 966 0009 1B       		.uleb128 0x1b
+ 967 000a 0E       		.uleb128 0xe
+ 968 000b 55       		.uleb128 0x55
+ 969 000c 17       		.uleb128 0x17
+ 970 000d 11       		.uleb128 0x11
+ 971 000e 01       		.uleb128 0x1
+ 972 000f 10       		.uleb128 0x10
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 28
+
+
+ 973 0010 17       		.uleb128 0x17
+ 974 0011 00       		.byte	0
+ 975 0012 00       		.byte	0
+ 976 0013 02       		.uleb128 0x2
+ 977 0014 24       		.uleb128 0x24
+ 978 0015 00       		.byte	0
+ 979 0016 0B       		.uleb128 0xb
+ 980 0017 0B       		.uleb128 0xb
+ 981 0018 3E       		.uleb128 0x3e
+ 982 0019 0B       		.uleb128 0xb
+ 983 001a 03       		.uleb128 0x3
+ 984 001b 0E       		.uleb128 0xe
+ 985 001c 00       		.byte	0
+ 986 001d 00       		.byte	0
+ 987 001e 03       		.uleb128 0x3
+ 988 001f 24       		.uleb128 0x24
+ 989 0020 00       		.byte	0
+ 990 0021 0B       		.uleb128 0xb
+ 991 0022 0B       		.uleb128 0xb
+ 992 0023 3E       		.uleb128 0x3e
+ 993 0024 0B       		.uleb128 0xb
+ 994 0025 03       		.uleb128 0x3
+ 995 0026 08       		.uleb128 0x8
+ 996 0027 00       		.byte	0
+ 997 0028 00       		.byte	0
+ 998 0029 04       		.uleb128 0x4
+ 999 002a 16       		.uleb128 0x16
+ 1000 002b 00       		.byte	0
+ 1001 002c 03       		.uleb128 0x3
+ 1002 002d 0E       		.uleb128 0xe
+ 1003 002e 3A       		.uleb128 0x3a
+ 1004 002f 0B       		.uleb128 0xb
+ 1005 0030 3B       		.uleb128 0x3b
+ 1006 0031 0B       		.uleb128 0xb
+ 1007 0032 49       		.uleb128 0x49
+ 1008 0033 13       		.uleb128 0x13
+ 1009 0034 00       		.byte	0
+ 1010 0035 00       		.byte	0
+ 1011 0036 05       		.uleb128 0x5
+ 1012 0037 35       		.uleb128 0x35
+ 1013 0038 00       		.byte	0
+ 1014 0039 49       		.uleb128 0x49
+ 1015 003a 13       		.uleb128 0x13
+ 1016 003b 00       		.byte	0
+ 1017 003c 00       		.byte	0
+ 1018 003d 06       		.uleb128 0x6
+ 1019 003e 2E       		.uleb128 0x2e
+ 1020 003f 01       		.byte	0x1
+ 1021 0040 3F       		.uleb128 0x3f
+ 1022 0041 19       		.uleb128 0x19
+ 1023 0042 03       		.uleb128 0x3
+ 1024 0043 0E       		.uleb128 0xe
+ 1025 0044 3A       		.uleb128 0x3a
+ 1026 0045 0B       		.uleb128 0xb
+ 1027 0046 3B       		.uleb128 0x3b
+ 1028 0047 0B       		.uleb128 0xb
+ 1029 0048 27       		.uleb128 0x27
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 29
+
+
+ 1030 0049 19       		.uleb128 0x19
+ 1031 004a 11       		.uleb128 0x11
+ 1032 004b 01       		.uleb128 0x1
+ 1033 004c 12       		.uleb128 0x12
+ 1034 004d 06       		.uleb128 0x6
+ 1035 004e 40       		.uleb128 0x40
+ 1036 004f 18       		.uleb128 0x18
+ 1037 0050 9642     		.uleb128 0x2116
+ 1038 0052 19       		.uleb128 0x19
+ 1039 0053 01       		.uleb128 0x1
+ 1040 0054 13       		.uleb128 0x13
+ 1041 0055 00       		.byte	0
+ 1042 0056 00       		.byte	0
+ 1043 0057 07       		.uleb128 0x7
+ 1044 0058 34       		.uleb128 0x34
+ 1045 0059 00       		.byte	0
+ 1046 005a 03       		.uleb128 0x3
+ 1047 005b 0E       		.uleb128 0xe
+ 1048 005c 3A       		.uleb128 0x3a
+ 1049 005d 0B       		.uleb128 0xb
+ 1050 005e 3B       		.uleb128 0x3b
+ 1051 005f 0B       		.uleb128 0xb
+ 1052 0060 49       		.uleb128 0x49
+ 1053 0061 13       		.uleb128 0x13
+ 1054 0062 02       		.uleb128 0x2
+ 1055 0063 18       		.uleb128 0x18
+ 1056 0064 00       		.byte	0
+ 1057 0065 00       		.byte	0
+ 1058 0066 08       		.uleb128 0x8
+ 1059 0067 2E       		.uleb128 0x2e
+ 1060 0068 00       		.byte	0
+ 1061 0069 3F       		.uleb128 0x3f
+ 1062 006a 19       		.uleb128 0x19
+ 1063 006b 03       		.uleb128 0x3
+ 1064 006c 0E       		.uleb128 0xe
+ 1065 006d 3A       		.uleb128 0x3a
+ 1066 006e 0B       		.uleb128 0xb
+ 1067 006f 3B       		.uleb128 0x3b
+ 1068 0070 0B       		.uleb128 0xb
+ 1069 0071 27       		.uleb128 0x27
+ 1070 0072 19       		.uleb128 0x19
+ 1071 0073 11       		.uleb128 0x11
+ 1072 0074 01       		.uleb128 0x1
+ 1073 0075 12       		.uleb128 0x12
+ 1074 0076 06       		.uleb128 0x6
+ 1075 0077 40       		.uleb128 0x40
+ 1076 0078 18       		.uleb128 0x18
+ 1077 0079 9742     		.uleb128 0x2117
+ 1078 007b 19       		.uleb128 0x19
+ 1079 007c 00       		.byte	0
+ 1080 007d 00       		.byte	0
+ 1081 007e 09       		.uleb128 0x9
+ 1082 007f 2E       		.uleb128 0x2e
+ 1083 0080 00       		.byte	0
+ 1084 0081 3F       		.uleb128 0x3f
+ 1085 0082 19       		.uleb128 0x19
+ 1086 0083 03       		.uleb128 0x3
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 30
+
+
+ 1087 0084 0E       		.uleb128 0xe
+ 1088 0085 3A       		.uleb128 0x3a
+ 1089 0086 0B       		.uleb128 0xb
+ 1090 0087 3B       		.uleb128 0x3b
+ 1091 0088 0B       		.uleb128 0xb
+ 1092 0089 27       		.uleb128 0x27
+ 1093 008a 19       		.uleb128 0x19
+ 1094 008b 11       		.uleb128 0x11
+ 1095 008c 01       		.uleb128 0x1
+ 1096 008d 12       		.uleb128 0x12
+ 1097 008e 06       		.uleb128 0x6
+ 1098 008f 40       		.uleb128 0x40
+ 1099 0090 18       		.uleb128 0x18
+ 1100 0091 9642     		.uleb128 0x2116
+ 1101 0093 19       		.uleb128 0x19
+ 1102 0094 00       		.byte	0
+ 1103 0095 00       		.byte	0
+ 1104 0096 0A       		.uleb128 0xa
+ 1105 0097 2E       		.uleb128 0x2e
+ 1106 0098 01       		.byte	0x1
+ 1107 0099 3F       		.uleb128 0x3f
+ 1108 009a 19       		.uleb128 0x19
+ 1109 009b 03       		.uleb128 0x3
+ 1110 009c 0E       		.uleb128 0xe
+ 1111 009d 3A       		.uleb128 0x3a
+ 1112 009e 0B       		.uleb128 0xb
+ 1113 009f 3B       		.uleb128 0x3b
+ 1114 00a0 0B       		.uleb128 0xb
+ 1115 00a1 27       		.uleb128 0x27
+ 1116 00a2 19       		.uleb128 0x19
+ 1117 00a3 11       		.uleb128 0x11
+ 1118 00a4 01       		.uleb128 0x1
+ 1119 00a5 12       		.uleb128 0x12
+ 1120 00a6 06       		.uleb128 0x6
+ 1121 00a7 40       		.uleb128 0x40
+ 1122 00a8 18       		.uleb128 0x18
+ 1123 00a9 9742     		.uleb128 0x2117
+ 1124 00ab 19       		.uleb128 0x19
+ 1125 00ac 01       		.uleb128 0x1
+ 1126 00ad 13       		.uleb128 0x13
+ 1127 00ae 00       		.byte	0
+ 1128 00af 00       		.byte	0
+ 1129 00b0 0B       		.uleb128 0xb
+ 1130 00b1 05       		.uleb128 0x5
+ 1131 00b2 00       		.byte	0
+ 1132 00b3 03       		.uleb128 0x3
+ 1133 00b4 0E       		.uleb128 0xe
+ 1134 00b5 3A       		.uleb128 0x3a
+ 1135 00b6 0B       		.uleb128 0xb
+ 1136 00b7 3B       		.uleb128 0x3b
+ 1137 00b8 0B       		.uleb128 0xb
+ 1138 00b9 49       		.uleb128 0x49
+ 1139 00ba 13       		.uleb128 0x13
+ 1140 00bb 02       		.uleb128 0x2
+ 1141 00bc 18       		.uleb128 0x18
+ 1142 00bd 00       		.byte	0
+ 1143 00be 00       		.byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 31
+
+
+ 1144 00bf 0C       		.uleb128 0xc
+ 1145 00c0 2E       		.uleb128 0x2e
+ 1146 00c1 00       		.byte	0
+ 1147 00c2 3F       		.uleb128 0x3f
+ 1148 00c3 19       		.uleb128 0x19
+ 1149 00c4 03       		.uleb128 0x3
+ 1150 00c5 0E       		.uleb128 0xe
+ 1151 00c6 3A       		.uleb128 0x3a
+ 1152 00c7 0B       		.uleb128 0xb
+ 1153 00c8 3B       		.uleb128 0x3b
+ 1154 00c9 05       		.uleb128 0x5
+ 1155 00ca 27       		.uleb128 0x27
+ 1156 00cb 19       		.uleb128 0x19
+ 1157 00cc 49       		.uleb128 0x49
+ 1158 00cd 13       		.uleb128 0x13
+ 1159 00ce 11       		.uleb128 0x11
+ 1160 00cf 01       		.uleb128 0x1
+ 1161 00d0 12       		.uleb128 0x12
+ 1162 00d1 06       		.uleb128 0x6
+ 1163 00d2 40       		.uleb128 0x40
+ 1164 00d3 18       		.uleb128 0x18
+ 1165 00d4 9742     		.uleb128 0x2117
+ 1166 00d6 19       		.uleb128 0x19
+ 1167 00d7 00       		.byte	0
+ 1168 00d8 00       		.byte	0
+ 1169 00d9 0D       		.uleb128 0xd
+ 1170 00da 2E       		.uleb128 0x2e
+ 1171 00db 01       		.byte	0x1
+ 1172 00dc 3F       		.uleb128 0x3f
+ 1173 00dd 19       		.uleb128 0x19
+ 1174 00de 03       		.uleb128 0x3
+ 1175 00df 0E       		.uleb128 0xe
+ 1176 00e0 3A       		.uleb128 0x3a
+ 1177 00e1 0B       		.uleb128 0xb
+ 1178 00e2 3B       		.uleb128 0x3b
+ 1179 00e3 05       		.uleb128 0x5
+ 1180 00e4 27       		.uleb128 0x27
+ 1181 00e5 19       		.uleb128 0x19
+ 1182 00e6 11       		.uleb128 0x11
+ 1183 00e7 01       		.uleb128 0x1
+ 1184 00e8 12       		.uleb128 0x12
+ 1185 00e9 06       		.uleb128 0x6
+ 1186 00ea 40       		.uleb128 0x40
+ 1187 00eb 18       		.uleb128 0x18
+ 1188 00ec 9742     		.uleb128 0x2117
+ 1189 00ee 19       		.uleb128 0x19
+ 1190 00ef 01       		.uleb128 0x1
+ 1191 00f0 13       		.uleb128 0x13
+ 1192 00f1 00       		.byte	0
+ 1193 00f2 00       		.byte	0
+ 1194 00f3 0E       		.uleb128 0xe
+ 1195 00f4 05       		.uleb128 0x5
+ 1196 00f5 00       		.byte	0
+ 1197 00f6 03       		.uleb128 0x3
+ 1198 00f7 0E       		.uleb128 0xe
+ 1199 00f8 3A       		.uleb128 0x3a
+ 1200 00f9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 32
+
+
+ 1201 00fa 3B       		.uleb128 0x3b
+ 1202 00fb 05       		.uleb128 0x5
+ 1203 00fc 49       		.uleb128 0x49
+ 1204 00fd 13       		.uleb128 0x13
+ 1205 00fe 02       		.uleb128 0x2
+ 1206 00ff 18       		.uleb128 0x18
+ 1207 0100 00       		.byte	0
+ 1208 0101 00       		.byte	0
+ 1209 0102 0F       		.uleb128 0xf
+ 1210 0103 2E       		.uleb128 0x2e
+ 1211 0104 00       		.byte	0
+ 1212 0105 3F       		.uleb128 0x3f
+ 1213 0106 19       		.uleb128 0x19
+ 1214 0107 03       		.uleb128 0x3
+ 1215 0108 0E       		.uleb128 0xe
+ 1216 0109 3A       		.uleb128 0x3a
+ 1217 010a 0B       		.uleb128 0xb
+ 1218 010b 3B       		.uleb128 0x3b
+ 1219 010c 05       		.uleb128 0x5
+ 1220 010d 27       		.uleb128 0x27
+ 1221 010e 19       		.uleb128 0x19
+ 1222 010f 11       		.uleb128 0x11
+ 1223 0110 01       		.uleb128 0x1
+ 1224 0111 12       		.uleb128 0x12
+ 1225 0112 06       		.uleb128 0x6
+ 1226 0113 40       		.uleb128 0x40
+ 1227 0114 18       		.uleb128 0x18
+ 1228 0115 9642     		.uleb128 0x2116
+ 1229 0117 19       		.uleb128 0x19
+ 1230 0118 00       		.byte	0
+ 1231 0119 00       		.byte	0
+ 1232 011a 10       		.uleb128 0x10
+ 1233 011b 34       		.uleb128 0x34
+ 1234 011c 00       		.byte	0
+ 1235 011d 03       		.uleb128 0x3
+ 1236 011e 0E       		.uleb128 0xe
+ 1237 011f 3A       		.uleb128 0x3a
+ 1238 0120 0B       		.uleb128 0xb
+ 1239 0121 3B       		.uleb128 0x3b
+ 1240 0122 0B       		.uleb128 0xb
+ 1241 0123 49       		.uleb128 0x49
+ 1242 0124 13       		.uleb128 0x13
+ 1243 0125 3F       		.uleb128 0x3f
+ 1244 0126 19       		.uleb128 0x19
+ 1245 0127 02       		.uleb128 0x2
+ 1246 0128 18       		.uleb128 0x18
+ 1247 0129 00       		.byte	0
+ 1248 012a 00       		.byte	0
+ 1249 012b 00       		.byte	0
+ 1250              		.section	.debug_aranges,"",%progbits
+ 1251 0000 94000000 		.4byte	0x94
+ 1252 0004 0200     		.2byte	0x2
+ 1253 0006 00000000 		.4byte	.Ldebug_info0
+ 1254 000a 04       		.byte	0x4
+ 1255 000b 00       		.byte	0
+ 1256 000c 0000     		.2byte	0
+ 1257 000e 0000     		.2byte	0
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 33
+
+
+ 1258 0010 00000000 		.4byte	.LFB0
+ 1259 0014 94000000 		.4byte	.LFE0-.LFB0
+ 1260 0018 00000000 		.4byte	.LFB1
+ 1261 001c 20000000 		.4byte	.LFE1-.LFB1
+ 1262 0020 00000000 		.4byte	.LFB2
+ 1263 0024 24000000 		.4byte	.LFE2-.LFB2
+ 1264 0028 00000000 		.4byte	.LFB3
+ 1265 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 1266 0030 00000000 		.4byte	.LFB4
+ 1267 0034 20000000 		.4byte	.LFE4-.LFB4
+ 1268 0038 00000000 		.4byte	.LFB5
+ 1269 003c 14000000 		.4byte	.LFE5-.LFB5
+ 1270 0040 00000000 		.4byte	.LFB6
+ 1271 0044 14000000 		.4byte	.LFE6-.LFB6
+ 1272 0048 00000000 		.4byte	.LFB7
+ 1273 004c 20000000 		.4byte	.LFE7-.LFB7
+ 1274 0050 00000000 		.4byte	.LFB8
+ 1275 0054 18000000 		.4byte	.LFE8-.LFB8
+ 1276 0058 00000000 		.4byte	.LFB9
+ 1277 005c 1C000000 		.4byte	.LFE9-.LFB9
+ 1278 0060 00000000 		.4byte	.LFB10
+ 1279 0064 14000000 		.4byte	.LFE10-.LFB10
+ 1280 0068 00000000 		.4byte	.LFB11
+ 1281 006c 18000000 		.4byte	.LFE11-.LFB11
+ 1282 0070 00000000 		.4byte	.LFB12
+ 1283 0074 14000000 		.4byte	.LFE12-.LFB12
+ 1284 0078 00000000 		.4byte	.LFB13
+ 1285 007c 18000000 		.4byte	.LFE13-.LFB13
+ 1286 0080 00000000 		.4byte	.LFB14
+ 1287 0084 14000000 		.4byte	.LFE14-.LFB14
+ 1288 0088 00000000 		.4byte	.LFB15
+ 1289 008c 1C000000 		.4byte	.LFE15-.LFB15
+ 1290 0090 00000000 		.4byte	0
+ 1291 0094 00000000 		.4byte	0
+ 1292              		.section	.debug_ranges,"",%progbits
+ 1293              	.Ldebug_ranges0:
+ 1294 0000 00000000 		.4byte	.LFB0
+ 1295 0004 94000000 		.4byte	.LFE0
+ 1296 0008 00000000 		.4byte	.LFB1
+ 1297 000c 20000000 		.4byte	.LFE1
+ 1298 0010 00000000 		.4byte	.LFB2
+ 1299 0014 24000000 		.4byte	.LFE2
+ 1300 0018 00000000 		.4byte	.LFB3
+ 1301 001c 1C000000 		.4byte	.LFE3
+ 1302 0020 00000000 		.4byte	.LFB4
+ 1303 0024 20000000 		.4byte	.LFE4
+ 1304 0028 00000000 		.4byte	.LFB5
+ 1305 002c 14000000 		.4byte	.LFE5
+ 1306 0030 00000000 		.4byte	.LFB6
+ 1307 0034 14000000 		.4byte	.LFE6
+ 1308 0038 00000000 		.4byte	.LFB7
+ 1309 003c 20000000 		.4byte	.LFE7
+ 1310 0040 00000000 		.4byte	.LFB8
+ 1311 0044 18000000 		.4byte	.LFE8
+ 1312 0048 00000000 		.4byte	.LFB9
+ 1313 004c 1C000000 		.4byte	.LFE9
+ 1314 0050 00000000 		.4byte	.LFB10
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 34
+
+
+ 1315 0054 14000000 		.4byte	.LFE10
+ 1316 0058 00000000 		.4byte	.LFB11
+ 1317 005c 18000000 		.4byte	.LFE11
+ 1318 0060 00000000 		.4byte	.LFB12
+ 1319 0064 14000000 		.4byte	.LFE12
+ 1320 0068 00000000 		.4byte	.LFB13
+ 1321 006c 18000000 		.4byte	.LFE13
+ 1322 0070 00000000 		.4byte	.LFB14
+ 1323 0074 14000000 		.4byte	.LFE14
+ 1324 0078 00000000 		.4byte	.LFB15
+ 1325 007c 1C000000 		.4byte	.LFE15
+ 1326 0080 00000000 		.4byte	0
+ 1327 0084 00000000 		.4byte	0
+ 1328              		.section	.debug_line,"",%progbits
+ 1329              	.Ldebug_line0:
+ 1330 0000 82010000 		.section	.debug_str,"MS",%progbits,1
+ 1330      02004500 
+ 1330      00000201 
+ 1330      FB0E0D00 
+ 1330      01010101 
+ 1331              	.LASF15:
+ 1332 0000 72656733 		.ascii	"reg32\000"
+ 1332      3200
+ 1333              	.LASF19:
+ 1334 0006 5570446F 		.ascii	"UpDown_Enable\000"
+ 1334      776E5F45 
+ 1334      6E61626C 
+ 1334      6500
+ 1335              	.LASF26:
+ 1336 0014 5570446F 		.ascii	"UpDown_WriteControlRegister\000"
+ 1336      776E5F57 
+ 1336      72697465 
+ 1336      436F6E74 
+ 1336      726F6C52 
+ 1337              	.LASF34:
+ 1338 0030 70657269 		.ascii	"period\000"
+ 1338      6F6400
+ 1339              	.LASF3:
+ 1340 0037 73686F72 		.ascii	"short unsigned int\000"
+ 1340      7420756E 
+ 1340      7369676E 
+ 1340      65642069 
+ 1340      6E7400
+ 1341              	.LASF33:
+ 1342 004a 5570446F 		.ascii	"UpDown_WritePeriod\000"
+ 1342      776E5F57 
+ 1342      72697465 
+ 1342      50657269 
+ 1342      6F6400
+ 1343              	.LASF42:
+ 1344 005d 453A5C50 		.ascii	"E:\\PSoC\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 1344      536F435C 
+ 1344      526F734F 
+ 1344      6E415374 
+ 1344      69636B5C 
+ 1345              	.LASF23:
+ 1346 0083 5570446F 		.ascii	"UpDown_SetInterruptMode\000"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 35
+
+
+ 1346      776E5F53 
+ 1346      6574496E 
+ 1346      74657272 
+ 1346      7570744D 
+ 1347              	.LASF22:
+ 1348 009b 5570446F 		.ascii	"UpDown_Init\000"
+ 1348      776E5F49 
+ 1348      6E697400 
+ 1349              	.LASF11:
+ 1350 00a7 666C6F61 		.ascii	"float\000"
+ 1350      7400
+ 1351              	.LASF30:
+ 1352 00ad 636F756E 		.ascii	"counter\000"
+ 1352      74657200 
+ 1353              	.LASF1:
+ 1354 00b5 756E7369 		.ascii	"unsigned char\000"
+ 1354      676E6564 
+ 1354      20636861 
+ 1354      7200
+ 1355              	.LASF29:
+ 1356 00c3 5570446F 		.ascii	"UpDown_WriteCounter\000"
+ 1356      776E5F57 
+ 1356      72697465 
+ 1356      436F756E 
+ 1356      74657200 
+ 1357              	.LASF18:
+ 1358 00d7 5570446F 		.ascii	"UpDown_interruptState\000"
+ 1358      776E5F69 
+ 1358      6E746572 
+ 1358      72757074 
+ 1358      53746174 
+ 1359              	.LASF5:
+ 1360 00ed 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1360      20756E73 
+ 1360      69676E65 
+ 1360      6420696E 
+ 1360      7400
+ 1361              	.LASF9:
+ 1362 00ff 75696E74 		.ascii	"uint8\000"
+ 1362      3800
+ 1363              	.LASF28:
+ 1364 0105 636F6E74 		.ascii	"control\000"
+ 1364      726F6C00 
+ 1365              	.LASF27:
+ 1366 010d 696E7465 		.ascii	"interruptsMask\000"
+ 1366      72727570 
+ 1366      74734D61 
+ 1366      736B00
+ 1367              	.LASF21:
+ 1368 011c 5570446F 		.ascii	"UpDown_Stop\000"
+ 1368      776E5F53 
+ 1368      746F7000 
+ 1369              	.LASF40:
+ 1370 0128 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1370      4320342E 
+ 1370      392E3320 
+ 1370      32303135 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 36
+
+
+ 1370      30333033 
+ 1371 015b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1371      20726576 
+ 1371      6973696F 
+ 1371      6E203232 
+ 1371      31323230 
+ 1372 018e 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects -fno-rtti -"
+ 1372      66756E63 
+ 1372      74696F6E 
+ 1372      2D736563 
+ 1372      74696F6E 
+ 1373 01c1 666E6F2D 		.ascii	"fno-exceptions -funsigned-char -funsigned-bitfields"
+ 1373      65786365 
+ 1373      7074696F 
+ 1373      6E73202D 
+ 1373      66756E73 
+ 1374 01f4 202D6673 		.ascii	" -fshort-enums\000"
+ 1374      686F7274 
+ 1374      2D656E75 
+ 1374      6D7300
+ 1375              	.LASF39:
+ 1376 0203 5570446F 		.ascii	"UpDown_ClearFIFO\000"
+ 1376      776E5F43 
+ 1376      6C656172 
+ 1376      4649464F 
+ 1376      00
+ 1377              	.LASF12:
+ 1378 0214 646F7562 		.ascii	"double\000"
+ 1378      6C6500
+ 1379              	.LASF38:
+ 1380 021b 5570446F 		.ascii	"UpDown_ReadCompare\000"
+ 1380      776E5F52 
+ 1380      65616443 
+ 1380      6F6D7061 
+ 1380      726500
+ 1381              	.LASF10:
+ 1382 022e 75696E74 		.ascii	"uint32\000"
+ 1382      333200
+ 1383              	.LASF8:
+ 1384 0235 756E7369 		.ascii	"unsigned int\000"
+ 1384      676E6564 
+ 1384      20696E74 
+ 1384      00
+ 1385              	.LASF41:
+ 1386 0242 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UpDown.c\000"
+ 1386      6E657261 
+ 1386      7465645F 
+ 1386      536F7572 
+ 1386      63655C50 
+ 1387              	.LASF7:
+ 1388 0264 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1388      206C6F6E 
+ 1388      6720756E 
+ 1388      7369676E 
+ 1388      65642069 
+ 1389              	.LASF14:
+ 1390 027b 72656738 		.ascii	"reg8\000"
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 37
+
+
+ 1390      00
+ 1391              	.LASF16:
+ 1392 0280 73697A65 		.ascii	"sizetype\000"
+ 1392      74797065 
+ 1392      00
+ 1393              	.LASF43:
+ 1394 0289 5570446F 		.ascii	"UpDown_initVar\000"
+ 1394      776E5F69 
+ 1394      6E697456 
+ 1394      617200
+ 1395              	.LASF6:
+ 1396 0298 6C6F6E67 		.ascii	"long long int\000"
+ 1396      206C6F6E 
+ 1396      6720696E 
+ 1396      7400
+ 1397              	.LASF13:
+ 1398 02a6 63686172 		.ascii	"char\000"
+ 1398      00
+ 1399              	.LASF20:
+ 1400 02ab 5570446F 		.ascii	"UpDown_Start\000"
+ 1400      776E5F53 
+ 1400      74617274 
+ 1400      00
+ 1401              	.LASF2:
+ 1402 02b8 73686F72 		.ascii	"short int\000"
+ 1402      7420696E 
+ 1402      7400
+ 1403              	.LASF25:
+ 1404 02c2 5570446F 		.ascii	"UpDown_ReadControlRegister\000"
+ 1404      776E5F52 
+ 1404      65616443 
+ 1404      6F6E7472 
+ 1404      6F6C5265 
+ 1405              	.LASF17:
+ 1406 02dd 6374726C 		.ascii	"ctrl\000"
+ 1406      00
+ 1407              	.LASF31:
+ 1408 02e2 5570446F 		.ascii	"UpDown_ReadCounter\000"
+ 1408      776E5F52 
+ 1408      65616443 
+ 1408      6F756E74 
+ 1408      657200
+ 1409              	.LASF4:
+ 1410 02f5 6C6F6E67 		.ascii	"long int\000"
+ 1410      20696E74 
+ 1410      00
+ 1411              	.LASF32:
+ 1412 02fe 5570446F 		.ascii	"UpDown_ReadCapture\000"
+ 1412      776E5F52 
+ 1412      65616443 
+ 1412      61707475 
+ 1412      726500
+ 1413              	.LASF35:
+ 1414 0311 5570446F 		.ascii	"UpDown_ReadPeriod\000"
+ 1414      776E5F52 
+ 1414      65616450 
+ 1414      6572696F 
+ARM GAS  C:\Users\Chuck\AppData\Local\Temp\ccAWgth2.s 			page 38
+
+
+ 1414      6400
+ 1415              	.LASF0:
+ 1416 0323 7369676E 		.ascii	"signed char\000"
+ 1416      65642063 
+ 1416      68617200 
+ 1417              	.LASF37:
+ 1418 032f 636F6D70 		.ascii	"compare\000"
+ 1418      61726500 
+ 1419              	.LASF36:
+ 1420 0337 5570446F 		.ascii	"UpDown_WriteCompare\000"
+ 1420      776E5F57 
+ 1420      72697465 
+ 1420      436F6D70 
+ 1420      61726500 
+ 1421              	.LASF24:
+ 1422 034b 5570446F 		.ascii	"UpDown_ReadStatusRegister\000"
+ 1422      776E5F52 
+ 1422      65616453 
+ 1422      74617475 
+ 1422      73526567 
+ 1423              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

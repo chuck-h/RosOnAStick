@@ -1,0 +1,210 @@
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccLhc80a.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"cxxabi-compat.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.__cxa_pure_virtual,"ax",%progbits
+  18              		.align	2
+  19              		.global	__cxa_pure_virtual
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	__cxa_pure_virtual, %function
+  23              	__cxa_pure_virtual:
+  24              	.LFB0:
+  25              		.file 1 ".\\ros_lib\\cxxabi-compat.cpp"
+   1:.\ros_lib/cxxabi-compat.cpp **** 
+   2:.\ros_lib/cxxabi-compat.cpp **** extern "C" void __cxa_pure_virtual(void) ;
+   3:.\ros_lib/cxxabi-compat.cpp **** 
+   4:.\ros_lib/cxxabi-compat.cpp **** extern "C" void __cxa_pure_virtual(void) {
+  26              		.loc 1 4 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  36              	.L2:
+   5:.\ros_lib/cxxabi-compat.cpp ****     while(1)
+  37              		.loc 1 5 0 discriminator 1
+  38 0004 FEE7     		b	.L2
+  39              		.cfi_endproc
+  40              	.LFE0:
+  41              		.size	__cxa_pure_virtual, .-__cxa_pure_virtual
+  42 0006 C046     		.text
+  43              	.Letext0:
+  44              		.section	.debug_info,"",%progbits
+  45              	.Ldebug_info0:
+  46 0000 3B000000 		.4byte	0x3b
+  47 0004 0200     		.2byte	0x2
+  48 0006 00000000 		.4byte	.Ldebug_abbrev0
+  49 000a 04       		.byte	0x4
+  50 000b 01       		.uleb128 0x1
+  51 000c 87000000 		.4byte	.LASF0
+  52 0010 04       		.byte	0x4
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccLhc80a.s 			page 2
+
+
+  53 0011 6B000000 		.4byte	.LASF1
+  54 0015 00000000 		.4byte	.LASF2
+  55 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  56 001d 00000000 		.4byte	0
+  57 0021 00000000 		.4byte	0
+  58 0025 00000000 		.4byte	.Ldebug_line0
+  59 0029 02       		.uleb128 0x2
+  60 002a 01       		.byte	0x1
+  61 002b 58000000 		.4byte	.LASF3
+  62 002f 01       		.byte	0x1
+  63 0030 04       		.byte	0x4
+  64 0031 00000000 		.4byte	.LFB0
+  65 0035 06000000 		.4byte	.LFE0
+  66 0039 00000000 		.4byte	.LLST0
+  67 003d 01       		.byte	0x1
+  68 003e 00       		.byte	0
+  69              		.section	.debug_abbrev,"",%progbits
+  70              	.Ldebug_abbrev0:
+  71 0000 01       		.uleb128 0x1
+  72 0001 11       		.uleb128 0x11
+  73 0002 01       		.byte	0x1
+  74 0003 25       		.uleb128 0x25
+  75 0004 0E       		.uleb128 0xe
+  76 0005 13       		.uleb128 0x13
+  77 0006 0B       		.uleb128 0xb
+  78 0007 03       		.uleb128 0x3
+  79 0008 0E       		.uleb128 0xe
+  80 0009 1B       		.uleb128 0x1b
+  81 000a 0E       		.uleb128 0xe
+  82 000b 55       		.uleb128 0x55
+  83 000c 06       		.uleb128 0x6
+  84 000d 11       		.uleb128 0x11
+  85 000e 01       		.uleb128 0x1
+  86 000f 52       		.uleb128 0x52
+  87 0010 01       		.uleb128 0x1
+  88 0011 10       		.uleb128 0x10
+  89 0012 06       		.uleb128 0x6
+  90 0013 00       		.byte	0
+  91 0014 00       		.byte	0
+  92 0015 02       		.uleb128 0x2
+  93 0016 2E       		.uleb128 0x2e
+  94 0017 00       		.byte	0
+  95 0018 3F       		.uleb128 0x3f
+  96 0019 0C       		.uleb128 0xc
+  97 001a 03       		.uleb128 0x3
+  98 001b 0E       		.uleb128 0xe
+  99 001c 3A       		.uleb128 0x3a
+ 100 001d 0B       		.uleb128 0xb
+ 101 001e 3B       		.uleb128 0x3b
+ 102 001f 0B       		.uleb128 0xb
+ 103 0020 11       		.uleb128 0x11
+ 104 0021 01       		.uleb128 0x1
+ 105 0022 12       		.uleb128 0x12
+ 106 0023 01       		.uleb128 0x1
+ 107 0024 40       		.uleb128 0x40
+ 108 0025 06       		.uleb128 0x6
+ 109 0026 9742     		.uleb128 0x2117
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccLhc80a.s 			page 3
+
+
+ 110 0028 0C       		.uleb128 0xc
+ 111 0029 00       		.byte	0
+ 112 002a 00       		.byte	0
+ 113 002b 00       		.byte	0
+ 114              		.section	.debug_loc,"",%progbits
+ 115              	.Ldebug_loc0:
+ 116              	.LLST0:
+ 117 0000 00000000 		.4byte	.LFB0
+ 118 0004 02000000 		.4byte	.LCFI0
+ 119 0008 0200     		.2byte	0x2
+ 120 000a 7D       		.byte	0x7d
+ 121 000b 00       		.sleb128 0
+ 122 000c 02000000 		.4byte	.LCFI0
+ 123 0010 04000000 		.4byte	.LCFI1
+ 124 0014 0200     		.2byte	0x2
+ 125 0016 7D       		.byte	0x7d
+ 126 0017 08       		.sleb128 8
+ 127 0018 04000000 		.4byte	.LCFI1
+ 128 001c 06000000 		.4byte	.LFE0
+ 129 0020 0200     		.2byte	0x2
+ 130 0022 77       		.byte	0x77
+ 131 0023 08       		.sleb128 8
+ 132 0024 00000000 		.4byte	0
+ 133 0028 00000000 		.4byte	0
+ 134              		.section	.debug_aranges,"",%progbits
+ 135 0000 1C000000 		.4byte	0x1c
+ 136 0004 0200     		.2byte	0x2
+ 137 0006 00000000 		.4byte	.Ldebug_info0
+ 138 000a 04       		.byte	0x4
+ 139 000b 00       		.byte	0
+ 140 000c 0000     		.2byte	0
+ 141 000e 0000     		.2byte	0
+ 142 0010 00000000 		.4byte	.LFB0
+ 143 0014 06000000 		.4byte	.LFE0-.LFB0
+ 144 0018 00000000 		.4byte	0
+ 145 001c 00000000 		.4byte	0
+ 146              		.section	.debug_ranges,"",%progbits
+ 147              	.Ldebug_ranges0:
+ 148 0000 00000000 		.4byte	.LFB0
+ 149 0004 06000000 		.4byte	.LFE0
+ 150 0008 00000000 		.4byte	0
+ 151 000c 00000000 		.4byte	0
+ 152              		.section	.debug_line,"",%progbits
+ 153              	.Ldebug_line0:
+ 154 0000 4A000000 		.section	.debug_str,"MS",%progbits,1
+ 154      02003200 
+ 154      00000201 
+ 154      FB0E0D00 
+ 154      01010101 
+ 155              	.LASF2:
+ 156 0000 433A5C44 		.ascii	"C:\\Documents and Settings\\Chuck\\My Documents\\PS"
+ 156      6F63756D 
+ 156      656E7473 
+ 156      20616E64 
+ 156      20536574 
+ 157 002f 6F432043 		.ascii	"oC Creator\\RosOnAStick\\RosOnAStick.cydsn\000"
+ 157      72656174 
+ARM GAS  C:\DOCUME~1\Chuck\LOCALS~1\Temp\ccLhc80a.s 			page 4
+
+
+ 157      6F725C52 
+ 157      6F734F6E 
+ 157      41537469 
+ 158              	.LASF3:
+ 159 0058 5F5F6378 		.ascii	"__cxa_pure_virtual\000"
+ 159      615F7075 
+ 159      72655F76 
+ 159      69727475 
+ 159      616C00
+ 160              	.LASF1:
+ 161 006b 2E5C726F 		.ascii	".\\ros_lib\\cxxabi-compat.cpp\000"
+ 161      735F6C69 
+ 161      625C6378 
+ 161      78616269 
+ 161      2D636F6D 
+ 162              	.LASF0:
+ 163 0087 474E5520 		.ascii	"GNU C++ 4.7.3 20130312 (release) [ARM/embedded-4_7-"
+ 163      432B2B20 
+ 163      342E372E 
+ 163      33203230 
+ 163      31333033 
+ 164 00ba 6272616E 		.ascii	"branch revision 196615]\000"
+ 164      63682072 
+ 164      65766973 
+ 164      696F6E20 
+ 164      31393636 
+ 165              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

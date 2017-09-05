@@ -1,0 +1,2547 @@
+##################################################################### 
+                    Table of Contents
+===================================================================== 
+	1::Clock Frequency Summary
+	2::Clock Relationship Summary
+	3::Datasheet Report
+		3.1::Setup to Clock
+		3.2::Clock to Out
+		3.3::Pad to Pad
+	4::Path Details for Clock Frequency Summary
+		4.1::Critical Path Report for CyHFCLK
+	5::Path Details for Clock Relationship Summary
+		5.1::Critical Path Report for (CyHFCLK:R vs. CyHFCLK:R)
+===================================================================== 
+                    End of Table of Contents
+##################################################################### 
+
+##################################################################### 
+                    1::Clock Frequency Summary
+===================================================================== 
+Number of clocks: 20
+Clock: ADC_SAR_SEQ_intClock       | N/A                   | Target: 8.00 MHz   | 
+Clock: ADC_SAR_SEQ_intClock(FFB)  | N/A                   | Target: 8.00 MHz   | 
+Clock: CapSense_SampleClk         | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_SampleClk(FFB)    | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_SenseClk          | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_SenseClk(FFB)     | N/A                   | Target: 0.09 MHz   | 
+Clock: CyHFCLK                    | Frequency: 29.68 MHz  | Target: 24.00 MHz  | 
+Clock: CyILO                      | N/A                   | Target: 0.03 MHz   | 
+Clock: CyIMO                      | N/A                   | Target: 24.00 MHz  | 
+Clock: CyLFCLK                    | N/A                   | Target: 0.03 MHz   | 
+Clock: CyRouted1                  | N/A                   | Target: 24.00 MHz  | 
+Clock: CySYSCLK                   | N/A                   | Target: 24.00 MHz  | 
+Clock: I2CMaster_SCBCLK           | N/A                   | Target: 1.60 MHz   | 
+Clock: I2CMaster_SCBCLK(FFB)      | N/A                   | Target: 1.60 MHz   | 
+Clock: PWM_Clock                  | N/A                   | Target: 1.00 MHz   | 
+Clock: PWM_Clock(FFB)             | N/A                   | Target: 1.00 MHz   | 
+Clock: Quad_Clock                 | N/A                   | Target: 24.00 MHz  | 
+Clock: Quad_Clock(FFB)            | N/A                   | Target: 24.00 MHz  | 
+Clock: ROSSerial_UART_Clock       | N/A                   | Target: 1.85 MHz   | 
+Clock: ROSSerial_UART_Clock(FFB)  | N/A                   | Target: 1.85 MHz   | 
+
+ =====================================================================
+                    End of Clock Frequency Summary
+ #####################################################################
+
+
+ #####################################################################
+                    2::Clock Relationship Summary
+ =====================================================================
+
+Launch Clock  Capture Clock  Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
+------------  -------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
+CyHFCLK       CyHFCLK        41666.7          7978        N/A              N/A         N/A              N/A         N/A              N/A         
+
+ =====================================================================
+                    End of Clock Relationship Summary
+ #####################################################################
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+3.1::Setup to Clock                     
+-------------------                     
+
+Port Name  Setup to Clk  Clock Name:Phase  
+---------  ------------  ----------------  
+
+
+-----------------------3.2::Clock to Out
+----------------------------------------
+
+Port Name        Clock to Out  Clock Name:Phase  
+---------------  ------------  ----------------  
+PWM_Pin(0)_PAD   18360         PWM_Clock(FFB):R  
+Step_A_N(0)_PAD  24960         CyHFCLK:R         
+Step_A_P(0)_PAD  26308         CyHFCLK:R         
+Step_B_N(0)_PAD  26911         CyHFCLK:R         
+Step_B_P(0)_PAD  24815         CyHFCLK:R         
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Source)  Port Name (Destination)  Delay  
+------------------  -----------------------  -----  
+
+===================================================================== 
+                    End of Datasheet Report
+##################################################################### 
+##################################################################### 
+                    4::Path Details for Clock Frequency Summary
+===================================================================== 
+4.1::Critical Path Report for CyHFCLK
+*************************************
+Clock: CyHFCLK
+Frequency: 29.68 MHz | Target: 24.00 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u3\/ci
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 7978p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -5090
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 36577
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       28599
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           28599
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell1   9710  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ci         datapathcell2      0  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell2   3310  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ci         datapathcell3      0  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell3   3310  28599   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/ci         datapathcell4      0  28599   7978  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/clock           datapathcell4           0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Frequency Summary
+##################################################################### 
+
+
+##################################################################### 
+                    5::Path Details for Clock Relationship Summary
+===================================================================== 
+
+5.1::Critical Path Report for (CyHFCLK:R vs. CyHFCLK:R)
+*******************************************************
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u3\/ci
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 7978p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -5090
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 36577
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       28599
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           28599
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell1   9710  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ci         datapathcell2      0  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell2   3310  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ci         datapathcell3      0  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell3   3310  28599   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/ci         datapathcell4      0  28599   7978  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/clock           datapathcell4           0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Relationship Summary
+##################################################################### 
+
+##################################################################### 
+                    Detailed Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u3\/ci
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 7978p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -5090
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 36577
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       28599
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           28599
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell1   9710  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ci         datapathcell2      0  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell2   3310  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ci         datapathcell3      0  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell3   3310  28599   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/ci         datapathcell4      0  28599   7978  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/clock           datapathcell4           0      0  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u2\/ci
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u2\/clock
+Path slack     : 11288p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -5090
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 36577
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       25289
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           25289
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell1   9710  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ci         datapathcell2      0  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell2   3310  25289   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ci         datapathcell3      0  25289  11288  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/clock           datapathcell3           0      0  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u1\/ci
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u1\/clock
+Path slack     : 14598p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -5090
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 36577
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       21979
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           21979
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell1   9710  21979   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ci         datapathcell2      0  21979  14598  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/clock           datapathcell2           0      0  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u2\/cs_addr_2
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u2\/clock
+Path slack     : 16976p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       13171
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           13171
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cs_addr_2  datapathcell3   3989  13171  16976  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/clock           datapathcell3           0      0  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u3\/cs_addr_2
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 17124p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       13023
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           13023
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cs_addr_2  datapathcell4   3841  13023  17124  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/clock           datapathcell4           0      0  RISE       1
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u1\/cs_addr_2
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u1\/clock
+Path slack     : 17836p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12311
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12311
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cs_addr_2  datapathcell2   3129  12311  17836  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/clock           datapathcell2           0      0  RISE       1
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u0\/clock
+Path slack     : 17878p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12269
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12269
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT  slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  -----  ----  ------
+cy_dffe_3/q                                      macrocell18     1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/main_2                macrocell5      4582   5832   7978  RISE       1
+\UpDown:CounterUDB:dp_dir\/q                     macrocell5      3350   9182   7978  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_2  datapathcell1   3086  12269  17878  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u2\/cs_addr_1
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u2\/clock
+Path slack     : 18046p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12101
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12101
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/clock    controlcell2            0      0  RISE       1
+
+Data path
+pin name                                                model name     delay     AT  slack  edge  Fanout
+------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/main_0                 macrocell4      2327   4907   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/q                      macrocell4      3350   8257   9173  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cs_addr_1         datapathcell3   3844  12101  18046  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/clock           datapathcell3           0      0  RISE       1
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u3\/cs_addr_1
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 18047p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12100
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12100
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/clock    controlcell2            0      0  RISE       1
+
+Data path
+pin name                                                model name     delay     AT  slack  edge  Fanout
+------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/main_0                 macrocell4      2327   4907   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/q                      macrocell4      3350   8257   9173  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cs_addr_1         datapathcell4   3843  12100  18047  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/clock           datapathcell4           0      0  RISE       1
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_1
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u0\/clock
+Path slack     : 19073p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11074
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11074
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/clock    controlcell2            0      0  RISE       1
+
+Data path
+pin name                                                model name     delay     AT  slack  edge  Fanout
+------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/main_0                 macrocell4      2327   4907   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/q                      macrocell4      3350   8257   9173  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/cs_addr_1         datapathcell1   2817  11074  19073  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+
+
+++++ Path 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
+Path End       : \UpDown:CounterUDB:sC32:counterdp:u1\/cs_addr_1
+Capture Clock  : \UpDown:CounterUDB:sC32:counterdp:u1\/clock
+Path slack     : 19074p
+
+Capture Clock Arrival Time                          0
++ Clock path delay                                  0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)    41667
+- Setup time                                   -11520
+--------------------------------------------   ------ 
+End-of-path required time (ps)                  30147
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11073
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11073
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/clock    controlcell2            0      0  RISE       1
+
+Data path
+pin name                                                model name     delay     AT  slack  edge  Fanout
+------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7  controlcell2    2580   2580   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/main_0                 macrocell4      2327   4907   9173  RISE       1
+\UpDown:CounterUDB:count_enable\/q                      macrocell4      3350   8257   9173  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cs_addr_1         datapathcell2   2816  11073  19074  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/clock           datapathcell2           0      0  RISE       1
+
+
+
+++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/cl1
+Path End       : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_0
+Capture Clock  : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock
+Path slack     : 20919p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -1570
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 40097
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       19177
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           19177
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT  slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/cl1           datapathcell1   4900   4900  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cl1i          datapathcell2      0   4900  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cl1           datapathcell2   1530   6430  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cl1i          datapathcell3      0   6430  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cl1           datapathcell3   1530   7960  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cl1i          datapathcell4      0   7960  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cl1_comb      datapathcell4   3070  11030  20919  RISE       1
+\UpDown:CounterUDB:status_0\/main_0                 macrocell1      2543  13573  20919  RISE       1
+\UpDown:CounterUDB:status_0\/q                      macrocell1      3350  16923  20919  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_0  statusicell1    2254  19177  20919  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock       statusicell1            0      0  RISE       1
+
+
+
+++++ Path 13 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/z0
+Path End       : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_3
+Capture Clock  : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock
+Path slack     : 23197p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -1570
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 40097
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       16900
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           16900
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT  slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/z0            datapathcell1   2320   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0i           datapathcell2      0   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0            datapathcell2   1430   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0i           datapathcell3      0   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0            datapathcell3   1430   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0i           datapathcell4      0   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0_comb       datapathcell4   2960   8140  23197  RISE       1
+\UpDown:CounterUDB:status_3\/main_0                 macrocell3      3143  11283  23197  RISE       1
+\UpDown:CounterUDB:status_3\/q                      macrocell3      3350  14633  23197  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_3  statusicell1    2267  16900  23197  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock       statusicell1            0      0  RISE       1
+
+
+
+++++ Path 14 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/ff0
+Path End       : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_2
+Capture Clock  : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock
+Path slack     : 23232p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -1570
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 40097
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       16865
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           16865
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT  slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/ff0           datapathcell1   2730   2730  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ff0i          datapathcell2      0   2730  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ff0           datapathcell2   1430   4160  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ff0i          datapathcell3      0   4160  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ff0           datapathcell3   1430   5590  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/ff0i          datapathcell4      0   5590  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/f0_comb       datapathcell4   2960   8550  23232  RISE       1
+\UpDown:CounterUDB:status_2\/main_0                 macrocell2      2703  11253  23232  RISE       1
+\UpDown:CounterUDB:status_2\/q                      macrocell2      3350  14603  23232  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_2  statusicell1    2261  16865  23232  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock       statusicell1            0      0  RISE       1
+
+
+
+++++ Path 15 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/cl1
+Path End       : \UpDown:CounterUDB:prevCompare\/main_0
+Capture Clock  : \UpDown:CounterUDB:prevCompare\/clock_0
+Path slack     : 24591p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       13566
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           13566
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                        model name     delay     AT  slack  edge  Fanout
+----------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/cl1       datapathcell1   4900   4900  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cl1i      datapathcell2      0   4900  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/cl1       datapathcell2   1530   6430  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cl1i      datapathcell3      0   6430  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/cl1       datapathcell3   1530   7960  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cl1i      datapathcell4      0   7960  20919  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/cl1_comb  datapathcell4   3070  11030  20919  RISE       1
+\UpDown:CounterUDB:prevCompare\/main_0          macrocell13     2536  13566  24591  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:prevCompare\/clock_0               macrocell13             0      0  RISE       1
+
+
+
+++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/z0
+Path End       : \UpDown:CounterUDB:underflow_reg_i\/main_0
+Capture Clock  : \UpDown:CounterUDB:underflow_reg_i\/clock_0
+Path slack     : 26043p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12113
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12113
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                       model name     delay     AT  slack  edge  Fanout
+---------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/z0       datapathcell1   2320   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0i      datapathcell2      0   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0       datapathcell2   1430   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0i      datapathcell3      0   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0       datapathcell3   1430   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0i      datapathcell4      0   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0_comb  datapathcell4   2960   8140  23197  RISE       1
+\UpDown:CounterUDB:underflow_reg_i\/main_0     macrocell12     3973  12113  26043  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:underflow_reg_i\/clock_0           macrocell12             0      0  RISE       1
+
+
+
+++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/ff0
+Path End       : \UpDown:CounterUDB:overflow_reg_i\/main_0
+Capture Clock  : \UpDown:CounterUDB:overflow_reg_i\/clock_0
+Path slack     : 26923p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11234
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11234
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                       model name     delay     AT  slack  edge  Fanout
+---------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/ff0      datapathcell1   2730   2730  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ff0i     datapathcell2      0   2730  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/ff0      datapathcell2   1430   4160  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ff0i     datapathcell3      0   4160  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/ff0      datapathcell3   1430   5590  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/ff0i     datapathcell4      0   5590  23232  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/f0_comb  datapathcell4   2960   8550  23232  RISE       1
+\UpDown:CounterUDB:overflow_reg_i\/main_0      macrocell11     2684  11234  26923  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:overflow_reg_i\/clock_0            macrocell11             0      0  RISE       1
+
+
+
+++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:sC32:counterdp:u0\/z0
+Path End       : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_1
+Capture Clock  : \UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock
+Path slack     : 27427p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -1570
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 40097
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12670
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12670
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u0\/clock           datapathcell1           0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT  slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:sC32:counterdp:u0\/z0            datapathcell1   2320   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0i           datapathcell2      0   2320  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u1\/z0            datapathcell2   1430   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0i           datapathcell3      0   3750  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u2\/z0            datapathcell3   1430   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0i           datapathcell4      0   5180  23197  RISE       1
+\UpDown:CounterUDB:sC32:counterdp:u3\/z0_comb       datapathcell4   2960   8140  23197  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/status_1  statusicell1    4530  12670  27427  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:sSTSReg:rstSts:stsreg\/clock       statusicell1            0      0  RISE       1
+
+
+
+++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : UD_Ref(0)/fb
+Path End       : cy_dffe_3/main_2
+Capture Clock  : cy_dffe_3/clock_0
+Path slack     : 29418p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       8739
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           8739
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+UD_Ref(0)/in_clock                                    iocell18                0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+UD_Ref(0)/fb      iocell18      4047   4047  29418  RISE       1
+cy_dffe_3/main_2  macrocell18   4692   8739  29418  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+
+
+++++ Path 20 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : UD_Signal(0)/fb
+Path End       : cy_dffe_2/main_2
+Capture Clock  : cy_dffe_2/clock_0
+Path slack     : 29427p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       8729
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           8729
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+UD_Signal(0)/in_clock                                 iocell19                0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+UD_Signal(0)/fb   iocell19      4047   4047  29427  RISE       1
+cy_dffe_2/main_2  macrocell19   4682   8729  29427  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+
+
+++++ Path 21 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:count_up\/main_1
+Capture Clock  : \UpDown:CounterUDB:count_up\/clock_0
+Path slack     : 31756p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       6401
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           6401
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                             model name   delay     AT  slack  edge  Fanout
+-----------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q                          macrocell18   1250   1250   7978  RISE       1
+\UpDown:CounterUDB:count_up\/main_1  macrocell15   5151   6401  31756  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_up\/clock_0                  macrocell15             0      0  RISE       1
+
+
+
+++++ Path 22 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:dwncnt_stored\/main_0
+Capture Clock  : \UpDown:CounterUDB:dwncnt_stored\/clock_0
+Path slack     : 31756p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       6401
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           6401
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q                               macrocell18   1250   1250   7978  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/main_0  macrocell16   5151   6401  31756  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/clock_0             macrocell16             0      0  RISE       1
+
+
+
+++++ Path 23 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_1
+Path End       : Net_379_3/main_0
+Capture Clock  : Net_379_3/clock_0
+Path slack     : 32360p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5796
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5796
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_1  controlcell1   2580   2580  32360  RISE       1
+Net_379_3/main_0                           macrocell7     3216   5796  32360  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_3/clock_0                                     macrocell7              0      0  RISE       1
+
+
+
+++++ Path 24 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_2
+Path End       : Net_379_3/main_2
+Capture Clock  : Net_379_3/clock_0
+Path slack     : 32365p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5791
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5791
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_2  controlcell1   2580   2580  32365  RISE       1
+Net_379_3/main_2                           macrocell7     3211   5791  32365  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_3/clock_0                                     macrocell7              0      0  RISE       1
+
+
+
+++++ Path 25 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_1
+Path End       : Net_379_2/main_1
+Capture Clock  : Net_379_2/clock_0
+Path slack     : 32366p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5791
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5791
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_1  controlcell1   2580   2580  32360  RISE       1
+Net_379_2/main_1                           macrocell8     3211   5791  32366  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_2/clock_0                                     macrocell8              0      0  RISE       1
+
+
+
+++++ Path 26 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_2
+Path End       : Net_379_2/main_2
+Capture Clock  : Net_379_2/clock_0
+Path slack     : 32369p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5787
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5787
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_2  controlcell1   2580   2580  32365  RISE       1
+Net_379_2/main_2                           macrocell8     3207   5787  32369  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_2/clock_0                                     macrocell8              0      0  RISE       1
+
+
+
+++++ Path 27 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_2
+Path End       : Net_379_0/main_2
+Capture Clock  : Net_379_0/clock_0
+Path slack     : 32377p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5779
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5779
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_2  controlcell1   2580   2580  32365  RISE       1
+Net_379_0/main_2                           macrocell10    3199   5779  32377  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_0/clock_0                                     macrocell10             0      0  RISE       1
+
+
+
+++++ Path 28 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_2
+Path End       : Net_379_1/main_2
+Capture Clock  : Net_379_1/clock_0
+Path slack     : 32383p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5774
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5774
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_2  controlcell1   2580   2580  32365  RISE       1
+Net_379_1/main_2                           macrocell9     3194   5774  32383  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_1/clock_0                                     macrocell9              0      0  RISE       1
+
+
+
+++++ Path 29 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_1
+Path End       : Net_379_0/main_0
+Capture Clock  : Net_379_0/clock_0
+Path slack     : 32390p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5767
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5767
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_1  controlcell1   2580   2580  32360  RISE       1
+Net_379_0/main_0                           macrocell10    3187   5767  32390  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_0/clock_0                                     macrocell10             0      0  RISE       1
+
+
+
+++++ Path 30 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Stepper_Control:Sync:ctrl_reg\/control_1
+Path End       : Net_379_1/main_0
+Capture Clock  : Net_379_1/clock_0
+Path slack     : 32391p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5766
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5766
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\Stepper_Control:Sync:ctrl_reg\/clock                 controlcell1            0      0  RISE       1
+
+Data path
+pin name                                   model name    delay     AT  slack  edge  Fanout
+-----------------------------------------  ------------  -----  -----  -----  ----  ------
+\Stepper_Control:Sync:ctrl_reg\/control_1  controlcell1   2580   2580  32360  RISE       1
+Net_379_1/main_0                           macrocell9     3186   5766  32391  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_1/clock_0                                     macrocell9              0      0  RISE       1
+
+
+
+++++ Path 31 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:count_down\/main_1
+Capture Clock  : \UpDown:CounterUDB:count_down\/clock_0
+Path slack     : 33142p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5015
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5015
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                               model name   delay     AT  slack  edge  Fanout
+-------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q                            macrocell18   1250   1250   7978  RISE       1
+\UpDown:CounterUDB:count_down\/main_1  macrocell17   3765   5015  33142  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_down\/clock_0                macrocell17             0      0  RISE       1
+
+
+
+++++ Path 32 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : cydff_4/main_0
+Capture Clock  : cydff_4/clock_0
+Path slack     : 33142p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5015
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5015
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name        model name   delay     AT  slack  edge  Fanout
+--------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q     macrocell18   1250   1250   7978  RISE       1
+cydff_4/main_0  macrocell21   3765   5015  33142  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_4/clock_0                                       macrocell21             0      0  RISE       1
+
+
+
+++++ Path 33 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : \UpDown:CounterUDB:upcnt_stored\/main_0
+Capture Clock  : \UpDown:CounterUDB:upcnt_stored\/clock_0
+Path slack     : 33182p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4975
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4975
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name                                 model name   delay     AT  slack  edge  Fanout
+---------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q                              macrocell18   1250   1250   7978  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/main_0  macrocell14   3725   4975  33182  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/clock_0              macrocell14             0      0  RISE       1
+
+
+
+++++ Path 34 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_3/q
+Path End       : cy_dffe_3/main_0
+Capture Clock  : cy_dffe_3/clock_0
+Path slack     : 33182p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4975
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4975
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_3/q       macrocell18   1250   1250   7978  RISE       1
+cy_dffe_3/main_0  macrocell18   3725   4975  33182  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+
+
+++++ Path 35 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_3/q
+Path End       : \UpDown:CounterUDB:count_up\/main_3
+Capture Clock  : \UpDown:CounterUDB:count_up\/clock_0
+Path slack     : 33301p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4855
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4855
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_3/clock_0                                       macrocell20             0      0  RISE       1
+
+Data path
+pin name                             model name   delay     AT  slack  edge  Fanout
+-----------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_3/q                            macrocell20   1250   1250   8964  RISE       1
+\UpDown:CounterUDB:count_up\/main_3  macrocell15   3605   4855  33301  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_up\/clock_0                  macrocell15             0      0  RISE       1
+
+
+
+++++ Path 36 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_3/q
+Path End       : \UpDown:CounterUDB:dwncnt_stored\/main_2
+Capture Clock  : \UpDown:CounterUDB:dwncnt_stored\/clock_0
+Path slack     : 33301p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4855
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4855
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_3/clock_0                                       macrocell20             0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_3/q                                 macrocell20   1250   1250   8964  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/main_2  macrocell16   3605   4855  33301  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/clock_0             macrocell16             0      0  RISE       1
+
+
+
+++++ Path 37 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_379_2/q
+Path End       : Net_379_2/main_0
+Capture Clock  : Net_379_2/clock_0
+Path slack     : 33453p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4704
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4704
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_2/clock_0                                     macrocell8              0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_379_2/q       macrocell8    1250   1250  33453  RISE       1
+Net_379_2/main_0  macrocell8    3454   4704  33453  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_2/clock_0                                     macrocell8              0      0  RISE       1
+
+
+
+++++ Path 38 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_3/q
+Path End       : \UpDown:CounterUDB:upcnt_stored\/main_2
+Capture Clock  : \UpDown:CounterUDB:upcnt_stored\/clock_0
+Path slack     : 33455p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4702
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4702
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_3/clock_0                                       macrocell20             0      0  RISE       1
+
+Data path
+pin name                                 model name   delay     AT  slack  edge  Fanout
+---------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_3/q                                macrocell20   1250   1250   8964  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/main_2  macrocell14   3452   4702  33455  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/clock_0              macrocell14             0      0  RISE       1
+
+
+
+++++ Path 39 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_3/q
+Path End       : \UpDown:CounterUDB:count_down\/main_3
+Capture Clock  : \UpDown:CounterUDB:count_down\/clock_0
+Path slack     : 33472p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4684
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4684
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_3/clock_0                                       macrocell20             0      0  RISE       1
+
+Data path
+pin name                               model name   delay     AT  slack  edge  Fanout
+-------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_3/q                              macrocell20   1250   1250   8964  RISE       1
+\UpDown:CounterUDB:count_down\/main_3  macrocell17   3434   4684  33472  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_down\/clock_0                macrocell17             0      0  RISE       1
+
+
+
+++++ Path 40 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_379_3/q
+Path End       : Net_379_3/main_1
+Capture Clock  : Net_379_3/clock_0
+Path slack     : 33494p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4662
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4662
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_3/clock_0                                     macrocell7              0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_379_3/q       macrocell7    1250   1250  33494  RISE       1
+Net_379_3/main_1  macrocell7    3412   4662  33494  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_3/clock_0                                     macrocell7              0      0  RISE       1
+
+
+
+++++ Path 41 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_379_0/q
+Path End       : Net_379_0/main_1
+Capture Clock  : Net_379_0/clock_0
+Path slack     : 33504p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4653
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4653
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_0/clock_0                                     macrocell10             0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_379_0/q       macrocell10   1250   1250  33504  RISE       1
+Net_379_0/main_1  macrocell10   3403   4653  33504  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_0/clock_0                                     macrocell10             0      0  RISE       1
+
+
+
+++++ Path 42 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : \UpDown:CounterUDB:upcnt_stored\/main_1
+Capture Clock  : \UpDown:CounterUDB:upcnt_stored\/clock_0
+Path slack     : 33673p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4484
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4484
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name                                 model name   delay     AT  slack  edge  Fanout
+---------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q                              macrocell19   1250   1250   9331  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/main_1  macrocell14   3234   4484  33673  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/clock_0              macrocell14             0      0  RISE       1
+
+
+
+++++ Path 43 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : cy_dffe_2/main_1
+Capture Clock  : cy_dffe_2/clock_0
+Path slack     : 33673p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4484
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4484
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q       macrocell19   1250   1250   9331  RISE       1
+cy_dffe_2/main_1  macrocell19   3234   4484  33673  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+
+
+++++ Path 44 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : \UpDown:CounterUDB:count_down\/main_2
+Capture Clock  : \UpDown:CounterUDB:count_down\/clock_0
+Path slack     : 33674p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4482
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4482
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name                               model name   delay     AT  slack  edge  Fanout
+-------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q                            macrocell19   1250   1250   9331  RISE       1
+\UpDown:CounterUDB:count_down\/main_2  macrocell17   3232   4482  33674  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_down\/clock_0                macrocell17             0      0  RISE       1
+
+
+
+++++ Path 45 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : cydff_3/main_0
+Capture Clock  : cydff_3/clock_0
+Path slack     : 33674p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4482
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4482
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name        model name   delay     AT  slack  edge  Fanout
+--------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q     macrocell19   1250   1250   9331  RISE       1
+cydff_3/main_0  macrocell20   3232   4482  33674  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_3/clock_0                                       macrocell20             0      0  RISE       1
+
+
+
+++++ Path 46 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : \UpDown:CounterUDB:count_up\/main_2
+Capture Clock  : \UpDown:CounterUDB:count_up\/clock_0
+Path slack     : 33675p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4481
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4481
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name                             model name   delay     AT  slack  edge  Fanout
+-----------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q                          macrocell19   1250   1250   9331  RISE       1
+\UpDown:CounterUDB:count_up\/main_2  macrocell15   3231   4481  33675  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_up\/clock_0                  macrocell15             0      0  RISE       1
+
+
+
+++++ Path 47 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cy_dffe_2/q
+Path End       : \UpDown:CounterUDB:dwncnt_stored\/main_1
+Capture Clock  : \UpDown:CounterUDB:dwncnt_stored\/clock_0
+Path slack     : 33675p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4481
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4481
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+cy_dffe_2/q                               macrocell19   1250   1250   9331  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/main_1  macrocell16   3231   4481  33675  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/clock_0             macrocell16             0      0  RISE       1
+
+
+
+++++ Path 48 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_4/q
+Path End       : \UpDown:CounterUDB:count_up\/main_4
+Capture Clock  : \UpDown:CounterUDB:count_up\/clock_0
+Path slack     : 33678p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4478
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4478
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_4/clock_0                                       macrocell21             0      0  RISE       1
+
+Data path
+pin name                             model name   delay     AT  slack  edge  Fanout
+-----------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_4/q                            macrocell21   1250   1250   9344  RISE       1
+\UpDown:CounterUDB:count_up\/main_4  macrocell15   3228   4478  33678  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_up\/clock_0                  macrocell15             0      0  RISE       1
+
+
+
+++++ Path 49 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_4/q
+Path End       : \UpDown:CounterUDB:dwncnt_stored\/main_3
+Capture Clock  : \UpDown:CounterUDB:dwncnt_stored\/clock_0
+Path slack     : 33678p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4478
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4478
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_4/clock_0                                       macrocell21             0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_4/q                                 macrocell21   1250   1250   9344  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/main_3  macrocell16   3228   4478  33678  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/clock_0             macrocell16             0      0  RISE       1
+
+
+
+++++ Path 50 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_4/q
+Path End       : \UpDown:CounterUDB:upcnt_stored\/main_3
+Capture Clock  : \UpDown:CounterUDB:upcnt_stored\/clock_0
+Path slack     : 33682p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4474
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4474
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_4/clock_0                                       macrocell21             0      0  RISE       1
+
+Data path
+pin name                                 model name   delay     AT  slack  edge  Fanout
+---------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_4/q                                macrocell21   1250   1250   9344  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/main_3  macrocell14   3224   4474  33682  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/clock_0              macrocell14             0      0  RISE       1
+
+
+
+++++ Path 51 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : cydff_4/q
+Path End       : \UpDown:CounterUDB:count_down\/main_4
+Capture Clock  : \UpDown:CounterUDB:count_down\/clock_0
+Path slack     : 33687p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4470
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4470
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cydff_4/clock_0                                       macrocell21             0      0  RISE       1
+
+Data path
+pin name                               model name   delay     AT  slack  edge  Fanout
+-------------------------------------  -----------  -----  -----  -----  ----  ------
+cydff_4/q                              macrocell21   1250   1250   9344  RISE       1
+\UpDown:CounterUDB:count_down\/main_4  macrocell17   3220   4470  33687  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_down\/clock_0                macrocell17             0      0  RISE       1
+
+
+
+++++ Path 52 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:dwncnt_stored\/q
+Path End       : \UpDown:CounterUDB:count_down\/main_0
+Capture Clock  : \UpDown:CounterUDB:count_down\/clock_0
+Path slack     : 34133p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4024
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4024
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:dwncnt_stored\/clock_0             macrocell16             0      0  RISE       1
+
+Data path
+pin name                               model name   delay     AT  slack  edge  Fanout
+-------------------------------------  -----------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:dwncnt_stored\/q    macrocell16   1250   1250   9778  RISE       1
+\UpDown:CounterUDB:count_down\/main_0  macrocell17   2774   4024  34133  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_down\/clock_0                macrocell17             0      0  RISE       1
+
+
+
+++++ Path 53 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \UpDown:CounterUDB:upcnt_stored\/q
+Path End       : \UpDown:CounterUDB:count_up\/main_0
+Capture Clock  : \UpDown:CounterUDB:count_up\/clock_0
+Path slack     : 34303p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3854
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3854
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:upcnt_stored\/clock_0              macrocell14             0      0  RISE       1
+
+Data path
+pin name                             model name   delay     AT  slack  edge  Fanout
+-----------------------------------  -----------  -----  -----  -----  ----  ------
+\UpDown:CounterUDB:upcnt_stored\/q   macrocell14   1250   1250   9958  RISE       1
+\UpDown:CounterUDB:count_up\/main_0  macrocell15   2604   3854  34303  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+\UpDown:CounterUDB:count_up\/clock_0                  macrocell15             0      0  RISE       1
+
+
+
+++++ Path 54 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_771/q
+Path End       : cy_dffe_3/main_1
+Capture Clock  : cy_dffe_3/clock_0
+Path slack     : 34608p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3548
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3548
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_771/clock_0                                       macrocell22             0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_771/q         macrocell22   1250   1250  34608  RISE       1
+cy_dffe_3/main_1  macrocell18   2298   3548  34608  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_3/clock_0                                     macrocell18             0      0  RISE       1
+
+
+
+++++ Path 55 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_771/q
+Path End       : cy_dffe_2/main_0
+Capture Clock  : cy_dffe_2/clock_0
+Path slack     : 34608p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3548
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3548
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_771/clock_0                                       macrocell22             0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_771/q         macrocell22   1250   1250  34608  RISE       1
+cy_dffe_2/main_0  macrocell19   2298   3548  34608  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+cy_dffe_2/clock_0                                     macrocell19             0      0  RISE       1
+
+
+
+++++ Path 56 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : Net_379_1/q
+Path End       : Net_379_1/main_1
+Capture Clock  : Net_379_1/clock_0
+Path slack     : 34664p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (CyHFCLK:R#1 vs. CyHFCLK:R#2)   41667
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 38157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3493
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3493
+ 
+Launch Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_1/clock_0                                     macrocell9              0      0  RISE       1
+
+Data path
+pin name          model name   delay     AT  slack  edge  Fanout
+----------------  -----------  -----  -----  -----  ----  ------
+Net_379_1/q       macrocell9    1250   1250  34664  RISE       1
+Net_379_1/main_1  macrocell9    2243   3493  34664  RISE       1
+
+Capture Clock Path
+pin name                                              model name          delay     AT  edge  Fanout
+----------------------------------------------------  ------------------  -----  -----  ----  ------
+ClockBlock/hfclk                                      m0s8clockblockcell      0      0  RISE       1
+Net_379_1/clock_0                                     macrocell9              0      0  RISE       1
+
+
+===================================================================== 
+                    End of Detailed Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+
