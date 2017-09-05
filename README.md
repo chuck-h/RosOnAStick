@@ -1,9 +1,11 @@
 # RosOnAStick
-demonstration ROS node running on a $4 embedded ARM board
+A demonstration ROS node running on a $4 embedded ARM board
 
 ## Device overview
 These ARM-architecture Cypress processors are available in very low-cost "prototyping kit" boards
 * PSoC4 [CY8CKIT-049](http://www.cypress.com/documentation/development-kitsboards/psoc-4-cy8ckit-049-4xxx-prototyping-kits) for under $5
+
+![](http://www.cypress.com/fckimages/myresources/CY8CKit-049_sm(1).jpg)
 
 These boards are available through many retail distributors (e.g. DigiKey, Mouser)
 
